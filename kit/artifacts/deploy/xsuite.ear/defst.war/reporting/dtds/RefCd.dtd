@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT RefCdList (RefCd)+>
+<!ELEMENT RefCd (AddBy,AddDate,Value,ModBy,ModDate,RefCd,RefCdType,RefStatusCd,ShortDesc)>
+<!ATTLIST RefCd Id ID #REQUIRED>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT RefCd (#PCDATA)>
+<!ELEMENT RefCdType (#PCDATA)>
+<!ELEMENT RefStatusCd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

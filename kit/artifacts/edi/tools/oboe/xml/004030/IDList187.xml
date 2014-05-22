@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Consolidated Weight</idValue>
+    <idCode>B</idCode>
+        <idValue>Billed Weight</idValue>
+    <idCode>C</idCode>
+        <idValue>Actual Net Repeated for Combination</idValue>
+    <idCode>D</idCode>
+        <idValue>Destination Weight Agreement</idValue>
+    <idCode>E</idCode>
+        <idValue>Estimated Net Weight</idValue>
+    <idCode>F</idCode>
+        <idValue>Deficit Weight</idValue>
+    <idCode>G</idCode>
+        <idValue>Gross Weight</idValue>
+    <idCode>H</idCode>
+        <idValue>Weight Per 100 Feet</idValue>
+    <idCode>I</idCode>
+        <idValue>Weight Per 1000 Feet</idValue>
+    <idCode>J</idCode>
+        <idValue>Light Weight</idValue>
+    <idCode>K</idCode>
+        <idValue>Clean Out</idValue>
+    <idCode>L</idCode>
+        <idValue>Legal Weight</idValue>
+    <idCode>M</idCode>
+        <idValue>Minimum Weight (for rate)</idValue>
+    <idCode>N</idCode>
+        <idValue>Actual Net Weight</idValue>
+    <idCode>O</idCode>
+        <idValue>Excess Weight Over Maximum</idValue>
+    <idCode>P</idCode>
+        <idValue>Weight Per 100 Units</idValue>
+    <idCode>Q</idCode>
+        <idValue>Weight Per 1000 Units</idValue>
+    <idCode>R</idCode>
+        <idValue>Per Unit Dunnage</idValue>
+    <idCode>S</idCode>
+        <idValue>State Weight</idValue>
+    <idCode>T</idCode>
+        <idValue>Tare Weight</idValue>
+    <idCode>U</idCode>
+        <idValue>Weight Per Unit</idValue>
+    <idCode>V</idCode>
+        <idValue>Non Transit Weight (On Transit Bills Only)</idValue>
+    <idCode>W</idCode>
+        <idValue>Transit Weight (On Transit Bills Only)</idValue>
+    <idCode>X</idCode>
+        <idValue>Maximum Weight (for Rate)</idValue>
+    <idCode>Y</idCode>
+        <idValue>Theoretical Weight</idValue>
+    <idCode>Z</idCode>
+        <idValue>Mutually Defined</idValue>
+    <idCode>A1</idCode>
+        <idValue>Dimensional Weight</idValue>
+    <idCode>A2</idCode>
+        <idValue>Reweighed By Carrier</idValue>
+    <idCode>A3</idCode>
+        <idValue>Shippers Weight</idValue>
+    <idCode>A4</idCode>
+        <idValue>Average Weight per Load</idValue>
+    <idCode>CD</idCode>
+        <idValue>Chargeable Dunnage</idValue>
+    <idCode>CE</idCode>
+        <idValue>Certified Weight of Cargo</idValue>
+    <idCode>DR</idCode>
+        <idValue>Drained Weight</idValue>
+    <idCode>FR</idCode>
+        <idValue>Freight Weight</idValue>
+    <idCode>LC</idCode>
+        <idValue>Maximum Lading Capacity</idValue>
+    <idCode>ND</idCode>
+        <idValue>Nonchargeable Dunnage</idValue>
+    <idCode>NI</idCode>
+        <idValue>Non-Temporary Storage Weight In</idValue>
+    <idCode>NR</idCode>
+        <idValue>Non-Temporary Storage Weight Re-handled</idValue>
+    <idCode>NT</idCode>
+        <idValue>Non-Temporary Storage Weight Out</idValue>
+    <idCode>PA</idCode>
+        <idValue>Pallet Weight</idValue>
+    <idCode>RG</idCode>
+        <idValue>Reweigh Gross Weight</idValue>
+    <idCode>RN</idCode>
+        <idValue>Reweigh Net Weight</idValue>
+    <idCode>RT</idCode>
+        <idValue>Reweigh Tare Weight</idValue>
+    <idCode>SF</idCode>
+        <idValue>Storage in Transit Final Weight Out</idValue>
+    <idCode>SI</idCode>
+        <idValue>Storage in Transit Weight in</idValue>
+    <idCode>SK</idCode>
+        <idValue>Skid Weight</idValue>
+    <idCode>SO</idCode>
+        <idValue>Storage in Transit Weight Out</idValue>
+    <idCode>WA</idCode>
+        <idValue>Administrative Weight Allowance</idValue>
+    <idCode>WB</idCode>
+        <idValue>Unaccompanied Baggage Weight</idValue>
+    <idCode>WG</idCode>
+        <idValue>Professional Gear Weight</idValue>
+    <idCode>WJ</idCode>
+        <idValue>Joint Travel Regulation Weight</idValue>
+    <idCode>WX</idCode>
+        <idValue>Net Explosive Weight</idValue>
+</idList>

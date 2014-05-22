@@ -1,0 +1,15 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT NoteAttachmentList (NoteAttachment)+>
+<!ELEMENT NoteAttachment (NoteId,AddBy,AddDate,FileName,ModBy,ModDate,ServerName)>
+<!ATTLIST NoteAttachment Id ID #REQUIRED>
+<!ELEMENT NoteId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT FileName (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ServerName (#PCDATA)>

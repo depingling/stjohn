@@ -1,0 +1,25 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT UserList (User)+>
+<!ELEMENT User (AddBy,AddDate,EffDate,ExpDate,FirstName,LastActivityDate,LastName,ModBy,ModDate,Password,PrefLocaleCd,RegisterDate,UserName,UserRoleCd,UserStatusCd,UserTypeCd,WorkflowRoleCd)>
+<!ATTLIST User Id ID #REQUIRED>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT EffDate (#PCDATA)>
+<!ELEMENT ExpDate (#PCDATA)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT LastActivityDate (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT Password (#PCDATA)>
+<!ELEMENT PrefLocaleCd (#PCDATA)>
+<!ELEMENT RegisterDate (#PCDATA)>
+<!ELEMENT UserName (#PCDATA)>
+<!ELEMENT UserRoleCd (#PCDATA)>
+<!ELEMENT UserStatusCd (#PCDATA)>
+<!ELEMENT UserTypeCd (#PCDATA)>
+<!ELEMENT WorkflowRoleCd (#PCDATA)>

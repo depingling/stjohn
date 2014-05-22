@@ -1,0 +1,19 @@
+#Message_All_en.txt is the default file,please add any new entries to Message_All_en.txt file.
+error.badDateFormat= {0} value must be formatted as 'mm/dd/yyyy'.
+report.control.beginDate:=Begin Date (mm/dd/yyyy):
+report.control.endDate:=End Date (mm/dd/yyyy):
+report.text.endDateInvalid=End Date is not a valid date of the form: mm/dd/yyyy
+report.text.beginDateInvalid=Begin Date is not a valid date of the form: mm/dd/yyyy
+report.description.OrderTotals=For all accounts displays category dollar volume by ship to location for each order. Multiple worksheets display dollar volume by ship to location for each order and item detail dollar volume and quantity by ship to location for each order. Please enter Begin Date and End Date in the MM/DD/YYYY format (I.e. 01/01/2004).
+report.description.SwissOrderTotals=For all accounts displays category dollar volume by ship to location for each order. Multiple worksheets display dollar volume by ship to location for each order and item detail dollar volume and quantity by ship to location for each order. Please enter Begin Date and End Date in the MM/DD/YYYY format (I.e. 01/01/2004).
+report.control.label.DW_BEGIN_DATE=Begin Date (mm/dd/yyyy):
+report.control.label.DW_END_DATE=End Date (mm/dd/yyyy):
+userportal.esw.checkout.text.inputDateFormat=mm/dd/yyyy
+
+format.date.abbrev.month=mm
+format.date.abbrev.day=dd
+format.date.abbrev.year=yyyy
+format.date.abbrev.hour=HH
+format.date.abbrev.minute=mm
+
+report.column.POSTAL_CODE=ZIP Code

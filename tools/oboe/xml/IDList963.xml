@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>Stadium Tax</idValue>
+    <idCode>AB</idCode>
+        <idValue>Surtax</idValue>
+    <idCode>AT</idCode>
+        <idValue>Assessment</idValue>
+    <idCode>BP</idCode>
+        <idValue>Business Privilege Tax</idValue>
+    <idCode>CA</idCode>
+        <idValue>City Tax</idValue>
+    <idCode>CB</idCode>
+        <idValue>Threshold Tax</idValue>
+    <idCode>CG</idCode>
+        <idValue>Federal Value-added Tax (GST) on Goods</idValue>
+    <idCode>CI</idCode>
+        <idValue>City Rental Tax</idValue>
+    <idCode>CP</idCode>
+        <idValue>County/Parish Sales Tax</idValue>
+    <idCode>CR</idCode>
+        <idValue>County Rental Tax</idValue>
+    <idCode>CS</idCode>
+        <idValue>City Sales Tax</idValue>
+    <idCode>CT</idCode>
+        <idValue>County Tax</idValue>
+    <idCode>CV</idCode>
+        <idValue>Federal Value-added Tax (GST) on Services</idValue>
+    <idCode>DL</idCode>
+        <idValue>Default Labor Tax</idValue>
+    <idCode>EQ</idCode>
+        <idValue>Equipment Tax</idValue>
+    <idCode>ET</idCode>
+        <idValue>Energy Tax</idValue>
+    <idCode>EV</idCode>
+        <idValue>Environmental Tax</idValue>
+    <idCode>F1</idCode>
+        <idValue>FICA Tax</idValue>
+    <idCode>F2</idCode>
+        <idValue>FICA Medicare Tax</idValue>
+    <idCode>F3</idCode>
+        <idValue>FICA Social Security Tax</idValue>
+    <idCode>FD</idCode>
+        <idValue>Federal Tax</idValue>
+    <idCode>FF</idCode>
+        <idValue>Fuel Super Fund Tax</idValue>
+    <idCode>FI</idCode>
+        <idValue>Federal Income Tax Withholding</idValue>
+    <idCode>FL</idCode>
+        <idValue>Fuel L.U.S.T. Tax (Leaking Underground Storage Tank)</idValue>
+    <idCode>FR</idCode>
+        <idValue>Franchise Tax</idValue>
+    <idCode>FS</idCode>
+        <idValue>Fuel Spill Tax</idValue>
+    <idCode>FT</idCode>
+        <idValue>Federal Excise Tax</idValue>
+    <idCode>GR</idCode>
+        <idValue>Gross Receipts Tax</idValue>
+    <idCode>GS</idCode>
+        <idValue>Goods and Services Tax</idValue>
+    <idCode>HS</idCode>
+        <idValue>Public Health and Education Tax</idValue>
+    <idCode>HT</idCode>
+        <idValue>Handicap Tax</idValue>
+    <idCode>HZ</idCode>
+        <idValue>Hazardous Waste Tax</idValue>
+    <idCode>LB</idCode>
+        <idValue>Labor By Trade Tax</idValue>
+    <idCode>LO</idCode>
+        <idValue>Local Tax (Not Sales Tax)</idValue>
+    <idCode>LS</idCode>
+        <idValue>State and Local Sales Tax</idValue>
+    <idCode>LT</idCode>
+        <idValue>Local Sales Tax (All Applicable Sales Taxes by Taxing Authority Below the State Level)</idValue>
+    <idCode>LU</idCode>
+        <idValue>Leaky Underground Storage Tank (LUST) Tax (federal)</idValue>
+    <idCode>LV</idCode>
+        <idValue>Leaky Underground Storage Tank (LUST) Tax (state)</idValue>
+    <idCode>MA</idCode>
+        <idValue>Material Tax</idValue>
+    <idCode>MN</idCode>
+        <idValue>Minimum Tax</idValue>
+    <idCode>MP</idCode>
+        <idValue>Municipal Tax</idValue>
+    <idCode>MS</idCode>
+        <idValue>Miscellaneous State Tax</idValue>
+    <idCode>MT</idCode>
+        <idValue>Metropolitan Transit Tax</idValue>
+    <idCode>OH</idCode>
+        <idValue>Other Taxes</idValue>
+    <idCode>OT</idCode>
+        <idValue>Occupational Tax</idValue>
+    <idCode>PG</idCode>
+        <idValue>State or Provincial Tax on Goods</idValue>
+    <idCode>PS</idCode>
+        <idValue>State or Provincial Tax on Services</idValue>
+    <idCode>SA</idCode>
+        <idValue>State or Provincial Fuel Tax</idValue>
+    <idCode>SB</idCode>
+        <idValue>Secondary Percentage Tax</idValue>
+    <idCode>SC</idCode>
+        <idValue>School Tax</idValue>
+    <idCode>SE</idCode>
+        <idValue>State Excise Tax</idValue>
+    <idCode>SF</idCode>
+        <idValue>Superfund Tax</idValue>
+    <idCode>SL</idCode>
+        <idValue>State and Local Tax</idValue>
+    <idCode>SP</idCode>
+        <idValue>State/Provincial Tax</idValue>
+    <idCode>SR</idCode>
+        <idValue>State Rental Tax</idValue>
+    <idCode>SS</idCode>
+        <idValue>State Tax on Specific Labor</idValue>
+    <idCode>ST</idCode>
+        <idValue>State Sales Tax</idValue>
+    <idCode>SU</idCode>
+        <idValue>Sales and Use Tax</idValue>
+    <idCode>SX</idCode>
+        <idValue>Enhanced 911 - State Excise Tax</idValue>
+    <idCode>T1</idCode>
+        <idValue>Pre-threshold Tax</idValue>
+    <idCode>T2</idCode>
+        <idValue>Post Threshold Tax</idValue>
+    <idCode>TD</idCode>
+        <idValue>Telecommunications Device for the Deaf (TDD) Service Excise Tax</idValue>
+    <idCode>TT</idCode>
+        <idValue>Telecommunications Tax</idValue>
+    <idCode>TX</idCode>
+        <idValue>All Taxes</idValue>
+    <idCode>UL</idCode>
+        <idValue>License Tax</idValue>
+    <idCode>UT</idCode>
+        <idValue>Utility Users&apos; Tax</idValue>
+    <idCode>VA</idCode>
+        <idValue>Value Added Tax</idValue>
+    <idCode>WS</idCode>
+        <idValue>Well Service</idValue>
+    <idCode>ZA</idCode>
+        <idValue>911-City Tax</idValue>
+    <idCode>ZB</idCode>
+        <idValue>911-County Tax</idValue>
+    <idCode>ZC</idCode>
+        <idValue>911-Excise Tax</idValue>
+    <idCode>ZD</idCode>
+        <idValue>911-State Tax</idValue>
+    <idCode>ZE</idCode>
+        <idValue>911-Tax</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

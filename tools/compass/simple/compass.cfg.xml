@@ -1,0 +1,23 @@
+<compass-core-config xmlns="http://www.opensymphony.com/compass/schema/core-config"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.opensymphony.com/compass/schema/core-config
+http://www.opensymphony.com/compass/schema/compass-core-config.xsd">
+  <compass name="CLW_COMPASS">
+
+    <connection>
+      <jdbc>
+        <dataSourceProvider>
+          <jndi lookup="java:/OracleDS"/>
+        </dataSourceProvider>
+      </jdbc>
+    </connection>
+    <transaction lockTimeout="1000" lockPollInterval="200" />
+
+    <searchEngine>
+      <analyzer name="deault" type="Snowball" snowballType="English">
+      </analyzer>
+    </searchEngine>
+
+  </compass>
+</compass-core-config>
+

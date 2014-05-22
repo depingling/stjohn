@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE transactionSet SYSTEM "transactionSetRules.dtd">
+<!-- Revision 2.6.0 data/OBOE, docs, February 25, 2004, -->
+<transactionSet name="Invoice" id="810"
+  revision="004030"
+  functionalGroup="IN"
+  description="New Version This Draft Standard for Trial Use contains the format and establishes the data contents of the Invoice Transaction Set (810) for use within the context of an Electronic Data Interchange (EDI) environment. The transaction set can be used to provide for customary and established business and industry practice relative to the billing for goods and services provided."
+  xmlTag="Invoice">
+    <table section="header">
+        <segment name="Transaction Set Header" id="ST"
+          description="To indicate the start of a transaction set and to assign a control number"
+          sequence="10"
+          occurs="1"
+          required='M'
+          xmlTag="TransactionSetHeader">
+            <dataElement name="Transaction Set Identifier Code" id="143"
+              sequence="1"
+              description="Code uniquely identifying a Transaction Set"
+              type="ID" required="M"
+              minLength="3" maxLength="3"
+              xmlTag="transactionSetIdentifierCode">
+              <idList>
+                <idCode>810</idCode>
+                <idValue>Purchase Order</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Transaction Set Control Number" id="329"
+              sequence="2"
+              description="Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set"
+              type="AN" required="M"
+              minLength="4" maxLength="9"
+              xmlTag="transactionSetControlNumber"/>
+        </segment>
+        <segment name="Beginning Segment for Invoice" id="BIG"
+          description="To indicate the beginning of an invoice transaction set and transmit identifying numbers and dates"
+          sequence="20"
+          occurs="1"
+          required='M'
+          xmlTag="BeginningSegmentForInvoice">
+            <dataElement name="Date" id="373"
+              sequence="1"
+              description="Date expressed as CCYYMMDD"
+              type="DT" required="M"
+              minLength="8" maxLength="8"
+              xmlTag="date"/>
+            <dataElement name="Invoice Number" id="76"
+              sequence="2"
+              description="Identifying number assigned by issuer"
+              type="AN" required="M"
+              minLength="1" maxLength="22"
+              xmlTag="invoiceNumber"/>
+            <dataElement name="Date" id="373"
+              sequence="3"
+              description="Date expressed as CCYYMMDD"
+              type="DT" required="O"
+              minLength="8" maxLength="8"
+              xmlTag="date"/>
+            <dataElement name="Purchase Order Number" id="324"
+              sequence="4"
+              description="Identifying number for Purchase Order assigned by the orderer/purchaser"
+              type="AN" required="O"
+              minLength="1" maxLength="22"
+              xmlTag="purchaseOrderNumber"/>
+        </segment>
+        <segment name="Reference Identification" id="REF"
+          description="To specify identifying information"
+          sequence="50"
+          occurs="12"
+          required='M'
+          xmlTag="ReferenceIdentification">
+            <dataElement name="Reference Identification Qualifier" id="128"
+              sequence="1"
+              description="Code qualifying the Reference Identification"
+              type="ID" required="M"
+              minLength="2" maxLength="3"
+              xmlTag="referenceIdentificationQualifier">
+              <idList>
+                <idCode>DP</idCode>
+                <idValue>Department Number</idValue>
+                <idCode>AE</idCode>
+                <idValue>Authorization Code</idValue>
+                <idCode>IA</idCode>
+                <idValue>Internal Supplier Number</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Reference Identification" id="127"
+              sequence="2"
+              description="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
+              type="AN" required="M"
+              minLength="1" maxLength="30"
+              xmlTag="referenceIdentification"/>
+        </segment>
+        <segment name="Name" id="N1"
+          occurs="4"
+          sequence="70"
+          required='O'
+          description="To identify a party by type of organization, name, and code"
+          xmlTag="Name">
+            <dataElement name="Entity Identifier Code" id="98"
+              sequence="1"
+              description="Code identifying an organizational entity, a physical location, property or an individual"
+              type="ID" required="M"
+              minLength="2" maxLength="3"
+              xmlTag="entityIdentifierCode">
+              <idList>
+                <idCode>RE</idCode>
+                <idValue>Remit To</idValue>
+                <idCode>BY</idCode>
+                <idValue>Buying Party</idValue>
+                <idCode>BT</idCode>
+                <idValue>Bill To Party</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Name" id="93"
+              sequence="2"
+              description="Free-form name"
+              type="AN" required="X"
+              minLength="1" maxLength="60"
+              xmlTag="name"/>
+            <dataElement name="Identification Code Qualifier" id="66"
+              sequence="3"
+              description="Code designating the system/method of code structure used for Identification Code (67)"
+              type="ID" required="X"
+              minLength="1" maxLength="2"
+              xmlTag="identificationCodeQualifier">
+              <idList>
+                <idCode>92</idCode>
+                <idValue>Assigned by Buyer</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Identification Code" id="67"
+              sequence="4"
+              description="Code identifying a party or other code"
+              type="AN" required="X"
+              minLength="2" maxLength="80"
+              xmlTag="identificationCode"/>
+        </segment>
+        <segment name="Terms of Sale/Deferred Terms of Sale" id="ITD"
+          description="To specify terms of sale"
+          sequence="130"
+          occurs="1"
+          required='M'
+          xmlTag="TermsOfSaleDeferredTermsOfSale">
+            <dataElement name="Terms Type Code" id="336"
+              sequence="1"
+              description="Code identifying type of payment terms"
+              type="ID" required="M"
+              minLength="2" maxLength="2"
+              xmlTag="termsTypeCode">
+              <idList>
+                <idCode>14</idCode>
+                <idValue>Previously Agreed Upon</idValue>
+                <idCode>22</idCode>
+                <idValue>Cash Discount Terms Apply</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Terms Basis Date Code" id="333"
+              sequence="2"
+              description="Code identifying the beginning of the terms period"
+              type="AN" required="O"
+              minLength="1" maxLength="2"
+              xmlTag="termsBasisDateCode"/>
+            <dataElement name="Terms Discount Percent" id="338"
+              sequence="3"
+              description="Terms discount percentage, expressed as a percent, available to the purchaser if an invoice is paid on or before the Terms Discount Due Date"
+              type="R" required="O"
+              minLength="1" maxLength="6"
+              xmlTag="termsDiscountPercent"/>
+            <dataElement name="Terms Discount Due Date" id="370"
+              sequence="4"
+              description="Date payment is due if discount is to be earned expressed in format CCYYMMDD"
+              type="DT" required="X"
+              minLength="8" maxLength="8"
+              xmlTag="termsDiscountDueDate"/>
+            <dataElement name="Terms Discount Days Due" id="351"
+              sequence="5"
+              description="Number of days in the terms discount period by which payment is due if terms discount is earned"
+              type="N0" required="X"
+              minLength="1" maxLength="3"
+              xmlTag="termsDiscountDaysDue"/>
+            <dataElement name="Terms Net Due Date" id="446"
+              sequence="6"
+              description="Date when total invoice amount becomes due expressed in format CCYYMMDD"
+              type="DT" required="O"
+              minLength="8" maxLength="8"
+              xmlTag="termsNetDueDate"/>
+            <dataElement name="Terms Net Days" id="386"
+              sequence="7"
+              description="Number of days until total invoice amount is due (discount not applicable)"
+              type="N0" required="O"
+              minLength="1" maxLength="3"
+              xmlTag="termsNetDays"/>
+            <dataElement name="Terms Discount Amount" id="362"
+              sequence="8"
+              description="Total amount of terms discount"
+              type="N2" required="O"
+              minLength="1" maxLength="10"
+              xmlTag="termsDiscountAmount"/>
+            <dataElement name="Terms Deferred Due Date" id="388"
+              sequence="9"
+              description="Date deferred payment or percent of invoice payable is due expressed in format CCYYMMDD"
+              type="DT" required="O"
+              minLength="8" maxLength="8"
+              xmlTag="termsDeferredDueDate"/>
+            <dataElement name="Deferred Amount Due" id="389"
+              sequence="10"
+              description="Deferred amount due for payment"
+              type="N2" required="X"
+              minLength="1" maxLength="10"
+              xmlTag="deferredAmountDue"/>
+            <dataElement name="Percent of Invoice Payable" id="342"
+              sequence="11"
+              description="Amount of invoice payable expressed in percent"
+              type="R" required="X"
+              minLength="1" maxLength="5"
+              xmlTag="percentOfInvoicePayable"/>
+            <dataElement name="Description" id="352"
+              sequence="12"
+              description="A free-form description to clarify the related data elements and their content"
+              type="AN" required="O"
+              minLength="1" maxLength="80"
+              xmlTag="description"/>
+        </segment>
+        <segment name="F.O.B. Related Instructions" id="FOB"
+          description="To specify transportation instructions relating to shipment"
+          sequence="150"
+          occurs="1"
+          required='M'
+          xmlTag="FOBRelatedInstructions">
+            <dataElement name="Shipment Method of Payment" id="146"
+              sequence="1"
+              description="Code identifying payment terms for transportation charges (JC Penny will always pay freight so always use PC)"
+              type="ID" required="M"
+              minLength="2" maxLength="2"
+              xmlTag="shipmentMethodOfPayment">
+              <idList>
+                <idCode>PC</idCode>
+                <idValue>Prepaid But Chared to customer</idValue>
+              </idList>
+              <default from="constant">PC</default>
+            </dataElement>  
+        </segment>
+        <segment name="PID Product Item Description" id="PID"
+          description="To Specify Fair Labor Standards compliance for all products on invoice."
+          sequence="150"
+          occurs="1"
+          required='O'
+          xmlTag="PIDProductItemDescription">
+            <dataElement name="Item Description Type" id="349"
+              sequence="1"
+              description="Item Description Type"
+              type="ID" required="M"
+              minLength="1" maxLength="1"
+              xmlTag="itemDescriptionType">
+              <idList>
+                <idCode>S</idCode>
+                <idValue>Structured (From Industry Code List)</idValue>
+              </idList>
+            </dataElement>
+            <dataElement name="Not Used" id="750"
+              sequence="1"
+              description="Not Used"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              xmlTag="notUsed">
+            </dataElement>
+            <dataElement name="Agency Qualifier Code" id="559"
+              sequence="1"
+              description="Agency Qualifier Code"
+              type="ID" required="C"
+              minLength="2" maxLength="2"
+              xmlTag="agencyQualifierCode">
+              <idList>
+                <idCode>VI</idCode>
+                <idValue>VICS</idValue>
+              </idList>
+            </dataElement>
+            <dataElement name="Product Description Code" id="751"
+              sequence="1"
+              description="Product Description Code"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              xmlTag="productDescriptionCode">
+              <idList>
+                <idCode>FL</idCode>
+                <idValue>Compliant With Fair Labor Standards Act</idValue>
+              </idList>
+            </dataElement>
+        </segment>
+    </table>
+    <table section="detail">
+        <segment name="Baseline Item Data (Invoice)" id="IT1"
+          occurs="200000"
+          sequence="10"
+          required='M'
+          description="To specify the basic and most frequently used line item data for the invoice and related transactions"
+          xmlTag="BaselineItemDataInvoice">
+            <dataElement name="Assigned Identification" id="350"
+              sequence="1"
+              description="Alphanumeric characters assigned for differentiation within a transaction set"
+              type="AN" required="O"
+              minLength="1" maxLength="20"
+              xmlTag="assignedIdentification"/>
+            <dataElement name="Quantity Invoiced" id="358"
+              sequence="2"
+              description="Number of units invoiced (supplier units)"
+              type="R" required="X"
+              minLength="1" maxLength="10"
+              xmlTag="quantityInvoiced"/>
+            <dataElement name="Unit or Basis for Measurement Code" id="355"
+              sequence="3"
+              description="Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken"
+              type="ID" required="M"
+              minLength="2" maxLength="2"
+              idListFile="IDList355.xml"
+              xmlTag="unitOrBasisForMeasurementCode"/>
+            <dataElement name="Unit Price" id="212"
+              sequence="4"
+              description="Price per unit of product, service, commodity, etc."
+              type="R" required="X"
+              minLength="1" maxLength="17"
+              xmlTag="unitPrice"/>
+            <dataElement name="Basis of Unit Price Code" id="639"
+              sequence="5"
+              description="Code identifying the type of unit price for an item"
+              type="AN" required="O"
+              minLength="2" maxLength="2"
+              xmlTag="basisOfUnitPriceCode"/>
+            <dataElement name="Product/Service ID Qualifier" id="235"
+              sequence="6"
+              description="Code identifying the type/source of the descriptive number used in Product/Service ID (234)"
+              type="ID" required="M"
+              minLength="2" maxLength="2"
+              xmlTag="productServiceIdQualifier">
+              <idList>
+                <idCode>SW</idCode>
+                <idValue>Stock Number</idValue>
+                <idCode>CB</idCode>
+                <idValue>Buyers Catalog Number</idValue>
+                <idCode>IN</idCode>
+                <idValue>Buyers Item Number</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Product/Service ID" id="234"
+              sequence="7"
+              description="Identifying number for a product or service"
+              type="AN" required="M"
+              minLength="1" maxLength="48"
+              xmlTag="productServiceId"/>
+            <dataElement name="Product/Service ID Qualifier" id="235"
+              sequence="8"
+              description="Code identifying the type/source of the descriptive number used in Product/Service ID (234)"
+              type="AN" required="X"
+              minLength="2" maxLength="2"
+              xmlTag="productServiceIdQualifier"/>
+            <dataElement name="Product/Service ID" id="234"
+              sequence="9"
+              description="Identifying number for a product or service"
+              type="AN" required="X"
+              minLength="1" maxLength="48"
+              xmlTag="productServiceId"/>
+            <dataElement name="Product/Service ID Qualifier" id="235"
+              sequence="10"
+              description="Code identifying the type/source of the descriptive number used in Product/Service ID (234)"
+              type="AN" required="X"
+              minLength="2" maxLength="2"
+              xmlTag="productServiceIdQualifier"/>
+            <dataElement name="Product/Service ID" id="234"
+              sequence="11"
+              description="Identifying number for a product or service"
+              type="AN" required="X"
+              minLength="1" maxLength="48"
+              xmlTag="productServiceId"/>
+            <segment name="Product/Item Description" id="PID"
+              occurs="1"
+              sequence="60"
+              required='O'
+              description="To describe a product or process in coded or free-form format"
+              xmlTag="ProductItemDescription">
+                <dataElement name="Item Description Type" id="349"
+                  sequence="1"
+                  description="Code indicating the format of a description"
+                  type="ID" required="M"
+                  minLength="1" maxLength="1"
+                  xmlTag="itemDescriptionType">
+                  <idList>
+                    <idCode>F</idCode>
+                    <idValue>Free Form Text</idValue>
+                  </idList>
+                </dataElement>  
+                <dataElement name="Product/Process Characteristic Code" id="750"
+                  sequence="2"
+                  description="Code identifying the general class of a product or process characteristic"
+                  type="ID" required="O"
+                  minLength="2" maxLength="3"
+                  xmlTag="productProcessCharacteristicCode">
+                  <idList>
+                    <idCode>08</idCode>
+                    <idValue>Product Description</idValue>
+                    <idCode>75</idCode>
+                    <idValue>Buyers' Color Desc.</idValue>
+                    <idCode>91</idCode>
+                    <idValue>Buyers' Size Group</idValue>
+                  </idList>
+                </dataElement>  
+                <dataElement name="Agency Qualifier Code" id="559"
+                  sequence="3"
+                  description="Code identifying the agency assigning the code values"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="agencyQualifierCode">
+                  <idList>
+                    <idCode>VI</idCode>
+                    <idValue>VICS</idValue>
+                  </idList>
+                </dataElement>  
+                <dataElement name="Product Description Code" id="751"
+                  sequence="4"
+                  description="A code from an industry code list which provides specific data about a product characteristic"
+                  type="AN" required="X"
+                  minLength="1" maxLength="12"
+                  xmlTag="productDescriptionCode"/>
+                <dataElement name="Description" id="352"
+                  sequence="5"
+                  description="A free-form description to clarify the related data elements and their content"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="description"/>
+            </segment>
+        </segment>
+    </table>
+    <table section="summary">
+        <segment name="Total Monetary Value Summary" id="TDS"
+          description="To specify the total invoice discounts and amounts"
+          sequence="10"
+          occurs="1"
+          required='M'
+          xmlTag="TotalMonetaryValueSummary">
+            <dataElement name="Amount" id="610"
+              sequence="1"
+              description="Monetary amount"
+              type="N2" required="M"
+              minLength="1" maxLength="15"
+              xmlTag="amount"/>
+            <dataElement name="Gross Amount" id="620"
+              sequence="1"
+              description="Monetary amount"
+              type="N2" required="M"
+              minLength="1" maxLength="15"
+              xmlTag="amount"/>
+        </segment>
+        <segment name="Carrier Detail" id="CAD"
+          description="To specify transportation details for the transaction"
+          sequence="30"
+          occurs="1"
+          required='M'
+          xmlTag="CarrierDetail">
+            <dataElement name="Transportation Method/Type Code" id="91"
+              sequence="1"
+              description="Code specifying the method or type of transportation for the shipment"
+              type="AN" required="O"
+              minLength="1" maxLength="2"
+              xmlTag="transportationMethodTypeCode"/>
+            <dataElement name="Equipment Initial" id="206"
+              sequence="2"
+              description="Prefix or alphabetic part of an equipment unit&apos;s identifying number"
+              type="AN" required="O"
+              minLength="1" maxLength="4"
+              xmlTag="equipmentInitial"/>
+            <dataElement name="Equipment Number" id="207"
+              sequence="3"
+              description="Sequencing or serial part of an equipment unit&apos;s identifying number (pure numeric form for equipment number is preferred)"
+              type="AN" required="O"
+              minLength="1" maxLength="10"
+              xmlTag="equipmentNumber"/>
+            <dataElement name="Standard Carrier Alpha Code" id="140"
+              sequence="4"
+              description="Standard Carrier Alpha Code"
+              type="ID" required="X"
+              minLength="2" maxLength="4"
+              xmlTag="standardCarrierAlphaCode">
+            </dataElement>  
+            <dataElement name="Routing" id="387"
+              sequence="5"
+              description="Free-form description of the routing or requested routing for shipment, or the originating carrier&apos;s identity"
+              type="AN" required="X"
+              minLength="1" maxLength="35"
+              xmlTag="routing">
+              <default from="constant">CLEANWISE</default>
+            </dataElement>  
+        </segment>
+        <segment name="Service, Promotion, Allowance, or Charge Information" id="SAC"
+          occurs="3"
+          sequence="40"
+          required='O'
+          description="To request or identify a service, promotion, allowance, or charge; to specify the amount or percentage for the service, promotion, allowance, or charge"
+          xmlTag="ServicePromotionAllowanceOrChargeInformation">
+            <dataElement name="Allowance or Charge Indicator" id="248"
+              sequence="1"
+              description="Code which indicates an allowance or charge for the service specified"
+              type="ID" required="M"
+              minLength="1" maxLength="1"
+              xmlTag="allowanceOrChargeIndicator">
+              <idList>
+                <idCode>C</idCode>
+                <idValue>Charge</idValue>
+                <idCode>A</idCode>
+                <idValue>Allowance</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Service, Promotion, Allowance, or Charge Code" id="1300"
+              sequence="2"
+              description="Code identifying the service, promotion, allowance, or charge"
+              type="ID" required="M"
+              minLength="4" maxLength="4"
+              xmlTag="servicePromotionAllowanceOrChargeCode">
+              <idList>
+                <idCode>D240</idCode>
+                <idValue>Freight</idValue>
+                <idCode>H740</idCode>
+                <idValue>Tax - Sales and Use</idValue>
+                <idCode>D500</idCode>
+                <idValue>Handling</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Agency Qualifier Code" id="559"
+              sequence="3"
+              description="Code identifying the agency assigning the code values"
+              type="AN" required="X"
+              minLength="2" maxLength="2"
+              xmlTag="agencyQualifierCode"/>
+            <dataElement name="Agency Service, Promotion, Allowance, or Charge Code" id="1301"
+              sequence="4"
+              description="Agency maintained code identifying the service, promotion, allowance, or charge"
+              type="AN" required="X"
+              minLength="1" maxLength="10"
+              xmlTag="agencyServicePromotionAllowanceOrChargeCode"/>
+            <dataElement name="Amount" id="610"
+              sequence="5"
+              description="Monetary amount"
+              type="N2" required="O"
+              minLength="1" maxLength="15"
+              xmlTag="amount"/>
+            <dataElement name="Allowance/Charge Percent Qualifier" id="378"
+              sequence="6"
+              description="Code indicating on what basis allowance or charge percent is calculated"
+              type="AN" required="X"
+              minLength="1" maxLength="1"
+              xmlTag="allowanceChargePercentQualifier"/>
+            <dataElement name="Percent" id="332"
+              sequence="7"
+              description="Percent expressed as a percent"
+              type="R" required="X"
+              minLength="1" maxLength="6"
+              xmlTag="percent"/>
+            <dataElement name="Rate" id="118"
+              sequence="8"
+              description="Rate expressed in the standard monetary denomination for the currency specified"
+              type="R" required="O"
+              minLength="1" maxLength="9"
+              xmlTag="rate"/>
+            <dataElement name="Unit or Basis for Measurement Code" id="355"
+              sequence="9"
+              description="Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken"
+              type="AN" required="X"
+              minLength="2" maxLength="2"
+              xmlTag="unitOrBasisForMeasurementCode"/>
+            <dataElement name="Quantity" id="380"
+              sequence="10"
+              description="Numeric value of quantity"
+              type="R" required="X"
+              minLength="1" maxLength="15"
+              xmlTag="quantity"/>
+            <dataElement name="Quantity" id="380"
+              sequence="11"
+              description="Numeric value of quantity"
+              type="R" required="O"
+              minLength="1" maxLength="15"
+              xmlTag="quantity"/>
+            <dataElement name="Allowance or Charge Method of Handling Code" id="331"
+              sequence="12"
+              description="Code indicating method of handling for an allowance or charge"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              xmlTag="allowanceOrChargeMethodOfHandlingCode">
+              <idList>
+                <idCode>01</idCode>
+                <idValue>Bill Back</idValue>
+                <idCode>06</idCode>
+                <idValue>Charge to be paid by customer</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Reference Identification" id="127"
+              sequence="13"
+              description="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
+              type="AN" required="X"
+              minLength="1" maxLength="30"
+              xmlTag="referenceIdentification"/>
+            <dataElement name="Option Number" id="770"
+              sequence="14"
+              description="A unique number identifying available promotion or allowance options when more than one is offered"
+              type="AN" required="O"
+              minLength="1" maxLength="20"
+              xmlTag="optionNumber"/>
+            <dataElement name="Description" id="352"
+              sequence="15"
+              description="A free-form description to clarify the related data elements and their content"
+              type="AN" required="X"
+              minLength="1" maxLength="80"
+              xmlTag="description"/>
+        </segment>
+        <segment name="Invoice Shipment Summary" id="ISS"
+          occurs="1"
+          sequence="60"
+          required='M'
+          description="To specify summary details of total items shipped in terms of quantity, weight, and volume"
+          xmlTag="InvoiceShipmentSummary">
+            <dataElement name="Number of Units Shipped" id="382"
+              sequence="1"
+              description="Numeric value of units shipped in manufacturer&apos;s shipping units for a line item or transaction set"
+              type="R" required="X"
+              minLength="1" maxLength="10"
+              xmlTag="numberOfUnitsShipped"/>
+            <dataElement name="Unit or Basis for Measurement Code" id="355"
+              sequence="2"
+              description="Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken"
+              type="ID" required="X"
+              minLength="2" maxLength="2"
+              xmlTag="unitOrBasisForMeasurementCode">
+              <idList>
+                <idCode>CA</idCode>
+                <idValue>Case</idValue>
+              </idList>
+            </dataElement>  
+        </segment>
+        <segment name="Transaction Totals" id="CTT"
+          description="To transmit a hash total for a specific element in the transaction set"
+          sequence="70"
+          occurs="1"
+          required='M'
+          xmlTag="TransactionTotals">
+            <dataElement name="Number of Line Items" id="354"
+              sequence="1"
+              description="Total number of line items in the transaction set"
+              type="N0" required="M"
+              minLength="1" maxLength="6"
+              xmlTag="numberOfLineItems"/>
+        </segment>
+        <segment name="Transaction Set Trailer" id="SE"
+          description="To indicate the end of the transaction set and provide the count of the transmitted segments (including the beginning (ST) and ending (SE) segments)"
+          sequence="80"
+          occurs="1"
+          required='M'
+          xmlTag="TransactionSetTrailer">
+            <dataElement name="Number of Included Segments" id="96"
+              sequence="1"
+              description="Total number of segments included in a transaction set including ST and SE segments"
+              type="N0" required="M"
+              minLength="1" maxLength="10"
+              xmlTag="numberOfIncludedSegments"/>
+            <dataElement name="Transaction Set Control Number" id="329"
+              sequence="2"
+              description="Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set"
+              type="AN" required="M"
+              minLength="4" maxLength="9"
+              xmlTag="transactionSetControlNumber"/>
+        </segment>
+    </table>
+</transactionSet>

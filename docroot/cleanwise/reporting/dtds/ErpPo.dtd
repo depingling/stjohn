@@ -1,0 +1,16 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ErpPoList (ErpPo)+>
+<!ELEMENT ErpPo (ErpPoNumber,PoDate,PoTime,VendorId,SendStatus,VendorOrderNumber,OrderStatusId,ManuallyManipulated)>
+<!ATTLIST ErpPo Id ID #REQUIRED>
+<!ELEMENT ErpPoNumber (#PCDATA)>
+<!ELEMENT PoDate (#PCDATA)>
+<!ELEMENT PoTime (#PCDATA)>
+<!ELEMENT VendorId (#PCDATA)>
+<!ELEMENT SendStatus (#PCDATA)>
+<!ELEMENT VendorOrderNumber (#PCDATA)>
+<!ELEMENT OrderStatusId (#PCDATA)>
+<!ELEMENT ManuallyManipulated (#PCDATA)>

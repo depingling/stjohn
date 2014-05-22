@@ -1,0 +1,20 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT OrderProcessingList (OrderProcessing)+>
+<!ELEMENT OrderProcessing (,ActualTransactionIdInvoiceId,OrderId,OrderItemId,AddBy,AddDate,ModBy,ModDate,OrderProcessingDate,OrderProcessingStatusCd,OrderProcessingTime,TransactionCd)>
+<!ATTLIST OrderProcessing Id ID #REQUIRED>
+<!ELEMENT ActualTransactionId (#PCDATA)>
+<!ELEMENT InvoiceId (#PCDATA)>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT OrderItemId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT OrderProcessingDate (#PCDATA)>
+<!ELEMENT OrderProcessingStatusCd (#PCDATA)>
+<!ELEMENT OrderProcessingTime (#PCDATA)>
+<!ELEMENT TransactionCd (#PCDATA)>

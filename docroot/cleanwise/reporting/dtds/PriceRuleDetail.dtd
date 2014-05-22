@@ -1,0 +1,15 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PriceRuleDetailList (PriceRuleDetail)+>
+<!ELEMENT PriceRuleDetail (PriceRuleId,AddBy,AddDate,ModBy,ModDate,ParamName,ParamValue)>
+<!ATTLIST PriceRuleDetail Id ID #REQUIRED>
+<!ELEMENT PriceRuleId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ParamName (#PCDATA)>
+<!ELEMENT ParamValue (#PCDATA)>

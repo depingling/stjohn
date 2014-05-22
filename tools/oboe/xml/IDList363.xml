@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AAA</idCode>
+        <idValue>Agent Details</idValue>
+    <idCode>AAB</idCode>
+        <idValue>Associated Business Areas</idValue>
+    <idCode>AAC</idCode>
+        <idValue>Borrower</idValue>
+    <idCode>AAD</idCode>
+        <idValue>Nationality Details</idValue>
+    <idCode>AAE</idCode>
+        <idValue>Assets</idValue>
+    <idCode>AAF</idCode>
+        <idValue>Liabilities</idValue>
+    <idCode>ABN</idCode>
+        <idValue>Abbreviated Nomenclature</idValue>
+    <idCode>ACC</idCode>
+        <idValue>Access Instructions</idValue>
+    <idCode>ACI</idCode>
+        <idValue>Additional Claim Information</idValue>
+    <idCode>ACN</idCode>
+        <idValue>Action Taken</idValue>
+    <idCode>ACS</idCode>
+        <idValue>Actual Solution</idValue>
+    <idCode>ACT</idCode>
+        <idValue>Action</idValue>
+    <idCode>ADD</idCode>
+        <idValue>Additional Information</idValue>
+    <idCode>AES</idCode>
+        <idValue>Actual Evaluation Summary</idValue>
+    <idCode>AET</idCode>
+        <idValue>Adverse Event Terms</idValue>
+    <idCode>ALG</idCode>
+        <idValue>Allergies</idValue>
+    <idCode>ALL</idCode>
+        <idValue>All Documents</idValue>
+    <idCode>ALT</idCode>
+        <idValue>Alerts</idValue>
+    <idCode>AMN</idCode>
+        <idValue>Additional Manufacturer Narrative</idValue>
+    <idCode>AOO</idCode>
+        <idValue>Area of Operation</idValue>
+    <idCode>APN</idCode>
+        <idValue>Application Notes</idValue>
+    <idCode>APS</idCode>
+        <idValue>Appropriation Specifications</idValue>
+    <idCode>BBD</idCode>
+        <idValue>Bank Description</idValue>
+    <idCode>BBF</idCode>
+        <idValue>Business Founder</idValue>
+    <idCode>BBH</idCode>
+        <idValue>Business History</idValue>
+    <idCode>BBN</idCode>
+        <idValue>Banking Notes</idValue>
+    <idCode>BBO</idCode>
+        <idValue>Business Origin Description</idValue>
+    <idCode>BBT</idCode>
+        <idValue>Brand Names</idValue>
+    <idCode>BFD</idCode>
+        <idValue>Business Financing Details</idValue>
+    <idCode>BOL</idCode>
+        <idValue>Bill of Lading Note</idValue>
+    <idCode>BUR</idCode>
+        <idValue>Bureau Remarks</idValue>
+    <idCode>CAA</idCode>
+        <idValue>Authentication Information</idValue>
+    <idCode>CAB</idCode>
+        <idValue>Line of In-State Business</idValue>
+    <idCode>CAC</idCode>
+        <idValue>Relationship Information</idValue>
+    <idCode>CAD</idCode>
+        <idValue>Basis for Amount Due</idValue>
+    <idCode>CAE</idCode>
+        <idValue>Type of Debt</idValue>
+    <idCode>CAF</idCode>
+        <idValue>Land Use Purpose</idValue>
+    <idCode>CAG</idCode>
+        <idValue>Land Description</idValue>
+    <idCode>CAH</idCode>
+        <idValue>Basis of Calculation</idValue>
+    <idCode>CAI</idCode>
+        <idValue>General Business Description</idValue>
+    <idCode>CAJ</idCode>
+        <idValue>Type of Business</idValue>
+    <idCode>CAK</idCode>
+        <idValue>Character of Business</idValue>
+    <idCode>CAL</idCode>
+        <idValue>Representation of Value</idValue>
+    <idCode>CAM</idCode>
+        <idValue>Supporting Statement, Tax, and Fee Computation</idValue>
+    <idCode>CAN</idCode>
+        <idValue>Cooperative Corporation Statement</idValue>
+    <idCode>CAO</idCode>
+        <idValue>Close Corporation Statement</idValue>
+    <idCode>CAP</idCode>
+        <idValue>Agreement to Abide by Laws</idValue>
+    <idCode>CAQ</idCode>
+        <idValue>Stock Restrictions</idValue>
+    <idCode>CAR</idCode>
+        <idValue>Other Related Information</idValue>
+    <idCode>CAS</idCode>
+        <idValue>Prohibition Against Being an Officer</idValue>
+    <idCode>CAT</idCode>
+        <idValue>Qualification of Director</idValue>
+    <idCode>CAU</idCode>
+        <idValue>Nature of Charter</idValue>
+    <idCode>CAV</idCode>
+        <idValue>Statement of Assets and Liabilities</idValue>
+    <idCode>CAW</idCode>
+        <idValue>Bankruptcy Information</idValue>
+    <idCode>CAX</idCode>
+        <idValue>Certificate of Disclosure</idValue>
+    <idCode>CAZ</idCode>
+        <idValue>Asset Detail</idValue>
+    <idCode>CBA</idCode>
+        <idValue>Statement Related to Regulation</idValue>
+    <idCode>CBB</idCode>
+        <idValue>Consideration to be Received</idValue>
+    <idCode>CBC</idCode>
+        <idValue>Other Lawful Provisions</idValue>
+    <idCode>CBH</idCode>
+        <idValue>Monetary Amount Description</idValue>
+    <idCode>CBI</idCode>
+        <idValue>Description of Title</idValue>
+    <idCode>CCA</idCode>
+        <idValue>Competition</idValue>
+    <idCode>CCB</idCode>
+        <idValue>Construction Details</idValue>
+    <idCode>CCC</idCode>
+        <idValue>Construction Financing</idValue>
+    <idCode>CCD</idCode>
+        <idValue>Construction Line of Business</idValue>
+    <idCode>CCE</idCode>
+        <idValue>Contract Details</idValue>
+    <idCode>CCF</idCode>
+        <idValue>Corporate Filing Details</idValue>
+    <idCode>CCG</idCode>
+        <idValue>Customer Description</idValue>
+    <idCode>CCN</idCode>
+        <idValue>Copyright Notice</idValue>
+    <idCode>CDD</idCode>
+        <idValue>Contingent Debt Details</idValue>
+    <idCode>CER</idCode>
+        <idValue>Certification Narrative</idValue>
+    <idCode>CHG</idCode>
+        <idValue>Change</idValue>
+    <idCode>CIG</idCode>
+        <idValue>Cigarette Information</idValue>
+    <idCode>CLN</idCode>
+        <idValue>Classifying Information</idValue>
+    <idCode>CLR</idCode>
+        <idValue>Security Clearance Instructions</idValue>
+    <idCode>CMP</idCode>
+        <idValue>Concomitant Medical Product Description</idValue>
+    <idCode>CMT</idCode>
+        <idValue>Maintenance Comment</idValue>
+    <idCode>COD</idCode>
+        <idValue>Corrected Data</idValue>
+    <idCode>COM</idCode>
+        <idValue>Consumer Comments</idValue>
+    <idCode>CON</idCode>
+        <idValue>Conviction Act Details</idValue>
+    <idCode>CRA</idCode>
+        <idValue>Credit Report Alerts</idValue>
+    <idCode>CRK</idCode>
+        <idValue>Closing Comment</idValue>
+    <idCode>CRN</idCode>
+        <idValue>Credit Report Notes</idValue>
+    <idCode>CUS</idCode>
+        <idValue>Customs declaration</idValue>
+    <idCode>DCP</idCode>
+        <idValue>Goals, Rehabilitation Potential, or Discharge Plans</idValue>
+    <idCode>DEE</idCode>
+        <idValue>Event Description</idValue>
+    <idCode>DEL</idCode>
+        <idValue>Delivery</idValue>
+    <idCode>DEP</idCode>
+        <idValue>Problem Description</idValue>
+    <idCode>DFR</idCode>
+        <idValue>Dose, Frequency and Route Description</idValue>
+    <idCode>DFS</idCode>
+        <idValue>Departure from Specification Comment</idValue>
+    <idCode>DGN</idCode>
+        <idValue>Diagnosis Description</idValue>
+    <idCode>DME</idCode>
+        <idValue>Durable Medical Equipment (DME) and Supplies</idValue>
+    <idCode>DOD</idCode>
+        <idValue>Description of Damage</idValue>
+    <idCode>DOI</idCode>
+        <idValue>Outcome Description</idValue>
+    <idCode>ECD</idCode>
+        <idValue>Environmental Conditions Description</idValue>
+    <idCode>ECM</idCode>
+        <idValue>Estimate Comment</idValue>
+    <idCode>ECN</idCode>
+        <idValue>Equipment Condition Description</idValue>
+    <idCode>ECT</idCode>
+        <idValue>Emergency Certification</idValue>
+    <idCode>EED</idCode>
+        <idValue>Equipment Description</idValue>
+    <idCode>EFD</idCode>
+        <idValue>Equipment Function Description</idValue>
+    <idCode>ELE</idCode>
+        <idValue>Equipment Log Entry</idValue>
+    <idCode>EMC</idCode>
+        <idValue>Employment Comments</idValue>
+    <idCode>EMD</idCode>
+        <idValue>Estimate Method Description</idValue>
+    <idCode>ENR</idCode>
+        <idValue>Explanation for Non-Return of Device to Manufacturer</idValue>
+    <idCode>ERN</idCode>
+        <idValue>Error Notes</idValue>
+    <idCode>EVL</idCode>
+        <idValue>Event Location</idValue>
+    <idCode>EXE</idCode>
+        <idValue>Exemption Description</idValue>
+    <idCode>EXR</idCode>
+        <idValue>Exercise Routine</idValue>
+    <idCode>EXT</idCode>
+        <idValue>Exterior Description</idValue>
+    <idCode>FEE</idCode>
+        <idValue>Fee Description</idValue>
+    <idCode>FUT</idCode>
+        <idValue>Future Plans</idValue>
+    <idCode>GEN</idCode>
+        <idValue>Entire Transaction Set</idValue>
+    <idCode>GPI</idCode>
+        <idValue>General Product or Process Information</idValue>
+    <idCode>GSI</idCode>
+        <idValue>General Specification Information</idValue>
+    <idCode>HHI</idCode>
+        <idValue>Household Goods Information</idValue>
+    <idCode>ICN</idCode>
+        <idValue>Interviewee Conversation</idValue>
+    <idCode>IDT</idCode>
+        <idValue>Intangible Description</idValue>
+    <idCode>IID</idCode>
+        <idValue>Inventory (Stock) Description</idValue>
+    <idCode>IIE</idCode>
+        <idValue>Investment Description</idValue>
+    <idCode>IIR</idCode>
+        <idValue>Intercompany Relations</idValue>
+    <idCode>IMP</idCode>
+        <idValue>Problem Impact</idValue>
+    <idCode>INS</idCode>
+        <idValue>Insurance</idValue>
+    <idCode>INT</idCode>
+        <idValue>General Order Instructions</idValue>
+    <idCode>INV</idCode>
+        <idValue>Invoice Instruction</idValue>
+    <idCode>IVC</idCode>
+        <idValue>Income Verification Comments</idValue>
+    <idCode>JVD</idCode>
+        <idValue>Joint Venture Description</idValue>
+    <idCode>LAB</idCode>
+        <idValue>Labeling Instructions</idValue>
+    <idCode>LBD</idCode>
+        <idValue>Laboratory Data</idValue>
+    <idCode>LBS</idCode>
+        <idValue>Labeled Strength</idValue>
+    <idCode>LEN</idCode>
+        <idValue>Lender Use</idValue>
+    <idCode>LIN</idCode>
+        <idValue>Line Item</idValue>
+    <idCode>LIQ</idCode>
+        <idValue>Liquor Information</idValue>
+    <idCode>LLA</idCode>
+        <idValue>Letters of Liability Agreements</idValue>
+    <idCode>LLB</idCode>
+        <idValue>Loan Details</idValue>
+    <idCode>LLC</idCode>
+        <idValue>Long Term Debt Description</idValue>
+    <idCode>LOC</idCode>
+        <idValue>Location Description Information</idValue>
+    <idCode>LOI</idCode>
+        <idValue>Loading Instructions</idValue>
+    <idCode>LSD</idCode>
+        <idValue>Legal Structure Details</idValue>
+    <idCode>MCD</idCode>
+        <idValue>Marital Contract Details</idValue>
+    <idCode>MDO</idCode>
+        <idValue>Device Operator Description</idValue>
+    <idCode>MED</idCode>
+        <idValue>Medications</idValue>
+    <idCode>MFG</idCode>
+        <idValue>Manufacturing Instructions</idValue>
+    <idCode>MKN</idCode>
+        <idValue>Marketing Notes</idValue>
+    <idCode>MMD</idCode>
+        <idValue>Merger Description</idValue>
+    <idCode>MSD</idCode>
+        <idValue>Marketable Securities Description</idValue>
+    <idCode>NCD</idCode>
+        <idValue>Nonconformance Specification</idValue>
+    <idCode>NPD</idCode>
+        <idValue>Nameplate Data</idValue>
+    <idCode>NTR</idCode>
+        <idValue>Nutritional Requirements</idValue>
+    <idCode>OBI</idCode>
+        <idValue>Originator to Beneficiary Instructions</idValue>
+    <idCode>OBL</idCode>
+        <idValue>Obligation Description</idValue>
+    <idCode>OCA</idCode>
+        <idValue>Other Current Asset Description</idValue>
+    <idCode>OCC</idCode>
+        <idValue>Occupancy Information</idValue>
+    <idCode>OCL</idCode>
+        <idValue>Other Current Liability Description</idValue>
+    <idCode>OCP</idCode>
+        <idValue>Occupation</idValue>
+    <idCode>OCR</idCode>
+        <idValue>Outside the Continental U.S. (OCONUS) Rating Information</idValue>
+    <idCode>ODT</idCode>
+        <idValue>Orders for Disciplines and Treatments</idValue>
+    <idCode>OLS</idCode>
+        <idValue>Original Legal Structure</idValue>
+    <idCode>OPO</idCode>
+        <idValue>Occupation Definition</idValue>
+    <idCode>ORA</idCode>
+        <idValue>Test Results Other Than Room Air</idValue>
+    <idCode>ORE</idCode>
+        <idValue>Other Remedial Action</idValue>
+    <idCode>ORI</idCode>
+        <idValue>Order Instructions</idValue>
+    <idCode>OTH</idCode>
+        <idValue>Other Instructions</idValue>
+    <idCode>OTN</idCode>
+        <idValue>Another Type of Number Description</idValue>
+    <idCode>OTS</idCode>
+        <idValue>Report Source Description</idValue>
+    <idCode>PAY</idCode>
+        <idValue>Payables</idValue>
+    <idCode>PCS</idCode>
+        <idValue>Process Specification</idValue>
+    <idCode>PDS</idCode>
+        <idValue>Product Specification</idValue>
+    <idCode>PED</idCode>
+        <idValue>Employee Sharing Arrangements</idValue>
+    <idCode>PEN</idCode>
+        <idValue>Penalty Description</idValue>
+    <idCode>PES</idCode>
+        <idValue>Partial Pressure of Oxygen (PO2) is 60 millimeters (MM) of Mercury (Hg) or above, or arterial blood oxygen saturation is 90% or above</idValue>
+    <idCode>PID</idCode>
+        <idValue>Property Improvement Description</idValue>
+    <idCode>PKG</idCode>
+        <idValue>Packaging Instructions</idValue>
+    <idCode>PMT</idCode>
+        <idValue>Payment</idValue>
+    <idCode>POB</idCode>
+        <idValue>Primary Observation</idValue>
+    <idCode>POC</idCode>
+        <idValue>Principals or Organization Comments</idValue>
+    <idCode>POL</idCode>
+        <idValue>Property Owner Location Information</idValue>
+    <idCode>PPC</idCode>
+        <idValue>Principal Procedure Code Description</idValue>
+    <idCode>PRI</idCode>
+        <idValue>Priority</idValue>
+    <idCode>PRN</idCode>
+        <idValue>Public Record Notes</idValue>
+    <idCode>PRO</idCode>
+        <idValue>Previous Registered Office</idValue>
+    <idCode>PRR</idCode>
+        <idValue>Price Range</idValue>
+    <idCode>PSY</idCode>
+        <idValue>Problem Summary</idValue>
+    <idCode>PUR</idCode>
+        <idValue>Purchasing</idValue>
+    <idCode>QUL</idCode>
+        <idValue>Qualifications</idValue>
+    <idCode>QUT</idCode>
+        <idValue>Quotation Instruction</idValue>
+    <idCode>RDI</idCode>
+        <idValue>Reason for Delinquency Information</idValue>
+    <idCode>REC</idCode>
+        <idValue>Recommendation</idValue>
+    <idCode>REG</idCode>
+        <idValue>Registered Activity</idValue>
+    <idCode>REP</idCode>
+        <idValue>Report</idValue>
+    <idCode>REV</idCode>
+        <idValue>Receivables</idValue>
+    <idCode>RFL</idCode>
+        <idValue>Reason for Leaving</idValue>
+    <idCode>RHB</idCode>
+        <idValue>Functional Limitations, Reason Homebound, or Both</idValue>
+    <idCode>RLA</idCode>
+        <idValue>Reason for Leave of Absence</idValue>
+    <idCode>RLH</idCode>
+        <idValue>Reasons Patient Leaves Home</idValue>
+    <idCode>RNH</idCode>
+        <idValue>Times and Reasons Patient Not at Home</idValue>
+    <idCode>RNI</idCode>
+        <idValue>Missing Report Explanation</idValue>
+    <idCode>ROU</idCode>
+        <idValue>Circuit Routing Instructions</idValue>
+    <idCode>RPT</idCode>
+        <idValue>Report Remarks</idValue>
+    <idCode>RST</idCode>
+        <idValue>Place Where a Report was Submitted</idValue>
+    <idCode>RVC</idCode>
+        <idValue>Rent Verification Comments</idValue>
+    <idCode>SAN</idCode>
+        <idValue>Settlement Amount Notes</idValue>
+    <idCode>SCN</idCode>
+        <idValue>Ocean Shipping Container Information</idValue>
+    <idCode>SDD</idCode>
+        <idValue>Sentence Description</idValue>
+    <idCode>SET</idCode>
+        <idValue>Unusual Home, Social Environment, or Both</idValue>
+    <idCode>SFM</idCode>
+        <idValue>Safety Measures</idValue>
+    <idCode>SMD</idCode>
+        <idValue>Selling Means Description</idValue>
+    <idCode>SOB</idCode>
+        <idValue>Secondary Observation</idValue>
+    <idCode>SOW</idCode>
+        <idValue>Statement of Work</idValue>
+    <idCode>SPH</idCode>
+        <idValue>Special Handling</idValue>
+    <idCode>SPT</idCode>
+        <idValue>Supplementary Plan of Treatment</idValue>
+    <idCode>SPV</idCode>
+        <idValue>Closing Instructions</idValue>
+    <idCode>SSA</idCode>
+        <idValue>School Attended Details</idValue>
+    <idCode>SSC</idCode>
+        <idValue>Status Comment</idValue>
+    <idCode>SSD</idCode>
+        <idValue>Sales Description</idValue>
+    <idCode>SSE</idCode>
+        <idValue>Spouse Information</idValue>
+    <idCode>SSG</idCode>
+        <idValue>School Graduated Details</idValue>
+    <idCode>SSH</idCode>
+        <idValue>Security Service Information</idValue>
+    <idCode>SSI</idCode>
+        <idValue>Shareholding Information</idValue>
+    <idCode>SSS</idCode>
+        <idValue>Signing Authority</idValue>
+    <idCode>SST</idCode>
+        <idValue>Sales Territory</idValue>
+    <idCode>TAF</idCode>
+        <idValue>Tariff Abbreviation</idValue>
+    <idCode>TCF</idCode>
+        <idValue>Tariff Commodity Footnotes</idValue>
+    <idCode>TDA</idCode>
+        <idValue>Turkish Defense Affairs Authorization Information</idValue>
+    <idCode>TES</idCode>
+        <idValue>Task Statement</idValue>
+    <idCode>TIL</idCode>
+        <idValue>Tariff Index</idValue>
+    <idCode>TLF</idCode>
+        <idValue>Tariff Rule</idValue>
+    <idCode>TLR</idCode>
+        <idValue>Tradeline Remarks</idValue>
+    <idCode>TPO</idCode>
+        <idValue>Third Party Organization Notes</idValue>
+    <idCode>TRA</idCode>
+        <idValue>Transportation</idValue>
+    <idCode>TRE</idCode>
+        <idValue>Reportable Event Description</idValue>
+    <idCode>TRF</idCode>
+        <idValue>Tariff Rate Footnotes</idValue>
+    <idCode>TRS</idCode>
+        <idValue>Quality Information</idValue>
+    <idCode>TSD</idCode>
+        <idValue>Terms of Sale Description</idValue>
+    <idCode>TSF</idCode>
+        <idValue>Tariff Section Footnotes</idValue>
+    <idCode>TST</idCode>
+        <idValue>Test Results</idValue>
+    <idCode>UPI</idCode>
+        <idValue>Updated Information</idValue>
+    <idCode>VEC</idCode>
+        <idValue>Verification Comments</idValue>
+    <idCode>VNN</idCode>
+        <idValue>Variation Notes</idValue>
+    <idCode>WHI</idCode>
+        <idValue>Warehouse Instruction</idValue>
+    <idCode>WRP</idCode>
+        <idValue>Wrapping Instructions</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

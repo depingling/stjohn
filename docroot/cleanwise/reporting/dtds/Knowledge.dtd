@@ -1,0 +1,24 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT KnowledgeList (Knowledge)+>
+<!ELEMENT Knowledge (,BusEntityIdItemId,StoreId,UserId,AddBy,AddDate,AddTime,Comments,EffDate,ExpDate,KnowledgeCategoryCd,KnowledgeStatusCd,LongDesc,ModBy,ModDate,ShortDesc)>
+<!ATTLIST Knowledge Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT ItemId (#PCDATA)>
+<!ELEMENT StoreId (#PCDATA)>
+<!ELEMENT UserId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT AddTime (#PCDATA)>
+<!ELEMENT Comments (#PCDATA)>
+<!ELEMENT EffDate (#PCDATA)>
+<!ELEMENT ExpDate (#PCDATA)>
+<!ELEMENT KnowledgeCategoryCd (#PCDATA)>
+<!ELEMENT KnowledgeStatusCd (#PCDATA)>
+<!ELEMENT LongDesc (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

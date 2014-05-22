@@ -1,0 +1,18 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ReportScheduleList (ReportSchedule)+>
+<!ELEMENT ReportSchedule (,GenericReportId,AddBy,AddDate,Cycle,LastRunDate,ModBy,ModDate,ReportScheduleRuleCd,ReportScheduleStatusCd,ShortDesc)>
+<!ATTLIST ReportSchedule Id ID #REQUIRED>
+<!ELEMENT GenericReportId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Cycle (#PCDATA)>
+<!ELEMENT LastRunDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ReportScheduleRuleCd (#PCDATA)>
+<!ELEMENT ReportScheduleStatusCd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

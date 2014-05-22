@@ -1,0 +1,98 @@
+# make sure that the host and ports match the JBoss 
+# installation that you are trying to talk to.
+
+. ${XDIR}/app.sh.env
+
+if [ -z ${XSUITE_HOME} ] 
+then
+  echo "XSUITE_HOME is not defined."
+  exit
+fi
+
+if [ $# -lt 2 ] 
+then
+  echo "usage: $0 erpnum generate_edi_type "
+  exit
+fi
+
+if [ -z $1 ] || [ -z $2 ] 
+then
+  echo "usage: $0 erpnum generate_edi_type "
+  exit
+fi
+
+tstamp=`date '+%Y%m%d%H%M%S'`
+
+if [ x"$1" = x"1127" ]
+then
+  archiveFile="clwlagorder_${tstamp}.txt"
+else
+  dtype="i"
+  if [ x"${2}" = x"850" ]
+  then
+    dtype="po"
+  elif [ x"${2}" = x"810" ]
+  then
+    dtype="inv"
+  elif [ x"${2}" = x"855" ]
+  then
+    dtype="ack"
+  elif [ x"${2}" = x"856" ]
+  then
+    dtype="sn"
+  elif [ x"${2}" = x"824" ]
+  then
+    dtype="exc"
+  elif [ x"${2}" = x"997" ]
+  then
+    dtype="fa"
+  fi
+  archiveFile="${dtype}${2}_cleanwise.dat.${tstamp}.txt"
+fi
+
+if [ -f ${archiveFile} ]
+then
+  echo "archive file ${archiveFile} already exists."
+  echo "Cannot continue."
+  exit
+fi
+
+if [ ! -d ../outbound ]
+then
+  mkdir ../outbound
+fi
+
+cd ../outbound
+
+outFile="${archiveFile}" 
+if [ -f ../outbound/$outFile ]
+then
+  echo "Output file: ../outbound/$outFile already exists."
+  echo "Cannot continue until the output file is moved or renamed."
+  exit
+fi
+
+logDir=../outbound_log
+if [ ! -d $logDir ]
+then
+  mkdir $logDir
+fi
+
+
+
+
+
+## Note that the crimson.jar file must be placed at the end
+## of the classpath list.
+## -Dofile="out810.txt" -Derpnum="10052" -Dtype="810"
+
+java -classpath "${TJCPATH}" \
+ -Duser.home=${XSUITE_HOME}/xsuite/edi/tools/oboe \
+ -Dconf="${XSUITE_HOME}/xsuite/app.properties" \
+ -Derpnum=${1} -Dtype=${2} \
+ -Dodir="../outbound" \
+com.cleanwise.service.apps.dataexchange.OutboundTranslate | tee ${logDir}/${archiveFile}
+
+
+
+

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="JBossSoapWebService" targetNamespace="http://ws.apps.service.cleanwise.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.apps.service.cleanwise.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://ws.apps.service.cleanwise.com/" version="1.0" xmlns:tns="http://ws.apps.service.cleanwise.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="getManufacturers" type="tns:getManufacturers"/>
+   <xs:element name="getManufacturersResponse" type="tns:getManufacturersResponse"/>
+   <xs:element name="getSites" type="tns:getSites"/>
+   <xs:element name="getSitesResponse" type="tns:getSitesResponse"/>
+   <xs:element name="logon" type="tns:logon"/>
+   <xs:element name="logonResponse" type="tns:logonResponse"/>
+   <xs:element name="save" type="tns:save"/>
+   <xs:element name="saveResponse" type="tns:saveResponse"/>
+   <xs:complexType name="save">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="object" type="xs:anyType"/>
+     <xs:element name="assocId" type="xs:int"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="saveResponse">
+    <xs:sequence>
+     <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSites">
+    <xs:sequence>
+     <xs:element form="qualified" minOccurs="0" name="searchCrit" type="tns:searchCrit"/>
+     <xs:element form="qualified" name="storeId" type="xs:int"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchCrit">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="searchCritConditions" nillable="true" type="tns:searchCritCondition"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchCritCondition">
+    <xs:sequence>
+     <xs:element name="nestedEntity" type="xs:int"/>
+     <xs:element name="searchOperator" type="xs:int"/>
+     <xs:element minOccurs="0" name="searchType" type="xs:string"/>
+     <xs:element minOccurs="0" name="searchValue" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSitesResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:siteDto"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="siteDto">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="addressShipping" type="tns:addressDto"/>
+     <xs:element name="busEntityId" type="xs:int"/>
+     <xs:element minOccurs="0" name="shortDesc" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="siteProperties" nillable="true" type="tns:propertyDto"/>
+     <xs:element minOccurs="0" name="statusCd" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="addressDto">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="address1" type="xs:string"/>
+     <xs:element minOccurs="0" name="address2" type="xs:string"/>
+     <xs:element minOccurs="0" name="address3" type="xs:string"/>
+     <xs:element minOccurs="0" name="address4" type="xs:string"/>
+     <xs:element name="addressId" type="xs:int"/>
+     <xs:element minOccurs="0" name="addressStatusCd" type="xs:string"/>
+     <xs:element minOccurs="0" name="city" type="xs:string"/>
+     <xs:element minOccurs="0" name="countryCd" type="xs:string"/>
+     <xs:element minOccurs="0" name="name1" type="xs:string"/>
+     <xs:element minOccurs="0" name="name2" type="xs:string"/>
+     <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
+     <xs:element minOccurs="0" name="stateProvinceCd" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyDto">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="locale" type="xs:string"/>
+     <xs:element name="propertyId" type="xs:int"/>
+     <xs:element minOccurs="0" name="propertyStatusCd" type="xs:string"/>
+     <xs:element minOccurs="0" name="propertyTypeCd1" type="xs:string"/>
+     <xs:element minOccurs="0" name="propertyTypeCd2" type="xs:string"/>
+     <xs:element minOccurs="0" name="value" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getManufacturers">
+    <xs:sequence>
+     <xs:element form="qualified" minOccurs="0" name="searchCrit" type="tns:searchCrit"/>
+     <xs:element form="qualified" name="storeId" type="xs:int"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getManufacturersResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:manufacturerDto"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manufacturerDto">
+    <xs:sequence>
+     <xs:element name="busEntityId" type="xs:int"/>
+     <xs:element minOccurs="0" name="shortDesc" type="xs:string"/>
+     <xs:element minOccurs="0" name="statusCd" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logon">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="userName" type="xs:string"/>
+     <xs:element minOccurs="0" name="password" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logonResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name="SOAPWs_getManufacturers">
+  <part element="tns:getManufacturers" name="getManufacturers"/>
+ </message>
+ <message name="SOAPWs_getSites">
+  <part element="tns:getSites" name="getSites"/>
+ </message>
+ <message name="SOAPWs_getSitesResponse">
+  <part element="tns:getSitesResponse" name="getSitesResponse"/>
+ </message>
+ <message name="SOAPWs_save">
+  <part element="tns:save" name="save"/>
+ </message>
+ <message name="SOAPWs_logon">
+  <part element="tns:logon" name="logon"/>
+ </message>
+ <message name="SOAPWs_logonResponse">
+  <part element="tns:logonResponse" name="logonResponse"/>
+ </message>
+ <message name="SOAPWs_saveResponse">
+  <part element="tns:saveResponse" name="saveResponse"/>
+ </message>
+ <message name="SOAPWs_getManufacturersResponse">
+  <part element="tns:getManufacturersResponse" name="getManufacturersResponse"/>
+ </message>
+ <portType name="SOAPWs">
+  <operation name="getManufacturers" parameterOrder="getManufacturers">
+   <input message="tns:SOAPWs_getManufacturers"/>
+   <output message="tns:SOAPWs_getManufacturersResponse"/>
+  </operation>
+  <operation name="getSites" parameterOrder="getSites">
+   <input message="tns:SOAPWs_getSites"/>
+   <output message="tns:SOAPWs_getSitesResponse"/>
+  </operation>
+  <operation name="logon" parameterOrder="logon">
+   <input message="tns:SOAPWs_logon"/>
+   <output message="tns:SOAPWs_logonResponse"/>
+  </operation>
+  <operation name="save" parameterOrder="save">
+   <input message="tns:SOAPWs_save"/>
+   <output message="tns:SOAPWs_saveResponse"/>
+  </operation>
+ </portType>
+ <binding name="SOAPWsBinding" type="tns:SOAPWs">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getManufacturers">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getSites">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="logon">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="save">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="JBossSoapWebService">
+  <port binding="tns:SOAPWsBinding" name="SOAPWsPort">
+   <soap:address location="http://localhost:58080/ws/SOAPWs"/>
+  </port>
+ </service>
+</definitions>

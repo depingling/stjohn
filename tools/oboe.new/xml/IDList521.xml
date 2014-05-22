@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>BB</idCode>
+        <idValue>Demand Information Only</idValue>
+    <idCode>BC</idCode>
+        <idValue>Issue - Other Agency</idValue>
+    <idCode>BD</idCode>
+        <idValue>Issue - Other Department</idValue>
+    <idCode>BE</idCode>
+        <idValue>Grant Aid</idValue>
+    <idCode>BF</idCode>
+        <idValue>Foreign Military Sale</idValue>
+    <idCode>BG</idCode>
+        <idValue>Test and Evaluation</idValue>
+    <idCode>BH</idCode>
+        <idValue>Furnished Goods and Services</idValue>
+    <idCode>BI</idCode>
+        <idValue>Reutilization and Marketing</idValue>
+    <idCode>BJ</idCode>
+        <idValue>Relocation</idValue>
+    <idCode>BK</idCode>
+        <idValue>Modification</idValue>
+    <idCode>BL</idCode>
+        <idValue>Repair or Nondestructive Testing</idValue>
+    <idCode>BM</idCode>
+        <idValue>Loan</idValue>
+    <idCode>BN</idCode>
+        <idValue>Return</idValue>
+    <idCode>BO</idCode>
+        <idValue>Designated Items</idValue>
+    <idCode>BP</idCode>
+        <idValue>Broken Price</idValue>
+    <idCode>BQ</idCode>
+        <idValue>Other</idValue>
+    <idCode>BR</idCode>
+        <idValue>Exchange</idValue>
+    <idCode>BS</idCode>
+        <idValue>Bailment Stock Withdrawal</idValue>
+    <idCode>CC</idCode>
+        <idValue>Transfer for Charitable Contribution</idValue>
+    <idCode>CO</idCode>
+        <idValue>Replacement Due to Complaint</idValue>
+    <idCode>CS</idCode>
+        <idValue>Contract Sale</idValue>
+    <idCode>DL</idCode>
+        <idValue>Oil Deliveries</idValue>
+    <idCode>DS</idCode>
+        <idValue>Drop Ship Sale</idValue>
+    <idCode>FG</idCode>
+        <idValue>Flowing Gas Information</idValue>
+    <idCode>GD</idCode>
+        <idValue>Gas Disposition</idValue>
+    <idCode>GP</idCode>
+        <idValue>Gas Plant Liquids Summary</idValue>
+    <idCode>GR</idCode>
+        <idValue>Gas Receipts</idValue>
+    <idCode>IA</idCode>
+        <idValue>Inventory adjustment</idValue>
+    <idCode>IB</idCode>
+        <idValue>Interbranch</idValue>
+    <idCode>OF</idCode>
+        <idValue>Offshore Movement/Sale</idValue>
+    <idCode>ON</idCode>
+        <idValue>Onshore Movement/Sale</idValue>
+    <idCode>OT</idCode>
+        <idValue>Oil Transfer and Storage</idValue>
+    <idCode>PA</idCode>
+        <idValue>Price adjustment</idValue>
+    <idCode>PB</idCode>
+        <idValue>Price Book</idValue>
+    <idCode>PL</idCode>
+        <idValue>Property Level Movement/Sale</idValue>
+    <idCode>PM</idCode>
+        <idValue>Physical Meter Information</idValue>
+    <idCode>PO</idCode>
+        <idValue>Production Origin</idValue>
+    <idCode>PP</idCode>
+        <idValue>Pool Level Movement and/or Sale</idValue>
+    <idCode>RA</idCode>
+        <idValue>Reapplication of Order</idValue>
+    <idCode>RB</idCode>
+        <idValue>Return of Broken Price</idValue>
+    <idCode>RC</idCode>
+        <idValue>Received From Vendor</idValue>
+    <idCode>RP</idCode>
+        <idValue>Return of List Price</idValue>
+    <idCode>RT</idCode>
+        <idValue>Oil Receipts</idValue>
+    <idCode>RU</idCode>
+        <idValue>Return to Usable Inventory</idValue>
+    <idCode>RV</idCode>
+        <idValue>Return to Vendor</idValue>
+    <idCode>SA</idCode>
+        <idValue>Stocking adjustment</idValue>
+    <idCode>SC</idCode>
+        <idValue>Scrap</idValue>
+    <idCode>SD</idCode>
+        <idValue>Ship and Debit Sale</idValue>
+    <idCode>SH</idCode>
+        <idValue>Ship and Debit</idValue>
+    <idCode>SM</idCode>
+        <idValue>Sample</idValue>
+    <idCode>SS</idCode>
+        <idValue>Stock Sale</idValue>
+    <idCode>SU</idCode>
+        <idValue>Summary</idValue>
+    <idCode>TD</idCode>
+        <idValue>Transfer for Disposal</idValue>
+    <idCode>WL</idCode>
+        <idValue>Well Level Movement/Sale</idValue>
+</idList>

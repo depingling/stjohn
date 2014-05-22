@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Air Miles</idValue>
+    <idCode>B</idCode>
+        <idValue>Carrier&apos;s Rate Basis Number</idValue>
+    <idCode>D</idCode>
+        <idValue>Carrier&apos;s Docket 28300 Miles</idValue>
+    <idCode>F</idCode>
+        <idValue>Air Kilometers</idValue>
+    <idCode>K</idCode>
+        <idValue>Kilometers (Actual)</idValue>
+    <idCode>L</idCode>
+        <idValue>Tariff Kilometers</idValue>
+    <idCode>M</idCode>
+        <idValue>Miles (Actual)</idValue>
+    <idCode>T</idCode>
+        <idValue>Tariff Miles</idValue>
+    <idCode>X</idCode>
+        <idValue>Maximum Miles</idValue>
+</idList>

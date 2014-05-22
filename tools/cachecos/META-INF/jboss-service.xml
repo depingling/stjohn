@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server>
+
+  <mbean code="com.cleanwise.service.api.cachecos.CacheControlService" name="user:service=CacheControlService">
+
+    <!--
+    Wait until the DataSources  deployed. This option
+	ensures correct  deployment order at JBoss startup.
+	Change the 'OracleDS' to your datasource name.
+	Important!==> this is NOT the JNDI name of the datasource.
+	(JNDI name for it is set in a separate xxx-service.xml file).
+     -->
+    <depends>jboss.jca:service=DataSourceBinding,name=OracleDS</depends>
+    <depends>jboss.j2ee:jndiName=cleanwise/Interchange,service=EJB</depends>
+
+    <attribute name="JndiName">CachecosManager</attribute>
+    <attribute name="Manager">com.cleanwise.service.api.cachecos.CachecosManagerImpl</attribute>
+    <attribute name="Cache">com.cleanwise.service.api.cachecos.CacheImpl</attribute>
+    <attribute name="ManagerState">${cachecos.manager.state}</attribute>
+    <attribute name="GarbageCollectionInterval">${cachecos.manager.garbageCollectionInterval}</attribute>
+    <attribute name="CacheObjectLifetime">${cachecos.manager.objectLifetime}</attribute>
+
+  </mbean>
+
+</server>

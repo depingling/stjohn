@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. ../app.sh.env
+
+lockfile=/tmp/$0.lockfile
+
+if [ -f $lockfile ]
+then
+  echo "ERROR lock file $lockfile in place."
+  exit
+fi
+echo $$ > $lockfile
+
+
+
+
+cd $XDIR/dataexchange
+
+
+sh ../util/fileparse.sh inbound 
+
+rm $lockfile

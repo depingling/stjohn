@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Account</idValue>
+    <idCode>AA</idCode>
+        <idValue>Cash on delivery service charge paid by consignor</idValue>
+    <idCode>AB</idCode>
+        <idValue>Cash on delivery service charge paid by consignee</idValue>
+    <idCode>AC</idCode>
+        <idValue>Insurance costs paid by consignor</idValue>
+    <idCode>AD</idCode>
+        <idValue>Insurance costs paid by consignee</idValue>
+    <idCode>CA</idCode>
+        <idValue>Advance collect</idValue>
+    <idCode>CC</idCode>
+        <idValue>Collect</idValue>
+    <idCode>CF</idCode>
+        <idValue>Collect, freight credited to payment customer</idValue>
+    <idCode>DF</idCode>
+        <idValue>Defined by buyer and seller</idValue>
+    <idCode>FO</idCode>
+        <idValue>FOB port of call</idValue>
+    <idCode>IC</idCode>
+        <idValue>Information copy, no payment due</idValue>
+    <idCode>MX</idCode>
+        <idValue>Mixed</idValue>
+    <idCode>NC</idCode>
+        <idValue>Service freight, no charge</idValue>
+    <idCode>NS</idCode>
+        <idValue>Not specified</idValue>
+    <idCode>PA</idCode>
+        <idValue>Advance prepaid</idValue>
+    <idCode>PB</idCode>
+        <idValue>Customer pick-up/backhaul</idValue>
+    <idCode>PC</idCode>
+        <idValue>Prepaid but charged to customer</idValue>
+    <idCode>PE</idCode>
+        <idValue>Payable elsewhere</idValue>
+    <idCode>PO</idCode>
+        <idValue>Prepaid only</idValue>
+    <idCode>PP</idCode>
+        <idValue>Prepaid (by seller)</idValue>
+    <idCode>PU</idCode>
+        <idValue>Pickup</idValue>
+    <idCode>RC</idCode>
+        <idValue>Return container freight paid by customer</idValue>
+    <idCode>RF</idCode>
+        <idValue>Return container freight free</idValue>
+    <idCode>RS</idCode>
+        <idValue>Return container freight paid by supplier</idValue>
+    <idCode>TP</idCode>
+        <idValue>Third party pay</idValue>
+    <idCode>WC</idCode>
+        <idValue>Weight condition</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually defined</idValue>
+</idList>

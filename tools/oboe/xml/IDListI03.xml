@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,July 9, 2001, -->
+<idList>
+    <idCode>00</idCode>
+        <idValue>No Security Information Present (No Meaningful Information in I04)</idValue>
+    <idCode>01</idCode>
+        <idValue>Password</idValue>
+</idList>

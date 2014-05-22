@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>00</idCode>
+        <idValue>Company Non-Classified</idValue>
+    <idCode>01</idCode>
+        <idValue>Company Internal Use Only</idValue>
+    <idCode>02</idCode>
+        <idValue>Company Confidential</idValue>
+    <idCode>03</idCode>
+        <idValue>Company Confidential, Restricted (Need to Know)</idValue>
+    <idCode>04</idCode>
+        <idValue>Company Registered (Signature Required)</idValue>
+    <idCode>05</idCode>
+        <idValue>Personal</idValue>
+    <idCode>06</idCode>
+        <idValue>Supplier Proprietary</idValue>
+    <idCode>09</idCode>
+        <idValue>Company Defined (Trading Partner Level)</idValue>
+    <idCode>11</idCode>
+        <idValue>Competition Sensitive</idValue>
+    <idCode>20</idCode>
+        <idValue>Court Restricted</idValue>
+    <idCode>21</idCode>
+        <idValue>Juvenile Record Restricted</idValue>
+    <idCode>90</idCode>
+        <idValue>Government Non-Classified</idValue>
+    <idCode>92</idCode>
+        <idValue>Government Confidential</idValue>
+    <idCode>93</idCode>
+        <idValue>Government Secret</idValue>
+    <idCode>94</idCode>
+        <idValue>Government Top Secret</idValue>
+    <idCode>99</idCode>
+        <idValue>Government Defined (Trading Partner Level)</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

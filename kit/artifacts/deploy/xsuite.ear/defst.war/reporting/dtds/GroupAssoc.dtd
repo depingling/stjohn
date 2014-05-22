@@ -1,0 +1,18 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT GroupAssocList (GroupAssoc)+>
+<!ELEMENT GroupAssoc (,BusEntityIdGenericReportId,GroupId,UserId,AddBy,AddDate,ApplicationFunction,GroupAssocCd,ModBy,ModDate)>
+<!ATTLIST GroupAssoc Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT GenericReportId (#PCDATA)>
+<!ELEMENT GroupId (#PCDATA)>
+<!ELEMENT UserId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ApplicationFunction (#PCDATA)>
+<!ELEMENT GroupAssocCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

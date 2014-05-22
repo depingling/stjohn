@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>BC</idCode>
+        <idValue>Barge Carrying Vessels (Lash &amp; Seabee)</idValue>
+    <idCode>BD</idCode>
+        <idValue>Bulk-Dry</idValue>
+    <idCode>BI</idCode>
+        <idValue>Barge-Inland</idValue>
+    <idCode>BK</idCode>
+        <idValue>Bulk-Undetermined</idValue>
+    <idCode>BL</idCode>
+        <idValue>Bulk-Liquid</idValue>
+    <idCode>BO</idCode>
+        <idValue>Barge-Oceangoing</idValue>
+    <idCode>CB</idCode>
+        <idValue>Conbulk</idValue>
+    <idCode>CT</idCode>
+        <idValue>Container</idValue>
+    <idCode>DG</idCode>
+        <idValue>Dredge</idValue>
+    <idCode>DP</idCode>
+        <idValue>Display Vessels</idValue>
+    <idCode>FH</idCode>
+        <idValue>Fishing</idValue>
+    <idCode>GC</idCode>
+        <idValue>General Cargo</idValue>
+    <idCode>GT</idCode>
+        <idValue>Government-Non-Military</idValue>
+    <idCode>MT</idCode>
+        <idValue>Military</idValue>
+    <idCode>PC</idCode>
+        <idValue>Partial Container</idValue>
+    <idCode>PS</idCode>
+        <idValue>Passenger</idValue>
+    <idCode>RR</idCode>
+        <idValue>Roll on/Roll off</idValue>
+    <idCode>SP</idCode>
+        <idValue>Supply Ship</idValue>
+    <idCode>TG</idCode>
+        <idValue>Tug</idValue>
+    <idCode>VH</idCode>
+        <idValue>Vehicle Carrier</idValue>
+</idList>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>P</idCode>
+        <idValue>Residue Last Contained Description (Packages)</idValue>
+    <idCode>R</idCode>
+        <idValue>Residue Last Contained Description (Tank Car)</idValue>
+</idList>

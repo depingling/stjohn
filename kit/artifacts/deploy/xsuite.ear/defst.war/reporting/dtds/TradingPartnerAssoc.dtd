@@ -1,0 +1,15 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT TradingPartnerAssocList (TradingPartnerAssoc)+>
+<!ELEMENT TradingPartnerAssoc (,BusEntityId,TradingPartnerId,AddBy,AddDate,ModBy,ModDate,TradingPartnerAssocCd)>
+<!ATTLIST TradingPartnerAssoc Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT TradingPartnerId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT TradingPartnerAssocCd (#PCDATA)>

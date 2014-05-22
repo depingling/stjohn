@@ -1,0 +1,23 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT OrderPropertyList (OrderProperty)+>
+<!ELEMENT OrderProperty (,InvoiceCustDetailIdInvoiceCustId,InvoiceDistDetailId,InvoiceDistId,OrderAddressId,OrderId,OrderItemId,AddBy,AddDate,Value,ModBy,ModDate,OrderPropertyStatusCd,OrderPropertyTypeCd,ShortDesc)>
+<!ATTLIST OrderProperty Id ID #REQUIRED>
+<!ELEMENT InvoiceCustDetailId (#PCDATA)>
+<!ELEMENT InvoiceCustId (#PCDATA)>
+<!ELEMENT InvoiceDistDetailId (#PCDATA)>
+<!ELEMENT InvoiceDistId (#PCDATA)>
+<!ELEMENT OrderAddressId (#PCDATA)>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT OrderItemId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT OrderPropertyStatusCd (#PCDATA)>
+<!ELEMENT OrderPropertyTypeCd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

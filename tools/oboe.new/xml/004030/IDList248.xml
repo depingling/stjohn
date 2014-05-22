@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Allowance</idValue>
+    <idCode>C</idCode>
+        <idValue>Charge</idValue>
+    <idCode>N</idCode>
+        <idValue>No Allowance or Charge</idValue>
+    <idCode>P</idCode>
+        <idValue>Promotion</idValue>
+    <idCode>Q</idCode>
+        <idValue>Charge Request</idValue>
+    <idCode>R</idCode>
+        <idValue>Allowance Request</idValue>
+    <idCode>S</idCode>
+        <idValue>Service</idValue>
+</idList>

@@ -1,0 +1,12 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PipelineLogList (PipelineLog)+>
+<!ELEMENT PipelineLog (,PipelineId,Change,Date,Time)>
+<!ATTLIST PipelineLog Id ID #REQUIRED>
+<!ELEMENT PipelineId (#PCDATA)>
+<!ELEMENT Change (#PCDATA)>
+<!ELEMENT Date (#PCDATA)>
+<!ELEMENT Time (#PCDATA)>

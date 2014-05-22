@@ -1,0 +1,31 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT RemittanceList (Remittance)+>
+<!ELEMENT Remittance (,PayerId,StoreId,AddBy,AddDate,CheckDate,CreditDebit,HandlingCode,ModBy,ModDate,PayeeBank,PayeeBankAccount,PayeeErpAccount,PayerBank,PayerBankAccount,PaymentPostDate,PaymentReferenceNumber,PaymentReferenceNumberType,PaymentType,RemittanceStatusCd,TotalPaymentAmount,TransactionCd,TransactionDate,TransactionReference)>
+<!ATTLIST Remittance Id ID #REQUIRED>
+<!ELEMENT PayerId (#PCDATA)>
+<!ELEMENT StoreId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT CheckDate (#PCDATA)>
+<!ELEMENT CreditDebit (#PCDATA)>
+<!ELEMENT HandlingCode (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT PayeeBank (#PCDATA)>
+<!ELEMENT PayeeBankAccount (#PCDATA)>
+<!ELEMENT PayeeErpAccount (#PCDATA)>
+<!ELEMENT PayerBank (#PCDATA)>
+<!ELEMENT PayerBankAccount (#PCDATA)>
+<!ELEMENT PaymentPostDate (#PCDATA)>
+<!ELEMENT PaymentReferenceNumber (#PCDATA)>
+<!ELEMENT PaymentReferenceNumberType (#PCDATA)>
+<!ELEMENT PaymentType (#PCDATA)>
+<!ELEMENT RemittanceStatusCd (#PCDATA)>
+<!ELEMENT TotalPaymentAmount (#PCDATA)>
+<!ELEMENT TransactionCd (#PCDATA)>
+<!ELEMENT TransactionDate (#PCDATA)>
+<!ELEMENT TransactionReference (#PCDATA)>

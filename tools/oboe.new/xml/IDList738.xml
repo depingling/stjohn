@@ -1,0 +1,1845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Control Efficiency</idValue>
+    <idCode>2</idCode>
+        <idValue>Capture Efficiency</idValue>
+    <idCode>3</idCode>
+        <idValue>Photonflux Density</idValue>
+    <idCode>4</idCode>
+        <idValue>Throughput Rate</idValue>
+    <idCode>5</idCode>
+        <idValue>Cloud Cover</idValue>
+    <idCode>6</idCode>
+        <idValue>Velocity</idValue>
+    <idCode>7</idCode>
+        <idValue>Plume Height</idValue>
+    <idCode>8</idCode>
+        <idValue>Individuals</idValue>
+    <idCode>10</idCode>
+        <idValue>Painting Costs</idValue>
+    <idCode>11</idCode>
+        <idValue>Structural Costs</idValue>
+    <idCode>12</idCode>
+        <idValue>Appliances</idValue>
+    <idCode>13</idCode>
+        <idValue>Utilities</idValue>
+    <idCode>14</idCode>
+        <idValue>Carpet or Floors</idValue>
+    <idCode>15</idCode>
+        <idValue>Other Repairs</idValue>
+    <idCode>16</idCode>
+        <idValue>Landscaping</idValue>
+    <idCode>18</idCode>
+        <idValue>Roof</idValue>
+    <idCode>19</idCode>
+        <idValue>Windows</idValue>
+    <idCode>1F</idCode>
+        <idValue>Radio Frequency</idValue>
+    <idCode>20</idCode>
+        <idValue>Cleaning or Trash Removal</idValue>
+    <idCode>21</idCode>
+        <idValue>Probable Sales Price</idValue>
+    <idCode>22</idCode>
+        <idValue>Proximity</idValue>
+    <idCode>23</idCode>
+        <idValue>Repairs and Improvements</idValue>
+    <idCode>24</idCode>
+        <idValue>Contributory Value of Repairs and Improvements</idValue>
+    <idCode>25</idCode>
+        <idValue>Marketing Time</idValue>
+    <idCode>26</idCode>
+        <idValue>Closed Comparable Sales</idValue>
+    <idCode>27</idCode>
+        <idValue>Competitive Listings in Price Range</idValue>
+    <idCode>28</idCode>
+        <idValue>Financing Concessions</idValue>
+    <idCode>29</idCode>
+        <idValue>Marketing Concessions</idValue>
+    <idCode>2F</idCode>
+        <idValue>Alternate Radio Frequency</idValue>
+    <idCode>30</idCode>
+        <idValue>Probable Net Price</idValue>
+    <idCode>31</idCode>
+        <idValue>Suggested Initial List Price</idValue>
+    <idCode>32</idCode>
+        <idValue>Value Change</idValue>
+    <idCode>33</idCode>
+        <idValue>Probable Final Value</idValue>
+    <idCode>34</idCode>
+        <idValue>Occupancy Rate</idValue>
+    <idCode>35</idCode>
+        <idValue>Number of Living Units</idValue>
+    <idCode>36</idCode>
+        <idValue>Number of Phases</idValue>
+    <idCode>37</idCode>
+        <idValue>Number of Active Listings</idValue>
+    <idCode>38</idCode>
+        <idValue>Price Active Listings</idValue>
+    <idCode>39</idCode>
+        <idValue>Marketing Time</idValue>
+    <idCode>3A</idCode>
+        <idValue>Target Depth</idValue>
+    <idCode>3B</idCode>
+        <idValue>Current Depth</idValue>
+    <idCode>3C</idCode>
+        <idValue>Total Depth</idValue>
+    <idCode>3D</idCode>
+        <idValue>Well Test Before Oil</idValue>
+    <idCode>3E</idCode>
+        <idValue>Well Test Before Gas</idValue>
+    <idCode>3F</idCode>
+        <idValue>Well Test Before Water</idValue>
+    <idCode>3G</idCode>
+        <idValue>Well Test After Oil</idValue>
+    <idCode>3H</idCode>
+        <idValue>Well Test After Gas</idValue>
+    <idCode>3I</idCode>
+        <idValue>Well Test After Water</idValue>
+    <idCode>3J</idCode>
+        <idValue>Estimated Depth of Operations</idValue>
+    <idCode>40</idCode>
+        <idValue>Price Per Gross Living Area</idValue>
+    <idCode>41</idCode>
+        <idValue>Built-up Rate</idValue>
+    <idCode>42</idCode>
+        <idValue>Vacant Rate</idValue>
+    <idCode>43</idCode>
+        <idValue>Typical Rents</idValue>
+    <idCode>44</idCode>
+        <idValue>Neighborhood Apartment Vacancy</idValue>
+    <idCode>4F</idCode>
+        <idValue>Squelch Tone</idValue>
+    <idCode>5F</idCode>
+        <idValue>Height above Ground</idValue>
+    <idCode>6F</idCode>
+        <idValue>Gain</idValue>
+    <idCode>8F</idCode>
+        <idValue>Directional Height above Average Terrain</idValue>
+    <idCode>A</idCode>
+        <idValue>Consolidated Weight</idValue>
+    <idCode>A1</idCode>
+        <idValue>Acids</idValue>
+    <idCode>A2</idCode>
+        <idValue>Adsorption</idValue>
+    <idCode>A3</idCode>
+        <idValue>Aging Time</idValue>
+    <idCode>A4</idCode>
+        <idValue>Aromatics</idValue>
+    <idCode>A5</idCode>
+        <idValue>Average Differential Pressure</idValue>
+    <idCode>A6</idCode>
+        <idValue>Average Static Pressure</idValue>
+    <idCode>A7</idCode>
+        <idValue>Flame Projection Distance</idValue>
+    <idCode>A9</idCode>
+        <idValue>Exposure</idValue>
+    <idCode>AA</idCode>
+        <idValue>Alternating Current</idValue>
+    <idCode>AAP</idCode>
+        <idValue>AC-apparent Power</idValue>
+    <idCode>AB</idCode>
+        <idValue>Activation Energy</idValue>
+    <idCode>ABO</idCode>
+        <idValue>Absorbance</idValue>
+    <idCode>ABR</idCode>
+        <idValue>Abrasion</idValue>
+    <idCode>ABS</idCode>
+        <idValue>Absorbency</idValue>
+    <idCode>AC</idCode>
+        <idValue>Actinium</idValue>
+    <idCode>ACN</idCode>
+        <idValue>Acid Number</idValue>
+    <idCode>AD</idCode>
+        <idValue>Ambient Temperature</idValue>
+    <idCode>ADH</idCode>
+        <idValue>Adhesion</idValue>
+    <idCode>ADM</idCode>
+        <idValue>Dye Manufacturing Units</idValue>
+    <idCode>AE</idCode>
+        <idValue>Argon</idValue>
+    <idCode>AF</idCode>
+        <idValue>Angle of Bend</idValue>
+    <idCode>AG</idCode>
+        <idValue>Americium</idValue>
+    <idCode>AGE</idCode>
+        <idValue>Inventory Age</idValue>
+    <idCode>AGI</idCode>
+        <idValue>Aggressive Index</idValue>
+    <idCode>AH</idCode>
+        <idValue>Astatine</idValue>
+    <idCode>AI</idCode>
+        <idValue>Acidity</idValue>
+    <idCode>AJ</idCode>
+        <idValue>Aim Gage</idValue>
+    <idCode>AK</idCode>
+        <idValue>Volatile Organic Compounds (VOCs)</idValue>
+    <idCode>AL</idCode>
+        <idValue>Spine Show</idValue>
+    <idCode>ALK</idCode>
+        <idValue>Alkalinity</idValue>
+    <idCode>ALN</idCode>
+        <idValue>Alkalinity Number</idValue>
+    <idCode>ALP</idCode>
+        <idValue>Alpha-Cellulose</idValue>
+    <idCode>AM</idCode>
+        <idValue>Average Speed</idValue>
+    <idCode>AMI</idCode>
+        <idValue>Amines</idValue>
+    <idCode>AMW</idCode>
+        <idValue>Average Molecular Weight</idValue>
+    <idCode>AN</idCode>
+        <idValue>Flute Test</idValue>
+    <idCode>AOX</idCode>
+        <idValue>Antioxidant</idValue>
+    <idCode>AP</idCode>
+        <idValue>Average Pressure</idValue>
+    <idCode>API</idCode>
+        <idValue>API Gravity</idValue>
+    <idCode>APP</idCode>
+        <idValue>Appearance</idValue>
+    <idCode>AS</idCode>
+        <idValue>Ash Fusion Temperature</idValue>
+    <idCode>ASH</idCode>
+        <idValue>Ash</idValue>
+    <idCode>ASY</idCode>
+        <idValue>Assay</idValue>
+    <idCode>AT</idCode>
+        <idValue>Additive</idValue>
+    <idCode>AU</idCode>
+        <idValue>Number of Units Projected</idValue>
+    <idCode>AV</idCode>
+        <idValue>Age</idValue>
+    <idCode>AVT</idCode>
+        <idValue>Average Temperature</idValue>
+    <idCode>AW</idCode>
+        <idValue>Remaining Economic Life</idValue>
+    <idCode>AX</idCode>
+        <idValue>Remaining Physical Life</idValue>
+    <idCode>AY</idCode>
+        <idValue>Number of Comparable Sales</idValue>
+    <idCode>AZ</idCode>
+        <idValue>Arbor Size</idValue>
+    <idCode>B</idCode>
+        <idValue>Billed Weight</idValue>
+    <idCode>B1</idCode>
+        <idValue>Base Number</idValue>
+    <idCode>B2</idCode>
+        <idValue>Number of Comparable Listings</idValue>
+    <idCode>B3</idCode>
+        <idValue>Present Land Use</idValue>
+    <idCode>B4</idCode>
+        <idValue>Subject Phase Dwelling Units</idValue>
+    <idCode>B5</idCode>
+        <idValue>Octanol/Water Partition Coefficient</idValue>
+    <idCode>B6</idCode>
+        <idValue>Total Project Dwelling Units</idValue>
+    <idCode>BA</idCode>
+        <idValue>Barium</idValue>
+    <idCode>BB</idCode>
+        <idValue>Beryllium</idValue>
+    <idCode>BC</idCode>
+        <idValue>Billet Size</idValue>
+    <idCode>BD</idCode>
+        <idValue>Bias</idValue>
+    <idCode>BDP</idCode>
+        <idValue>Perforation Bottom Depth</idValue>
+    <idCode>BE</idCode>
+        <idValue>Boron Factor</idValue>
+    <idCode>BF</idCode>
+        <idValue>Brinell</idValue>
+    <idCode>BG</idCode>
+        <idValue>Berkelium</idValue>
+    <idCode>BH</idCode>
+        <idValue>Bromine</idValue>
+    <idCode>BHF</idCode>
+        <idValue>Bottomhole Pressure - Flowing</idValue>
+    <idCode>BHS</idCode>
+        <idValue>Bottomhole Pressure - Shutin</idValue>
+    <idCode>BIC</idCode>
+        <idValue>Bark in Chips</idValue>
+    <idCode>BJ</idCode>
+        <idValue>Burst Index</idValue>
+    <idCode>BK</idCode>
+        <idValue>Bulk</idValue>
+    <idCode>BL</idCode>
+        <idValue>Blisters</idValue>
+    <idCode>BN</idCode>
+        <idValue>Bend</idValue>
+    <idCode>BND</idCode>
+        <idValue>Amount Bound in Material</idValue>
+    <idCode>BO</idCode>
+        <idValue>Lateral Bow (Camber)</idValue>
+    <idCode>BOR</idCode>
+        <idValue>Boiling Range</idValue>
+    <idCode>BP</idCode>
+        <idValue>Boiling Point</idValue>
+    <idCode>BQ</idCode>
+        <idValue>Breaks</idValue>
+    <idCode>BR</idCode>
+        <idValue>Brightness</idValue>
+    <idCode>BRS</idCode>
+        <idValue>Breaking Strength</idValue>
+    <idCode>BSW</idCode>
+        <idValue>Percent Bottom Sediment and Water</idValue>
+    <idCode>BT</idCode>
+        <idValue>Bursts</idValue>
+    <idCode>BU</idCode>
+        <idValue>Buckles</idValue>
+    <idCode>BUD</idCode>
+        <idValue>Bulk Density</idValue>
+    <idCode>BW</idCode>
+        <idValue>Basis Weight</idValue>
+    <idCode>BX</idCode>
+        <idValue>Blood Alcohol</idValue>
+    <idCode>C</idCode>
+        <idValue>Actual New Repeated for Combination</idValue>
+    <idCode>C0</idCode>
+        <idValue>Color Grade</idValue>
+    <idCode>C1</idCode>
+        <idValue>Carbonyl</idValue>
+    <idCode>C2</idCode>
+        <idValue>Catalyst</idValue>
+    <idCode>C3</idCode>
+        <idValue>Maximum Contraction</idValue>
+    <idCode>C4</idCode>
+        <idValue>Color Quadrant</idValue>
+    <idCode>CA</idCode>
+        <idValue>Caliper</idValue>
+    <idCode>CAU</idCode>
+        <idValue>Caustic Reaction Severity</idValue>
+    <idCode>CC</idCode>
+        <idValue>Celsius</idValue>
+    <idCode>CCF</idCode>
+        <idValue>Composite Corrected Factor</idValue>
+    <idCode>CCG</idCode>
+        <idValue>Combined Center of Gravity</idValue>
+    <idCode>CD</idCode>
+        <idValue>Compression</idValue>
+    <idCode>CE</idCode>
+        <idValue>Capacitance In</idValue>
+    <idCode>CF</idCode>
+        <idValue>Capacitance Out</idValue>
+    <idCode>CG</idCode>
+        <idValue>Cadmium</idValue>
+    <idCode>CGR</idCode>
+        <idValue>Color Grayness RD</idValue>
+    <idCode>CH</idCode>
+        <idValue>Cesium</idValue>
+    <idCode>CHA</idCode>
+        <idValue>Chemical Addition Rate</idValue>
+    <idCode>CHC</idCode>
+        <idValue>Concentration of Hazardous Component</idValue>
+    <idCode>CHG</idCode>
+        <idValue>Rate of Change</idValue>
+    <idCode>CHL</idCode>
+        <idValue>Chlorides</idValue>
+    <idCode>CI</idCode>
+        <idValue>Curium</idValue>
+    <idCode>CIV</idCode>
+        <idValue>Cuene Intrinsic Viscosity</idValue>
+    <idCode>CJ</idCode>
+        <idValue>Cycle Time</idValue>
+    <idCode>CK</idCode>
+        <idValue>Californium</idValue>
+    <idCode>CL</idCode>
+        <idValue>Cladding Thickness(% of Composite Thickness)</idValue>
+    <idCode>CLA</idCode>
+        <idValue>Clarity</idValue>
+    <idCode>CLB</idCode>
+        <idValue>Calibration</idValue>
+    <idCode>CLN</idCode>
+        <idValue>Cleanliness</idValue>
+    <idCode>CM</idCode>
+        <idValue>Cures</idValue>
+    <idCode>CN</idCode>
+        <idValue>Chlorine</idValue>
+    <idCode>CO</idCode>
+        <idValue>Core Loss</idValue>
+    <idCode>COH</idCode>
+        <idValue>Coercive Force</idValue>
+    <idCode>COL</idCode>
+        <idValue>Color</idValue>
+    <idCode>CON</idCode>
+        <idValue>Concentration</idValue>
+    <idCode>COR</idCode>
+        <idValue>Corrosiveness</idValue>
+    <idCode>COS</idCode>
+        <idValue>Cost</idValue>
+    <idCode>COT</idCode>
+        <idValue>Content</idValue>
+    <idCode>CP</idCode>
+        <idValue>Crimp</idValue>
+    <idCode>CPF</idCode>
+        <idValue>Casing Pressure - Flowing</idValue>
+    <idCode>CPS</idCode>
+        <idValue>Casing Pressure - Shutin</idValue>
+    <idCode>CQ</idCode>
+        <idValue>Cuts</idValue>
+    <idCode>CR</idCode>
+        <idValue>Crosswise Spacing</idValue>
+    <idCode>CRF</idCode>
+        <idValue>Free Chlorine Residual</idValue>
+    <idCode>CRL</idCode>
+        <idValue>Compression Relaxation</idValue>
+    <idCode>CRN</idCode>
+        <idValue>Crown</idValue>
+    <idCode>CRT</idCode>
+        <idValue>Total Chlorine Residual</idValue>
+    <idCode>CS</idCode>
+        <idValue>Cross Section</idValue>
+    <idCode>CSC</idCode>
+        <idValue>Choke Size - Casing</idValue>
+    <idCode>CSR</idCode>
+        <idValue>Cost Realism</idValue>
+    <idCode>CST</idCode>
+        <idValue>Choke Size - Tubing</idValue>
+    <idCode>CT</idCode>
+        <idValue>Center-to-center</idValue>
+    <idCode>CTG</idCode>
+        <idValue>Coating</idValue>
+    <idCode>CTT</idCode>
+        <idValue>Contact Time</idValue>
+    <idCode>CU</idCode>
+        <idValue>Coil Curvature</idValue>
+    <idCode>CUT</idCode>
+        <idValue>Cure Time</idValue>
+    <idCode>CW</idCode>
+        <idValue>Cuttable Width</idValue>
+    <idCode>CWT</idCode>
+        <idValue>Charge Weight</idValue>
+    <idCode>CX</idCode>
+        <idValue>Calculated Value</idValue>
+    <idCode>CY</idCode>
+        <idValue>Contamination</idValue>
+    <idCode>CYB</idCode>
+        <idValue>Color Yellowness (+B)</idValue>
+    <idCode>D</idCode>
+        <idValue>Destination Weight Agreement</idValue>
+    <idCode>D1</idCode>
+        <idValue>Maximum Dilatation</idValue>
+    <idCode>D2</idCode>
+        <idValue>Dispersing Agent</idValue>
+    <idCode>D3</idCode>
+        <idValue>Drying Agent</idValue>
+    <idCode>D4</idCode>
+        <idValue>Dry Point</idValue>
+    <idCode>D5</idCode>
+        <idValue>Wear</idValue>
+    <idCode>D7</idCode>
+        <idValue>Distillation Fraction</idValue>
+    <idCode>DA</idCode>
+        <idValue>Delta Value A</idValue>
+    <idCode>DAT</idCode>
+        <idValue>Datum Depth</idValue>
+    <idCode>DB</idCode>
+        <idValue>Delta Value B</idValue>
+    <idCode>DC</idCode>
+        <idValue>Ductile Class</idValue>
+    <idCode>DCT</idCode>
+        <idValue>Dirt Count</idValue>
+    <idCode>DD</idCode>
+        <idValue>Depth of Dents</idValue>
+    <idCode>DE</idCode>
+        <idValue>Defects</idValue>
+    <idCode>DEM</idCode>
+        <idValue>De Minimis Level</idValue>
+    <idCode>DF</idCode>
+        <idValue>Distance Across Flats</idValue>
+    <idCode>DG</idCode>
+        <idValue>Direct Current</idValue>
+    <idCode>DH</idCode>
+        <idValue>Dysprosium</idValue>
+    <idCode>DI</idCode>
+        <idValue>Diameter</idValue>
+    <idCode>DIR</idCode>
+        <idValue>Distillation Range</idValue>
+    <idCode>DIS</idCode>
+        <idValue>Dispersion</idValue>
+    <idCode>DJ</idCode>
+        <idValue>Dominant Wave Length</idValue>
+    <idCode>DL</idCode>
+        <idValue>Delta Value L</idValue>
+    <idCode>DM</idCode>
+        <idValue>Dual Amplitude</idValue>
+    <idCode>DME</idCode>
+        <idValue>Dichloromethane Extract</idValue>
+    <idCode>DMF</idCode>
+        <idValue>Distributed Meter Factor</idValue>
+    <idCode>DN</idCode>
+        <idValue>Density</idValue>
+    <idCode>DP</idCode>
+        <idValue>Depth</idValue>
+    <idCode>DPM</idCode>
+        <idValue>Degree of Polymerization</idValue>
+    <idCode>DR</idCode>
+        <idValue>Delta R</idValue>
+    <idCode>DRY</idCode>
+        <idValue>Dryness</idValue>
+    <idCode>DS</idCode>
+        <idValue>Distance Between Points</idValue>
+    <idCode>DT</idCode>
+        <idValue>Distance From Base Point</idValue>
+    <idCode>DU</idCode>
+        <idValue>Draw Tension</idValue>
+    <idCode>DW</idCode>
+        <idValue>Width, Boxcar Door</idValue>
+    <idCode>DWP</idCode>
+        <idValue>Dew Point</idValue>
+    <idCode>DY</idCode>
+        <idValue>Dyeability</idValue>
+    <idCode>E</idCode>
+        <idValue>Estimated New Weight</idValue>
+    <idCode>E0</idCode>
+        <idValue>Extraneous Matter</idValue>
+    <idCode>E1</idCode>
+        <idValue>End</idValue>
+    <idCode>EA</idCode>
+        <idValue>Elongation</idValue>
+    <idCode>EB</idCode>
+        <idValue>Edge Burr</idValue>
+    <idCode>EC</idCode>
+        <idValue>English Coil Dimensions</idValue>
+    <idCode>ED</idCode>
+        <idValue>Eddy</idValue>
+    <idCode>EE</idCode>
+        <idValue>Einsteinium</idValue>
+    <idCode>EF</idCode>
+        <idValue>Europium</idValue>
+    <idCode>EG</idCode>
+        <idValue>Equivalent Temperature</idValue>
+    <idCode>EH</idCode>
+        <idValue>Erbium</idValue>
+    <idCode>EI</idCode>
+        <idValue>Expansion</idValue>
+    <idCode>EJ</idCode>
+        <idValue>Electrical Conductivity</idValue>
+    <idCode>EL</idCode>
+        <idValue>Elasticity</idValue>
+    <idCode>ELC</idCode>
+        <idValue>Exposure Ceiling: Threshold Limit Value</idValue>
+    <idCode>ELE</idCode>
+        <idValue>Elevation</idValue>
+    <idCode>ELI</idCode>
+        <idValue>Immediately Dangerous to Life and Health</idValue>
+    <idCode>ELL</idCode>
+        <idValue>Explosion Limit</idValue>
+    <idCode>ELO</idCode>
+        <idValue>Occupational Safety and Health Administration (OSHA) Permissible Exposure Limit</idValue>
+    <idCode>ELP</idCode>
+        <idValue>Occupational Safety and Health Administration (OSHA) Permissible Exposure Limit Ceiling</idValue>
+    <idCode>ELS</idCode>
+        <idValue>American Conference of Government Industrial Hygienists (ACGIH) Threshold Limit Value: Short-Term Exposure</idValue>
+    <idCode>ELT</idCode>
+        <idValue>American Conference of Governmental Industrial Hygienists (ACGIH) Threshold Limit Value: Time Weighted Average</idValue>
+    <idCode>ELV</idCode>
+        <idValue>Unshielded Exposure Rate</idValue>
+    <idCode>ELW</idCode>
+        <idValue>American Industrial Hygienists Association (AIHA) Work Environment Exposure Level (WEEL)</idValue>
+    <idCode>ELX</idCode>
+        <idValue>American Industrial Hygienists Association (AIHA) Work Environment Exposure Level (WEEL): Time Weighted Average</idValue>
+    <idCode>EM</idCode>
+        <idValue>Elmendorf Tear</idValue>
+    <idCode>EN</idCode>
+        <idValue>Entanglement</idValue>
+    <idCode>EP</idCode>
+        <idValue>Exciting Power</idValue>
+    <idCode>EPL</idCode>
+        <idValue>Expected Product Life</idValue>
+    <idCode>ES</idCode>
+        <idValue>Edge</idValue>
+    <idCode>EVL</idCode>
+        <idValue>Evaporation Loss</idValue>
+    <idCode>EVR</idCode>
+        <idValue>Evaporation Rate</idValue>
+    <idCode>EW</idCode>
+        <idValue>Empty Weight</idValue>
+    <idCode>EX</idCode>
+        <idValue>Eccentricity</idValue>
+    <idCode>EXH</idCode>
+        <idValue>Exhaust Benzene Emissions</idValue>
+    <idCode>EXT</idCode>
+        <idValue>Extractables</idValue>
+    <idCode>F</idCode>
+        <idValue>Deficit Weight</idValue>
+    <idCode>F1</idCode>
+        <idValue>Fire Point</idValue>
+    <idCode>F2</idCode>
+        <idValue>Radiated Power</idValue>
+    <idCode>F3</idCode>
+        <idValue>Output Power (Peak Envelope)</idValue>
+    <idCode>F4</idCode>
+        <idValue>Height above Average Terrain</idValue>
+    <idCode>F5</idCode>
+        <idValue>Ground Elevation</idValue>
+    <idCode>F6</idCode>
+        <idValue>Height to Tip</idValue>
+    <idCode>F7</idCode>
+        <idValue>Radius from a Location</idValue>
+    <idCode>F8</idCode>
+        <idValue>Radius from Coordinates</idValue>
+    <idCode>F9</idCode>
+        <idValue>Operating Hours</idValue>
+    <idCode>FA</idCode>
+        <idValue>Fluorine</idValue>
+    <idCode>FB</idCode>
+        <idValue>Flare</idValue>
+    <idCode>FBP</idCode>
+        <idValue>Acetate Break Point</idValue>
+    <idCode>FC</idCode>
+        <idValue>Short Cycle Flatness</idValue>
+    <idCode>FD</idCode>
+        <idValue>Frequency of Operation</idValue>
+    <idCode>FE</idCode>
+        <idValue>Fermium</idValue>
+    <idCode>FF</idCode>
+        <idValue>Francium</idValue>
+    <idCode>FG</idCode>
+        <idValue>Freezing Point</idValue>
+    <idCode>FH</idCode>
+        <idValue>Finish</idValue>
+    <idCode>FI</idCode>
+        <idValue>Filament Count</idValue>
+    <idCode>FIL</idCode>
+        <idValue>Filter Number</idValue>
+    <idCode>FIN</idCode>
+        <idValue>Fineness</idValue>
+    <idCode>FIT</idCode>
+        <idValue>Filterability</idValue>
+    <idCode>FJ</idCode>
+        <idValue>Face Width</idValue>
+    <idCode>FK</idCode>
+        <idValue>Fluid Consistency</idValue>
+    <idCode>FL</idCode>
+        <idValue>Longitudinal Flatness</idValue>
+    <idCode>FLD</idCode>
+        <idValue>Fluid Point</idValue>
+    <idCode>FLN</idCode>
+        <idValue>Fiber Length</idValue>
+    <idCode>FLP</idCode>
+        <idValue>Fluid Level Above Pump</idValue>
+    <idCode>FLV</idCode>
+        <idValue>Flavor Threshold</idValue>
+    <idCode>FML</idCode>
+        <idValue>Flammability Limits</idValue>
+    <idCode>FMZ</idCode>
+        <idValue>Flammability</idValue>
+    <idCode>FN</idCode>
+        <idValue>Flatness</idValue>
+    <idCode>FNL</idCode>
+        <idValue>Fines Retained on Screen</idValue>
+    <idCode>FNS</idCode>
+        <idValue>Fines</idValue>
+    <idCode>FOA</idCode>
+        <idValue>Foam</idValue>
+    <idCode>FOH</idCode>
+        <idValue>Front Over-Hang of Vehicle</idValue>
+    <idCode>FOI</idCode>
+        <idValue>Fouling Index</idValue>
+    <idCode>FOR</idCode>
+        <idValue>Foreign Matter</idValue>
+    <idCode>FP</idCode>
+        <idValue>Flashpoint</idValue>
+    <idCode>FPV</idCode>
+        <idValue>Acetate Plugging Value</idValue>
+    <idCode>FQ</idCode>
+        <idValue>Frequency</idValue>
+    <idCode>FR</idCode>
+        <idValue>Flow Rate</idValue>
+    <idCode>FS</idCode>
+        <idValue>Fold Strength</idValue>
+    <idCode>FSI</idCode>
+        <idValue>Free Swelling Index</idValue>
+    <idCode>FT</idCode>
+        <idValue>Flange Thickness</idValue>
+    <idCode>FU</idCode>
+        <idValue>Azimuth</idValue>
+    <idCode>FUD</idCode>
+        <idValue>Full Load</idValue>
+    <idCode>FV</idCode>
+        <idValue>Transverse Flatness</idValue>
+    <idCode>FW</idCode>
+        <idValue>Flange Width</idValue>
+    <idCode>FX</idCode>
+        <idValue>Filler</idValue>
+    <idCode>FY</idCode>
+        <idValue>Beam</idValue>
+    <idCode>FZ</idCode>
+        <idValue>Output Power (Mean RF)</idValue>
+    <idCode>G</idCode>
+        <idValue>Gross Weight</idValue>
+    <idCode>G1</idCode>
+        <idValue>Gutter</idValue>
+    <idCode>G2</idCode>
+        <idValue>Grain Size</idValue>
+    <idCode>G3</idCode>
+        <idValue>Tilt</idValue>
+    <idCode>G4</idCode>
+        <idValue>G-Force</idValue>
+    <idCode>GA</idCode>
+        <idValue>Grain</idValue>
+    <idCode>GB</idCode>
+        <idValue>Guided Bends Root</idValue>
+    <idCode>GC</idCode>
+        <idValue>Gadolinium</idValue>
+    <idCode>GD</idCode>
+        <idValue>Gold</idValue>
+    <idCode>GE</idCode>
+        <idValue>Guided Bends Face</idValue>
+    <idCode>GEL</idCode>
+        <idValue>Gel</idValue>
+    <idCode>GF</idCode>
+        <idValue>Guided Bends Side</idValue>
+    <idCode>GG</idCode>
+        <idValue>Gauge</idValue>
+    <idCode>GGR</idCode>
+        <idValue>Gas Gravity</idValue>
+    <idCode>GH</idCode>
+        <idValue>Gallium</idValue>
+    <idCode>GI</idCode>
+        <idValue>Grit, Brushed</idValue>
+    <idCode>GIR</idCode>
+        <idValue>Gas Injection Test Rate</idValue>
+    <idCode>GJ</idCode>
+        <idValue>Grit, Unbrushed</idValue>
+    <idCode>GK</idCode>
+        <idValue>Tinting Strength</idValue>
+    <idCode>GL</idCode>
+        <idValue>Gloss</idValue>
+    <idCode>GLE</idCode>
+        <idValue>Ground Level Elevation</idValue>
+    <idCode>GM</idCode>
+        <idValue>Emulsion Gloss</idValue>
+    <idCode>GN</idCode>
+        <idValue>Gross to Net Conversion Factor</idValue>
+    <idCode>GO</idCode>
+        <idValue>Particle End Point</idValue>
+    <idCode>GOR</idCode>
+        <idValue>Gas-to-Oil Ratio</idValue>
+    <idCode>GP</idCode>
+        <idValue>Group Package Separation</idValue>
+    <idCode>GQ</idCode>
+        <idValue>Scattered Particles</idValue>
+    <idCode>GR</idCode>
+        <idValue>Gravity</idValue>
+    <idCode>GRA</idCode>
+        <idValue>Gas Test Rate</idValue>
+    <idCode>GRI</idCode>
+        <idValue>Graininess</idValue>
+    <idCode>GS</idCode>
+        <idValue>Carbon Black Undertone</idValue>
+    <idCode>GT</idCode>
+        <idValue>Glass Transition Temperature</idValue>
+    <idCode>GW</idCode>
+        <idValue>Gross Weight, Maximum</idValue>
+    <idCode>H1</idCode>
+        <idValue>Heavies</idValue>
+    <idCode>H2O</idCode>
+        <idValue>Water Volume</idValue>
+    <idCode>H8</idCode>
+        <idValue>Net Explosive Weight</idValue>
+    <idCode>H9</idCode>
+        <idValue>Recommended Exposure Limit</idValue>
+    <idCode>HA</idCode>
+        <idValue>Hydro Pressure</idValue>
+    <idCode>HAR</idCode>
+        <idValue>Hardening Rate</idValue>
+    <idCode>HAZ</idCode>
+        <idValue>Haze</idValue>
+    <idCode>HB</idCode>
+        <idValue>Heavy Aluminas</idValue>
+    <idCode>HC</idCode>
+        <idValue>Helium</idValue>
+    <idCode>HCG</idCode>
+        <idValue>Horizontal Center of Gravity</idValue>
+    <idCode>HD</idCode>
+        <idValue>High Propagation Delay Time</idValue>
+    <idCode>HE</idCode>
+        <idValue>Heavy Silicates</idValue>
+    <idCode>HF</idCode>
+        <idValue>Hardness</idValue>
+    <idCode>HG</idCode>
+        <idValue>Heavy Sulfides</idValue>
+    <idCode>HH</idCode>
+        <idValue>Heavy Globular Oxides</idValue>
+    <idCode>HHW</idCode>
+        <idValue>Hemispherical Point</idValue>
+    <idCode>HI</idCode>
+        <idValue>Hafnium</idValue>
+    <idCode>HIB</idCode>
+        <idValue>High Boilers</idValue>
+    <idCode>HJ</idCode>
+        <idValue>Holmium</idValue>
+    <idCode>HK</idCode>
+        <idValue>Human Factors</idValue>
+    <idCode>HL</idCode>
+        <idValue>Heat Loss</idValue>
+    <idCode>HM</idCode>
+        <idValue>Height, Maximum</idValue>
+    <idCode>HO</idCode>
+        <idValue>Holes</idValue>
+    <idCode>HOC</idCode>
+        <idValue>Heat of Combustion</idValue>
+    <idCode>HP</idCode>
+        <idValue>Height of Tread Plate Pattern</idValue>
+    <idCode>HR</idCode>
+        <idValue>Height of Runners</idValue>
+    <idCode>HT</idCode>
+        <idValue>Height</idValue>
+    <idCode>HTE</idCode>
+        <idValue>Heat Equivalency</idValue>
+    <idCode>HVM</idCode>
+        <idValue>Heavy Metals</idValue>
+    <idCode>HWS</idCode>
+        <idValue>Softening Point</idValue>
+    <idCode>HYD</idCode>
+        <idValue>Hydroxyl Number</idValue>
+    <idCode>HZ</idCode>
+        <idValue>Hazepoint</idValue>
+    <idCode>HZC</idCode>
+        <idValue>Hazardous Component</idValue>
+    <idCode>I</idCode>
+        <idValue>Heat Input</idValue>
+    <idCode>IA</idCode>
+        <idValue>Imperfections - Thicks</idValue>
+    <idCode>IB</idCode>
+        <idValue>Impact Energy</idValue>
+    <idCode>IC</idCode>
+        <idValue>Incremental Distance</idValue>
+    <idCode>ID</idCode>
+        <idValue>Inside Diameter</idValue>
+    <idCode>IDE</idCode>
+        <idValue>Identification</idValue>
+    <idCode>IE</idCode>
+        <idValue>Imperfections - Thins</idValue>
+    <idCode>IF</idCode>
+        <idValue>Input Low Voltage</idValue>
+    <idCode>IG</idCode>
+        <idValue>Granulated Ingot Size</idValue>
+    <idCode>IGA</idCode>
+        <idValue>Autoignition Temperature</idValue>
+    <idCode>IGR</idCode>
+        <idValue>Input Gas Rate</idValue>
+    <idCode>IH</idCode>
+        <idValue>Input Current</idValue>
+    <idCode>IHV</idCode>
+        <idValue>Inherent Viscosity</idValue>
+    <idCode>II</idCode>
+        <idValue>Input Setup Time</idValue>
+    <idCode>IJ</idCode>
+        <idValue>Input Hold Time</idValue>
+    <idCode>IK</idCode>
+        <idValue>Indium</idValue>
+    <idCode>IL</idCode>
+        <idValue>Imperfections - Neps</idValue>
+    <idCode>IM</idCode>
+        <idValue>Iridium</idValue>
+    <idCode>IMP</idCode>
+        <idValue>Impurities</idValue>
+    <idCode>IN</idCode>
+        <idValue>Input Low Current</idValue>
+    <idCode>IND</idCode>
+        <idValue>Initial Deformation Point</idValue>
+    <idCode>INS</idCode>
+        <idValue>Insolubles</idValue>
+    <idCode>IO</idCode>
+        <idValue>Input High Current</idValue>
+    <idCode>IP</idCode>
+        <idValue>Input Leakage Current</idValue>
+    <idCode>IPI</idCode>
+        <idValue>Primary Irritation Index</idValue>
+    <idCode>IQ</idCode>
+        <idValue>Input Clamp Diode Voltage</idValue>
+    <idCode>IR</idCode>
+        <idValue>Ideal Diameter</idValue>
+    <idCode>IRA</idCode>
+        <idValue>Inclusion Rating</idValue>
+    <idCode>IS</idCode>
+        <idValue>Input High Voltage</idValue>
+    <idCode>IT</idCode>
+        <idValue>Interrupt Pulse Period</idValue>
+    <idCode>IU</idCode>
+        <idValue>Interrupt Setup Time</idValue>
+    <idCode>IV</idCode>
+        <idValue>Iodine</idValue>
+    <idCode>IW</idCode>
+        <idValue>Incrustation Factor</idValue>
+    <idCode>IX</idCode>
+        <idValue>Inside Diameter, Minimum</idValue>
+    <idCode>IY</idCode>
+        <idValue>Induction</idValue>
+    <idCode>IZ</idCode>
+        <idValue>Ingot Pound Size</idValue>
+    <idCode>JA</idCode>
+        <idValue>Junction Temperature</idValue>
+    <idCode>JOM</idCode>
+        <idValue>Jominy Hardenability</idValue>
+    <idCode>KA</idCode>
+        <idValue>Knoop</idValue>
+    <idCode>KB</idCode>
+        <idValue>Krypton</idValue>
+    <idCode>KN</idCode>
+        <idValue>K&amp;N Holdout</idValue>
+    <idCode>L</idCode>
+        <idValue>Legal Weight</idValue>
+    <idCode>L0</idCode>
+        <idValue>Leaf Grade</idValue>
+    <idCode>L1</idCode>
+        <idValue>Lights</idValue>
+    <idCode>LA</idCode>
+        <idValue>Lanthanum</idValue>
+    <idCode>LAI</idCode>
+        <idValue>Langlier Index</idValue>
+    <idCode>LB</idCode>
+        <idValue>Lithium</idValue>
+    <idCode>LC</idCode>
+        <idValue>Low Propagation Delay Time</idValue>
+    <idCode>LC5</idCode>
+        <idValue>Lethal Concentration, 50% (&quot;LC-50&quot;)</idValue>
+    <idCode>LCG</idCode>
+        <idValue>Longitudinal Center of Gravity</idValue>
+    <idCode>LD</idCode>
+        <idValue>Lawrencium</idValue>
+    <idCode>LD5</idCode>
+        <idValue>Lethal Dose, 50% (&quot;LD-50&quot;)</idValue>
+    <idCode>LDH</idCode>
+        <idValue>Limited Dome Height (LDH)</idValue>
+    <idCode>LE</idCode>
+        <idValue>Lutetium</idValue>
+    <idCode>LEF</idCode>
+        <idValue>Leaf</idValue>
+    <idCode>LF</idCode>
+        <idValue>Long Fibers</idValue>
+    <idCode>LG</idCode>
+        <idValue>Leg</idValue>
+    <idCode>LIR</idCode>
+        <idValue>Liquid Injection Test Rate</idValue>
+    <idCode>LIV</idCode>
+        <idValue>Limit Intrinsic Viscosity</idValue>
+    <idCode>LL</idCode>
+        <idValue>Long Leg</idValue>
+    <idCode>LLD</idCode>
+        <idValue>Light Load</idValue>
+    <idCode>LM</idCode>
+        <idValue>Length, Maximum</idValue>
+    <idCode>LN</idCode>
+        <idValue>Length</idValue>
+    <idCode>LO</idCode>
+        <idValue>Long Length</idValue>
+    <idCode>LOI</idCode>
+        <idValue>Loss on Ignition</idValue>
+    <idCode>LOS</idCode>
+        <idValue>Loss on Drying</idValue>
+    <idCode>LOW</idCode>
+        <idValue>Low Boilers</idValue>
+    <idCode>LP</idCode>
+        <idValue>Camber of Pattern Line</idValue>
+    <idCode>LPG</idCode>
+        <idValue>Liquefied Petroleum Gas Factor</idValue>
+    <idCode>LPL</idCode>
+        <idValue>Labeled Product Life</idValue>
+    <idCode>LPR</idCode>
+        <idValue>Line Pressure</idValue>
+    <idCode>LS</idCode>
+        <idValue>Short Leg</idValue>
+    <idCode>LSK</idCode>
+        <idValue>Length Shrinkage</idValue>
+    <idCode>LSS</idCode>
+        <idValue>Linear Sheet Swelling</idValue>
+    <idCode>LT</idCode>
+        <idValue>Lengthwise Spacing</idValue>
+    <idCode>LTD</idCode>
+        <idValue>Liner Top Depth</idValue>
+    <idCode>LW</idCode>
+        <idValue>Long Width</idValue>
+    <idCode>M</idCode>
+        <idValue>Minimum Weight (for Weight)</idValue>
+    <idCode>M1</idCode>
+        <idValue>Melt Range</idValue>
+    <idCode>M2</idCode>
+        <idValue>Maximum Differential Pressure</idValue>
+    <idCode>M3</idCode>
+        <idValue>Maximum Static Pressure</idValue>
+    <idCode>M4</idCode>
+        <idValue>Area</idValue>
+    <idCode>M5</idCode>
+        <idValue>Minimum Speed</idValue>
+    <idCode>M6</idCode>
+        <idValue>Maximum Speed</idValue>
+    <idCode>MA</idCode>
+        <idValue>Mean Average</idValue>
+    <idCode>MAT</idCode>
+        <idValue>Maturity</idValue>
+    <idCode>MB</idCode>
+        <idValue>Mendelevium</idValue>
+    <idCode>MC</idCode>
+        <idValue>Min./Max Cuttable Width</idValue>
+    <idCode>MCN</idCode>
+        <idValue>Magnetic Contamination</idValue>
+    <idCode>MD</idCode>
+        <idValue>Measurement Voltage</idValue>
+    <idCode>ME</idCode>
+        <idValue>Maximum Input Low Voltage</idValue>
+    <idCode>MEF</idCode>
+        <idValue>Meter Factor</idValue>
+    <idCode>MEL</idCode>
+        <idValue>Melt Time</idValue>
+    <idCode>MER</idCode>
+        <idValue>Efficient Rate-Reservoir</idValue>
+    <idCode>MF</idCode>
+        <idValue>Minimum Input High Voltage</idValue>
+    <idCode>MG</idCode>
+        <idValue>Mercury</idValue>
+    <idCode>MH</idCode>
+        <idValue>Melting Point</idValue>
+    <idCode>MHI</idCode>
+        <idValue>Highest Torque</idValue>
+    <idCode>MI</idCode>
+        <idValue>Minimum</idValue>
+    <idCode>MIC</idCode>
+        <idValue>Micronaire</idValue>
+    <idCode>MJ</idCode>
+        <idValue>Major Section (Stepped)</idValue>
+    <idCode>MK</idCode>
+        <idValue>Microseperometer (MSEP)</idValue>
+    <idCode>MM</idCode>
+        <idValue>Management</idValue>
+    <idCode>MN</idCode>
+        <idValue>Minimum Average</idValue>
+    <idCode>MO</idCode>
+        <idValue>Mottles</idValue>
+    <idCode>MOI</idCode>
+        <idValue>Moisture</idValue>
+    <idCode>MOR</idCode>
+        <idValue>Mortality</idValue>
+    <idCode>MP</idCode>
+        <idValue>Mullen Pop</idValue>
+    <idCode>MPR</idCode>
+        <idValue>Production Rate-Well</idValue>
+    <idCode>MQ</idCode>
+        <idValue>MCQuaid</idValue>
+    <idCode>MR</idCode>
+        <idValue>Module R (R Bar)</idValue>
+    <idCode>MS</idCode>
+        <idValue>Minor Section (Stepped)</idValue>
+    <idCode>MT</idCode>
+        <idValue>Moisture Content</idValue>
+    <idCode>MTD</idCode>
+        <idValue>Maximum Total Depth</idValue>
+    <idCode>MU</idCode>
+        <idValue>Multiplier</idValue>
+    <idCode>MUL</idCode>
+        <idValue>Mullen</idValue>
+    <idCode>MV</idCode>
+        <idValue>Maximum Average</idValue>
+    <idCode>MW</idCode>
+        <idValue>Molecular Weight</idValue>
+    <idCode>MX</idCode>
+        <idValue>Maximum</idValue>
+    <idCode>MY</idCode>
+        <idValue>Magnetizing Field</idValue>
+    <idCode>N</idCode>
+        <idValue>Actual Net Weight</idValue>
+    <idCode>NA</idCode>
+        <idValue>Number per Package</idValue>
+    <idCode>NB</idCode>
+        <idValue>Number per Bundle</idValue>
+    <idCode>NC</idCode>
+        <idValue>Number per Coil Group</idValue>
+    <idCode>ND</idCode>
+        <idValue>Neodymium</idValue>
+    <idCode>NEU</idCode>
+        <idValue>Neutralization Number</idValue>
+    <idCode>NF</idCode>
+        <idValue>Neon</idValue>
+    <idCode>NG</idCode>
+        <idValue>Nobelium</idValue>
+    <idCode>NH</idCode>
+        <idValue>Number of Items per Package Label</idValue>
+    <idCode>NI</idCode>
+        <idValue>Number of Splices per Package Label</idValue>
+    <idCode>NIL</idCode>
+        <idValue>Nil Ductility Test</idValue>
+    <idCode>NJ</idCode>
+        <idValue>Number of Sheets per Package Label</idValue>
+    <idCode>NK</idCode>
+        <idValue>Nesting Factor</idValue>
+    <idCode>NL</idCode>
+        <idValue>Number per Lift</idValue>
+    <idCode>NM</idCode>
+        <idValue>Number Pkgs. per Master Pack</idValue>
+    <idCode>NNW</idCode>
+        <idValue>Net Net Weight</idValue>
+    <idCode>NO</idCode>
+        <idValue>Nominal (Target, Aim)</idValue>
+    <idCode>NOC</idCode>
+        <idValue>Number of Cosigners</idValue>
+    <idCode>NON</idCode>
+        <idValue>Non-Volatile Matter</idValue>
+    <idCode>NOR</idCode>
+        <idValue>Number of References</idValue>
+    <idCode>NOX</idCode>
+        <idValue>NOx Emissions Performance</idValue>
+    <idCode>NP</idCode>
+        <idValue>Percent of Specified</idValue>
+    <idCode>NS</idCode>
+        <idValue>Number per Skid</idValue>
+    <idCode>NU</idCode>
+        <idValue>Number per Unit</idValue>
+    <idCode>NV</idCode>
+        <idValue>N Value</idValue>
+    <idCode>O</idCode>
+        <idValue>Excess Weight Over Maximum</idValue>
+    <idCode>O1</idCode>
+        <idValue>Orifice - Inside Diameter</idValue>
+    <idCode>OA</idCode>
+        <idValue>Offset</idValue>
+    <idCode>OAP</idCode>
+        <idValue>Observed American Petroleum Institute Gravity</idValue>
+    <idCode>OB</idCode>
+        <idValue>Osmium</idValue>
+    <idCode>OBT</idCode>
+        <idValue>Observed Temperature</idValue>
+    <idCode>OC</idCode>
+        <idValue>Output Low Voltage</idValue>
+    <idCode>OCG</idCode>
+        <idValue>Oil/Condensate Gravity</idValue>
+    <idCode>OCR</idCode>
+        <idValue>Oil/Condensate Test Rate</idValue>
+    <idCode>OD</idCode>
+        <idValue>Outside Diameter</idValue>
+    <idCode>ODR</idCode>
+        <idValue>Odor</idValue>
+    <idCode>OE</idCode>
+        <idValue>Output Low Current</idValue>
+    <idCode>OF</idCode>
+        <idValue>Output High Voltage</idValue>
+    <idCode>OG</idCode>
+        <idValue>Output High Current</idValue>
+    <idCode>OH</idCode>
+        <idValue>Overhead Height, Receiving Door</idValue>
+    <idCode>OI</idCode>
+        <idValue>Output Off Current Low</idValue>
+    <idCode>OIL</idCode>
+        <idValue>Oil</idValue>
+    <idCode>OJ</idCode>
+        <idValue>Output Off Current High</idValue>
+    <idCode>OK</idCode>
+        <idValue>Output Short-Circuit Current</idValue>
+    <idCode>OL</idCode>
+        <idValue>Output Disable Time from Low Level of a 3-State Output</idValue>
+    <idCode>OLE</idCode>
+        <idValue>Olefins</idValue>
+    <idCode>OM</idCode>
+        <idValue>Outside Diameter, Maximum</idValue>
+    <idCode>ON</idCode>
+        <idValue>Output Disable Time from High Level of a 3-State Output</idValue>
+    <idCode>OO</idCode>
+        <idValue>Output Enable Time from Low Level of a 3-State Output</idValue>
+    <idCode>OP</idCode>
+        <idValue>Openness</idValue>
+    <idCode>OQ</idCode>
+        <idValue>Output Enable Time from High Level of a 3-State Output</idValue>
+    <idCode>OR</idCode>
+        <idValue>Distance Between Outside Runners</idValue>
+    <idCode>ORC</idCode>
+        <idValue>Organic Carbon</idValue>
+    <idCode>OS</idCode>
+        <idValue>Open Circuits</idValue>
+    <idCode>OT</idCode>
+        <idValue>Output Delay Time</idValue>
+    <idCode>OTE</idCode>
+        <idValue>Others Each</idValue>
+    <idCode>OTH</idCode>
+        <idValue>Odor Threshold</idValue>
+    <idCode>OTT</idCode>
+        <idValue>Others Total</idValue>
+    <idCode>OV</idCode>
+        <idValue>Opacity</idValue>
+    <idCode>OW</idCode>
+        <idValue>Overall Width</idValue>
+    <idCode>OX</idCode>
+        <idValue>Ownership Share</idValue>
+    <idCode>OXI</idCode>
+        <idValue>Oxidizable Substance</idValue>
+    <idCode>OXS</idCode>
+        <idValue>Oxidizing Substance</idValue>
+    <idCode>OY</idCode>
+        <idValue>Operating Weight</idValue>
+    <idCode>P1</idCode>
+        <idValue>Price</idValue>
+    <idCode>PA</idCode>
+        <idValue>Package Separation</idValue>
+    <idCode>PAR</idCode>
+        <idValue>Particle Size</idValue>
+    <idCode>PB</idCode>
+        <idValue>Pressure</idValue>
+    <idCode>PBD</idCode>
+        <idValue>Plug Back Total Depth</idValue>
+    <idCode>PC</idCode>
+        <idValue>Per Hundred Linear Yards</idValue>
+    <idCode>PD</idCode>
+        <idValue>Platinum</idValue>
+    <idCode>PDE</idCode>
+        <idValue>Casing/Liner Tubing Depth</idValue>
+    <idCode>PDG</idCode>
+        <idValue>Pump Depth from Ground</idValue>
+    <idCode>PE</idCode>
+        <idValue>Potassium</idValue>
+    <idCode>PER</idCode>
+        <idValue>Magnetic Permeability</idValue>
+    <idCode>PF</idCode>
+        <idValue>Promethium</idValue>
+    <idCode>PFO</idCode>
+        <idValue>Perforation Feet Open</idValue>
+    <idCode>PG</idCode>
+        <idValue>Polonium</idValue>
+    <idCode>PH</idCode>
+        <idValue>Pulse Setup Time</idValue>
+    <idCode>PHA</idCode>
+        <idValue>pH</idValue>
+    <idCode>PHW</idCode>
+        <idValue>Hardwood Fiber</idValue>
+    <idCode>PI</idCode>
+        <idValue>Pulse Hold Time</idValue>
+    <idCode>PIC</idCode>
+        <idValue>Pick Off</idValue>
+    <idCode>PJ</idCode>
+        <idValue>Pulse Width</idValue>
+    <idCode>PK</idCode>
+        <idValue>Pulse Recovery Time</idValue>
+    <idCode>PL</idCode>
+        <idValue>Percent Defective</idValue>
+    <idCode>PM</idCode>
+        <idValue>Practice</idValue>
+    <idCode>PN</idCode>
+        <idValue>Palladium</idValue>
+    <idCode>PO</idCode>
+        <idValue>Percent of Order (-, +)</idValue>
+    <idCode>POC</idCode>
+        <idValue>Completion</idValue>
+    <idCode>POD</idCode>
+        <idValue>Physical Description - Outer Diameter</idValue>
+    <idCode>POP</idCode>
+        <idValue>Pour Point</idValue>
+    <idCode>PP</idCode>
+        <idValue>Powder/Paste Package Size</idValue>
+    <idCode>PPS</idCode>
+        <idValue>Proprietary Shade</idValue>
+    <idCode>PQ</idCode>
+        <idValue>Plutonium</idValue>
+    <idCode>PR</idCode>
+        <idValue>Praseodymium</idValue>
+    <idCode>PRE</idCode>
+        <idValue>Prior Experience</idValue>
+    <idCode>PRF</idCode>
+        <idValue>Pressure Factor</idValue>
+    <idCode>PRI</idCode>
+        <idValue>Product Index</idValue>
+    <idCode>PRL</idCode>
+        <idValue>Product Level</idValue>
+    <idCode>PRO</idCode>
+        <idValue>Processability</idValue>
+    <idCode>PRQ</idCode>
+        <idValue>Product Reportable Quantity</idValue>
+    <idCode>PRY</idCode>
+        <idValue>Porosity</idValue>
+    <idCode>PS</idCode>
+        <idValue>Protactinium</idValue>
+    <idCode>PSA</idCode>
+        <idValue>Percent Solution Actual</idValue>
+    <idCode>PSP</idCode>
+        <idValue>Past Performance</idValue>
+    <idCode>PSW</idCode>
+        <idValue>Softwood Fiber</idValue>
+    <idCode>PT</idCode>
+        <idValue>Pits</idValue>
+    <idCode>PU</idCode>
+        <idValue>Pressure Base</idValue>
+    <idCode>PV</idCode>
+        <idValue>Picks</idValue>
+    <idCode>PW</idCode>
+        <idValue>Purchased Width</idValue>
+    <idCode>PWA</idCode>
+        <idValue>Processed Waste</idValue>
+    <idCode>PWE</idCode>
+        <idValue>Physical Description - Weight</idValue>
+    <idCode>PWF</idCode>
+        <idValue>Power Factor</idValue>
+    <idCode>PX</idCode>
+        <idValue>Purity</idValue>
+    <idCode>PY</idCode>
+        <idValue>Percent of Water</idValue>
+    <idCode>PZ</idCode>
+        <idValue>Pipe Size Nominal</idValue>
+    <idCode>Q</idCode>
+        <idValue>Volatile Organic Compounds Plus Water</idValue>
+    <idCode>QA</idCode>
+        <idValue>Quality Index</idValue>
+    <idCode>QB</idCode>
+        <idValue>Quantity or Loading Average</idValue>
+    <idCode>QC</idCode>
+        <idValue>Quantity or Loading Maximum</idValue>
+    <idCode>QD</idCode>
+        <idValue>Quality or Concentration Average</idValue>
+    <idCode>QE</idCode>
+        <idValue>Quality or Concentration Minimum</idValue>
+    <idCode>QF</idCode>
+        <idValue>Quality or Concentration Maximum</idValue>
+    <idCode>QL</idCode>
+        <idValue>Quality</idValue>
+    <idCode>QUR</idCode>
+        <idValue>Reportable Quantity</idValue>
+    <idCode>R</idCode>
+        <idValue>Per Unit Dunnage</idValue>
+    <idCode>R1</idCode>
+        <idValue>Hemoglobin</idValue>
+    <idCode>R10</idCode>
+        <idValue>Relative Fraction of Pure Long-Chain Cellulose</idValue>
+    <idCode>R18</idCode>
+        <idValue>Relative Fraction of Total Cellulose</idValue>
+    <idCode>R2</idCode>
+        <idValue>Hematocrit</idValue>
+    <idCode>R3</idCode>
+        <idValue>Epoetin Starting Dosage</idValue>
+    <idCode>R4</idCode>
+        <idValue>Creatin</idValue>
+    <idCode>R7</idCode>
+        <idValue>Speed</idValue>
+    <idCode>R8</idCode>
+        <idValue>Speed Limit</idValue>
+    <idCode>RA</idCode>
+        <idValue>Relative Humidity</idValue>
+    <idCode>RAD</idCode>
+        <idValue>Radius</idValue>
+    <idCode>RAF</idCode>
+        <idValue>Roof Adjustment Factor</idValue>
+    <idCode>RB</idCode>
+        <idValue>Range Value</idValue>
+    <idCode>RC</idCode>
+        <idValue>Radius of Corner</idValue>
+    <idCode>RD</idCode>
+        <idValue>Readpoint</idValue>
+    <idCode>RE</idCode>
+        <idValue>Ream Weight</idValue>
+    <idCode>REA</idCode>
+        <idValue>Reactivity</idValue>
+    <idCode>RED</idCode>
+        <idValue>Reducing Substance</idValue>
+    <idCode>REF</idCode>
+        <idValue>Refining</idValue>
+    <idCode>REI</idCode>
+        <idValue>Refractive Index</idValue>
+    <idCode>REL</idCode>
+        <idValue>Reflectance</idValue>
+    <idCode>RES</idCode>
+        <idValue>Resistance</idValue>
+    <idCode>RF</idCode>
+        <idValue>Resistivity</idValue>
+    <idCode>RG</idCode>
+        <idValue>Radium</idValue>
+    <idCode>RH</idCode>
+        <idValue>Rhenium</idValue>
+    <idCode>RI</idCode>
+        <idValue>Rubidium</idValue>
+    <idCode>RJ</idCode>
+        <idValue>Rockwell-C</idValue>
+    <idCode>RK</idCode>
+        <idValue>Rockwell-B</idValue>
+    <idCode>RL</idCode>
+        <idValue>Reduction Ration</idValue>
+    <idCode>RM</idCode>
+        <idValue>RMS Range (Side 1)</idValue>
+    <idCode>RN</idCode>
+        <idValue>Required Interrupt Release</idValue>
+    <idCode>RO</idCode>
+        <idValue>Reset Pulse Width</idValue>
+    <idCode>ROH</idCode>
+        <idValue>Rear Over-Hang of Vehicle</idValue>
+    <idCode>ROX</idCode>
+        <idValue>Oxygen from a Renewable Oxygenate</idValue>
+    <idCode>RP</idCode>
+        <idValue>Reduction of Area</idValue>
+    <idCode>RQ</idCode>
+        <idValue>Radon</idValue>
+    <idCode>RR</idCode>
+        <idValue>Reduction Ratio</idValue>
+    <idCode>RS</idCode>
+        <idValue>RMS Range (Side 2)</idValue>
+    <idCode>RSZ</idCode>
+        <idValue>Roll Size</idValue>
+    <idCode>RT</idCode>
+        <idValue>Rounds Ammunition/Military</idValue>
+    <idCode>RTB</idCode>
+        <idValue>Reporting Temperature Base</idValue>
+    <idCode>RU</idCode>
+        <idValue>Rhodium</idValue>
+    <idCode>RUD</idCode>
+        <idValue>Usage Deviation (Applies to Kilowatt Hours, Kilowatt Demand and Reactive Demand)</idValue>
+    <idCode>RV</idCode>
+        <idValue>Ruthenium</idValue>
+    <idCode>RVP</idCode>
+        <idValue>Reid Vapor Pressure</idValue>
+    <idCode>RW</idCode>
+        <idValue>Rolling Width</idValue>
+    <idCode>RX</idCode>
+        <idValue>Ridges</idValue>
+    <idCode>RY</idCode>
+        <idValue>Ratio</idValue>
+    <idCode>S</idCode>
+        <idValue>State Weight</idValue>
+    <idCode>S1</idCode>
+        <idValue>Smoothness</idValue>
+    <idCode>S10</idCode>
+        <idValue>Pulp Impurities</idValue>
+    <idCode>S12</idCode>
+        <idValue>Start</idValue>
+    <idCode>S18</idCode>
+        <idValue>Hemicellulose</idValue>
+    <idCode>S2</idCode>
+        <idValue>Selvedge on Beam</idValue>
+    <idCode>S3</idCode>
+        <idValue>Sheffield Smoothness</idValue>
+    <idCode>S4</idCode>
+        <idValue>Surface Strength</idValue>
+    <idCode>S5</idCode>
+        <idValue>Stiffness</idValue>
+    <idCode>S6</idCode>
+        <idValue>Saturation</idValue>
+    <idCode>S7</idCode>
+        <idValue>Sediment</idValue>
+    <idCode>S8</idCode>
+        <idValue>Solubility</idValue>
+    <idCode>S9</idCode>
+        <idValue>Site Atmospheric Pressure</idValue>
+    <idCode>SA</idCode>
+        <idValue>Sort Code CIE LAB</idValue>
+    <idCode>SAP</idCode>
+        <idValue>Saponification Number</idValue>
+    <idCode>SB</idCode>
+        <idValue>Sort Code CMC</idValue>
+    <idCode>SC</idCode>
+        <idValue>Schedule Number (Pipe Size)</idValue>
+    <idCode>SCH</idCode>
+        <idValue>Schedule</idValue>
+    <idCode>SD</idCode>
+        <idValue>Strength</idValue>
+    <idCode>SE</idCode>
+        <idValue>Selvage Left</idValue>
+    <idCode>SEV</idCode>
+        <idValue>Severity</idValue>
+    <idCode>SF</idCode>
+        <idValue>Samarium</idValue>
+    <idCode>SG</idCode>
+        <idValue>Slit Width</idValue>
+    <idCode>SH</idCode>
+        <idValue>Strontium</idValue>
+    <idCode>SHA</idCode>
+        <idValue>Shelf Life</idValue>
+    <idCode>SI</idCode>
+        <idValue>Supply Current</idValue>
+    <idCode>SIL</idCode>
+        <idValue>Silica (Silicon Dioxide)</idValue>
+    <idCode>SJ</idCode>
+        <idValue>Short Circuits</idValue>
+    <idCode>SK</idCode>
+        <idValue>Shrinkage</idValue>
+    <idCode>SL</idCode>
+        <idValue>Short Length</idValue>
+    <idCode>SLD</idCode>
+        <idValue>Solderability</idValue>
+    <idCode>SLI</idCode>
+        <idValue>Slagging Index</idValue>
+    <idCode>SM</idCode>
+        <idValue>Shear</idValue>
+    <idCode>SMB</idCode>
+        <idValue>SAM-B Rating</idValue>
+    <idCode>SMD</idCode>
+        <idValue>SAM-D Rating</idValue>
+    <idCode>SN</idCode>
+        <idValue>Stain</idValue>
+    <idCode>SO</idCode>
+        <idValue>Sort Code CIE LCH</idValue>
+    <idCode>SOD</idCode>
+        <idValue>Solids</idValue>
+    <idCode>SOF</idCode>
+        <idValue>Softening Range</idValue>
+    <idCode>SP</idCode>
+        <idValue>Splinter Count</idValue>
+    <idCode>SPG</idCode>
+        <idValue>Specific Gravity</idValue>
+    <idCode>SPR</idCode>
+        <idValue>Separator Pressure</idValue>
+    <idCode>SQ</idCode>
+        <idValue>Shipped Quantity</idValue>
+    <idCode>SR</idCode>
+        <idValue>Selvage Right</idValue>
+    <idCode>SS</idCode>
+        <idValue>Silver</idValue>
+    <idCode>ST</idCode>
+        <idValue>Stop Recovery Startup Time</idValue>
+    <idCode>STA</idCode>
+        <idValue>Stability</idValue>
+    <idCode>STL</idCode>
+        <idValue>Short Term Exposure Limit</idValue>
+    <idCode>STP</idCode>
+        <idValue>Staple</idValue>
+    <idCode>SU</idCode>
+        <idValue>Shipped Units</idValue>
+    <idCode>SUM</idCode>
+        <idValue>Suspended Matter</idValue>
+    <idCode>SUR</idCode>
+        <idValue>Surface Roughness</idValue>
+    <idCode>SUT</idCode>
+        <idValue>Surface Tension</idValue>
+    <idCode>SV</idCode>
+        <idValue>Scandium</idValue>
+    <idCode>SVL</idCode>
+        <idValue>Survival</idValue>
+    <idCode>SW</idCode>
+        <idValue>Short Width</idValue>
+    <idCode>SX</idCode>
+        <idValue>Sodium</idValue>
+    <idCode>SXX</idCode>
+        <idValue>S10 Minus S18 Value</idValue>
+    <idCode>SY</idCode>
+        <idValue>Service Interrupt Duration</idValue>
+    <idCode>SZ</idCode>
+        <idValue>Skid Height</idValue>
+    <idCode>T</idCode>
+        <idValue>Tare Weight</idValue>
+    <idCode>T1</idCode>
+        <idValue>Tire Pressure</idValue>
+    <idCode>T2</idCode>
+        <idValue>Tube - Inside Diameter</idValue>
+    <idCode>T3</idCode>
+        <idValue>Technical</idValue>
+    <idCode>T4</idCode>
+        <idValue>Single End Break</idValue>
+    <idCode>T5</idCode>
+        <idValue>Skein Break</idValue>
+    <idCode>T50</idCode>
+        <idValue>T50</idValue>
+    <idCode>T90</idCode>
+        <idValue>T90</idValue>
+    <idCode>TA</idCode>
+        <idValue>Thickness Heavy End (Tapered/Stepped)</idValue>
+    <idCode>TAS</idCode>
+        <idValue>Taste</idValue>
+    <idCode>TB</idCode>
+        <idValue>Thickness Small End (Tapered/Stepped)</idValue>
+    <idCode>TC</idCode>
+        <idValue>Temperature</idValue>
+    <idCode>TCL</idCode>
+        <idValue>Tire Tread Contact Length</idValue>
+    <idCode>TD</idCode>
+        <idValue>Thin Aluminas</idValue>
+    <idCode>TDP</idCode>
+        <idValue>Perforation Top Depth</idValue>
+    <idCode>TE</idCode>
+        <idValue>Tenacity</idValue>
+    <idCode>TEE</idCode>
+        <idValue>Autodecomposition Temperature</idValue>
+    <idCode>TES</idCode>
+        <idValue>Storage Temperature</idValue>
+    <idCode>TEX</idCode>
+        <idValue>Texture</idValue>
+    <idCode>TF</idCode>
+        <idValue>Tensile</idValue>
+    <idCode>TG</idCode>
+        <idValue>Thin Sulfides</idValue>
+    <idCode>TH</idCode>
+        <idValue>Thickness</idValue>
+    <idCode>TI</idCode>
+        <idValue>Thin Silicates</idValue>
+    <idCode>TJ</idCode>
+        <idValue>Total Supply Current</idValue>
+    <idCode>TK</idCode>
+        <idValue>Timer Pulse Width</idValue>
+    <idCode>TL</idCode>
+        <idValue>Tapered/Stepped Length Type</idValue>
+    <idCode>TM</idCode>
+        <idValue>Length Type: Multiples</idValue>
+    <idCode>TN</idCode>
+        <idValue>Timer Period</idValue>
+    <idCode>TO</idCode>
+        <idValue>Terbium</idValue>
+    <idCode>TOA</idCode>
+        <idValue>Aquatic Toxicity</idValue>
+    <idCode>TOR</idCode>
+        <idValue>Torque</idValue>
+    <idCode>TOX</idCode>
+        <idValue>Toxic Emissions Performance</idValue>
+    <idCode>TP</idCode>
+        <idValue>Thorium</idValue>
+    <idCode>TPF</idCode>
+        <idValue>Temperature Factor</idValue>
+    <idCode>TPL</idCode>
+        <idValue>Tubing Pressure - Flowing</idValue>
+    <idCode>TPQ</idCode>
+        <idValue>Threshold Planning Quantity</idValue>
+    <idCode>TPS</idCode>
+        <idValue>Tubing Pressure - Shutin</idValue>
+    <idCode>TQ</idCode>
+        <idValue>Thin Globular Oxides</idValue>
+    <idCode>TR</idCode>
+        <idValue>Length Type: Random</idValue>
+    <idCode>TRA</idCode>
+        <idValue>Trash Area</idValue>
+    <idCode>TRC</idCode>
+        <idValue>Trash Count</idValue>
+    <idCode>TRD</idCode>
+        <idValue>Tire Diameter</idValue>
+    <idCode>TRN</idCode>
+        <idValue>Transmittance</idValue>
+    <idCode>TS</idCode>
+        <idValue>Length Type: Specific</idValue>
+    <idCode>TSZ</idCode>
+        <idValue>Trim Size</idValue>
+    <idCode>TT</idCode>
+        <idValue>Time</idValue>
+    <idCode>TTL</idCode>
+        <idValue>Trailer Tongue Length</idValue>
+    <idCode>TU</idCode>
+        <idValue>Technetium</idValue>
+    <idCode>TUR</idCode>
+        <idValue>Turbidity</idValue>
+    <idCode>TV</idCode>
+        <idValue>Thallium</idValue>
+    <idCode>TVD</idCode>
+        <idValue>Maximum True Vertical Depth</idValue>
+    <idCode>TW</idCode>
+        <idValue>Top</idValue>
+    <idCode>TWD</idCode>
+        <idValue>Tire Width</idValue>
+    <idCode>TX</idCode>
+        <idValue>Thulium</idValue>
+    <idCode>TY</idCode>
+        <idValue>Tear Strength</idValue>
+    <idCode>U</idCode>
+        <idValue>Weight per Unit</idValue>
+    <idCode>UA</idCode>
+        <idValue>Uranium</idValue>
+    <idCode>UCB</idCode>
+        <idValue>Cube</idValue>
+    <idCode>UG</idCode>
+        <idValue>Usage</idValue>
+    <idCode>UNI</idCode>
+        <idValue>Uniformity</idValue>
+    <idCode>UNK</idCode>
+        <idValue>Unknowns</idValue>
+    <idCode>VAD</idCode>
+        <idValue>Vapor Density</idValue>
+    <idCode>VAP</idCode>
+        <idValue>Vapor Pressure</idValue>
+    <idCode>VCG</idCode>
+        <idValue>Vertical Center of Gravity</idValue>
+    <idCode>VH</idCode>
+        <idValue>Height, Van Door</idValue>
+    <idCode>VIN</idCode>
+        <idValue>Vinyl</idValue>
+    <idCode>VIS</idCode>
+        <idValue>Viscosity</idValue>
+    <idCode>VO</idCode>
+        <idValue>Voltage</idValue>
+    <idCode>VOC</idCode>
+        <idValue>VOC Emissions Performance</idValue>
+    <idCode>VOL</idCode>
+        <idValue>Volume</idValue>
+    <idCode>VOT</idCode>
+        <idValue>Volatiles</idValue>
+    <idCode>VOV</idCode>
+        <idValue>Volatiles by Volume</idValue>
+    <idCode>VOW</idCode>
+        <idValue>Volatiles by Weight</idValue>
+    <idCode>VSO</idCode>
+        <idValue>Volume Split to Others</idValue>
+    <idCode>VW</idCode>
+        <idValue>Width, Van Door</idValue>
+    <idCode>VWT</idCode>
+        <idValue>Volume Weight</idValue>
+    <idCode>WA</idCode>
+        <idValue>Weight per Unit of Area</idValue>
+    <idCode>WB</idCode>
+        <idValue>Web</idValue>
+    <idCode>WC</idCode>
+        <idValue>Web Depth/Height</idValue>
+    <idCode>WD</idCode>
+        <idValue>Width</idValue>
+    <idCode>WDE</idCode>
+        <idValue>Water Depth</idValue>
+    <idCode>WE</idCode>
+        <idValue>Wolfram</idValue>
+    <idCode>WEL</idCode>
+        <idValue>Weight Loss</idValue>
+    <idCode>WF</idCode>
+        <idValue>Wait Recovery Startup Time</idValue>
+    <idCode>WH</idCode>
+        <idValue>Whiteness</idValue>
+    <idCode>WI</idCode>
+        <idValue>Winding Loss</idValue>
+    <idCode>WL</idCode>
+        <idValue>Wall Thickness</idValue>
+    <idCode>WM</idCode>
+        <idValue>Width, Maximum</idValue>
+    <idCode>WOD</idCode>
+        <idValue>Water-Oil Distribution Coefficient</idValue>
+    <idCode>WPF</idCode>
+        <idValue>Wellhead Pressure-Flowing</idValue>
+    <idCode>WPL</idCode>
+        <idValue>Water/Product Level</idValue>
+    <idCode>WPS</idCode>
+        <idValue>Wellhead Pressure Shutin</idValue>
+    <idCode>WR</idCode>
+        <idValue>Wrinkles</idValue>
+    <idCode>WRA</idCode>
+        <idValue>Water Test Rate</idValue>
+    <idCode>WSK</idCode>
+        <idValue>Width Shrinkage</idValue>
+    <idCode>WT</idCode>
+        <idValue>Weight</idValue>
+    <idCode>WTB</idCode>
+        <idValue>Water/Tank Bottom Level</idValue>
+    <idCode>WU</idCode>
+        <idValue>Weight per Unit of Length</idValue>
+    <idCode>WX</idCode>
+        <idValue>Wax Pick</idValue>
+    <idCode>X</idCode>
+        <idValue>Maximum Weight (for Rate)</idValue>
+    <idCode>XA</idCode>
+        <idValue>Xenon</idValue>
+    <idCode>XH</idCode>
+        <idValue>Side Height, Flat Bed With Removable Sides</idValue>
+    <idCode>XP</idCode>
+        <idValue>Specified</idValue>
+    <idCode>XQ</idCode>
+        <idValue>Squareness</idValue>
+    <idCode>XZ</idCode>
+        <idValue>Spool Size</idValue>
+    <idCode>YA</idCode>
+        <idValue>Yttrium</idValue>
+    <idCode>YB</idCode>
+        <idValue>Yield</idValue>
+    <idCode>YC</idCode>
+        <idValue>Ytterbium</idValue>
+    <idCode>YD</idCode>
+        <idValue>Yarn Count</idValue>
+    <idCode>ZA</idCode>
+        <idValue>Power Factor</idValue>
+    <idCode>ZAL</idCode>
+        <idValue>Aluminum</idValue>
+    <idCode>ZAS</idCode>
+        <idValue>Arsenic</idValue>
+    <idCode>ZB</idCode>
+        <idValue>Boron</idValue>
+    <idCode>ZBI</idCode>
+        <idValue>Bismuth</idValue>
+    <idCode>ZBT</idCode>
+        <idValue>N-Butane</idValue>
+    <idCode>ZBZ</idCode>
+        <idValue>Benzene</idValue>
+    <idCode>ZC</idCode>
+        <idValue>Carbon</idValue>
+    <idCode>ZCA</idCode>
+        <idValue>Calcium</idValue>
+    <idCode>ZCB</idCode>
+        <idValue>Columbium</idValue>
+    <idCode>ZCD</idCode>
+        <idValue>Carbon Dioxide</idValue>
+    <idCode>ZCE</idCode>
+        <idValue>Cerium</idValue>
+    <idCode>ZCO</idCode>
+        <idValue>Cobalt</idValue>
+    <idCode>ZCR</idCode>
+        <idValue>Chromium</idValue>
+    <idCode>ZCU</idCode>
+        <idValue>Copper</idValue>
+    <idCode>ZD</idCode>
+        <idValue>Load Factor</idValue>
+    <idCode>ZET</idCode>
+        <idValue>Ethane</idValue>
+    <idCode>ZF</idCode>
+        <idValue>Sulfate Sulfur</idValue>
+    <idCode>ZFE</idCode>
+        <idValue>Iron</idValue>
+    <idCode>ZFL</idCode>
+        <idValue>Newspaper--Full Page</idValue>
+    <idCode>ZFS</idCode>
+        <idValue>Iron plus Silicon</idValue>
+    <idCode>ZG</idCode>
+        <idValue>Organic Sulfur</idValue>
+    <idCode>ZGE</idCode>
+        <idValue>Germanium</idValue>
+    <idCode>ZH</idCode>
+        <idValue>Hydrogen</idValue>
+    <idCode>ZHP</idCode>
+        <idValue>Heptane</idValue>
+    <idCode>ZHS</idCode>
+        <idValue>Hydrogen Sulfide</idValue>
+    <idCode>ZHX</idCode>
+        <idValue>Hexane</idValue>
+    <idCode>ZIB</idCode>
+        <idValue>I-Butane</idValue>
+    <idCode>ZIP</idCode>
+        <idValue>I-Pentane</idValue>
+    <idCode>ZMG</idCode>
+        <idValue>Magnesium</idValue>
+    <idCode>ZMN</idCode>
+        <idValue>Manganese</idValue>
+    <idCode>ZMO</idCode>
+        <idValue>Molybdenum</idValue>
+    <idCode>ZMT</idCode>
+        <idValue>Methane</idValue>
+    <idCode>ZN</idCode>
+        <idValue>Nitrogen</idValue>
+    <idCode>ZNB</idCode>
+        <idValue>Niobium</idValue>
+    <idCode>ZNI</idCode>
+        <idValue>Nickel</idValue>
+    <idCode>ZNP</idCode>
+        <idValue>Neo-Pentane</idValue>
+    <idCode>ZO</idCode>
+        <idValue>Oxygen</idValue>
+    <idCode>ZOC</idCode>
+        <idValue>Octane</idValue>
+    <idCode>ZP</idCode>
+        <idValue>Phosphorous</idValue>
+    <idCode>ZPB</idCode>
+        <idValue>Lead</idValue>
+    <idCode>ZPP</idCode>
+        <idValue>Propane</idValue>
+    <idCode>ZPT</idCode>
+        <idValue>N-Pentane</idValue>
+    <idCode>ZR</idCode>
+        <idValue>Pyritic Sulfur</idValue>
+    <idCode>ZS</idCode>
+        <idValue>Sulfur</idValue>
+    <idCode>ZSB</idCode>
+        <idValue>Antimony</idValue>
+    <idCode>ZSE</idCode>
+        <idValue>Selenium</idValue>
+    <idCode>ZSI</idCode>
+        <idValue>Silicon</idValue>
+    <idCode>ZSN</idCode>
+        <idValue>Tin</idValue>
+    <idCode>ZTA</idCode>
+        <idValue>Tantalum</idValue>
+    <idCode>ZTB</idCode>
+        <idValue>Newspaper--Tabloid Page</idValue>
+    <idCode>ZTE</idCode>
+        <idValue>Tellurium</idValue>
+    <idCode>ZTI</idCode>
+        <idValue>Titanium</idValue>
+    <idCode>ZV</idCode>
+        <idValue>Vanadium</idValue>
+    <idCode>ZW</idCode>
+        <idValue>Tungsten</idValue>
+    <idCode>ZZN</idCode>
+        <idValue>Zinc</idValue>
+    <idCode>ZZR</idCode>
+        <idValue>Zirconium</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

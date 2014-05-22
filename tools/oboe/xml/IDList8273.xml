@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>ADR</idCode>
+        <idValue>European agreement on the international carriage of dangerous goods on road (ADR)</idValue>
+    <idCode>ADS</idCode>
+        <idValue>NDR European agreement for the transport of dangerous goods on the river Rhine</idValue>
+    <idCode>AGS</idCode>
+        <idValue>DE, ADR and GGVS combined regulations for combined transport</idValue>
+    <idCode>ANR</idCode>
+        <idValue>ADNR, Autorisation de transport de matieres Dangereuses pour la Navigation sur le Rhin</idValue>
+    <idCode>ARD</idCode>
+        <idValue>DE, ARD and RID - Combined regulations for combined transport</idValue>
+    <idCode>CFR</idCode>
+        <idValue>49 code of federal regulations</idValue>
+    <idCode>COM</idCode>
+        <idValue>DE, ADR, RID, GGVS and GGVE - Combined regulations for combined transport</idValue>
+    <idCode>GVE</idCode>
+        <idValue>DE, GGVE (Gefahrgutverordnung Eisenbahn)</idValue>
+    <idCode>GVS</idCode>
+        <idValue>DE, GGVS (Gefahrgutverordnung Strasse)</idValue>
+    <idCode>ICA</idCode>
+        <idValue>IATA ICAO</idValue>
+    <idCode>IMD</idCode>
+        <idValue>IMO IMDG code</idValue>
+    <idCode>RGE</idCode>
+        <idValue>DE, RID and GGVE, Combined regulations for combined transport on rails</idValue>
+    <idCode>RID</idCode>
+        <idValue>Railroad dangerous goods book (RID)</idValue>
+    <idCode>TEC</idCode>
+        <idValue>Transport emergency trem card</idValue>
+    <idCode>UI</idCode>
+        <idValue>UK IMO book</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually defined</idValue>
+</idList>

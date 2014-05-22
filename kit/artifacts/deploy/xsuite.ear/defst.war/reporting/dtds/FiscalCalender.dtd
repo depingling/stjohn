@@ -1,0 +1,30 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT FiscalCalenderList (FiscalCalender)+>
+<!ELEMENT FiscalCalender (,BusEntityId,AddBy,AddDate,EffDate,FiscalYear,Mmdd1,Mmdd10,Mmdd11,Mmdd12,Mmdd13,Mmdd2,Mmdd3,Mmdd4,Mmdd5,Mmdd6,Mmdd7,Mmdd8,Mmdd9,ModBy,ModDate,PeriodCd,ShortDesc)>
+<!ATTLIST FiscalCalender Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT EffDate (#PCDATA)>
+<!ELEMENT FiscalYear (#PCDATA)>
+<!ELEMENT Mmdd1 (#PCDATA)>
+<!ELEMENT Mmdd10 (#PCDATA)>
+<!ELEMENT Mmdd11 (#PCDATA)>
+<!ELEMENT Mmdd12 (#PCDATA)>
+<!ELEMENT Mmdd13 (#PCDATA)>
+<!ELEMENT Mmdd2 (#PCDATA)>
+<!ELEMENT Mmdd3 (#PCDATA)>
+<!ELEMENT Mmdd4 (#PCDATA)>
+<!ELEMENT Mmdd5 (#PCDATA)>
+<!ELEMENT Mmdd6 (#PCDATA)>
+<!ELEMENT Mmdd7 (#PCDATA)>
+<!ELEMENT Mmdd8 (#PCDATA)>
+<!ELEMENT Mmdd9 (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT PeriodCd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

@@ -1,0 +1,12 @@
+testwithnumatend1
+1testwithnumatbeging
+good  st
+good  st# with special char
+good  dr
+good   LN
+good   Ave
+good  strEet more text
+good  circle
+good  pickup somthing else
+good  rd
+good  road

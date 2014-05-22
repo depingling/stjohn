@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>ASB</idCode>
+        <idValue>ASCII-Baudot Filter</idValue>
+    <idCode>ASC</idCode>
+        <idValue>ASCII Filter</idValue>
+    <idCode>B64</idCode>
+        <idValue>Base 64</idValue>
+    <idCode>HDC</idCode>
+        <idValue>Hexadecimal Filter</idValue>
+    <idCode>NOF</idCode>
+        <idValue>No Filter</idValue>
+    <idCode>R64</idCode>
+        <idValue>Radix 64</idValue>
+    <idCode>UUE</idCode>
+        <idValue>UUencoding</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

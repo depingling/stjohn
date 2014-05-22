@@ -1,0 +1,49 @@
+<project name="Reports Utility" default="compile" basedir=".">
+    <path id="project.class.path">
+        <pathelement path="../../../../kit"/>
+    </path>
+   <property name="appname" value="xsuite"/>
+  
+
+   <property name="src.dir" value="."/>
+   <property name="build.dir" value="classes"/>
+   <property name="install.dir" value="../../../../../util"/>
+   <property file="../../../../installation.properties" />
+
+   <target name="compile">
+   <mkdir dir="${build.dir}"/>
+   <javac srcdir="${src.dir}"
+      destdir="${build.dir}"
+      debug="on"
+      deprecation="on"
+      optimize="off"
+      includes="*"
+   >
+          <classpath refid="project.class.path" />
+    </javac>
+   </target>
+
+   <target name="install" depends="compile">
+   <filter filtersfile="../../../../installation.properties" />
+
+   <mkdir dir="${install.dir}"/>
+        <copy todir="${install.dir}">
+            <fileset dir="${build.dir}" />
+        </copy>
+        <copy file="synchjc.sh" todir="${install.dir}"
+          overwrite="yes" filtering="yes" />
+        <copy file="stage-rep.sh" todir="${install.dir}"
+          overwrite="yes" filtering="yes" />
+        <copy file="stage-rep-db.sh" todir="${install.dir}"
+          overwrite="yes" filtering="yes" />
+        <copy file="check-reporting-users.sh" todir="${install.dir}"
+          overwrite="yes" filtering="yes" />
+          <copy file="tempLogShipToAddr.sh" todir="${install.dir}"
+          overwrite="yes" filtering="yes" />
+          
+        <copy file="catmgr.sh" todir="${install.dir}"/>
+        <copy file="sys-agent.sh" todir="${install.dir}"/>
+        <copy file="web_fetch.pl" todir="${install.dir}"/>
+   </target>
+
+</project>

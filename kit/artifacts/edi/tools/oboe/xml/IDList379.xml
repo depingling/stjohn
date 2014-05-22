@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,January 17, 2008, -->
+<idList>
+    <idCode>AB</idCode>
+        <idValue>Alternate Bid</idValue>
+    <idCode>BF</idCode>
+        <idValue>Best and Final</idValue>
+    <idCode>BI</idCode>
+        <idValue>Bid Without Exception</idValue>
+    <idCode>BW</idCode>
+        <idValue>Bid With Exception (Request for Information)</idValue>
+    <idCode>DQ</idCode>
+        <idValue>Decline to Quote</idValue>
+    <idCode>OM</idCode>
+        <idValue>One of Multiple</idValue>
+    <idCode>RE</idCode>
+        <idValue>Replacement</idValue>
+    <idCode>RT</idCode>
+        <idValue>Request for Time Extension</idValue>
+    <idCode>UQ</idCode>
+        <idValue>Unable to Quote</idValue>
+</idList>

@@ -1,0 +1,14 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT SiteWorkflowList (SiteWorkflow)+>
+<!ELEMENT SiteWorkflow (,SiteId,WorkflowId,AddBy,AddDate,ModBy,ModDate)>
+<!ATTLIST SiteWorkflow Id ID #REQUIRED>
+<!ELEMENT SiteId (#PCDATA)>
+<!ELEMENT WorkflowId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

@@ -1,0 +1,15 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+
+        <report>
+                <category>DBM</category>
+                <name>DMSI to Cleanwise Missing Orders</name>
+                <emailrecipient>bstevens@espendwise.com,tzelano@espendwise.com,msonavane@espendwise.com,jriendeau@espendwise.com</emailrecipient>
+                <email-message>DMSI to Cleanwise orders that are not in Cleanwise</email-message>
+                <send-only-if-data>true</send-only-if-data>
+        </report>
+</xml>

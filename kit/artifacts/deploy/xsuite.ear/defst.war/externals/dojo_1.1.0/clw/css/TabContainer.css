@@ -1,0 +1,78 @@
+
+/* Tabs */
+
+.dijitTabPaneWrapper {
+	z-index:0;
+	overflow: hidden;
+	clear: both;	/* needed for doLayout=false mode */
+    background:#ccc;
+	border:1px outset #ccc;
+    vertical-align:top;
+}
+
+.dijitTab {
+	position:relative;
+	float:left;
+	cursor:pointer;
+	white-space:nowrap;
+	z-index:3;
+}
+
+.dijitTabContainer .dijitAlignLeft .dijitTab,
+.dijitTabContainer .dijitAlignRight .dijitTab {
+	float:none;
+}
+
+.dijitTabInnerDiv {
+	position:relative;
+}
+
+
+.dijitTab {
+	font-size:12px;
+    font-weight:normal;
+    line-height:normal;
+	margin-right:5px;	/* space between one tab and the next in top/bottom mode */
+	padding:0px;  	background:#ccc;
+    border:1px ridge #cccccc;
+    border-bottom:0px ridge #cccccc;
+
+}
+
+ .dijitAlignLeft .dijitTab,
+ .dijitAlignRight .dijitTab {
+	margin-right:0px;
+	margin-bottom:5px;	/* space between one tab and the next in left/right mode */
+}
+
+ .dijitTabInnerDiv {
+	padding:6px 20px 4px 10px;
+}
+
+ .dijitTabHover,
+ .dijitTabCloseButtonHover {
+	color: #243C5F;
+
+}
+
+ .dijitTabChecked,
+ .dijitTabCloseButtonChecked
+{
+	/* the selected tab (with or without hover) */
+	border:2px outset #cccccc;
+    border-bottom:0;
+    background-color:#ccc;
+	background-image:none;
+    margin-bottom:-1px;
+    font-weight:bold;
+
+}
+
+
+
+ .dijitAlignBottom .dijitTabChecked,
+ .dijitAlignBottom .dijitTabCloseButtonChecked{
+	-moz-border-radius:2px 2px 0px 0px;	/* eliminate some border detritrus on moz */
+}
+
+

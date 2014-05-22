@@ -1,0 +1,19 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+		
+		<report>
+               <category>Customer</category>
+               <name>Daily Back Order Report</name>
+               <emailrecipient>jwenarsky@allanindustries.com,allanbackorders@ipaper.com</emailrecipient>
+			   <param name="SINGLE_DAYS_BACK_7">@LAST_WEEKDAY@</param>
+               <param name="CUSTOMER">82507</param>
+			   <param name="FROM_ADDR">Orderline@xpedx.com</param>
+			   <param name="SUBJECT_DATE">@LAST_WEEKDAY@</param>
+                           <send-only-if-data>true</send-only-if-data>
+		</report>
+		
+</xml>

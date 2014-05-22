@@ -1,0 +1,18 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ContentDetailList (ContentDetail)+>
+<!ELEMENT ContentDetail (ContentId,AddBy,AddDate,Value,ContentDetailStatusCd,ContentDetailTypeCd,ModBy,ModDate,SequenceNum,ShortDesc)>
+<!ATTLIST ContentDetail Id ID #REQUIRED>
+<!ELEMENT ContentId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT ContentDetailStatusCd (#PCDATA)>
+<!ELEMENT ContentDetailTypeCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT SequenceNum (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

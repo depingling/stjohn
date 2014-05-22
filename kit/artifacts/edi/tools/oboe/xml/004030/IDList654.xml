@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>CA</idCode>
+        <idValue>Discount in Cash</idValue>
+    <idCode>PC</idCode>
+        <idValue>Discount Determined as a Percentage of the Value of the Transaction</idValue>
+    <idCode>UN</idCode>
+        <idValue>Discount Determined to be Additional Units that Are Defined by Discount Control </idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

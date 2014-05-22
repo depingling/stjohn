@@ -1,0 +1,1 @@
+select table_name from dba_tables where  owner = NLS_UPPER('@dbUser@' );

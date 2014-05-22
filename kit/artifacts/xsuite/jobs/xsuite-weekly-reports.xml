@@ -1,0 +1,15 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+        <report>
+                <category>Operational</category>
+                <name>Order As Of For Site</name>
+                <param name="DAYS_BACK">365</param>
+                <param name="ACCOUNT_MULTI_OPT">88089</param>
+                <emailrecipient>FBarretta@cleanwise.com, jkuras@diveinc.com,tgavenda@nextel.blackberry.net, jholzberger@diveinc.com, rroman@diveinc.com</emailrecipient>
+                <email-message> </email-message>
+        </report>
+</xml>

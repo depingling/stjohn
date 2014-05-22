@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Paid by customer</idValue>
+    <idCode>2</idCode>
+        <idValue>Free</idValue>
+    <idCode>3</idCode>
+        <idValue>Paid by supplier</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually defined</idValue>
+</idList>

@@ -1,0 +1,3 @@
+custSkuNumColumnForExcel=true
+categoryColumnForExcel=true
+currencyCodeColumnForExcel=false

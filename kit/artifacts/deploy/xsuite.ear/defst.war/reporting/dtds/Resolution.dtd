@@ -1,0 +1,15 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ResolutionList (Resolution)+>
+<!ELEMENT Resolution (EvaluationId,ShortDesc,ContentUrl,AddDate,AddBy,ModDate,ModBy)>
+<!ATTLIST Resolution Id ID #REQUIRED>
+<!ELEMENT EvaluationId (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>
+<!ELEMENT ContentUrl (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>

@@ -1,0 +1,16 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ItemAssocList (ItemAssoc)+>
+<!ELEMENT ItemAssoc (,CatalogIdItem1Id,Item2Id,AddBy,AddDate,ItemAssocCd,ModBy,ModDate)>
+<!ATTLIST ItemAssoc Id ID #REQUIRED>
+<!ELEMENT CatalogId (#PCDATA)>
+<!ELEMENT Item1Id (#PCDATA)>
+<!ELEMENT Item2Id (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ItemAssocCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>Branches</idValue>
+    <idCode>AB</idCode>
+        <idValue>Members</idValue>
+    <idCode>AC</idCode>
+        <idValue>Commercial Enterprises</idValue>
+    <idCode>AD</idCode>
+        <idValue>Special Trades</idValue>
+    <idCode>AG</idCode>
+        <idValue>Agent</idValue>
+    <idCode>AI</idCode>
+        <idValue>Importer</idValue>
+    <idCode>AP</idCode>
+        <idValue>Purchaser</idValue>
+    <idCode>AS</idCode>
+        <idValue>Seller</idValue>
+    <idCode>BG</idCode>
+        <idValue>Buying Group</idValue>
+    <idCode>BR</idCode>
+        <idValue>Broker</idValue>
+    <idCode>CB</idCode>
+        <idValue>Combined</idValue>
+    <idCode>CN</idCode>
+        <idValue>Consolidator (Master Distributor)</idValue>
+    <idCode>CO</idCode>
+        <idValue>Contractor</idValue>
+    <idCode>CR</idCode>
+        <idValue>Chain Store Retail</idValue>
+    <idCode>CX</idCode>
+        <idValue>Confection</idValue>
+    <idCode>CY</idCode>
+        <idValue>Convenience Store</idValue>
+    <idCode>DE</idCode>
+        <idValue>Dealer</idValue>
+    <idCode>DF</idCode>
+        <idValue>Doctors&apos; Offices</idValue>
+    <idCode>DI</idCode>
+        <idValue>Distributor</idValue>
+    <idCode>DR</idCode>
+        <idValue>Drug Store</idValue>
+    <idCode>EX</idCode>
+        <idValue>Exporter</idValue>
+    <idCode>FS</idCode>
+        <idValue>Food Service</idValue>
+    <idCode>GA</idCode>
+        <idValue>Grocery Accounts</idValue>
+    <idCode>GM</idCode>
+        <idValue>General Merchandise</idValue>
+    <idCode>GR</idCode>
+        <idValue>General Retail</idValue>
+    <idCode>GV</idCode>
+        <idValue>Government</idValue>
+    <idCode>HS</idCode>
+        <idValue>Hospitals</idValue>
+    <idCode>ID</idCode>
+        <idValue>Industrial</idValue>
+    <idCode>IN</idCode>
+        <idValue>Institutional</idValue>
+    <idCode>IR</idCode>
+        <idValue>Independent Retail</idValue>
+    <idCode>JB</idCode>
+        <idValue>Jobber</idValue>
+    <idCode>LC</idCode>
+        <idValue>Long-term Care</idValue>
+    <idCode>MC</idCode>
+        <idValue>Managed Care</idValue>
+    <idCode>MF</idCode>
+        <idValue>Manufacturer</idValue>
+    <idCode>ML</idCode>
+        <idValue>Military</idValue>
+    <idCode>OE</idCode>
+        <idValue>OEM</idValue>
+    <idCode>OF</idCode>
+        <idValue>Off Premise</idValue>
+    <idCode>ON</idCode>
+        <idValue>On Premise</idValue>
+    <idCode>PF</idCode>
+        <idValue>Professional</idValue>
+    <idCode>PH</idCode>
+        <idValue>Outpatient Pharmacy</idValue>
+    <idCode>PT</idCode>
+        <idValue>Pet Supply Store</idValue>
+    <idCode>PY</idCode>
+        <idValue>Private Label</idValue>
+    <idCode>RS</idCode>
+        <idValue>Resale</idValue>
+    <idCode>SA</idCode>
+        <idValue>Services</idValue>
+    <idCode>SB</idCode>
+        <idValue>Support</idValue>
+    <idCode>SE</idCode>
+        <idValue>Securities</idValue>
+    <idCode>ST</idCode>
+        <idValue>Stationer</idValue>
+    <idCode>TR</idCode>
+        <idValue>General Trade</idValue>
+    <idCode>WA</idCode>
+        <idValue>Warehousing</idValue>
+    <idCode>WC</idCode>
+        <idValue>Warehouse Clubs</idValue>
+    <idCode>WH</idCode>
+        <idValue>Wholesaler</idValue>
+    <idCode>WS</idCode>
+        <idValue>User</idValue>
+</idList>

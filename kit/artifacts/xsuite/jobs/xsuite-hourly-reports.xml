@@ -1,0 +1,31 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+        <report>
+                <category>DBM</category>
+                <name>Failed To Send Pos</name>
+                <emailrecipient>mSonavane@espendwise.com,YKupershmidt@espendwise.com,bstevens@espendwise.com,tharmon@espendwise.com,jriendeau@espendwise.com</emailrecipient>
+                <email-message>Failed to send pos</email-message>
+                <send-only-if-data>true</send-only-if-data>
+        </report>
+<!--        <report> -->
+<!--                <category>Distribution</category> -->
+<!--                <name>VMARS PO Consolidation Report</name> -->
+<!--                <emailrecipient>msonavane@cleanwise.com,trosa@cleanwise.com</emailrecipient> -->
+<!--                <email-message>USPS purchase orders placed within the last 1 hour for the same site and distributor</email-message> -->
+<!--                <send-only-if-data>true</send-only-if-data> -->
+<!--                <param name="ACCOUNT_MULTI_OPT">168880,89417,100</param> -->
+<!--                <param name="DISTRIBUTOR_OPT"></param> -->
+<!--        </report> -->
+        <report>
+                <category>Operational</category>
+                <name>Failed Credit Card Authorizations</name>
+                <emailrecipient>YKupershmidt@cleanwise.com,bstevens@cleanwise.com</emailrecipient>
+                <email-message>Failed to authorize and or charge these credit card transactions.</email-message>
+                <send-only-if-data>true</send-only-if-data>
+		<param name="STORE">1</param>
+        </report>
+</xml>

@@ -1,0 +1,222 @@
+MAILTO=jobreporting@cleanwise.com
+20 0 * * * cd /apps/xadmin3/webapp/; sh run-daily-jobs.sh
+20 3 * * 1-6 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-daily-generic-reports.xml > /tmp/xsuite-daily-generic-reports.log
+#####20 15 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-daily-generic-reports.xml > /tmp/xsuite-daily-generic-reports.log
+1 21 * * 1-6 cd  /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job failed_to_generate_invoices.xml >/tmp/failed_to_generate_invoices.log
+#OFF for initial sync while this is a job server
+##10,30,50 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh -x xsuite-content-synch.sh > /tmp/xsuite-content-synch.sh.log 2>&1
+#1 1 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh -x xsuite-content-synch-master-update.sh
+*/5 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-system-verify.job  1> /tmp/xsuite-verify.log 2>&1
+1,38 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-parse-pending-files.job
+15 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-parse-pending-files.job.chunk
+#0,30 7-10,15-21 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-after-send-reports.job
+#Moved to cw-vm-job01  09/02/2009
+15 2 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh auto-orders.job
+
+##perform some checks on files we received
+2 2 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh appcmd2.sh -Dcmd=verify_inbound_orders -Ddir=../edi/processed
+###Moved to /apps/xadmin3/webapp/util since it uses ojdbc14.jar file and all scripts that used this jar are in util dir --Manoj 02/28/2008
+####0 4 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-check-inbound-810s.job
+####0 1 * * * cd /apps/xadmin3/webapp/util; sh xsuite-check-inbound-810s.job > /tmp/xsuite-check-inbound-810s.job.log
+
+###6,11,16,21,26,31,36,41,46,51,56  * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-order-processing.job
+#moved to zoot - manoj 06/10/2008
+1 4 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs;sh xsuite-invoices-to-customer.job
+###* * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-event-sys.job
+
+#Disk Usage script added on monday 17 dec 2007 , Manoj
+1 6 * * * cd /apps/xadmin3; sh diskUsage.sh
+
+5,35 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh ez-get-files.sh
+#####moved to event system 12/29/2008
+###8,38 7-21 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh gca-waxie-get-files.sh
+
+#Temporarily moved to zoot(xadminProd) on 02/07/2008 -manoj
+##0 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-process-scheduled-orders.job
+##moved to event system 12/29/2008
+###59,20 7-23 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh gca-waxie-send-files.sh
+###Moved to event system Brook 5/1/2008
+###45 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh winn-dixie-send.sh
+0 7,10,13,20 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh fbg-send-files.sh
+#
+##Bunzl Automation
+#Added on Fri oct 12 2007, Manoj
+#Disabled on 2/11/2009 by Jason. Reason: Moving to the event system.
+#Renabled on 2/25/2009 by Jason. Reason: Bunzl not sending 997s to us, so it looks like they aren't receiving our files.
+#Re-disabled on 2/25/2009 by Jason. Reason: Fixed the job in the event system.
+#51 8-17 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh bunzl-send-files.sh
+#1 8 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh bunzl-get-files.sh
+#
+##GCA Automation
+#added on Tuesday Oct 16 2007, Manoj
+#Disabled on Tuesday, Nov 3 2009 by Jason. Reason: moving to event system.
+#42 2,3 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh gca-get-files.sh
+##Disabled gca-send-files.sh on(10/31/2008) since Ellen moved it on Event System ----Manoj
+#0 1 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh gca-send-files.sh
+##
+#
+##HHS Automation
+#added on Tuesday Oct 16 2007, Manoj
+#Disabled on Oct 6, 2009 by Jason. Reason: HHS send went email, and they shut off their FTP server.
+#35 2 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh hhs-get-files.sh
+#30 2 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh hhs-send-files.sh
+#
+#moved t zoot
+#1 5-21 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh order-emails.job > /tmp/order-emails.log
+#1 5,7,9,11,13,15,17,19,21 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh order-emails.job > /tmp/order-emails.log
+#
+#
+##Network Automation
+#added on Tuesday Oct 23 2007, Manoj
+#Disabled 8/31/2009. Reason: moving to event system.
+#*/20 9-17 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh network-send-files.sh
+##Disabled Network-get-files as we moved to Event System(Manoj 11/17/2008)
+###25 7,10,13,16 * * 1-5  cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh network-get-files.sh
+#45,25,5 8-21 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh hhs-network-send-files.sh
+30 7,10,13,16 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh hhs-network-get-files.sh
+#
+##
+#Sac-Val Automation
+#added on Tuesday Nov 29 2007, Manoj
+#disabled 9-28-2009 by Jason. Reason: We no longer send or receive files from Sac Val.
+#40 7-21 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh sacval-send-files.sh
+#30 7-21 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh sacval-get-files.sh 
+##
+##CIT Automation
+#added on Wednesday oct 24 2007, Manoj
+#0 6 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh cit-get-files.sh 
+#
+##EZ Send Automation
+#added on Wednesday oct 24 2007, Manoj
+#Disabled Sept 30, 2009. Reason: Moved to event system. Jason R.
+#1 1 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh ez-send-files.sh
+#*/10 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh ez-send-files-frequent.sh
+#
+##
+##Parcel Direct Automation
+#added on Wednesday oct 24 2007, Manoj
+#Removed on 3/18/2009 since we no longer send files to them.
+#4 6 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh parcel-direct-send-files.sh
+#
+##Redcoats Automation
+#added on Wednesday oct 24 2007, manoj
+50 7-18 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh redcoats-leonard-send-files.sh
+#Disabled on 9/30/2009 by Jason R. Reason: moved to event system.
+#10 13 * * 1 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh redcoats-send-files.sh
+#
+##USPS Automation
+#added on Thursday oct 25 2007, Manoj
+40 9 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh usps-send-files.sh > /tmp/usps-send-files.log 2>&1
+40 11 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh usps-send-810-files.sh > /tmp/usps-send-810-files.log 2>&1
+45 7,10-13,15,17 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh usps-get-files.sh > /tmp/usps-get-files.log 2>&1
+00 19 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh usps-824-send.sh
+
+#
+##JCPenney Auto Rec File automation
+#added on Thursday 25 2007, Manoj
+####45 9 * * 1,2,3,4,5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh jcp_punch_out_send_files.sh
+#
+05 19 * * 1-5  cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh jcp-824-send.sh
+##XPEDX RMS Automation
+#added on Thursday oct 25 2007, Manoj
+###xpedx-RMS-send disabled since it is moved to event system (Manoj - 11/17/2008)
+###*/5 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xpedx-RMS-send.sh
+#Removed as xpedx RMS is no longer used on 10/24/2009 Brook
+###35 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xpedx-RMS-get-files.sh
+#
+#1 9 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs;sh xsuite-invoices-to-customer.job
+
+#Database Maintaince
+#added on Friday oct 26 2007, Manoj
+#####3,13,23,32,43,53 8-21 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh oracle-db-maintenance.sh
+#
+##Generic Reports
+#added on Monday oct 29 2007, Manoj
+#diable short-pay-report to run at 12.15PM enable it once the database performance is improved(Manoj-09/30/2008)
+#15 12 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-short-pay-reports.xml
+1 1 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-short-pay-reports.xml
+30 2 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-gca-morning-reports.xml
+1 0 * * 0 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-end-of-week-reports.xml
+1 5 1 * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-monthly-reports.xml
+#
+##
+#added on Monday oct 29 2007, Manoj
+#9,29,49 6-21 * * 1-5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh OutboundPurchaseOrder.job | tee /tmp/OutboundPurchaseOrder.job.log
+#
+#added on wednesday 31 2007, Manoj
+#1 20 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-sales-tax-rate.job
+#
+##Auto orders
+#added on wednesday 31 2007, Manoj
+1 18,19 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh auto-orders-sched-winn-dixie.job
+3 3 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh auto-orders-sched.job
+##
+#disabled on 06/24/2009, Manoj
+#####1 7 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-schedule-report-runner.job
+#
+##Hourly Job
+#Added on Friday Nov 8 2007, Manoj
+#1 5-21 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh run-hourly-jobs.sh
+#
+##Added on Wednesday Dec 19 2007, Manoj
+1 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh pennvalley-send.sh
+
+##Scripts for new db delete it when we move to new db server
+###moved to new Job runnner(192.168.3.74) - Manoj 08/24/2009
+#Disabled because we also run it in run-daily-jobs. 11/14/2k8 Jason Riendeau
+###Moved to new job runner(192.168.3.74) - Manoj 08/24/2009
+####1 7 * * * cd /apps/xadmin3/webapp/util; sh xsuite-load-report-db-tables.job > /tmp/xsuite-load-report-db-tables.job.log
+##
+##
+##Stage Budget Report
+00 21 * * * cd /apps/xadmin3/webapp/util; sh stage-rep.sh 2>&1 > /tmp/stage-rep.log 
+##
+##
+####0 23 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh db-maintenance.sh
+0 6 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-missing-dist.xml
+###Moved to new job runner (192.168.3.74) - Manoj 08/24/2009
+###30 22 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh db-dist-info.sh
+######Moved to Event System(Manoj- 08/24/2009)
+####0 6 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh xpedx_update.sh
+13 6,21 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-dist-ship-tos.xml
+
+#get the listing of lockfiles and send them to gonzo for the status site. Added 10/8/2k8 by Jason Riendeau. Removed 10/10/2k8 by Jason R.
+#*/5 * * * * cd /apps/xadmin3; . ~/.ssh-agent; perl teeth_upload.pl
+
+0 7 * * 1-6 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-new-db-generic-reports.xml > /tmp/xsuite-new-db-generic-reports.log
+
+##Added by Manoj on 10/28/2008
+###Disabled on 12/17/2008 - Manoj
+#######1 19 * * 1 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh kohls_on_hand_value.sh >/tmp/kohls_on_hand_value.sh.txt.log
+
+####Moved the job to new job runner(192.168.3.74 xadmin3) --Manoj 08/21/2009
+###1 8 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh jd_china_loader.sh >/tmp/jd_china_loader.sh.log
+## Added JD China user loader to run independently before it was a part of item loader -Manoj 03/20/2009
+###Moved the job to new job runner(192.168.3.74 xadmin3) --Manoj 08/21/2009
+###15 8 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh jd_china_loader_user.sh >/tmp/jd_china_loader_user.sh.log
+
+###Script to Delete records from clw_logging and clw_process_property Tables(Manoj - 05/12/2009)
+###Moved to event System(Manoj - 08/24/2009)
+###0 23 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh delete_old_data.sh >/tmp/delete_old_data.sh.log
+###script to insert record into order_item_action for every cancelled order_item for xpedx(Manoj - 05/19/2009)
+#####Moved to new Job runner(192.168.3.74) - Manoj 08/24/2009
+###0 21 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh xpedx_order_item_action.sh >/tmp/xpedx_order_item_action.sh.log
+#####Script ro update clw_event_email table (Manoj-05/20/2009)
+####Moved to Event System(Manoj - 08/24/2009)
+###1 21 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh update_event_email.sh >/tmp/update_event_email.sh.log
+###1 18 * * 5 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/util; sh kohls_test_schedule_cart.sh >/tmp/kohls_test_schedule_cart.sh.log
+
+####Addbedy by Manoj on 02/13/2009
+####report to check if pars are modifed today
+##Disabled on 11/12/2009 - Manoj
+###0 12,16 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job par_modified_report.xml > /tmp/par_modified_report.log
+####Invoice Exception report for storeid = 0 or store id is null
+####Addded by Manoj on 03/16/2009
+30 23 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-invoice-exception-report.job > /tmp/xsuite-invoice-exception-report.job.log
+
+#Freight short pay report. Added 3/25/2009 by Jason R.
+12 3 * * 4 cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-freight-short-pay-reports.xml
+
+###Report ot check if an item_assoc gets delete for xpedx -- Add by Manoj 04/16/2009
+1 * * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job item_assoc_change.xml
+50 1 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-dmsi-to-cleanwise-report.xml

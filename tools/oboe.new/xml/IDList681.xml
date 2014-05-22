@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Annually (Calendar Year)</idValue>
+    <idCode>C</idCode>
+        <idValue>Daily</idValue>
+    <idCode>D</idCode>
+        <idValue>Discrete</idValue>
+    <idCode>F</idCode>
+        <idValue>Flexible Interval (from Date X through Date Y)</idValue>
+    <idCode>M</idCode>
+        <idValue>Monthly Bucket (Calendar Months)</idValue>
+    <idCode>Q</idCode>
+        <idValue>Quarterly (Calendar Quarters)</idValue>
+    <idCode>S</idCode>
+        <idValue>Semi-Annually (Calendar Year)</idValue>
+    <idCode>T</idCode>
+        <idValue>Four week bucket (13 buckets per year)</idValue>
+    <idCode>W</idCode>
+        <idValue>Weekly Bucket (Monday through Sunday)</idValue>
+    <idCode>X</idCode>
+        <idValue>Weekly Bucket (7 day interval)</idValue>
+    <idCode>Z</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>20</idCode>
+        <idValue>20 ft. IL Container (Open Top)</idValue>
+    <idCode>2B</idCode>
+        <idValue>20 ft. IL Container (Closed Top)</idValue>
+    <idCode>2D</idCode>
+        <idValue>Control Unit</idValue>
+    <idCode>2E</idCode>
+        <idValue>Helper Unit</idValue>
+    <idCode>2F</idCode>
+        <idValue>Roadrailer</idValue>
+    <idCode>2G</idCode>
+        <idValue>Cut-in Helper</idValue>
+    <idCode>40</idCode>
+        <idValue>40 ft. IL Container (Open Top)</idValue>
+    <idCode>4B</idCode>
+        <idValue>40 ft. IL Container (Closed Top)</idValue>
+    <idCode>AC</idCode>
+        <idValue>Closed Container</idValue>
+    <idCode>AF</idCode>
+        <idValue>Air Freight (Break Bulk)</idValue>
+    <idCode>AL</idCode>
+        <idValue>Container, Aluminum</idValue>
+    <idCode>AP</idCode>
+        <idValue>Aircraft</idValue>
+    <idCode>AT</idCode>
+        <idValue>Closed Container (Controlled Temperature)</idValue>
+    <idCode>BC</idCode>
+        <idValue>Covered Barge</idValue>
+    <idCode>BE</idCode>
+        <idValue>Bilevel Railcar Fully Open</idValue>
+    <idCode>BF</idCode>
+        <idValue>Bilevel Railcar Fully Enclosed</idValue>
+    <idCode>BG</idCode>
+        <idValue>Bogie</idValue>
+    <idCode>BH</idCode>
+        <idValue>Bilevel Railcar Screened With Roof</idValue>
+    <idCode>BJ</idCode>
+        <idValue>Bilevel Railcar Screened, No Roof</idValue>
+    <idCode>BK</idCode>
+        <idValue>Container, Bulk</idValue>
+    <idCode>BO</idCode>
+        <idValue>Barge Open</idValue>
+    <idCode>BR</idCode>
+        <idValue>Barge</idValue>
+    <idCode>BX</idCode>
+        <idValue>Boxcar</idValue>
+    <idCode>CA</idCode>
+        <idValue>Caboose</idValue>
+    <idCode>CB</idCode>
+        <idValue>Chassis, Gooseneck</idValue>
+    <idCode>CC</idCode>
+        <idValue>Container resting on a Chassis</idValue>
+    <idCode>CD</idCode>
+        <idValue>Container with Bag Hangers</idValue>
+    <idCode>CG</idCode>
+        <idValue>Container, Tank (Gas)</idValue>
+    <idCode>CH</idCode>
+        <idValue>Chassis</idValue>
+    <idCode>CI</idCode>
+        <idValue>Container, Insulated</idValue>
+    <idCode>CJ</idCode>
+        <idValue>Container, Insulated/Ventilated</idValue>
+    <idCode>CK</idCode>
+        <idValue>Container, Heated/Insulated/Ventilated</idValue>
+    <idCode>CL</idCode>
+        <idValue>Container (Closed Top - Length Unspecified)</idValue>
+    <idCode>CM</idCode>
+        <idValue>Container, Open-Sided</idValue>
+    <idCode>CN</idCode>
+        <idValue>Container</idValue>
+    <idCode>CP</idCode>
+        <idValue>Coil Car Open</idValue>
+    <idCode>CQ</idCode>
+        <idValue>Container, Tank (Food Grade-Liquid)</idValue>
+    <idCode>CR</idCode>
+        <idValue>Coil-Car Covered</idValue>
+    <idCode>CS</idCode>
+        <idValue>Container-Low Side Open Top</idValue>
+    <idCode>CT</idCode>
+        <idValue>Container-High Side Open Top</idValue>
+    <idCode>CU</idCode>
+        <idValue>Container (Open Top - Length Unspecified)</idValue>
+    <idCode>CV</idCode>
+        <idValue>Closed Van</idValue>
+    <idCode>CW</idCode>
+        <idValue>Container, Tank (Chemicals)</idValue>
+    <idCode>CX</idCode>
+        <idValue>Container, Tank</idValue>
+    <idCode>CZ</idCode>
+        <idValue>Refrigerated Container</idValue>
+    <idCode>DD</idCode>
+        <idValue>Double-Drop Trailer</idValue>
+    <idCode>DF</idCode>
+        <idValue>Container with Flush Doors</idValue>
+    <idCode>DT</idCode>
+        <idValue>Drop Back Trailer</idValue>
+    <idCode>DX</idCode>
+        <idValue>Boxcar, Damage Free Equipped</idValue>
+    <idCode>ET</idCode>
+        <idValue>End of Train Device</idValue>
+    <idCode>FF</idCode>
+        <idValue>Frozen Food Trailer</idValue>
+    <idCode>FH</idCode>
+        <idValue>Flat Bed Trailer with Headboards</idValue>
+    <idCode>FN</idCode>
+        <idValue>Flat Bed Trailer with No Headboards</idValue>
+    <idCode>FP</idCode>
+        <idValue>Flatcar With Pedestal</idValue>
+    <idCode>FR</idCode>
+        <idValue>Flat Bed Trailer - Removable Sides</idValue>
+    <idCode>FS</idCode>
+        <idValue>Container with Floor Securing Rings</idValue>
+    <idCode>FT</idCode>
+        <idValue>Flat Bed Trailer</idValue>
+    <idCode>FX</idCode>
+        <idValue>Boxcar Cushion Under Frame OF</idValue>
+    <idCode>GS</idCode>
+        <idValue>Generator Set</idValue>
+    <idCode>HB</idCode>
+        <idValue>Container with Hangar Bars</idValue>
+    <idCode>HC</idCode>
+        <idValue>Hopper Car (Covered)</idValue>
+    <idCode>HO</idCode>
+        <idValue>Hopper Car (Open)</idValue>
+    <idCode>HP</idCode>
+        <idValue>Hopper Car (Covered; Pneumatic Discharge)</idValue>
+    <idCode>HT</idCode>
+        <idValue>Head of Train Device</idValue>
+    <idCode>HV</idCode>
+        <idValue>High Cube Van</idValue>
+    <idCode>HY</idCode>
+        <idValue>Hydrant-Cart</idValue>
+    <idCode>ID</idCode>
+        <idValue>Idler Car</idValue>
+    <idCode>IX</idCode>
+        <idValue>Boxcar (Insulated)</idValue>
+    <idCode>LO</idCode>
+        <idValue>Locomotive</idValue>
+    <idCode>LS</idCode>
+        <idValue>Half Height Flat Rack</idValue>
+    <idCode>LU</idCode>
+        <idValue>Load/unload Device on Equipment</idValue>
+    <idCode>NX</idCode>
+        <idValue>Boxcar (Interior Bulkheads)</idValue>
+    <idCode>OB</idCode>
+        <idValue>Ocean Vessel (Break Bulk)</idValue>
+    <idCode>OT</idCode>
+        <idValue>Open-top/flatbed trailer</idValue>
+    <idCode>OV</idCode>
+        <idValue>Open Top Van</idValue>
+    <idCode>PL</idCode>
+        <idValue>Container, Platform</idValue>
+    <idCode>PP</idCode>
+        <idValue>Power Pack</idValue>
+    <idCode>PT</idCode>
+        <idValue>Protected Trailer</idValue>
+    <idCode>PU</idCode>
+        <idValue>Pick-up Truck</idValue>
+    <idCode>RA</idCode>
+        <idValue>Fixed-Rack, Flat-Bed Trailer</idValue>
+    <idCode>RC</idCode>
+        <idValue>Refrigerated (Reefer) Car</idValue>
+    <idCode>RD</idCode>
+        <idValue>Fixed-Rack, Double Drop Trailer</idValue>
+    <idCode>RE</idCode>
+        <idValue>Flat Car (End Bulkheads)</idValue>
+    <idCode>RF</idCode>
+        <idValue>Flat Car</idValue>
+    <idCode>RG</idCode>
+        <idValue>Gondola Covered</idValue>
+    <idCode>RI</idCode>
+        <idValue>Gondola Car (Covered - Interior Bulkheads)</idValue>
+    <idCode>RO</idCode>
+        <idValue>Gondola Car (Open)</idValue>
+    <idCode>RR</idCode>
+        <idValue>Rail Car</idValue>
+    <idCode>RS</idCode>
+        <idValue>Fixed-Rack, Single-Drop Trailer</idValue>
+    <idCode>RT</idCode>
+        <idValue>Controlled Temperature Trailer (Reefer)</idValue>
+    <idCode>SA</idCode>
+        <idValue>Saddle</idValue>
+    <idCode>SC</idCode>
+        <idValue>Service Car</idValue>
+    <idCode>SD</idCode>
+        <idValue>Single-Drop Trailer</idValue>
+    <idCode>SK</idCode>
+        <idValue>Stack Car</idValue>
+    <idCode>SL</idCode>
+        <idValue>Container, Steel</idValue>
+    <idCode>SR</idCode>
+        <idValue>STAK-RAK</idValue>
+    <idCode>SS</idCode>
+        <idValue>Container with Smooth Sides</idValue>
+    <idCode>ST</idCode>
+        <idValue>Removable Side Trailer</idValue>
+    <idCode>SV</idCode>
+        <idValue>Van - Special Inside Length, Width or Height Requirements</idValue>
+    <idCode>TA</idCode>
+        <idValue>Trailer, Heated/Insulated/Ventilated</idValue>
+    <idCode>TB</idCode>
+        <idValue>Trailer, Boat</idValue>
+    <idCode>TC</idCode>
+        <idValue>Trailer, Car</idValue>
+    <idCode>TF</idCode>
+        <idValue>Trailer, Dry Freight</idValue>
+    <idCode>TG</idCode>
+        <idValue>Trailer, Tank (Gas)</idValue>
+    <idCode>TH</idCode>
+        <idValue>Truck, Open Top High Side</idValue>
+    <idCode>TI</idCode>
+        <idValue>Trailer, Insulated</idValue>
+    <idCode>TJ</idCode>
+        <idValue>Trailer, Tank (Chemicals)</idValue>
+    <idCode>TK</idCode>
+        <idValue>Trailer, Tank (Food Grade-Liquid)</idValue>
+    <idCode>TL</idCode>
+        <idValue>Trailer (not otherwise specified)</idValue>
+    <idCode>TM</idCode>
+        <idValue>Trailer, Insulated/Ventilated</idValue>
+    <idCode>TN</idCode>
+        <idValue>Tank Car</idValue>
+    <idCode>TO</idCode>
+        <idValue>Truck, Open Top</idValue>
+    <idCode>TP</idCode>
+        <idValue>Trailer, Pneumatic</idValue>
+    <idCode>TQ</idCode>
+        <idValue>Trailer, Electric Heat</idValue>
+    <idCode>TR</idCode>
+        <idValue>Tractor</idValue>
+    <idCode>TT</idCode>
+        <idValue>Telescoping Trailer</idValue>
+    <idCode>TU</idCode>
+        <idValue>Truck, Open Top Low Side</idValue>
+    <idCode>TV</idCode>
+        <idValue>Truck, Van</idValue>
+    <idCode>TW</idCode>
+        <idValue>Trailer, Refrigerated</idValue>
+    <idCode>UA</idCode>
+        <idValue>Trilevel Railcar 20 Feet</idValue>
+    <idCode>UB</idCode>
+        <idValue>Trilevel Railcar Screened, Fully Enclosed</idValue>
+    <idCode>UC</idCode>
+        <idValue>Trilevel Railcar Screened, With Roof</idValue>
+    <idCode>UD</idCode>
+        <idValue>Trilevel Railcar Screened, No Roof</idValue>
+    <idCode>UE</idCode>
+        <idValue>Trilevel Railcar Screened, With Doors, No Roof</idValue>
+    <idCode>UL</idCode>
+        <idValue>Unit Load Device (ULD)</idValue>
+    <idCode>UP</idCode>
+        <idValue>Container, Upgraded</idValue>
+    <idCode>VA</idCode>
+        <idValue>Container, Vented</idValue>
+    <idCode>VE</idCode>
+        <idValue>Vessel, Ocean</idValue>
+    <idCode>VL</idCode>
+        <idValue>Vessel, Lake</idValue>
+    <idCode>VR</idCode>
+        <idValue>Vessel, Ocean, Rollon-Rolloff</idValue>
+    <idCode>VS</idCode>
+        <idValue>Vessel, Ocean, Lash</idValue>
+    <idCode>VT</idCode>
+        <idValue>Vessel, Ocean, Containership</idValue>
+    <idCode>WR</idCode>
+        <idValue>Container with Wavy or Ripple Sides</idValue>
+    <idCode>WY</idCode>
+        <idValue>Railroad Maintenance of Way Car</idValue>
+</idList>

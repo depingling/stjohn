@@ -1,0 +1,34 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT InvoiceDistDetailList (InvoiceDistDetail)+>
+<!ELEMENT InvoiceDistDetail (,InvoiceCustDetailIdInvoiceCustId,InvoiceDistId,OrderItemId,AddBy,AddDate,AdjustedCost,DistItemPack,DistItemQtyReceived,DistItemQuantity,DistItemShortDesc,DistItemSkuNum,DistItemUom,DistLineNumber,ErpAccountCode,ErpPoLineNum,ItemCost,ItemPack,ItemQuantity,ItemReceivedCost,ItemShortDesc,ItemSkuNum,ItemUom,LineTotal,ModBy,ModDate)>
+<!ATTLIST InvoiceDistDetail Id ID #REQUIRED>
+<!ELEMENT InvoiceCustDetailId (#PCDATA)>
+<!ELEMENT InvoiceCustId (#PCDATA)>
+<!ELEMENT InvoiceDistId (#PCDATA)>
+<!ELEMENT OrderItemId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT AdjustedCost (#PCDATA)>
+<!ELEMENT DistItemPack (#PCDATA)>
+<!ELEMENT DistItemQtyReceived (#PCDATA)>
+<!ELEMENT DistItemQuantity (#PCDATA)>
+<!ELEMENT DistItemShortDesc (#PCDATA)>
+<!ELEMENT DistItemSkuNum (#PCDATA)>
+<!ELEMENT DistItemUom (#PCDATA)>
+<!ELEMENT DistLineNumber (#PCDATA)>
+<!ELEMENT ErpAccountCode (#PCDATA)>
+<!ELEMENT ErpPoLineNum (#PCDATA)>
+<!ELEMENT ItemCost (#PCDATA)>
+<!ELEMENT ItemPack (#PCDATA)>
+<!ELEMENT ItemQuantity (#PCDATA)>
+<!ELEMENT ItemReceivedCost (#PCDATA)>
+<!ELEMENT ItemShortDesc (#PCDATA)>
+<!ELEMENT ItemSkuNum (#PCDATA)>
+<!ELEMENT ItemUom (#PCDATA)>
+<!ELEMENT LineTotal (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

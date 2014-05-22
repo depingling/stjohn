@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<PortalSkins>
+<PortalIcon Name="dark" 
+Icon="/inetsoft/sree/web/portalimages/icon/dark/logo.gif" 
+/>
+<PortalIcon Name="default" 
+Icon="/inetsoft/sree/web/portalimages/icon/default/logo.gif" 
+/>
+<PortalIcon Name="flowers" 
+Icon="/inetsoft/sree/web/portalimages/icon/flowers/logo.gif" 
+/>
+<PortalIcon Name="light" 
+Icon="/inetsoft/sree/web/portalimages/icon/light/logo.gif" 
+/>
+<PortalIcon Name="ocean" 
+Icon="/inetsoft/sree/web/portalimages/icon/ocean/logo.gif" 
+/>
+<PortalIcon Name="sports" 
+Icon="/inetsoft/sree/web/portalimages/icon/sports/logo.gif" 
+/>
+<PortalIcon Name="violet" 
+Icon="/inetsoft/sree/web/portalimages/icon/violet/logo.gif" 
+/>
+<PortalToolbar Name="dark" 
+Start="/inetsoft/sree/web/portalimages/toolbar/dark/img_dark_content.gif" 
+Middle="/inetsoft/sree/web/portalimages/toolbar/dark/img_dark_content.gif" 
+End="/inetsoft/sree/web/portalimages/toolbar/dark/img_dark_content.gif" 
+Background="/inetsoft/sree/web/portalimages/toolbar/dark/img_dark_content.gif" 
+/>
+<PortalToolbar Name="default" 
+Start="/inetsoft/sree/web/portalimages/toolbar/default/img_content.gif" 
+Middle="/inetsoft/sree/web/portalimages/toolbar/default/img_content.gif" 
+End="/inetsoft/sree/web/portalimages/toolbar/default/img_content.gif" 
+Background="/inetsoft/sree/web/portalimages/toolbar/default/img_content.gif" 
+/>
+<PortalToolbar Name="flowers" 
+Start="/inetsoft/sree/web/portalimages/toolbar/flowers/img_flowers_content.gif" 
+Middle="/inetsoft/sree/web/portalimages/toolbar/flowers/img_flowers_content.gif" 
+End="/inetsoft/sree/web/portalimages/toolbar/flowers/img_flowers_content.gif" 
+Background="/inetsoft/sree/web/portalimages/toolbar/flowers/img_flowers_content.gif" 
+/>
+<PortalToolbar Name="light" 
+Start="/inetsoft/sree/web/portalimages/toolbar/light/img_light_start.gif" 
+Middle="/inetsoft/sree/web/portalimages/toolbar/light/img_light_middle.gif" 
+End="/inetsoft/sree/web/portalimages/toolbar/light/img_light_end.gif" 
+Background="/inetsoft/sree/web/portalimages/toolbar/light/img_light_content.gif" 
+/>
+<PortalToolbar Name="ocean" 
+Start="/inetsoft/sree/web/portalimages/toolbar/ocean/img_ocean_content.gif" 
+Middle="/inetsoft/sree/web/portalimages/toolbar/ocean/img_ocean_middle.gif" 
+End="/inetsoft/sree/web/portalimages/toolbar/ocean/img_ocean_content.gif" 
+Background="/inetsoft/sree/web/portalimages/toolbar/ocean/img_ocean_content.gif" 
+/>
+<PortalToolbar Name="sports" 
+Start="/inetsoft/sree/web/portalimages/toolbar/sports/img_sports_content.gif" 
+Middle="/inetsoft/sree/web/portalimages/toolbar/sports/img_sports_middle.gif" 
+End="/inetsoft/sree/web/portalimages/toolbar/sports/img_sports_content.gif" 
+Background="/inetsoft/sree/web/portalimages/toolbar/sports/img_sports_content.gif" 
+/>
+<PortalToolbar Name="violet" 
+Start="/inetsoft/sree/web/portalimages/toolbar/violet/img_violet_content.gif" 
+Middle="/inetsoft/sree/web/portalimages/toolbar/violet/img_violet_content.gif" 
+End="/inetsoft/sree/web/portalimages/toolbar/violet/img_violet_content.gif" 
+Background="/inetsoft/sree/web/portalimages/toolbar/violet/img_violet_content.gif" 
+/>
+<PortalTree Name="dark" 
+Root="/inetsoft/sree/web/portalimages/tree/dark/img-globe-0.gif" 
+Leaf="/inetsoft/sree/web/portalimages/tree/dark/img-page-globe.gif" 
+FolderOpen="/inetsoft/sree/web/portalimages/tree/dark/img-folder-open-0.gif" 
+FolderClose="/inetsoft/sree/web/portalimages/tree/dark/img-folder-closed-0.gif" 
+PlusContinue="/inetsoft/sree/web/portalimages/tree/dark/img-plus-cont-0.gif" 
+PlusEnd="/inetsoft/sree/web/portalimages/tree/dark/img-plus-end-0.gif" 
+MinusContinue="/inetsoft/sree/web/portalimages/tree/dark/img-minus-cont-0.gif" 
+MinusEnd="/inetsoft/sree/web/portalimages/tree/dark/img-minus-end-0.gif" 
+BranchContinue="/inetsoft/sree/web/portalimages/tree/dark/img-branch-cont-0.gif" 
+BranchEnd="/inetsoft/sree/web/portalimages/tree/dark/img-branch-end-0.gif" 
+VerticalLine="/inetsoft/sree/web/portalimages/tree/dark/img-vert-line-0.gif" 
+Blank="/inetsoft/sree/web/portalimages/tree/dark/img-blank.gif" 
+/>
+<PortalTree Name="default" 
+Root="/inetsoft/sree/web/portalimages/tree/default/img-globe-0.gif" 
+Leaf="/inetsoft/sree/web/portalimages/tree/default/img-page-globe.gif" 
+FolderOpen="/inetsoft/sree/web/portalimages/tree/default/img-folder-open-0.gif" 
+FolderClose="/inetsoft/sree/web/portalimages/tree/default/img-folder-closed-0.gif" 
+/>
+<PortalTree Name="flowers" 
+Root="/inetsoft/sree/web/portalimages/tree/flowers/img-globe-0.gif" 
+Leaf="/inetsoft/sree/web/portalimages/tree/flowers/img-page-globe.gif" 
+FolderOpen="/inetsoft/sree/web/portalimages/tree/flowers/img-folder-open-0.gif" 
+FolderClose="/inetsoft/sree/web/portalimages/tree/flowers/img-folder-closed-0.gif" 
+PlusContinue="/inetsoft/sree/web/portalimages/tree/flowers/img-plus-cont-0.gif" 
+PlusEnd="/inetsoft/sree/web/portalimages/tree/flowers/img-plus-end-0.gif" 
+MinusContinue="/inetsoft/sree/web/portalimages/tree/flowers/img-minus-cont-0.gif" 
+MinusEnd="/inetsoft/sree/web/portalimages/tree/flowers/img-minus-end-0.gif" 
+BranchContinue="/inetsoft/sree/web/portalimages/tree/flowers/img-branch-cont-0.gif" 
+BranchEnd="/inetsoft/sree/web/portalimages/tree/flowers/img-branch-end-0.gif" 
+VerticalLine="/inetsoft/sree/web/portalimages/tree/flowers/img-vert-line-0.gif" 
+Blank="/inetsoft/sree/web/portalimages/tree/flowers/img-blank.gif" 
+/>
+<PortalTree Name="light" 
+Root="/inetsoft/sree/web/portalimages/tree/light/img-globe-0.gif" 
+Leaf="/inetsoft/sree/web/portalimages/tree/light/img-page-globe.gif" 
+FolderOpen="/inetsoft/sree/web/portalimages/tree/light/img-folder-open-0.gif" 
+FolderClose="/inetsoft/sree/web/portalimages/tree/light/img-folder-closed-0.gif" 
+PlusContinue="/inetsoft/sree/web/portalimages/tree/light/img-plus-cont-0.gif" 
+PlusEnd="/inetsoft/sree/web/portalimages/tree/light/img-plus-end-0.gif" 
+MinusContinue="/inetsoft/sree/web/portalimages/tree/light/img-minus-cont-0.gif" 
+MinusEnd="/inetsoft/sree/web/portalimages/tree/light/img-minus-end-0.gif" 
+BranchContinue="/inetsoft/sree/web/portalimages/tree/light/img-branch-cont-0.gif" 
+BranchEnd="/inetsoft/sree/web/portalimages/tree/light/img-branch-end-0.gif" 
+VerticalLine="/inetsoft/sree/web/portalimages/tree/light/img-vert-line-0.gif" 
+Blank="/inetsoft/sree/web/portalimages/tree/light/img-blank.gif" 
+/>
+<PortalTree Name="ocean" 
+Root="/inetsoft/sree/web/portalimages/tree/ocean/img-globe-0.gif" 
+Leaf="/inetsoft/sree/web/portalimages/tree/ocean/img-page-globe.gif" 
+FolderOpen="/inetsoft/sree/web/portalimages/tree/ocean/img-folder-open-0.gif" 
+FolderClose="/inetsoft/sree/web/portalimages/tree/ocean/img-folder-closed-0.gif" 
+PlusContinue="/inetsoft/sree/web/portalimages/tree/ocean/img-plus-cont-0.gif" 
+PlusEnd="/inetsoft/sree/web/portalimages/tree/ocean/img-plus-end-0.gif" 
+MinusContinue="/inetsoft/sree/web/portalimages/tree/ocean/img-minus-cont-0.gif" 
+MinusEnd="/inetsoft/sree/web/portalimages/tree/ocean/img-minus-end-0.gif" 
+BranchContinue="/inetsoft/sree/web/portalimages/tree/ocean/img-branch-cont-0.gif" 
+BranchEnd="/inetsoft/sree/web/portalimages/tree/ocean/img-branch-end-0.gif" 
+VerticalLine="/inetsoft/sree/web/portalimages/tree/ocean/img-vert-line-0.gif" 
+Blank="/inetsoft/sree/web/portalimages/tree/ocean/img-blank.gif" 
+/>
+<PortalTree Name="sports" 
+Root="/inetsoft/sree/web/portalimages/tree/sports/img-globe-0.gif" 
+Leaf="/inetsoft/sree/web/portalimages/tree/sports/img-page-globe.gif" 
+FolderOpen="/inetsoft/sree/web/portalimages/tree/sports/img-folder-open-0.gif" 
+FolderClose="/inetsoft/sree/web/portalimages/tree/sports/img-folder-closed-0.gif" 
+PlusContinue="/inetsoft/sree/web/portalimages/tree/sports/img-plus-cont-0.gif" 
+PlusEnd="/inetsoft/sree/web/portalimages/tree/sports/img-plus-end-0.gif" 
+MinusContinue="/inetsoft/sree/web/portalimages/tree/sports/img-minus-cont-0.gif" 
+MinusEnd="/inetsoft/sree/web/portalimages/tree/sports/img-minus-end-0.gif" 
+BranchContinue="/inetsoft/sree/web/portalimages/tree/sports/img-branch-cont-0.gif" 
+BranchEnd="/inetsoft/sree/web/portalimages/tree/sports/img-branch-end-0.gif" 
+VerticalLine="/inetsoft/sree/web/portalimages/tree/sports/img-vert-line-0.gif" 
+Blank="/inetsoft/sree/web/portalimages/tree/sports/img-blank.gif" 
+/>
+<PortalTree Name="violet" 
+Root="/inetsoft/sree/web/portalimages/tree/violet/img-globe-0.gif" 
+Leaf="/inetsoft/sree/web/portalimages/tree/violet/img-page-globe.gif" 
+FolderOpen="/inetsoft/sree/web/portalimages/tree/violet/img-folder-open-0.gif" 
+FolderClose="/inetsoft/sree/web/portalimages/tree/violet/img-folder-closed-0.gif" 
+PlusContinue="/inetsoft/sree/web/portalimages/tree/violet/img-plus-cont-0.gif" 
+PlusEnd="/inetsoft/sree/web/portalimages/tree/violet/img-plus-end-0.gif" 
+MinusContinue="/inetsoft/sree/web/portalimages/tree/violet/img-minus-cont-0.gif" 
+MinusEnd="/inetsoft/sree/web/portalimages/tree/violet/img-minus-end-0.gif" 
+BranchContinue="/inetsoft/sree/web/portalimages/tree/violet/img-branch-cont-0.gif" 
+BranchEnd="/inetsoft/sree/web/portalimages/tree/violet/img-branch-end-0.gif" 
+VerticalLine="/inetsoft/sree/web/portalimages/tree/violet/img-vert-line-0.gif" 
+Blank="/inetsoft/sree/web/portalimages/tree/violet/img-blank.gif" 
+/>
+<PortalList Name="dark" 
+Up="/inetsoft/sree/web/portalimages/list/dark/img-up.gif" 
+Folder="/inetsoft/sree/web/portalimages/list/dark/img-folder-open.gif" 
+Report="/inetsoft/sree/web/portalimages/list/dark/img-replet.gif" 
+/>
+<PortalList Name="default" 
+Up="/inetsoft/sree/web/portalimages/list/default/up.gif" 
+Folder="/inetsoft/sree/web/portalimages/list/default/folder.gif" 
+Report="/inetsoft/sree/web/portalimages/list/default/report.gif" 
+/>
+<PortalList Name="flowers" 
+Up="/inetsoft/sree/web/portalimages/list/flowers/img-up.gif" 
+Folder="/inetsoft/sree/web/portalimages/list/flowers/img-folder-open.gif" 
+Report="/inetsoft/sree/web/portalimages/list/flowers/img-replet.gif" 
+/>
+<PortalList Name="light" 
+Up="/inetsoft/sree/web/portalimages/list/light/img-up.gif" 
+Folder="/inetsoft/sree/web/portalimages/list/light/img-folder-open.gif" 
+Report="/inetsoft/sree/web/portalimages/list/light/img-replet.gif" 
+/>
+<PortalList Name="ocean" 
+Up="/inetsoft/sree/web/portalimages/list/ocean/img-up.gif" 
+Folder="/inetsoft/sree/web/portalimages/list/ocean/img-folder-open.gif" 
+Report="/inetsoft/sree/web/portalimages/list/ocean/img-replet.gif" 
+/>
+<PortalList Name="sports" 
+Up="/inetsoft/sree/web/portalimages/list/sports/img-up.gif" 
+Folder="/inetsoft/sree/web/portalimages/list/sports/img-folder-open.gif" 
+Report="/inetsoft/sree/web/portalimages/list/sports/img-replet.gif" 
+/>
+<PortalList Name="violet" 
+Up="/inetsoft/sree/web/portalimages/list/violet/img-up.gif" 
+Folder="/inetsoft/sree/web/portalimages/list/violet/img-folder-open.gif" 
+Report="/inetsoft/sree/web/portalimages/list/violet/img-replet.gif" 
+/>
+<PortalSkin Name="dark">
+<SkinIcon Style="dark" Width="100" WidthUnit="%"/>
+<SkinToolbar Style="dark" Foreground="-1" SelectedForeground="-16777216"/>
+<SkinTree Style="dark" Foreground="-16777216" Background="-3735643" />
+<SkinList Style="dark" Foreground="-16777216" Background="-3735643" />
+<SkinTitle Font="Verdana-BOLDITALIC-37" Foreground="-16777216" Background="-1" />
+<SkinMenu Foreground="-16777216" Background="-6500608" />
+<SkinWelcomePage  Background="-1" />
+<SkinFooter Font="Verdana-PLAIN-10" Foreground="-16777216" Background="-6500608" />
+</PortalSkin>
+<PortalSkin >
+<SkinIcon Style="default" Width="100" WidthUnit="%"/>
+<SkinToolbar Style="default" Foreground="-1" SelectedForeground="-16777216"/>
+<SkinTree Style="default" Foreground="-16777216" Background="-3223553" />
+<SkinList Style="default" Foreground="-16777216" Background="-3223553" />
+<SkinTitle Font="Verdana-BOLD-37" Foreground="-16777216" Background="-10066228" />
+<SkinMenu Foreground="-16777216" Background="-6527538" />
+<SkinWelcomePage  Background="-1" />
+<SkinFooter Font="Serif-PLAIN-10" Foreground="-16777216" Background="-6246401" />
+</PortalSkin>
+<PortalSkin Name="flowers">
+<SkinIcon Style="flowers" Width="100" WidthUnit="%"/>
+<SkinToolbar Style="flowers" Foreground="-1" SelectedForeground="-16777216"/>
+<SkinTree Style="flowers" Foreground="-16777216" Background="-70405" />
+<SkinList Style="flowers" Foreground="-16777216" Background="-70405" />
+<SkinTitle Font="Verdana-BOLDITALIC-37" Foreground="-16777216" Background="-1" />
+<SkinMenu Foreground="-16777216" Background="-70405" />
+<SkinWelcomePage  Background="-1" />
+<SkinFooter Font="Verdana-PLAIN-10" Foreground="-16777216" Background="-6246401" />
+</PortalSkin>
+<PortalSkin Name="light">
+<SkinIcon Style="light" Width="100" WidthUnit="%"/>
+<SkinToolbar Style="light" Foreground="-1" SelectedForeground="-16777216"/>
+<SkinTree Style="light" Foreground="-16777216" Background="-3223553" />
+<SkinList Style="light" Foreground="-16777216" Background="-3223553" />
+<SkinTitle Font="Verdana-BOLDITALIC-37" Foreground="-16777216" Background="-1" />
+<SkinMenu Foreground="-16777216" Background="-3223553" />
+<SkinWelcomePage  Background="-1" />
+<SkinFooter Font="Verdana-PLAIN-10" Foreground="-16777216" Background="-6246401" />
+</PortalSkin>
+<PortalSkin Name="ocean">
+<SkinIcon Style="ocean" Width="100" WidthUnit="%"/>
+<SkinToolbar Style="ocean" Foreground="-1" SelectedForeground="-16777216"/>
+<SkinTree Style="ocean" Foreground="-16777216" Background="-4132415" />
+<SkinList Style="ocean" Foreground="-16777216" Background="-4132415" />
+<SkinTitle Font="Verdana-BOLDITALIC-37" Foreground="-16777216" Background="-1" />
+<SkinMenu Foreground="-16777216" Background="-4132415" />
+<SkinWelcomePage  Background="-1" />
+<SkinFooter Font="Verdana-PLAIN-10" Foreground="-16777216" Background="-4791113" />
+</PortalSkin>
+<PortalSkin Name="sports">
+<SkinIcon Style="sports" Width="100" WidthUnit="%"/>
+<SkinToolbar Style="sports" Foreground="-1" SelectedForeground="-16777216"/>
+<SkinTree Style="sports" Foreground="-16777216" Background="-3223553" />
+<SkinList Style="sports" Foreground="-16777216" Background="-3223553" />
+<SkinTitle Font="Verdana-BOLDITALIC-37" Foreground="-16777216" Background="-1" />
+<SkinMenu Foreground="-16777216" Background="-9397783" />
+<SkinWelcomePage  Background="-1" />
+<SkinFooter Font="Verdana-PLAIN-10" Foreground="-16777216" Background="-6246401" />
+</PortalSkin>
+<PortalSkin Name="violet">
+<SkinIcon Style="violet" Width="100" WidthUnit="%"/>
+<SkinToolbar Style="violet" Foreground="-1" SelectedForeground="-16777216"/>
+<SkinTree Style="violet" Foreground="-16777216" Background="-3223553" />
+<SkinList Style="violet" Foreground="-16777216" Background="-3223553" />
+<SkinTitle Font="Verdana-BOLDITALIC-37" Foreground="-16777216" Background="-1" />
+<SkinMenu Foreground="-16777216" Background="-6527538" />
+<SkinWelcomePage  Background="-1" />
+<SkinFooter Font="Verdana-PLAIN-10" Foreground="-16777216" Background="-6246401" />
+</PortalSkin>
+</PortalSkins>

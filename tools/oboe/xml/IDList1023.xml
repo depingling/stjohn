@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Hazard Zone A</idValue>
+    <idCode>B</idCode>
+        <idValue>Hazard Zone B</idValue>
+    <idCode>C</idCode>
+        <idValue>Hazard Zone C</idValue>
+    <idCode>D</idCode>
+        <idValue>Hazard Zone D</idValue>
+</idList>

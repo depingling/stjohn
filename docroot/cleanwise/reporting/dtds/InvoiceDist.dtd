@@ -1,0 +1,55 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT InvoiceDistList (InvoiceDist)+>
+<!ELEMENT InvoiceDist (,BusEntityId,OrderId,StoreId,AddBy,AddDate,BatchDate,BatchNumber,BatchTime,Carrier,Credits,Discounts,DistOrderNum,DistShipmentNum,ErpPoNum,ErpSystemCd,Freight,InvoiceDate,InvoiceDistSourceCd,InvoiceNum,InvoiceStatusCd,MiscCharges,ModBy,ModDate,RemitTo,SalesTax,Scac,ShipFromAddress1,ShipFromAddress2,ShipFromAddress3,ShipFromAddress4,ShipFromCity,ShipFromCountry,ShipFromName,ShipFromPostalCode,ShipFromState,ShipToAddress1,ShipToAddress2,ShipToAddress3,ShipToAddress4,ShipToCity,ShipToCountry,ShipToName,ShipToPostalCode,ShipToState,SubTotal,TrackingNum,TrackingType)>
+<!ATTLIST InvoiceDist Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT StoreId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT BatchDate (#PCDATA)>
+<!ELEMENT BatchNumber (#PCDATA)>
+<!ELEMENT BatchTime (#PCDATA)>
+<!ELEMENT Carrier (#PCDATA)>
+<!ELEMENT Credits (#PCDATA)>
+<!ELEMENT Discounts (#PCDATA)>
+<!ELEMENT DistOrderNum (#PCDATA)>
+<!ELEMENT DistShipmentNum (#PCDATA)>
+<!ELEMENT ErpPoNum (#PCDATA)>
+<!ELEMENT ErpSystemCd (#PCDATA)>
+<!ELEMENT Freight (#PCDATA)>
+<!ELEMENT InvoiceDate (#PCDATA)>
+<!ELEMENT InvoiceDistSourceCd (#PCDATA)>
+<!ELEMENT InvoiceNum (#PCDATA)>
+<!ELEMENT InvoiceStatusCd (#PCDATA)>
+<!ELEMENT MiscCharges (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT RemitTo (#PCDATA)>
+<!ELEMENT SalesTax (#PCDATA)>
+<!ELEMENT Scac (#PCDATA)>
+<!ELEMENT ShipFromAddress1 (#PCDATA)>
+<!ELEMENT ShipFromAddress2 (#PCDATA)>
+<!ELEMENT ShipFromAddress3 (#PCDATA)>
+<!ELEMENT ShipFromAddress4 (#PCDATA)>
+<!ELEMENT ShipFromCity (#PCDATA)>
+<!ELEMENT ShipFromCountry (#PCDATA)>
+<!ELEMENT ShipFromName (#PCDATA)>
+<!ELEMENT ShipFromPostalCode (#PCDATA)>
+<!ELEMENT ShipFromState (#PCDATA)>
+<!ELEMENT ShipToAddress1 (#PCDATA)>
+<!ELEMENT ShipToAddress2 (#PCDATA)>
+<!ELEMENT ShipToAddress3 (#PCDATA)>
+<!ELEMENT ShipToAddress4 (#PCDATA)>
+<!ELEMENT ShipToCity (#PCDATA)>
+<!ELEMENT ShipToCountry (#PCDATA)>
+<!ELEMENT ShipToName (#PCDATA)>
+<!ELEMENT ShipToPostalCode (#PCDATA)>
+<!ELEMENT ShipToState (#PCDATA)>
+<!ELEMENT SubTotal (#PCDATA)>
+<!ELEMENT TrackingNum (#PCDATA)>
+<!ELEMENT TrackingType (#PCDATA)>

@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>9L</idCode>
+        <idValue>Ninth Layer</idValue>
+    <idCode>AA</idCode>
+        <idValue>Meter reading-beginning actual/ending actual</idValue>
+    <idCode>AB</idCode>
+        <idValue>Average Balance</idValue>
+    <idCode>AC</idCode>
+        <idValue>Maximum Balance</idValue>
+    <idCode>AD</idCode>
+        <idValue>Serving Specifications</idValue>
+    <idCode>AE</idCode>
+        <idValue>Meter reading-beginning actual/ending estimated</idValue>
+    <idCode>AF</idCode>
+        <idValue>Actual Total</idValue>
+    <idCode>AG</idCode>
+        <idValue>Compliance Total</idValue>
+    <idCode>AH</idCode>
+        <idValue>Gross Compliance Total</idValue>
+    <idCode>AI</idCode>
+        <idValue>Net Compliance Total</idValue>
+    <idCode>AJ</idCode>
+        <idValue>Effectiveness</idValue>
+    <idCode>AK</idCode>
+        <idValue>Penetration</idValue>
+    <idCode>AL</idCode>
+        <idValue>Exposure</idValue>
+    <idCode>AM</idCode>
+        <idValue>Capacity</idValue>
+    <idCode>AN</idCode>
+        <idValue>Work</idValue>
+    <idCode>AO</idCode>
+        <idValue>Account Opened Period</idValue>
+    <idCode>AP</idCode>
+        <idValue>Apartments</idValue>
+    <idCode>AQ</idCode>
+        <idValue>Amount Owes</idValue>
+    <idCode>AR</idCode>
+        <idValue>Annual Result</idValue>
+    <idCode>AS</idCode>
+        <idValue>Modified Exposure</idValue>
+    <idCode>AT</idCode>
+        <idValue>Pro Rata Factor</idValue>
+    <idCode>AU</idCode>
+        <idValue>Sample</idValue>
+    <idCode>AV</idCode>
+        <idValue>Average Reading</idValue>
+    <idCode>AW</idCode>
+        <idValue>Relative Humidity</idValue>
+    <idCode>BA</idCode>
+        <idValue>Base Point</idValue>
+    <idCode>BB</idCode>
+        <idValue>Bank Balance</idValue>
+    <idCode>BC</idCode>
+        <idValue>Billed Actual</idValue>
+    <idCode>BD</idCode>
+        <idValue>Billed Dimensions</idValue>
+    <idCode>BL</idCode>
+        <idValue>Bundle Limitation</idValue>
+    <idCode>BM</idCode>
+        <idValue>Base Metal</idValue>
+    <idCode>BN</idCode>
+        <idValue>Billed Minimum</idValue>
+    <idCode>BO</idCode>
+        <idValue>Meter Reading as Billed</idValue>
+    <idCode>BP</idCode>
+        <idValue>Bearing Piece Limitation</idValue>
+    <idCode>BR</idCode>
+        <idValue>Billed History</idValue>
+    <idCode>BT</idCode>
+        <idValue>Batch Limits</idValue>
+    <idCode>BZ</idCode>
+        <idValue>Batten Size</idValue>
+    <idCode>C1</idCode>
+        <idValue>Conformance Property Status</idValue>
+    <idCode>CA</idCode>
+        <idValue>Coating</idValue>
+    <idCode>CB</idCode>
+        <idValue>Condominium</idValue>
+    <idCode>CC</idCode>
+        <idValue>Cooperative</idValue>
+    <idCode>CF</idCode>
+        <idValue>Conversion Factor</idValue>
+    <idCode>CG</idCode>
+        <idValue>Average Owing</idValue>
+    <idCode>CH</idCode>
+        <idValue>Chemistry</idValue>
+    <idCode>CJ</idCode>
+        <idValue>Current Balance</idValue>
+    <idCode>CK</idCode>
+        <idValue>Discounted Checks</idValue>
+    <idCode>CL</idCode>
+        <idValue>Drafts</idValue>
+    <idCode>CM</idCode>
+        <idValue>Commercial</idValue>
+    <idCode>CN</idCode>
+        <idValue>Core Notch Dimensions</idValue>
+    <idCode>CO</idCode>
+        <idValue>Concentration</idValue>
+    <idCode>CP</idCode>
+        <idValue>Letter of Credit Size</idValue>
+    <idCode>CQ</idCode>
+        <idValue>Payment Orders</idValue>
+    <idCode>CS</idCode>
+        <idValue>Core Size</idValue>
+    <idCode>CT</idCode>
+        <idValue>Counts</idValue>
+    <idCode>CU</idCode>
+        <idValue>Pledge Size</idValue>
+    <idCode>CV</idCode>
+        <idValue>Cumulative Test Period</idValue>
+    <idCode>CW</idCode>
+        <idValue>Promissory Notes in Force</idValue>
+    <idCode>CY</idCode>
+        <idValue>Secured Amount</idValue>
+    <idCode>DE</idCode>
+        <idValue>Defects</idValue>
+    <idCode>DN</idCode>
+        <idValue>Dunnage Dimension</idValue>
+    <idCode>DT</idCode>
+        <idValue>Dimensional Tolerance</idValue>
+    <idCode>EA</idCode>
+        <idValue>Meter reading-beginning estimated/ending actual</idValue>
+    <idCode>EE</idCode>
+        <idValue>Meter reading-beginning estimated/ending estimated</idValue>
+    <idCode>EF</idCode>
+        <idValue>Evaluation Factors</idValue>
+    <idCode>EL</idCode>
+        <idValue>Electrical Characteristics</idValue>
+    <idCode>EN</idCode>
+        <idValue>Environmental Conditions</idValue>
+    <idCode>FC</idCode>
+        <idValue>First of Campaign Result</idValue>
+    <idCode>FD</idCode>
+        <idValue>Finished Dimensions</idValue>
+    <idCode>FH</idCode>
+        <idValue>Radio Operations</idValue>
+    <idCode>FJ</idCode>
+        <idValue>Antenna Characteristics</idValue>
+    <idCode>FV</idCode>
+        <idValue>Firing Values</idValue>
+    <idCode>FZ</idCode>
+        <idValue>File Size</idValue>
+    <idCode>GC</idCode>
+        <idValue>Contractor Delivery Limitations</idValue>
+    <idCode>GL</idCode>
+        <idValue>Guidelines</idValue>
+    <idCode>GO</idCode>
+        <idValue>Government Ordering Limitations</idValue>
+    <idCode>GP</idCode>
+        <idValue>Ordering Period Limitations</idValue>
+    <idCode>HC</idCode>
+        <idValue>High Credit Average</idValue>
+    <idCode>HR</idCode>
+        <idValue>Historical Result</idValue>
+    <idCode>ID</idCode>
+        <idValue>Industrial</idValue>
+    <idCode>IN</idCode>
+        <idValue>Incrustation</idValue>
+    <idCode>IR</idCode>
+        <idValue>Interpolated Result</idValue>
+    <idCode>LC</idCode>
+        <idValue>Limited Weight/Size Coils</idValue>
+    <idCode>LD</idCode>
+        <idValue>Load Planning Dimensions</idValue>
+    <idCode>LG</idCode>
+        <idValue>Loans Granted</idValue>
+    <idCode>LL</idCode>
+        <idValue>Lift Limitation</idValue>
+    <idCode>LM</idCode>
+        <idValue>Layer of Multiple Layered Product</idValue>
+    <idCode>LP</idCode>
+        <idValue>Last Sold Period</idValue>
+    <idCode>LS</idCode>
+        <idValue>Lot Status</idValue>
+    <idCode>LT</idCode>
+        <idValue>Lot Limits</idValue>
+    <idCode>MA</idCode>
+        <idValue>Accuracy</idValue>
+    <idCode>MB</idCode>
+        <idValue>Activity Period Result</idValue>
+    <idCode>MC</idCode>
+        <idValue>Average Daily Limit</idValue>
+    <idCode>MD</idCode>
+        <idValue>Design Capacity</idValue>
+    <idCode>ME</idCode>
+        <idValue>Map Scale</idValue>
+    <idCode>MF</idCode>
+        <idValue>Maximum Daily Limit</idValue>
+    <idCode>MP</idCode>
+        <idValue>Maturity Period</idValue>
+    <idCode>MR</idCode>
+        <idValue>Base Material Result</idValue>
+    <idCode>NC</idCode>
+        <idValue>Net Change</idValue>
+    <idCode>NE</idCode>
+        <idValue>Neighborhood</idValue>
+    <idCode>NX</idCode>
+        <idValue>Net Explosive Weight</idValue>
+    <idCode>OD</idCode>
+        <idValue>Ordered Dimensions</idValue>
+    <idCode>OG</idCode>
+        <idValue>Original</idValue>
+    <idCode>OL</idCode>
+        <idValue>Order Limits</idValue>
+    <idCode>OP</idCode>
+        <idValue>Other Property</idValue>
+    <idCode>P1</idCode>
+        <idValue>Platform Limitation</idValue>
+    <idCode>PA</idCode>
+        <idValue>Pallet Dimensions</idValue>
+    <idCode>PB</idCode>
+        <idValue>Receivership Period</idValue>
+    <idCode>PC</idCode>
+        <idValue>Parting Cut (Sawcut)</idValue>
+    <idCode>PD</idCode>
+        <idValue>Physical Dimensions</idValue>
+    <idCode>PI</idCode>
+        <idValue>Project Incomplete</idValue>
+    <idCode>PJ</idCode>
+        <idValue>Project Complete</idValue>
+    <idCode>PK</idCode>
+        <idValue>Package Dimensions</idValue>
+    <idCode>PL</idCode>
+        <idValue>Package Limitations</idValue>
+    <idCode>PM</idCode>
+        <idValue>Permitted</idValue>
+    <idCode>PO</idCode>
+        <idValue>Position</idValue>
+    <idCode>PR</idCode>
+        <idValue>Product Dimension Range Price Bracket</idValue>
+    <idCode>PS</idCode>
+        <idValue>Product Characteristic Specification</idValue>
+    <idCode>PT</idCode>
+        <idValue>Pretest Period</idValue>
+    <idCode>PU</idCode>
+        <idValue>Planned Urban Development</idValue>
+    <idCode>PY</idCode>
+        <idValue>Property</idValue>
+    <idCode>QR</idCode>
+        <idValue>Quarterly Result</idValue>
+    <idCode>QV</idCode>
+        <idValue>Quantity Variation</idValue>
+    <idCode>R1</idCode>
+        <idValue>Opening Reading</idValue>
+    <idCode>R2</idCode>
+        <idValue>Closing Reading</idValue>
+    <idCode>RA</idCode>
+        <idValue>Reject Amount</idValue>
+    <idCode>RG</idCode>
+        <idValue>Regulatory Limit</idValue>
+    <idCode>RL</idCode>
+        <idValue>Receiving Facility Limitations</idValue>
+    <idCode>RN</idCode>
+        <idValue>Lengths Limitation</idValue>
+    <idCode>RO</idCode>
+        <idValue>Roll Limits</idValue>
+    <idCode>RP</idCode>
+        <idValue>Relative Position</idValue>
+    <idCode>RQ</idCode>
+        <idValue>Requested</idValue>
+    <idCode>RS</idCode>
+        <idValue>Response Time</idValue>
+    <idCode>RT</idCode>
+        <idValue>Replacement</idValue>
+    <idCode>SA</idCode>
+        <idValue>Spacing/Margin</idValue>
+    <idCode>SB</idCode>
+        <idValue>Single Family</idValue>
+    <idCode>SC</idCode>
+        <idValue>Standard Industrial Classification (SIC) Code Size Standards</idValue>
+    <idCode>SD</idCode>
+        <idValue>Shipped Dimensions</idValue>
+    <idCode>SE</idCode>
+        <idValue>Property Specifications</idValue>
+    <idCode>SF</idCode>
+        <idValue>Shelf Life</idValue>
+    <idCode>SH</idCode>
+        <idValue>Shipping Tolerance</idValue>
+    <idCode>SJ</idCode>
+        <idValue>Subject Phase</idValue>
+    <idCode>SK</idCode>
+        <idValue>Skid Dimensions</idValue>
+    <idCode>SL</idCode>
+        <idValue>Skid Limitations</idValue>
+    <idCode>SM</idCode>
+        <idValue>Shade</idValue>
+    <idCode>SP</idCode>
+        <idValue>Splices</idValue>
+    <idCode>SR</idCode>
+        <idValue>Surface Roughness</idValue>
+    <idCode>ST</idCode>
+        <idValue>Surface Treatment</idValue>
+    <idCode>SU</idCode>
+        <idValue>Surface</idValue>
+    <idCode>SZ</idCode>
+        <idValue>Subject Property</idValue>
+    <idCode>TA</idCode>
+        <idValue>Two to Four Family</idValue>
+    <idCode>TD</idCode>
+        <idValue>Splice Tape Dimensions</idValue>
+    <idCode>TE</idCode>
+        <idValue>Temperature</idValue>
+    <idCode>TI</idCode>
+        <idValue>Time</idValue>
+    <idCode>TL</idCode>
+        <idValue>Transportation Equipment Limitations</idValue>
+    <idCode>TO</idCode>
+        <idValue>Total Dimensions</idValue>
+    <idCode>TP</idCode>
+        <idValue>Test Period</idValue>
+    <idCode>TR</idCode>
+        <idValue>Test Results</idValue>
+    <idCode>TS</idCode>
+        <idValue>Single Test Limits</idValue>
+    <idCode>TT</idCode>
+        <idValue>This Type Property</idValue>
+    <idCode>VT</idCode>
+        <idValue>Vacant</idValue>
+    <idCode>WA</idCode>
+        <idValue>Waste Amount</idValue>
+    <idCode>WR</idCode>
+        <idValue>Warranty</idValue>
+    <idCode>WT</idCode>
+        <idValue>Weights</idValue>
+    <idCode>ZA</idCode>
+        <idValue>Multi - Family</idValue>
+    <idCode>ZP</idCode>
+        <idValue>Log Zero Point of Reference</idValue>
+</idList>

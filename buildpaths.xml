@@ -1,0 +1,347 @@
+<project name="Paths" basedir=".">
+
+   <echo>Setting build paths</echo>
+
+   <!-- The class path used for compiling the source code -->
+   <!-- path id="project.class.path">
+      <pathelement path="${build}"/>
+      <pathelement location="${jdbcLib}" />
+      <pathelement location="${tools}/crypto/jce1_2_2.jar" />
+      <pathelement location="${tools}/rightFax/RFJavaInt.zip" />
+      <pathelement location="${tools}/netsuite/netsuite.jar" />
+      <pathelement location="${tools}/jakarta-commons/commons-logging-1.0.4.jar" />
+      <pathelement location="${tools}/jakarta-commons/commons-discovery-0.2.jar" />
+      <pathelement location="${tools}/MyFax/mailapi.jar" />
+      <pathelement location="${tools}/MyFax/axis-ant.jar" />
+      <pathelement location="${tools}/AvalaraTax/activation.jar" />
+      <pathelement location="${tools}/AvalaraTax/axis-1.2.1.jar" />
+      <pathelement location="${tools}/AvalaraTax/axis-ant.jar" />
+      <pathelement location="${tools}/AvalaraTax/bcprov-jdk13-128.jar" />
+      <pathelement location="${tools}/AvalaraTax/commons-discovery-0.2.jar" />
+      <pathelement location="${tools}/AvalaraTax/commons-logging-1.0.4.jar" />
+      <pathelement location="${tools}/AvalaraTax/jaxrpc.jar" />
+      <pathelement location="${tools}/AvalaraTax/junit-3.8.1.jar" />
+      <pathelement location="${tools}/AvalaraTax/log4j.properties" />
+      <pathelement location="${tools}/AvalaraTax/log4j-1.2.8.jar" />
+      <pathelement location="${tools}/AvalaraTax/mailapi.jar" />
+      <pathelement location="${tools}/AvalaraTax/saaj.jar" />
+      <pathelement location="${tools}/AvalaraTax/wsdl4j-1.5.1.jar" />
+      <pathelement location="${tools}/AvalaraTax/xalan-2.6.0.jar" />
+      <pathelement location="${tools}/itext/iText-2.1.0.jar" />
+      <pathelement location="${tools}/lawson/LawsonBizBeansCommon.jar" />
+      <pathelement location="${tools}/POI/jakarta-poi-3.2.jar" />
+      <pathelement location="${tools}/POI/jakarta-poi-ooxml.jar" />
+      <pathelement location="${tools}/dom4j/dom4j.jar" />
+      <pathelement location="${tools}/oboe.new/oboe.jar" />
+      <pathelement location="${jbossLib}/xerces.jar" />
+      <pathelement location="${jbossLib}/jmxri.jar" />
+      <pathelement location="${tools}/httpunit/httpunit.jar" />
+      <pathelement location="${tools}/httpclient/commons-httpclient.jar" />
+      <pathelement location="${tools}/input-filter/esapi-2.0_RC7-SNAPSHOT.jar" />
+      <pathelement location="${tools}/freemarker/freemarker-2.3.16.jar" />
+      <pathelement location="${tools}/qrgen/qrgen-1.1.jar" />
+      
+      <fileset dir="${servletContainerHome}">
+         <include name="lib/servlet.jar" />
+         <include name="common/lib/servlet.jar" />
+         <include name="lib/javax.servlet.jar" />
+      </fileset>
+      <fileset dir="${tools}/struts/">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/jakarta-commons/">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/inetsoft">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/ftp">
+         <include name="edtftpj-pro.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/client">
+         <include name="**/jbossall-client.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/lib">
+         <include name="**/jboss-common.jar" />
+      </fileset>
+      <fileset dir="${jbossLibExt}">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossLib}">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/quartz/">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/cryptix/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/compass/">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/paymetric/">
+         <include name="**/*.jar" />
+      </fileset>
+
+   </path -->
+
+   <!-- ============================ -->
+   <path id="jboss5.project.class.path">
+   <!-- ============================ -->
+<!--
+      <fileset dir="${jbossHome}/common/lib">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/lib">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/lib/endorsed">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/client">
+         <include name="**/*.jar" />
+      </fileset>
+
+      <fileset dir="${jbossHome}/xsuite/lib">
+         <include name="**/*.jar" />
+      </fileset>
+-->
+      <fileset dir="${tools}/thumbnails/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/bzip2/">
+         <include name="**/*.jar" />
+      </fileset>
+      <pathelement path="${build}"/>
+      <fileset dir="${tools}/ftp">
+         <include name="edtftpj-pro.jar" />
+         <include name="j2ssh-core.jar"/>
+      </fileset>
+      <fileset dir="${tools}/quartz/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossDir}/server/client">
+         <include name="jbossall-client.jar" />
+      </fileset>
+      <fileset dir="${jbossDir}/server/common/lib">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossDir}/server/lib">
+         <include name="**/*.jar" />
+      </fileset>
+      <!-- fileset dir="${jbossLibExt}">
+         <include name="**/*.jar" />
+      </fileset-->
+      
+      <fileset dir="${jdbcDir}">
+         <include name="**/*.jar" />
+      </fileset>
+      <!-- pathelement location="${jdbcLib}" / -->
+      <pathelement location="${tools}/crypto/jce1_2_2.jar" />
+      <pathelement location="${tools}/rightFax/RFJavaInt.zip" />
+      <pathelement location="${tools}/itext/iText-2.1.0.jar" />
+      <pathelement location="${tools}/lawson/LawsonBizBeansCommon.jar" />
+      <pathelement location="${tools}/dom4j/dom4j.jar" />
+      <pathelement location="${tools}/oboe.new/oboe.jar" />
+      <pathelement location="${tools}/netsuite/netsuite.jar" />
+      <pathelement location="${tools}/jakarta-commons/commons-logging-1.0.4.jar" />
+      <pathelement location="${tools}/jakarta-commons/commons-discovery-0.2.jar" />
+      <pathelement location="${tools}/httpunit/httpunit.jar" />
+      <pathelement location="${tools}/httpclient/commons-httpclient.jar" />
+      <pathelement location="${tools}/input-filter/esapi-2.0_RC7-SNAPSHOT.jar" />
+      <pathelement location="${tools}/freemarker/freemarker-2.3.16.jar" />
+      <pathelement location="${tools}/ocean/eSpendwiseOceanUtil.jar" />
+      <pathelement location="${tools}/ocean/eSpendwiseOceanCommon.jar" />
+      <pathelement location="${jbossHome}/common/lib/jsp-api.jar" />
+
+      <!--       <pathelement location="${jbossHome}/common/lib/jboss-javaee.jar" />  -->
+      <!-- pathelement location="${jbossHome}/client/jboss-javaee.jar" / -->
+      <!-- THESE 2 FILES ARE DIFFERENT -->
+
+      <fileset dir="${tools}/MyFax/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/AvalaraTax/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/POI/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/struts/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/jakarta-commons/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/inetsoft">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/cryptix/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/compass/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/paymetric/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/xerces/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/restws/lib/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/qrgen/">
+         <include name="**/*.jar" />
+      </fileset>
+   </path>
+
+   <!-- The class path used for compiling the parser related source code.
+        It requires the Xerces XML parser, and the EJB code seems to
+        require the Crimson XML parser.  (Something to do with JBoss?) -->
+   <!-- path id="project.edi.path">
+      <pathelement path="${build}"/>
+      <fileset dir="${jbossLibExt}">
+         <include name="**/*.zip" />
+          <include name="**/*.jar" />
+      </fileset>
+      <pathelement location="${tools}/oboe.new/oboe.jar" />
+      <pathelement location="${tools}/inetsoft/etools.jar" />
+   </path-->
+
+   <!-- path id="jboss5.project.edi.path">
+      <pathelement path="${build}"/>
+      <fileset dir="${jbossLib}">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossLibExt}">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <pathelement location="${tools}/oboe.new/oboe.jar" />
+      <pathelement location="${tools}/inetsoft/etools.jar" />
+      <pathelement location="${jbossHome}/common/lib/jboss-javaee.jar" />
+   </path -->
+
+   <!-- path id="project.client.path">
+      <pathelement location="${jbossLibExt}/log4j.jar" />
+      <pathelement location="${tools}/httpunit/httpunit.jar" />
+      <pathelement location="${build}" />
+   </path-->
+
+   <!-- path id="project.credit.card.path">
+      <pathelement location="${tools}/payflow/lib/payflow.jar" />
+      <pathelement location="${build}" />
+   </path -->
+
+   <!-- The class path used for verifying ejb jar files (Note that the
+       verifier.jar and metadata.jar are obsolete as of JBoss 2.4.1) -->
+   <!-- path id="project.verifier.path">
+      <pathelement location="${jbossHome}/lib/jboss-system.jar" />
+      <pathelement location="${jbossHome}/lib/jboss-common.jar" />
+      <pathelement location="${jbossHome}/lib/concurrent.jar" />
+      <pathelement location="${jbossHome}/lib/jboss-jmx.jar" />
+      <pathelement location="${jbossLib}/xerces.jar" />
+      <pathelement location="${tools}/lawson/LawsonBizBeansCommon.jar" />
+      <pathelement path="${build}"/>
+      <fileset dir="${jbossLibExt}">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+   </path -->
+
+   <!-- The class path used for build tools -->
+   <path id="project.class.tools">
+      <pathelement path="${build}/tools" />
+      <fileset dir="${build}/jar/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/lib/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/common/lib/">
+         <include name="**/*.jar" />
+      </fileset>
+   </path>
+
+   <!-- The class path used for compiling the com.cleanwise.service.edi
+        package with new oboe lib (for test purpose)-->
+   <!-- path id="project.oboe.test.class.path">
+      <pathelement path="${build}"/>
+      <pathelement location="${jdbcLib}" />
+      <pathelement location="${tools}/crypto/jce1_2_2.jar" />
+      <pathelement location="${tools}/rightFax/RFJavaInt.zip" />
+      <pathelement location="${tools}/itext/iText-2.1.0.jar" />
+      <pathelement location="${tools}/lawson/LawsonBizBeansCommon.jar" />
+      <pathelement location="${tools}/POI/jakarta-poi-3.2.jar" />
+      <pathelement location="${tools}/POI/jakarta-poi-ooxml.jar" />
+      <pathelement location="${tools}/dom4j/dom4j.jar" />
+      <pathelement location="${tools}/oboe.new/oboe.jar" />
+      <pathelement location="${jbossLib}/xerces.jar" />
+      <pathelement location="${jbossLib}/jmxri.jar" />
+      <pathelement location="${tools}/httpunit/httpunit.jar" />
+      <pathelement location="${tools}/httpclient/commons-httpclient.jar" />
+
+      <fileset dir="${servletContainerHome}">
+         <include name="lib/servlet.jar" />
+         <include name="common/lib/servlet.jar" />
+         <include name="lib/javax.servlet.jar" />
+      </fileset>
+      <fileset dir="${tools}/struts/">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/jakarta-commons/">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/inetsoft">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/client">
+         <include name="**/jbossall-client.jar" />
+      </fileset>
+      <fileset dir="${jbossHome}/lib">
+         <include name="**/jboss-common.jar" />
+      </fileset>
+      <fileset dir="${jbossLibExt}">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${jbossLib}">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/quartz/">
+         <include name="**/*.zip" />
+         <include name="**/*.jar" />
+      </fileset>
+   </path -->
+
+   <!-- The class path used for decrypt application -->
+   <!-- path id="project.decrypt.app.path">
+      <fileset dir="${tools}/POI/">
+         <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${tools}/cryptix/">
+         <include name="**/*.jar" />
+      </fileset>
+      <pathelement location="${build}" />
+   </path -->
+
+   <!-- The class path used for replicate application -->
+   <!-- path id="project.replicate.app.path">
+      <fileset dir="${tools}/replicate/">
+         <include name="**/*.jar" />
+      </fileset>
+      <pathelement location="${build}" />
+   </path-->
+
+</project>

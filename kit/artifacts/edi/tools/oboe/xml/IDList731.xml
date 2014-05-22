@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>BS</idCode>
+        <idValue>Buyer to Seller</idValue>
+    <idCode>SB</idCode>
+        <idValue>Seller to Buyer</idValue>
+    <idCode>SC</idCode>
+        <idValue>Subcontractor to Seller</idValue>
+    <idCode>SD</idCode>
+        <idValue>Seller to Drop-Ship Designated Location</idValue>
+    <idCode>SF</idCode>
+        <idValue>Seller to Freight Forwarder</idValue>
+    <idCode>SS</idCode>
+        <idValue>Seller to Subcontractor</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

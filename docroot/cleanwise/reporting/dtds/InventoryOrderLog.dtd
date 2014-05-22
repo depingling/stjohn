@@ -1,0 +1,16 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT InventoryOrderLogList (InventoryOrderLog)+>
+<!ELEMENT InventoryOrderLog (OrderId,SiteId,AddBy,AddDate,ModBy,ModDate,OrderCutoffDate,OrderDeliveryDate)>
+<!ATTLIST InventoryOrderLog Id ID #REQUIRED>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT SiteId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT OrderCutoffDate (#PCDATA)>
+<!ELEMENT OrderDeliveryDate (#PCDATA)>

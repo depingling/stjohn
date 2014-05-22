@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="com/cleanwise/mule/" kind="src" path="src"/>
+	<classpathentry kind="lib" path="tools/soap/axis.jar"/>
+	<classpathentry kind="lib" path="tools/crypto/bcprov-jdk14.jar"/>
+	<classpathentry kind="lib" path="tools/bzip2/bzip2.jar"/>
+	<classpathentry kind="lib" path="tools/jakarta-commons/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="tools/jakarta-commons/commons-lang-2.2.jar"/>
+	<classpathentry kind="lib" path="tools/compass/compass.jar"/>
+	<classpathentry kind="lib" path="tools/cryptix/cryptix-jce-api-20050328.jar"/>
+	<classpathentry kind="lib" path="tools/cryptix/cryptix-jce-provider-20050328.jar"/>
+	<classpathentry kind="lib" path="tools/cryptix/cryptix-message-api-20050405.jar"/>
+	<classpathentry kind="lib" path="tools/cryptix/cryptix-openpgp-provider-20050405.jar"/>
+	<classpathentry kind="lib" path="tools/cryptix/cryptix-pki-api-20050405.jar"/>
+	<classpathentry kind="lib" path="tools/ftp/edtftpj-pro.jar"/>
+	<classpathentry kind="lib" path="tools/input-filter/esapi-2.0_RC7-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="tools/ocean/eSpendwiseOceanCommon.jar"/>
+	<classpathentry kind="lib" path="tools/ocean/eSpendwiseOceanUtil.jar"/>
+	<classpathentry kind="lib" path="tools/freemarker/freemarker-2.3.16.jar"/>
+	<classpathentry kind="lib" path="tools/httpunit/httpunit.jar"/>
+	<classpathentry kind="lib" path="tools/itext/iText-2.1.0.jar"/>
+	<classpathentry kind="lib" path="tools/ftp/j2ssh-core.jar"/>
+	<classpathentry kind="lib" path="tools/POI/jakarta-poi-3.2.jar"/>
+	<classpathentry kind="lib" path="tools/POI/jakarta-poi-ooxml.jar"/>
+	<classpathentry kind="lib" path="tools/restws/lib/jaxrs-api-2.2.2.GA.jar"/>
+	<classpathentry kind="lib" path="tools/inetsoft/jxl.jar"/>
+	<classpathentry kind="lib" path="tools/replicate/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="tools/netsuite/netsuite.jar"/>
+	<classpathentry kind="lib" path="tools/oboe.new/oboe.jar"/>
+	<classpathentry kind="lib" path="installation/jdbc/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="tools/paymetric/paymetric.jar"/>
+	<classpathentry kind="lib" path="tools/qrgen/qrgen-1.1.jar"/>
+	<classpathentry kind="lib" path="tools/quartz/quartz-1.6.0.jar"/>
+	<classpathentry kind="lib" path="tools/inetsoft/sree_pro.jar"/>
+	<classpathentry kind="lib" path="tools/struts/struts.jar"/>
+	<classpathentry kind="lib" path="tools/thumbnails/Thumbnailator-0.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.6.0_20/lib/tools.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.6.0_20">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.generic.runtimeTarget/JBoss v5.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="tools/xerces/xerces.jar"/>
+	<classpathentry kind="output" path="src"/>
+</classpath>

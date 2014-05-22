@@ -1,0 +1,19 @@
+The contents of this directory are files unzipped from the original
+OBOE_258.binary.extended.zip (American Coders OBOE 2.5.8 package) with
+the following additions/modifications:
+
+- updated version of xml/IDList98.xml (additional elements specific to
+  Cleanwise trading partners???)
+- xml/850.object (binary file with 850 rules generated first time an 
+  850 is processed)
+- xml/997.object (binary file with 997 rules generated first time an 
+  997 is processed)
+- modified OBOE.properties for the directory location
+- samples directory with Java samples obtained from American Coders, but
+  not in the original
+- unzipped javadoc.zip
+- this file (README-CLEANWISE)
+
+
+Note to create a new template class (850 855 etc):
+java com.americancoders.util.OBOECodeGenerator b 850 Outbound850.java

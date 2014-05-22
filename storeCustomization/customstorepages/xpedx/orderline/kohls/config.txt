@@ -1,0 +1,2 @@
+PdfOrderGuide=com.cleanwise.view.utils.pdf.PdfOrderGuide
+orderGuideSecondarySorting=ORDER_BY_CATEGORY_AND_SKU

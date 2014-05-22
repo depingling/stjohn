@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Shipper supplied</idValue>
+    <idCode>2</idCode>
+        <idValue>Carrier supplied</idValue>
+    <idCode>3</idCode>
+        <idValue>Consolidator supplied</idValue>
+    <idCode>4</idCode>
+        <idValue>Deconsolidator supplied</idValue>
+    <idCode>5</idCode>
+        <idValue>Third party supplied</idValue>
+</idList>

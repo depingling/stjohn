@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 2.5.0 data/OBOE, docs,January 23, 2004, -->
+<idList>
+    <idCode>AI</idCode>
+        <idValue>Adjustment In</idValue>
+    <idCode>AO</idCode>
+        <idValue>Adjustment Out</idValue>
+    <idCode>CD</idCode>
+        <idValue>Customer to Distributor</idValue>
+    <idCode>DC</idCode>
+        <idValue>Distributor to Customer</idValue>
+    <idCode>DM</idCode>
+        <idValue>Distributor to Manufacturer</idValue>
+    <idCode>MD</idCode>
+        <idValue>Manufacturer to Distributor</idValue>
+    <idCode>TI</idCode>
+        <idValue>Transfer In</idValue>
+    <idCode>TO</idCode>
+        <idValue>Transfer Out</idValue>
+</idList>

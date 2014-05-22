@@ -1,0 +1,1607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE transactionSet SYSTEM "transactionSetRules.dtd">
+<!-- Revision 2.6.0 data/OBOE, docs, February 25, 2004, -->
+<transactionSet name="Purchase Order" id="850"
+  revision="004030"
+  functionalGroup="PO"
+  description="This Draft Standard for Trial Use contains the format and establishes the data contents of the Purchase Order Transaction Set (850) for use within the context of an Electronic Data Interchange (EDI) environment. The transaction set can be used to provide for customary and established business and industry practice relative to the placement of purchase orders for goods and services. This transaction set should not be used to convey purchase order changes or purchase order acknowledgment information."
+  xmlTag="PurchaseOrder">
+    <table section="header">
+        <segment name="Transaction Set Header" id="ST"
+          description="To indicate the start of a transaction set and to assign a control number"
+          sequence="10"
+          occurs="1"
+          required='M'
+          xmlTag="TransactionSetHeader">
+            <dataElement name="Transaction Set Identifier Code" id="143"
+              sequence="1"
+              description="Code uniquely identifying a Transaction Set"
+              type="ID" required="M"
+              minLength="3" maxLength="3"
+              xmlTag="transactionSetIdentifierCode">
+              <idList>
+                <idCode>850</idCode>
+                <idValue>PO Acknowledgment</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Transaction Set Control Number" id="329"
+              sequence="2"
+              description="Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set"
+              type="AN" required="M"
+              minLength="4" maxLength="9"
+              xmlTag="transactionSetControlNumber"/>
+        </segment>
+        <segment name="Beginning Segment for Purchase Order" id="BEG"
+          description="To indicate the beginning of the Purchase Order Transaction Set and transmit identifying numbers and dates"
+          sequence="20"
+          occurs="1"
+          required='M'
+          xmlTag="BeginningSegmentForPurchaseOrder">
+            <dataElement name="Transaction Set Purpose Code" id="353"
+              sequence="1"
+              description="Code identifying purpose of transaction set"
+              type="ID" required="M"
+              minLength="2" maxLength="2"
+              idListFile="IDList353.xml"
+              xmlTag="transactionSetPurposeCode"/>
+            <dataElement name="Purchase Order Type Code" id="92"
+              sequence="2"
+              description="Code specifying the type of Purchase Order"
+              type="ID" required="M"
+              minLength="2" maxLength="2"
+              xmlTag="purchaseOrderTypeCode">
+              <idList>
+                <idCode>SA</idCode>
+                <idValue>Stand-alone order</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Purchase Order Number" id="324"
+              sequence="3"
+              description="Identifying number for Purchase Order assigned by the orderer/purchaser"
+              type="AN" required="M"
+              minLength="1" maxLength="22"
+              xmlTag="purchaseOrderNumber"/>
+            <dataElement name="Release Number" id="328"
+              sequence="4"
+              description="Number identifying a release against a Purchase Order previously placed by the parties involved in the transaction"
+              type="AN" required="O"
+              minLength="1" maxLength="30"
+              xmlTag="releaseNumber"/>
+            <dataElement name="Date" id="373"
+              sequence="5"
+              description="Date expressed as CCYYMMDD"
+              type="DT" required="M"
+              minLength="8" maxLength="8"
+              xmlTag="date"/>
+            <dataElement name="Contract Number" id="367"
+              sequence="6"
+              description="Contract number"
+              type="AN" required="O"
+              minLength="1" maxLength="30"
+              xmlTag="contractNumber"/>
+            <dataElement name="Acknowledgment Type" id="587"
+              sequence="7"
+              description="Code specifying the type of acknowledgment"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              idListFile="IDList587.xml"
+              xmlTag="acknowledgmentType"/>
+            <dataElement name="Invoice Type Code" id="1019"
+              sequence="8"
+              description="Code defining the method by which invoices are to be processed"
+              type="ID" required="O"
+              minLength="3" maxLength="3"
+              idListFile="IDList1019.xml"
+              xmlTag="invoiceTypeCode"/>
+            <dataElement name="Contract Type Code" id="1166"
+              sequence="9"
+              description="Code identifying a contract type"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              idListFile="IDList1166.xml"
+              xmlTag="contractTypeCode"/>
+            <dataElement name="Purchase Category" id="1232"
+              sequence="10"
+              description="Code identifying the broad category of products or services being acquired"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              idListFile="IDList1232.xml"
+              xmlTag="purchaseCategory"/>
+            <dataElement name="Security Level Code" id="786"
+              sequence="11"
+              description="Code indicating the level of confidentiality assigned by the sender to the information following"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              idListFile="IDList786.xml"
+              xmlTag="securityLevelCode"/>
+            <dataElement name="Transaction Type Code" id="640"
+              sequence="12"
+              description="Code specifying the type of transaction"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              idListFile="IDList640.xml"
+              xmlTag="transactionTypeCode"/>
+        </segment>
+        <segment name="Note/Special Instruction" id="NTE"
+          description="To transmit information in a free-form format, if necessary, for comment or special instruction"
+          sequence="30"
+          occurs="2"
+          required='O'
+          xmlTag="NoteSpecialInstruction">
+            <dataElement name="Note Reference Code" id="363"
+              sequence="1"
+              description="Code identifying the functional area or purpose for which the note applies"
+              type="AN" required="O"
+              minLength="3" maxLength="3"
+              xmlTag="noteReferenceCode">
+            </dataElement>
+            <dataElement name="Description" id="352"
+              sequence="2"
+              description="A free-form description to clarify the related data elements and their content"
+              type="AN" required="M"
+              minLength="1" maxLength="80"
+              xmlTag="description"/>
+        </segment>
+
+        <segment name="Reference Identification" id="REF"
+          description="To specify identifying information"
+          sequence="50"
+          occurs="5"
+          required='M'
+          xmlTag="ReferenceIdentification">
+            <dataElement name="Reference Identification Qualifier" id="128"
+              sequence="1"
+              description="Code qualifying the Reference Identification"
+              type="ID" required="M"
+              minLength="2" maxLength="3"
+              xmlTag="referenceIdentificationQualifier">
+              <idList>
+                <idCode>DP</idCode>
+                <idValue>Department Number</idValue>
+                <idCode>IA</idCode>
+                <idValue>Internal Supplier Number</idValue>
+                <idCode>AE</idCode>
+                <idValue>Authorization for Expense Number</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Reference Identification" id="127"
+              sequence="2"
+              description="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
+              type="AN" required="M"
+              minLength="1" maxLength="30"
+              xmlTag="referenceIdentification"/>
+        </segment>
+
+        <!--<segment name="Sales Requirements" id="CSH"
+          description="To specify general conditions or requirements of the sale"
+          sequence="110"
+          occurs="1"
+          required='M'
+          xmlTag="SalesRequirements">
+            <dataElement name="Sales Requirement Code" id="563"
+              sequence="1"
+              description="Code to identify a specific requirement or agreement of sale"
+              type="ID" required="M"
+              minLength="1" maxLength="2"
+              xmlTag="salesRequirementCode">
+              <idList>
+                <idCode>P2</idCode>
+                <idValue>Ship as soon as possible</idValue>
+                <idCode>P4</idCode>
+                <idValue>Do not Preship</idValue>
+                <idCode>SP</idCode>
+                <idValue>Ship Partial - Balance cancel</idValue>
+              </idList>
+            </dataElement>  
+        </segment>-->
+
+
+        <segment name="Sales Requirements" id="CSH"
+          description="To specify general conditions or requirements of the sale"
+          sequence="110"
+          occurs="5"
+          required='O'
+          xmlTag="SalesRequirements">
+            <dataElement name="Sales Requirement Code" id="563"
+              sequence="1"
+              description="Code to identify a specific requirement or agreement of sale"
+              type="ID" required="O"
+              minLength="1" maxLength="2"
+              idListFile="IDList563.xml"
+              xmlTag="salesRequirementCode"/>
+            <dataElement name="Action Code" id="306"
+              sequence="2"
+              description="Code indicating type of action"
+              type="ID" required="O"
+              minLength="1" maxLength="2"
+              idListFile="IDList306.xml"
+              xmlTag="actionCode"/>
+            <dataElement name="Amount" id="610"
+              sequence="3"
+              description="Monetary amount"
+              type="N2" required="X"
+              minLength="1" maxLength="15"
+              xmlTag="amount"/>
+            <dataElement name="Account Number" id="508"
+              sequence="4"
+              description="Account number assigned"
+              type="AN" required="O"
+              minLength="1" maxLength="35"
+              xmlTag="accountNumber"/>
+            <dataElement name="Date" id="373"
+              sequence="5"
+              description="Date expressed as CCYYMMDD"
+              type="DT" required="O"
+              minLength="6" maxLength="8"
+              xmlTag="date"/>
+            <dataElement name="Agency Qualifier Code" id="559"
+              sequence="6"
+              description="Code identifying the agency assigning the code values"
+              type="ID" required="X"
+              minLength="2" maxLength="2"
+              idListFile="IDList559.xml"
+              xmlTag="agencyQualifierCode"/>
+            <dataElement name="Special Services Code" id="560"
+              sequence="7"
+              description="Code identifying the special service"
+              type="ID" required="X"
+              minLength="2" maxLength="10"
+              idListFile="IDList560.xml"
+              xmlTag="specialServicesCode"/>
+            <dataElement name="Product/Service Substitution Code" id="566"
+              sequence="8"
+              description="Code indicating product or service substitution conditions"
+              type="ID" required="O"
+              minLength="1" maxLength="2"
+              idListFile="IDList566.xml"
+              xmlTag="productServiceSubstitutionCode"/>
+            <dataElement name="Percent" id="954"
+              sequence="9"
+              description="Percentage expressed as a decimal"
+              type="R" required="X"
+              minLength="1" maxLength="10"
+              xmlTag="percent"/>
+            <dataElement name="Percent Qualifier" id="1004"
+              sequence="10"
+              description="Code to qualify percent"
+              type="ID" required="X"
+              minLength="1" maxLength="2"
+              idListFile="IDList1004.xml"
+              xmlTag="percentQualifier"/>
+            <elementRule rule="ifFirstExistsThenAllMustExist" positions="2, 3"/>
+            <elementRule rule="allOrNoneMayExist" positions="6, 7"/>
+            <elementRule rule="allOrNoneMayExist" positions="9, 10"/>
+        </segment>
+
+        <segment name="Terms of Sale/Deferred Terms of Sale" id="ITD"
+          description="To specify terms of sale"
+          sequence="130"
+          occurs="-1"
+          required='O'
+          xmlTag="TermsOfSaleDeferredTermsOfSale">
+            <dataElement name="Terms Type Code" id="336"
+              sequence="1"
+              description="Code identifying type of payment terms"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              idListFile="IDList336.xml"
+              xmlTag="termsTypeCode"/>
+            <dataElement name="Terms Basis Date Code" id="333"
+              sequence="2"
+              description="Code identifying the beginning of the terms period"
+              type="ID" required="O"
+              minLength="1" maxLength="2"
+              idListFile="IDList333.xml"
+              xmlTag="termsBasisDateCode"/>
+            <dataElement name="Terms Discount Percent" id="338"
+              sequence="3"
+              description="Terms discount percentage, expressed as a percent, available to the purchaser if an invoice is paid on or before the Terms Discount Due Date"
+              type="R" required="O"
+              minLength="1" maxLength="6"
+              xmlTag="termsDiscountPercent"/>
+            <dataElement name="Terms Discount Due Date" id="370"
+              sequence="4"
+              description="Date payment is due if discount is to be earned expressed in format CCYYMMDD"
+              type="DT" required="X"
+              minLength="6" maxLength="8"
+              xmlTag="termsDiscountDueDate"/>
+            <dataElement name="Terms Discount Days Due" id="351"
+              sequence="5"
+              description="Number of days in the terms discount period by which payment is due if terms discount is earned"
+              type="N0" required="X"
+              minLength="1" maxLength="3"
+              xmlTag="termsDiscountDaysDue"/>
+            <dataElement name="Terms Net Due Date" id="446"
+              sequence="6"
+              description="Date when total invoice amount becomes due expressed in format CCYYMMDD"
+              type="DT" required="O"
+              minLength="6" maxLength="8"
+              xmlTag="termsNetDueDate"/>
+            <dataElement name="Terms Net Days" id="386"
+              sequence="7"
+              description="Number of days until total invoice amount is due (discount not applicable)"
+              type="N0" required="O"
+              minLength="1" maxLength="3"
+              xmlTag="termsNetDays"/>
+            <dataElement name="Terms Discount Amount" id="362"
+              sequence="8"
+              description="Total amount of terms discount"
+              type="N2" required="O"
+              minLength="1" maxLength="10"
+              xmlTag="termsDiscountAmount"/>
+            <dataElement name="Terms Deferred Due Date" id="388"
+              sequence="9"
+              description="Date deferred payment or percent of invoice payable is due expressed in format CCYYMMDD"
+              type="DT" required="O"
+              minLength="6" maxLength="8"
+              xmlTag="termsDeferredDueDate"/>
+            <dataElement name="Deferred Amount Due" id="389"
+              sequence="10"
+              description="Deferred amount due for payment"
+              type="N2" required="X"
+              minLength="1" maxLength="10"
+              xmlTag="deferredAmountDue"/>
+            <dataElement name="Percent of Invoice Payable" id="342"
+              sequence="11"
+              description="Amount of invoice payable expressed in percent"
+              type="R" required="X"
+              minLength="1" maxLength="5"
+              xmlTag="percentOfInvoicePayable"/>
+            <dataElement name="Description" id="352"
+              sequence="12"
+              description="A free-form description to clarify the related data elements and their content"
+              type="AN" required="O"
+              minLength="1" maxLength="80"
+              xmlTag="description"/>
+            <dataElement name="Day of Month" id="765"
+              sequence="13"
+              description="The numeric value of the day of the month between 1 and the maximum day of the month being referenced"
+              type="N0" required="X"
+              minLength="1" maxLength="2"
+              xmlTag="dayOfMonth"/>
+            <dataElement name="Payment Method Code" id="107"
+              sequence="14"
+              description="Code identifying type of payment procedures"
+              type="ID" required="O"
+              minLength="1" maxLength="2"
+              idListFile="IDList107.xml"
+              xmlTag="paymentMethodCode"/>
+            <dataElement name="Percent" id="954"
+              sequence="15"
+              description="Percentage expressed as a decimal"
+              type="R" required="O"
+              minLength="1" maxLength="10"
+              xmlTag="percent"/>
+            <elementRule rule="ifFirstExistsThenAtLeastOneMoreMustExist" positions="3, 4, 5, 13"/>
+            <elementRule rule="ifFirstExistsThenAtLeastOneMoreMustExist" positions="8, 4, 5, 13"/>
+            <elementRule rule="ifFirstExistsThenAtLeastOneMoreMustExist" positions="9, 10, 11"/>
+        </segment>
+
+
+        <segment name="Date/Time Reference" id="DTM"
+          description="To specify pertinent dates and times"
+          sequence="150"
+          occurs="3"
+          required='O'
+          xmlTag="DateTimeReference">
+            <dataElement name="Date/Time Qualifier" id="374"
+              sequence="1"
+              description="Code specifying type of date or time, or both date and time"
+              type="ID" required="M"
+              minLength="3" maxLength="3"
+              xmlTag="dateTimeQualifier">
+              <idList>
+                <idCode>010</idCode>
+                <idValue>Request Ship Date</idValue>
+                <idCode>001</idCode>
+                <idValue>Cancel After Date</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Date" id="373"
+              sequence="2"
+              description="Date expressed as CCYYMMDD"
+              type="DT" required="M"
+              minLength="8" maxLength="8"
+              xmlTag="date"/>
+        </segment>
+        
+
+
+        <segment name="Carrier Details (Routing Sequence/Transit Time)" id="TD5"
+          description="To specify the carrier and sequence of routing and provide transit time information"
+          sequence="240"
+          occurs="12"
+          required='O'
+          xmlTag="CarrierDetailsRoutingSequenceTransitTime">
+            <dataElement name="Routing Sequence Code" id="133"
+              sequence="1"
+              description="Code describing the relationship of a carrier to a specific shipment movement"
+              type="AN" required="O"
+              minLength="1" maxLength="2"
+              xmlTag="routingSequenceCode"/>
+            <dataElement name="Identification Code Qualifier" id="66"
+              sequence="2"
+              description="Code designating the system/method of code structure used for Identification Code (67)"
+              type="AN" required="X"
+              minLength="1" maxLength="2"
+              xmlTag="identificationCodeQualifier"/>
+            <dataElement name="Identification Code" id="67"
+              sequence="3"
+              description="Code identifying a party or other code"
+              type="AN" required="X"
+              minLength="2" maxLength="80"
+              xmlTag="identificationCode"/>
+            <dataElement name="Transportation Method/Type Code" id="91"
+              sequence="4"
+              description="Code specifying the method or type of transportation for the shipment"
+              type="ID" required="X"
+              minLength="1" maxLength="2"
+              xmlTag="transportationMethodTypeCode">
+              <idList>
+                <idCode>A</idCode>
+                <idValue>Air</idValue>
+                <idCode>E</idCode>
+                <idValue>Expedited Truck</idValue>
+                <idCode>D</idCode>
+                <idValue>Parcel Post</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Routing" id="387"
+              sequence="5"
+              description="Free-form description of the routing or requested routing for shipment, or the originating carrier&apos;s identity"
+              type="AN" required="X"
+              minLength="1" maxLength="35"
+              xmlTag="routing"/>
+        </segment>
+
+<segment name="Identification Reference" id="N9"
+              description="To transmit identifying information as specified by the Reference Identification Qualifier"
+              sequence="330"
+              occurs="1000"
+              required='O'
+              xmlTag="Text">
+                <dataElement name="Reference Identification Qualifier" id="128"
+                  sequence="1"
+                  description="Code qualifying the Reference Identification"
+                  type="ID" required="M"
+                  minLength="2" maxLength="3"
+                  idListFile="IDList128.xml"
+                  xmlTag="referenceIdentificationQualifier"/>
+                <dataElement name="Reference Identification" id="127"
+                  sequence="2"
+                  description="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
+                  type="AN" required="X"
+                  minLength="1" maxLength="30"
+                  xmlTag="referenceIdentification"/>
+                <dataElement name="Free-form Description" id="369"
+                  sequence="3"
+                  description="Free-form descriptive text"
+                  type="AN" required="X"
+                  minLength="1" maxLength="45"
+                  xmlTag="freeFormDescription"/>
+                <dataElement name="Date" id="373"
+                  sequence="4"
+                  description="Date expressed as CCYYMMDD"
+                  type="DT" required="O"
+                  minLength="6" maxLength="8"
+                  xmlTag="date"/>
+<segment name="Text" id="MTX"
+              description="To specify textual data"
+              sequence="630"
+              occurs="1000"
+              required='O'
+              xmlTag="MessageText">
+                <dataElement name="Note Reference Code" id="363"
+                  sequence="1"
+                  description="Code identifying the functional area or purpose for which the note applies"
+                  type="ID" required="O"
+                  minLength="3" maxLength="3"
+                  idListFile="IDList363.xml"
+                  xmlTag="noteReferenceCode"/>
+                <dataElement name="Message Text" id="1551"
+                  sequence="2"
+                  description="To transmit large volumes of message text"
+                  type="AN" required="X"
+                  minLength="1" maxLength="4096"
+                  xmlTag="messageText"/>
+                <dataElement name="Message Text" id="1551"
+                  sequence="3"
+                  description="To transmit large volumes of message text"
+                  type="AN" required="O"
+                  minLength="1" maxLength="4096"
+                  xmlTag="messageText"/>
+                <dataElement name="Printer Carriage Control Code" id="934"
+                  sequence="4"
+                  description="A field to be used for the control of the line feed of the receiving printer"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList934.xml"
+                  xmlTag="printerCarriageControlCode"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="1, 2"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="3, 2"/>
+            </segment>
+
+            </segment>
+
+<segment name="Text" id="MTX"
+              description="To specify textual data"
+              sequence="630"
+              occurs="1000"
+              required='O'
+              xmlTag="MessageText">
+                <dataElement name="Note Reference Code" id="363"
+                  sequence="1"
+                  description="Code identifying the functional area or purpose for which the note applies"
+                  type="ID" required="O"
+                  minLength="3" maxLength="3"
+                  idListFile="IDList363.xml"
+                  xmlTag="noteReferenceCode"/>
+                <dataElement name="Message Text" id="1551"
+                  sequence="2"
+                  description="To transmit large volumes of message text"
+                  type="AN" required="X"
+                  minLength="1" maxLength="4096"
+                  xmlTag="messageText"/>
+                <dataElement name="Message Text" id="1551"
+                  sequence="3"
+                  description="To transmit large volumes of message text"
+                  type="AN" required="O"
+                  minLength="1" maxLength="4096"
+                  xmlTag="messageText"/>
+                <dataElement name="Printer Carriage Control Code" id="934"
+                  sequence="4"
+                  description="A field to be used for the control of the line feed of the receiving printer"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList934.xml"
+                  xmlTag="printerCarriageControlCode"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="1, 2"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="3, 2"/>
+            </segment>
+
+        <segment name="Name" id="N1"
+          occurs="200"
+          sequence="310"
+          required='O'
+          description="To identify a party by type of organization, name, and code"
+          xmlTag="Name">
+            <dataElement name="Entity Identifier Code" id="98"
+              sequence="1"
+              description="Code identifying an organizational entity, a physical location, property or an individual"
+              type="ID" required="M"
+              minLength="2" maxLength="3"
+              idListFile="IDList98.xml"
+              xmlTag="entityIdentifierCode"/>
+            <dataElement name="Name" id="93"
+              sequence="2"
+              description="Free-form name"
+              type="AN" required="X"
+              minLength="1" maxLength="60"
+              xmlTag="name"/>
+            <dataElement name="Identification Code Qualifier" id="66"
+              sequence="3"
+              description="Code designating the system/method of code structure used for Identification Code (67)"
+              type="ID" required="X"
+              minLength="1" maxLength="2"
+              idListFile="IDList66.xml"
+              xmlTag="identificationCodeQualifier"/>
+            <dataElement name="Identification Code" id="67"
+              sequence="4"
+              description="Code identifying a party or other code"
+              type="AN" required="X"
+              minLength="2" maxLength="80"
+              xmlTag="identificationCode"/>
+            <dataElement name="Entity Relationship Code" id="706"
+              sequence="5"
+              description="Code describing entity relationship"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              idListFile="IDList706.xml"
+              xmlTag="entityRelationshipCode"/>
+            <dataElement name="Entity Identifier Code" id="98"
+              sequence="6"
+              description="Code identifying an organizational entity, a physical location, property or an individual"
+              type="ID" required="O"
+              minLength="2" maxLength="3"
+              idListFile="IDList98.xml"
+              xmlTag="entityIdentifierCode"/>
+            <segment name="Additional Name Information" id="N2"
+              description="To specify additional names or those longer than 35 characters in length"
+              sequence="320"
+              occurs="2"
+              required='O'
+              xmlTag="AdditionalNameInformation">
+                <dataElement name="Name" id="93"
+                  sequence="1"
+                  description="Free-form name"
+                  type="AN" required="M"
+                  minLength="1" maxLength="60"
+                  xmlTag="name"/>
+                <dataElement name="Name" id="93"
+                  sequence="2"
+                  description="Free-form name"
+                  type="AN" required="O"
+                  minLength="1" maxLength="60"
+                  xmlTag="name"/>
+            </segment>
+            <segment name="Address Information" id="N3"
+              description="To specify the location of the named party"
+              sequence="330"
+              occurs="2"
+              required='O'
+              xmlTag="AddressInformation">
+                <dataElement name="Address Information" id="166"
+                  sequence="1"
+                  description="Address information"
+                  type="AN" required="M"
+                  minLength="1" maxLength="55"
+                  xmlTag="addressInformation"/>
+                <dataElement name="Address Information" id="166"
+                  sequence="2"
+                  description="Address information"
+                  type="AN" required="O"
+                  minLength="1" maxLength="55"
+                  xmlTag="addressInformation"/>
+            </segment>
+            <segment name="Geographic Location" id="N4"
+              description="To specify the geographic place of the named party"
+              sequence="340"
+              occurs="-1"
+              required='O'
+              xmlTag="GeographicLocation">
+                <dataElement name="City Name" id="19"
+                  sequence="1"
+                  description="Free-form text for city name"
+                  type="AN" required="O"
+                  minLength="2" maxLength="30"
+                  xmlTag="cityName"/>
+                <dataElement name="State or Province Code" id="156"
+                  sequence="2"
+                  description="Code (Standard State/Province) as defined by appropriate government agency"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  xmlTag="stateOrProvinceCode"/>
+                <dataElement name="Postal Code" id="116"
+                  sequence="3"
+                  description="Code defining international postal zone code excluding punctuation and blanks (zip code for United States)"
+                  type="ID" required="O"
+                  minLength="3" maxLength="15"
+                  xmlTag="postalCode"/>
+                <dataElement name="Country Code" id="26"
+                  sequence="4"
+                  description="Code identifying the country"
+                  type="ID" required="O"
+                  minLength="2" maxLength="3"
+                  xmlTag="countryCode"/>
+                <dataElement name="Location Qualifier" id="309"
+                  sequence="5"
+                  description="Code identifying type of location"
+                  type="ID" required="X"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList309.xml"
+                  xmlTag="locationQualifier"/>
+                <dataElement name="Location Identifier" id="310"
+                  sequence="6"
+                  description="Code which identifies a specific location"
+                  type="AN" required="O"
+                  minLength="1" maxLength="30"
+                  xmlTag="locationIdentifier"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="6, 5"/>
+            </segment>
+            <segment name="Location ID Component" id="NX2"
+              description="To define types and values of a geographic location"
+              sequence="345"
+              occurs="-1"
+              required='O'
+              xmlTag="LocationIdComponent">
+                <dataElement name="Address Component Qualifier" id="1106"
+                  sequence="1"
+                  description="Code qualifying the type of address component"
+                  type="ID" required="M"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList1106.xml"
+                  xmlTag="addressComponentQualifier"/>
+                <dataElement name="Address Information" id="166"
+                  sequence="2"
+                  description="Address information"
+                  type="AN" required="M"
+                  minLength="1" maxLength="55"
+                  xmlTag="addressInformation"/>
+                <dataElement name="County Designator" id="1096"
+                  sequence="3"
+                  description="Code identifying the county within a state"
+                  type="ID" required="O"
+                  minLength="5" maxLength="5"
+                  xmlTag="countyDesignator"/>
+            </segment>
+            <segment name="Reference Identification" id="REF"
+              description="To specify identifying information"
+              sequence="350"
+              occurs="12"
+              required='O'
+              xmlTag="ReferenceIdentification">
+                <dataElement name="Reference Identification Qualifier" id="128"
+                  sequence="1"
+                  description="Code qualifying the Reference Identification"
+                  type="ID" required="M"
+                  minLength="2" maxLength="3"
+                  idListFile="IDList128.xml"
+                  xmlTag="referenceIdentificationQualifier"/>
+                <dataElement name="Reference Identification" id="127"
+                  sequence="2"
+                  description="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
+                  type="AN" required="X"
+                  minLength="1" maxLength="30"
+                  xmlTag="referenceIdentification"/>
+                <dataElement name="Description" id="352"
+                  sequence="3"
+                  description="A free-form description to clarify the related data elements and their content"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="description"/>
+                <compositeDE name="Reference Identifier" id="C040"
+                  sequence="4"
+                  xmlTag="referenceIdentifier">
+                    <dataElement name="Reference Identification Qualifier" id="128"
+                      sequence="1"
+                      description="Code qualifying the Reference Identification"
+                      type="ID" required="M"
+                      minLength="2" maxLength="3"
+                      idListFile="IDList128.xml"
+                      xmlTag="referenceIdentificationQualifier"/>
+                    <dataElement name="Reference Identification" id="127"
+                      sequence="2"
+                      description="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
+                      type="AN" required="M"
+                      minLength="1" maxLength="30"
+                      xmlTag="referenceIdentification"/>
+                    <dataElement name="Reference Identification Qualifier" id="128"
+                      sequence="3"
+                      description="Code qualifying the Reference Identification"
+                      type="ID" required="X"
+                      minLength="2" maxLength="3"
+                      idListFile="IDList128.xml"
+                      xmlTag="referenceIdentificationQualifier"/>
+                    <dataElement name="Reference Identification" id="127"
+                      sequence="4"
+                      description="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
+                      type="AN" required="X"
+                      minLength="1" maxLength="30"
+                      xmlTag="referenceIdentification"/>
+                    <dataElement name="Reference Identification Qualifier" id="128"
+                      sequence="5"
+                      description="Code qualifying the Reference Identification"
+                      type="ID" required="X"
+                      minLength="2" maxLength="3"
+                      idListFile="IDList128.xml"
+                      xmlTag="referenceIdentificationQualifier"/>
+                    <dataElement name="Reference Identification" id="127"
+                      sequence="6"
+                      description="Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
+                      type="AN" required="X"
+                      minLength="1" maxLength="30"
+                      xmlTag="referenceIdentification"/>
+                </compositeDE>
+                <elementRule rule="oneOrMoreMustExist" positions="2, 3"/>
+            </segment>
+            <segment name="Administrative Communications Contact" id="PER"
+              description="To identify a person or office to whom administrative communications should be directed"
+              sequence="360"
+              occurs="-1"
+              required='O'
+              xmlTag="AdministrativeCommunicationsContact">
+                <dataElement name="Contact Function Code" id="366"
+                  sequence="1"
+                  description="Code identifying the major duty or responsibility of the person or group named"
+                  type="ID" required="M"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList366.xml"
+                  xmlTag="contactFunctionCode"/>
+                <dataElement name="Name" id="93"
+                  sequence="2"
+                  description="Free-form name"
+                  type="AN" required="O"
+                  minLength="1" maxLength="60"
+                  xmlTag="name"/>
+                <dataElement name="Communication Number Qualifier" id="365"
+                  sequence="3"
+                  description="Code identifying the type of communication number"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList365.xml"
+                  xmlTag="communicationNumberQualifier"/>
+                <dataElement name="Communication Number" id="364"
+                  sequence="4"
+                  description="Complete communications number including country or area code when applicable"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="communicationNumber"/>
+                <dataElement name="Communication Number Qualifier" id="365"
+                  sequence="5"
+                  description="Code identifying the type of communication number"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList365.xml"
+                  xmlTag="communicationNumberQualifier"/>
+                <dataElement name="Communication Number" id="364"
+                  sequence="6"
+                  description="Complete communications number including country or area code when applicable"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="communicationNumber"/>
+                <dataElement name="Communication Number Qualifier" id="365"
+                  sequence="7"
+                  description="Code identifying the type of communication number"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList365.xml"
+                  xmlTag="communicationNumberQualifier"/>
+                <dataElement name="Communication Number" id="364"
+                  sequence="8"
+                  description="Complete communications number including country or area code when applicable"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="communicationNumber"/>
+                <dataElement name="Contact Inquiry Reference" id="443"
+                  sequence="9"
+                  description="Additional reference number or description to clarify a contact number"
+                  type="AN" required="O"
+                  minLength="1" maxLength="20"
+                  xmlTag="contactInquiryReference"/>
+                <elementRule rule="allOrNoneMayExist" positions="3, 4"/>
+                <elementRule rule="allOrNoneMayExist" positions="5, 6"/>
+                <elementRule rule="allOrNoneMayExist" positions="7, 8"/>
+            </segment>
+            <segment name="Service Characteristic Identification" id="SI"
+              description="To specify service characteristic data"
+              sequence="365"
+              occurs="-1"
+              required='O'
+              xmlTag="ServiceCharacteristicIdentification">
+                <dataElement name="Agency Qualifier Code" id="559"
+                  sequence="1"
+                  description="Code identifying the agency assigning the code values"
+                  type="ID" required="M"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList559.xml"
+                  xmlTag="agencyQualifierCode"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="2"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="M"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="3"
+                  description="Identifying number for a product or service"
+                  type="AN" required="M"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="4"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="5"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="6"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="7"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="8"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="9"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="10"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="11"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="12"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="13"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="14"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="15"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="16"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="17"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="18"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="19"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <dataElement name="Service Characteristics Qualifier" id="1000"
+                  sequence="20"
+                  description="Code from an industry code list qualifying the type of service characteristics"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="serviceCharacteristicsQualifier"/>
+                <dataElement name="Product/Service ID" id="234"
+                  sequence="21"
+                  description="Identifying number for a product or service"
+                  type="AN" required="X"
+                  minLength="1" maxLength="48"
+                  xmlTag="productServiceId"/>
+                <elementRule rule="allOrNoneMayExist" positions="4, 5"/>
+                <elementRule rule="allOrNoneMayExist" positions="6, 7"/>
+                <elementRule rule="allOrNoneMayExist" positions="8, 9"/>
+                <elementRule rule="allOrNoneMayExist" positions="10, 11"/>
+                <elementRule rule="allOrNoneMayExist" positions="12, 13"/>
+                <elementRule rule="allOrNoneMayExist" positions="14, 15"/>
+                <elementRule rule="allOrNoneMayExist" positions="16, 17"/>
+                <elementRule rule="allOrNoneMayExist" positions="18, 19"/>
+                <elementRule rule="allOrNoneMayExist" positions="20, 21"/>
+            </segment>
+            <segment name="F.O.B. Related Instructions" id="FOB"
+              description="To specify transportation instructions relating to shipment"
+              sequence="370"
+              occurs="1"
+              required='O'
+              xmlTag="FOBRelatedInstructions">
+                <dataElement name="Shipment Method of Payment" id="146"
+                  sequence="1"
+                  description="Code identifying payment terms for transportation charges"
+                  type="ID" required="M"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList146.xml"
+                  xmlTag="shipmentMethodOfPayment"/>
+                <dataElement name="Location Qualifier" id="309"
+                  sequence="2"
+                  description="Code identifying type of location"
+                  type="ID" required="X"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList309.xml"
+                  xmlTag="locationQualifier"/>
+                <dataElement name="Description" id="352"
+                  sequence="3"
+                  description="A free-form description to clarify the related data elements and their content"
+                  type="AN" required="O"
+                  minLength="1" maxLength="80"
+                  xmlTag="description"/>
+                <dataElement name="Transportation Terms Qualifier Code" id="334"
+                  sequence="4"
+                  description="Code identifying the source of the transportation terms"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList334.xml"
+                  xmlTag="transportationTermsQualifierCode"/>
+                <dataElement name="Transportation Terms Code" id="335"
+                  sequence="5"
+                  description="Code identifying the trade terms which apply to the shipment transportation responsibility"
+                  type="ID" required="X"
+                  minLength="3" maxLength="3"
+                  idListFile="IDList335.xml"
+                  xmlTag="transportationTermsCode"/>
+                <dataElement name="Location Qualifier" id="309"
+                  sequence="6"
+                  description="Code identifying type of location"
+                  type="ID" required="X"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList309.xml"
+                  xmlTag="locationQualifier"/>
+                <dataElement name="Description" id="352"
+                  sequence="7"
+                  description="A free-form description to clarify the related data elements and their content"
+                  type="AN" required="O"
+                  minLength="1" maxLength="80"
+                  xmlTag="description"/>
+                <dataElement name="Risk of Loss Code" id="54"
+                  sequence="8"
+                  description="Code specifying where responsibility for risk of loss passes"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList54.xml"
+                  xmlTag="riskOfLossCode"/>
+                <dataElement name="Description" id="352"
+                  sequence="9"
+                  description="A free-form description to clarify the related data elements and their content"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="description"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="3, 2"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="4, 5"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="7, 6"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="8, 9"/>
+            </segment>
+            <segment name="Carrier Details (Quantity and Weight)" id="TD1"
+              description="To specify the transportation details relative to commodity, weight, and quantity"
+              sequence="380"
+              occurs="2"
+              required='O'
+              xmlTag="CarrierDetailsQuantityAndWeight">
+                <dataElement name="Packaging Code" id="103"
+                  sequence="1"
+                  description="Code identifying the type of packaging; Part 1: Packaging Form, Part 2: Packaging Material; if the Data Element is used, then Part 1 is always required"
+                  type="AN" required="O"
+                  minLength="3" maxLength="5"
+                  idListFile="IDList103.xml"
+                  xmlTag="packagingCode"/>
+                <dataElement name="Lading Quantity" id="80"
+                  sequence="2"
+                  description="Number of units (pieces) of the lading commodity"
+                  type="N0" required="X"
+                  minLength="1" maxLength="7"
+                  xmlTag="ladingQuantity"/>
+                <dataElement name="Commodity Code Qualifier" id="23"
+                  sequence="3"
+                  description="Code identifying the commodity coding system used for Commodity Code"
+                  type="ID" required="O"
+                  minLength="1" maxLength="1"
+                  idListFile="IDList23.xml"
+                  xmlTag="commodityCodeQualifier"/>
+                <dataElement name="Commodity Code" id="22"
+                  sequence="4"
+                  description="Code describing a commodity or group of commodities"
+                  type="AN" required="X"
+                  minLength="1" maxLength="30"
+                  xmlTag="commodityCode"/>
+                <dataElement name="Lading Description" id="79"
+                  sequence="5"
+                  description="Description of an item as required for rating and billing purposes"
+                  type="AN" required="O"
+                  minLength="1" maxLength="50"
+                  xmlTag="ladingDescription"/>
+                <dataElement name="Weight Qualifier" id="187"
+                  sequence="6"
+                  description="Code defining the type of weight"
+                  type="ID" required="O"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList187.xml"
+                  xmlTag="weightQualifier"/>
+                <dataElement name="Weight" id="81"
+                  sequence="7"
+                  description="Numeric value of weight"
+                  type="R" required="X"
+                  minLength="1" maxLength="10"
+                  xmlTag="weight"/>
+                <dataElement name="Unit or Basis for Measurement Code" id="355"
+                  sequence="8"
+                  description="Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList355.xml"
+                  xmlTag="unitOrBasisForMeasurementCode"/>
+                <dataElement name="Volume" id="183"
+                  sequence="9"
+                  description="Value of volumetric measure"
+                  type="R" required="X"
+                  minLength="1" maxLength="8"
+                  xmlTag="volume"/>
+                <dataElement name="Unit or Basis for Measurement Code" id="355"
+                  sequence="10"
+                  description="Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList355.xml"
+                  xmlTag="unitOrBasisForMeasurementCode"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="1, 2"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="3, 4"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="6, 7"/>
+                <elementRule rule="allOrNoneMayExist" positions="7, 8"/>
+                <elementRule rule="allOrNoneMayExist" positions="9, 10"/>
+            </segment>
+            <segment name="Carrier Details (Routing Sequence/Transit Time)" id="TD5"
+              description="To specify the carrier and sequence of routing and provide transit time information"
+              sequence="390"
+              occurs="12"
+              required='O'
+              xmlTag="CarrierDetailsRoutingSequenceTransitTime">
+                <dataElement name="Routing Sequence Code" id="133"
+                  sequence="1"
+                  description="Code describing the relationship of a carrier to a specific shipment movement"
+                  type="ID" required="O"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList133.xml"
+                  xmlTag="routingSequenceCode"/>
+                <dataElement name="Identification Code Qualifier" id="66"
+                  sequence="2"
+                  description="Code designating the system/method of code structure used for Identification Code (67)"
+                  type="ID" required="X"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList66.xml"
+                  xmlTag="identificationCodeQualifier"/>
+                <dataElement name="Identification Code" id="67"
+                  sequence="3"
+                  description="Code identifying a party or other code"
+                  type="AN" required="X"
+                  minLength="2" maxLength="80"
+                  xmlTag="identificationCode"/>
+                <dataElement name="Transportation Method/Type Code" id="91"
+                  sequence="4"
+                  description="Code specifying the method or type of transportation for the shipment"
+                  type="ID" required="X"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList91.xml"
+                  xmlTag="transportationMethodTypeCode"/>
+                <dataElement name="Routing" id="387"
+                  sequence="5"
+                  description="Free-form description of the routing or requested routing for shipment, or the originating carrier&apos;s identity"
+                  type="AN" required="X"
+                  minLength="1" maxLength="35"
+                  xmlTag="routing"/>
+                <dataElement name="Shipment/Order Status Code" id="368"
+                  sequence="6"
+                  description="Code indicating the status of an order or shipment or the disposition of any difference between the quantity ordered and the quantity shipped for a line item or transaction"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList368.xml"
+                  xmlTag="shipmentOrderStatusCode"/>
+                <dataElement name="Location Qualifier" id="309"
+                  sequence="7"
+                  description="Code identifying type of location"
+                  type="ID" required="O"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList309.xml"
+                  xmlTag="locationQualifier"/>
+                <dataElement name="Location Identifier" id="310"
+                  sequence="8"
+                  description="Code which identifies a specific location"
+                  type="AN" required="X"
+                  minLength="1" maxLength="30"
+                  xmlTag="locationIdentifier"/>
+                <dataElement name="Transit Direction Code" id="731"
+                  sequence="9"
+                  description="The point of origin and point of direction"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList731.xml"
+                  xmlTag="transitDirectionCode"/>
+                <dataElement name="Transit Time Direction Qualifier" id="732"
+                  sequence="10"
+                  description="Code specifying the value of time used to measure the transit time"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList732.xml"
+                  xmlTag="transitTimeDirectionQualifier"/>
+                <dataElement name="Transit Time" id="733"
+                  sequence="11"
+                  description="The numeric amount of transit time"
+                  type="R" required="X"
+                  minLength="1" maxLength="4"
+                  xmlTag="transitTime"/>
+                <dataElement name="Service Level Code" id="284"
+                  sequence="12"
+                  description="Code indicating the level of transportation service or the billing service offered by the transportation carrier"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList284.xml"
+                  xmlTag="serviceLevelCode"/>
+                <dataElement name="Service Level Code" id="284"
+                  sequence="13"
+                  description="Code indicating the level of transportation service or the billing service offered by the transportation carrier"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList284.xml"
+                  xmlTag="serviceLevelCode"/>
+                <dataElement name="Service Level Code" id="284"
+                  sequence="14"
+                  description="Code indicating the level of transportation service or the billing service offered by the transportation carrier"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList284.xml"
+                  xmlTag="serviceLevelCode"/>
+                <dataElement name="Country Code" id="26"
+                  sequence="15"
+                  description="Code identifying the country"
+                  type="ID" required="O"
+                  minLength="2" maxLength="3"
+                  xmlTag="countryCode"/>
+                <elementRule rule="oneOrMoreMustExist" positions="2, 4, 5, 6, 12"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="2, 3"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="7, 8"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="10, 11"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="13, 12"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="14, 13"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="15, 12"/>
+            </segment>
+            <segment name="Carrier Details (Equipment)" id="TD3"
+              description="To specify transportation details relating to the equipment used by the carrier"
+              sequence="400"
+              occurs="12"
+              required='O'
+              xmlTag="CarrierDetailsEquipment">
+                <dataElement name="Equipment Description Code" id="40"
+                  sequence="1"
+                  description="Code identifying type of equipment used for shipment"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList40.xml"
+                  xmlTag="equipmentDescriptionCode"/>
+                <dataElement name="Equipment Initial" id="206"
+                  sequence="2"
+                  description="Prefix or alphabetic part of an equipment unit&apos;s identifying number"
+                  type="AN" required="O"
+                  minLength="1" maxLength="4"
+                  xmlTag="equipmentInitial"/>
+                <dataElement name="Equipment Number" id="207"
+                  sequence="3"
+                  description="Sequencing or serial part of an equipment unit&apos;s identifying number (pure numeric form for equipment number is preferred)"
+                  type="AN" required="X"
+                  minLength="1" maxLength="10"
+                  xmlTag="equipmentNumber"/>
+                <dataElement name="Weight Qualifier" id="187"
+                  sequence="4"
+                  description="Code defining the type of weight"
+                  type="ID" required="O"
+                  minLength="1" maxLength="2"
+                  idListFile="IDList187.xml"
+                  xmlTag="weightQualifier"/>
+                <dataElement name="Weight" id="81"
+                  sequence="5"
+                  description="Numeric value of weight"
+                  type="R" required="X"
+                  minLength="1" maxLength="10"
+                  xmlTag="weight"/>
+                <dataElement name="Unit or Basis for Measurement Code" id="355"
+                  sequence="6"
+                  description="Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList355.xml"
+                  xmlTag="unitOrBasisForMeasurementCode"/>
+                <dataElement name="Ownership Code" id="102"
+                  sequence="7"
+                  description="Code indicating the relationship of equipment to carrier or ownership of equipment"
+                  type="ID" required="O"
+                  minLength="1" maxLength="1"
+                  idListFile="IDList102.xml"
+                  xmlTag="ownershipCode"/>
+                <dataElement name="Seal Status Code" id="407"
+                  sequence="8"
+                  description="Code indicating condition of door seal upon arrival"
+                  type="ID" required="O"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList407.xml"
+                  xmlTag="sealStatusCode"/>
+                <dataElement name="Seal Number" id="225"
+                  sequence="9"
+                  description="Unique number on seal used to close a shipment"
+                  type="AN" required="O"
+                  minLength="2" maxLength="15"
+                  xmlTag="sealNumber"/>
+                <dataElement name="Equipment Type" id="24"
+                  sequence="10"
+                  description="Code identifying equipment type"
+                  type="ID" required="X"
+                  minLength="4" maxLength="4"
+                  xmlTag="equipmentType"/>
+                <elementRule rule="oneAndOnlyOneMayExist" positions="1, 10"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="2, 3"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="4, 5"/>
+                <elementRule rule="allOrNoneMayExist" positions="5, 6"/>
+            </segment>
+            <segment name="Carrier Details (Special Handling, or Hazardous Materials, or Both)" id="TD4"
+              description="To specify transportation special handling requirements, or hazardous materials information, or both"
+              sequence="410"
+              occurs="5"
+              required='O'
+              xmlTag="CarrierDetailsSpecialHandlingOrHazardousMaterialsOrBoth">
+                <dataElement name="Special Handling Code" id="152"
+                  sequence="1"
+                  description="Code specifying special transportation handling instructions"
+                  type="ID" required="X"
+                  minLength="2" maxLength="3"
+                  idListFile="IDList152.xml"
+                  xmlTag="specialHandlingCode"/>
+                <dataElement name="Hazardous Material Code Qualifier" id="208"
+                  sequence="2"
+                  description="Code which qualifies the Hazardous Material Class Code (209)"
+                  type="ID" required="X"
+                  minLength="1" maxLength="1"
+                  idListFile="IDList208.xml"
+                  xmlTag="hazardousMaterialCodeQualifier"/>
+                <dataElement name="Hazardous Material Class Code" id="209"
+                  sequence="3"
+                  description="Code specifying the kind of hazard for a material"
+                  type="AN" required="X"
+                  minLength="1" maxLength="4"
+                  xmlTag="hazardousMaterialClassCode"/>
+                <dataElement name="Description" id="352"
+                  sequence="4"
+                  description="A free-form description to clarify the related data elements and their content"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="description"/>
+                <dataElement name="Yes/No Condition or Response Code" id="1073"
+                  sequence="5"
+                  description="Code indicating a Yes or No condition or response"
+                  type="ID" required="O"
+                  minLength="1" maxLength="1"
+                  idListFile="IDList1073.xml"
+                  xmlTag="yesNoConditionOrResponseCode"/>
+                <elementRule rule="oneOrMoreMustExist" positions="1, 2, 4"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="2, 3"/>
+            </segment>
+            <segment name="Marking, Packaging, Loading" id="PKG"
+              description="To describe marking, packaging, loading, and unloading requirements"
+              sequence="420"
+              occurs="200"
+              required='O'
+              xmlTag="MarkingPackagingLoading">
+                <dataElement name="Item Description Type" id="349"
+                  sequence="1"
+                  description="Code indicating the format of a description"
+                  type="ID" required="X"
+                  minLength="1" maxLength="1"
+                  idListFile="IDList349.xml"
+                  xmlTag="itemDescriptionType"/>
+                <dataElement name="Packaging Characteristic Code" id="753"
+                  sequence="2"
+                  description="Code specifying the marking, packaging, loading and related characteristics being described"
+                  type="ID" required="O"
+                  minLength="1" maxLength="5"
+                  idListFile="IDList753.xml"
+                  xmlTag="packagingCharacteristicCode"/>
+                <dataElement name="Agency Qualifier Code" id="559"
+                  sequence="3"
+                  description="Code identifying the agency assigning the code values"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList559.xml"
+                  xmlTag="agencyQualifierCode"/>
+                <dataElement name="Packaging Description Code" id="754"
+                  sequence="4"
+                  description="A code from an industry code list which provides specific data about the marking, packaging or loading and unloading of a product"
+                  type="AN" required="X"
+                  minLength="1" maxLength="7"
+                  xmlTag="packagingDescriptionCode"/>
+                <dataElement name="Description" id="352"
+                  sequence="5"
+                  description="A free-form description to clarify the related data elements and their content"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="description"/>
+                <dataElement name="Unit Load Option Code" id="400"
+                  sequence="6"
+                  description="Code identifying loading or unloading a shipment"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  idListFile="IDList400.xml"
+                  xmlTag="unitLoadOptionCode"/>
+                <elementRule rule="oneOrMoreMustExist" positions="4, 5, 6"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="4, 3"/>
+                <elementRule rule="ifFirstExistsThenAllMustExist" positions="5, 1"/>
+            </segment>
+        </segment>
+    </table>
+    <table section="detail">
+        <segment name="Baseline Item Data" id="PO1"
+          occurs="100000"
+          sequence="10"
+          required='M'
+          description="To specify basic and most frequently used line item data"
+          xmlTag="BaselineItemData">
+            <dataElement name="Assigned Identification" id="350"
+              sequence="1"
+              description="Alphanumeric characters assigned for differentiation within a transaction set"
+              type="AN" required="O"
+              minLength="1" maxLength="20"
+              xmlTag="assignedIdentification"/>
+            <dataElement name="Quantity Ordered" id="330"
+              sequence="2"
+              description="Quantity ordered"
+              type="R" required="M"
+              minLength="1" maxLength="15"
+              xmlTag="quantityOrdered"/>
+            <dataElement name="Unit or Basis for Measurement Code" id="355"
+              sequence="3"
+              description="Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              idListFile="IDList355.xml"
+              xmlTag="unitOrBasisForMeasurementCode"/>
+            <dataElement name="Unit Price" id="212"
+              sequence="4"
+              description="Price per unit of product, service, commodity, etc."
+              type="R" required="O"
+              minLength="1" maxLength="17"
+              xmlTag="unitPrice"/>
+            <dataElement name="Basis of Unit Price Code" id="639"
+              sequence="5"
+              description="Code identifying the type of unit price for an item"
+              type="ID" required="O"
+              minLength="2" maxLength="2"
+              xmlTag="basisOfUnitPriceCode">
+              <idList>
+                <idCode>RE</idCode>
+                <idValue>Retail price for each</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Product/Service ID Qualifier" id="235"
+              sequence="6"
+              description="Code identifying the type/source of the descriptive number used in Product/Service ID (234)"
+              type="ID" required="M"
+              minLength="2" maxLength="2"
+              xmlTag="productServiceIdQualifier">
+              <idList>
+                <idCode>IN</idCode>
+                <idValue>Buyers Item Number</idValue>
+              </idList>
+            </dataElement>  
+            <dataElement name="Product/Service ID" id="234"
+              sequence="7"
+              description="Identifying number for a product or service"
+              type="AN" required="M"
+              minLength="1" maxLength="48"
+              xmlTag="productServiceId"/>
+            <segment name="Product/Item Description" id="PID"
+              occurs="5"
+              sequence="50"
+              required='M'
+              description="To describe a product or process in coded or free-form format"
+              xmlTag="ProductItemDescription">
+                <dataElement name="Item Description Type" id="349"
+                  sequence="1"
+                  description="Code indicating the format of a description"
+                  type="ID" required="M"
+                  minLength="1" maxLength="1"
+                  xmlTag="itemDescriptionType">
+                  <idList>
+                    <idCode>F</idCode>
+                    <idValue>Free Form Text</idValue>
+                  </idList>
+                </dataElement>  
+                <dataElement name="Product/Process Characteristic Code" id="750"
+                  sequence="2"
+                  description="Code identifying the general class of a product or process characteristic"
+                  type="ID" required="O"
+                  minLength="2" maxLength="3"
+                  xmlTag="productProcessCharacteristicCode">
+                  <idList>
+                    <idCode>08</idCode>
+                    <idValue>Product Description</idValue>
+                    <idCode>75</idCode>
+                    <idValue>Buyer Color Description</idValue>
+                    <idCode>91</idCode>
+                    <idValue>Buyer Size Description</idValue>
+                  </idList>
+                </dataElement>  
+                <dataElement name="Agency Qualifier Code" id="559"
+                  sequence="3"
+                  description="Code identifying the agency assigning the code values"
+                  type="ID" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="agencyQualifierCode">
+                  <idList>
+                    <idCode>VI</idCode>
+                    <idValue>VICS</idValue>
+                  </idList>
+                </dataElement>  
+                <dataElement name="Product Description Code" id="751"
+                  sequence="4"
+                  description="A code from an industry code list which provides specific data about a product characteristic"
+                  type="AN" required="X"
+                  minLength="1" maxLength="12"
+                  xmlTag="productDescriptionCode"/>
+                <dataElement name="Description" id="352"
+                  sequence="5"
+                  description="A free-form description to clarify the related data elements and their content"
+                  type="AN" required="X"
+                  minLength="1" maxLength="80"
+                  xmlTag="description"/>
+            </segment>      
+            <segment name="Item Physical Details" id="PO4"
+              description="To specify the physical qualities, packaging, weights, and dimensions relating to the item"
+              sequence="90"
+              occurs="-1"
+              required='O'
+              xmlTag="ItemPhysicalDetails">
+                <dataElement name="Pack" id="356"
+                  sequence="1"
+                  description="The number of inner containers, or number of eaches if there are no inner containers, per outer container"
+                  type="N0" required="O"
+                  minLength="1" maxLength="6"
+                  xmlTag="pack"/>
+                <dataElement name="Size" id="357"
+                  sequence="2"
+                  description="Size of supplier units in pack"
+                  type="R" required="X"
+                  minLength="1" maxLength="8"
+                  xmlTag="size"/>
+                <dataElement name="Unit or Basis for Measurement Code" id="355"
+                  sequence="3"
+                  description="Code specifying the units in which a value is being expressed, or manner in which a measurement has been taken"
+                  type="AN" required="X"
+                  minLength="2" maxLength="2"
+                  xmlTag="unitOrBasisForMeasurementCode"/>
+            </segment>
+       </segment>
+    </table>
+    <table section="summary">
+        <segment name="Transaction Totals" id="CTT"
+          occurs="1"
+          sequence="10"
+          required='O'
+          description="To transmit a hash total for a specific element in the transaction set"
+          xmlTag="TransactionTotals">
+            <dataElement name="Number of Line Items" id="354"
+              sequence="1"
+              description="Total number of line items in the transaction set"
+              type="N0" required="M"
+              minLength="1" maxLength="6"
+              xmlTag="numberOfLineItems"/>
+        </segment>
+        <segment name="Transaction Set Trailer" id="SE"
+          description="To indicate the end of the transaction set and provide the count of the transmitted segments (including the beginning (ST) and ending (SE) segments)"
+          sequence="30"
+          occurs="1"
+          required='M'
+          xmlTag="TransactionSetTrailer">
+            <dataElement name="Number of Included Segments" id="96"
+              sequence="1"
+              description="Total number of segments included in a transaction set including ST and SE segments"
+              type="N0" required="M"
+              minLength="1" maxLength="10"
+              xmlTag="numberOfIncludedSegments"/>
+            <dataElement name="Transaction Set Control Number" id="329"
+              sequence="2"
+              description="Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set"
+              type="AN" required="M"
+              minLength="4" maxLength="9"
+              xmlTag="transactionSetControlNumber"/>
+        </segment>
+    </table>
+</transactionSet>

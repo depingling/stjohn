@@ -1,0 +1,23 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT CatalogStructureList (CatalogStructure)+>
+<!ELEMENT CatalogStructure (,BusEntityIdCatalogId,CostCenterId,ItemId,AddBy,AddDate,CatalogStructureCd,CustomerSkuNum,EffDate,ExpDate,ModBy,ModDate,ShortDesc,StatusCd,TaxExempt)>
+<!ATTLIST CatalogStructure Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT CatalogId (#PCDATA)>
+<!ELEMENT CostCenterId (#PCDATA)>
+<!ELEMENT ItemId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT CatalogStructureCd (#PCDATA)>
+<!ELEMENT CustomerSkuNum (#PCDATA)>
+<!ELEMENT EffDate (#PCDATA)>
+<!ELEMENT ExpDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>
+<!ELEMENT StatusCd (#PCDATA)>
+<!ELEMENT TaxExempt (#PCDATA)>

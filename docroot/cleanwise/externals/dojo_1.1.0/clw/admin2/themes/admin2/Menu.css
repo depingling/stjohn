@@ -1,0 +1,54 @@
+.admin2 .dijitMenu {
+	border: 1px solid #7eabcd;
+	margin: 0px;
+	padding: 0px;
+}
+
+.admin2 .dijitMenuItem {
+	background-color: #f7f7f7;
+	font: menu;
+	margin: 0;
+}
+.admin2 .dijitMenuPreviousButton, .admin2 .dijitMenuNextButton {
+	font-style: italic;
+}
+.admin2 .dijitMenuItem td {
+	padding:2px;
+}
+
+.admin2 .dijitMenuItemHover {
+	background-color: #60a1ea;
+	color:#fff;
+}
+
+.admin2 .dijitMenuItemIcon {
+	width: 16px;
+	height: 16px;
+}
+
+.admin2 .dijitMenuExpand {
+	display:none;
+}
+.admin2 .dijitMenuExpandEnabled {
+	width:16px;
+	height:16px;
+	background:url('images/arrowRight.gif') no-repeat center center;
+	display:block;
+}
+
+.admin2 .dijitMenuExpandInner {
+	display:none;
+}
+
+.admin2 .dijitMenuSeparator {
+	background-color: #f7f7f7;
+}
+
+/* separator can be two pixels -- set border of either one to 0px to have only one */
+.admin2 .dijitMenuSeparatorTop {
+	border-bottom: 1px solid #9b9b9b;
+}
+
+.admin2 .dijitMenuSeparatorBottom {
+	border-top: 1px solid #e8e8e8;
+}

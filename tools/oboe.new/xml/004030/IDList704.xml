@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Used to Initiate This Report</idValue>
+    <idCode>2</idCode>
+        <idValue>Report to be Filed</idValue>
+    <idCode>3</idCode>
+        <idValue>Complete</idValue>
+    <idCode>4</idCode>
+        <idValue>Notarize</idValue>
+    <idCode>5</idCode>
+        <idValue>Generate</idValue>
+    <idCode>6</idCode>
+        <idValue>Letterhead Required</idValue>
+    <idCode>CH</idCode>
+        <idValue>Chamberize</idValue>
+    <idCode>CO</idCode>
+        <idValue>Consularize</idValue>
+    <idCode>DM</idCode>
+        <idValue>Document is Missing</idValue>
+    <idCode>NT</idCode>
+        <idValue>Generate in Language of Ultimate Destination</idValue>
+    <idCode>ON</idCode>
+        <idValue>Original Not Required (Copies Acceptable)</idValue>
+    <idCode>OR</idCode>
+        <idValue>Original Required</idValue>
+    <idCode>PV</idCode>
+        <idValue>Provided</idValue>
+    <idCode>SG</idCode>
+        <idValue>Sign (Power of Attorney)</idValue>
+</idList>

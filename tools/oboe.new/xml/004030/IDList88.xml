@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>L</idCode>
+        <idValue>Line Item Only</idValue>
+    <idCode>R</idCode>
+        <idValue>Originator Assigned</idValue>
+    <idCode>S</idCode>
+        <idValue>Entire Shipment</idValue>
+    <idCode>W</idCode>
+        <idValue>Pallet Number</idValue>
+    <idCode>X</idCode>
+        <idValue>Pallet Configuration Number</idValue>
+    <idCode>AA</idCode>
+        <idValue>SSCC-18</idValue>
+    <idCode>AI</idCode>
+        <idValue>UCC/EAN-128 Application Identifier (AI) and Data</idValue>
+    <idCode>CA</idCode>
+        <idValue>Shipper-Assigned Case Number</idValue>
+    <idCode>CP</idCode>
+        <idValue>Carrier-Assigned Package ID Number</idValue>
+    <idCode>DZ</idCode>
+        <idValue>Receiver Assigned Drop Zone</idValue>
+    <idCode>GM</idCode>
+        <idValue>SSCC-18 and Application Identifier</idValue>
+    <idCode>MC</idCode>
+        <idValue>Master Carton Number</idValue>
+    <idCode>MT</idCode>
+        <idValue>Marked Ticket Price</idValue>
+    <idCode>PB</idCode>
+        <idValue>Premarked by Buyer</idValue>
+    <idCode>SI</idCode>
+        <idValue>Self-Identifying Container via Radio Frequency ID Device</idValue>
+    <idCode>SM</idCode>
+        <idValue>Shipper Assigned</idValue>
+    <idCode>SR</idCode>
+        <idValue>Shipper Assigned Roll Number</idValue>
+    <idCode>SS</idCode>
+        <idValue>Shipper Assigned Skid Number</idValue>
+    <idCode>UC</idCode>
+        <idValue>U.P.C. Shipping Container Code</idValue>
+    <idCode>UP</idCode>
+        <idValue>U.P.C. Consumer Package Code (1-5-5-1)</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

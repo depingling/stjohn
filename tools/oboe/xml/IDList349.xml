@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>F</idCode>
+        <idValue>Free-form</idValue>
+    <idCode>S</idCode>
+        <idValue>Structured (From Industry Code List)</idValue>
+    <idCode>X</idCode>
+        <idValue>Semi-structured (Code and Text)</idValue>
+</idList>

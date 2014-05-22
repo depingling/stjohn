@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>A0010</idCode>
+        <idValue>Alterations</idValue>
+    <idCode>A0020</idCode>
+        <idValue>Anneal/Heat (Steel or Glass Treatment)</idValue>
+    <idCode>A0030</idCode>
+        <idValue>Art Work</idValue>
+    <idCode>AC</idCode>
+        <idValue>Acid (Battery)</idValue>
+    <idCode>AD</idCode>
+        <idValue>Accept at Destination</idValue>
+    <idCode>AF</idCode>
+        <idValue>Affidavit</idValue>
+    <idCode>AG</idCode>
+        <idValue>Aircraft On Ground (AOG)</idValue>
+    <idCode>AM</idCode>
+        <idValue>Administration</idValue>
+    <idCode>AO</idCode>
+        <idValue>Accept at Origin</idValue>
+    <idCode>B0020</idCode>
+        <idValue>Black Lung Tax</idValue>
+    <idCode>B0040</idCode>
+        <idValue>Burning</idValue>
+    <idCode>BH</idCode>
+        <idValue>Buyer Hand Carry</idValue>
+    <idCode>BI</idCode>
+        <idValue>Bill and Hold</idValue>
+    <idCode>BOP</idCode>
+        <idValue>Bop Sheet</idValue>
+    <idCode>C0012</idCode>
+        <idValue>Capping</idValue>
+    <idCode>C0032</idCode>
+        <idValue>Coating (Dip, Rustproof, EDP)</idValue>
+    <idCode>C0036</idCode>
+        <idValue>Certificate of Conformance</idValue>
+    <idCode>C0038</idCode>
+        <idValue>Certificate of Origin</idValue>
+    <idCode>C1</idCode>
+        <idValue>Shipper Load and Count</idValue>
+    <idCode>C2</idCode>
+        <idValue>Carrier Load and Count</idValue>
+    <idCode>CA</idCode>
+        <idValue>Cataloging Services</idValue>
+    <idCode>CC</idCode>
+        <idValue>Carrier Unload</idValue>
+    <idCode>CD</idCode>
+        <idValue>COD Request</idValue>
+    <idCode>CH</idCode>
+        <idValue>Cut and Parallel</idValue>
+    <idCode>CI</idCode>
+        <idValue>Cut</idValue>
+    <idCode>CM</idCode>
+        <idValue>Continuous Movement</idValue>
+    <idCode>CN</idCode>
+        <idValue>Combination Performance and Non-performance</idValue>
+    <idCode>CO</idCode>
+        <idValue>Cooperative Unloading</idValue>
+    <idCode>CS</idCode>
+        <idValue>Cigarette Stamping</idValue>
+    <idCode>CT</idCode>
+        <idValue>Count and Recount</idValue>
+    <idCode>CU</idCode>
+        <idValue>Consignee Unload</idValue>
+    <idCode>CY</idCode>
+        <idValue>Carry-in Service</idValue>
+    <idCode>CZ</idCode>
+        <idValue>Cable Pressurization</idValue>
+    <idCode>D0020</idCode>
+        <idValue>Determined Freight</idValue>
+    <idCode>D0024</idCode>
+        <idValue>Layout/Design</idValue>
+    <idCode>D0031</idCode>
+        <idValue>Driver Assisted Unloading</idValue>
+    <idCode>D0032</idCode>
+        <idValue>Driver Assisted Loading</idValue>
+    <idCode>D1</idCode>
+        <idValue>One - Day Service</idValue>
+    <idCode>D2</idCode>
+        <idValue>Two - Day Service</idValue>
+    <idCode>DA</idCode>
+        <idValue>Delivery Acknowledgment</idValue>
+    <idCode>DE</idCode>
+        <idValue>De-Installation</idValue>
+    <idCode>DH</idCode>
+        <idValue>Drop and Hook Receiving</idValue>
+    <idCode>DI</idCode>
+        <idValue>Die Service Charge</idValue>
+    <idCode>DL</idCode>
+        <idValue>Delivery</idValue>
+    <idCode>DS</idCode>
+        <idValue>Designated Supplier Inspection</idValue>
+    <idCode>DV</idCode>
+        <idValue>Declared Value</idValue>
+    <idCode>E0030</idCode>
+        <idValue>Exclusive use</idValue>
+    <idCode>EG</idCode>
+        <idValue>Engraving</idValue>
+    <idCode>EM</idCode>
+        <idValue>Emergency Service</idValue>
+    <idCode>EN</idCode>
+        <idValue>Enclosure</idValue>
+    <idCode>ER</idCode>
+        <idValue>Equipment Manufacturer Restoration Audit</idValue>
+    <idCode>EU</idCode>
+        <idValue>Exclusive Use Of Equipment</idValue>
+    <idCode>EX</idCode>
+        <idValue>Expedited Service</idValue>
+    <idCode>F1</idCode>
+        <idValue>Full Service</idValue>
+    <idCode>FG</idCode>
+        <idValue>Free Goods</idValue>
+    <idCode>FS</idCode>
+        <idValue>Floor Stock Protection</idValue>
+    <idCode>G0010</idCode>
+        <idValue>Grinding</idValue>
+    <idCode>G0052</idCode>
+        <idValue>Government Inspection</idValue>
+    <idCode>GI</idCode>
+        <idValue>Grouped Items</idValue>
+    <idCode>GP</idCode>
+        <idValue>Gas Pressure</idValue>
+    <idCode>GU</idCode>
+        <idValue>Guaranteed Inspection Technical Service</idValue>
+    <idCode>H1</idCode>
+        <idValue>Temperature Protection</idValue>
+    <idCode>HC</idCode>
+        <idValue>Handling Service</idValue>
+    <idCode>HH</idCode>
+        <idValue>Hointins and Hauling</idValue>
+    <idCode>HS</idCode>
+        <idValue>Hauling and Hoisting</idValue>
+    <idCode>I0012</idCode>
+        <idValue>Installation</idValue>
+    <idCode>I0013</idCode>
+        <idValue>Installation &amp; Warranty</idValue>
+    <idCode>I0021</idCode>
+        <idValue>Inspection</idValue>
+    <idCode>I0022</idCode>
+        <idValue>Identification</idValue>
+    <idCode>IC</idCode>
+        <idValue>Inside Cable Connectors</idValue>
+    <idCode>ID</idCode>
+        <idValue>Inside Delivery</idValue>
+    <idCode>IG</idCode>
+        <idValue>Invoice with Goods</idValue>
+    <idCode>IK</idCode>
+        <idValue>Insurance Provided by Lessee</idValue>
+    <idCode>IL</idCode>
+        <idValue>Insurance Provided by Lessor</idValue>
+    <idCode>IM</idCode>
+        <idValue>Inspect at Destination</idValue>
+    <idCode>IN</idCode>
+        <idValue>Insurance</idValue>
+    <idCode>IO</idCode>
+        <idValue>Inspect at Origin</idValue>
+    <idCode>IP</idCode>
+        <idValue>In-stock Merchandise</idValue>
+    <idCode>IQ</idCode>
+        <idValue>Interim Use Permitted at Special Rate</idValue>
+    <idCode>IR</idCode>
+        <idValue>Installation and Training</idValue>
+    <idCode>IS</idCode>
+        <idValue>Invoice Services</idValue>
+    <idCode>IT</idCode>
+        <idValue>In Transit Price Protection</idValue>
+    <idCode>KO</idCode>
+        <idValue>Koshering</idValue>
+    <idCode>L1</idCode>
+        <idValue>Shipper Load, Carrier Count</idValue>
+    <idCode>LA</idCode>
+        <idValue>Labeling</idValue>
+    <idCode>LL</idCode>
+        <idValue>Loading Service</idValue>
+    <idCode>LS</idCode>
+        <idValue>Lease Shortfall Consideration</idValue>
+    <idCode>M0010</idCode>
+        <idValue>Memo Returnable Container</idValue>
+    <idCode>M0042</idCode>
+        <idValue>Mounting</idValue>
+    <idCode>MI</idCode>
+        <idValue>Mail Invoice</idValue>
+    <idCode>ML</idCode>
+        <idValue>Mail Invoice to Each Location</idValue>
+    <idCode>MNTAN</idCode>
+        <idValue>Annual Maintenance</idValue>
+    <idCode>MNTMN</idCode>
+        <idValue>Monthly Maintenance</idValue>
+    <idCode>MNTON</idCode>
+        <idValue>One-Time Maintenance</idValue>
+    <idCode>N0020</idCode>
+        <idValue>Non-returnable Containers</idValue>
+    <idCode>N0021</idCode>
+        <idValue>Non-Returnable</idValue>
+    <idCode>N0032</idCode>
+        <idValue>Notarized Affidavit</idValue>
+    <idCode>NC</idCode>
+        <idValue>Notify Consignee Before Delivery</idValue>
+    <idCode>OA</idCode>
+        <idValue>Outside Cable Connectors</idValue>
+    <idCode>ON</idCode>
+        <idValue>On-site Service</idValue>
+    <idCode>OP</idCode>
+        <idValue>Oversized Package</idValue>
+    <idCode>P0012</idCode>
+        <idValue>Painting (Primer or Finish)</idValue>
+    <idCode>P0014</idCode>
+        <idValue>Phosphatizing (Steel Treatment)</idValue>
+    <idCode>P0016</idCode>
+        <idValue>Pickle and Oil</idValue>
+    <idCode>P0018</idCode>
+        <idValue>Plating</idValue>
+    <idCode>P0022</idCode>
+        <idValue>Preparation</idValue>
+    <idCode>PA</idCode>
+        <idValue>Pack Invoice with Shipment</idValue>
+    <idCode>PB</idCode>
+        <idValue>Previous Billing</idValue>
+    <idCode>PC</idCode>
+        <idValue>Packaging Service</idValue>
+    <idCode>PE</idCode>
+        <idValue>Pulling Eyes</idValue>
+    <idCode>PF</idCode>
+        <idValue>Proof &amp; Composition</idValue>
+    <idCode>PL</idCode>
+        <idValue>Palletizing</idValue>
+    <idCode>PLI</idCode>
+        <idValue>Pilot Inspection</idValue>
+    <idCode>PM</idCode>
+        <idValue>Perpetual Movement</idValue>
+    <idCode>PO</idCode>
+        <idValue>Purchase Option</idValue>
+    <idCode>PP</idCode>
+        <idValue>Progress Payment Requirement</idValue>
+    <idCode>PSF</idCode>
+        <idValue>Pickup Service Furnished</idValue>
+    <idCode>R0072</idCode>
+        <idValue>Repair</idValue>
+    <idCode>R0076</idCode>
+        <idValue>Returnable Container</idValue>
+    <idCode>R0077</idCode>
+        <idValue>Returnable</idValue>
+    <idCode>R0110</idCode>
+        <idValue>Rework</idValue>
+    <idCode>RD</idCode>
+        <idValue>Residential Delivery</idValue>
+    <idCode>RE</idCode>
+        <idValue>Recall Service</idValue>
+    <idCode>RM</idCode>
+        <idValue>Roundtrip Movement</idValue>
+    <idCode>RP</idCode>
+        <idValue>Return Parts to Customer</idValue>
+    <idCode>S0014</idCode>
+        <idValue>Shearing</idValue>
+    <idCode>S0016</idCode>
+        <idValue>Shotblasting</idValue>
+    <idCode>S0022</idCode>
+        <idValue>Sleeving</idValue>
+    <idCode>S0024</idCode>
+        <idValue>Ship to Stock Quality Audit</idValue>
+    <idCode>S0050</idCode>
+        <idValue>Special Packaging</idValue>
+    <idCode>S0052</idCode>
+        <idValue>Stamping</idValue>
+    <idCode>S0054</idCode>
+        <idValue>Source Inspection</idValue>
+    <idCode>S0056</idCode>
+        <idValue>Strapping</idValue>
+    <idCode>S0080</idCode>
+        <idValue>Supplemental Items</idValue>
+    <idCode>S1</idCode>
+        <idValue>Shipper Load, Consignee Unload</idValue>
+    <idCode>S2</idCode>
+        <idValue>Slip Sheet, Truck</idValue>
+    <idCode>S3</idCode>
+        <idValue>Seller Hand Carry</idValue>
+    <idCode>SD</idCode>
+        <idValue>Shrinkage Allowance</idValue>
+    <idCode>SG</idCode>
+        <idValue>Same - Day Service</idValue>
+    <idCode>SH</idCode>
+        <idValue>Special Handling Service</idValue>
+    <idCode>SJ</idCode>
+        <idValue>Subject To Tax On Resale</idValue>
+    <idCode>SLP</idCode>
+        <idValue>Slip Sheet</idValue>
+    <idCode>SPI</idCode>
+        <idValue>Specification Review</idValue>
+    <idCode>SR</idCode>
+        <idValue>Slip Sheet, Rail</idValue>
+    <idCode>SS</idCode>
+        <idValue>Tax Liability - One Time</idValue>
+    <idCode>ST</idCode>
+        <idValue>Tax Liability - Amortized</idValue>
+    <idCode>SU</idCode>
+        <idValue>Set-up</idValue>
+    <idCode>SV</idCode>
+        <idValue>Service Center</idValue>
+    <idCode>SW</idCode>
+        <idValue>Swell</idValue>
+    <idCode>T0070</idCode>
+        <idValue>Tools for Printing</idValue>
+    <idCode>T1</idCode>
+        <idValue>Onetime Tooling</idValue>
+    <idCode>TC</idCode>
+        <idValue>Ticketing Service</idValue>
+    <idCode>TE</idCode>
+        <idValue>Tendered as Truckload</idValue>
+    <idCode>TH</idCode>
+        <idValue>Technology Exchange</idValue>
+    <idCode>TM</idCode>
+        <idValue>Consecutive Movement</idValue>
+    <idCode>TO</idCode>
+        <idValue>Tooling</idValue>
+    <idCode>UN</idCode>
+        <idValue>Unitized</idValue>
+    <idCode>US</idCode>
+        <idValue>USDA Inspected, Stamping Certification</idValue>
+    <idCode>V1</idCode>
+        <idValue>Drop Yard</idValue>
+    <idCode>V2</idCode>
+        <idValue>Drop Dock</idValue>
+    <idCode>W0010</idCode>
+        <idValue>Warranties</idValue>
+    <idCode>WC</idCode>
+        <idValue>Will Call</idValue>
+    <idCode>WH</idCode>
+        <idValue>Warehousing</idValue>
+    <idCode>X0010</idCode>
+        <idValue>Combine All Same Day Shipment</idValue>
+    <idCode>XP</idCode>
+        <idValue>Expanded Service</idValue>
+    <idCode>XX</idCode>
+        <idValue>Third Party Pallets</idValue>
+    <idCode>YY</idCode>
+        <idValue>Split Pickup</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

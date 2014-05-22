@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT OrderRoutingList (OrderRouting)+>
+<!ELEMENT OrderRouting (,AccountIdContractId,DistributorId,FinalContractId,FinalDistributorId,FinalFreightHandlerId,FreightHandlerId,LtlFreightHandlerId,Zip)>
+<!ATTLIST OrderRouting Id ID #REQUIRED>
+<!ELEMENT AccountId (#PCDATA)>
+<!ELEMENT ContractId (#PCDATA)>
+<!ELEMENT DistributorId (#PCDATA)>
+<!ELEMENT FinalContractId (#PCDATA)>
+<!ELEMENT FinalDistributorId (#PCDATA)>
+<!ELEMENT FinalFreightHandlerId (#PCDATA)>
+<!ELEMENT FreightHandlerId (#PCDATA)>
+<!ELEMENT LtlFreightHandlerId (#PCDATA)>
+<!ELEMENT Zip (#PCDATA)>

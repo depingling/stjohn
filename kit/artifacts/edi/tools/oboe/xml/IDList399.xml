@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>No Exchange/No Return</idValue>
+    <idCode>2</idCode>
+        <idValue>Exchange Pallets</idValue>
+    <idCode>3</idCode>
+        <idValue>Return Pallets</idValue>
+    <idCode>4</idCode>
+        <idValue>Pallets to be Purchased by Customer</idValue>
+    <idCode>5</idCode>
+        <idValue>Third-Party Pallet Exchange</idValue>
+</idList>

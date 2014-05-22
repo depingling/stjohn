@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Text for subsequent use</idValue>
+    <idCode>2</idCode>
+        <idValue>Text replacing missing code</idValue>
+    <idCode>3</idCode>
+        <idValue>Text for immediate use</idValue>
+    <idCode>4</idCode>
+        <idValue>No action required</idValue>
+    <idCode>5</idCode>
+        <idValue>Header</idValue>
+    <idCode>6</idCode>
+        <idValue>Numbered paragraph</idValue>
+    <idCode>7</idCode>
+        <idValue>Paragraph</idValue>
+</idList>

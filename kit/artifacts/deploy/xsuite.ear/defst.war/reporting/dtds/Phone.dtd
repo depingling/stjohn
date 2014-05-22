@@ -1,0 +1,22 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PhoneList (Phone)+>
+<!ELEMENT Phone (,BusEntityIdContactId,UserId,AddBy,AddDate,ModBy,ModDate,PhoneAreaCode,PhoneCountryCd,PhoneNum,PhoneStatusCd,PhoneTypeCd,PrimaryInd,ShortDesc)>
+<!ATTLIST Phone Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT ContactId (#PCDATA)>
+<!ELEMENT UserId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT PhoneAreaCode (#PCDATA)>
+<!ELEMENT PhoneCountryCd (#PCDATA)>
+<!ELEMENT PhoneNum (#PCDATA)>
+<!ELEMENT PhoneStatusCd (#PCDATA)>
+<!ELEMENT PhoneTypeCd (#PCDATA)>
+<!ELEMENT PrimaryInd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>AE</idCode>
+        <idValue>Architect and Engineering</idValue>
+    <idCode>CN</idCode>
+        <idValue>Construction</idValue>
+    <idCode>DR</idCode>
+        <idValue>Demolish, Dismantle or Replace</idValue>
+    <idCode>ER</idCode>
+        <idValue>Equipment Rental</idValue>
+    <idCode>HW</idCode>
+        <idValue>Hardware</idValue>
+    <idCode>IR</idCode>
+        <idValue>Inspect and Repair as Necessary</idValue>
+    <idCode>MD</idCode>
+        <idValue>Modification</idValue>
+    <idCode>OV</idCode>
+        <idValue>Overhaul</idValue>
+    <idCode>RD</idCode>
+        <idValue>Research and Development</idValue>
+    <idCode>RE</idCode>
+        <idValue>Repair</idValue>
+    <idCode>SB</idCode>
+        <idValue>Shipbuilding</idValue>
+    <idCode>SP</idCode>
+        <idValue>Supplies</idValue>
+    <idCode>SU</idCode>
+        <idValue>Subsistence</idValue>
+    <idCode>SV</idCode>
+        <idValue>Services</idValue>
+    <idCode>TE</idCode>
+        <idValue>Test and Evaluation</idValue>
+    <idCode>UT</idCode>
+        <idValue>Utilities</idValue>
+</idList>

@@ -1,0 +1,22 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ItemSubstitutionList (ItemSubstitution)+>
+<!ELEMENT ItemSubstitution (OrderId,OrderItemId,AddBy,AddDate,DistItemSkuNum,ItemDistCost,ItemPack,ItemQuantity,ItemShortDesc,ItemSkuNum,ItemUom,ManuItemSkuNum,ModBy,ModDate)>
+<!ATTLIST ItemSubstitution Id ID #REQUIRED>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT OrderItemId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT DistItemSkuNum (#PCDATA)>
+<!ELEMENT ItemDistCost (#PCDATA)>
+<!ELEMENT ItemPack (#PCDATA)>
+<!ELEMENT ItemQuantity (#PCDATA)>
+<!ELEMENT ItemShortDesc (#PCDATA)>
+<!ELEMENT ItemSkuNum (#PCDATA)>
+<!ELEMENT ItemUom (#PCDATA)>
+<!ELEMENT ManuItemSkuNum (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

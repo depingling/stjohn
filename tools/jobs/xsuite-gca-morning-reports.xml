@@ -1,0 +1,19 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+        <report>
+                <category>Customer</category>
+                <name>The Whopper</name>
+                <!--  <param name="DAYS_BACK">90</param> -->
+                <fileTransferHost>www.gcaware.com</fileTransferHost> 
+                <fileTransferUser>anonymous</fileTransferUser> 
+                <fileTransferPass>contactus@cleanwise.com</fileTransferPass> 
+                <fileTransferMode>normal</fileTransferMode> 
+                <sendFileName>orderdata/CleanwiseOrders.xls</sendFileName>
+                <fileTransferOverwriteFile>true</fileTransferOverwriteFile>
+        </report>
+
+</xml>

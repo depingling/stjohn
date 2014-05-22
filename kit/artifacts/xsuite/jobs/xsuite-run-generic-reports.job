@@ -1,0 +1,39 @@
+#!/bin/sh
+#lockfile=/tmp/$0.lockfile
+#if [ -f $lockfile ]
+#then
+#  echo "error lock file $lockfile in place."
+#  exit
+#fi
+
+#echo $$ > $lockfile
+
+# go to the home directory for this user
+
+. ../app.sh.env
+
+if [ -z ${XSUITE_HOME} ] 
+then
+  echo "XSUITE_HOME is not defined."
+  exit
+fi
+
+
+
+# create a temporary area to store the reports generated.
+if [ ! -d /tmp/xsuite_reports_tmp ]
+then
+  mkdir /tmp/xsuite_reports_tmp
+fi
+
+java -Xmx512m -classpath "${TJCPATH}" \
+ -Djava.io.tmpdir=/tmp/xsuite_reports_tmp \
+-Dconf="${XSUITE_HOME}/xsuite/app.properties" \
+com.cleanwise.service.apps.GenericReportRunner ../jobs/$1
+
+
+# cleanup temporary files older than 5 days that were
+# generated when the xls reports are run.
+cd /tmp/xsuite_reports_tmp; find . -name "*.xls" -atime +5 -exec rm {} \;
+
+#rm $lockfile

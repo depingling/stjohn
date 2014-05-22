@@ -1,0 +1,16 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+        <report>
+                <category>Distribution</category>
+                <name>Distributor Ship Tos Automated</name>
+                <emailrecipient>Patti.Robertson@pollockpaper.com</emailrecipient>
+                <email-message>New and modified addresses.</email-message>
+                <param name="DISTRIBUTOR">106804</param>
+                <param name="ALLOW_UPDATES">true</param>
+                <send-only-if-data>true</send-only-if-data>
+        </report>
+</xml>

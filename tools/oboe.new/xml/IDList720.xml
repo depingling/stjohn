@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Unrecognized segment ID</idValue>
+    <idCode>2</idCode>
+        <idValue>Unexpected segment</idValue>
+    <idCode>3</idCode>
+        <idValue>Mandatory segment missing</idValue>
+    <idCode>4</idCode>
+        <idValue>Loop Occurs Over Maximum Times</idValue>
+    <idCode>5</idCode>
+        <idValue>Segment Exceeds Maximum Use</idValue>
+    <idCode>6</idCode>
+        <idValue>Segment Not in Defined Transaction Set</idValue>
+    <idCode>7</idCode>
+        <idValue>Segment Not in Proper Sequence</idValue>
+    <idCode>8</idCode>
+        <idValue>Segment Has Data Element Errors</idValue>
+</idList>

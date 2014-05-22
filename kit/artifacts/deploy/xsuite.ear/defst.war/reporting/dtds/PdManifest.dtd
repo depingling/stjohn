@@ -1,0 +1,33 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PdManifestList (PdManifest)+>
+<!ELEMENT PdManifest (,CustManifestIdCustPrclId,DistributorId,PurchaseOrderId,PurchaseOrderIdNonPd,ActualWeight,AddBy,AddDate,DestSrcCd,EstShipDate,EstShipDateType,EstWeight,ExpectedFlag,ManifestGrpTxt,MatchingRecords,MatchingRecordsNonPd,MatchType,ModBy,ModDate,PhysicalFlag,PrclChrg,PrcsCatCd,SblCd,SrcDoc,ZoneCd)>
+<!ATTLIST PdManifest Id ID #REQUIRED>
+<!ELEMENT CustManifestId (#PCDATA)>
+<!ELEMENT CustPrclId (#PCDATA)>
+<!ELEMENT DistributorId (#PCDATA)>
+<!ELEMENT PurchaseOrderId (#PCDATA)>
+<!ELEMENT PurchaseOrderIdNonPd (#PCDATA)>
+<!ELEMENT ActualWeight (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT DestSrcCd (#PCDATA)>
+<!ELEMENT EstShipDate (#PCDATA)>
+<!ELEMENT EstShipDateType (#PCDATA)>
+<!ELEMENT EstWeight (#PCDATA)>
+<!ELEMENT ExpectedFlag (#PCDATA)>
+<!ELEMENT ManifestGrpTxt (#PCDATA)>
+<!ELEMENT MatchingRecords (#PCDATA)>
+<!ELEMENT MatchingRecordsNonPd (#PCDATA)>
+<!ELEMENT MatchType (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT PhysicalFlag (#PCDATA)>
+<!ELEMENT PrclChrg (#PCDATA)>
+<!ELEMENT PrcsCatCd (#PCDATA)>
+<!ELEMENT SblCd (#PCDATA)>
+<!ELEMENT SrcDoc (#PCDATA)>
+<!ELEMENT ZoneCd (#PCDATA)>

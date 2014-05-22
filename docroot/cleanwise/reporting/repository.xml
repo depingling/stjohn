@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Registry>
+<Replet name="contractItemsBadDistSku" folder="false" class="inetsoft.sree.TemplateReplet" alias="" template="/../templates/contractItemsBadDistSku.srt" visible="true">
+</Replet>
+<Replet name="OrderAnalysis" folder="false" class="com.cleanwise.view.reporting.ReportOpReplet" alias="" template="/../templates/OrderAnalysis.srt" visible="false">
+</Replet>
+<Replet name="itemsInContracts" folder="false" class="inetsoft.sree.TemplateReplet" alias="" template="/../templates/itemsInContracts.srt" visible="true">
+</Replet>
+<Replet name="OrderAnalysisByCategory" folder="false" class="com.cleanwise.view.reporting.ReportOpReplet" alias="" template="/../templates/OrderAnalysisByCategory.srt" visible="false">
+</Replet>
+<Replet name="itemUsage" folder="false" class="inetsoft.sree.TemplateReplet" alias="" template="/../templates/itemUsage.srt" visible="true">
+<Request name="create">
+<Parameter name="isBadDistSku" type="String" value="false"/>
+</Request>
+</Replet>
+<Replet name="repContractItemsBadDistSku" folder="false" class="inetsoft.sree.TemplateReplet" alias="" template="/../templates/contractItemsBadDistSku.srt" visible="true">
+<Request name="create">
+<Parameter name="Parameter" type="String" value="contractId"/>
+</Request>
+</Replet>
+<Replet name="OrderAnalysisByState" folder="false" class="com.cleanwise.view.reporting.ReportOpReplet" alias="" template="/../templates/OrderAnalysisByState.srt" visible="false">
+</Replet>
+<Replet name="distShipTo" folder="false" class="inetsoft.sree.TemplateReplet" alias="" template="/../templates/distShipTo.srt" visible="true">
+</Replet>
+<Replet name="OrderAnalysisOrderType" folder="false" class="com.cleanwise.view.reporting.ReportOpReplet" alias="" template="/../templates/OrderByType.srt" visible="true">
+</Replet>
+<Replet name="/" folder="true"></Replet>
+<Replet name="cw" folder="true"></Replet>
+</Registry>

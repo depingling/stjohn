@@ -1,0 +1,24 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT GenericReportList (GenericReport)+>
+<!ELEMENT GenericReport (AddBy,AddDate,Category,Classname,GenericReportType,InterfaceTable,LongDesc,ModBy,ModDate,Name,ParameterToken,ReportSchemaCd,RuntimeEnabled,ScriptText,SqlText,SupplementaryControls)>
+<!ATTLIST GenericReport Id ID #REQUIRED>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Category (#PCDATA)>
+<!ELEMENT Classname (#PCDATA)>
+<!ELEMENT GenericReportType (#PCDATA)>
+<!ELEMENT InterfaceTable (#PCDATA)>
+<!ELEMENT LongDesc (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT ParameterToken (#PCDATA)>
+<!ELEMENT ReportSchemaCd (#PCDATA)>
+<!ELEMENT RuntimeEnabled (#PCDATA)>
+<!ELEMENT ScriptText (#PCDATA)>
+<!ELEMENT SqlText (#PCDATA)>
+<!ELEMENT SupplementaryControls (#PCDATA)>

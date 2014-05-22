@@ -1,0 +1,55 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT InvoiceCustList (InvoiceCust)+>
+<!ELEMENT InvoiceCust (,AccountId,OrderId,SiteId,StoreId,AddBy,AddDate,BatchDate,BatchNumber,BatchTime,BillToAddress1,BillToAddress2,BillToAddress3,BillToAddress4,BillToCity,BillToCountry,BillToName,BillToPostalCode,BillToState,CitAssignmentNumber,CitStatusCd,CitTransactionDate,Credits,Discounts,ErpPoNum,ErpSystemCd,Freight,InvoiceDate,InvoiceNum,InvoiceStatusCd,InvoiceType,MiscCharges,ModBy,ModDate,NetDue,OriginalInvoiceNum,PaymentTermsCd,SalesTax,ShippingAddress1,ShippingAddress2,ShippingAddress3,ShippingAddress4,ShippingCity,ShippingCountry,ShippingName,ShippingPostalCode,ShippingState,SubTotal)>
+<!ATTLIST InvoiceCust Id ID #REQUIRED>
+<!ELEMENT AccountId (#PCDATA)>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT SiteId (#PCDATA)>
+<!ELEMENT StoreId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT BatchDate (#PCDATA)>
+<!ELEMENT BatchNumber (#PCDATA)>
+<!ELEMENT BatchTime (#PCDATA)>
+<!ELEMENT BillToAddress1 (#PCDATA)>
+<!ELEMENT BillToAddress2 (#PCDATA)>
+<!ELEMENT BillToAddress3 (#PCDATA)>
+<!ELEMENT BillToAddress4 (#PCDATA)>
+<!ELEMENT BillToCity (#PCDATA)>
+<!ELEMENT BillToCountry (#PCDATA)>
+<!ELEMENT BillToName (#PCDATA)>
+<!ELEMENT BillToPostalCode (#PCDATA)>
+<!ELEMENT BillToState (#PCDATA)>
+<!ELEMENT CitAssignmentNumber (#PCDATA)>
+<!ELEMENT CitStatusCd (#PCDATA)>
+<!ELEMENT CitTransactionDate (#PCDATA)>
+<!ELEMENT Credits (#PCDATA)>
+<!ELEMENT Discounts (#PCDATA)>
+<!ELEMENT ErpPoNum (#PCDATA)>
+<!ELEMENT ErpSystemCd (#PCDATA)>
+<!ELEMENT Freight (#PCDATA)>
+<!ELEMENT InvoiceDate (#PCDATA)>
+<!ELEMENT InvoiceNum (#PCDATA)>
+<!ELEMENT InvoiceStatusCd (#PCDATA)>
+<!ELEMENT InvoiceType (#PCDATA)>
+<!ELEMENT MiscCharges (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT NetDue (#PCDATA)>
+<!ELEMENT OriginalInvoiceNum (#PCDATA)>
+<!ELEMENT PaymentTermsCd (#PCDATA)>
+<!ELEMENT SalesTax (#PCDATA)>
+<!ELEMENT ShippingAddress1 (#PCDATA)>
+<!ELEMENT ShippingAddress2 (#PCDATA)>
+<!ELEMENT ShippingAddress3 (#PCDATA)>
+<!ELEMENT ShippingAddress4 (#PCDATA)>
+<!ELEMENT ShippingCity (#PCDATA)>
+<!ELEMENT ShippingCountry (#PCDATA)>
+<!ELEMENT ShippingName (#PCDATA)>
+<!ELEMENT ShippingPostalCode (#PCDATA)>
+<!ELEMENT ShippingState (#PCDATA)>
+<!ELEMENT SubTotal (#PCDATA)>

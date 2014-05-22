@@ -1,0 +1,26 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ManifestItemList (ManifestItem)+>
+<!ELEMENT ManifestItem (,DistributionCenterIdManifestId,PackageConfirmId,PackageId,PurchaseOrderId,AddBy,AddDate,CubicSize,ManifestItemStatusCd,ManifestLabelTypeCd,ModBy,ModDate,RecievedActualWeight,RecievedPackageCategoryCd,RecievedPackageCost,RecievedPostalCd,RecievedZoneCd,Weight)>
+<!ATTLIST ManifestItem Id ID #REQUIRED>
+<!ELEMENT DistributionCenterId (#PCDATA)>
+<!ELEMENT ManifestId (#PCDATA)>
+<!ELEMENT PackageConfirmId (#PCDATA)>
+<!ELEMENT PackageId (#PCDATA)>
+<!ELEMENT PurchaseOrderId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT CubicSize (#PCDATA)>
+<!ELEMENT ManifestItemStatusCd (#PCDATA)>
+<!ELEMENT ManifestLabelTypeCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT RecievedActualWeight (#PCDATA)>
+<!ELEMENT RecievedPackageCategoryCd (#PCDATA)>
+<!ELEMENT RecievedPackageCost (#PCDATA)>
+<!ELEMENT RecievedPostalCd (#PCDATA)>
+<!ELEMENT RecievedZoneCd (#PCDATA)>
+<!ELEMENT Weight (#PCDATA)>

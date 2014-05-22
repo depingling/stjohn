@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Allowance</idValue>
+    <idCode>2</idCode>
+        <idValue>Charge</idValue>
+    <idCode>3</idCode>
+        <idValue>Allowance or charge</idValue>
+    <idCode>4</idCode>
+        <idValue>Reinsurer&apos;s share</idValue>
+    <idCode>5</idCode>
+        <idValue>Entry percentage</idValue>
+    <idCode>6</idCode>
+        <idValue>Quality/yield</idValue>
+    <idCode>7</idCode>
+        <idValue>Percentage of invoice</idValue>
+    <idCode>8</idCode>
+        <idValue>Reduction/surcharge percentage</idValue>
+    <idCode>9</idCode>
+        <idValue>Adjustment</idValue>
+    <idCode>10</idCode>
+        <idValue>Bureau share</idValue>
+    <idCode>11</idCode>
+        <idValue>Buffer stock requirement</idValue>
+    <idCode>12</idCode>
+        <idValue>Discount</idValue>
+    <idCode>13</idCode>
+        <idValue>Amount tolerance</idValue>
+    <idCode>14</idCode>
+        <idValue>Percentage of note</idValue>
+    <idCode>15</idCode>
+        <idValue>Penalty percentage</idValue>
+    <idCode>16</idCode>
+        <idValue>Interest percentage</idValue>
+    <idCode>17</idCode>
+        <idValue>Part of documentary credit amount</idValue>
+    <idCode>18</idCode>
+        <idValue>Percentage credit note</idValue>
+    <idCode>19</idCode>
+        <idValue>Percentage debit note</idValue>
+    <idCode>20</idCode>
+        <idValue>Percentage of insurance</idValue>
+    <idCode>21</idCode>
+        <idValue>Own risk percentage</idValue>
+    <idCode>22</idCode>
+        <idValue>Transferred VAT percentage</idValue>
+    <idCode>23</idCode>
+        <idValue>Part time employment</idValue>
+    <idCode>24</idCode>
+        <idValue>Voluntary contribution</idValue>
+    <idCode>25</idCode>
+        <idValue>Attribute factor</idValue>
+    <idCode>26</idCode>
+        <idValue>Additional contribution</idValue>
+    <idCode>27</idCode>
+        <idValue>Benefits allocation</idValue>
+    <idCode>28</idCode>
+        <idValue>Attribute classification</idValue>
+    <idCode>29</idCode>
+        <idValue>Renegotiation trigger upper limit</idValue>
+    <idCode>30</idCode>
+        <idValue>Renegotiation trigger lower limit</idValue>
+    <idCode>31</idCode>
+        <idValue>Material reduction factor</idValue>
+    <idCode>32</idCode>
+        <idValue>Acceptable price difference</idValue>
+    <idCode>33</idCode>
+        <idValue>Share of buyer&apos;s total requirement</idValue>
+    <idCode>34</idCode>
+        <idValue>Price increase</idValue>
+    <idCode>35</idCode>
+        <idValue>Share of tool cost paid by buyer</idValue>
+    <idCode>36</idCode>
+        <idValue>Volume capacity usage</idValue>
+    <idCode>37</idCode>
+        <idValue>Weight capacity usage</idValue>
+    <idCode>38</idCode>
+        <idValue>Loading length capacity usage</idValue>
+    <idCode>39</idCode>
+        <idValue>Share of packaging cost paid by vendor</idValue>
+    <idCode>40</idCode>
+        <idValue>Reduction percentage</idValue>
+    <idCode>41</idCode>
+        <idValue>Surcharge percentage</idValue>
+    <idCode>42</idCode>
+        <idValue>Local content</idValue>
+    <idCode>43</idCode>
+        <idValue>Chargeback</idValue>
+    <idCode>44</idCode>
+        <idValue>Gross turnover commission</idValue>
+    <idCode>45</idCode>
+        <idValue>Progress payment percentage</idValue>
+    <idCode>46</idCode>
+        <idValue>Offset</idValue>
+    <idCode>47</idCode>
+        <idValue>Prepaid payment percentage</idValue>
+    <idCode>48</idCode>
+        <idValue>Percentage of work completed</idValue>
+    <idCode>49</idCode>
+        <idValue>Underwriting rating</idValue>
+    <idCode>50</idCode>
+        <idValue>Mortgage interest rate</idValue>
+    <idCode>51</idCode>
+        <idValue>Maximum cost of living adjustment rate</idValue>
+    <idCode>52</idCode>
+        <idValue>Humidity</idValue>
+    <idCode>53</idCode>
+        <idValue>Minimum cost of living adjustment rate</idValue>
+    <idCode>54</idCode>
+        <idValue>Contractor cost share</idValue>
+    <idCode>55</idCode>
+        <idValue>Government cost share</idValue>
+    <idCode>56</idCode>
+        <idValue>Progress payment liquidation percentage</idValue>
+    <idCode>57</idCode>
+        <idValue>Fee percentage</idValue>
+    <idCode>58</idCode>
+        <idValue>Resource availability</idValue>
+    <idCode>59</idCode>
+        <idValue>Resource efficiency</idValue>
+    <idCode>60</idCode>
+        <idValue>Rework yield</idValue>
+    <idCode>62</idCode>
+        <idValue>Remaining work</idValue>
+    <idCode>63</idCode>
+        <idValue>Actual work percent completed</idValue>
+    <idCode>64</idCode>
+        <idValue>Earned value</idValue>
+    <idCode>65</idCode>
+        <idValue>Cost escalation</idValue>
+    <idCode>66</idCode>
+        <idValue>Loss</idValue>
+    <idCode>67</idCode>
+        <idValue>Cost of living adjustment rate</idValue>
+    <idCode>68</idCode>
+        <idValue>Percentage of due amount</idValue>
+    <idCode>69</idCode>
+        <idValue>Asset ownership</idValue>
+    <idCode>70</idCode>
+        <idValue>Common stock reported</idValue>
+    <idCode>71</idCode>
+        <idValue>Preferred stock reported</idValue>
+    <idCode>72</idCode>
+        <idValue>Ordinary profit to sales</idValue>
+    <idCode>73</idCode>
+        <idValue>Invested capital ratio</idValue>
+    <idCode>74</idCode>
+        <idValue>Equity to loan ratio</idValue>
+    <idCode>75</idCode>
+        <idValue>Equity to deposit ratio</idValue>
+    <idCode>76</idCode>
+        <idValue>Loan to deposit ratio</idValue>
+    <idCode>77</idCode>
+        <idValue>Percent of total</idValue>
+    <idCode>78</idCode>
+        <idValue>Participation</idValue>
+    <idCode>79</idCode>
+        <idValue>Indebtedness</idValue>
+    <idCode>80</idCode>
+        <idValue>Liquid ratio</idValue>
+    <idCode>81</idCode>
+        <idValue>Net worth to total assets</idValue>
+    <idCode>82</idCode>
+        <idValue>Subcontracted</idValue>
+    <idCode>83</idCode>
+        <idValue>Sales per employee</idValue>
+    <idCode>84</idCode>
+        <idValue>Sales to net working capital</idValue>
+    <idCode>85</idCode>
+        <idValue>Total liability to net worth</idValue>
+    <idCode>86</idCode>
+        <idValue>Assets to sales</idValue>
+    <idCode>87</idCode>
+        <idValue>Capital per employee</idValue>
+    <idCode>88</idCode>
+        <idValue>Costs per employee</idValue>
+    <idCode>89</idCode>
+        <idValue>Accounts payable to sales</idValue>
+    <idCode>90</idCode>
+        <idValue>Current liabilities to net worth</idValue>
+    <idCode>91</idCode>
+        <idValue>Current liabilities to inventory</idValue>
+    <idCode>92</idCode>
+        <idValue>Current ratio</idValue>
+    <idCode>93</idCode>
+        <idValue>Fixed assets to net worth</idValue>
+    <idCode>94</idCode>
+        <idValue>Inventory turnover</idValue>
+    <idCode>95</idCode>
+        <idValue>Quick ratio</idValue>
+    <idCode>96</idCode>
+        <idValue>Resources retained for project</idValue>
+    <idCode>97</idCode>
+        <idValue>Return on assets</idValue>
+    <idCode>98</idCode>
+        <idValue>Return on sales ratio</idValue>
+    <idCode>99</idCode>
+        <idValue>Return on capital ratio</idValue>
+    <idCode>100</idCode>
+        <idValue>Shareholders&apos; return ratio</idValue>
+    <idCode>101</idCode>
+        <idValue>Contracts obtained by bid</idValue>
+    <idCode>102</idCode>
+        <idValue>Contracts obtained by negotiation</idValue>
+    <idCode>103</idCode>
+        <idValue>Cost plus basis</idValue>
+    <idCode>104</idCode>
+        <idValue>Lump sum payments</idValue>
+    <idCode>105</idCode>
+        <idValue>Purchases on letter of credit</idValue>
+    <idCode>106</idCode>
+        <idValue>Purchases on floor plan</idValue>
+    <idCode>107</idCode>
+        <idValue>Change in sales</idValue>
+    <idCode>108</idCode>
+        <idValue>Change in profit</idValue>
+    <idCode>109</idCode>
+        <idValue>Damage</idValue>
+    <idCode>110</idCode>
+        <idValue>Interest on liabilities</idValue>
+    <idCode>111</idCode>
+        <idValue>Risk margin</idValue>
+    <idCode>112</idCode>
+        <idValue>Liability ratio</idValue>
+    <idCode>113</idCode>
+        <idValue>Interest cover</idValue>
+    <idCode>114</idCode>
+        <idValue>Change</idValue>
+    <idCode>115</idCode>
+        <idValue>Expense</idValue>
+    <idCode>116</idCode>
+        <idValue>Market share</idValue>
+    <idCode>117</idCode>
+        <idValue>Owned by small shareholders</idValue>
+    <idCode>118</idCode>
+        <idValue>Paid in capital</idValue>
+    <idCode>119</idCode>
+        <idValue>Previous participation</idValue>
+    <idCode>120</idCode>
+        <idValue>Fixed fee</idValue>
+    <idCode>121</idCode>
+        <idValue>Asset turnover</idValue>
+    <idCode>122</idCode>
+        <idValue>Percentage of total payment</idValue>
+    <idCode>123</idCode>
+        <idValue>Territorial trade percent</idValue>
+    <idCode>124</idCode>
+        <idValue>Change in taxable income</idValue>
+    <idCode>125</idCode>
+        <idValue>Sales by type of customer</idValue>
+    <idCode>126</idCode>
+        <idValue>Previous period percent of total</idValue>
+    <idCode>127</idCode>
+        <idValue>Minority interest return on equity</idValue>
+    <idCode>128</idCode>
+        <idValue>Change in ordinary income</idValue>
+</idList>

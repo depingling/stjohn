@@ -1,0 +1,8 @@
+button.addCustomerComment=Add
+label.customer.order.notes=Enter JWO #
+pages.contact.msg=Call us anytime between {0} to speak to a Customer Service Expert who will assist you with your order.  For GCAware Purchasing support call 877-422-4570 (877-gca-hlp0).  Press 2 for GCAware and 1 for Purchasing.  Please remember to identify yourself as a GCA Services employee and your site.
+shop.budgetInfo.label.setBudgetedOrder=Set as Non Job Work Order
+shop.budgetInfo.label.setNotBudgetedOrder=Set as Job Work Order Requires Approval
+shop.budgetInfo.text.oderWillNotAffectBudgetButWillRequireApproval=Set as Job Work Order Requires Approval
+shop.checkout.text.customerComment=JWO #
+shop.checkout.text.processOrderOn="<font color=""red"">Optional</font> - Note: Will hold order from going to the distributor until this date.<b>(Used for holding order until the next budget period, place a PO while on vacation, etc)</b>"

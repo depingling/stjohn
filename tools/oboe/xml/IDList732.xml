@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>Air Hours</idValue>
+    <idCode>AD</idCode>
+        <idValue>Air Days</idValue>
+    <idCode>CD</idCode>
+        <idValue>Calendar Days (Includes weekends and Holidays)</idValue>
+    <idCode>CW</idCode>
+        <idValue>Calendar Weeks (7 Day)</idValue>
+    <idCode>HO</idCode>
+        <idValue>Hours</idValue>
+    <idCode>SD</idCode>
+        <idValue>Surface Days</idValue>
+    <idCode>SH</idCode>
+        <idValue>Surface Hours</idValue>
+    <idCode>WD</idCode>
+        <idValue>Working Days (Excludes weekends and holidays)</idValue>
+    <idCode>WW</idCode>
+        <idValue>5 Day Work Week</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

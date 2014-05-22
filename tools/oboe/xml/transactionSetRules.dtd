@@ -1,0 +1,60 @@
+<?xml encoding="ISO-8859-1"?>
+<!-- OBOE release 2.5.0 -->
+<!ELEMENT transactionSet (table+)>
+<!ATTLIST transactionSet
+	name CDATA #REQUIRED
+	id CDATA #REQUIRED
+	revision CDATA #IMPLIED
+	functionalGroup CDATA #IMPLIED
+	description CDATA #IMPLIED
+	xmlTag CDATA #IMPLIED
+>
+<!ELEMENT table (segment*)>
+<!ATTLIST table
+	section (header | detail | summary) "header"
+>
+<!ELEMENT segment (segment*, (compositeDE?, dataElement?)*, elementRule*)*>
+<!ATTLIST segment
+	name CDATA #REQUIRED
+	id CDATA #REQUIRED
+	sequence CDATA #REQUIRED
+	description CDATA #IMPLIED
+	occurs CDATA #IMPLIED
+	required (M | O | C) "M"
+	xmlTag CDATA #IMPLIED
+        loopID CDATA #IMPLIED
+>
+<!ELEMENT compositeDE (dataElement)+>
+<!ATTLIST compositeDE
+	name CDATA #REQUIRED
+	id CDATA #REQUIRED
+	description CDATA #IMPLIED
+	sequence CDATA #IMPLIED
+	required CDATA #IMPLIED
+	xmlTag CDATA #IMPLIED
+>
+<!ELEMENT dataElement ((default)?|(idList, (default)?))>
+<!ATTLIST dataElement
+	name CDATA #REQUIRED
+	id CDATA #REQUIRED
+	type CDATA #REQUIRED
+	sequence CDATA #IMPLIED
+	required CDATA #IMPLIED
+	description CDATA #IMPLIED
+	minLength CDATA #REQUIRED
+	maxLength CDATA #REQUIRED
+	xmlTag CDATA #IMPLIED
+	idListFile CDATA #IMPLIED
+>
+<!ELEMENT idList ((idCode, idValue)*)>
+<!ELEMENT idCode (#PCDATA)>
+<!ELEMENT idValue (#PCDATA)>
+<!ELEMENT default (#PCDATA)>
+<!ATTLIST default
+	from (constant | property | method) #REQUIRED
+>
+<!ELEMENT elementRule EMPTY>
+<!ATTLIST elementRule
+	rule (oneOrMoreMustExist | ifFirstExistsThenAllMustExist | oneAndOnlyOneMayExist | ifFirstExistsThenAtLeastOneMoreMustExist | allOrNoneMayExist | ifFirstExistsThenNoOthersMayExist) #REQUIRED
+	positions CDATA #REQUIRED
+>

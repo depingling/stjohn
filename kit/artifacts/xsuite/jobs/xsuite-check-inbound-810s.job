@@ -1,0 +1,60 @@
+#!/bin/sh
+
+lcmd=check-in-810s
+
+HERE=`pwd`
+
+## common for all scripts
+
+lockfile=/tmp/xsuite.lock.$lcmd 
+if [ -f $lockfile ]
+then
+  echo "error lock on for $lcmd"
+  exit
+fi
+
+echo $$ > $lockfile
+
+
+tstamp=`date '+Date-%Y.%m.%d-Time-%H.%M.%S'`
+
+if [ -f  /apps/xadmin3/.profile ]
+then
+        . /apps/xadmin3/.profile 
+fi
+
+# make sure that the host and ports match the JBoss 
+# installation that you are trying to talk to.
+
+. $XDIR/app.sh.env
+
+if [ -z ${XSUITE_HOME} ] 
+then
+  echo "error XSUITE_HOME is not defined."
+  exit
+fi
+
+
+cd $XDIR/edi/processed
+pwd
+
+TJCPATH="${TJCPATH}${PSEP}${HERE}/ojdbc14.jar${PSEP}."
+
+cd $XDIR/util
+
+mfile=/tmp/$0.mail
+echo "subject: invoice file check on `hostname`" > $mfile
+echo " " >> $mfile
+echo "START INVOICE CHECKING" >> $mfile
+date >> $mfile
+
+# only check for legitimate files (eg. more than 4 chars in the name)
+
+java -classpath "${TJCPATH}"  -Dconf="${XSUITE_HOME}/xsuite/app.properties" -DdbUrl=jdbc:oracle:thin:@192.168.3.123:1521:cwcamdb1 -DdbUser=stjohn_prod  -DdbPwd=stjohn_prod -DXSUITE_HOME=${XSUITE_HOME} -DprocessDir="${XDIR}/edi/processed" -Ddebug=y $*  com.cleanwise.service.apps.edi.Inbound810Checker >> $mfile
+
+sleep 5
+
+echo "DONE INVOICE CHECKING" >> $mfile
+
+mail jobreporting@cleanwise.com < $mfile
+rm $lockfile

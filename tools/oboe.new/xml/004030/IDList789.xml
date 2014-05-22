@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>A0</idCode>
+        <idValue>841 x 1189 mm *</idValue>
+    <idCode>A1</idCode>
+        <idValue>594 x 841 mm *</idValue>
+    <idCode>A2</idCode>
+        <idValue>420 x 594 mm *</idValue>
+    <idCode>A3</idCode>
+        <idValue>297 x 420 mm *</idValue>
+    <idCode>A4</idCode>
+        <idValue>210 x 297 mm *</idValue>
+    <idCode>AH</idCode>
+        <idValue>8.5 x 11.0 inches</idValue>
+    <idCode>AV</idCode>
+        <idValue>11.0 x 8.5 inches</idValue>
+    <idCode>BH</idCode>
+        <idValue>11.0 x 17.0 inches</idValue>
+    <idCode>CH</idCode>
+        <idValue>17.0 x 22.0 inches</idValue>
+    <idCode>DH</idCode>
+        <idValue>22.0 x 34.0 inches</idValue>
+    <idCode>EH</idCode>
+        <idValue>34.0 x 44.0 inches</idValue>
+    <idCode>FH</idCode>
+        <idValue>28.0 x 40.0 inches</idValue>
+    <idCode>GH</idCode>
+        <idValue>11.0 *</idValue>
+    <idCode>HH</idCode>
+        <idValue>28.0 *</idValue>
+    <idCode>JH</idCode>
+        <idValue>34.0 *</idValue>
+    <idCode>KH</idCode>
+        <idValue>40.0 *</idValue>
+    <idCode>NL</idCode>
+        <idValue>8.5 x 14.0 inches (Legal)</idValue>
+</idList>

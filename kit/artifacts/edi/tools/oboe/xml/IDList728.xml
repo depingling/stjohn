@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>B</idCode>
+        <idValue>Loaded with empty 4-block for blocking purposes</idValue>
+    <idCode>D</idCode>
+        <idValue>Empty containers with dunnage</idValue>
+    <idCode>E</idCode>
+        <idValue>Empty Containers</idValue>
+    <idCode>L</idCode>
+        <idValue>Loaded with production material</idValue>
+    <idCode>M</idCode>
+        <idValue>Mixed empty and loaded</idValue>
+    <idCode>O</idCode>
+        <idValue>Obsolete material</idValue>
+    <idCode>P</idCode>
+        <idValue>Loaded with returned excess production material</idValue>
+    <idCode>R</idCode>
+        <idValue>Loaded with rejected material</idValue>
+    <idCode>S</idCode>
+        <idValue>Service part obsolete container</idValue>
+    <idCode>U</idCode>
+        <idValue>Loaded with returned processed material</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Product</idValue>
+    <idCode>2</idCode>
+        <idValue>Licence</idValue>
+    <idCode>3</idCode>
+        <idValue>Package</idValue>
+    <idCode>4</idCode>
+        <idValue>Vehicle reference set</idValue>
+    <idCode>5</idCode>
+        <idValue>Source database</idValue>
+    <idCode>6</idCode>
+        <idValue>Target database</idValue>
+    <idCode>7</idCode>
+        <idValue>Value list</idValue>
+    <idCode>8</idCode>
+        <idValue>Contract</idValue>
+    <idCode>9</idCode>
+        <idValue>Financial security</idValue>
+    <idCode>10</idCode>
+        <idValue>Accounting</idValue>
+    <idCode>11</idCode>
+        <idValue>Project</idValue>
+    <idCode>12</idCode>
+        <idValue>Work plan</idValue>
+    <idCode>13</idCode>
+        <idValue>Work schedule</idValue>
+    <idCode>14</idCode>
+        <idValue>Resource</idValue>
+    <idCode>15</idCode>
+        <idValue>Milestone event</idValue>
+    <idCode>16</idCode>
+        <idValue>Interface work task</idValue>
+    <idCode>17</idCode>
+        <idValue>Work task constraint</idValue>
+    <idCode>18</idCode>
+        <idValue>Data structure position number</idValue>
+</idList>

@@ -1,0 +1,2 @@
+.colWrapper{position:relative;clear:both;float:left;width:100%;overflow:hidden;}.colContent{float:left;width:100%;position:relative;padding:10px;}.col1,.col2,.col3,.col4{float:left;position:relative;padding:10px;overflow:hidden;font-size:1.3em;}.cols .col1,.col3{width:15%;text-align:right;font-size:1.3em;vertical-align:middle;padding:5px;}
+.cols .col2,.col4{width:25%;margin-right:5%;padding:5px;}.center{margin-left:40%;}

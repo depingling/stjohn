@@ -1,0 +1,20 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PreOrderAddressList (PreOrderAddress)+>
+<!ELEMENT PreOrderAddress (PreOrderId,Address1,Address2,Address3,Address4,AddressTypeCd,City,CountryCd,CountyCd,PostalCode,ShortDesc,StateProvinceCd)>
+<!ATTLIST PreOrderAddress Id ID #REQUIRED>
+<!ELEMENT PreOrderId (#PCDATA)>
+<!ELEMENT Address1 (#PCDATA)>
+<!ELEMENT Address2 (#PCDATA)>
+<!ELEMENT Address3 (#PCDATA)>
+<!ELEMENT Address4 (#PCDATA)>
+<!ELEMENT AddressTypeCd (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT CountryCd (#PCDATA)>
+<!ELEMENT CountyCd (#PCDATA)>
+<!ELEMENT PostalCode (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>
+<!ELEMENT StateProvinceCd (#PCDATA)>

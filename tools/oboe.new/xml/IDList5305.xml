@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Mixed tax rate</idValue>
+    <idCode>AA</idCode>
+        <idValue>Lower rate</idValue>
+    <idCode>AB</idCode>
+        <idValue>Exempt for resale</idValue>
+    <idCode>AC</idCode>
+        <idValue>Value Added Tax (VAT) not now due for payment</idValue>
+    <idCode>AD</idCode>
+        <idValue>Value Added Tax (VAT) due from a previous invoice</idValue>
+    <idCode>B</idCode>
+        <idValue>Transferred (VAT)</idValue>
+    <idCode>C</idCode>
+        <idValue>Duty paid by supplier</idValue>
+    <idCode>E</idCode>
+        <idValue>Exempt from tax</idValue>
+    <idCode>G</idCode>
+        <idValue>Free export item, tax not charged</idValue>
+    <idCode>H</idCode>
+        <idValue>Higher rate</idValue>
+    <idCode>O</idCode>
+        <idValue>Services outside scope of tax</idValue>
+    <idCode>S</idCode>
+        <idValue>Standard rate</idValue>
+    <idCode>Z</idCode>
+        <idValue>Zero rated goods</idValue>
+</idList>

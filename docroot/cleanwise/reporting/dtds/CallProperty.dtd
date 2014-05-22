@@ -1,0 +1,18 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT CallPropertyList (CallProperty)+>
+<!ELEMENT CallProperty (,CallId,AddBy,AddDate,AddTime,CallPropertyStatusCd,CallPropertyTypeCd,Value,ModBy,ModDate,ShortDesc)>
+<!ATTLIST CallProperty Id ID #REQUIRED>
+<!ELEMENT CallId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT AddTime (#PCDATA)>
+<!ELEMENT CallPropertyStatusCd (#PCDATA)>
+<!ELEMENT CallPropertyTypeCd (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

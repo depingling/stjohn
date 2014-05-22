@@ -1,0 +1,53 @@
+#!/bin/sh
+
+lcmd=process_schedule_by_report
+
+## common for all scripts
+
+lockfile=/tmp/xsuite.$USER.lock.$lcmd 
+if [ -f $lockfile ]
+then
+  echo "error lock on for $lcmd"
+  exit
+fi
+
+echo $$ > $lockfile
+
+. ../app.sh.env
+cd ${XSUITE_HOME}/xsuite/util
+
+
+tstamp=`date '+Date-%Y.%m.%d-Time-%H.%M.%S'`
+logfile="../reports/$tstamp.$0.log"
+
+echo "--- PID $$ " > $logfile
+echo "START RUNNING process_schedule_by_report command "+tstamp  >> $logfile 2>&1
+sh appcmd.sh -Dcmd=process_schedule_by_report -DreportName=InventoryBatchSchedule -DinvModernShopping=true  >> $logfile 2>&1
+tstamp=`date '+Date-%Y.%m.%d-Time-%H.%M.%S'`
+echo "DONE RUNNING process_schedule_by_report command "+tstamp  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "."  >> $logfile 2>&1
+echo "START RUNNING send_inventory_missing_email command "+tstamp  >> $logfile 2>&1
+sh appcmd.sh -Dcmd=send_inventory_missing_email -DuserName=inv_order -DreportName=InventoryMissingEmailReport  >> $logfile 2>&1
+tstamp=`date '+Date-%Y.%m.%d-Time-%H.%M.%S'`
+echo "DONE RUNNING send_inventory_missing_email command "+tstamp  >> $logfile 2>&1
+echo "--- PID $$ done " >> $logfile 
+
+rm $lockfile
+
+maillist=jobreporting@cleanwise.com
+mail ${maillist} <<EOF
+subject: $0 ${outFile} processed
+
+--- $0
+
+`cat $logfile`
+
+EOF

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>ACT</idCode>
+        <idValue>Actual</idValue>
+    <idCode>AGC</idCode>
+        <idValue>Average Generic Product Price</idValue>
+    <idCode>ALT</idCode>
+        <idValue>Alternate Price</idValue>
+    <idCode>AWP</idCode>
+        <idValue>Average Wholesale Price</idValue>
+    <idCode>BBP</idCode>
+        <idValue>Balance-Based Price</idValue>
+    <idCode>BCH</idCode>
+        <idValue>Base Charge</idValue>
+    <idCode>C01</idCode>
+        <idValue>Contract Tier 1</idValue>
+    <idCode>C02</idCode>
+        <idValue>Contract Tier 2</idValue>
+    <idCode>C03</idCode>
+        <idValue>Contract Tier 3</idValue>
+    <idCode>C04</idCode>
+        <idValue>Contract Tier 4</idValue>
+    <idCode>C05</idCode>
+        <idValue>Contract Tier 5</idValue>
+    <idCode>C06</idCode>
+        <idValue>Contract Tier 6</idValue>
+    <idCode>C07</idCode>
+        <idValue>Contract Tier 7</idValue>
+    <idCode>C08</idCode>
+        <idValue>Contract Tier 8</idValue>
+    <idCode>C09</idCode>
+        <idValue>Contract Tier 9</idValue>
+    <idCode>C10</idCode>
+        <idValue>Contract Tier 10</idValue>
+    <idCode>C11</idCode>
+        <idValue>Contract Tier 11</idValue>
+    <idCode>C12</idCode>
+        <idValue>Contract Tier 12</idValue>
+    <idCode>C13</idCode>
+        <idValue>Contract Tier 13</idValue>
+    <idCode>C14</idCode>
+        <idValue>Contract Tier 14</idValue>
+    <idCode>C15</idCode>
+        <idValue>Contract Tier 15</idValue>
+    <idCode>C16</idCode>
+        <idValue>Contract Tier 16</idValue>
+    <idCode>C17</idCode>
+        <idValue>Contract Tier 17</idValue>
+    <idCode>C18</idCode>
+        <idValue>Contract Tier 18</idValue>
+    <idCode>C19</idCode>
+        <idValue>Contract Tier 19</idValue>
+    <idCode>C20</idCode>
+        <idValue>Contract Tier 20</idValue>
+    <idCode>C21</idCode>
+        <idValue>Contract Tier 21</idValue>
+    <idCode>C22</idCode>
+        <idValue>Contract Tier 22</idValue>
+    <idCode>C23</idCode>
+        <idValue>Contract Tier 23</idValue>
+    <idCode>C24</idCode>
+        <idValue>Contract Tier 24</idValue>
+    <idCode>C25</idCode>
+        <idValue>Contract Tier 25</idValue>
+    <idCode>C26</idCode>
+        <idValue>Contract Tier 26</idValue>
+    <idCode>C27</idCode>
+        <idValue>Contract Tier 27</idValue>
+    <idCode>C28</idCode>
+        <idValue>Contract Tier 28</idValue>
+    <idCode>C29</idCode>
+        <idValue>Contract Tier 29</idValue>
+    <idCode>C30</idCode>
+        <idValue>Contract Tier 30</idValue>
+    <idCode>CAN</idCode>
+        <idValue>Cancellation Charge</idValue>
+    <idCode>CAT</idCode>
+        <idValue>Catalog Price</idValue>
+    <idCode>CDF</idCode>
+        <idValue>Central Distribution Facility (Warehouse)</idValue>
+    <idCode>CDV</idCode>
+        <idValue>Current Domestic Value</idValue>
+    <idCode>CHG</idCode>
+        <idValue>Changed Price</idValue>
+    <idCode>CON</idCode>
+        <idValue>Contract Price</idValue>
+    <idCode>CUP</idCode>
+        <idValue>Confirmed Unit Price</idValue>
+    <idCode>CUS</idCode>
+        <idValue>Declared Customs Unit Value</idValue>
+    <idCode>D01</idCode>
+        <idValue>Federal Supply Schedule (FSS) Price</idValue>
+    <idCode>D02</idCode>
+        <idValue>Depot Price</idValue>
+    <idCode>D03</idCode>
+        <idValue>Distribution and Pricing Agreement (DAPA) Price</idValue>
+    <idCode>DAP</idCode>
+        <idValue>Dealer Adjusted Price</idValue>
+    <idCode>DIS</idCode>
+        <idValue>Distributor&apos;s Price</idValue>
+    <idCode>DPR</idCode>
+        <idValue>Discount Price</idValue>
+    <idCode>DSC</idCode>
+        <idValue>Discount Amount Allowed</idValue>
+    <idCode>DSD</idCode>
+        <idValue>Direct Store Delivery</idValue>
+    <idCode>DSP</idCode>
+        <idValue>Direct Ship Program Price</idValue>
+    <idCode>EDM</idCode>
+        <idValue>Emergency Direct Ship Price (Original Equipment Manufacturer)</idValue>
+    <idCode>EDP</idCode>
+        <idValue>Emergency Direct Ship Price</idValue>
+    <idCode>EDS</idCode>
+        <idValue>Emergency Direct Ship Price (Supplier)</idValue>
+    <idCode>EDW</idCode>
+        <idValue>Emergency Direct Ship Price (Warehouse)</idValue>
+    <idCode>ELC</idCode>
+        <idValue>Estimated Landed Cost</idValue>
+    <idCode>EST</idCode>
+        <idValue>Estimated Price</idValue>
+    <idCode>EUP</idCode>
+        <idValue>Expected Unit Price</idValue>
+    <idCode>FCH</idCode>
+        <idValue>Flat Charge</idValue>
+    <idCode>FCP</idCode>
+        <idValue>First Cost Price</idValue>
+    <idCode>FDS</idCode>
+        <idValue>Frequent Delivery Service</idValue>
+    <idCode>FET</idCode>
+        <idValue>Federal Excise Tax</idValue>
+    <idCode>FGP</idCode>
+        <idValue>Free Goods Price</idValue>
+    <idCode>FSP</idCode>
+        <idValue>Free Service Price</idValue>
+    <idCode>FUL</idCode>
+        <idValue>Federal Upper Limit Price (Maximum Allowable Cost Pricing for Drugs)</idValue>
+    <idCode>FUP</idCode>
+        <idValue>Firm Price - Do Not Advise</idValue>
+    <idCode>GAP</idCode>
+        <idValue>Advertising Price</idValue>
+    <idCode>GDP</idCode>
+        <idValue>Display Price</idValue>
+    <idCode>GOV</idCode>
+        <idValue>Government Price</idValue>
+    <idCode>GSP</idCode>
+        <idValue>Shelf Price</idValue>
+    <idCode>GTP</idCode>
+        <idValue>Temporary Price Reduction Price</idValue>
+    <idCode>ICL</idCode>
+        <idValue>Unit Price Through Quantity</idValue>
+    <idCode>IND</idCode>
+        <idValue>Industrial Price</idValue>
+    <idCode>INS</idCode>
+        <idValue>Institutional Price</idValue>
+    <idCode>INV</idCode>
+        <idValue>Invoice Billing Price</idValue>
+    <idCode>LAR</idCode>
+        <idValue>Labor Rate</idValue>
+    <idCode>LPP</idCode>
+        <idValue>Lease to Purchase Price</idValue>
+    <idCode>LPR</idCode>
+        <idValue>List Price</idValue>
+    <idCode>MAP</idCode>
+        <idValue>Mandatory to Advise Unit Price</idValue>
+    <idCode>MAS</idCode>
+        <idValue>Minimum Activity Surcharge</idValue>
+    <idCode>MAX</idCode>
+        <idValue>Maximum Order Quantity Price</idValue>
+    <idCode>MIN</idCode>
+        <idValue>Minimum Order Quantity Price</idValue>
+    <idCode>MNC</idCode>
+        <idValue>Minimum Charge</idValue>
+    <idCode>MNR</idCode>
+        <idValue>Minimum Release Quantity Price</idValue>
+    <idCode>MOD</idCode>
+        <idValue>Modal Premium</idValue>
+    <idCode>MPR</idCode>
+        <idValue>Maximum Price Reduction</idValue>
+    <idCode>MSR</idCode>
+        <idValue>Manufacturer&apos;s Suggested Retail</idValue>
+    <idCode>MXR</idCode>
+        <idValue>Maximum Release Quantity Price</idValue>
+    <idCode>N01</idCode>
+        <idValue>Noncontract Tier 1</idValue>
+    <idCode>N02</idCode>
+        <idValue>Noncontract Tier 2</idValue>
+    <idCode>N03</idCode>
+        <idValue>Noncontract Tier 3</idValue>
+    <idCode>N04</idCode>
+        <idValue>Noncontract Tier 4</idValue>
+    <idCode>N05</idCode>
+        <idValue>Noncontract Tier 5</idValue>
+    <idCode>N06</idCode>
+        <idValue>Noncontract Tier 6</idValue>
+    <idCode>N07</idCode>
+        <idValue>Noncontract Tier 7</idValue>
+    <idCode>N08</idCode>
+        <idValue>Noncontract Tier 8</idValue>
+    <idCode>N09</idCode>
+        <idValue>Noncontract Tier 9</idValue>
+    <idCode>N10</idCode>
+        <idValue>Noncontract Tier 10</idValue>
+    <idCode>N11</idCode>
+        <idValue>Noncontract Tier 11</idValue>
+    <idCode>N12</idCode>
+        <idValue>Noncontract Tier 12</idValue>
+    <idCode>N13</idCode>
+        <idValue>Noncontract Tier 13</idValue>
+    <idCode>N14</idCode>
+        <idValue>Noncontract Tier 14</idValue>
+    <idCode>N15</idCode>
+        <idValue>Noncontract Tier 15</idValue>
+    <idCode>N16</idCode>
+        <idValue>Noncontract Tier 16</idValue>
+    <idCode>N17</idCode>
+        <idValue>Noncontract Tier 17</idValue>
+    <idCode>N18</idCode>
+        <idValue>Noncontract Tier 18</idValue>
+    <idCode>N19</idCode>
+        <idValue>Noncontract Tier 19</idValue>
+    <idCode>N20</idCode>
+        <idValue>Noncontract Tier 20</idValue>
+    <idCode>N21</idCode>
+        <idValue>Noncontract Tier 21</idValue>
+    <idCode>N22</idCode>
+        <idValue>Noncontract Tier 22</idValue>
+    <idCode>N23</idCode>
+        <idValue>Noncontract Tier 23</idValue>
+    <idCode>N24</idCode>
+        <idValue>Noncontract Tier 24</idValue>
+    <idCode>N25</idCode>
+        <idValue>Noncontract Tier 25</idValue>
+    <idCode>N26</idCode>
+        <idValue>Noncontract Tier 26</idValue>
+    <idCode>N27</idCode>
+        <idValue>Noncontract Tier 27</idValue>
+    <idCode>N28</idCode>
+        <idValue>Noncontract Tier 28</idValue>
+    <idCode>N29</idCode>
+        <idValue>Noncontract Tier 29</idValue>
+    <idCode>N30</idCode>
+        <idValue>Noncontract Tier 30</idValue>
+    <idCode>N31</idCode>
+        <idValue>No Charge</idValue>
+    <idCode>NET</idCode>
+        <idValue>Net Item Price</idValue>
+    <idCode>OAP</idCode>
+        <idValue>Optional to Advise Unit Price</idValue>
+    <idCode>OPP</idCode>
+        <idValue>Original Purchase Order Price</idValue>
+    <idCode>PAP</idCode>
+        <idValue>Protection Level Price</idValue>
+    <idCode>PAQ</idCode>
+        <idValue>Price Break Quantity(s)</idValue>
+    <idCode>PBQ</idCode>
+        <idValue>Unit Price Beginning Quantity</idValue>
+    <idCode>PBR</idCode>
+        <idValue>Price Break Purchase Order Count</idValue>
+    <idCode>PHS</idCode>
+        <idValue>Public Health Service Price</idValue>
+    <idCode>PIE</idCode>
+        <idValue>Price in Effect at Time of Shipment</idValue>
+    <idCode>PLT</idCode>
+        <idValue>Producing Plant Price</idValue>
+    <idCode>PPA</idCode>
+        <idValue>Packing Level Price</idValue>
+    <idCode>PPD</idCode>
+        <idValue>Prepaid Freight Charges</idValue>
+    <idCode>PRF</idCode>
+        <idValue>Professional Price</idValue>
+    <idCode>PRO</idCode>
+        <idValue>Producer&apos;s Price</idValue>
+    <idCode>PRP</idCode>
+        <idValue>Promotional price</idValue>
+    <idCode>PUR</idCode>
+        <idValue>Purchase</idValue>
+    <idCode>QTE</idCode>
+        <idValue>Quote Price</idValue>
+    <idCode>REG</idCode>
+        <idValue>Regular Charge</idValue>
+    <idCode>RES</idCode>
+        <idValue>Resale</idValue>
+    <idCode>RPA</idCode>
+        <idValue>Rental Price, Annual</idValue>
+    <idCode>RPM</idCode>
+        <idValue>Rental Price, Monthly</idValue>
+    <idCode>RPP</idCode>
+        <idValue>Replacement Price</idValue>
+    <idCode>RSH</idCode>
+        <idValue>Rush Charge</idValue>
+    <idCode>RTL</idCode>
+        <idValue>Retail</idValue>
+    <idCode>SAC</idCode>
+        <idValue>Service Attempted Charge</idValue>
+    <idCode>SDP</idCode>
+        <idValue>Suggested Dealer Net Price</idValue>
+    <idCode>SFP</idCode>
+        <idValue>Suggested Fleet Price</idValue>
+    <idCode>SHD</idCode>
+        <idValue>Ship and Debit</idValue>
+    <idCode>SLP</idCode>
+        <idValue>Suggested List Price</idValue>
+    <idCode>SPC</idCode>
+        <idValue>Special Price</idValue>
+    <idCode>SPE</idCode>
+        <idValue>Single Price (Factors Equalized)</idValue>
+    <idCode>STA</idCode>
+        <idValue>Standard Price</idValue>
+    <idCode>SUM</idCode>
+        <idValue>Sum of Line Items</idValue>
+    <idCode>SWP</idCode>
+        <idValue>Suggested Wholesale Price</idValue>
+    <idCode>THP</idCode>
+        <idValue>Threshold Price</idValue>
+    <idCode>TOT</idCode>
+        <idValue>Total Invoice Amount Due</idValue>
+    <idCode>TRF</idCode>
+        <idValue>Transfer</idValue>
+    <idCode>UCP</idCode>
+        <idValue>Unit cost price</idValue>
+    <idCode>ULC</idCode>
+        <idValue>Unsalable Item List Cost</idValue>
+    <idCode>WAR</idCode>
+        <idValue>Public Warehouse Price</idValue>
+    <idCode>WHL</idCode>
+        <idValue>Wholesale</idValue>
+    <idCode>WSP</idCode>
+        <idValue>Waived Service Price</idValue>
+    <idCode>ZNP</idCode>
+        <idValue>Zone Price</idValue>
+</idList>

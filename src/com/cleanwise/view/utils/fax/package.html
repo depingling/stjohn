@@ -1,0 +1,15 @@
+<body>
+<p>Classes in this package abstract access to Fax transport and generation.  This implementation uses a RightFax
+server, and thus needs the RightFax library files contained in RFJavaInt.zip to be in the classpath.  A typical client would
+ look something like:</p>
+<code>
+    //FaxTranslator takes the form of <br>
+    FaxTranslator translator = new FaxTranslator("555-1212","Mr Receiver","Company Co."); <br>
+    FaxDocument doc = translator.constructSomeSupportedDocumentType(SomeProprietaryObject); <br>
+    adaptor.sendFax(doc);
+</code>
+<p>Additional  document types can be added to the FaxTranslator class insulating the application developer from 
+having to know the RightFax API, and allowing for fax servers to be swapped with minimal effort</p>
+<p>The status of the fax can be asked of the FaxDocument which has a number of properties to determine its state. 
+These are typically only set <b>after</b> the document has been sent, or at least attempted to be sent. </p>
+</body>

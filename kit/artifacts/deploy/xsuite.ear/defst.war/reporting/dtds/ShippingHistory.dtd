@@ -1,0 +1,32 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ShippingHistoryList (ShippingHistory)+>
+<!ELEMENT ShippingHistory (OrderId,OrderItemId,DistributorShipmentId,ShipDate,ShipTime,TransactionDate,TransactionTime,TrackingType,TrackingNum,ShipFromName,ShipFromCity,ShipFromState,ShipFromPostalCode,ShipFromCountry,ShippingWeight,ShipMethodCd,Carrier,Quantity,Uom,StatusCd,AddDate,AddBy,ModDate,ModBy)>
+<!ATTLIST ShippingHistory Id ID #REQUIRED>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT OrderItemId (#PCDATA)>
+<!ELEMENT DistributorShipmentId (#PCDATA)>
+<!ELEMENT ShipDate (#PCDATA)>
+<!ELEMENT ShipTime (#PCDATA)>
+<!ELEMENT TransactionDate (#PCDATA)>
+<!ELEMENT TransactionTime (#PCDATA)>
+<!ELEMENT TrackingType (#PCDATA)>
+<!ELEMENT TrackingNum (#PCDATA)>
+<!ELEMENT ShipFromName (#PCDATA)>
+<!ELEMENT ShipFromCity (#PCDATA)>
+<!ELEMENT ShipFromState (#PCDATA)>
+<!ELEMENT ShipFromPostalCode (#PCDATA)>
+<!ELEMENT ShipFromCountry (#PCDATA)>
+<!ELEMENT ShippingWeight (#PCDATA)>
+<!ELEMENT ShipMethodCd (#PCDATA)>
+<!ELEMENT Carrier (#PCDATA)>
+<!ELEMENT Quantity (#PCDATA)>
+<!ELEMENT Uom (#PCDATA)>
+<!ELEMENT StatusCd (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>

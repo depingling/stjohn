@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>CSD</idCode>
+        <idValue>Cost Markup Multiplier - Original Cost</idValue>
+    <idCode>CSR</idCode>
+        <idValue>Cost Markup Multiplier - Retail Cost</idValue>
+    <idCode>DIS</idCode>
+        <idValue>Discount Multiplier</idValue>
+    <idCode>ILP</idCode>
+        <idValue>Cost Markup Multiplier - Wholesale Cost</idValue>
+    <idCode>PSP</idCode>
+        <idValue>Percent Solution Multiplier</idValue>
+    <idCode>SEL</idCode>
+        <idValue>Selling Multiplier</idValue>
+</idList>

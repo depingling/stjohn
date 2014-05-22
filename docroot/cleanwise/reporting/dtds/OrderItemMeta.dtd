@@ -1,0 +1,16 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT OrderItemMetaList (OrderItemMeta)+>
+<!ELEMENT OrderItemMeta (,OrderItemId,AddBy,AddDate,Value,ModBy,ModDate,Name,ValueNum)>
+<!ATTLIST OrderItemMeta Id ID #REQUIRED>
+<!ELEMENT OrderItemId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT ValueNum (#PCDATA)>

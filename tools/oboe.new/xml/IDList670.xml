@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,November 7, 2007, -->
+<idList>
+    <idCode>AI</idCode>
+        <idValue>Add Additional Item(s)</idValue>
+    <idCode>CA</idCode>
+        <idValue>Changes To Line Items</idValue>
+    <idCode>CB</idCode>
+        <idValue>Change of Date Terms</idValue>
+    <idCode>CC</idCode>
+        <idValue>Changes To Terms</idValue>
+    <idCode>CE</idCode>
+        <idValue>Changes To Item Level Allowance/Charges</idValue>
+    <idCode>CF</idCode>
+        <idValue>Cancel Previously Transmitted Purchase Order</idValue>
+    <idCode>CG</idCode>
+        <idValue>Changes To Total Level Allowance/Charges</idValue>
+    <idCode>CH</idCode>
+        <idValue>Change To Original Confirmation Of Original Announcement</idValue>
+    <idCode>CI</idCode>
+        <idValue>Change To Confirmation Of Revised Announcement</idValue>
+    <idCode>CT</idCode>
+        <idValue>Change of Dates</idValue>
+    <idCode>DI</idCode>
+        <idValue>Delete Item(s)</idValue>
+    <idCode>MU</idCode>
+        <idValue>(Multiple) For Unit Price Quantity Reschedule Change</idValue>
+    <idCode>NC</idCode>
+        <idValue>Concurrent Item (No Change)</idValue>
+    <idCode>OA</idCode>
+        <idValue>Original Confirmation Of Revised Announcement</idValue>
+    <idCode>OC</idCode>
+        <idValue>Original Confirmation Of Original Announcement</idValue>
+    <idCode>PC</idCode>
+        <idValue>Price Change</idValue>
+    <idCode>PQ</idCode>
+        <idValue>Unit Price/Quantity Change</idValue>
+    <idCode>PR</idCode>
+        <idValue>Unit Price/Reschedule Change</idValue>
+    <idCode>QD</idCode>
+        <idValue>Quantity Decrease</idValue>
+    <idCode>QI</idCode>
+        <idValue>Quantity Increase</idValue>
+    <idCode>RA</idCode>
+        <idValue>Replace Mode of Shipment</idValue>
+    <idCode>RB</idCode>
+        <idValue>Replace All Dates</idValue>
+    <idCode>RC</idCode>
+        <idValue>Reject Item Change</idValue>
+    <idCode>RE</idCode>
+        <idValue>Replacement Item</idValue>
+    <idCode>RM</idCode>
+        <idValue>Replacement Item with Modifications</idValue>
+    <idCode>RQ</idCode>
+        <idValue>Reschedule/Quantity Change</idValue>
+    <idCode>RS</idCode>
+        <idValue>Reschedule</idValue>
+    <idCode>RZ</idCode>
+        <idValue>Replace All Values</idValue>
+    <idCode>TI</idCode>
+        <idValue>Transfer Item</idValue>
+</idList>

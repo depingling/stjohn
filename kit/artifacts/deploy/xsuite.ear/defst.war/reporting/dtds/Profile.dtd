@@ -1,0 +1,20 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ProfileList (Profile)+>
+<!ELEMENT Profile (AddBy,AddDate,HelpText,Image,ModBy,ModDate,ProfileOrder,ProfileQuestionTypeCd,ProfileStatusCd,ProfileTypeCd,ReadOnly,ShortDesc)>
+<!ATTLIST Profile Id ID #REQUIRED>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT HelpText (#PCDATA)>
+<!ELEMENT Image (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ProfileOrder (#PCDATA)>
+<!ELEMENT ProfileQuestionTypeCd (#PCDATA)>
+<!ELEMENT ProfileStatusCd (#PCDATA)>
+<!ELEMENT ProfileTypeCd (#PCDATA)>
+<!ELEMENT ReadOnly (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>Debit advice</idValue>
+    <idCode>AB</idCode>
+        <idValue>Message acknowledgement</idValue>
+    <idCode>AC</idCode>
+        <idValue>Acknowledge - with detail and change</idValue>
+    <idCode>AD</idCode>
+        <idValue>Acknowledge - with detail, no change</idValue>
+    <idCode>AF</idCode>
+        <idValue>Debit advice/message acknowledgement</idValue>
+    <idCode>AG</idCode>
+        <idValue>Authentication</idValue>
+    <idCode>AI</idCode>
+        <idValue>Acknowledge only changes</idValue>
+    <idCode>AJ</idCode>
+        <idValue>Pending</idValue>
+    <idCode>AP</idCode>
+        <idValue>Accepted</idValue>
+    <idCode>AQ</idCode>
+        <idValue>Response expected</idValue>
+    <idCode>AR</idCode>
+        <idValue>Direct documentary credit collection</idValue>
+    <idCode>AS</idCode>
+        <idValue>Credit advice and message acknowledgement</idValue>
+    <idCode>CA</idCode>
+        <idValue>Conditionally accepted</idValue>
+    <idCode>CO</idCode>
+        <idValue>Confirmation of measurements</idValue>
+    <idCode>NA</idCode>
+        <idValue>No acknowledgement needed</idValue>
+    <idCode>RE</idCode>
+        <idValue>Rejected</idValue>
+</idList>

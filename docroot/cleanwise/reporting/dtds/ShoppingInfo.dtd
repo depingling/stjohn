@@ -1,0 +1,18 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ShoppingInfoList (ShoppingInfo)+>
+<!ELEMENT ShoppingInfo (,ItemIdOrderGuideId,OrderId,SiteId,AddBy,AddDate,Value,ModBy,ModDate,ShortDesc)>
+<!ATTLIST ShoppingInfo Id ID #REQUIRED>
+<!ELEMENT ItemId (#PCDATA)>
+<!ELEMENT OrderGuideId (#PCDATA)>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT SiteId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

@@ -1,0 +1,28 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT AddressList (Address)+>
+<!ELEMENT Address (BusEntityId,UserId,Address1,Address2,Address3,Address4,AddressStatusCd,AddressTypeCd,AddBy,AddDate,City,CountryCd,CountyCd,ModBy,ModDate,Name1,Name2,PostalCode,PrimaryInd,StateProvinceCd)>
+<!ATTLIST Address Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT UserId (#PCDATA)>
+<!ELEMENT Address1 (#PCDATA)>
+<!ELEMENT Address2 (#PCDATA)>
+<!ELEMENT Address3 (#PCDATA)>
+<!ELEMENT Address4 (#PCDATA)>
+<!ELEMENT AddressStatusCd (#PCDATA)>
+<!ELEMENT AddressTypeCd (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT CountryCd (#PCDATA)>
+<!ELEMENT CountyCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT Name1 (#PCDATA)>
+<!ELEMENT Name2 (#PCDATA)>
+<!ELEMENT PostalCode (#PCDATA)>
+<!ELEMENT PrimaryInd (#PCDATA)>
+<!ELEMENT StateProvinceCd (#PCDATA)>

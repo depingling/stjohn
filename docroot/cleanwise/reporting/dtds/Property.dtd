@@ -1,0 +1,18 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PropertyList (Property)+>
+<!ELEMENT Property (,BusEntityId,UserId,AddBy,AddDate,Value,ModBy,ModDate,PropertyStatusCd,PropertyTypeCd,ShortDesc)>
+<!ATTLIST Property Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT UserId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT PropertyStatusCd (#PCDATA)>
+<!ELEMENT PropertyTypeCd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

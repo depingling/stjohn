@@ -1,0 +1,16 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ProfileAssocList (ProfileAssoc)+>
+<!ELEMENT ProfileAssoc (,BusEntityIdProfile1Id,Profile2Id,AddBy,AddDate,ModBy,ModDate,ProfileAssocCd)>
+<!ATTLIST ProfileAssoc Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT Profile1Id (#PCDATA)>
+<!ELEMENT Profile2Id (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ProfileAssocCd (#PCDATA)>

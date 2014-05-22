@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT LocaleList (Locale)+>
+<!ELEMENT Locale (AddBy,AddDate,CountryCd,CurrencyCd,DateFormatCd,LanguageCd,ModBy,ModDate,ShortDesc)>
+<!ATTLIST Locale Id ID #REQUIRED>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT CountryCd (#PCDATA)>
+<!ELEMENT CurrencyCd (#PCDATA)>
+<!ELEMENT DateFormatCd (#PCDATA)>
+<!ELEMENT LanguageCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

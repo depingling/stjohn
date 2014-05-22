@@ -1,0 +1,21 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PreOrderItemList (PreOrderItem)+>
+<!ELEMENT PreOrderItem (,ItemIdPreOrderId,AsInventoryItem,CustomerPack,CustomerProductDesc,CustomerSku,CustomerUom,InventoryParValue,InventoryQtyOnHand,LineNumber,Price,Quantity,SaleTypeCd)>
+<!ATTLIST PreOrderItem Id ID #REQUIRED>
+<!ELEMENT ItemId (#PCDATA)>
+<!ELEMENT PreOrderId (#PCDATA)>
+<!ELEMENT AsInventoryItem (#PCDATA)>
+<!ELEMENT CustomerPack (#PCDATA)>
+<!ELEMENT CustomerProductDesc (#PCDATA)>
+<!ELEMENT CustomerSku (#PCDATA)>
+<!ELEMENT CustomerUom (#PCDATA)>
+<!ELEMENT InventoryParValue (#PCDATA)>
+<!ELEMENT InventoryQtyOnHand (#PCDATA)>
+<!ELEMENT LineNumber (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT Quantity (#PCDATA)>
+<!ELEMENT SaleTypeCd (#PCDATA)>

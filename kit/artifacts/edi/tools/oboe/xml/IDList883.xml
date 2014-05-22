@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Aluminum</idValue>
+    <idCode>2</idCode>
+        <idValue>As Specified by the Department of Transportation (DOT)</idValue>
+    <idCode>3</idCode>
+        <idValue>Metal</idValue>
+    <idCode>4</idCode>
+        <idValue>Standard</idValue>
+    <idCode>5</idCode>
+        <idValue>Steel</idValue>
+    <idCode>6</idCode>
+        <idValue>Wood</idValue>
+    <idCode>7</idCode>
+        <idValue>Slip sheet</idValue>
+</idList>

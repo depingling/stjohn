@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT BusEntityTerrList (BusEntityTerr)+>
+<!ELEMENT BusEntityTerr (,BusEntityId,PostalCodeId,AddBy,AddDate,BusEntityTerrCd,BusEntityTerrFreightCd,ModBy,ModDate,PostalCode)>
+<!ATTLIST BusEntityTerr Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT PostalCodeId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT BusEntityTerrCd (#PCDATA)>
+<!ELEMENT BusEntityTerrFreightCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT PostalCode (#PCDATA)>

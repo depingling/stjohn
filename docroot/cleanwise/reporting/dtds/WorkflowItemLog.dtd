@@ -1,0 +1,19 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT WorkflowItemLogList (WorkflowItemLog)+>
+<!ELEMENT WorkflowItemLog (BusEntityId,WorkflowId,WorkflowActionCd,WorkflowRoleCd,WorkflowRoutingCondCd,StartDate,StartTime,EndDate,EndTime,Comments,WorkflowItemId)>
+<!ATTLIST WorkflowItemLog Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT WorkflowId (#PCDATA)>
+<!ELEMENT WorkflowActionCd (#PCDATA)>
+<!ELEMENT WorkflowRoleCd (#PCDATA)>
+<!ELEMENT WorkflowRoutingCondCd (#PCDATA)>
+<!ELEMENT StartDate (#PCDATA)>
+<!ELEMENT StartTime (#PCDATA)>
+<!ELEMENT EndDate (#PCDATA)>
+<!ELEMENT EndTime (#PCDATA)>
+<!ELEMENT Comments (#PCDATA)>
+<!ELEMENT WorkflowItemId (#PCDATA)>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<registry>
+<datasource name="StJohn" type="xml">
+<ds_xml url="http://localhost:8080/cleanwise/reportservlet" method="get">
+<description>XML Datasource for St. John</description>
+<request>
+<name>getOrderAnalysis</name>
+<parameters>
+<param>
+<name type="string" null="false"><![CDATA[name]]></name>
+<value type="string" null="false"><![CDATA[getOrderAnalysis]]></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[interval]]></name>
+<value type="string" null="true" variable="interval"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[begin]]></name>
+<value type="string" null="true" variable="begin"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[end]]></name>
+<value type="string" null="true" variable="end"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[account]]></name>
+<value type="string" null="true" variable="account"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[min]]></name>
+<value type="string" null="true" variable="min"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[max]]></name>
+<value type="string" null="true" variable="max"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[inclusive]]></name>
+<value type="string" null="true" variable="inclusive"></value>
+</param>
+</parameters>
+<output type="OrderAnalysisList">
+<type name="OrderAnalysisList">
+<element name="OrderAnalysis" type="OrderAnalysis" maxOccurs="*"/>
+</type>
+<type name="OrderAnalysis">
+<element name="AccountName" type="string"/>
+<element name="AccountId" type="string"/>
+<element name="SiteId" type="string"/>
+<element name="State" type="string"/>
+<element name="PostalCode" type="string"/>
+<element name="BeginDate" type="string"/>
+<element name="EndDate" type="string"/>
+<element name="TotalOrders" type="string"/>
+<element name="TotalOnlineOrders" type="string"/>
+<element name="TotalBackorderOrders" type="string"/>
+<element name="TotalFreightChargeOrders" type="string"/>
+<element name="TotalOrderAmt" type="string"/>
+<element name="TotalOrderAmtCategory1" type="string"/>
+<element name="TotalOrderAmtCategory2" type="string"/>
+<element name="TotalOrderAmtCategory3" type="string"/>
+<element name="TotalOrderAmtCategory4" type="string"/>
+<element name="TotalOrderFreightAmt" type="string"/>
+<element name="HighDaysOrderShipNoBackorder" type="string"/>
+<element name="LowDaysOrderShipNoBackorder" type="string"/>
+<element name="AvgDaysOrderShipNoBackorder" type="string"/>
+<element name="HighDaysOrderShipBackorder" type="string"/>
+<element name="LowDaysOrderShipBackorder" type="string"/>
+<element name="AvgDaysOrderShipBackorder" type="string"/>
+</type>
+</output>
+</request>
+<request>
+<name>getOrderAnalysisSummary</name>
+<parameters>
+<param>
+<name type="string" null="false"><![CDATA[name]]></name>
+<value type="string" null="false"><![CDATA[getOrderAnalysisSummary]]></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[interval]]></name>
+<value type="string" null="true" variable="interval"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[begin]]></name>
+<value type="string" null="true" variable="begin"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[end]]></name>
+<value type="string" null="true" variable="end"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[account]]></name>
+<value type="string" null="true" variable="account"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[min]]></name>
+<value type="string" null="true" variable="min"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[max]]></name>
+<value type="string" null="true" variable="max"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[inclusive]]></name>
+<value type="string" null="true" variable="inclusive"></value>
+</param>
+</parameters>
+<output type="OrderAnalysisList">
+<type name="OrderAnalysisList">
+<element name="OrderAnalysis" type="OrderAnalysis" maxOccurs="*"/>
+</type>
+<type name="OrderAnalysis">
+<element name="AccountName" type="string"/>
+<element name="AccountId" type="string"/>
+<element name="SiteId" type="string"/>
+<element name="State" type="string"/>
+<element name="PostalCode" type="string"/>
+<element name="BeginDate" type="string"/>
+<element name="EndDate" type="string"/>
+<element name="TotalOrders" type="string"/>
+<element name="TotalOnlineOrders" type="string"/>
+<element name="TotalBackorderOrders" type="string"/>
+<element name="TotalFreightChargeOrders" type="string"/>
+<element name="TotalOrderAmt" type="string"/>
+<element name="TotalOrderAmtCategory1" type="string"/>
+<element name="TotalOrderAmtCategory2" type="string"/>
+<element name="TotalOrderAmtCategory3" type="string"/>
+<element name="TotalOrderAmtCategory4" type="string"/>
+<element name="TotalOrderFreightAmt" type="string"/>
+<element name="HighDaysOrderShipNoBackorder" type="string"/>
+<element name="LowDaysOrderShipNoBackorder" type="string"/>
+<element name="AvgDaysOrderShipNoBackorder" type="string"/>
+<element name="HighDaysOrderShipBackorder" type="string"/>
+<element name="LowDaysOrderShipBackorder" type="string"/>
+<element name="AvgDaysOrderShipBackorder" type="string"/>
+</type>
+</output>
+</request>
+<request>
+<name>getOrderAnalysisByState</name>
+<parameters>
+<param>
+<name type="string" null="false"><![CDATA[name]]></name>
+<value type="string" null="false"><![CDATA[getOrderAnalysisByState]]></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[begin]]></name>
+<value type="string" null="true" variable="begin"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[end]]></name>
+<value type="string" null="true" variable="end"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[account]]></name>
+<value type="string" null="true" variable="account"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[min]]></name>
+<value type="string" null="true" variable="min"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[max]]></name>
+<value type="string" null="true"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[inclusive]]></name>
+<value type="string" null="true" variable="inclusive"></value>
+</param>
+</parameters>
+<output type="OrderAnalysisList">
+<type name="OrderAnalysisList">
+<element name="OrderAnalysis" type="OrderAnalysis" maxOccurs="*"/>
+</type>
+<type name="OrderAnalysis">
+<element name="AccountName" type="string"/>
+<element name="AccountId" type="string"/>
+<element name="SiteId" type="string"/>
+<element name="State" type="string"/>
+<element name="PostalCode" type="string"/>
+<element name="BeginDate" type="string"/>
+<element name="EndDate" type="string"/>
+<element name="TotalOrders" type="string"/>
+<element name="TotalOnlineOrders" type="string"/>
+<element name="TotalBackorderOrders" type="string"/>
+<element name="TotalFreightChargeOrders" type="string"/>
+<element name="TotalOrderAmt" type="string"/>
+<element name="TotalOrderAmtCategory1" type="string"/>
+<element name="TotalOrderAmtCategory2" type="string"/>
+<element name="TotalOrderAmtCategory3" type="string"/>
+<element name="TotalOrderAmtCategory4" type="string"/>
+<element name="TotalOrderFreightAmt" type="string"/>
+<element name="HighDaysOrderShipNoBackorder" type="string"/>
+<element name="LowDaysOrderShipNoBackorder" type="string"/>
+<element name="AvgDaysOrderShipNoBackorder" type="string"/>
+<element name="HighDaysOrderShipBackorder" type="string"/>
+<element name="LowDaysOrderShipBackorder" type="string"/>
+<element name="AvgDaysOrderShipBackorder" type="string"/>
+</type>
+</output>
+</request>
+<request>
+<name>getOrderAnalysisByType</name>
+<parameters>
+<param>
+<name type="string" null="false"><![CDATA[name]]></name>
+<value type="string" null="false"><![CDATA[getOrderAnalysisByType]]></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[begin]]></name>
+<value type="string" null="true" variable="begin"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[end]]></name>
+<value type="string" null="true" variable="end"></value>
+</param>
+<param>
+<name type="string" null="false"><![CDATA[account]]></name>
+<value type="string" null="true" variable="account"></value>
+</param>
+</parameters>
+<output type="OrderAnalysisList">
+<type name="OrderAnalysisList">
+<element name="OrderAnalysis" type="OrderAnalysis" maxOccurs="*"/>
+</type>
+<type name="OrderAnalysis">
+<element name="AccountName" type="string"/>
+<element name="AccountId" type="string"/>
+<element name="SiteId" type="string"/>
+<element name="State" type="string"/>
+<element name="PostalCode" type="string"/>
+<element name="BeginDate" type="string"/>
+<element name="EndDate" type="string"/>
+<element name="TotalOrders" type="string"/>
+<element name="TotalOnlineOrders" type="string"/>
+<element name="TotalBackorderOrders" type="string"/>
+<element name="TotalFreightChargeOrders" type="string"/>
+<element name="TotalOrderAmt" type="string"/>
+<element name="TotalOrderAmtCategory1" type="string"/>
+<element name="TotalOrderAmtCategory2" type="string"/>
+<element name="TotalOrderAmtCategory3" type="string"/>
+<element name="TotalOrderAmtCategory4" type="string"/>
+<element name="TotalOrderFreightAmt" type="string"/>
+<element name="HighDaysOrderShipNoBackorder" type="string"/>
+<element name="LowDaysOrderShipNoBackorder" type="string"/>
+<element name="AvgDaysOrderShipNoBackorder" type="string"/>
+<element name="HighDaysOrderShipBackorder" type="string"/>
+<element name="LowDaysOrderShipBackorder" type="string"/>
+<element name="AvgDaysOrderShipBackorder" type="string"/>
+<element name="OrderType" type="string"/>
+<element name="CountOrderType" type="string"/>
+</type>
+</output>
+</request>
+</ds_xml>
+</datasource>
+<datasource name="St John" type="jdbc">
+<ds_jdbc url="${dbUrl}" driver="${dbDriver}" requireLogin="true" user="${dbUser}" password="${dbPassword}">
+</ds_jdbc>
+</datasource>
+</registry>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Accepted</idValue>
+    <idCode>E</idCode>
+        <idValue>Accepted But Errors Were Noted</idValue>
+    <idCode>M</idCode>
+        <idValue>Rejected, Message Authentication Code (MAC) Failed</idValue>
+    <idCode>R</idCode>
+        <idValue>Rejected</idValue>
+    <idCode>W</idCode>
+        <idValue>Rejected, Assurance Failed Validity Tests</idValue>
+    <idCode>X</idCode>
+        <idValue>Rejected, Content After Decryption Could Not Be Analyzed</idValue>
+</idList>

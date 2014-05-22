@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Adjustment</idValue>
+    <idCode>AM</idCode>
+        <idValue>Analysis Month</idValue>
+    <idCode>C</idCode>
+        <idValue>Cycle</idValue>
+    <idCode>CD</idCode>
+        <idValue>Cycle to Date</idValue>
+    <idCode>M</idCode>
+        <idValue>Current Month</idValue>
+    <idCode>N</idCode>
+        <idValue>Month</idValue>
+    <idCode>P</idCode>
+        <idValue>Previous Month</idValue>
+    <idCode>Q</idCode>
+        <idValue>Quarterly</idValue>
+    <idCode>Y</idCode>
+        <idValue>Year to Date</idValue>
+</idList>

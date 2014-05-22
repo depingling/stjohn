@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Additional identification</idValue>
+    <idCode>2</idCode>
+        <idValue>Identification for potential substitution</idValue>
+    <idCode>3</idCode>
+        <idValue>Substituted by</idValue>
+    <idCode>4</idCode>
+        <idValue>Substituted for</idValue>
+    <idCode>5</idCode>
+        <idValue>Product identification</idValue>
+    <idCode>6</idCode>
+        <idValue>Successor product id</idValue>
+    <idCode>7</idCode>
+        <idValue>Predecessor product id</idValue>
+    <idCode>8</idCode>
+        <idValue>Expired/out of production</idValue>
+    <idCode>9</idCode>
+        <idValue>Deletion of secondary identification</idValue>
+    <idCode>10</idCode>
+        <idValue>Defective part&apos;s identification</idValue>
+    <idCode>11</idCode>
+        <idValue>Repaired part&apos;s identification</idValue>
+    <idCode>12</idCode>
+        <idValue>Alternate product identification</idValue>
+</idList>

@@ -1,0 +1,809 @@
+
+/* DO NOT EDIT - Generated code from XSL file DataAccess.xsl */
+
+package com.cleanwise.service.api.dao;
+
+/**
+ * Title:        HistorySecurityDataAccess
+ * Description:  This class is used to build access methods to the CLW_HISTORY_SECURITY table.
+ * Purpose:
+ * Copyright:    Copyright (c) 2001
+ * Company:      CleanWise, Inc.
+ * @author       Generated Code from XSL file DataAccess.xsl
+ */
+
+import com.cleanwise.service.api.value.HistorySecurityData;
+import com.cleanwise.service.api.value.HistorySecurityDataVector;
+import com.cleanwise.service.api.framework.DataAccessImpl;
+import com.cleanwise.service.api.value.IdVector;
+import com.cleanwise.service.api.util.DBAccess;
+import com.cleanwise.service.api.util.DBCriteria;
+import com.cleanwise.service.api.util.DataNotFoundException;
+import org.apache.log4j.Category;
+import java.io.ByteArrayInputStream;
+import java.sql.*;
+import java.util.*;
+
+/**
+ * <code>HistorySecurityDataAccess</code>
+ */
+public class HistorySecurityDataAccess extends DataAccessImpl
+{
+    private static Category log = Category.getInstance(HistorySecurityDataAccess.class.getName());
+
+    /** <code>CLW_HISTORY_SECURITY</code> table name */
+	/* Primary key: HISTORY_SECURITY_ID */
+	
+    public static final String CLW_HISTORY_SECURITY = "CLW_HISTORY_SECURITY";
+    
+    /** <code>HISTORY_SECURITY_ID</code> HISTORY_SECURITY_ID column of table CLW_HISTORY_SECURITY */
+    public static final String HISTORY_SECURITY_ID = "HISTORY_SECURITY_ID";
+    /** <code>HISTORY_ID</code> HISTORY_ID column of table CLW_HISTORY_SECURITY */
+    public static final String HISTORY_ID = "HISTORY_ID";
+    /** <code>BUS_ENTITY_ID</code> BUS_ENTITY_ID column of table CLW_HISTORY_SECURITY */
+    public static final String BUS_ENTITY_ID = "BUS_ENTITY_ID";
+    /** <code>BUS_ENTITY_TYPE_CD</code> BUS_ENTITY_TYPE_CD column of table CLW_HISTORY_SECURITY */
+    public static final String BUS_ENTITY_TYPE_CD = "BUS_ENTITY_TYPE_CD";
+    /** <code>ADD_BY</code> ADD_BY column of table CLW_HISTORY_SECURITY */
+    public static final String ADD_BY = "ADD_BY";
+    /** <code>ADD_DATE</code> ADD_DATE column of table CLW_HISTORY_SECURITY */
+    public static final String ADD_DATE = "ADD_DATE";
+    /** <code>MOD_BY</code> MOD_BY column of table CLW_HISTORY_SECURITY */
+    public static final String MOD_BY = "MOD_BY";
+    /** <code>MOD_DATE</code> MOD_DATE column of table CLW_HISTORY_SECURITY */
+    public static final String MOD_DATE = "MOD_DATE";
+
+    /**
+     * Constructor.
+     */
+    public HistorySecurityDataAccess()
+    {
+    }
+
+    /**
+     * Gets a HistorySecurityData object with the specified
+     * key from the database.
+     * @param pCon An open database connection.
+     * @param pHistorySecurityId The key requested.
+     * @return new HistorySecurityData()
+     * @throws            SQLException
+     */
+    public static HistorySecurityData select(Connection pCon, int pHistorySecurityId)
+        throws SQLException, DataNotFoundException {
+        HistorySecurityData x=null;
+        String sql="SELECT HISTORY_SECURITY_ID,HISTORY_ID,BUS_ENTITY_ID,BUS_ENTITY_TYPE_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_HISTORY_SECURITY WHERE HISTORY_SECURITY_ID = ?";
+
+        if (log.isDebugEnabled()) {
+            log.debug("SQL: pHistorySecurityId=" + pHistorySecurityId);
+            log.debug("SQL: " + sql);
+        }
+
+        PreparedStatement stmt = pCon.prepareStatement(sql);
+        stmt.setInt(1,pHistorySecurityId);
+        ResultSet rs=stmt.executeQuery();
+        if (rs.next()) {
+            // build the object
+            x=HistorySecurityData.createValue();
+            
+            x.setHistorySecurityId(rs.getInt(1));
+            x.setHistoryId(rs.getInt(2));
+            x.setBusEntityId(rs.getInt(3));
+            x.setBusEntityTypeCd(rs.getString(4));
+            x.setAddBy(rs.getString(5));
+            x.setAddDate(rs.getTimestamp(6));
+            x.setModBy(rs.getString(7));
+            x.setModDate(rs.getTimestamp(8));
+
+        } else {
+            rs.close();
+            stmt.close();
+            throw new DataNotFoundException("HISTORY_SECURITY_ID :" + pHistorySecurityId);
+        }
+
+        rs.close();
+        stmt.close();
+
+        return x;
+    }
+
+    /**
+     * Gets a HistorySecurityDataVector object that consists
+     * of HistorySecurityData objects that match the supplied
+     * criteria.
+     * @param pCon An open database connection.
+     * @param pCriteria A DBCriteria with the SQL 'where clause'
+     * @return new HistorySecurityDataVector()
+     * @throws            SQLException
+     */
+    public static HistorySecurityDataVector select(Connection pCon, DBCriteria pCriteria)
+        throws SQLException{
+        // Specify the maximum row limit to zero, unlimited size.
+        return select(pCon, pCriteria, 0);
+    }
+
+    /**
+    *@Returns a String of the columns suitable for using in a sql statement that may then be parsed into a HistorySecurityData Object
+    *using the parseResultSet method.
+    */
+    public String getSelectColumns(){
+        return "CLW_HISTORY_SECURITY.HISTORY_SECURITY_ID,CLW_HISTORY_SECURITY.HISTORY_ID,CLW_HISTORY_SECURITY.BUS_ENTITY_ID,CLW_HISTORY_SECURITY.BUS_ENTITY_TYPE_CD,CLW_HISTORY_SECURITY.ADD_BY,CLW_HISTORY_SECURITY.ADD_DATE,CLW_HISTORY_SECURITY.MOD_BY,CLW_HISTORY_SECURITY.MOD_DATE";
+    }
+
+
+    /**
+    *Parses a result set into a value object.  Uses the position of the columns as its key so this method should only
+    *be used in conjunction with the getSelectColumns() method or the wrong data will be parsed into the wrong properties.
+    *The result set is not incremented, so calls to this method leave the resultset object unchanged.
+    *@param ResultSet an open result set.
+    *@returns a populated HistorySecurityData Object.
+    *@throws SQLException
+    */
+    public com.cleanwise.service.api.framework.ValueObject parseResultSet(ResultSet rs) throws SQLException{
+         return parseResultSet(rs,0);
+    }
+
+    /**
+    *Parses a result set into a value object.  Uses the position of the columns as its key so this method should only
+    *be used in conjunction with the getSelectColumns() method or the wrong data will be parsed into the wrong properties.
+    *The result set is not incremented, so calls to this method leave the resultset object unchanged.
+    *@param ResultSet an open result set.
+    *@param int the offset to use which is useful when using 1 query to populate multiple objects
+    *@returns a populated HistorySecurityData Object.
+    *@throws SQLException
+    */
+    public com.cleanwise.service.api.framework.ValueObject parseResultSet(ResultSet rs, int offset) throws SQLException{
+         // build the object
+         HistorySecurityData x = HistorySecurityData.createValue();
+         
+         x.setHistorySecurityId(rs.getInt(1+offset));
+         x.setHistoryId(rs.getInt(2+offset));
+         x.setBusEntityId(rs.getInt(3+offset));
+         x.setBusEntityTypeCd(rs.getString(4+offset));
+         x.setAddBy(rs.getString(5+offset));
+         x.setAddDate(rs.getTimestamp(6+offset));
+         x.setModBy(rs.getString(7+offset));
+         x.setModDate(rs.getTimestamp(8+offset));
+         return x;
+    }
+
+    /**
+    *@Returns a count of the number of columns the HistorySecurityData Object represents.
+    */
+    public int getColumnCount(){
+        return 8;
+    }
+
+    /**
+     * Gets a HistorySecurityDataVector object that consists
+     * of HistorySecurityData objects that match the supplied
+     * criteria.
+     * @param pCon An open database connection.
+     * @param pCriteria A DBCriteria with the SQL 'where clause'
+     * @param pMaxRows the maximum number of rows to return.
+     * @return new HistorySecurityDataVector()
+     * @throws            SQLException
+     */
+    public static HistorySecurityDataVector select(Connection pCon, DBCriteria pCriteria, int pMaxRows)
+        throws SQLException{
+        StringBuffer sqlBuf;
+        Collection otherTables = pCriteria.getJoinTables();
+        String where;
+        if(otherTables == null || otherTables.isEmpty()){
+                sqlBuf = new StringBuffer("SELECT HISTORY_SECURITY_ID,HISTORY_ID,BUS_ENTITY_ID,BUS_ENTITY_TYPE_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_HISTORY_SECURITY");
+                where = pCriteria.getSqlClause();
+        }else{
+                sqlBuf = new StringBuffer("SELECT CLW_HISTORY_SECURITY.HISTORY_SECURITY_ID,CLW_HISTORY_SECURITY.HISTORY_ID,CLW_HISTORY_SECURITY.BUS_ENTITY_ID,CLW_HISTORY_SECURITY.BUS_ENTITY_TYPE_CD,CLW_HISTORY_SECURITY.ADD_BY,CLW_HISTORY_SECURITY.ADD_DATE,CLW_HISTORY_SECURITY.MOD_BY,CLW_HISTORY_SECURITY.MOD_DATE FROM CLW_HISTORY_SECURITY");
+                where = pCriteria.getSqlClause("CLW_HISTORY_SECURITY");
+
+                Iterator it = otherTables.iterator();
+                while(it.hasNext()){
+                        String otherTable = (String) it.next();
+                        if(!CLW_HISTORY_SECURITY.equals(otherTable)){
+                        sqlBuf.append(",");
+                        sqlBuf.append(otherTable);
+				}
+                }
+        }
+
+        if (where != null && !where.equals("")) {
+            sqlBuf.append(" WHERE ");
+            sqlBuf.append(where);
+        }
+
+        String sql = sqlBuf.toString();
+        if (log.isDebugEnabled()) {
+            log.debug("SQL: " + sql);
+        }
+
+        Statement stmt = pCon.createStatement();
+        if ( pMaxRows > 0 ) {
+            // Insure that only positive values are set.
+              stmt.setMaxRows(pMaxRows);
+        }
+        ResultSet rs=stmt.executeQuery(sql);
+        HistorySecurityDataVector v = new HistorySecurityDataVector();
+        while (rs.next()) {
+            HistorySecurityData x = HistorySecurityData.createValue();
+            
+            x.setHistorySecurityId(rs.getInt(1));
+            x.setHistoryId(rs.getInt(2));
+            x.setBusEntityId(rs.getInt(3));
+            x.setBusEntityTypeCd(rs.getString(4));
+            x.setAddBy(rs.getString(5));
+            x.setAddDate(rs.getTimestamp(6));
+            x.setModBy(rs.getString(7));
+            x.setModDate(rs.getTimestamp(8));
+            v.add(x);
+        }
+
+        rs.close();
+        stmt.close();
+
+        return v;
+    }
+
+    /**
+     * Gets a HistorySecurityDataVector object that consists
+     * of HistorySecurityData objects with the keys requested.
+     * @param pCon An open database connection.
+     * @param pIdVector A collection of keys for HistorySecurityData
+     * to retrieve from the database (i.e. select 'IN' pIdVector)
+     * @return new HistorySecurityDataVector()
+     * @throws            SQLException
+     */
+    public static HistorySecurityDataVector select(Connection pCon, IdVector pIdVector)
+        throws SQLException{
+        HistorySecurityDataVector v = new HistorySecurityDataVector();
+        StringBuffer sqlBuf = new StringBuffer("SELECT HISTORY_SECURITY_ID,HISTORY_ID,BUS_ENTITY_ID,BUS_ENTITY_TYPE_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_HISTORY_SECURITY WHERE HISTORY_SECURITY_ID IN (");
+
+        if ( pIdVector.size() > 0 ) {
+            sqlBuf.append(pIdVector.get(0).toString());
+            int vecsize = pIdVector.size();
+            for ( int idx = 1; idx < vecsize; idx++ ) {
+                sqlBuf.append("," + pIdVector.get(idx).toString());
+            }
+            sqlBuf.append(")");
+
+
+            String sql = sqlBuf.toString();
+            if (log.isDebugEnabled()) {
+                log.debug("SQL: " + sql);
+            }
+
+            Statement stmt = pCon.createStatement();
+            ResultSet rs=stmt.executeQuery(sql);
+            HistorySecurityData x=null;
+            while (rs.next()) {
+                // build the object
+                x=HistorySecurityData.createValue();
+                
+                x.setHistorySecurityId(rs.getInt(1));
+                x.setHistoryId(rs.getInt(2));
+                x.setBusEntityId(rs.getInt(3));
+                x.setBusEntityTypeCd(rs.getString(4));
+                x.setAddBy(rs.getString(5));
+                x.setAddDate(rs.getTimestamp(6));
+                x.setModBy(rs.getString(7));
+                x.setModDate(rs.getTimestamp(8));
+                v.add(x);
+            }
+
+            rs.close();
+            stmt.close();
+        }
+
+        return v;
+    }
+
+    /**
+     * Gets a HistorySecurityDataVector object of all
+     * HistorySecurityData objects in the database.
+     * @param pCon An open database connection.
+     * @return new HistorySecurityDataVector()
+     * @throws            SQLException
+     */
+    public static HistorySecurityDataVector selectAll(Connection pCon)
+        throws SQLException{
+        String sql = "SELECT HISTORY_SECURITY_ID,HISTORY_ID,BUS_ENTITY_ID,BUS_ENTITY_TYPE_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_HISTORY_SECURITY";
+
+        if (log.isDebugEnabled()) {
+            log.debug("SQL: " + sql);
+        }
+
+        Statement stmt = pCon.createStatement();
+        ResultSet rs=stmt.executeQuery(sql);
+        HistorySecurityDataVector v = new HistorySecurityDataVector();
+        HistorySecurityData x = null;
+        while (rs.next()) {
+            // build the object
+            x = HistorySecurityData.createValue();
+            
+            x.setHistorySecurityId(rs.getInt(1));
+            x.setHistoryId(rs.getInt(2));
+            x.setBusEntityId(rs.getInt(3));
+            x.setBusEntityTypeCd(rs.getString(4));
+            x.setAddBy(rs.getString(5));
+            x.setAddDate(rs.getTimestamp(6));
+            x.setModBy(rs.getString(7));
+            x.setModDate(rs.getTimestamp(8));
+
+            v.add(x);
+        }
+
+        rs.close();
+        stmt.close();
+
+        return v;
+    }
+
+    /**
+     * Gets an IdVector of Integers representing the Ids of the matching
+     * HistorySecurityData objects in the database.
+     * @param pCon An open database connection.
+     * @param pCriteria A DBCriteria with the SQL 'where clause'
+     * @return new IdVector()
+     * @throws            SQLException
+     */
+    public static IdVector selectIdOnly(Connection pCon, DBCriteria pCriteria)
+        throws SQLException{
+        StringBuffer sqlBuf;
+        Collection otherTables = pCriteria.getJoinTables();
+        String where;
+        if(otherTables == null || otherTables.isEmpty()){
+                sqlBuf = new StringBuffer("SELECT DISTINCT HISTORY_SECURITY_ID FROM CLW_HISTORY_SECURITY");
+                where = pCriteria.getSqlClause();
+        } else {
+                sqlBuf = new StringBuffer("SELECT DISTINCT HISTORY_SECURITY_ID FROM CLW_HISTORY_SECURITY");
+                where = pCriteria.getSqlClause("CLW_HISTORY_SECURITY");
+
+                Iterator it = otherTables.iterator();
+                while(it.hasNext()){
+                        String otherTable = (String) it.next();
+                        if(!CLW_HISTORY_SECURITY.equals(otherTable)){
+                        sqlBuf.append(",");
+                        sqlBuf.append(otherTable);
+				}
+                }
+        }
+
+        if (where != null && !where.equals("")) {
+            sqlBuf.append(" WHERE ");
+            sqlBuf.append(where);
+        }
+
+        String sql = sqlBuf.toString();
+        if (log.isDebugEnabled()) {
+            log.debug("SQL: " + sql);
+        }
+
+        Statement stmt = pCon.createStatement();
+        ResultSet rs=stmt.executeQuery(sql);
+        IdVector v = new IdVector();
+        while (rs.next()) {
+            Integer x = new Integer(rs.getInt(1));
+            v.add(x);
+        }
+
+        rs.close();
+        stmt.close();
+
+        return v;
+    }
+
+    /**
+     * Gets an IdVector of Integers representing the Ids of requested
+     * objects in the database.
+     * @param pCon An open database connection.
+     * @param pIdName A column name
+     * @param pCriteria A DBCriteria with the SQL 'where clause'
+     * @return new IdVector()
+     * @throws            SQLException
+     */
+    public static IdVector selectIdOnly(Connection pCon, String pIdName, DBCriteria pCriteria)
+        throws SQLException{
+        StringBuffer sqlBuf;
+        Collection otherTables = pCriteria.getJoinTables();
+        String where;
+        if(otherTables == null || otherTables.isEmpty()){
+                sqlBuf = new StringBuffer("SELECT DISTINCT "+pIdName+" FROM CLW_HISTORY_SECURITY");
+                where = pCriteria.getSqlClause();
+        } else {
+                sqlBuf = new StringBuffer("SELECT DISTINCT "+pIdName+" FROM CLW_HISTORY_SECURITY");
+                where = pCriteria.getSqlClause("CLW_HISTORY_SECURITY");
+
+                Iterator it = otherTables.iterator();
+                while(it.hasNext()){
+                        String otherTable = (String) it.next();
+                        if(!CLW_HISTORY_SECURITY.equals(otherTable)){
+                        sqlBuf.append(",");
+                        sqlBuf.append(otherTable);
+				}
+                }
+        }
+
+        if (where != null && !where.equals("")) {
+            sqlBuf.append(" WHERE ");
+            sqlBuf.append(where);
+        }
+
+        String sql = sqlBuf.toString();
+        if (log.isDebugEnabled()) {
+            log.debug("SQL: " + sql);
+        }
+
+        Statement stmt = pCon.createStatement();
+        ResultSet rs=stmt.executeQuery(sql);
+        IdVector v = new IdVector();
+        while (rs.next()) {
+            Integer x = new Integer(rs.getInt(1));
+            v.add(x);
+        }
+
+        rs.close();
+        stmt.close();
+
+        return v;
+    }
+
+
+    /**
+     * Gets an sql statement to request ids of
+     * objects in the database.
+     * @param pIdName A column name
+     * @param pCriteria A DBCriteria with the SQL 'where clause'
+     * @return String
+     */
+    public static String getSqlSelectIdOnly(String pIdName, DBCriteria pCriteria)
+    {
+        StringBuffer sqlBuf;
+        Collection otherTables = pCriteria.getJoinTables();
+        String where;
+        if(otherTables == null || otherTables.isEmpty()){
+                sqlBuf = new StringBuffer("SELECT DISTINCT "+pIdName+" FROM CLW_HISTORY_SECURITY");
+                where = pCriteria.getSqlClause();
+        }else{
+                sqlBuf = new StringBuffer("SELECT DISTINCT "+pIdName+" FROM CLW_HISTORY_SECURITY");
+                where = pCriteria.getSqlClause("CLW_HISTORY_SECURITY");
+
+                Iterator it = otherTables.iterator();
+                while(it.hasNext()){
+                        String otherTable = (String) it.next();
+                        if(!CLW_HISTORY_SECURITY.equals(otherTable)){
+                        sqlBuf.append(",");
+                        sqlBuf.append(otherTable);
+				}
+                }
+        }
+
+        if (where != null && !where.equals("")) {
+            sqlBuf.append(" WHERE ");
+            sqlBuf.append(where);
+        }
+
+
+        String sql = sqlBuf.toString();
+        if (log.isDebugEnabled()) {
+            log.debug("SQL text: " + sql);
+        }
+
+        return sql;
+    }
+
+    /**
+     * Inserts a HistorySecurityData object into the database.
+     * @param pCon  An open database connection.
+     * @param pData  A HistorySecurityData object to insert.
+     * The object id will be set to the one generated.  The "AddDate" and
+     * "ModDate" fields will be set to the current date. 
+     * @return new HistorySecurityData() with the generated
+     *         key set
+     * @throws            SQLException
+     */
+    public static HistorySecurityData insert(Connection pCon, HistorySecurityData pData)
+        throws SQLException {
+
+        if (log.isDebugEnabled()) {
+            log.debug("SELECT CLW_HISTORY_SECURITY_SEQ.NEXTVAL FROM DUAL");
+        }
+        String exceptionMessage=null;
+        Statement stmt = pCon.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT CLW_HISTORY_SECURITY_SEQ.NEXTVAL FROM DUAL");
+        rs.next();
+        pData.setHistorySecurityId(rs.getInt(1));
+        stmt.close();
+
+        String sql = "INSERT INTO CLW_HISTORY_SECURITY (HISTORY_SECURITY_ID,HISTORY_ID,BUS_ENTITY_ID,BUS_ENTITY_TYPE_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE) VALUES(?,?,?,?,?,?,?,?)"; PreparedStatement pstmt = pCon.prepareStatement(sql);
+
+        
+        java.util.Date current = new java.util.Date(System.currentTimeMillis());
+        pData.setAddDate(current);
+        pData.setModDate(current);
+
+        pstmt.setInt(1,pData.getHistorySecurityId());
+        pstmt.setInt(2,pData.getHistoryId());
+        pstmt.setInt(3,pData.getBusEntityId());
+        pstmt.setString(4,pData.getBusEntityTypeCd());
+        pstmt.setString(5,pData.getAddBy());
+        pstmt.setTimestamp(6,DBAccess.toSQLTimestamp(pData.getAddDate()));
+        pstmt.setString(7,pData.getModBy());
+        pstmt.setTimestamp(8,DBAccess.toSQLTimestamp(pData.getModDate()));
+
+        if (log.isDebugEnabled()) {
+            log.debug("SQL:   HISTORY_SECURITY_ID="+pData.getHistorySecurityId());
+            log.debug("SQL:   HISTORY_ID="+pData.getHistoryId());
+            log.debug("SQL:   BUS_ENTITY_ID="+pData.getBusEntityId());
+            log.debug("SQL:   BUS_ENTITY_TYPE_CD="+pData.getBusEntityTypeCd());
+            log.debug("SQL:   ADD_BY="+pData.getAddBy());
+            log.debug("SQL:   ADD_DATE="+pData.getAddDate());
+            log.debug("SQL:   MOD_BY="+pData.getModBy());
+            log.debug("SQL:   MOD_DATE="+pData.getModDate());
+            log.debug("SQL: " + sql);
+        }
+        try {
+        pstmt.executeUpdate();
+        pData.setDirty(false);
+        }
+        catch(SQLException e){
+        pData.setHistorySecurityId(0);
+        exceptionMessage=e.getMessage();
+        }
+        finally{
+        pstmt.close();
+        }
+
+        if(exceptionMessage!=null) {
+                 throw new SQLException(exceptionMessage);
+        }
+
+        return pData;
+    }
+
+    /**
+     * Updates a HistorySecurityData object in the database.
+     * @param pCon  An open database connection.
+     * @param pData  A HistorySecurityData object to update. 
+     * The "ModDate" field of the object will be set to the current date.
+     * @return int Number of rows updated (0 or 1).
+     * @throws            SQLException
+     */
+    public static int update(Connection pCon, HistorySecurityData pData)
+        throws SQLException {
+
+        int n = 0;
+
+        String sql = "UPDATE CLW_HISTORY_SECURITY SET HISTORY_ID = ?,BUS_ENTITY_ID = ?,BUS_ENTITY_TYPE_CD = ?,ADD_BY = ?,ADD_DATE = ?,MOD_BY = ?,MOD_DATE = ? WHERE HISTORY_SECURITY_ID = ?";
+
+        PreparedStatement pstmt = pCon.prepareStatement(sql);
+
+        
+        pData.setModDate(new java.util.Date(System.currentTimeMillis()));
+
+        int i = 1;
+        
+        pstmt.setInt(i++,pData.getHistoryId());
+        pstmt.setInt(i++,pData.getBusEntityId());
+        pstmt.setString(i++,pData.getBusEntityTypeCd());
+        pstmt.setString(i++,pData.getAddBy());
+        pstmt.setTimestamp(i++,DBAccess.toSQLTimestamp(pData.getAddDate()));
+        pstmt.setString(i++,pData.getModBy());
+        pstmt.setTimestamp(i++,DBAccess.toSQLTimestamp(pData.getModDate()));
+        pstmt.setInt(i++,pData.getHistorySecurityId());
+
+        if (log.isDebugEnabled()) {
+            log.debug("SQL:   HISTORY_ID="+pData.getHistoryId());
+            log.debug("SQL:   BUS_ENTITY_ID="+pData.getBusEntityId());
+            log.debug("SQL:   BUS_ENTITY_TYPE_CD="+pData.getBusEntityTypeCd());
+            log.debug("SQL:   ADD_BY="+pData.getAddBy());
+            log.debug("SQL:   ADD_DATE="+pData.getAddDate());
+            log.debug("SQL:   MOD_BY="+pData.getModBy());
+            log.debug("SQL:   MOD_DATE="+pData.getModDate());
+            log.debug("SQL: " + sql);
+        }
+
+        n = pstmt.executeUpdate();
+        pstmt.close();
+
+        pData.setDirty(false);
+
+        return n;
+    }
+
+    /**
+     * Deletes a HistorySecurityData object with the specified
+     * key from the database.
+     * @param pCon  An open database connection.
+     * @param pHistorySecurityId Key of object to be deleted.
+     * @return int Number of rows deleted (0 or 1).
+     * @throws            SQLException
+     */
+    public static int remove(Connection pCon, int pHistorySecurityId)
+        throws SQLException{
+        int n = 0;
+        String sql="DELETE FROM CLW_HISTORY_SECURITY WHERE HISTORY_SECURITY_ID = " + pHistorySecurityId;
+
+        if (log.isDebugEnabled()) {
+            log.debug("SQL: " + sql);
+        }
+
+        Statement stmt = pCon.createStatement();
+        n = stmt.executeUpdate(sql);
+        stmt.close();
+
+        return n;
+     }
+
+    /**
+     * Deletes HistorySecurityData objects that match the specified criteria.
+     * @param pCon  An open database connection.
+     * @param pCriteria A DBCriteria with the SQL 'where clause'
+     * @return int Number of rows deleted.
+     * @throws            SQLException
+     */
+    public static int remove(Connection pCon, DBCriteria pCriteria)
+        throws SQLException {
+        int n = 0;
+        StringBuffer sqlBuf = new StringBuffer("DELETE FROM CLW_HISTORY_SECURITY");
+        String where = pCriteria.getSqlClause();
+        if (where != null && !where.equals("")) {
+            sqlBuf.append(" WHERE ");
+            sqlBuf.append(where);
+        }
+
+        String sql = sqlBuf.toString();
+        if (log.isDebugEnabled()) {
+            log.debug("SQL: " + sql);
+        }
+
+        Statement stmt = pCon.createStatement();
+        n = stmt.executeUpdate(sql);
+        stmt.close();
+
+        return n;
+    }
+
+    /**
+     * Inserts a HistorySecurityData log object into the database.
+     * @param pCon  An open database connection.
+     * @param pData  A HistorySecurityData object to insert
+     * @param pMillis current time in milliseconds
+     * @param pAction action made (I, U, D)
+     * @param pStatus record status (O, N)
+     * @throws            SQLException
+     */
+    public static void insertLog(Connection pCon, HistorySecurityData pData, long pMillis, String pAction, String pStatus)
+        throws SQLException {
+
+        String sql = "INSERT INTO LCLW_HISTORY_SECURITY (LOG_DATE_MS,LOG_DATE,ACTION, STATUS,"+
+          "HISTORY_SECURITY_ID,HISTORY_ID,BUS_ENTITY_ID,BUS_ENTITY_TYPE_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+
+        PreparedStatement pstmt = pCon.prepareStatement(sql);
+        
+        pstmt.setLong(1,pMillis);
+        pstmt.setTimestamp(2,DBAccess.toSQLTimestamp(new java.util.Date(pMillis)));
+        pstmt.setString(3,pAction);
+        pstmt.setString(4,pStatus);
+
+        pstmt.setInt(1+4,pData.getHistorySecurityId());
+        pstmt.setInt(2+4,pData.getHistoryId());
+        pstmt.setInt(3+4,pData.getBusEntityId());
+        pstmt.setString(4+4,pData.getBusEntityTypeCd());
+        pstmt.setString(5+4,pData.getAddBy());
+        pstmt.setTimestamp(6+4,DBAccess.toSQLTimestamp(pData.getAddDate()));
+        pstmt.setString(7+4,pData.getModBy());
+        pstmt.setTimestamp(8+4,DBAccess.toSQLTimestamp(pData.getModDate()));
+
+
+        pstmt.executeUpdate();
+        pstmt.close();
+    }
+
+
+
+
+///////////////////////////////////////////////
+    /**
+     * Inserts a HistorySecurityData object into the database.
+     * @param pCon  An open database connection.
+     * @param pData  A HistorySecurityData object to insert.
+     * The object id will be set to the one generated.  The "AddDate" and
+     * "ModDate" fields will be set to the current date. 
+     * @param pLogFl  Creates record in log table if true
+     * @return new HistorySecurityData() with the generated
+     *         key set
+     * @throws            SQLException
+     */
+    public static HistorySecurityData insert(Connection pCon, HistorySecurityData pData, boolean pLogFl)
+        throws SQLException {
+        pData = insert(pCon, pData);
+
+        if(pLogFl) {
+          long millis = System.currentTimeMillis();
+          insertLog(pCon, pData, millis, "I", "N");
+        }
+
+        return pData;
+    }
+
+    /**
+     * Updates a HistorySecurityData object in the database.
+     * @param pCon  An open database connection.
+     * @param pData  A HistorySecurityData object to update. 
+     * The "ModDate" field of the object will be set to the current date.
+     * @param pLogFl  Creates record in log table if true
+     * @return int Number of rows updated (0 or 1).
+     * @throws            SQLException
+     */
+    public static int update(Connection pCon, HistorySecurityData pData, boolean pLogFl)
+        throws SQLException {
+        HistorySecurityData oldData = null;
+        if(pLogFl) {
+          int id = pData.getHistorySecurityId();
+          try {
+          oldData = HistorySecurityDataAccess.select(pCon,id);
+          } catch(DataNotFoundException exc) {}
+        }
+        int n = update(pCon,pData);
+        if(pLogFl) {
+          long millis = System.currentTimeMillis();
+          insertLog(pCon, oldData, millis, "U", "O");
+          insertLog(pCon, pData, millis, "U", "N");
+        }
+        return n;
+    }
+
+    /**
+     * Deletes a HistorySecurityData object with the specified
+     * key from the database.
+     * @param pCon  An open database connection.
+     * @param pHistorySecurityId Key of object to be deleted.
+     * @param pLogFl  Create record in log table if true
+     * @return int Number of rows deleted (0 or 1).
+     * @throws            SQLException
+     */
+    public static int remove(Connection pCon, int pHistorySecurityId, boolean pLogFl)
+        throws SQLException{
+        if(pLogFl){
+          long millis = System.currentTimeMillis();
+          java.util.Date rmDate = new java.util.Date(millis);
+          java.text.SimpleDateFormat smf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+          String oracleDate = "to_date('"+smf.format(rmDate)+"','YYYY-MM-DD HH24:MI:SS')";
+          String sqlLog ="INSERT INTO LCLW_HISTORY_SECURITY SELECT "+millis+ ","+oracleDate+",'D','O',d.* FROM CLW_HISTORY_SECURITY d WHERE HISTORY_SECURITY_ID = " + pHistorySecurityId;
+          Statement stmt = pCon.createStatement();
+          stmt.executeUpdate(sqlLog);
+           stmt.close();
+        }
+        int n = remove(pCon,pHistorySecurityId);
+        return n;
+     }
+
+    /**
+     * Deletes HistorySecurityData objects that match the specified criteria.
+     * @param pCon  An open database connection.
+     * @param pCriteria A DBCriteria with the SQL 'where clause'
+     * @param pLogFl  Create record in log table if true
+     * @return int Number of rows deleted.
+     * @throws            SQLException
+     */
+    public static int remove(Connection pCon, DBCriteria pCriteria, boolean pLogFl)
+        throws SQLException {
+        if(pLogFl){
+          long millis = System.currentTimeMillis();
+          java.util.Date rmDate = new java.util.Date(millis);
+          java.text.SimpleDateFormat smf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+          String oracleDate = "to_date('"+smf.format(rmDate)+"','YYYY-MM-DD HH24:MI:SS')";
+          StringBuffer sqlBuf =
+             new StringBuffer("INSERT INTO LCLW_HISTORY_SECURITY SELECT "+millis+ ","+oracleDate+",'D','O',d.* FROM CLW_HISTORY_SECURITY d ");
+          String where = pCriteria.getSqlClause();
+          sqlBuf.append(" WHERE ");
+          sqlBuf.append(where);
+
+          Statement stmt = pCon.createStatement();
+          stmt.executeUpdate(sqlBuf.toString());
+          stmt.close();
+        }
+        int n = remove(pCon,pCriteria);
+        return n;
+    }
+///////////////////////////////////////////////
+}
+

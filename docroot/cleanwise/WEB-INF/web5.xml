@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <display-name>Cleanwise</display-name>
+  <description>Cleanwise XSuite Application</description>
+
+<filter>
+  <filter-name>HttpHeadersFilter</filter-name>
+  <filter-class>
+   com.cleanwise.view.utils.HttpHeadersFilter</filter-class>
+  <init-param>
+    <param-name>P3P</param-name>
+    <param-value>policyref="/w3c/p3p.xml", CP="ALL DSP COR CUR ADM PSA IVA HIS OUR DEL SAM OTR UNR LEG"</param-value>
+    <!--<param-value>policyref="/defst/w3c/p3p.xml", CP="CAO DSP COR CURa ADMa DEVa TAIa CONo HISa TELo OUR DELa SAMo OTRo BUS IND PHY ONL UNI PUR COM NAV INT STA"</param-value>-->
+  </init-param>
+</filter>
+
+<filter>
+  <filter-name>HttpCharEncodingFilter</filter-name>
+  <filter-class>
+   com.cleanwise.view.utils.HttpCharEncodingFilter</filter-class>
+</filter>
+
+<filter-mapping>
+  <filter-name>
+   HttpHeadersFilter</filter-name>
+  <url-pattern>*</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+  <filter-name>
+   HttpCharEncodingFilter</filter-name>
+  <url-pattern>*</url-pattern>
+</filter-mapping>
+
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <display-name>Struts Controller Servlet</display-name>
+    <servlet-class>com.cleanwise.view.utils.ClwActionServlet</servlet-class>
+<!--    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class> -->
+    <init-param>
+      <param-name>locale</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>validate</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>redirectConfidentialPort</param-name>
+      <param-value>${redirectConfidentialPort}</param-value>
+    </init-param>
+    <init-param>
+      <param-name>servletConfidentialPort</param-name>
+      <param-value>${ServletConfidentialPort}</param-value>
+    </init-param>
+<!--The name of the header that contains a true or false variable indicating the request
+should be treated as if it came in via ssl.  This is useful if you are behind an ssl proxy
+or ssl load balancer that will forward this on to the application.-->
+    <init-param>
+      <param-name>ssl_forwarded_header</param-name>
+      <param-value>X-SSL-Request</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+
+  <servlet>
+    <servlet-name>replets</servlet-name>
+    <servlet-class>inetsoft.sree.web.ServletRepository</servlet-class>
+    <init-param>
+      <param-name>sree.home</param-name>
+      <param-value>${webdeploy}/reporting</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>manager</servlet-name>
+    <servlet-class>inetsoft.sree.adm.AdmServlet</servlet-class>
+    <init-param>
+      <param-name>sree.home</param-name>
+      <param-value>${webdeploy}/reporting</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ReportServlet</servlet-name>
+    <servlet-class>com.cleanwise.view.reporting.ReportServlet</servlet-class>
+    <init-param>
+      <param-name>dir</param-name>
+      <param-value>${webdeploy}/reporting</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.DO</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>replets</servlet-name>
+    <url-pattern>/reportrepository</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>manager</servlet-name>
+    <url-pattern>/reportmanager</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ReportServlet</servlet-name>
+    <url-pattern>/reportservlet</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>${sessionTimeout}</session-timeout>
+  </session-config>
+
+  <mime-mapping>
+    <extension>wmv</extension>
+    <mime-type>video/x.ms.asx</mime-type>
+  </mime-mapping>
+	
+	<mime-mapping>
+   	<extension>xls</extension>
+    <mime-type>application/vnd.ms-excel</mime-type>
+  </mime-mapping>
+
+  <error-page>
+    <error-code>503</error-code>
+    <location>
+      /userportal/cwError.jsp
+    </location>
+  </error-page>
+
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/application.tld</taglib-uri>
+    <taglib-location>/WEB-INF/application.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/i18n.tld</taglib-uri>
+    <taglib-location>/WEB-INF/i18n.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/pager-taglib.tld</taglib-uri>
+    <taglib-location>/WEB-INF/pager-taglib.tld</taglib-location>
+  </taglib>
+
+  <login-config>
+    <auth-method>FORM</auth-method>
+      <form-login-config>
+        <form-login-page>/userportal/cwLogOn.jsp</form-login-page>
+        <form-error-page>/userportal/index.jsp</form-error-page>
+      </form-login-config>
+  </login-config>
+
+  <!-- resource-ref>
+    <description>a data source for the oracle DB</description>
+    <res-ref-name>jdbc/DefaultDS</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref-->
+
+  <!-- security-role>
+    <description>Users</description>
+    <role-name>USER</role-name>
+  </security-role -->
+
+  <!--security-constraint>
+    <web-resource-collection>
+	<web-resource-name>Cleanwise</web-resource-name>
+        <url-pattern>/cleawise/*/*.jsp</url-pattern>
+        <url-pattern>/cleawise/*/*.do</url-pattern>
+		<url-pattern>/cleawise/*/*.DO</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>USER</role-name>
+    </auth-constraint>
+  </security-constraint-->
+
+</web-app>

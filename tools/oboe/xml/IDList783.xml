@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>Customized Ordering Forecast</idValue>
+    <idCode>MM</idCode>
+        <idValue>Manufacturer to Manufacturer</idValue>
+    <idCode>MN</idCode>
+        <idValue>Consumer Sales Forecast</idValue>
+    <idCode>MP</idCode>
+        <idValue>Manufacturer to Publisher</idValue>
+    <idCode>OS</idCode>
+        <idValue>Operator to Shipper</idValue>
+    <idCode>OT</idCode>
+        <idValue>Operator to Transporter</idValue>
+    <idCode>PM</idCode>
+        <idValue>Publisher to Manufacturer</idValue>
+    <idCode>PS</idCode>
+        <idValue>Purchaser to Seller</idValue>
+    <idCode>SO</idCode>
+        <idValue>Seller to Operator</idValue>
+    <idCode>ST</idCode>
+        <idValue>Shipper to Transporter</idValue>
+    <idCode>TO</idCode>
+        <idValue>Transporter to Operator</idValue>
+    <idCode>TS</idCode>
+        <idValue>Transporter to Shipper</idValue>
+    <idCode>TT</idCode>
+        <idValue>Transporter to Transporter</idValue>
+    <idCode>XA</idCode>
+        <idValue>Requirement Forecast</idValue>
+    <idCode>XF</idCode>
+        <idValue>War Reserve Forecast</idValue>
+</idList>

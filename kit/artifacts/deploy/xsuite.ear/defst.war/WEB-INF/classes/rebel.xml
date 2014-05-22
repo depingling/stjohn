@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<application>
+<classpath>
+<dir name="c:\development\stjohn\kit">
+    <include name="com/cleanwise/view/**"/> 
+    <include name="com/espendwise/view/**"/> 
+    <include name="com/cleanwise/service/util/**"/>
+</dir>
+</classpath>
+
+</application>

@@ -1,0 +1,62 @@
+<?xml encoding="UTF-8"?>
+<!-- used by EnvelopeFactory -->
+<!-- OBOE release 3.5.0 Thursday, February 22, 2007-->
+<!-- 3.4.0 change:  added used attribute to most major nodes, 
+                    added exclude/include to idlistfile-->
+<!-- 3.5.0 change:  further defined type attribute of dataElement node
+                    added exclude/include to idlistfile-->
+<!ELEMENT envelope (segment+, functionalGroup, segment+)>
+<!ATTLIST envelope
+	type (X12 | EDIFact | Tradacoms | other) #REQUIRED
+>
+<!ELEMENT functionalGroup (segment*, transactionSet, segment*)>
+<!ELEMENT transactionSet EMPTY>
+<!ELEMENT segment  (compositeDE?, dataElement?)*>
+<!ATTLIST segment
+	name CDATA #REQUIRED
+	id CDATA #REQUIRED
+	sequence CDATA #REQUIRED
+	description CDATA #IMPLIED
+	occurs CDATA #IMPLIED
+	required (M | O | C) "M"
+        used (Y | N) "Y"
+	xmlTag CDATA #IMPLIED
+>
+<!ELEMENT compositeDE (dataElement)+>
+<!ATTLIST compositeDE
+	name CDATA #REQUIRED
+	id CDATA #REQUIRED
+	description CDATA #IMPLIED
+	occurs CDATA "1"
+	sequence CDATA #IMPLIED
+	required CDATA #IMPLIED
+        used (Y | N) "Y"
+	xmlTag CDATA #IMPLIED
+>
+<!ELEMENT dataElement (idList | idListClass | idListFile)?>
+<!ATTLIST dataElement
+	name CDATA #REQUIRED
+	id CDATA #REQUIRED
+	type (A |AN | B | DT | ID | N| N0 | N1 | N2 | N3 | N4 | N5 | N6 | N7 | N8 | N9 | R | TM) #REQUIRED
+	sequence CDATA #IMPLIED
+	required CDATA #IMPLIED
+	description CDATA #IMPLIED
+	occurs CDATA "1"
+	minLength CDATA #REQUIRED
+	maxLength CDATA #REQUIRED
+        used (Y | N) "Y"
+	xmlTag CDATA #IMPLIED
+>
+<!ELEMENT idList ((idCode, idValue)*)>
+<!ELEMENT idCode (#PCDATA)>
+<!ELEMENT idValue (#PCDATA)>
+<!ELEMENT idListClass EMPTY>
+<!ATTLIST idListClass
+	className CDATA #REQUIRED
+>
+<!ELEMENT idListFile EMPTY>
+<!ATTLIST idListFile
+	fileName CDATA #REQUIRED
+	include CDATA #IMPLIED
+	exclude CDATA #IMPLIED
+>

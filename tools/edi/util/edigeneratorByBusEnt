@@ -1,0 +1,56 @@
+# make sure that the host and ports match the JBoss 
+# installation that you are trying to talk to.
+
+. ${XDIR}/app.sh.env
+
+if [ -z ${XSUITE_HOME} ] 
+then
+  echo "XSUITE_HOME is not defined."
+  exit
+fi
+
+if [ $# -lt 2 ] 
+then
+  echo "usage: $0 bus_entity_id_list generate_edi_type"
+  exit
+fi
+
+if [ -z $1 ] || [ -z $2 ] 
+then
+  echo "usage: $0 erpnum generate_edi_type "
+  exit
+fi
+
+tstamp=`date '+%Y%m%d%H%M%S'`
+
+logDir=../outbound_log
+if [ ! -d $logDir ]
+then
+  mkdir $logDir
+fi
+
+
+
+
+# -Dofile=brook 
+
+## Note that the crimson.jar file must be placed at the end
+## of the classpath list.
+## -Dofile="out810.txt" -Derpnum="10052" -Dtype="810"
+ 
+java -Xms128m -Xmx512m -classpath "${TJCPATH}" \
+ -Duser.home=${XSUITE_HOME}/xsuite/edi/tools/oboe \
+ -Dconf="${XSUITE_HOME}/xsuite/app.properties" \
+ -DbusEntityIdList=${1} -Dtype=${2} \
+com.cleanwise.service.apps.dataexchange.OutboundTranslate | tee ${logDir}/${archiveFile}
+
+# If there's anything in the file, move it to the outbound directory.
+#if [ -s $outFile ] 
+#then
+#  mv $outFile ../outbound
+#else
+#  echo "No ${2} generated for account ${1}"
+#  rm -f $outFile
+#fi
+
+

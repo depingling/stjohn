@@ -1,0 +1,16 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ContractItemSubstList (ContractItemSubst)+>
+<!ELEMENT ContractItemSubst (,ContractId,ItemId,SubstItemId,AddBy,AddDate,ModBy,ModDate,SubstStatusCd)>
+<!ATTLIST ContractItemSubst Id ID #REQUIRED>
+<!ELEMENT ContractId (#PCDATA)>
+<!ELEMENT ItemId (#PCDATA)>
+<!ELEMENT SubstItemId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT SubstStatusCd (#PCDATA)>

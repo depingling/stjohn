@@ -1,0 +1,125 @@
+. ../app.sh.env
+
+if [ -z ${XSUITE_HOME} ] 
+then
+  echo "XSUITE_HOME is not defined."
+  exit
+fi
+
+if [ -f report.txt ]
+then
+  echo "Report being generated."
+  exit
+fi
+
+
+if [ ! -d ../reports ]
+then
+  mkdir ../reports
+fi
+
+tstamp=`date '+Date-%Y.%m.%d-Time-%H.%M.%S'`
+rfn=../reports/${tstamp}.report.html
+
+echo "<html><title>`hostname` System Report</title>" > $rfn
+echo "<style>
+.tabb {
+  border-right: solid 1px black;
+  border-bottom: solid 1px black;
+}
+TD {
+  border-bottom: solid 1px black;
+  border-right: solid 1px black;
+}
+th {
+  background-color : #669966;
+  font-size: 10pt;
+}
+.t2 {
+  background-color : #99CCFF;
+  border-right: solid 1px black;
+}
+</style>
+" >> $rfn
+
+echo "<body>" >> $rfn
+echo "Report generated on: <b>`date`</b>" >> $rfn
+echo "<table cellpadding=4 cellspacing=0 >  " >> $rfn
+echo "<tr><th></th> <th>Count</th>
+  <th></th><th>Date</th> </tr>" >> $rfn
+
+sqlplus -S ${XSUITE_DBUSER}/${XSUITE_DBPASS}@${XSUITE_DBSERVER} << EOF
+set head off
+set echo off
+set linesize 80
+
+spool report.txt 
+
+select    '<tr><td class="t2"><b> Orders </b> </td><td class="tabb"> ' 
+       ||  count(*),
+          '</td> <td>Newest</td><td class="tabb">' 
+       || MAX(ORIGINAL_ORDER_DATE)  
+       || '</td></tr>'
+  from clw_order;
+
+select    '<tr><td  class="t2"><b> Orders with exceptions </b></td><td class="tabb"> ' 
+       ||  count(*), 
+          ' </td><td>Oldest</td><td class="tabb">  ' 
+       || MIN(ORIGINAL_ORDER_DATE)  
+       || '</td></tr>'
+ from clw_order where EXCEPTION_IND = 'Y';
+
+select    '<tr><td  class="t2"><b> Orders pending review </b></td><td class="tabb"> ' 
+       ||  count(*),
+          '</td><td>Oldest</td><td class="tabb"> ' 
+       || MIN(ORIGINAL_ORDER_DATE)  
+       || '</td></tr>'
+ from clw_order where EXCEPTION_IND = 'Y' and
+  order_status_cd = 'Pending Review';
+
+select    '<tr><td  class="t2"><b> Orders pending approval </b> <td class="tabb">' 
+       ||  count(*),
+          '</td><td>Oldest</td><td class="tabb"> ' 
+       || MIN(ORIGINAL_ORDER_DATE)  
+       || '</td></tr> </table>'
+ from clw_order where 
+  order_status_cd = 'Pending Approval';
+quit
+EOF
+
+echo "<ul>" >> $rfn
+
+sqlplus -S ${XSUITE_DBUSER}/${XSUITE_DBPASS}@${XSUITE_DBSERVER} << EOF
+set head off
+set echo off
+set linesize 80
+
+select    '<li><b> Sites: </b> '  || count(*) 
+  from clw_bus_entity
+  where bus_entity_type_cd = 'SITE' 
+  and BUS_ENTITY_STATUS_CD = 'ACTIVE';
+
+select '<li ><b> Accounts: </b> ' || count(*) 
+  from clw_bus_entity
+  where bus_entity_type_cd = 'ACCOUNT'
+  and BUS_ENTITY_STATUS_CD = 'ACTIVE';
+
+select '<li><b> Users: </b> '     || count(*) 
+  from clw_user
+  where USER_STATUS_CD = 'ACTIVE';
+quit
+EOF
+
+echo "</ul>" >> $rfn
+
+cat report.txt >> $rfn
+echo "<p> System name: " >> $rfn
+hostname >> $rfn
+echo "<p>" >> $rfn
+uptime >> $rfn
+echo "</body></html>" >> $rfn
+
+rm report.txt
+
+
+

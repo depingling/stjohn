@@ -1,0 +1,2 @@
+function shopHelp(A,C){if(navigator.appName.indexOf("Netscape")!=-1){return ;}var G;if(C=="OrderGuide"){G=document.all.orderGuideHelp;}else{if(C=="LastOrder"){G=document.all.lastOrderHelp;}else{G=document.all.janitorClosetHelp;}}G.style.left=A.offsetLeft+70;var E=A.style.pixelTop;var F=A.offsetHeight;
+var D=G.style.pixelHeight;var B=document.body.scrollTop;if(E-D>=B&&E+F+D>document.body.clientHeight+B){G.style.top=E-D;}else{G.style.top=E+F;}if("none"==G.style.display){G.style.display="block";}}

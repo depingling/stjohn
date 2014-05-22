@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Sub-line information</idValue>
+    <idCode>2</idCode>
+        <idValue>Subordinate sub-line information</idValue>
+</idList>

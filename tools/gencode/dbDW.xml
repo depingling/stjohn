@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database>
+<table name="DW_FACT_ORDER" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="FACT_ORDER_ID" size="38" type="NUMBER"/>
+	<column name="ORDER_ID" size="38" type="NUMBER"/>
+	<column name="ORDER_NUM" nullable="true" size="50" type="VARCHAR2"/>
+	<column name="REQUEST_PO_NUM" nullable="true" size="255" type="VARCHAR2"/>
+	<column name="DIM_STORE_ID" size="38" type="NUMBER"/>
+	<column name="DIM_ACCOUNT_ID" size="38" type="NUMBER"/>
+	<column name="DIM_SITE_ID" size="38" type="NUMBER"/>
+	<column name="ORDER_DATE_ID" size="38" type="NUMBER"/>
+	<column name="REVISED_ORDER_DATE_ID" size="38" type="NUMBER"/>
+	<column name="DIM_ITEM_MAPPING_ID" size="38" type="NUMBER"/>
+	<column name="DIM_ITEM_ID" size="38" type="NUMBER"/>
+	<column name="ORDER_ITEM_ID" size="38" type="NUMBER"/>
+	<column name="TOTAL_QUANTITY_ORDERED" nullable="true" size="38" type="NUMBER"/>
+	<column digits="8" name="CUST_CONTRACT_PRICE" nullable="true" size="22" type="NUMBER"/>
+	<column digits="8" name="DIST_ITEM_COST" nullable="true" size="22" type="NUMBER"/>
+	<column digits="8" name="TAX_AMOUNT" nullable="true" size="22" type="NUMBER"/>
+	<column digits="8" name="TOTAL_FREIGHT_COST" nullable="true" size="22" type="NUMBER"/>
+	<column digits="8" name="TOTAL_MISC_COST" nullable="true" size="22" type="NUMBER"/>
+	<column digits="8" name="TOTAL_DISCOUNT" nullable="true" size="22" type="NUMBER"/>
+	<column digits="8" name="SERVICE_FEE" nullable="true" size="22" type="NUMBER"/>
+	<column name="DIM_CATEGORY_ID" size="38" type="NUMBER"/>
+	<column name="DIM_SPL_ID" size="38" type="NUMBER"/>
+	<column name="DIM_SALE_TYPE_ID" size="38" type="NUMBER"/>
+	<column name="DIM_MANUFACTURER_ID" size="38" type="NUMBER"/>
+	<column name="DIM_DISTRIBUTOR_ID" size="38" type="NUMBER"/>
+	<column name="DIM_CURRENCY_ID" size="38" type="NUMBER"/>
+	<column name="DELIVERY_REF_NUM" nullable="true" size="255" type="VARCHAR2"/>
+	<column name="DIM_ORDER_TYPE_ID" size="38" type="NUMBER"/>
+	<column name="DIM_ORDER_STATUS_ID" size="38" type="NUMBER"/>
+	<primaryKey name="FACT_ORDER_PK">
+		<columnref name="FACT_ORDER_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_STORE" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_STORE_ID" size="38" type="NUMBER"/>
+	<column name="BUS_ENTITY_ID" size="38" type="NUMBER"/>
+	<column name="SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="BUS_ENTITY_STATUS_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_STORE_PK">
+		<columnref name="DIM_STORE_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_ACCOUNT" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_ACCOUNT_ID" size="38" type="NUMBER"/>
+	<column name="BUS_ENTITY_ID" size="38" type="NUMBER"/>
+	<column name="SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="PRIMARY_CONTACT_NAME1" size="255" type="VARCHAR2"/>
+	<column name="PRIMARY_CONTACT_NAME2" size="255" type="VARCHAR2"/>
+	<column name="BUS_ENTITY_STATUS_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_ACCOUNT_PK">
+		<columnref name="DIM_ACCOUNT_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_SITE" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_SITE_ID" size="38" type="NUMBER"/>
+	<column name="BUS_ENTITY_ID" size="38" type="NUMBER"/>
+	<column name="SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="SITE_REFERENCE_NUMBER" nullable="true" size="255" type="VARCHAR2"/>
+	<column name="SHIPPING_ADDRESS_NAME1" nullable="true" size="255" type="VARCHAR2"/>
+	<column name="SHIPPING_ADDRESS_NAME2" nullable="true" size="255" type="VARCHAR2"/>
+	<column name="SHIPPING_STATE_PROVINCE_CD" nullable="true" size="30" type="VARCHAR2"/>
+	<column name="BUS_ENTITY_STATUS_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_SITE_PK">
+		<columnref name="DIM_SITE_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_DATE" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_DATE_ID" size="38" type="NUMBER"/>
+	<column name="DAY" size="38" type="NUMBER"/>
+	<column name="MONTH" size="38" type="NUMBER"/>
+	<column name="YEAR" size="38" type="NUMBER"/>
+	<primaryKey name="DIM_DATE_PK">
+		<columnref name="DIM_DATE_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_ITEM" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_ITEM_ID" size="38" type="NUMBER"/>
+	<column name="ITEM_ID" size="38" type="NUMBER"/>
+	<column name="SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="GREEN_ITEM" size="30" type="VARCHAR2"/>
+	<column name="STATUS_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_ITEM_PK">
+		<columnref name="DIM_ITEM_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_ITEM_MAPPING" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_ITEM_MAPPING_ID" size="38" type="NUMBER"/>
+	<column name="ITEM_ID" size="38" type="NUMBER"/>
+	<column name="SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="ITEM_SKU" size="30" type="VARCHAR2"/>
+	<column name="ITEM_UOM" size="30" type="VARCHAR2"/>
+	<column name="ITEM_PACK" size="30" type="VARCHAR2"/>
+	<column name="ITEM_SIZE" size="30" type="VARCHAR2"/>
+	<column name="DISTRIBUTOR_ID" size="38" type="NUMBER"/>
+	<column name="DIST_ITEM_SKU_NUM" size="30" type="VARCHAR2"/>
+	<column name="DIST_ITEM_SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="MANUFACTURER_ID" size="38" type="NUMBER"/>
+	<column name="MANU_ITEM_SKU_NUM" size="30" type="VARCHAR2"/>
+	<column name="MANU_ITEM_SHORT_DESC" size="255" type="VARCHAR2"/>
+	<primaryKey name="DIM_ITEM_MAPPING_PK">
+		<columnref name="DIM_ITEM_MAPPING_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_CATEGORY" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_CATEGORY_ID" size="38" type="NUMBER"/>
+	<column name="ITEM_ID" size="38" type="NUMBER"/>
+	<column name="SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="STATUS_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_CATEGORY_PK">
+		<columnref name="DIM_CATEGORY_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_SPL" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_SPL_ID" size="38" type="NUMBER"/>
+	<column name="STANDARD_PRODUCT_LIST" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_SPL_PK">
+		<columnref name="DIM_SPL_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_SALE_TYPE" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_SALE_TYPE_ID" size="38" type="NUMBER"/>
+	<column name="SALE_TYPE_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_SALE_TYPE_PK">
+		<columnref name="DIM_SALE_TYPE_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_MANUFACTURER" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_MANUFACTURER_ID" size="38" type="NUMBER"/>
+	<column name="BUS_ENTITY_ID" size="38" type="NUMBER"/>
+	<column name="SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="BUS_ENTITY_STATUS_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_MANUFACTURER_PK">
+		<columnref name="DIM_MANUFACTURER_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_DISTRIBUTOR" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_DISTRIBUTOR_ID" size="38" type="NUMBER"/>
+	<column name="BUS_ENTITY_ID" size="38" type="NUMBER"/>
+	<column name="SHORT_DESC" size="255" type="VARCHAR2"/>
+	<column name="BUS_ENTITY_STATUS_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_DISTRIBUTOR_PK">
+		<columnref name="DIM_DISTRIBUTOR_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_CURRENCY" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_CURRENCY_ID" size="38" type="NUMBER"/>
+	<column name="CURRENCY_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_CURRENCY_PK">
+		<columnref name="DIM_CURRENCY_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_ORDER_TYPE" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_ORDER_TYPE_ID" size="38" type="NUMBER"/>
+	<column name="ORDER_TYPE" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_ORDER_TYPE_PK">
+		<columnref name="DIM_ORDER_TYPE_ID"/>
+	</primaryKey>
+</table>
+<table name="DW_DIM_ORDER_STATUS" serialVersionDataUID="1L" serialVersionVectorUID="-1L">
+	<column isPrimaryKey="true" name="DIM_ORDER_STATUS_ID" size="38" type="NUMBER"/>
+	<column name="ORDER_STATUS_CD" size="30" type="VARCHAR2"/>
+	<primaryKey name="DIM_ORDER_STATUS_PK">
+		<columnref name="DIM_ORDER_STATUS_ID"/>
+	</primaryKey>
+</table>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_STORE_FK" pkName="DIM_STORE_PK" pkTable="DW_DIM_STORE">
+	<fkeyref fkColumnName="DIM_STORE_ID" pkColumnName="DIM_STORE_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_ACCOUNT_FK" pkName="DIM_ACCOUNT_PK" pkTable="DW_DIM_ACCOUNT">
+	<fkeyref fkColumnName="DIM_ACCOUNT_ID" pkColumnName="DIM_ACCOUNT_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_SITE_FK" pkName="DIM_SITE_PK" pkTable="DW_DIM_SITE">
+	<fkeyref fkColumnName="DIM_SITE_ID" pkColumnName="DIM_SITE_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_ORDER_DATE_FK" pkName="DIM_DATE_PK" pkTable="DW_DIM_DATE">
+	<fkeyref fkColumnName="ORDER_DATE_ID" pkColumnName="DIM_DATE_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_REVISED_ORDER_DATE_FK" pkName="DIM_DATE_PK" pkTable="DW_DIM_DATE">
+	<fkeyref fkColumnName="REVISED_ORDER_DATE_ID" pkColumnName="DIM_DATE_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_ITEM_FK" pkName="DIM_ITEM_PK" pkTable="DW_DIM_ITEM">
+	<fkeyref fkColumnName="DIM_ITEM_ID" pkColumnName="DIM_ITEM_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_ITEM_MAPPING_FK" pkName="DIM_ITEM_MAPPING_PK" pkTable="DW_DIM_ITEM_MAPPING">
+	<fkeyref fkColumnName="DIM_ITEM_MAPPING_ID" pkColumnName="DIM_ITEM_MAPPING_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_CATEGORY_FK" pkName="DIM_CATEGORY_PK" pkTable="DW_DIM_CATEGORY">
+	<fkeyref fkColumnName="DIM_CATEGORY_ID" pkColumnName="DIM_CATEGORY_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_SPL_FK" pkName="DIM_SPL_PK" pkTable="DW_DIM_SPL">
+	<fkeyref fkColumnName="DIM_SPL_ID" pkColumnName="DIM_SPL_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_SALE_TYPE_FK" pkName="DIM_SALE_TYPE_PK" pkTable="DW_DIM_SALE_TYPE">
+	<fkeyref fkColumnName="DIM_SALE_TYPE_ID" pkColumnName="DIM_SALE_TYPE_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_MANUFACTURER_FK" pkName="DIM_MANUFACTURER_PK" pkTable="DW_DIM_MANUFACTURER">
+	<fkeyref fkColumnName="DIM_MANUFACTURER_ID" pkColumnName="DIM_MANUFACTURER_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_DISTRIBUTOR_FK" pkName="DIM_DISTRIBUTOR_PK" pkTable="DW_DIM_DISTRIBUTOR">
+	<fkeyref fkColumnName="DIM_DISTRIBUTOR_ID" pkColumnName="DIM_DISTRIBUTOR_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_CURRENCY_FK" pkName="DIM_CURRENCY_PK" pkTable="DW_DIM_CURRENCY">
+	<fkeyref fkColumnName="DIM_CURRENCY_ID" pkColumnName="DIM_CURRENCY_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_ORDER_TYPE_FK" pkName="DIM_ORDER_TYPE_PK" pkTable="DW_DIM_ORDER_TYPE">
+	<fkeyref fkColumnName="DIM_ORDER_TYPE_ID" pkColumnName="DIM_ORDER_TYPE_ID"/>
+</fkey>
+<fkey fkTable="DW_FACT_ORDER" name="DIM_ORDER_STATUS_FK" pkName="DIM_ORDER_STATUS_PK" pkTable="DW_DIM_ORDER_STATUS">
+	<fkeyref fkColumnName="DIM_ORDER_STATUS_ID" pkColumnName="DIM_ORDER_STATUS_ID"/>
+</fkey>
+<sequence name="DW_FACT_ORDER_SEQ"/>
+<sequence name="DW_DIM_STORE_SEQ"/>
+<sequence name="DW_DIM_ACCOUNT_SEQ"/>
+<sequence name="DW_DIM_SITE_SEQ"/>
+<sequence name="DW_DIM_DATE_SEQ"/>
+<sequence name="DW_DIM_ITEM_SEQ"/>
+<sequence name="DW_DIM_ITEM_MAPPING_SEQ"/>
+<sequence name="DW_DIM_CATEGORY_SEQ"/>
+<sequence name="DW_DIM_SPL_SEQ"/>
+<sequence name="DW_DIM_SALE_TYPE_SEQ"/>
+<sequence name="DW_DIM_MANUFACTURER_SEQ"/>
+<sequence name="DW_DIM_DISTRIBUTOR_SEQ"/>
+<sequence name="DW_DIM_CURRENCY_SEQ"/>
+<sequence name="DW_DIM_ORDER_TYPE_SEQ"/>
+<sequence name="DW_DIM_ORDER_STATUS_SEQ"/>
+</database>

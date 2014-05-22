@@ -1,0 +1,16 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+        <report>
+                <category>Operational</category>
+                <name>Open Lines Extended</name>
+                <emailrecipient>openpolines@Cleanwise.com</emailrecipient>
+                <email-message>Open PO Lines Report</email-message>
+                <param name="AMOUNT">0</param>
+                                <param name="Extended Version">false</param>
+                                <param name="Show Pricing">false</param>
+        </report>
+</xml>

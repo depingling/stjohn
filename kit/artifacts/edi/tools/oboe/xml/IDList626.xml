@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Schedule Increase, Forecast Change or Special Car Order</idValue>
+    <idCode>B</idCode>
+        <idValue>Engineering Change or Late Release</idValue>
+    <idCode>C</idCode>
+        <idValue>Specification (Schedule) Error/Overbuilding</idValue>
+    <idCode>D</idCode>
+        <idValue>Shipment Tracing Delay</idValue>
+    <idCode>E</idCode>
+        <idValue>Plant Inventory Loss</idValue>
+    <idCode>F</idCode>
+        <idValue>Building Ahead of Schedule</idValue>
+    <idCode>G</idCode>
+        <idValue>Vendor Behind Schedule</idValue>
+    <idCode>H</idCode>
+        <idValue>Failed to Include In Last Shipment or Unauthorized Premium</idValue>
+    <idCode>I</idCode>
+        <idValue>Carrier Loss Claim</idValue>
+    <idCode>J</idCode>
+        <idValue>Transportation Failure</idValue>
+    <idCode>K</idCode>
+        <idValue>Insufficient Weight For Carload</idValue>
+    <idCode>L</idCode>
+        <idValue>Reject or Discrepancy</idValue>
+    <idCode>M</idCode>
+        <idValue>Transportation Delay</idValue>
+    <idCode>N</idCode>
+        <idValue>Lack of Railcar or Railroad Equipment</idValue>
+    <idCode>P</idCode>
+        <idValue>Releasing Error</idValue>
+    <idCode>R</idCode>
+        <idValue>Record Error or Late Reported Discrepancy Report</idValue>
+    <idCode>T</idCode>
+        <idValue>Common or Peculiar Part Schedule Increase</idValue>
+    <idCode>U</idCode>
+        <idValue>Alternate Supplier Shipping for Responsible Supplier</idValue>
+    <idCode>V</idCode>
+        <idValue>Direct Schedule or Locally Controlled</idValue>
+    <idCode>W</idCode>
+        <idValue>Purchasing Waiver Approval</idValue>
+    <idCode>X</idCode>
+        <idValue>Authorization Code to be Determined</idValue>
+    <idCode>Y</idCode>
+        <idValue>Pilot Material, Samples or Pre-Production</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

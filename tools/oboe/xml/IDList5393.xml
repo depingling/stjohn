@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Price adjustment coefficient</idValue>
+    <idCode>B</idCode>
+        <idValue>Escalation coefficient</idValue>
+    <idCode>C</idCode>
+        <idValue>Timesing factor</idValue>
+    <idCode>CSD</idCode>
+        <idValue>Cost markup multiplier - original cost</idValue>
+    <idCode>CSR</idCode>
+        <idValue>Cost markup multiplier - retail cost</idValue>
+    <idCode>DIS</idCode>
+        <idValue>Discount multiplier</idValue>
+    <idCode>SEL</idCode>
+        <idValue>Selling multiplier</idValue>
+</idList>

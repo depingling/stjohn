@@ -1,0 +1,130 @@
+<html>
+<body>
+<h1>Cleanwise Cryptographic Package</h1>
+<p>
+The <code>com.cleanwise.Crypto</code> package is a group of classes
+which implement the <b>Cleanwise Secure File Xfer Package</b>. Under
+this scheme, files which must be secured are encrypted and bundled
+into JAR files along with information that a receiver can use to decrypt
+and verify the package on receipt. The files are encrypted using some
+form of symmetric cryptography using a one-time session key. Asymmetric
+cryptography is used to encrypt the session key with the intended
+recipient's public key and the resultant encrypted key is signed with
+the sender's private key. On receipt, the receiver can use the
+sender's public key to verify the source of the message, and can use their
+own private key to decrypt the session key and thence decrypt the whole
+package.
+</p>
+<h2>Key Generation</h2>
+<p>
+The Cleanwise Secure File Xfer Package (CSFXP) utilizes public key 
+cryptography. Sender and receiver must generate public/private key
+pairs and exchange public keys. Security of the transfer depends
+on keeping the private keys protected.
+</p>
+<p>
+The Java SDK bundles tools for key management, the main one of interest
+being <code>keytool</code>. Keytool is described in the Sun
+documentation: <code>C:\jdk1.2.2\docs\tooldocs\win32\keytool.html</code>
+</p>
+<p>
+To generate public/private key pair using RSA with MD5withRSA for signing
+do this:
+<H4>Download and install the ABA implementation of the JCE plus a security provider</H4>
+<ol>
+<li>Download the ABA implementation of the JCE from 
+<a href="http://www.openjce.org">http://www.openjce.org</a> and install
+in <code>{JREHOME}/lib/ext</code> directory. This is the directory
+for extension packages and by placing the jce.zip file here, it will
+not need to be added to the class path, the JVM will find it
+automatically</li>
+<li>You may need to add it to two JRE directories. I have found that
+<code>keytool</code> is run out of the jdk installation directory but
+regular programs use a different JRE directory. If you run into problems,
+e.g. "Algorithm not available", check which directory your keytool program
+is located in.</li>
+<li>The ABA package adds RSA and Twofish in addition to several other
+strong encryption schemes that are not available with the SUN JCE
+Provider. Although, the SUN JCE may be sufficient for most uses.</li>
+<li>Add this line to <code>{JREHOME}/lib/security/java.security</code>
+<pre>
+security.provider.2=au.net.aba.crypto.provider.ABAProvider
+</pre>
+Without this, the JCE will not utilize the ABA JCE Provider. There are
+other providers (some free some not free), theoretically any should work.</li>
+<LI><I>Alternate</I> Or, use the <CODE>cwSecurityProvider</CODE> class to dynamically
+load the ABA provider. The advantage to this is that it avoids having to install anything
+into the JRE, all you need is the have the jce.zip file in the class path - and to have
+a security policy that allows the package to be loaded dynamically. 
+<PRE>
+import java.security.*;
+import java.util.*;
+import com.cleanwise.Crypto.cwSecurityProvider;
+import com.cleanwise.Crypto.cwCryptoException;
+import org.apache.log4j.Logger;
+
+private static final Logger log = Logger.getLogger(this.class);
+
+cwSecurityProvider manager = new cwSecurityProvider();
+Properties providerMap     = new Properties();
+providerMap.setProperty("ABA", "au.net.aba.crypto.provider.ABAProvider");
+manager.setSecurityClassMap(providerMap);
+manager.loadProvider("ABA");
+log.info("ABA Provider is loaded");
+</PRE>
+<I>Do this in the top level class or the main class, the underlying crypto classes should
+not know which providers are being used or where they are to get an implementation of
+the algorithms they have been told to use.</I>
+</LI>
+</OL>
+<H4>Generating the keys</H4>
+<OL>
+<li>Generate the public/private key pair for Cleanwise:
+<pre>
+keytool -genkey -keystore cleanwiseks -keyalg RSA -sigalg MD5withRSA -alias cleanwise
+</pre>
+This will create the keystore file <code>cleanwiseks</code> if it doesn't
+already exist. If you get an error "keypair generator not available" this
+indicates that the ABA package is either not installed or it is not
+listed in your <code>java.security</code> file.</li>
+<li>Normally, you would request a CA to sign your key, but self-signed
+certificates should be sufficient for this application since all
+members are known to each other.</li>
+<li>The Estore vendor, e.g. Kenway does the same operation.
+<pre>
+keytool -genkey -keystore kenwayks -keyalg RSA -sigalg MD5withRSA -alias kenway
+</pre>
+<li>Export Cleanwise public key (so it can be imported into your intended
+recipient's keystore.
+<pre>
+keytool -keystore cleanwiseks -export -alias cleanwise -file cleanwisePublicKey.cer
+</pre>
+</li>
+<li>Export the Kenway public key
+<pre>
+keytool -keystore kenwayks -export -alias kenway -file kenwayPublicKey.cer
+</pre>
+</li>
+<li>Import the Kenway public key as a trusted certificate into the
+cleanwise database (and refer to it by the alias "kenway") :
+<pre>
+keytool -keystore cleanwise -import -alias kenway -file kenwayPublicKey.cer
+</pre>
+</li>
+<li>Import the Cleanwise public key into the Kenway database (and
+refer to it by the alias "cleanwise"):
+<pre>
+keytool -keystore kenway -import -alias cleanwise -file cleanwisePublicKey.cer
+</pre>
+</li>
+</ol>
+<H3>Problems.</H3>
+<P>
+<I>If the security class is not available or in the path, have encountered java Null pointer
+exceptions executing cwSigner constructor - a constructor which is apparently empty and
+doesn't do anything - but something must be happening because this crash occurred after I
+had removed the JCE package from the <CODE>jre/lib/ext</CODE> directory and from java.security.
+The code compiled OK because the appropriate zip files where in the compile class path.</I>
+</P>
+</body>
+</html>

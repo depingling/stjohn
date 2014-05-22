@@ -1,0 +1,18 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT OrderExceptionList (OrderException)+>
+<!ELEMENT OrderException (OrderId,OrderItemId,OrderExceptionCd,ExceptionDate,ExceptionTime,ExceptionDesc,AddDate,AddBy,ModDate,ModBy)>
+<!ATTLIST OrderException Id ID #REQUIRED>
+<!ELEMENT OrderId (#PCDATA)>
+<!ELEMENT OrderItemId (#PCDATA)>
+<!ELEMENT OrderExceptionCd (#PCDATA)>
+<!ELEMENT ExceptionDate (#PCDATA)>
+<!ELEMENT ExceptionTime (#PCDATA)>
+<!ELEMENT ExceptionDesc (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>

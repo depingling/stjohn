@@ -1,0 +1,1 @@
+This is the lib directory in total from the struts distribution.  Only the *.dtd, *.tld, and struts.jar file are used from here.

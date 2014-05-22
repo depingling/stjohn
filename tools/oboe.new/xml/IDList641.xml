@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>001</idCode>
+        <idValue>Death of Principal Mortgagor</idValue>
+    <idCode>002</idCode>
+        <idValue>Illness of Principal Mortgagor</idValue>
+    <idCode>003</idCode>
+        <idValue>Illness of Mortgagor&apos;s Family Member</idValue>
+    <idCode>004</idCode>
+        <idValue>Death of Mortgagor&apos;s Family Member</idValue>
+    <idCode>005</idCode>
+        <idValue>Marital Difficulties</idValue>
+    <idCode>006</idCode>
+        <idValue>Curtailment of Income</idValue>
+    <idCode>007</idCode>
+        <idValue>Excessive Obligations - Same Income, Including Habitual Nonpayment of Debts</idValue>
+    <idCode>008</idCode>
+        <idValue>Abandonment of Property</idValue>
+    <idCode>009</idCode>
+        <idValue>Distant Employment Transfer</idValue>
+    <idCode>010</idCode>
+        <idValue>Neighborhood Problem</idValue>
+    <idCode>011</idCode>
+        <idValue>Property Problem</idValue>
+    <idCode>012</idCode>
+        <idValue>Inability to Sell Property</idValue>
+    <idCode>013</idCode>
+        <idValue>Inability to Rent Property</idValue>
+    <idCode>014</idCode>
+        <idValue>Military Service</idValue>
+    <idCode>015</idCode>
+        <idValue>Default Detail</idValue>
+    <idCode>016</idCode>
+        <idValue>Unemployment</idValue>
+    <idCode>017</idCode>
+        <idValue>Business Failure</idValue>
+    <idCode>018</idCode>
+        <idValue>Bankruptcy</idValue>
+    <idCode>019</idCode>
+        <idValue>Casualty Loss</idValue>
+    <idCode>020</idCode>
+        <idValue>Moved - Vacated</idValue>
+    <idCode>021</idCode>
+        <idValue>Dissatisfied with Property</idValue>
+    <idCode>022</idCode>
+        <idValue>Energy-Environment Cost</idValue>
+    <idCode>023</idCode>
+        <idValue>Servicing Problems</idValue>
+    <idCode>024</idCode>
+        <idValue>Auto Repairs</idValue>
+    <idCode>025</idCode>
+        <idValue>Extended Reasons</idValue>
+    <idCode>026</idCode>
+        <idValue>Payment Adjustment</idValue>
+    <idCode>027</idCode>
+        <idValue>Payment Dispute</idValue>
+    <idCode>028</idCode>
+        <idValue>Due on Transfer</idValue>
+    <idCode>029</idCode>
+        <idValue>Transfer of Ownership Pending</idValue>
+    <idCode>030</idCode>
+        <idValue>Fraud</idValue>
+    <idCode>031</idCode>
+        <idValue>Unable to Contact Borrower</idValue>
+    <idCode>035</idCode>
+        <idValue>Borrower Action</idValue>
+    <idCode>036</idCode>
+        <idValue>Automatic Conversion</idValue>
+    <idCode>037</idCode>
+        <idValue>Lender Approval Required</idValue>
+    <idCode>038</idCode>
+        <idValue>Lender Approval Not Required</idValue>
+    <idCode>039</idCode>
+        <idValue>Owner-occupied Loan Outstanding</idValue>
+    <idCode>040</idCode>
+        <idValue>Loan Reached Maturity</idValue>
+    <idCode>041</idCode>
+        <idValue>Triggered by Interest Increase</idValue>
+    <idCode>042</idCode>
+        <idValue>Specified Time Period Completed</idValue>
+    <idCode>043</idCode>
+        <idValue>Transfer Without Written Notice</idValue>
+    <idCode>044</idCode>
+        <idValue>Triggered by Payment Increase</idValue>
+    <idCode>045</idCode>
+        <idValue>Facility Added</idValue>
+    <idCode>046</idCode>
+        <idValue>Facility Changed</idValue>
+    <idCode>047</idCode>
+        <idValue>Location Added</idValue>
+    <idCode>048</idCode>
+        <idValue>Location Changed</idValue>
+    <idCode>049</idCode>
+        <idValue>Merchandise Damaged or Destroyed</idValue>
+    <idCode>050</idCode>
+        <idValue>Internal Systems Problems</idValue>
+    <idCode>051</idCode>
+        <idValue>Vendor-Supplied Carrier Delay</idValue>
+    <idCode>052</idCode>
+        <idValue>Import Container Delay</idValue>
+    <idCode>053</idCode>
+        <idValue>Notice of Term Enrollment</idValue>
+    <idCode>054</idCode>
+        <idValue>Term Grade Report</idValue>
+    <idCode>055</idCode>
+        <idValue>Change of Venue Granted</idValue>
+    <idCode>056</idCode>
+        <idValue>Removed to Federal Court</idValue>
+    <idCode>057</idCode>
+        <idValue>Foreclosure Completed</idValue>
+    <idCode>058</idCode>
+        <idValue>Servicing Rights Transferred to Non-member</idValue>
+    <idCode>059</idCode>
+        <idValue>Investor is Pulling Servicing as a Result of Default</idValue>
+    <idCode>060</idCode>
+        <idValue>Servicer Pulling Servicing from Sub-Servicer as a Result of Default</idValue>
+    <idCode>061</idCode>
+        <idValue>Consolidation, Extension, Modification (CEM)</idValue>
+    <idCode>062</idCode>
+        <idValue>Renewal and Extension</idValue>
+    <idCode>063</idCode>
+        <idValue>Reinstatement - Loan Not Reassigned to Mortgage Electronic Registration System (MERS)</idValue>
+    <idCode>064</idCode>
+        <idValue>Member Resignation or Expulsion</idValue>
+    <idCode>A01</idCode>
+        <idValue>Missed Delivery</idValue>
+    <idCode>A02</idCode>
+        <idValue>Release Signature or Release Number</idValue>
+    <idCode>A03</idCode>
+        <idValue>Incorrect Address</idValue>
+    <idCode>A04</idCode>
+        <idValue>Indirect Delivery</idValue>
+    <idCode>A05</idCode>
+        <idValue>Unable To Locate</idValue>
+    <idCode>A06</idCode>
+        <idValue>Address Corrected - Delivery Attempt</idValue>
+    <idCode>A07</idCode>
+        <idValue>Refused by Consignee</idValue>
+    <idCode>A08</idCode>
+        <idValue>Not In On Delivery Completed</idValue>
+    <idCode>A09</idCode>
+        <idValue>Damaged - Delivery Completed</idValue>
+    <idCode>A10</idCode>
+        <idValue>Damaged - Delivery Not Completed</idValue>
+    <idCode>A11</idCode>
+        <idValue>Business Closed</idValue>
+    <idCode>A12</idCode>
+        <idValue>Package Sorted To Wrong Route</idValue>
+    <idCode>A13</idCode>
+        <idValue>Other</idValue>
+    <idCode>A14</idCode>
+        <idValue>Returned to Shipper</idValue>
+    <idCode>A15</idCode>
+        <idValue>Business On Strike</idValue>
+    <idCode>A16</idCode>
+        <idValue>Payment Received</idValue>
+    <idCode>A17</idCode>
+        <idValue>Customer Requested Future Delivery</idValue>
+    <idCode>A18</idCode>
+        <idValue>Missort</idValue>
+    <idCode>A19</idCode>
+        <idValue>Restricted Articles Incompatible</idValue>
+    <idCode>A20</idCode>
+        <idValue>Restricted Articles Unacceptable</idValue>
+    <idCode>A21</idCode>
+        <idValue>Bulk Plane</idValue>
+    <idCode>A22</idCode>
+        <idValue>Package Missed Inbound Plane At Origin Station</idValue>
+    <idCode>A23</idCode>
+        <idValue>Customer Dropped Off Package After Aircraft Depart</idValue>
+    <idCode>A24</idCode>
+        <idValue>Accident</idValue>
+    <idCode>A25</idCode>
+        <idValue>Package Received At Destination Station Without Airbill</idValue>
+    <idCode>A26</idCode>
+        <idValue>Consignee Related</idValue>
+    <idCode>A27</idCode>
+        <idValue>Driver Related</idValue>
+    <idCode>A28</idCode>
+        <idValue>Package Missorted During Aircraft Unload</idValue>
+    <idCode>A29</idCode>
+        <idValue>Hold Changed To Delivery Package</idValue>
+    <idCode>A30</idCode>
+        <idValue>Mechanical Breakdown</idValue>
+    <idCode>A31</idCode>
+        <idValue>Arrived In Station After Courier Dispatch</idValue>
+    <idCode>A32</idCode>
+        <idValue>Aircraft Arrived Late In Hub</idValue>
+    <idCode>A33</idCode>
+        <idValue>Other Carrier-Related</idValue>
+    <idCode>A34</idCode>
+        <idValue>Package Shipped From Overgoods</idValue>
+    <idCode>A36</idCode>
+        <idValue>Holding In Overgoods</idValue>
+    <idCode>A37</idCode>
+        <idValue>Damaged Rewrapped In Hub</idValue>
+    <idCode>A38</idCode>
+        <idValue>Detached Airbill</idValue>
+    <idCode>A39</idCode>
+        <idValue>Previous Stop</idValue>
+    <idCode>A40</idCode>
+        <idValue>Shipper Related</idValue>
+    <idCode>A41</idCode>
+        <idValue>Standard Air Package</idValue>
+    <idCode>A42</idCode>
+        <idValue>Holiday - Closed</idValue>
+    <idCode>A43</idCode>
+        <idValue>Weather or Natural Disaster Related</idValue>
+    <idCode>A45</idCode>
+        <idValue>Delivery Not Completed</idValue>
+    <idCode>A46</idCode>
+        <idValue>Recipient Unavailable -- Delivery Delayed</idValue>
+    <idCode>A49</idCode>
+        <idValue>ODA/Cartage Agent</idValue>
+    <idCode>A50</idCode>
+        <idValue>Improper International Paperwork</idValue>
+    <idCode>A51</idCode>
+        <idValue>Carrier Keying Error</idValue>
+    <idCode>A52</idCode>
+        <idValue>No Requested Arrival Date</idValue>
+    <idCode>A53</idCode>
+        <idValue>Shipper Changed Scheduled Shipment Date</idValue>
+    <idCode>A55</idCode>
+        <idValue>Hold Due to Customs/Documentation</idValue>
+    <idCode>A58</idCode>
+        <idValue>Unable to Contact Recipient For Broker Information</idValue>
+    <idCode>A59</idCode>
+        <idValue>Hold At Location</idValue>
+    <idCode>A61</idCode>
+        <idValue>International Manifest</idValue>
+    <idCode>A63</idCode>
+        <idValue>Puerto Rican Tax Authorities Holding Package</idValue>
+    <idCode>A64</idCode>
+        <idValue>Non-FEC Broker Advised</idValue>
+    <idCode>A65</idCode>
+        <idValue>Customs Release</idValue>
+    <idCode>A73</idCode>
+        <idValue>Package Delivered Before Commitment</idValue>
+    <idCode>A74</idCode>
+        <idValue>Package Delivered After Commitment</idValue>
+    <idCode>A75</idCode>
+        <idValue>Invalid Account Format</idValue>
+    <idCode>A76</idCode>
+        <idValue>Account Not Found</idValue>
+    <idCode>A77</idCode>
+        <idValue>Name Specified Does Not Match Account</idValue>
+    <idCode>A78</idCode>
+        <idValue>Item or Service Already Established, Cannot Add</idValue>
+    <idCode>A79</idCode>
+        <idValue>Item or Service Not Established, Cannot Modify</idValue>
+    <idCode>A80</idCode>
+        <idValue>Item or Service Not Available</idValue>
+    <idCode>A81</idCode>
+        <idValue>Item or Service Not Available on Requested Date</idValue>
+    <idCode>A82</idCode>
+        <idValue>Address Specified Does Not Match Account</idValue>
+    <idCode>A83</idCode>
+        <idValue>Unauthorized or Invalid Action</idValue>
+    <idCode>A84</idCode>
+        <idValue>Civil Event Related Delay</idValue>
+    <idCode>A85</idCode>
+        <idValue>Customer-requested Early Delivery</idValue>
+    <idCode>A91</idCode>
+        <idValue>Exceeds Service Limitations</idValue>
+    <idCode>A95</idCode>
+        <idValue>Past Cutoff Time</idValue>
+    <idCode>A96</idCode>
+        <idValue>Insufficient Pickup Time</idValue>
+    <idCode>A98</idCode>
+        <idValue>Missed Pickup</idValue>
+    <idCode>A99</idCode>
+        <idValue>Alternate Carrier Delivered</idValue>
+    <idCode>ABN</idCode>
+        <idValue>Abnormal</idValue>
+    <idCode>ACC</idCode>
+        <idValue>Actual Contractor-Caused Delay</idValue>
+    <idCode>ACD</idCode>
+        <idValue>Anticipated Contractor-Caused Delay</idValue>
+    <idCode>AFR</idCode>
+        <idValue>Assignment Form Required</idValue>
+    <idCode>AGC</idCode>
+        <idValue>Actual Government-Caused Delay</idValue>
+    <idCode>AGD</idCode>
+        <idValue>Anticipated Government-Caused Delay</idValue>
+    <idCode>ANA</idCode>
+        <idValue>Agent Not Appointed</idValue>
+    <idCode>ANL</idCode>
+        <idValue>Agent Not Licensed</idValue>
+    <idCode>API</idCode>
+        <idValue>Application Incomplete</idValue>
+    <idCode>B01</idCode>
+        <idValue>Reconsigned</idValue>
+    <idCode>B02</idCode>
+        <idValue>Appointment or Pre-Arranged Delivery Date</idValue>
+    <idCode>B03</idCode>
+        <idValue>Trap for Customer</idValue>
+    <idCode>B04</idCode>
+        <idValue>Held for Payment</idValue>
+    <idCode>B05</idCode>
+        <idValue>Held for Consignee</idValue>
+    <idCode>B06</idCode>
+        <idValue>Consignee Closed (Inventory, Vacation, Etc.)</idValue>
+    <idCode>B07</idCode>
+        <idValue>Dock Pick-Up</idValue>
+    <idCode>B08</idCode>
+        <idValue>Improper Unloading Facility or Equipment</idValue>
+    <idCode>B09</idCode>
+        <idValue>Receiving Time Restricted</idValue>
+    <idCode>B10</idCode>
+        <idValue>Order Notify</idValue>
+    <idCode>B11</idCode>
+        <idValue>Held for Protective Service</idValue>
+    <idCode>B12</idCode>
+        <idValue>Connecting Line or Cartage Pick-Up</idValue>
+    <idCode>B13</idCode>
+        <idValue>Held per Shipper</idValue>
+    <idCode>B14</idCode>
+        <idValue>Missing Documents</idValue>
+    <idCode>B15</idCode>
+        <idValue>Border Clearance</idValue>
+    <idCode>B16</idCode>
+        <idValue>Road Conditions</idValue>
+    <idCode>B17</idCode>
+        <idValue>Did not complete secondary school</idValue>
+    <idCode>B18</idCode>
+        <idValue>Standard high school diploma</idValue>
+    <idCode>B19</idCode>
+        <idValue>Advanced or honors diploma</idValue>
+    <idCode>B20</idCode>
+        <idValue>Vocational diploma</idValue>
+    <idCode>B21</idCode>
+        <idValue>Special education diploma</idValue>
+    <idCode>B22</idCode>
+        <idValue>Certificate of completion or attendance</idValue>
+    <idCode>B23</idCode>
+        <idValue>Special certificate of completion</idValue>
+    <idCode>B24</idCode>
+        <idValue>General Education Development Diploma (GED)</idValue>
+    <idCode>B25</idCode>
+        <idValue>Other high school equivalency diploma</idValue>
+    <idCode>B26</idCode>
+        <idValue>International diploma or certificate (such as International Baccalaureate)</idValue>
+    <idCode>B27</idCode>
+        <idValue>Student is eligible to continue or return or both</idValue>
+    <idCode>B28</idCode>
+        <idValue>Student is on suspension or dismissal</idValue>
+    <idCode>B29</idCode>
+        <idValue>Student is expelled (from PreK - grade 12)</idValue>
+    <idCode>B30</idCode>
+        <idValue>Currently enrolled but courses in progress not included</idValue>
+    <idCode>B31</idCode>
+        <idValue>Not currently enrolled</idValue>
+    <idCode>B32</idCode>
+        <idValue>Previous enrollment. Used for entry or exit or both at school other than the sending school</idValue>
+    <idCode>B33</idCode>
+        <idValue>Unreported - Information is not available in record</idValue>
+    <idCode>B34</idCode>
+        <idValue>Currently enrolled and courses in progress are included</idValue>
+    <idCode>B35</idCode>
+        <idValue>Highest Honors</idValue>
+    <idCode>B36</idCode>
+        <idValue>Second Highest Honors</idValue>
+    <idCode>B37</idCode>
+        <idValue>Third Highest Honors</idValue>
+    <idCode>B38</idCode>
+        <idValue>Dropped</idValue>
+    <idCode>B39</idCode>
+        <idValue>Academic Probation</idValue>
+    <idCode>B40</idCode>
+        <idValue>Suspended</idValue>
+    <idCode>B41</idCode>
+        <idValue>Requested record will not be sent; Cannot identify student</idValue>
+    <idCode>B42</idCode>
+        <idValue>Requested record will not be sent electronically; Paper copy will be sent</idValue>
+    <idCode>B43</idCode>
+        <idValue>Requested record will not be sent; Have student contact us</idValue>
+    <idCode>B44</idCode>
+        <idValue>Part of requested record being sent; Remainder to be sent by hard copy</idValue>
+    <idCode>B45</idCode>
+        <idValue>Requested record will not be sent; No record of student</idValue>
+    <idCode>B46</idCode>
+        <idValue>Requested record will not be sent; Degree or Diploma not yet awarded</idValue>
+    <idCode>B47</idCode>
+        <idValue>Requested record will not be sent; Institutional policy requires student release. Have student contact us</idValue>
+    <idCode>B48</idCode>
+        <idValue>Record being sent at request of student</idValue>
+    <idCode>B49</idCode>
+        <idValue>Record being sent to replace one previously sent</idValue>
+    <idCode>B50</idCode>
+        <idValue>Requested record being sent</idValue>
+    <idCode>B51</idCode>
+        <idValue>Student on Suspension or Dismissal; Eligible to Apply for Re-entry</idValue>
+    <idCode>B52</idCode>
+        <idValue>According to established regulations or statutes, the student is considered to be a &quot;dropout&quot;</idValue>
+    <idCode>B53</idCode>
+        <idValue>Student Qualifies for Special Services</idValue>
+    <idCode>B54</idCode>
+        <idValue>Passed Proficiency Test</idValue>
+    <idCode>B55</idCode>
+        <idValue>Passed Screening</idValue>
+    <idCode>B56</idCode>
+        <idValue>Better Features</idValue>
+    <idCode>B57</idCode>
+        <idValue>Rating Changed</idValue>
+    <idCode>BPR</idCode>
+        <idValue>Better Performance</idValue>
+    <idCode>BW2</idCode>
+        <idValue>Bottom Well Cannot Handle Two or More Units</idValue>
+    <idCode>BWL</idCode>
+        <idValue>Bottom Well Cannot Handle Unit Assigned because of Length</idValue>
+    <idCode>BWT</idCode>
+        <idValue>Bottom Well Cannot Handle Unit Assigned because of Type</idValue>
+    <idCode>BWW</idCode>
+        <idValue>Bottom Well Cannot Handle Unit Assigned because of Width</idValue>
+    <idCode>C01</idCode>
+        <idValue>Waiting for Customer Pick-up</idValue>
+    <idCode>C02</idCode>
+        <idValue>Credit Hold</idValue>
+    <idCode>C03</idCode>
+        <idValue>Suspended at Customer Request</idValue>
+    <idCode>C04</idCode>
+        <idValue>Customer Vacation</idValue>
+    <idCode>C05</idCode>
+        <idValue>Customer Strike</idValue>
+    <idCode>C06</idCode>
+        <idValue>Waiting Shipping Instructions</idValue>
+    <idCode>C07</idCode>
+        <idValue>Waiting for Customer Specified Carrier</idValue>
+    <idCode>C08</idCode>
+        <idValue>Collect on Delivery Required</idValue>
+    <idCode>C09</idCode>
+        <idValue>Cash Not Available from Consignee</idValue>
+    <idCode>C10</idCode>
+        <idValue>Customs (Import/Export)</idValue>
+    <idCode>C11</idCode>
+        <idValue>No Requested Arrival Date Provided To Carrier By Shipper</idValue>
+    <idCode>C12</idCode>
+        <idValue>No Requested Arrival Time Provided To Carrier By Shipper</idValue>
+    <idCode>C13</idCode>
+        <idValue>Loan Paid in Full</idValue>
+    <idCode>C14</idCode>
+        <idValue>Loan Refinanced, Insured by Insurer Receiving Report</idValue>
+    <idCode>C15</idCode>
+        <idValue>Loan Refinanced, Insured by Other Insurance Carrier</idValue>
+    <idCode>C16</idCode>
+        <idValue>Loan Refinanced, No Insurance Required</idValue>
+    <idCode>C17</idCode>
+        <idValue>Coverage No Longer Required</idValue>
+    <idCode>C18</idCode>
+        <idValue>No Outstanding Commitments</idValue>
+    <idCode>C19</idCode>
+        <idValue>Court Probation</idValue>
+    <idCode>C20</idCode>
+        <idValue>Complete</idValue>
+    <idCode>CBD</idCode>
+        <idValue>Changed Broker Dealer</idValue>
+    <idCode>CDE</idCode>
+        <idValue>Clearance to Destination Exceeded</idValue>
+    <idCode>CHA</idCode>
+        <idValue>Changed Agent</idValue>
+    <idCode>CIE</idCode>
+        <idValue>Conflict of Interest Exists</idValue>
+    <idCode>CIM</idCode>
+        <idValue>Check in Mail</idValue>
+    <idCode>CLA</idCode>
+        <idValue>Collateral Assignment</idValue>
+    <idCode>CLP</idCode>
+        <idValue>Contract or Lost Policy Statement Required</idValue>
+    <idCode>CLR</idCode>
+        <idValue>Clear - No motor vehicle violations</idValue>
+    <idCode>COS</idCode>
+        <idValue>Cosmetic</idValue>
+    <idCode>D01</idCode>
+        <idValue>Carrier Dispatch Error</idValue>
+    <idCode>D02</idCode>
+        <idValue>Driver Not Available</idValue>
+    <idCode>D03</idCode>
+        <idValue>Student has attended a nonpublic school or home education program in- or out-of-state this year, but is entering a public school in this state for the first time this school year</idValue>
+    <idCode>D04</idCode>
+        <idValue>Student was received from another attendance reporting unit in the same school</idValue>
+    <idCode>D05</idCode>
+        <idValue>Student was received from a school in the same district</idValue>
+    <idCode>D06</idCode>
+        <idValue>Student was received from another public school outside the district either in- or out-of-state</idValue>
+    <idCode>D07</idCode>
+        <idValue>Student was received from a nonpublic school either in or out of the district or has returned after having been enrolled in a home education program; The student must have been enrolled previously in a public school this year</idValue>
+    <idCode>D08</idCode>
+        <idValue>Student unexpectedly reentered the same school after withdrawing or being discharged</idValue>
+    <idCode>D09</idCode>
+        <idValue>Student was expected to attend a school but did not enter as expected for unknown reasons</idValue>
+    <idCode>D10</idCode>
+        <idValue>Student was promoted, retained, or transferred to another attendance-reporting unit in the same school</idValue>
+    <idCode>D11</idCode>
+        <idValue>Student was promoted, retained, or transferred to another school in the same district</idValue>
+    <idCode>D12</idCode>
+        <idValue>Student withdrew to attend another public school in the same district</idValue>
+    <idCode>D13</idCode>
+        <idValue>Student withdrew to attend another public school in- or out-of-state</idValue>
+    <idCode>D14</idCode>
+        <idValue>Student Over Compulsory Attendance Age Left School Voluntarily with No Intention of Returning</idValue>
+    <idCode>D15</idCode>
+        <idValue>Student Graduated from School with a Standard Diploma</idValue>
+    <idCode>D16</idCode>
+        <idValue>Student Graduated from School with a Special Diploma</idValue>
+    <idCode>D17</idCode>
+        <idValue>Student Left School with a Certificate of Completion</idValue>
+    <idCode>D18</idCode>
+        <idValue>Student Left School with a Special Certificate of Completion</idValue>
+    <idCode>D19</idCode>
+        <idValue>Student Left School with a State General Education Development (GED) High School Diploma</idValue>
+    <idCode>D20</idCode>
+        <idValue>Student Withdrew to Attend a Non-Public School or Home Education Program In- or Out-of-State.</idValue>
+    <idCode>D21</idCode>
+        <idValue>Student withdrew from school due to hardship</idValue>
+    <idCode>D22</idCode>
+        <idValue>Student has not entered any school in this or any other state this school year</idValue>
+    <idCode>D23</idCode>
+        <idValue>Previously attended out-of-state public school but is entering a public school in this state for the first time this school year</idValue>
+    <idCode>D24</idCode>
+        <idValue>Returned to Regular Education Program</idValue>
+    <idCode>D25</idCode>
+        <idValue>Reclassified Fully English Proficient</idValue>
+    <idCode>D26</idCode>
+        <idValue>Retained in Current Grade</idValue>
+    <idCode>D27</idCode>
+        <idValue>Placed in Next Grade After Expected Grade</idValue>
+    <idCode>D28</idCode>
+        <idValue>Placed in Transitional Program (K-1)</idValue>
+    <idCode>D29</idCode>
+        <idValue>Status Pending Completion of Summer School (K-12)</idValue>
+    <idCode>D30</idCode>
+        <idValue>Declined Services</idValue>
+    <idCode>D31</idCode>
+        <idValue>Administratively Placed in a Higher Grade</idValue>
+    <idCode>D32</idCode>
+        <idValue>Academically Placed in a Higher Grade</idValue>
+    <idCode>D33</idCode>
+        <idValue>Promotion Status not Applicable</idValue>
+    <idCode>D34</idCode>
+        <idValue>Promoted</idValue>
+    <idCode>D50</idCode>
+        <idValue>Delayed</idValue>
+    <idCode>D51</idCode>
+        <idValue>Currently Applying</idValue>
+    <idCode>D52</idCode>
+        <idValue>Previously Applied</idValue>
+    <idCode>D53</idCode>
+        <idValue>Graduate from a College</idValue>
+    <idCode>D54</idCode>
+        <idValue>Transfer from a University Program</idValue>
+    <idCode>D55</idCode>
+        <idValue>Graduate from a University Program</idValue>
+    <idCode>D56</idCode>
+        <idValue>Exchange Student</idValue>
+    <idCode>D57</idCode>
+        <idValue>Returning Student Admitted to a New Program</idValue>
+    <idCode>D58</idCode>
+        <idValue>Returning Student Admitted to the Same Program</idValue>
+    <idCode>D59</idCode>
+        <idValue>Returning or Continuing Student Changing to Unclassified or General or Unspecified Studies</idValue>
+    <idCode>D60</idCode>
+        <idValue>Continuing Student Changing to a New Program</idValue>
+    <idCode>D61</idCode>
+        <idValue>Special Permission</idValue>
+    <idCode>D62</idCode>
+        <idValue>Graduate from a Technical Institute</idValue>
+    <idCode>D63</idCode>
+        <idValue>Transfer from a College</idValue>
+    <idCode>DEF</idCode>
+        <idValue>Deferred Maintenance</idValue>
+    <idCode>EB1</idCode>
+        <idValue>Deceased</idValue>
+    <idCode>EB2</idCode>
+        <idValue>Did not Attend this Semester</idValue>
+    <idCode>EB3</idCode>
+        <idValue>Withdrawn</idValue>
+    <idCode>EB4</idCode>
+        <idValue>Graduated</idValue>
+    <idCode>EB5</idCode>
+        <idValue>Never Attended</idValue>
+    <idCode>EB6</idCode>
+        <idValue>Full-Time Enrollment</idValue>
+    <idCode>EB7</idCode>
+        <idValue>Half-Time Enrollment</idValue>
+    <idCode>EB8</idCode>
+        <idValue>Less Than Half-Time Enrollment</idValue>
+    <idCode>EB9</idCode>
+        <idValue>Approved Leave of Absence</idValue>
+    <idCode>EBA</idCode>
+        <idValue>No Record Found</idValue>
+    <idCode>ENR</idCode>
+        <idValue>Export Release Not Required</idValue>
+    <idCode>ERR</idCode>
+        <idValue>Export Release Required</idValue>
+    <idCode>EXD</idCode>
+        <idValue>Excessive Dimension Cannot be Accepted</idValue>
+    <idCode>F73</idCode>
+        <idValue>Non-express Clearance Delay</idValue>
+    <idCode>F74</idCode>
+        <idValue>International Non-carrier Delay</idValue>
+    <idCode>FCS</idCode>
+        <idValue>Flatcar Shortage</idValue>
+    <idCode>FRB</idCode>
+        <idValue>Failed to Release Billing</idValue>
+    <idCode>FZD</idCode>
+        <idValue>Freeze Damage</idValue>
+    <idCode>HIT</idCode>
+        <idValue>Hit - At Least One Motor Vehicle Violation</idValue>
+    <idCode>HZM</idCode>
+        <idValue>Hazardous Material Placement</idValue>
+    <idCode>IBF</idCode>
+        <idValue>Irrevocable Beneficiary</idValue>
+    <idCode>INC</idCode>
+        <idValue>Incarceration</idValue>
+    <idCode>INF</idCode>
+        <idValue>Incomplete - Final</idValue>
+    <idCode>INP</idCode>
+        <idValue>Incomplete - In Progress</idValue>
+    <idCode>INS</idCode>
+        <idValue>Investment Selections</idValue>
+    <idCode>IOC</idCode>
+        <idValue>Investment Objectives Changed</idValue>
+    <idCode>IRS</idCode>
+        <idValue>Internal Revenue Service Lien</idValue>
+    <idCode>IV1</idCode>
+        <idValue>Failed Material Returned for Repair</idValue>
+    <idCode>IV2</idCode>
+        <idValue>Material Shipped Between Intermediate Points</idValue>
+    <idCode>JOW</idCode>
+        <idValue>Joint Ownership</idValue>
+    <idCode>JVP</idCode>
+        <idValue>Juvenile Policy</idValue>
+    <idCode>LIQ</idCode>
+        <idValue>Liquidated</idValue>
+    <idCode>LSH</idCode>
+        <idValue>Load Shifted</idValue>
+    <idCode>MAS</idCode>
+        <idValue>Multiple Assignments</idValue>
+    <idCode>MIN</idCode>
+        <idValue>Mental Incompetency</idValue>
+    <idCode>MP2</idCode>
+        <idValue>Middle Position Cannot Handle Two or More Units</idValue>
+    <idCode>MPL</idCode>
+        <idValue>Middle Position Cannot Handle Unit Assigned because of Length</idValue>
+    <idCode>MPT</idCode>
+        <idValue>Middle Position Cannot Handle Unit Assigned because of Type</idValue>
+    <idCode>MPW</idCode>
+        <idValue>Middle Position Cannot Handle Unit Assigned because of Width</idValue>
+    <idCode>MTC</idCode>
+        <idValue>Multiple Conditions</idValue>
+    <idCode>NGP</idCode>
+        <idValue>New Generation Product</idValue>
+    <idCode>NNM</idCode>
+        <idValue>No New Money (IRA &gt; 70 1/2)</idValue>
+    <idCode>NOR</idCode>
+        <idValue>Normal</idValue>
+    <idCode>NWD</idCode>
+        <idValue>No Withdrawals</idValue>
+    <idCode>P01</idCode>
+        <idValue>Processing Delay</idValue>
+    <idCode>P02</idCode>
+        <idValue>Waiting Inspection</idValue>
+    <idCode>P03</idCode>
+        <idValue>Production Falldown</idValue>
+    <idCode>P04</idCode>
+        <idValue>Held for Full Carrier Load</idValue>
+    <idCode>P05</idCode>
+        <idValue>Waiting Test Results</idValue>
+    <idCode>P06</idCode>
+        <idValue>Producer Strike</idValue>
+    <idCode>P07</idCode>
+        <idValue>Producer Vacation</idValue>
+    <idCode>PAA</idCode>
+        <idValue>Pending Agent Appointment</idValue>
+    <idCode>PAL</idCode>
+        <idValue>Pending Agent License</idValue>
+    <idCode>POA</idCode>
+        <idValue>Power of Attorney</idValue>
+    <idCode>REJ</idCode>
+        <idValue>Rejected - Insufficient or Incorrect Information</idValue>
+    <idCode>RFM</idCode>
+        <idValue>Railroad Failed to Meet Schedule</idValue>
+    <idCode>RFR</idCode>
+        <idValue>Replacement Form Required</idValue>
+    <idCode>RUN</idCode>
+        <idValue>Reason Unknown</idValue>
+    <idCode>S01</idCode>
+        <idValue>Delivery Shortage</idValue>
+    <idCode>SCH</idCode>
+        <idValue>Surrender Charges</idValue>
+    <idCode>SFR</idCode>
+        <idValue>Surrender Form Required</idValue>
+    <idCode>SGR</idCode>
+        <idValue>Signature Required</idValue>
+    <idCode>SOW</idCode>
+        <idValue>Shipment Overweight</idValue>
+    <idCode>STM</idCode>
+        <idValue>Storm</idValue>
+    <idCode>T01</idCode>
+        <idValue>Tractor With Sleeper Car Not Available</idValue>
+    <idCode>T02</idCode>
+        <idValue>Tractor, Conventional, Not Available</idValue>
+    <idCode>T03</idCode>
+        <idValue>Trailer Not Available</idValue>
+    <idCode>T04</idCode>
+        <idValue>Trailer Not Usable Due to Prior Product</idValue>
+    <idCode>T05</idCode>
+        <idValue>Trailer Class Not Available</idValue>
+    <idCode>T06</idCode>
+        <idValue>Trailer Volume Not Available</idValue>
+    <idCode>T07</idCode>
+        <idValue>Insufficient Delivery Time</idValue>
+    <idCode>TDR</idCode>
+        <idValue>Train Derailment</idValue>
+    <idCode>THT</idCode>
+        <idValue>Theft</idValue>
+    <idCode>TIL</idCode>
+        <idValue>Temporary Income Loss</idValue>
+    <idCode>TP2</idCode>
+        <idValue>Top Position Cannot Handle Two or More Units</idValue>
+    <idCode>TPL</idCode>
+        <idValue>Top Position Cannot Handle Unit Assigned because of Length</idValue>
+    <idCode>TPT</idCode>
+        <idValue>Top Position Cannot Handle Unit Assigned because of Type</idValue>
+    <idCode>TPW</idCode>
+        <idValue>Top Position Cannot Handle Unit Assigned because of Width</idValue>
+    <idCode>UCD</idCode>
+        <idValue>Unknown Cause of Delay</idValue>
+    <idCode>UND</idCode>
+        <idValue>Undetermined</idValue>
+    <idCode>VAN</idCode>
+        <idValue>Vandalism</idValue>
+    <idCode>W01</idCode>
+        <idValue>Out of Stock</idValue>
+    <idCode>W02</idCode>
+        <idValue>Equipment Cut</idValue>
+    <idCode>W03</idCode>
+        <idValue>Booking Location Request</idValue>
+    <idCode>W04</idCode>
+        <idValue>On Hold</idValue>
+    <idCode>W05</idCode>
+        <idValue>Order Discrepancy</idValue>
+    <idCode>W06</idCode>
+        <idValue>Receiving Location Request</idValue>
+    <idCode>W07</idCode>
+        <idValue>Inventory Discrepancy</idValue>
+    <idCode>W08</idCode>
+        <idValue>Material Shortage</idValue>
+    <idCode>W09</idCode>
+        <idValue>Substitution</idValue>
+    <idCode>W10</idCode>
+        <idValue>Diverted Item</idValue>
+    <idCode>W11</idCode>
+        <idValue>Loading Error</idValue>
+    <idCode>W12</idCode>
+        <idValue>Inbound Carrier Failure</idValue>
+    <idCode>W13</idCode>
+        <idValue>Product Allocation Exceeded</idValue>
+    <idCode>W14</idCode>
+        <idValue>Improperly Sized Order</idValue>
+    <idCode>W15</idCode>
+        <idValue>Wrong Equipment</idValue>
+    <idCode>W16</idCode>
+        <idValue>Insufficient Equipment Space</idValue>
+    <idCode>WAD</idCode>
+        <idValue>Waiting Application Delivery</idValue>
+    <idCode>WLC</idCode>
+        <idValue>Weight Limit of Car Exceeded</idValue>
+    <idCode>WLT</idCode>
+        <idValue>Weight Limit of Truck Exceeded</idValue>
+    <idCode>WLW</idCode>
+        <idValue>Weight Limit of Well Exceeded</idValue>
+    <idCode>WTP</idCode>
+        <idValue>Waiting for Proof</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

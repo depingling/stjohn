@@ -1,0 +1,4 @@
+#PdfOrderGuide=com.cleanwise.view.utils.pdf.PdfOrderGuide
+PdfOrderGuide=com.cleanwise.view.utils.pdf.PdfOrderGuideThumbnail
+#PdfOrderGuide=com.cleanwise.view.utils.pdf.PdfOrderGuideInventorySeparated
+

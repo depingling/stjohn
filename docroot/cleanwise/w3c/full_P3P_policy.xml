@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<POLICIES xmlns="http://www.w3.org/2002/01/P3Pv1">
+    <!-- Expiry information for this policy -->
+    <EXPIRY max-age="604800"/>
+
+<POLICY
+    name="Cleanwise"
+    discuri="http://www.cleanwise.com/privacy.html"
+    opturi="http://www.cleanwise.com/opt.html"
+    xml:lang="en">
+    <!-- Description of the entity making this policy statement. -->
+    <ENTITY>
+    <DATA-GROUP>
+<DATA ref="#business.contact-info.telecom.telephone.number">1-877-790-2497</DATA>
+<DATA ref="#business.contact-info.online.email">contactus@cleanwise.com</DATA>
+<DATA ref="#business.contact-info.online.uri">http://www.cleanwise.com</DATA>
+<DATA ref="#business.contact-info.postal.organization">Cleanwise, Inc</DATA>
+<DATA ref="#business.contact-info.postal.street">33 Boston Post Road West
+Suite 400</DATA>
+<DATA ref="#business.contact-info.postal.city">Marlborough</DATA>
+<DATA ref="#business.contact-info.postal.stateprov">MA</DATA>
+<DATA ref="#business.contact-info.postal.postalcode">01752</DATA>
+<DATA ref="#business.contact-info.postal.country">USA</DATA>
+<DATA ref="#business.name">Cleanwise, Inc</DATA>
+    </DATA-GROUP>
+    </ENTITY>
+
+    <!-- Disclosure -->
+    <ACCESS><contact-and-other/></ACCESS>
+
+
+    <!-- Disputes -->
+    <DISPUTES-GROUP>
+        <DISPUTES resolution-type="service" service="http://www.cleanwise.com/contact.html" short-description="Dispute">
+            <LONG-DESCRIPTION>Call our Customer Care Dept at 1-800-236-7097</LONG-DESCRIPTION>
+            <REMEDIES><correct/></REMEDIES>
+        </DISPUTES>
+    </DISPUTES-GROUP>
+
+    <!-- Statement for group "Access log information" -->
+    <STATEMENT>
+        <EXTENSION optional="yes">
+            <GROUP-INFO xmlns="http://www.software.ibm.com/P3P/editor/extension-1.0.html" name="Access log information"/>
+        </EXTENSION>
+
+    <!-- Consequence -->
+    <CONSEQUENCE>
+Our Web server collects access logs
+containing this information.</CONSEQUENCE>
+
+    <!-- Use (purpose) -->
+    <PURPOSE><admin/><current/><develop/></PURPOSE>
+
+    <!-- Recipients -->
+    <RECIPIENT><ours/></RECIPIENT>
+
+    <!-- Retention -->
+    <RETENTION><indefinitely/></RETENTION>
+
+    <!-- Base dataschema elements. -->
+    <DATA-GROUP>
+    <DATA ref="#dynamic.clickstream"/>
+    <DATA ref="#dynamic.http"/>
+    </DATA-GROUP>
+</STATEMENT>
+
+    <!-- Statement for group "Cookies" -->
+    <STATEMENT>
+        <EXTENSION optional="yes">
+            <GROUP-INFO xmlns="http://www.software.ibm.com/P3P/editor/extension-1.0.html" name="Cookies"/>
+        </EXTENSION>
+
+    <!-- Consequence -->
+    <CONSEQUENCE>
+Cookies are used to track visitors to
+our site, so we can better understand
+what portions of our site best serve
+you. We also use cookies to allow 
+our server to maintain information 
+about the contents of your shopping
+cart.</CONSEQUENCE>
+
+    <!-- Use (purpose) -->
+    <PURPOSE><develop/><tailoring/></PURPOSE>
+
+    <!-- Recipients -->
+    <RECIPIENT><ours/></RECIPIENT>
+
+    <!-- Retention -->
+    <RETENTION><business-practices/></RETENTION>
+
+    <!-- Base dataschema elements. -->
+    <DATA-GROUP>
+    <DATA ref="#dynamic.cookies"><CATEGORIES><state/><uniqueid/></CATEGORIES></DATA>
+    </DATA-GROUP>
+</STATEMENT>
+
+    <!-- Statement for group "Transaction info (required)" -->
+    <STATEMENT>
+        <EXTENSION optional="yes">
+            <GROUP-INFO xmlns="http://www.software.ibm.com/P3P/editor/extension-1.0.html" name="Transaction info (required)"/>
+        </EXTENSION>
+
+    <!-- Consequence -->
+    <CONSEQUENCE>
+Information we collect in order to process your purchase.</CONSEQUENCE>
+
+    <!-- Use (purpose) -->
+    <PURPOSE><admin/><contact required="opt-out"/><current/><develop/><historical/><telemarketing required="opt-out"/></PURPOSE>
+
+    <!-- Recipients -->
+    <RECIPIENT><ours/><same required="opt-out"/><other-recipient required="opt-out"/><delivery/></RECIPIENT>
+
+    <!-- Retention -->
+    <RETENTION><business-practices/></RETENTION>
+
+    <!-- Base dataschema elements. -->
+    <DATA-GROUP>
+    <DATA ref="#dynamic.miscdata"><CATEGORIES><physical/></CATEGORIES></DATA>
+    <DATA ref="#dynamic.miscdata"><CATEGORIES><online/></CATEGORIES></DATA>
+    <DATA ref="#dynamic.miscdata"><CATEGORIES><purchase/></CATEGORIES></DATA>
+    <DATA ref="#dynamic.interactionrecord"/>
+    </DATA-GROUP>
+</STATEMENT>
+
+<!-- End of policy -->
+</POLICY>
+</POLICIES>

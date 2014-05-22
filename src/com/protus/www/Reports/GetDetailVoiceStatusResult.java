@@ -1,0 +1,174 @@
+/**
+ * GetDetailVoiceStatusResult.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Nov 19, 2006 (02:31:34 GMT+00:00) WSDL2Java emitter.
+ */
+
+package com.protus.www.Reports;
+
+public class GetDetailVoiceStatusResult  implements java.io.Serializable {
+    private com.protus.www.Reports.Header header;
+
+    private com.protus.www.Reports.VoiceDetail[] voiceDetail;
+
+    public GetDetailVoiceStatusResult() {
+    }
+
+    public GetDetailVoiceStatusResult(
+           com.protus.www.Reports.Header header,
+           com.protus.www.Reports.VoiceDetail[] voiceDetail) {
+           this.header = header;
+           this.voiceDetail = voiceDetail;
+    }
+
+
+    /**
+     * Gets the header value for this GetDetailVoiceStatusResult.
+     * 
+     * @return header
+     */
+    public com.protus.www.Reports.Header getHeader() {
+        return header;
+    }
+
+
+    /**
+     * Sets the header value for this GetDetailVoiceStatusResult.
+     * 
+     * @param header
+     */
+    public void setHeader(com.protus.www.Reports.Header header) {
+        this.header = header;
+    }
+
+
+    /**
+     * Gets the voiceDetail value for this GetDetailVoiceStatusResult.
+     * 
+     * @return voiceDetail
+     */
+    public com.protus.www.Reports.VoiceDetail[] getVoiceDetail() {
+        return voiceDetail;
+    }
+
+
+    /**
+     * Sets the voiceDetail value for this GetDetailVoiceStatusResult.
+     * 
+     * @param voiceDetail
+     */
+    public void setVoiceDetail(com.protus.www.Reports.VoiceDetail[] voiceDetail) {
+        this.voiceDetail = voiceDetail;
+    }
+
+    public com.protus.www.Reports.VoiceDetail getVoiceDetail(int i) {
+        return this.voiceDetail[i];
+    }
+
+    public void setVoiceDetail(int i, com.protus.www.Reports.VoiceDetail _value) {
+        this.voiceDetail[i] = _value;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GetDetailVoiceStatusResult)) return false;
+        GetDetailVoiceStatusResult other = (GetDetailVoiceStatusResult) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.header==null && other.getHeader()==null) || 
+             (this.header!=null &&
+              this.header.equals(other.getHeader()))) &&
+            ((this.voiceDetail==null && other.getVoiceDetail()==null) || 
+             (this.voiceDetail!=null &&
+              java.util.Arrays.equals(this.voiceDetail, other.getVoiceDetail())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getHeader() != null) {
+            _hashCode += getHeader().hashCode();
+        }
+        if (getVoiceDetail() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getVoiceDetail());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getVoiceDetail(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GetDetailVoiceStatusResult.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://www.protus.com/Reports", ">GetDetailVoiceStatusResult"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("header");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.protus.com/Reports", "Header"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.protus.com/Reports", "Header"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("voiceDetail");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.protus.com/Reports", "VoiceDetail"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.protus.com/Reports", "VoiceDetail"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+}

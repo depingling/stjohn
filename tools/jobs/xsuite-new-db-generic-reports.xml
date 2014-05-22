@@ -1,0 +1,33 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+
+<!--       <report>
+                <category>Operational</category>
+                <name>Config Report - LaCosta</name>
+                <emailrecipient>SelfServiceDM@Cleanwise.com</emailrecipient>
+                <email-message>
+BAD LaCosta Data.
+                </email-message>
+                <send-only-if-data>true</send-only-if-data>
+        </report>-->
+
+       <report>
+                <category>Distribution</category>
+                <name>Distributor PO Listing - Original</name>
+                <emailrecipient>EB-JCP-orders@cleanwise.com</emailrecipient>
+                <email-message>JCP orders</email-message>
+                <send-only-if-data>true</send-only-if-data>
+                <param name="BEG_DATE">@LAST_WEEKDAY@</param>
+                <param name="END_DATE">@LAST_WEEKDAY@</param>
+                <param name="DISTRIBUTOR">103574</param>
+        </report>
+<!--        <report>
+                <category>Operational</category>
+                <name>Config Report - Diversified</name>
+                <emailrecipient>notifications@espendwise.com</emailrecipient>
+        </report> -->
+</xml>

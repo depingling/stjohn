@@ -1,0 +1,1370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<registry>
+<query name="Order Analysis By Type" type="xml" datasource="StJohn">
+<query_xml>
+<path><![CDATA[OrderAnalysisList.OrderAnalysis]]></path>
+<select><![CDATA[select OrderType as "Order Type" to string,CountOrderType as "Count of Order Type" to string]]></select>
+<variable name="end" type="user" prompt="false" label="end" source="Order Analysis By Type" xtype="string">
+<value type="string" null="false"><![CDATA[]]></value>
+</variable>
+<variable name="begin" type="user" prompt="false" label="begin" source="Order Analysis By Type" xtype="string">
+<value type="string" null="false"><![CDATA[]]></value>
+</variable>
+<variable name="account" type="user" prompt="false" label="account" source="Order Analysis By Type" xtype="string">
+<value type="string" null="true"></value>
+</variable>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+<request><![CDATA[getOrderAnalysisByType]]></request>
+</query_xml>
+</query>
+<query name="distributorShipTo" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[acc]]></alias>
+<name><![CDATA[CLW_BUS_ENTITY]]></name>
+</table>
+<table>
+<alias><![CDATA[site]]></alias>
+<name><![CDATA[CLW_BUS_ENTITY]]></name>
+</table>
+<table>
+<alias><![CDATA[addr]]></alias>
+<name><![CDATA[CLW_ADDRESS]]></name>
+</table>
+<table>
+<alias><![CDATA[cass]]></alias>
+<name><![CDATA[CLW_CATALOG_ASSOC]]></name>
+</table>
+<table>
+<alias><![CDATA[dist]]></alias>
+<name><![CDATA[CLV_CATALOG_DISTRIBUTORS]]></name>
+</table>
+<table>
+<alias><![CDATA[assoc]]></alias>
+<name><![CDATA[CLW_BUS_ENTITY_ASSOC]]></name>
+</table>
+<column>
+<![CDATA[acc.SHORT_DESC]]>
+<alias><![CDATA[Account Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[site.SHORT_DESC]]>
+<alias><![CDATA[Site Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[addr.ADDRESS1]]>
+<alias><![CDATA[Add 1]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[addr.ADDRESS2]]>
+<alias><![CDATA[Add 2]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[addr.ADDRESS3]]>
+<alias><![CDATA[Add 3]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[addr.ADDRESS4]]>
+<alias><![CDATA[Add 4]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[addr.ADDRESS4]]>
+<alias><![CDATA[Add 4]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[addr.CITY]]>
+<alias><![CDATA[City]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[addr.STATE_PROVINCE_CD]]>
+<alias><![CDATA[State]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[addr.POSTAL_CODE]]>
+<alias><![CDATA[Zip]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<where>
+<XSet relation="and" isnot="false" clause="where">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[assoc.bus_entity_assoc_cd]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ 'SITE OF ACCOUNT']]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[addr.address_type_cd]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ 'SHIPPING']]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[cass.catalog_assoc_cd]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ 'CATALOG_SITE']]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[dist.dist_bus_ent_id]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[$(distId)]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[acc.BUS_ENTITY_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[assoc.BUS_ENTITY2_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+<XSet relation="and" isnot="false" clause="">
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[site.BUS_ENTITY_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[addr.BUS_ENTITY_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+<XSet relation="and" isnot="false" clause="">
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[site.BUS_ENTITY_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[cass.BUS_ENTITY_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+<XSet relation="and" isnot="false" clause="">
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[site.BUS_ENTITY_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[assoc.BUS_ENTITY1_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[cass.CATALOG_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[dist.CATALOG_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+</XSet>
+</XSet>
+</XSet>
+</XSet>
+</XSet>
+</XSet>
+</XSet>
+</XSet>
+</where>
+<sortby><field order="asc">acc.short_desc</field>,<field order="asc">site.short_desc</field></sortby>
+<groupby></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select acc.SHORT_DESC as "Account Name", site.SHORT_DESC as "Site Name", addr.ADDRESS1 as "Add 1", addr.ADDRESS2 as "Add 2", addr.ADDRESS3 as "Add 3", addr.ADDRESS4 as "Add 4", addr.CITY as City, addr.STATE_PROVINCE_CD as State, addr.POSTAL_CODE as Zip from CLW_BUS_ENTITY acc, CLW_BUS_ENTITY site, CLW_ADDRESS addr, CLW_CATALOG_ASSOC cass, CLV_CATALOG_DISTRIBUTORS dist, CLW_BUS_ENTITY_ASSOC assoc where assoc.bus_entity_assoc_cd =  'SITE OF ACCOUNT' and addr.address_type_cd =  'SHIPPING' and cass.catalog_assoc_cd =  'CATALOG_SITE' and dist.dist_bus_ent_id = $(distId) and acc.BUS_ENTITY_ID = assoc.BUS_ENTITY2_ID and site.BUS_ENTITY_ID = addr.BUS_ENTITY_ID and site.BUS_ENTITY_ID = cass.BUS_ENTITY_ID and site.BUS_ENTITY_ID = assoc.BUS_ENTITY1_ID and cass.CATALOG_ID = dist.CATALOG_ID   order by acc.short_desc asc, site.short_desc asc]]></sqlstring>
+</uniform_sql>
+<variable name="distId" type="user" prompt="false" label="distId" source="distributorShipTo" xtype="string">
+</variable>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="Order Analysis By State" type="xml" datasource="StJohn">
+<query_xml>
+<path><![CDATA[OrderAnalysisList.OrderAnalysis]]></path>
+<select><![CDATA[select State as "State" to string,TotalOrders as "Total Orders" to string,AccountName as "Account Name" to string,AccountId as "Account ID" to string,BeginDate as "Period Start" to string,EndDate as "Period End" to string,TotalOrderAmt as "Total Order Amount" to string]]></select>
+<variable name="inclusive" type="user" prompt="false" label="Inclusive" source="Order Analysis By State" xtype="string">
+<value type="string" null="false"><![CDATA[true]]></value>
+</variable>
+<variable name="end" type="user" prompt="false" label="End Date" source="Order Analysis By State" xtype="string">
+<value type="string" null="true"></value>
+</variable>
+<variable name="min" type="user" prompt="false" label="Minimum Order Amount" source="Order Analysis By State" xtype="string">
+<value type="string" null="false"><![CDATA[0]]></value>
+</variable>
+<variable name="begin" type="user" prompt="false" label="Begin Date" source="Order Analysis By State" xtype="string">
+<value type="string" null="true"></value>
+</variable>
+<variable name="account" type="user" prompt="false" label="Account" source="Order Analysis By State" xtype="string">
+<value type="string" null="false"><![CDATA[]]></value>
+</variable>
+<description>Get the order analysis data for states</description>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+<request><![CDATA[getOrderAnalysisByState]]></request>
+</query_xml>
+</query>
+<query name="contractItemsBadSkus" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[ciu]]></alias>
+<name><![CDATA[CLV_ITEM_USAGE]]></name>
+</table>
+<table>
+<alias><![CDATA[ii]]></alias>
+<name><![CDATA[CLV_ITEM_INFO]]></name>
+</table>
+<table>
+<alias><![CDATA[ci]]></alias>
+<name><![CDATA[CLW_CONTRACT_ITEM]]></name>
+</table>
+<column>
+<![CDATA[ii.SKU_NUM]]>
+<alias><![CDATA[CW SKU]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[ii.ITEM_DESC]]>
+<alias><![CDATA[Prod Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.MANUFACTURER]]>
+<alias><![CDATA[Manufacturer]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.MANU_SKU]]>
+<alias><![CDATA[Manu SKU]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.UOM]]>
+<alias><![CDATA[UOM]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.PACK]]>
+<alias><![CDATA[Pack]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.ITEM_SIZE]]>
+<alias><![CDATA[Item Size]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ciu.DIST_NAME]]>
+<alias><![CDATA[Dist Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ciu.DIST_SKU]]>
+<alias><![CDATA[Dist SKU]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ciu.DIST_UOM]]>
+<alias><![CDATA[Dist UOM]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ciu.DIST_PACK]]>
+<alias><![CDATA[Dist Pack]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ci.DIST_COST]]>
+<alias><![CDATA[Dist Cost]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[ci.AMOUNT]]>
+<alias><![CDATA[Cont Price]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<where>
+<XSet relation="and" isnot="false" clause="where">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[ci.CONTRACT_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[$(contractId)]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XSet relation="or" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Other">
+<![CDATA[lower( ciu.DIST_SKU)]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ 'cw%']]>
+</expression>
+</expression2>
+<op><![CDATA[LIKE]]></op>
+</XBinaryCondition>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[cui.DIST_SKU]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ '']]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+</XSet>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[ci.CONTRACT_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[ciu.CONTRACT_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[ci.ITEM_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[ciu.ITEM_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[ci.ITEM_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[ii.ITEM_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+</XSet>
+</where>
+<sortby><field order="asc">CW SKU</field></sortby>
+<groupby></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select ii.SKU_NUM as "CW SKU", ii.ITEM_DESC as "Prod Name", ii.MANUFACTURER as "Manufacturer", ii.MANU_SKU as "Manu SKU", ii.UOM as "UOM", ii.PACK as "Pack", ii.ITEM_SIZE as "Item Size", ciu.DIST_NAME as "Dist Name", ciu.DIST_SKU as "Dist SKU", ciu.DIST_UOM as "Dist UOM", ciu.DIST_PACK as "Dist Pack", ci.DIST_COST as "Dist Cost", ci.AMOUNT as "Cont Price" from CLV_ITEM_USAGE ciu, CLV_ITEM_INFO ii, CLW_CONTRACT_ITEM ci where ci.CONTRACT_ID = $(contractId) and (lower( ciu.DIST_SKU) LIKE  'cw%' or ciu.DIST_SKU =  '') and ci.CONTRACT_ID = ciu.CONTRACT_ID and ci.ITEM_ID = ciu.ITEM_ID and ci.ITEM_ID = ii.ITEM_ID   order by "CW SKU" asc]]></sqlstring>
+</uniform_sql>
+<variable name="contractId" type="user" prompt="false" label="contractId" source="contractItemsBadSkus" xtype="string">
+</variable>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="distInfo" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[dist]]></alias>
+<name><![CDATA[CLW_BUS_ENTITY]]></name>
+</table>
+<column>
+<![CDATA[dist.SHORT_DESC]]>
+<alias><![CDATA[Distributor Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[dist.ERP_NUM]]>
+<alias><![CDATA[Distributor ERP Num]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<where>
+<XSet relation="and" isnot="false" clause="where">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[dist.BUS_ENTITY_TYPE_CD]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ 'DISTRIBUTOR']]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[dist.BUS_ENTITY_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[$(distId)]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+</XSet>
+</where>
+<sortby></sortby>
+<groupby></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select dist.SHORT_DESC as "Distributor Name", dist.ERP_NUM as "Distributor ERP Num" from CLW_BUS_ENTITY dist where dist.BUS_ENTITY_TYPE_CD = 'DISTRIBUTOR' and dist.BUS_ENTITY_ID = $(distId)]]></sqlstring>
+</uniform_sql>
+<variable name="distId" type="user" prompt="false" label="distId" source="distInfo" xtype="string">
+</variable>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="ItemUsageLoc" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[CLV_ITEM_USAGE]]></alias>
+<name><![CDATA[CLV_ITEM_USAGE]]></name>
+</table>
+<table>
+<alias><![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH]]></alias>
+<name><![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH]]></name>
+</table>
+<column>
+<![CDATA[CLV_ITEM_USAGE.CONTRACT_ID]]>
+<alias><![CDATA[Contract ID]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.CONTRACT_NAME]]>
+<alias><![CDATA[Contract Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_NAME]]>
+<alias><![CDATA[Dist Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_ERP_NUM]]>
+<alias><![CDATA[Dist ERP Num]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_SKU]]>
+<alias><![CDATA[Dist SKU]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_UOM]]>
+<alias><![CDATA[Dist UOM]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_PACK]]>
+<alias><![CDATA[Dist Pack]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.CONTRACT_PRICE]]>
+<alias><![CDATA[Contract Price]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_COST]]>
+<alias><![CDATA[Dist Cost]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CONTRACT_PRICE-DIST_COST]]>
+<alias><![CDATA[Profit]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<column>
+<![CDATA[ROUND(((CONTRACT_PRICE-DIST_COST)/CONTRACT_PRICE)*100,2)]]>
+<alias><![CDATA[Margin]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<column>
+<![CDATA[to_char(CLV_TOTAL_CONT_ITEMS_PURCH.LAST_DATE_ORDERED, 'mm/dd/yyyy')]]>
+<alias><![CDATA[Last Date Ord]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<column>
+<![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH.TOTAL_QTY_ORDERED]]>
+<alias><![CDATA[Tot Qty Purch]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<where>
+<XSet relation="and" isnot="false" clause="where">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLV_ITEM_USAGE.ITEM_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[$(itemId)]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH.ITEM_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[CLV_ITEM_USAGE.ITEM_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[(+)=]]></op>
+</XJoin>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH.CONTRACT_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[CLV_ITEM_USAGE.CONTRACT_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[(+)=]]></op>
+</XJoin>
+</XSet>
+</XSet>
+</where>
+<sortby><field order="asc">CLV_ITEM_USAGE.ITEM_ID</field>,<field order="asc">CLV_ITEM_USAGE.CONTRACT_ID</field></sortby>
+<groupby></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select CLV_ITEM_USAGE.CONTRACT_ID as "Contract ID", CLV_ITEM_USAGE.CONTRACT_NAME as "Contract Name", CLV_ITEM_USAGE.DIST_NAME as "Dist Name", CLV_ITEM_USAGE.DIST_ERP_NUM as "Dist ERP Num", CLV_ITEM_USAGE.DIST_SKU as "Dist SKU", CLV_ITEM_USAGE.DIST_UOM as "Dist UOM", CLV_ITEM_USAGE.DIST_PACK as "Dist Pack", CLV_ITEM_USAGE.CONTRACT_PRICE as "Contract Price", CLV_ITEM_USAGE.DIST_COST as "Dist Cost", CONTRACT_PRICE-DIST_COST as "Profit", ROUND(((CONTRACT_PRICE-DIST_COST)/CONTRACT_PRICE)*100,2) as "Margin", to_char(CLV_TOTAL_CONT_ITEMS_PURCH.LAST_DATE_ORDERED,'mm/dd/yyyy') as "Last Date Ord", CLV_TOTAL_CONT_ITEMS_PURCH.TOTAL_QTY_ORDERED as "Tot Qty Purch" from CLV_ITEM_USAGE, CLV_TOTAL_CONT_ITEMS_PURCH where CLV_ITEM_USAGE.ITEM_ID = $(itemId) and CLV_TOTAL_CONT_ITEMS_PURCH.ITEM_ID (+)= CLV_ITEM_USAGE.ITEM_ID and CLV_TOTAL_CONT_ITEMS_PURCH.CONTRACT_ID (+)= CLV_ITEM_USAGE.CONTRACT_ID   order by CLV_ITEM_USAGE.ITEM_ID asc, CLV_ITEM_USAGE.CONTRACT_ID asc]]></sqlstring>
+</uniform_sql>
+<variable name="itemId" type="user" prompt="false" label="itemId" source="ItemUsageLoc" xtype="string">
+</variable>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="OrderType" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[STJOHN_PROD.CLW_ORDER]]></alias>
+<name><![CDATA[STJOHN_PROD.CLW_ORDER]]></name>
+</table>
+<table>
+<alias><![CDATA[STJOHN_PROD.CLW_BUS_ENTITY]]></alias>
+<name><![CDATA[STJOHN_PROD.CLW_BUS_ENTITY]]></name>
+</table>
+<column>
+<![CDATA[STJOHN_PROD.CLW_ORDER.ORDER_SOURCE_CD]]>
+<alias><![CDATA[Order Type]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[Count( ORDER_SOURCE_CD)]]>
+<alias><![CDATA[Order Count]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<where>
+<XSet relation="and" isnot="false" clause="where">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[STJOHN_PROD.CLW_BUS_ENTITY.BUS_ENTITY_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[100]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[STJOHN_PROD.CLW_ORDER.ORIGINAL_ORDER_DATE]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[TO_DATE( '05/22/2002', 'mm/dd/yyyy')]]>
+</expression>
+</expression2>
+<op><![CDATA[>=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[STJOHN_PROD.CLW_ORDER.ORIGINAL_ORDER_DATE]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[TO_DATE( '05/30/2002', 'mm/dd/yyyy')]]>
+</expression>
+</expression2>
+<op><![CDATA[<=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[STJOHN_PROD.CLW_BUS_ENTITY.BUS_ENTITY_TYPE_CD]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ 'ACCOUNT']]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[STJOHN_PROD.CLW_ORDER.ACCOUNT_ERP_NUM]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[STJOHN_PROD.CLW_BUS_ENTITY.ERP_NUM]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+</XSet>
+</XSet>
+</XSet>
+</XSet>
+</where>
+<sortby></sortby>
+<groupby><field>STJOHN_PROD.CLW_ORDER.ORDER_SOURCE_CD</field></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select STJOHN_PROD.CLW_ORDER.ORDER_SOURCE_CD as "Order Type", Count( ORDER_SOURCE_CD) as "Order Count" from STJOHN_PROD.CLW_ORDER, STJOHN_PROD.CLW_BUS_ENTITY where STJOHN_PROD.CLW_BUS_ENTITY.BUS_ENTITY_ID = 100 and STJOHN_PROD.CLW_ORDER.ORIGINAL_ORDER_DATE >= TO_DATE ('05/22/2002','mm/dd/yyyy') and STJOHN_PROD.CLW_ORDER.ORIGINAL_ORDER_DATE <= TO_DATE ('05/30/2002','mm/dd/yyyy') and STJOHN_PROD.CLW_BUS_ENTITY.BUS_ENTITY_TYPE_CD = 'ACCOUNT' and STJOHN_PROD.CLW_ORDER.ACCOUNT_ERP_NUM = STJOHN_PROD.CLW_BUS_ENTITY.ERP_NUM group by STJOHN_PROD.CLW_ORDER.ORDER_SOURCE_CD]]></sqlstring>
+</uniform_sql>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="OrderAnalysisByCategory" type="xml" datasource="StJohn">
+<query_xml>
+<path><![CDATA[OrderAnalysisList.OrderAnalysis]]></path>
+<select><![CDATA[select TotalOrderAmt as "Total $",TotalOrderAmtCategory1 as "Chemicals",TotalOrderAmtCategory2 as "Paper",TotalOrderAmtCategory3 as "Liners",TotalOrderAmtCategory4 as "Other"]]></select>
+<variable name="inclusive" type="user" prompt="false" label="Inclusive" source="OrderAnalysisByCategory" xtype="string">
+<value type="string" null="false"><![CDATA[true]]></value>
+</variable>
+<variable name="max" type="user" prompt="false" label="Maximum Order Amount" source="OrderAnalysisByCategory" xtype="string">
+<value type="string" null="false"><![CDATA[0]]></value>
+</variable>
+<variable name="end" type="user" prompt="false" label="End Date" source="OrderAnalysisByCategory" xtype="string">
+<value type="string" null="false"><![CDATA[12/28/2001]]></value>
+</variable>
+<variable name="interval" type="user" prompt="false" label="Interval" source="OrderAnalysisByCategory" xtype="string">
+<value type="string" null="false"><![CDATA[YEARLY]]></value>
+</variable>
+<variable name="min" type="user" prompt="false" label="Minimum Order Amount" source="OrderAnalysisByCategory" xtype="string">
+<value type="string" null="false"><![CDATA[0]]></value>
+</variable>
+<variable name="begin" type="user" prompt="false" label="Begin Date" source="OrderAnalysisByCategory" xtype="string">
+<value type="string" null="false"><![CDATA[12/01/2001]]></value>
+</variable>
+<variable name="account" type="user" prompt="false" label="Account" source="OrderAnalysisByCategory" xtype="string">
+<value type="string" null="false"><![CDATA[jcpjci]]></value>
+</variable>
+<description>Get the orders by category</description>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+<request><![CDATA[getOrderAnalysisSummary]]></request>
+</query_xml>
+</query>
+<query name="test" type="jdbc" datasource="St John">
+<query_jdbc>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="Item Analysis By Item ID" type="xml" datasource="StJohn">
+<query_xml>
+<path><![CDATA[ItemAnalysisList.ItemAnalysis[(((((((((((((((((((ItemInfo.ItemId = '') and (ItemInfo.CwSku = '')) and (ItemInfo.ProductName = '')) and (ItemInfo.Size = '')) and (ItemInfo.Pack = '')) and (ItemInfo.Uom = '')) and (ItemInfo.ManuId = '')) and (ItemInfo.ManuName = '')) and (ItemInfo.ManuSku = '')) and (ItemUsage.ContractId = '')) and (ItemUsage.ContractName = '')) and (ItemUsage.ConractPrice = '')) and (ItemUsage.DistId = '')) and (ItemUsage.DistName = '')) and (ItemUsage.DistSku = '')) and (ItemUsage.DistPack = '')) and (ItemUsage.DistUom = '')) and (ItemUsage.DistCost = '')) and (ItemUsage.DistShortDesc = ''))]]]></path>
+<select><![CDATA[select ItemInfo.ItemId as "Item ID" to string,ItemInfo.CwSku as "CW SKU" to string,ItemInfo.ProductName as "Product Name" to string,ItemInfo.Size as "Size" to string,ItemInfo.Pack as "Pack" to string,ItemInfo.Uom as "UOM" to string,ItemInfo.ManuId as "Manufacturer ID" to string,ItemInfo.ManuName as "Manufacturer Name" to string,ItemInfo.ManuSku as "Manufacturer SKU" to string,ItemUsage.ContractId as "Contract ID" to string,ItemUsage.ContractName as "Contract Name" to string,ItemUsage.ConractPrice as "Contract Price" to string,ItemUsage.DistId as "Distributor ID" to string,ItemUsage.DistName as "Distributor Name" to string,ItemUsage.DistSku as "Distributor SKU" to string,ItemUsage.DistPack as "Distributor Pack" to string,ItemUsage.DistUom as "Distributor UOM" to string,ItemUsage.DistCost as "Distributor Cost" to string,ItemUsage.DistShortDesc as "Distributor Short Desc" to string]]></select>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+<request><![CDATA[getItemAnalysis]]></request>
+</query_xml>
+</query>
+<query name="itemsInContracts" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[ii]]></alias>
+<name><![CDATA[CLV_ITEM_INFO]]></name>
+</table>
+<column>
+<![CDATA[ii.CATEGORY]]>
+<alias><![CDATA[Category]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.MANUFACTURER]]>
+<alias><![CDATA[Manufacturer]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.ITEM_DESC]]>
+<alias><![CDATA[Item Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.SKU_NUM]]>
+<alias><![CDATA[CW SKU]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[ii.MANU_SKU]]>
+<alias><![CDATA[Manu SKU]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.UOM]]>
+<alias><![CDATA[]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.PACK]]>
+<alias><![CDATA[Pack]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.ITEM_SIZE]]>
+<alias><![CDATA[Item Size]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.COLOR]]>
+<alias><![CDATA[Color]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[ii.LIST_PRICE]]>
+<alias><![CDATA[List Price]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<where>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[ii.item_id]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Subquery">
+<uniform_sql>
+<table>
+<alias><![CDATA[ci]]></alias>
+<name><![CDATA[clw_contract_item]]></name>
+</table>
+<column>
+<![CDATA[ci.item_id]]>
+<alias><![CDATA[]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<where>
+</where>
+<sortby></sortby>
+<groupby><field>ci.item_id</field></groupby>
+<having>
+</having>
+</uniform_sql>
+</expression>
+</expression2>
+<op><![CDATA[in]]></op>
+</XBinaryCondition>
+</where>
+<sortby><field order="asc">ii.category</field>,<field order="asc">ii.manufacturer</field>,<field order="asc">ii.item_desc</field></sortby>
+<groupby></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select ii.CATEGORY as "Category", ii.MANUFACTURER as "Manufacturer", ii.ITEM_DESC as "Item Name", ii.SKU_NUM as "CW SKU", ii.MANU_SKU as "Manu SKU", ii.UOM, ii.PACK as "Pack", ii.ITEM_SIZE as "Item Size", ii.COLOR as "Color", ii.LIST_PRICE as "List Price" from CLV_ITEM_INFO ii where ii.item_id in (select ci.item_id from clw_contract_item ci  group by ci.item_id )   order by ii.category asc, ii.manufacturer asc, ii.item_desc asc]]></sqlstring>
+</uniform_sql>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="OrderAnalysis" type="xml" datasource="StJohn">
+<query_xml>
+<path><![CDATA[OrderAnalysisList.OrderAnalysis]]></path>
+<select><![CDATA[select AccountName as "Account Name" to string,AccountId as "Account ID" to string,SiteId as "Site ID" to string,State as "State" to string,PostalCode as "Zip" to string,BeginDate as "Begin Date" to string,EndDate as "End Date" to string,TotalOrders as "Total # of Orders" to string,TotalOnlineOrders as "Total # of Online Orders" to string,TotalBackorderOrders as "Total # of Orders Resulting in Backorder" to string,TotalFreightChargeOrders as "Total # of Freight Charge Orders" to string,TotalOrderAmt as "Total $ of Orders" to string,TotalOrderAmtCategory1 as "Total $ of Orders - Chemical" to string,TotalOrderAmtCategory2 as "Total $ of Orders - Paper" to string,TotalOrderAmtCategory3 as "Total $ of Orders - Liners" to string,TotalOrderAmtCategory4 as "Total $ of Orders - Other" to string,TotalOrderFreightAmt as "Total $ of Freight" to string,HighDaysOrderShipNoBackorder as "Highest # of days between order date and ship date not subject to backorder" to string,LowDaysOrderShipNoBackorder as "Average # of days between order date and ship date ship date not subject to backorder" to string,AvgDaysOrderShipNoBackorder as "Average # of days between order date and ship date not subject to backorder" to string,HighDaysOrderShipBackorder as "Highest # of days between order date and ship date subject to backorder" to string,LowDaysOrderShipBackorder as "Lowest # of days between order date and ship date subject to backorder" to string,AvgDaysOrderShipBackorder as "Average # of days between order date and ship date subject to backorder" to string]]></select>
+<variable name="inclusive" type="user" prompt="false" label="Inclusive" source="OrderAnalysis" xtype="string">
+<value type="string" null="false"><![CDATA[true]]></value>
+</variable>
+<variable name="end" type="user" prompt="false" label="End Date" source="OrderAnalysis" xtype="string">
+<value type="string" null="false"><![CDATA[12/28/2001]]></value>
+</variable>
+<variable name="min" type="user" prompt="false" label="Minimum Order Amount" source="OrderAnalysis" xtype="string">
+<value type="string" null="false"><![CDATA[0]]></value>
+</variable>
+<variable name="begin" type="user" prompt="false" label="Begin Date" source="OrderAnalysis" xtype="string">
+<value type="string" null="false"><![CDATA[9/1/2001]]></value>
+</variable>
+<variable name="account" type="user" prompt="false" label="Account" source="OrderAnalysis" xtype="string">
+<value type="string" null="false"><![CDATA[jcpjci]]></value>
+</variable>
+<description>Get the order analysis data</description>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+<request><![CDATA[getOrderAnalysisByState]]></request>
+</query_xml>
+</query>
+<query name="ItemUsageNullVenSkuLoc" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[CLV_ITEM_USAGE]]></alias>
+<name><![CDATA[CLV_ITEM_USAGE]]></name>
+</table>
+<table>
+<alias><![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH]]></alias>
+<name><![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH]]></name>
+</table>
+<column>
+<![CDATA[CLV_ITEM_USAGE.CONTRACT_ID]]>
+<alias><![CDATA[Contract ID]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.CONTRACT_NAME]]>
+<alias><![CDATA[Contract Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_NAME]]>
+<alias><![CDATA[Dist Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_ERP_NUM]]>
+<alias><![CDATA[Dist ERP Num]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_SKU]]>
+<alias><![CDATA[Dist SKU]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_UOM]]>
+<alias><![CDATA[Dist UOM]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_PACK]]>
+<alias><![CDATA[Dist Pack]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.CONTRACT_PRICE]]>
+<alias><![CDATA[Contract Price]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_USAGE.DIST_COST]]>
+<alias><![CDATA[Dist Cost]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CONTRACT_PRICE-DIST_COST]]>
+<alias><![CDATA[Profit]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<column>
+<![CDATA[ROUND(((CONTRACT_PRICE-DIST_COST)/CONTRACT_PRICE)*100,2)]]>
+<alias><![CDATA[Margin]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<column>
+<![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH.LAST_DATE_ORDERED]]>
+<alias><![CDATA[Last Date Ord]]></alias>
+<type><![CDATA[timeInstant]]></type>
+</column>
+<column>
+<![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH.TOTAL_QTY_ORDERED]]>
+<alias><![CDATA[Tot Qty Purch]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<where>
+<XSet relation="and" isnot="false" clause="where">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLV_ITEM_USAGE.ITEM_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[$(itemId)]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+<XSet relation="and" isnot="false" clause="">
+<XSet relation="or" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Other">
+<![CDATA[lower( CLV_ITEM_USAGE.DIST_SKU)]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ 'cw%']]>
+</expression>
+</expression2>
+<op><![CDATA[LIKE]]></op>
+</XBinaryCondition>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLV_ITEM_USAGE.DIST_SKU]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[ '']]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+</XSet>
+<XSet relation="and" isnot="false" clause="">
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH.ITEM_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[CLV_ITEM_USAGE.ITEM_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[(+)=]]></op>
+</XJoin>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLV_TOTAL_CONT_ITEMS_PURCH.CONTRACT_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[CLV_ITEM_USAGE.CONTRACT_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[(+)=]]></op>
+</XJoin>
+</XSet>
+</XSet>
+</XSet>
+</where>
+<sortby><field order="asc">CLV_ITEM_USAGE.ITEM_ID</field>,<field order="asc">CLV_ITEM_USAGE.CONTRACT_ID</field></sortby>
+<groupby></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select CLV_ITEM_USAGE.CONTRACT_ID as "Contract ID", CLV_ITEM_USAGE.CONTRACT_NAME as "Contract Name", CLV_ITEM_USAGE.DIST_NAME as "Dist Name", CLV_ITEM_USAGE.DIST_ERP_NUM as "Dist ERP Num", CLV_ITEM_USAGE.DIST_SKU as "Dist SKU", CLV_ITEM_USAGE.DIST_UOM as "Dist UOM", CLV_ITEM_USAGE.DIST_PACK as "Dist Pack", CLV_ITEM_USAGE.CONTRACT_PRICE as "Contract Price", CLV_ITEM_USAGE.DIST_COST as "Dist Cost", CONTRACT_PRICE-DIST_COST as "Profit", ROUND(((CONTRACT_PRICE-DIST_COST)/CONTRACT_PRICE)*100,2) as "Margin", CLV_TOTAL_CONT_ITEMS_PURCH.LAST_DATE_ORDERED as "Last Date Ord", CLV_TOTAL_CONT_ITEMS_PURCH.TOTAL_QTY_ORDERED as "Tot Qty Purch" from CLV_ITEM_USAGE, CLV_TOTAL_CONT_ITEMS_PURCH where CLV_ITEM_USAGE.ITEM_ID = $(itemId) and (lower( CLV_ITEM_USAGE.DIST_SKU) LIKE  'cw%' or CLV_ITEM_USAGE.DIST_SKU =  '') and CLV_TOTAL_CONT_ITEMS_PURCH.ITEM_ID (+)= CLV_ITEM_USAGE.ITEM_ID and CLV_TOTAL_CONT_ITEMS_PURCH.CONTRACT_ID (+)= CLV_ITEM_USAGE.CONTRACT_ID   order by CLV_ITEM_USAGE.ITEM_ID asc, CLV_ITEM_USAGE.CONTRACT_ID asc]]></sqlstring>
+</uniform_sql>
+<variable name="itemId" type="user" prompt="false" label="itemId" source="ItemUsageNullVenSkuLoc" xtype="string">
+</variable>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="contractInfo" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[c]]></alias>
+<name><![CDATA[CLW_CONTRACT]]></name>
+</table>
+<column>
+<![CDATA[c.CONTRACT_ID]]>
+<alias><![CDATA[Contract ID]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[c.SHORT_DESC]]>
+<alias><![CDATA[Contract Name]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[c.CONTRACT_STATUS_CD]]>
+<alias><![CDATA[Cont Status CD]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[to_char(c.EFF_DATE, 'mm/dd/yyyy')]]>
+<alias><![CDATA[Eff Date]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<column>
+<![CDATA[to_char(c.EXP_DATE, 'mm/dd/yyyy')]]>
+<alias><![CDATA[Exp Date]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<column>
+<![CDATA[(select Count( CLW_CONTRACT_ITEM.CONTRACT_ITEM_ID) as "Num Contract Items" from CLW_CONTRACT_ITEM where clw_contract_item.contract_id = c.contract_id group by CLW_CONTRACT_ITEM.CONTRACT_ID   )]]>
+<alias><![CDATA[Num Items In Cont]]></alias>
+<type><![CDATA[]]></type>
+</column>
+<where>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[c.CONTRACT_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[$(contractId)]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+</where>
+<sortby></sortby>
+<groupby></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select c.CONTRACT_ID as "Contract ID", c.SHORT_DESC as "Contract Name", c.CONTRACT_STATUS_CD as "Cont Status CD", to_char(c.EFF_DATE,'mm/dd/yyyy') as "Eff Date", to_char(c.EXP_DATE,'mm/dd/yyyy') as "Exp Date", (select Count( CLW_CONTRACT_ITEM.CONTRACT_ITEM_ID) as 
+ "Num Contract Items" from CLW_CONTRACT_ITEM where clw_contract_item.contract_id=c.contract_id
+ group by CLW_CONTRACT_ITEM.CONTRACT_ID) as "Num Items In Cont" from CLW_CONTRACT c where c.CONTRACT_ID = $(contractId)]]></sqlstring>
+</uniform_sql>
+<variable name="contractId" type="user" prompt="false" label="contractId" source="contractInfo" xtype="string">
+</variable>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="itemInfo" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[CLV_ITEM_INFO]]></alias>
+<name><![CDATA[CLV_ITEM_INFO]]></name>
+</table>
+<column>
+<![CDATA[CLV_ITEM_INFO.ITEM_ID]]>
+<alias><![CDATA[Item ID]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.SKU_NUM]]>
+<alias><![CDATA[SKU]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.ITEM_DESC]]>
+<alias><![CDATA[Description]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.MANUFACTURER]]>
+<alias><![CDATA[Manufacturer]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.MANU_SKU]]>
+<alias><![CDATA[Manu SKU]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.UOM]]>
+<alias><![CDATA[UOM]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.PACK]]>
+<alias><![CDATA[Pack]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.ITEM_SIZE]]>
+<alias><![CDATA[Item Size]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.COLOR]]>
+<alias><![CDATA[Color]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.LIST_PRICE]]>
+<alias><![CDATA[List Price]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[CLV_ITEM_INFO.CATEGORY]]>
+<alias><![CDATA[Category]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<where>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLV_ITEM_INFO.ITEM_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA[$(itemId)]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XBinaryCondition>
+</where>
+<sortby></sortby>
+<groupby></groupby>
+<having>
+</having>
+<sqlstring><![CDATA[select CLV_ITEM_INFO.ITEM_ID as "Item ID", CLV_ITEM_INFO.SKU_NUM as SKU, CLV_ITEM_INFO.ITEM_DESC as "Description", CLV_ITEM_INFO.MANUFACTURER as "Manufacturer", CLV_ITEM_INFO.MANU_SKU as "Manu SKU", CLV_ITEM_INFO.UOM as "UOM", CLV_ITEM_INFO.PACK as "Pack", CLV_ITEM_INFO.ITEM_SIZE as "Item Size", CLV_ITEM_INFO.COLOR as "Color", CLV_ITEM_INFO.LIST_PRICE as "List Price", CLV_ITEM_INFO.CATEGORY as "Category" from CLV_ITEM_INFO where CLV_ITEM_INFO.ITEM_ID = $(itemId)]]></sqlstring>
+</uniform_sql>
+<variable name="itemId" type="user" prompt="false" label="itemId" source="itemInfo" xtype="string">
+</variable>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+<query name="orderContractItems" type="jdbc" datasource="St John">
+<query_jdbc>
+<uniform_sql>
+<table>
+<alias><![CDATA[CLW_CONTRACT_ITEM]]></alias>
+<name><![CDATA[CLW_CONTRACT_ITEM]]></name>
+</table>
+<table>
+<alias><![CDATA[CLW_ORDER]]></alias>
+<name><![CDATA[CLW_ORDER]]></name>
+</table>
+<table>
+<alias><![CDATA[CLW_ORDER_ITEM]]></alias>
+<name><![CDATA[CLW_ORDER_ITEM]]></name>
+</table>
+<column>
+<![CDATA[CLW_CONTRACT_ITEM.ITEM_ID]]>
+<alias><![CDATA[]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[CLW_CONTRACT_ITEM.CONTRACT_ID]]>
+<alias><![CDATA[]]></alias>
+<type><![CDATA[double]]></type>
+</column>
+<column>
+<![CDATA[Max( ORIGINAL_ORDER_DATE)]]>
+<alias><![CDATA[Last Date Ordered]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<column>
+<![CDATA[Sum( TOTAL_QUANTITY_ORDERED)]]>
+<alias><![CDATA[Total Qty Ord]]></alias>
+<type><![CDATA[string]]></type>
+</column>
+<where>
+<XSet relation="and" isnot="false" clause="">
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLW_ORDER.ORDER_STATUS_CD]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA['Cancelled']]>
+</expression>
+</expression2>
+<op><![CDATA[<>]]></op>
+</XBinaryCondition>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLW_ORDER.ORDER_STATUS_CD]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA['Duplicate Order']]>
+</expression>
+</expression2>
+<op><![CDATA[<>]]></op>
+</XBinaryCondition>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLW_ORDER.ORDER_STATUS_CD]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA['Duplicated']]>
+</expression>
+</expression2>
+<op><![CDATA[<>]]></op>
+</XBinaryCondition>
+<XBinaryCondition isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLW_ORDER.ORDER_STATUS_CD]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Other">
+<![CDATA['Rejected']]>
+</expression>
+</expression2>
+<op><![CDATA[<>]]></op>
+</XBinaryCondition>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLW_ORDER.CONTRACT_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[CLW_CONTRACT_ITEM.CONTRACT_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLW_ORDER_ITEM.ORDER_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[CLW_ORDER.ORDER_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+<XJoin isnot="false" clause= "">
+<expression1>
+<expression type="Field">
+<![CDATA[CLW_ORDER_ITEM.ITEM_ID]]>
+</expression>
+</expression1>
+<expression2>
+<expression type="Field">
+<![CDATA[CLW_CONTRACT_ITEM.ITEM_ID]]>
+</expression>
+</expression2>
+<op><![CDATA[=]]></op>
+</XJoin>
+</XSet>
+</where>
+<sortby></sortby>
+<groupby><field>CLW_CONTRACT_ITEM.ITEM_ID</field><field>CLW_CONTRACT_ITEM.CONTRACT_ID</field><field>CLW_ORDER.ORDER_STATUS_CD</field></groupby>
+<having>
+</having>
+</uniform_sql>
+<maxrows>0</maxrows>
+<timeout>0</timeout>
+</query_jdbc>
+</query>
+</registry>

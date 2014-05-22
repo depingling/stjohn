@@ -1,0 +1,12 @@
+
+<jsptags.com> Pager Tag Library v1.1
+
+The Pager Tag Library helps generate Google[sm] and AltaVista®
+style search result navigators. It will take multiple pages worth of
+information, dynamically split it up into page sized pieces and generate
+a browsable index. It does this in a flexible way that allows designers
+to give the index just about any look desired.
+
+See the file index.html for full details.
+
+-James Klicman <james@jsptags.com>

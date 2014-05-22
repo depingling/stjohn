@@ -1,0 +1,593 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>AAA</idCode>
+        <idValue>Goods description</idValue>
+    <idCode>AAB</idCode>
+        <idValue>Terms of payments</idValue>
+    <idCode>AAC</idCode>
+        <idValue>Dangerous goods additional information</idValue>
+    <idCode>AAD</idCode>
+        <idValue>Dangerous goods, technical name</idValue>
+    <idCode>AAE</idCode>
+        <idValue>Acknowledgement description</idValue>
+    <idCode>AAF</idCode>
+        <idValue>Rate additional information</idValue>
+    <idCode>AAG</idCode>
+        <idValue>Party instructions</idValue>
+    <idCode>AAH</idCode>
+        <idValue>Customs information</idValue>
+    <idCode>AAI</idCode>
+        <idValue>General information</idValue>
+    <idCode>AAJ</idCode>
+        <idValue>Additional conditions of sale/purchase</idValue>
+    <idCode>AAK</idCode>
+        <idValue>Price conditions</idValue>
+    <idCode>AAL</idCode>
+        <idValue>Goods dimensions in characters</idValue>
+    <idCode>AAM</idCode>
+        <idValue>Equipment re-usage restrictions</idValue>
+    <idCode>AAN</idCode>
+        <idValue>Handling restriction</idValue>
+    <idCode>AAO</idCode>
+        <idValue>Error description (free text)</idValue>
+    <idCode>AAP</idCode>
+        <idValue>Response (free text)</idValue>
+    <idCode>AAQ</idCode>
+        <idValue>Package content&apos;s description</idValue>
+    <idCode>AAR</idCode>
+        <idValue>Terms of delivery</idValue>
+    <idCode>AAS</idCode>
+        <idValue>Bill of lading remarks</idValue>
+    <idCode>AAT</idCode>
+        <idValue>Mode of settlement information</idValue>
+    <idCode>AAU</idCode>
+        <idValue>Consignment invoice information</idValue>
+    <idCode>AAV</idCode>
+        <idValue>Clearance invoice information</idValue>
+    <idCode>AAW</idCode>
+        <idValue>Letter of credit information</idValue>
+    <idCode>AAX</idCode>
+        <idValue>License information</idValue>
+    <idCode>AAY</idCode>
+        <idValue>Certification statements</idValue>
+    <idCode>AAZ</idCode>
+        <idValue>Additional export information</idValue>
+    <idCode>ABA</idCode>
+        <idValue>Tariff statements</idValue>
+    <idCode>ABC</idCode>
+        <idValue>Conditions of sale or purchase</idValue>
+    <idCode>ABD</idCode>
+        <idValue>Nature of transaction</idValue>
+    <idCode>ABE</idCode>
+        <idValue>Additional terms and/or conditions (documentary credit)</idValue>
+    <idCode>ABF</idCode>
+        <idValue>Instructions or information about standby documentary credit</idValue>
+    <idCode>ABG</idCode>
+        <idValue>Instructions or information about partial shipment(s)</idValue>
+    <idCode>ABH</idCode>
+        <idValue>Instructions or information about transhipment(s)</idValue>
+    <idCode>ABI</idCode>
+        <idValue>Additional handling instructions documentary credit</idValue>
+    <idCode>ABJ</idCode>
+        <idValue>Domestic routing information</idValue>
+    <idCode>ABK</idCode>
+        <idValue>Chargeable category of equipment</idValue>
+    <idCode>ABL</idCode>
+        <idValue>Government information</idValue>
+    <idCode>ABM</idCode>
+        <idValue>Onward routing information</idValue>
+    <idCode>ABN</idCode>
+        <idValue>Accounting information</idValue>
+    <idCode>ABO</idCode>
+        <idValue>Discrepancy information</idValue>
+    <idCode>ABP</idCode>
+        <idValue>Confirmation instructions</idValue>
+    <idCode>ABQ</idCode>
+        <idValue>Method of issuance</idValue>
+    <idCode>ABR</idCode>
+        <idValue>Documents delivery instructions</idValue>
+    <idCode>ABS</idCode>
+        <idValue>Additional conditions</idValue>
+    <idCode>ABT</idCode>
+        <idValue>Information/instructions about additional amounts covered</idValue>
+    <idCode>ABU</idCode>
+        <idValue>Deferred payment termed additional</idValue>
+    <idCode>ABV</idCode>
+        <idValue>Acceptance terms additional</idValue>
+    <idCode>ABW</idCode>
+        <idValue>Negotiation terms additional</idValue>
+    <idCode>ABX</idCode>
+        <idValue>Document name and documentary requirements</idValue>
+    <idCode>ABY</idCode>
+        <idValue>Regulatory information</idValue>
+    <idCode>ABZ</idCode>
+        <idValue>Instructions/information about revolving documentary credit</idValue>
+    <idCode>ACA</idCode>
+        <idValue>Documentary requirements</idValue>
+    <idCode>ACB</idCode>
+        <idValue>Additional information</idValue>
+    <idCode>ACC</idCode>
+        <idValue>Factor assignment clause</idValue>
+    <idCode>ACD</idCode>
+        <idValue>Reason</idValue>
+    <idCode>ACE</idCode>
+        <idValue>Dispute</idValue>
+    <idCode>ACF</idCode>
+        <idValue>Additional attribute information</idValue>
+    <idCode>ACG</idCode>
+        <idValue>Absence declaration</idValue>
+    <idCode>ACH</idCode>
+        <idValue>Aggregation statement</idValue>
+    <idCode>ACI</idCode>
+        <idValue>Compilation statement</idValue>
+    <idCode>ACJ</idCode>
+        <idValue>Definitional exception</idValue>
+    <idCode>ACK</idCode>
+        <idValue>Privacy statement</idValue>
+    <idCode>ACL</idCode>
+        <idValue>Quality statement</idValue>
+    <idCode>ACM</idCode>
+        <idValue>Statistical description</idValue>
+    <idCode>ACN</idCode>
+        <idValue>Statistical definition</idValue>
+    <idCode>ACO</idCode>
+        <idValue>Statistical name</idValue>
+    <idCode>ACP</idCode>
+        <idValue>Statistical title</idValue>
+    <idCode>ACQ</idCode>
+        <idValue>Off-dimension information</idValue>
+    <idCode>ACR</idCode>
+        <idValue>Unexpected stops information</idValue>
+    <idCode>ACS</idCode>
+        <idValue>Principles</idValue>
+    <idCode>ACT</idCode>
+        <idValue>Terms and definition</idValue>
+    <idCode>ACU</idCode>
+        <idValue>Segment name</idValue>
+    <idCode>ACV</idCode>
+        <idValue>Simple data element name</idValue>
+    <idCode>ACW</idCode>
+        <idValue>Scope</idValue>
+    <idCode>ACX</idCode>
+        <idValue>Message type name</idValue>
+    <idCode>ACY</idCode>
+        <idValue>Introduction</idValue>
+    <idCode>ACZ</idCode>
+        <idValue>Glossary</idValue>
+    <idCode>ADA</idCode>
+        <idValue>Functional definition</idValue>
+    <idCode>ADB</idCode>
+        <idValue>Examples</idValue>
+    <idCode>ADC</idCode>
+        <idValue>Cover page</idValue>
+    <idCode>ADD</idCode>
+        <idValue>Dependency (syntax) notes</idValue>
+    <idCode>ADE</idCode>
+        <idValue>Code value name</idValue>
+    <idCode>ADF</idCode>
+        <idValue>Code list name</idValue>
+    <idCode>ADG</idCode>
+        <idValue>Clarification of usage</idValue>
+    <idCode>ADH</idCode>
+        <idValue>Composite data element name</idValue>
+    <idCode>ADI</idCode>
+        <idValue>Field of application</idValue>
+    <idCode>ADJ</idCode>
+        <idValue>Type of assets and liabilities</idValue>
+    <idCode>ADK</idCode>
+        <idValue>Promotion information</idValue>
+    <idCode>ADL</idCode>
+        <idValue>Meter condition</idValue>
+    <idCode>ADM</idCode>
+        <idValue>Meter reading information</idValue>
+    <idCode>ADN</idCode>
+        <idValue>Type of transaction reason</idValue>
+    <idCode>ADO</idCode>
+        <idValue>Type of survey question</idValue>
+    <idCode>ADP</idCode>
+        <idValue>Carrier&apos;s agent counter information</idValue>
+    <idCode>ADQ</idCode>
+        <idValue>Description of work item on equipment</idValue>
+    <idCode>ADR</idCode>
+        <idValue>Message definition</idValue>
+    <idCode>ADS</idCode>
+        <idValue>Booked item information</idValue>
+    <idCode>ADT</idCode>
+        <idValue>Source of document</idValue>
+    <idCode>ADU</idCode>
+        <idValue>Note</idValue>
+    <idCode>ADV</idCode>
+        <idValue>Fixed part of segment clarification text</idValue>
+    <idCode>ADW</idCode>
+        <idValue>Characteristics of goods</idValue>
+    <idCode>ADX</idCode>
+        <idValue>Additional discharge instructions</idValue>
+    <idCode>ADY</idCode>
+        <idValue>Container stripping instructions</idValue>
+    <idCode>ADZ</idCode>
+        <idValue>CSC (Container Safety Convention) plate information</idValue>
+    <idCode>AEA</idCode>
+        <idValue>Cargo remarks</idValue>
+    <idCode>AEB</idCode>
+        <idValue>Temperature control instructions</idValue>
+    <idCode>AEC</idCode>
+        <idValue>Text refers to expected data</idValue>
+    <idCode>AED</idCode>
+        <idValue>Text refers to received data</idValue>
+    <idCode>AEE</idCode>
+        <idValue>Section clarification text</idValue>
+    <idCode>AEF</idCode>
+        <idValue>Information to the beneficiary</idValue>
+    <idCode>AEG</idCode>
+        <idValue>Information to the applicant</idValue>
+    <idCode>AEH</idCode>
+        <idValue>Instructions to the beneficiary</idValue>
+    <idCode>AEI</idCode>
+        <idValue>Instructions to the applicant</idValue>
+    <idCode>AEJ</idCode>
+        <idValue>Controlled atmosphere</idValue>
+    <idCode>AEK</idCode>
+        <idValue>Take off annotation</idValue>
+    <idCode>AEL</idCode>
+        <idValue>Price variation narrative</idValue>
+    <idCode>AEM</idCode>
+        <idValue>Documentary credit amendment instructions</idValue>
+    <idCode>AEN</idCode>
+        <idValue>Standard method narrative</idValue>
+    <idCode>AEO</idCode>
+        <idValue>Project narrative</idValue>
+    <idCode>AEP</idCode>
+        <idValue>Radioactive goods, additional information</idValue>
+    <idCode>AEQ</idCode>
+        <idValue>Bank-to-bank information</idValue>
+    <idCode>AER</idCode>
+        <idValue>Reimbursement instructions</idValue>
+    <idCode>AES</idCode>
+        <idValue>Reason for amending a message</idValue>
+    <idCode>AET</idCode>
+        <idValue>Instructions to the paying and/or accepting and/or negotiating bank</idValue>
+    <idCode>AEU</idCode>
+        <idValue>Interest instructions</idValue>
+    <idCode>AEV</idCode>
+        <idValue>Agent commission</idValue>
+    <idCode>AEW</idCode>
+        <idValue>Remitting bank instructions</idValue>
+    <idCode>AEX</idCode>
+        <idValue>Instructions to the collecting bank</idValue>
+    <idCode>AEY</idCode>
+        <idValue>Collection amount instructions</idValue>
+    <idCode>AEZ</idCode>
+        <idValue>Internal auditing information</idValue>
+    <idCode>AFA</idCode>
+        <idValue>Constraint</idValue>
+    <idCode>AFB</idCode>
+        <idValue>Comment</idValue>
+    <idCode>AFC</idCode>
+        <idValue>Semantic note</idValue>
+    <idCode>AFD</idCode>
+        <idValue>Help text</idValue>
+    <idCode>AFE</idCode>
+        <idValue>Legend</idValue>
+    <idCode>AFF</idCode>
+        <idValue>Batch code structure</idValue>
+    <idCode>AFG</idCode>
+        <idValue>Product application</idValue>
+    <idCode>AFH</idCode>
+        <idValue>Customer complaint</idValue>
+    <idCode>AFI</idCode>
+        <idValue>Probable cause of fault</idValue>
+    <idCode>AFJ</idCode>
+        <idValue>Defect description</idValue>
+    <idCode>AFK</idCode>
+        <idValue>Repair description</idValue>
+    <idCode>AFL</idCode>
+        <idValue>Review comments</idValue>
+    <idCode>AFM</idCode>
+        <idValue>Title</idValue>
+    <idCode>AFN</idCode>
+        <idValue>Description of amount</idValue>
+    <idCode>AFO</idCode>
+        <idValue>Responsibilities</idValue>
+    <idCode>AFP</idCode>
+        <idValue>Supplier</idValue>
+    <idCode>AFQ</idCode>
+        <idValue>Purchase region</idValue>
+    <idCode>AFR</idCode>
+        <idValue>Affiliation</idValue>
+    <idCode>AFS</idCode>
+        <idValue>Borrower</idValue>
+    <idCode>AFT</idCode>
+        <idValue>Line of business</idValue>
+    <idCode>AFU</idCode>
+        <idValue>Financial institution</idValue>
+    <idCode>AFV</idCode>
+        <idValue>Business founder</idValue>
+    <idCode>AFW</idCode>
+        <idValue>Business history</idValue>
+    <idCode>AFX</idCode>
+        <idValue>Banking arrangements</idValue>
+    <idCode>AFY</idCode>
+        <idValue>Business origin</idValue>
+    <idCode>AFZ</idCode>
+        <idValue>Brand names&apos; description</idValue>
+    <idCode>AGA</idCode>
+        <idValue>Business financing details</idValue>
+    <idCode>AGB</idCode>
+        <idValue>Competition</idValue>
+    <idCode>AGC</idCode>
+        <idValue>Construction process details</idValue>
+    <idCode>AGD</idCode>
+        <idValue>Construction specialty</idValue>
+    <idCode>AGE</idCode>
+        <idValue>Contract information</idValue>
+    <idCode>AGF</idCode>
+        <idValue>Corporate filing</idValue>
+    <idCode>AGG</idCode>
+        <idValue>Customer information</idValue>
+    <idCode>AGH</idCode>
+        <idValue>Copyright notice</idValue>
+    <idCode>AGI</idCode>
+        <idValue>Contingent debt</idValue>
+    <idCode>AGJ</idCode>
+        <idValue>Conviction details</idValue>
+    <idCode>AGK</idCode>
+        <idValue>Equipment</idValue>
+    <idCode>AGL</idCode>
+        <idValue>Workforce description</idValue>
+    <idCode>AGM</idCode>
+        <idValue>Exemption</idValue>
+    <idCode>AGN</idCode>
+        <idValue>Future plans</idValue>
+    <idCode>AGO</idCode>
+        <idValue>Interviewee conversation information</idValue>
+    <idCode>AGP</idCode>
+        <idValue>Intangible asset</idValue>
+    <idCode>AGQ</idCode>
+        <idValue>Inventory</idValue>
+    <idCode>AGR</idCode>
+        <idValue>Investment</idValue>
+    <idCode>AGS</idCode>
+        <idValue>Intercompany relations information</idValue>
+    <idCode>AGT</idCode>
+        <idValue>Joint venture</idValue>
+    <idCode>AGU</idCode>
+        <idValue>Loan</idValue>
+    <idCode>AGV</idCode>
+        <idValue>Long term debt</idValue>
+    <idCode>AGW</idCode>
+        <idValue>Location</idValue>
+    <idCode>AGX</idCode>
+        <idValue>Current legal structure</idValue>
+    <idCode>AGY</idCode>
+        <idValue>Marital contract</idValue>
+    <idCode>AGZ</idCode>
+        <idValue>Marketing activities</idValue>
+    <idCode>AHA</idCode>
+        <idValue>Merger</idValue>
+    <idCode>AHB</idCode>
+        <idValue>Marketable securities</idValue>
+    <idCode>AHC</idCode>
+        <idValue>Business debt</idValue>
+    <idCode>AHD</idCode>
+        <idValue>Original legal structure</idValue>
+    <idCode>AHE</idCode>
+        <idValue>Employee sharing arrangements</idValue>
+    <idCode>AHF</idCode>
+        <idValue>Organization details</idValue>
+    <idCode>AHG</idCode>
+        <idValue>Public record details</idValue>
+    <idCode>AHH</idCode>
+        <idValue>Price range</idValue>
+    <idCode>AHI</idCode>
+        <idValue>Qualifications</idValue>
+    <idCode>AHJ</idCode>
+        <idValue>Registered activity</idValue>
+    <idCode>AHK</idCode>
+        <idValue>Criminal sentence</idValue>
+    <idCode>AHL</idCode>
+        <idValue>Sales method</idValue>
+    <idCode>AHM</idCode>
+        <idValue>Educational institution information</idValue>
+    <idCode>AHN</idCode>
+        <idValue>Status details</idValue>
+    <idCode>AHO</idCode>
+        <idValue>Sales</idValue>
+    <idCode>AHP</idCode>
+        <idValue>Spouse information</idValue>
+    <idCode>AHQ</idCode>
+        <idValue>Educational degree information</idValue>
+    <idCode>AHR</idCode>
+        <idValue>Shareholding information</idValue>
+    <idCode>AHS</idCode>
+        <idValue>Sales territory</idValue>
+    <idCode>AHT</idCode>
+        <idValue>Accountant&apos;s comments</idValue>
+    <idCode>AHU</idCode>
+        <idValue>Exemption law location</idValue>
+    <idCode>AHV</idCode>
+        <idValue>Share classifications</idValue>
+    <idCode>AHW</idCode>
+        <idValue>Forecast</idValue>
+    <idCode>AHX</idCode>
+        <idValue>Event location</idValue>
+    <idCode>AHY</idCode>
+        <idValue>Facility occupancy</idValue>
+    <idCode>AHZ</idCode>
+        <idValue>Import and export details</idValue>
+    <idCode>AIA</idCode>
+        <idValue>Additional facility information</idValue>
+    <idCode>AIB</idCode>
+        <idValue>Inventory value</idValue>
+    <idCode>AIC</idCode>
+        <idValue>Education</idValue>
+    <idCode>AID</idCode>
+        <idValue>Event</idValue>
+    <idCode>AIE</idCode>
+        <idValue>Agent</idValue>
+    <idCode>ALC</idCode>
+        <idValue>Allowance/charge information</idValue>
+    <idCode>ALL</idCode>
+        <idValue>All documents</idValue>
+    <idCode>ARR</idCode>
+        <idValue>Arrival conditions</idValue>
+    <idCode>AUT</idCode>
+        <idValue>Authentication</idValue>
+    <idCode>BLC</idCode>
+        <idValue>Bill of lading clause</idValue>
+    <idCode>BLR</idCode>
+        <idValue>Transport document remarks</idValue>
+    <idCode>CCI</idCode>
+        <idValue>Customs clearance instructions</idValue>
+    <idCode>CEX</idCode>
+        <idValue>Customs clearance instructions export</idValue>
+    <idCode>CHG</idCode>
+        <idValue>Change information</idValue>
+    <idCode>CIP</idCode>
+        <idValue>Customs clearance instruction import</idValue>
+    <idCode>CLP</idCode>
+        <idValue>Clearance place requested</idValue>
+    <idCode>CLR</idCode>
+        <idValue>Loading remarks</idValue>
+    <idCode>COI</idCode>
+        <idValue>Order information</idValue>
+    <idCode>CUR</idCode>
+        <idValue>Customer remarks</idValue>
+    <idCode>CUS</idCode>
+        <idValue>Customs declaration information</idValue>
+    <idCode>DAR</idCode>
+        <idValue>Damage remarks</idValue>
+    <idCode>DCL</idCode>
+        <idValue>Declaration</idValue>
+    <idCode>DEL</idCode>
+        <idValue>Delivery information</idValue>
+    <idCode>DIN</idCode>
+        <idValue>Delivery instructions</idValue>
+    <idCode>DOC</idCode>
+        <idValue>Documentation instructions</idValue>
+    <idCode>DUT</idCode>
+        <idValue>Duty declaration</idValue>
+    <idCode>EUR</idCode>
+        <idValue>Effective used routing</idValue>
+    <idCode>FBC</idCode>
+        <idValue>First block to be printed on the transport contract</idValue>
+    <idCode>GBL</idCode>
+        <idValue>Government bill of lading information</idValue>
+    <idCode>GEN</idCode>
+        <idValue>Entire transaction set</idValue>
+    <idCode>GS7</idCode>
+        <idValue>Further information concerning GGVS par. 7</idValue>
+    <idCode>HAN</idCode>
+        <idValue>Handling instructions</idValue>
+    <idCode>HAZ</idCode>
+        <idValue>Hazard information</idValue>
+    <idCode>ICN</idCode>
+        <idValue>Information for consignee</idValue>
+    <idCode>IIN</idCode>
+        <idValue>Insurance instructions</idValue>
+    <idCode>IMI</idCode>
+        <idValue>Invoice mailing instructions</idValue>
+    <idCode>IND</idCode>
+        <idValue>Commercial invoice item description</idValue>
+    <idCode>INS</idCode>
+        <idValue>Insurance information</idValue>
+    <idCode>INV</idCode>
+        <idValue>Invoice instruction</idValue>
+    <idCode>IRP</idCode>
+        <idValue>Information for railway purpose</idValue>
+    <idCode>ITR</idCode>
+        <idValue>Inland transport details</idValue>
+    <idCode>ITS</idCode>
+        <idValue>Testing instructions</idValue>
+    <idCode>LIN</idCode>
+        <idValue>Line item</idValue>
+    <idCode>LOI</idCode>
+        <idValue>Loading instruction</idValue>
+    <idCode>MCO</idCode>
+        <idValue>Miscellaneous charge order</idValue>
+    <idCode>MKS</idCode>
+        <idValue>Additional marks/numbers information</idValue>
+    <idCode>ORI</idCode>
+        <idValue>Order instruction</idValue>
+    <idCode>OSI</idCode>
+        <idValue>Other service information</idValue>
+    <idCode>PAC</idCode>
+        <idValue>Packing/marking information</idValue>
+    <idCode>PAI</idCode>
+        <idValue>Payment instructions information</idValue>
+    <idCode>PAY</idCode>
+        <idValue>Payables information</idValue>
+    <idCode>PKG</idCode>
+        <idValue>Packaging information</idValue>
+    <idCode>PKT</idCode>
+        <idValue>Packaging terms information</idValue>
+    <idCode>PMD</idCode>
+        <idValue>Payment detail/remittance information</idValue>
+    <idCode>PMT</idCode>
+        <idValue>Payment information</idValue>
+    <idCode>PRD</idCode>
+        <idValue>Product information</idValue>
+    <idCode>PRF</idCode>
+        <idValue>Price calculation formula</idValue>
+    <idCode>PRI</idCode>
+        <idValue>Priority information</idValue>
+    <idCode>PUR</idCode>
+        <idValue>Purchasing information</idValue>
+    <idCode>QIN</idCode>
+        <idValue>Quarantine instructions</idValue>
+    <idCode>QQD</idCode>
+        <idValue>Quality demands/requirements</idValue>
+    <idCode>QUT</idCode>
+        <idValue>Quotation instruction/information</idValue>
+    <idCode>RAH</idCode>
+        <idValue>Risk and handling information</idValue>
+    <idCode>REG</idCode>
+        <idValue>Regulatory information</idValue>
+    <idCode>RET</idCode>
+        <idValue>Return to origin information</idValue>
+    <idCode>REV</idCode>
+        <idValue>Receivables</idValue>
+    <idCode>RQR</idCode>
+        <idValue>Requested routes/routing instructions</idValue>
+    <idCode>RQT</idCode>
+        <idValue>Tariffs and route requested</idValue>
+    <idCode>SAF</idCode>
+        <idValue>Safety information</idValue>
+    <idCode>SIC</idCode>
+        <idValue>Sender&apos;s instruction to carrier</idValue>
+    <idCode>SIN</idCode>
+        <idValue>Special instructions</idValue>
+    <idCode>SLR</idCode>
+        <idValue>Ship line requested</idValue>
+    <idCode>SPA</idCode>
+        <idValue>Special permission for transport, generally</idValue>
+    <idCode>SPG</idCode>
+        <idValue>Special permission concerning the goods to be transported</idValue>
+    <idCode>SPH</idCode>
+        <idValue>Special handling</idValue>
+    <idCode>SPP</idCode>
+        <idValue>Special permission concerning package</idValue>
+    <idCode>SPT</idCode>
+        <idValue>Special permission concerning transport means</idValue>
+    <idCode>SRN</idCode>
+        <idValue>Subsidiary risk number (IATA/DGR)</idValue>
+    <idCode>SSR</idCode>
+        <idValue>Special service request</idValue>
+    <idCode>SUR</idCode>
+        <idValue>Supplier remarks</idValue>
+    <idCode>TCA</idCode>
+        <idValue>Tariff and class applied</idValue>
+    <idCode>TDT</idCode>
+        <idValue>Transport details remarks</idValue>
+    <idCode>TRA</idCode>
+        <idValue>Transportation information</idValue>
+    <idCode>TRR</idCode>
+        <idValue>Requested tariff</idValue>
+    <idCode>TXD</idCode>
+        <idValue>Tax declaration</idValue>
+    <idCode>WHI</idCode>
+        <idValue>Warehouse instruction/information</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually defined</idValue>
+</idList>

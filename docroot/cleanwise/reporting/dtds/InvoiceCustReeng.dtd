@@ -1,0 +1,27 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT InvoiceCustReengList (InvoiceCustReeng)+>
+<!ELEMENT InvoiceCustReeng (AddBy,AddDate,ChargeType,CustSkuNum,CwSkuNum,FileName,InvoiceDate,InvoiceNum,InvoiceType,ItemPrice,ItemQty,ItemUom,LineNum,ModBy,ModDate,Receiver,RefInvoiceNum,Sender,SetNum)>
+<!ATTLIST InvoiceCustReeng Id ID #REQUIRED>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ChargeType (#PCDATA)>
+<!ELEMENT CustSkuNum (#PCDATA)>
+<!ELEMENT CwSkuNum (#PCDATA)>
+<!ELEMENT FileName (#PCDATA)>
+<!ELEMENT InvoiceDate (#PCDATA)>
+<!ELEMENT InvoiceNum (#PCDATA)>
+<!ELEMENT InvoiceType (#PCDATA)>
+<!ELEMENT ItemPrice (#PCDATA)>
+<!ELEMENT ItemQty (#PCDATA)>
+<!ELEMENT ItemUom (#PCDATA)>
+<!ELEMENT LineNum (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT Receiver (#PCDATA)>
+<!ELEMENT RefInvoiceNum (#PCDATA)>
+<!ELEMENT Sender (#PCDATA)>
+<!ELEMENT SetNum (#PCDATA)>

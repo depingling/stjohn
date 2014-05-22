@@ -1,0 +1,50 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PreOrderList (PreOrder)+>
+<!ELEMENT PreOrder (,AccountIdContractId,CostCenterId,IncomingProfileId,RefOrderId,SiteId,TradingPartnerId,UserId,AccountErpNumberOveride,AddBy,AddDate,BillingOrder,BypassOrderRouting,BypassPreCapturePipeline,CustomerBillingUnit,CustomerComments,CustomerOrderDate,CustomerPoNumber,FreeFormatAddress,FreightCharge,HandlingCharge,HoldUntilDate,ModBy,ModDate,OrderBudgetTypeCd,OrderContactName,OrderEmail,OrderFaxNumber,OrderNote,OrderRefNumber,OrderRequestedShipDate,OrderSourceCd,OrderStatusCdOveride,OrderTelephoneNumber,OrderTypeCd,PaymentType,RushCharge,SiteName,SkuTypeCd,UserName,UserNameKey,WorkflowInd)>
+<!ATTLIST PreOrder Id ID #REQUIRED>
+<!ELEMENT AccountId (#PCDATA)>
+<!ELEMENT ContractId (#PCDATA)>
+<!ELEMENT CostCenterId (#PCDATA)>
+<!ELEMENT IncomingProfileId (#PCDATA)>
+<!ELEMENT RefOrderId (#PCDATA)>
+<!ELEMENT SiteId (#PCDATA)>
+<!ELEMENT TradingPartnerId (#PCDATA)>
+<!ELEMENT UserId (#PCDATA)>
+<!ELEMENT AccountErpNumberOveride (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT BillingOrder (#PCDATA)>
+<!ELEMENT BypassOrderRouting (#PCDATA)>
+<!ELEMENT BypassPreCapturePipeline (#PCDATA)>
+<!ELEMENT CustomerBillingUnit (#PCDATA)>
+<!ELEMENT CustomerComments (#PCDATA)>
+<!ELEMENT CustomerOrderDate (#PCDATA)>
+<!ELEMENT CustomerPoNumber (#PCDATA)>
+<!ELEMENT FreeFormatAddress (#PCDATA)>
+<!ELEMENT FreightCharge (#PCDATA)>
+<!ELEMENT HandlingCharge (#PCDATA)>
+<!ELEMENT HoldUntilDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT OrderBudgetTypeCd (#PCDATA)>
+<!ELEMENT OrderContactName (#PCDATA)>
+<!ELEMENT OrderEmail (#PCDATA)>
+<!ELEMENT OrderFaxNumber (#PCDATA)>
+<!ELEMENT OrderNote (#PCDATA)>
+<!ELEMENT OrderRefNumber (#PCDATA)>
+<!ELEMENT OrderRequestedShipDate (#PCDATA)>
+<!ELEMENT OrderSourceCd (#PCDATA)>
+<!ELEMENT OrderStatusCdOveride (#PCDATA)>
+<!ELEMENT OrderTelephoneNumber (#PCDATA)>
+<!ELEMENT OrderTypeCd (#PCDATA)>
+<!ELEMENT PaymentType (#PCDATA)>
+<!ELEMENT RushCharge (#PCDATA)>
+<!ELEMENT SiteName (#PCDATA)>
+<!ELEMENT SkuTypeCd (#PCDATA)>
+<!ELEMENT UserName (#PCDATA)>
+<!ELEMENT UserNameKey (#PCDATA)>
+<!ELEMENT WorkflowInd (#PCDATA)>

@@ -1,0 +1,14 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ProfileResultsList (ProfileResults)+>
+<!ELEMENT ProfileResults (ProfileId,BusEntityId,AddDate,AddBy,ModDate,ModBy)>
+<!ATTLIST ProfileResults Id ID #REQUIRED>
+<!ELEMENT ProfileId (#PCDATA)>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>

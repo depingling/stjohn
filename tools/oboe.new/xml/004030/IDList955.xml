@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>CD</idCode>
+        <idValue>Customer defined</idValue>
+    <idCode>MB</idCode>
+        <idValue>Taxing Authority Code</idValue>
+    <idCode>SP</idCode>
+        <idValue>State or Province</idValue>
+    <idCode>VD</idCode>
+        <idValue>Vendor defined</idValue>
+    <idCode>VE</idCode>
+        <idValue>Vertex</idValue>
+</idList>

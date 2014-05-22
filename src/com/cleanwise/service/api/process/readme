@@ -1,0 +1,288 @@
+ insert into CLW_PROCESS
+  (       PROCESS_ID,
+          PROCESS_NAME,
+          PROCESS_TYPE_CD,
+          PROCESS_STATUS_CD,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_PROCESS_SEQ.nextval,
+  'INVOICE_PROCESS','TEMPLATE','ACTIVE',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK
+  ( TASK_ID,TASK_TEMPLATE_ID,PROCESS_ID,TASK_NAME,VAR_CLASS,METHOD,TASK_TYPE_CD,TASK_STATUS_CD,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_SEQ.nextval,NULL,
+  (select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE'),
+  'populateBaton','com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','populatePipelineBaton','TEMPLATE','ACTIVE',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  ///////////////////////////////////////////////////1/////////////////////////////////////////////////////////
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='populateBaton' and  TASK_TYPE_CD='TEMPLATE'),
+  'MANDATORY',1,'com.cleanwise.service.api.value.InvoiceRequestData','invoice',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='populateBaton' and  TASK_TYPE_CD='TEMPLATE'),
+  'MANDATORY',2,'java.lang.Integer','partner',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+ insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='populateBaton' and  TASK_TYPE_CD='TEMPLATE'),
+  'MANDATORY',3,'java.lang.String','processName',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='populateBaton' and  TASK_TYPE_CD='TEMPLATE'),
+  'OUTPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+
+  ////////////////////////////////////////////////////2////////////////////////////////////////////////////////////////
+
+  insert into CLW_TASK
+  ( TASK_ID,TASK_TEMPLATE_ID,PROCESS_ID,TASK_NAME,VAR_CLASS,METHOD,TASK_TYPE_CD,TASK_STATUS_CD,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_SEQ.nextval,NULL,
+  (select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE'),
+  'validateShipTo','com.cleanwise.service.api.pipeline.InvoiceRequestValidateShipToAddress','process','TEMPLATE','ACTIVE',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='validateShipTo' and  TASK_TYPE_CD='TEMPLATE'),
+  'INPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='validateShipTo' and  TASK_TYPE_CD='TEMPLATE'),
+  'OUTPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+
+  ////////////////////////////////////////////////////3////////////////////////////////////////////////////////////////
+
+  insert into CLW_TASK
+  ( TASK_ID,TASK_TEMPLATE_ID,PROCESS_ID,TASK_NAME,VAR_CLASS,METHOD,TASK_TYPE_CD,TASK_STATUS_CD,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_SEQ.nextval,NULL,
+  (select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE'),
+  'invoiceRequestUpdatePO','com.cleanwise.service.api.pipeline.InvoiceRequestUpdatePO','process','TEMPLATE','ACTIVE',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestUpdatePO' and  TASK_TYPE_CD='TEMPLATE'),
+  'INPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestUpdatePO' and  TASK_TYPE_CD='TEMPLATE'),
+  'OUTPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  ////////////////////////////////////////////////////4////////////////////////////////////////////////////////////////
+
+  insert into CLW_TASK
+  ( TASK_ID,TASK_TEMPLATE_ID,PROCESS_ID,TASK_NAME,VAR_CLASS,METHOD,TASK_TYPE_CD,TASK_STATUS_CD,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_SEQ.nextval,NULL,
+  (select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE'),
+  'invoiceRequestAnalysis','com.cleanwise.service.api.pipeline.InvoiceRequestAnalysis','process','TEMPLATE','ACTIVE',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestAnalysis' and  TASK_TYPE_CD='TEMPLATE'),
+  'INPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestAnalysis' and  TASK_TYPE_CD='TEMPLATE'),
+  'OUTPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  ////////////////////////////////////////////////////5////////////////////////////////////////////////////////////////
+
+  insert into CLW_TASK
+  ( TASK_ID,TASK_TEMPLATE_ID,PROCESS_ID,TASK_NAME,VAR_CLASS,METHOD,TASK_TYPE_CD,TASK_STATUS_CD,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_SEQ.nextval,NULL,
+  (select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE'),
+  'invoiceRequestAddShipFromAddress','com.cleanwise.service.api.pipeline.InvoiceRequestAddShipFromAddress','process','TEMPLATE','ACTIVE',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestAddShipFromAddress' and  TASK_TYPE_CD='TEMPLATE'),
+  'INPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestAddShipFromAddress' and  TASK_TYPE_CD='TEMPLATE'),
+  'OUTPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  ////////////////////////////////////////////////////6////////////////////////////////////////////////////////////////
+
+  insert into CLW_TASK
+  ( TASK_ID,TASK_TEMPLATE_ID,PROCESS_ID,TASK_NAME,VAR_CLASS,METHOD,TASK_TYPE_CD,TASK_STATUS_CD,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_SEQ.nextval,NULL,
+  (select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE'),
+  'invoiceRequestItemProcessor','com.cleanwise.service.api.pipeline.InvoiceRequestItemProcessor','process','TEMPLATE','ACTIVE',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestItemProcessor' and  TASK_TYPE_CD='TEMPLATE'),
+  'INPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestItemProcessor' and  TASK_TYPE_CD='TEMPLATE'),
+  'OUTPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  ////////////////////////////////////////////////////7////////////////////////////////////////////////////////////////
+
+  insert into CLW_TASK
+  ( TASK_ID,TASK_TEMPLATE_ID,PROCESS_ID,TASK_NAME,VAR_CLASS,METHOD,TASK_TYPE_CD,TASK_STATUS_CD,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_SEQ.nextval,NULL,
+  (select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE'),
+  'invoiceRequestEndProcess','com.cleanwise.service.api.pipeline.InvoiceRequestEndProcess','process','TEMPLATE','ACTIVE',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestEndProcess' and  TASK_TYPE_CD='TEMPLATE'),
+  'INPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_PROPERTY
+  (TASK_PROPERTY_ID,TASK_ID,PROPERTY_TYPE_CD,POSITION,
+    VAR_TYPE,VAR_NAME,add_date, add_by, mod_date, mod_by)
+  select CLW_TASK_PROPERTY_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestEndProcess' and  TASK_TYPE_CD='TEMPLATE'),
+  'OUTPUT',1,'com.cleanwise.service.api.pipeline.InvoiceRequestPipelineBaton','baton',sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+
+  /////////////////////
+
+  insert into CLW_TASK_REF
+  ( TASK_REF_ID,TASK_ID2,process_id,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_TASK_REF_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='populateBaton' and  TASK_TYPE_CD='TEMPLATE')
+  ,(select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE')
+  ,sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+
+  insert into CLW_TASK_REF
+  ( TASK_REF_ID,TASK_ID1,TASK_ID2,process_id,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_TASK_REF_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='populateBaton' and  TASK_TYPE_CD='TEMPLATE')
+  ,(Select TASK_ID from clw_TASK where TASK_NAME='validateShipTo' and  TASK_TYPE_CD='TEMPLATE')
+  ,(select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE')
+  ,sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+
+  insert into CLW_TASK_REF
+  ( TASK_REF_ID,TASK_ID1,TASK_ID2,process_id,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_TASK_REF_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='validateShipTo' and  TASK_TYPE_CD='TEMPLATE')
+  ,(Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestUpdatePO' and  TASK_TYPE_CD='TEMPLATE')
+  ,(select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE')
+  ,sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+
+  insert into CLW_TASK_REF
+  ( TASK_REF_ID,TASK_ID1,TASK_ID2,process_id,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_TASK_REF_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestUpdatePO' and  TASK_TYPE_CD='TEMPLATE')
+  ,(Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestAnalysis' and  TASK_TYPE_CD='TEMPLATE')
+  ,(select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE')
+  ,sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+
+  insert into CLW_TASK_REF
+  ( TASK_REF_ID,TASK_ID1,TASK_ID2,process_id,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_TASK_REF_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestAnalysis' and  TASK_TYPE_CD='TEMPLATE')
+  ,(Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestAddShipFromAddress' and  TASK_TYPE_CD='TEMPLATE')
+  ,(select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE')
+  ,sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+
+  insert into CLW_TASK_REF
+  ( TASK_REF_ID,TASK_ID1,TASK_ID2,process_id,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_TASK_REF_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestAddShipFromAddress' and  TASK_TYPE_CD='TEMPLATE')
+  ,(Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestItemProcessor' and  TASK_TYPE_CD='TEMPLATE')
+  ,(select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE')
+  ,sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_REF
+  ( TASK_REF_ID,TASK_ID1,TASK_ID2,process_id,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_TASK_REF_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestItemProcessor' and  TASK_TYPE_CD='TEMPLATE')
+  ,(Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestEndProcess' and  TASK_TYPE_CD='TEMPLATE')
+  ,(select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE')
+  ,sysdate,'oxysql',sysdate,'oxysql'
+  from dual;
+
+  insert into CLW_TASK_REF
+  ( TASK_REF_ID,TASK_ID1,process_id,add_date, add_by, mod_date, mod_by)
+  select
+  CLW_TASK_REF_SEQ.nextval,
+  (Select TASK_ID from clw_TASK where TASK_NAME='invoiceRequestEndProcess' and  TASK_TYPE_CD='TEMPLATE')
+  ,(select process_id from CLW_PROCESS where PROCESS_NAME='INVOICE_PROCESS' AND PROCESS_TYPE_CD='TEMPLATE')
+  ,sysdate,'oxysql',sysdate,'oxysql'
+  from dual;

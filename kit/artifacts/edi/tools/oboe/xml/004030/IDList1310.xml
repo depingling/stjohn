@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Advance Payment</idValue>
+    <idCode>G</idCode>
+        <idValue>Guaranteed Loan</idValue>
+    <idCode>P</idCode>
+        <idValue>Progress Payment</idValue>
+</idList>

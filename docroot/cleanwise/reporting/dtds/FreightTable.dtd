@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT FreightTableList (FreightTable)+>
+<!ELEMENT FreightTable (,DistributorId,StoreId,AddBy,AddDate,FreightTableStatusCd,FreightTableTypeCd,ModBy,ModDate,ShortDesc)>
+<!ATTLIST FreightTable Id ID #REQUIRED>
+<!ELEMENT DistributorId (#PCDATA)>
+<!ELEMENT StoreId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT FreightTableStatusCd (#PCDATA)>
+<!ELEMENT FreightTableTypeCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

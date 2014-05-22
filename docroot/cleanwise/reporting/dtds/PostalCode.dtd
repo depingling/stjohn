@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PostalCodeList (PostalCode)+>
+<!ELEMENT PostalCode (AddBy,AddDate,CountryCd,CountyCd,ModBy,ModDate,PostalCode,StateProvinceCd,StateProvinceNam)>
+<!ATTLIST PostalCode Id ID #REQUIRED>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT CountryCd (#PCDATA)>
+<!ELEMENT CountyCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT PostalCode (#PCDATA)>
+<!ELEMENT StateProvinceCd (#PCDATA)>
+<!ELEMENT StateProvinceNam (#PCDATA)>

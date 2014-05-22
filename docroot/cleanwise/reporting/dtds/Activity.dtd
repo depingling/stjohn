@@ -1,0 +1,12 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ActivityList (Activity)+>
+<!ELEMENT Activity (Date,Time,UserId,Activity)>
+<!ATTLIST Activity Id ID #REQUIRED>
+<!ELEMENT Date (#PCDATA)>
+<!ELEMENT Time (#PCDATA)>
+<!ELEMENT UserId (#PCDATA)>
+<!ELEMENT Activity (#PCDATA)>

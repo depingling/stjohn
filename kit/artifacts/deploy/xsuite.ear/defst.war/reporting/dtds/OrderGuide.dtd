@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT OrderGuideList (OrderGuide)+>
+<!ELEMENT OrderGuide (,BusEntityIdCatalogId,UserId,AddBy,AddDate,ModBy,ModDate,OrderGuideTypeCd,ShortDesc)>
+<!ATTLIST OrderGuide Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT CatalogId (#PCDATA)>
+<!ELEMENT UserId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT OrderGuideTypeCd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

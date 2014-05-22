@@ -1,0 +1,26 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT RemittanceDetailList (RemittanceDetail)+>
+<!ELEMENT RemittanceDetail (RemittanceId,AddBy,AddDate,CustomerPoNumber,CustomerSupplierNumber,DiscountAmount,ErpReferenceNumber,InvoiceNumber,InvoiceType,ModBy,ModDate,NetAmount,OrigInvoiceAmount,PaymentTypeCd,ReferenceInvoiceNumber,RemittanceDetailStatusCd,SiteReference,TransactionCd)>
+<!ATTLIST RemittanceDetail Id ID #REQUIRED>
+<!ELEMENT RemittanceId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT CustomerPoNumber (#PCDATA)>
+<!ELEMENT CustomerSupplierNumber (#PCDATA)>
+<!ELEMENT DiscountAmount (#PCDATA)>
+<!ELEMENT ErpReferenceNumber (#PCDATA)>
+<!ELEMENT InvoiceNumber (#PCDATA)>
+<!ELEMENT InvoiceType (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT NetAmount (#PCDATA)>
+<!ELEMENT OrigInvoiceAmount (#PCDATA)>
+<!ELEMENT PaymentTypeCd (#PCDATA)>
+<!ELEMENT ReferenceInvoiceNumber (#PCDATA)>
+<!ELEMENT RemittanceDetailStatusCd (#PCDATA)>
+<!ELEMENT SiteReference (#PCDATA)>
+<!ELEMENT TransactionCd (#PCDATA)>

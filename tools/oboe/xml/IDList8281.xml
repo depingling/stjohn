@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Transport for the owner&apos;s account</idValue>
+    <idCode>2</idCode>
+        <idValue>Transport for another account</idValue>
+    <idCode>3</idCode>
+        <idValue>Private transport</idValue>
+</idList>

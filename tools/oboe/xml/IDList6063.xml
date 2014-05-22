@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Discrete quantity</idValue>
+    <idCode>2</idCode>
+        <idValue>Charge</idValue>
+    <idCode>3</idCode>
+        <idValue>Cumulative quantity</idValue>
+    <idCode>8</idCode>
+        <idValue>Inventory quantity at supplier&apos;s subject to inspection by customer</idValue>
+    <idCode>11</idCode>
+        <idValue>Split quantity</idValue>
+    <idCode>12</idCode>
+        <idValue>Despatch quantity</idValue>
+    <idCode>17</idCode>
+        <idValue>Quantity on hand</idValue>
+    <idCode>18</idCode>
+        <idValue>Previous quantity</idValue>
+    <idCode>20</idCode>
+        <idValue>Unusable quantity</idValue>
+    <idCode>21</idCode>
+        <idValue>Ordered quantity</idValue>
+    <idCode>22</idCode>
+        <idValue>Quantity at 100%</idValue>
+    <idCode>23</idCode>
+        <idValue>Active ingredient</idValue>
+    <idCode>24</idCode>
+        <idValue>Inventory quantity at supplier&apos;s not subject to inspection by customer</idValue>
+    <idCode>25</idCode>
+        <idValue>Retail sales</idValue>
+    <idCode>26</idCode>
+        <idValue>Promotion quantity</idValue>
+    <idCode>27</idCode>
+        <idValue>On hold for shipment</idValue>
+    <idCode>28</idCode>
+        <idValue>Military sales quantity</idValue>
+    <idCode>29</idCode>
+        <idValue>On premises sales</idValue>
+    <idCode>30</idCode>
+        <idValue>Off premises sales</idValue>
+    <idCode>31</idCode>
+        <idValue>Estimated annual volume</idValue>
+    <idCode>32</idCode>
+        <idValue>Minimum delivery batch</idValue>
+    <idCode>33</idCode>
+        <idValue>Maximum delivery batch</idValue>
+    <idCode>35</idCode>
+        <idValue>Price break from</idValue>
+    <idCode>36</idCode>
+        <idValue>Price break to</idValue>
+    <idCode>40</idCode>
+        <idValue>Normal delivery</idValue>
+    <idCode>46</idCode>
+        <idValue>Pieces delivered</idValue>
+    <idCode>47</idCode>
+        <idValue>Invoiced quantity</idValue>
+    <idCode>48</idCode>
+        <idValue>Received quantity</idValue>
+    <idCode>49</idCode>
+        <idValue>Chargeable distance</idValue>
+    <idCode>50</idCode>
+        <idValue>Disposition undetermined quantity</idValue>
+    <idCode>51</idCode>
+        <idValue>Inventory category transfer</idValue>
+    <idCode>52</idCode>
+        <idValue>Quantity per pack</idValue>
+    <idCode>53</idCode>
+        <idValue>Minimum order quantity</idValue>
+    <idCode>54</idCode>
+        <idValue>Maximum order quantity</idValue>
+    <idCode>55</idCode>
+        <idValue>Total sales</idValue>
+    <idCode>56</idCode>
+        <idValue>Wholesaler to wholesaler sales</idValue>
+    <idCode>57</idCode>
+        <idValue>In transit quantity</idValue>
+    <idCode>58</idCode>
+        <idValue>Quantity withdrawn</idValue>
+    <idCode>59</idCode>
+        <idValue>Numbers of consumer units in the traded unit</idValue>
+    <idCode>60</idCode>
+        <idValue>Current inventory quantity available for shipment</idValue>
+    <idCode>61</idCode>
+        <idValue>Return quantity</idValue>
+    <idCode>62</idCode>
+        <idValue>Sorted quantity</idValue>
+    <idCode>63</idCode>
+        <idValue>Sorted quantity rejected</idValue>
+    <idCode>64</idCode>
+        <idValue>Scrap quantity</idValue>
+    <idCode>65</idCode>
+        <idValue>Destroyed quantity</idValue>
+    <idCode>66</idCode>
+        <idValue>Committed quantity</idValue>
+    <idCode>67</idCode>
+        <idValue>Estimated reading quantity</idValue>
+    <idCode>68</idCode>
+        <idValue>End quantity</idValue>
+    <idCode>69</idCode>
+        <idValue>Start quantity</idValue>
+    <idCode>70</idCode>
+        <idValue>Cumulative quantity received</idValue>
+    <idCode>71</idCode>
+        <idValue>Cumulative quantity ordered</idValue>
+    <idCode>72</idCode>
+        <idValue>Cumulative quantity received end of prior year</idValue>
+    <idCode>73</idCode>
+        <idValue>Outstanding quantity</idValue>
+    <idCode>74</idCode>
+        <idValue>Latest cumulative quantity</idValue>
+    <idCode>75</idCode>
+        <idValue>Previous highest cumulative quantity</idValue>
+    <idCode>76</idCode>
+        <idValue>Adjusted corrector reading</idValue>
+    <idCode>77</idCode>
+        <idValue>Work days</idValue>
+    <idCode>78</idCode>
+        <idValue>Cumulative quantity scheduled</idValue>
+    <idCode>79</idCode>
+        <idValue>Previous cumulative quantity</idValue>
+    <idCode>80</idCode>
+        <idValue>Unadjusted corrector reading</idValue>
+    <idCode>81</idCode>
+        <idValue>Extra unplanned delivery</idValue>
+    <idCode>82</idCode>
+        <idValue>Quantity requirement for sample inspection</idValue>
+    <idCode>83</idCode>
+        <idValue>Backorder quantity</idValue>
+    <idCode>84</idCode>
+        <idValue>Urgent delivery quantity</idValue>
+    <idCode>85</idCode>
+        <idValue>Previous order quantity to be cancelled</idValue>
+    <idCode>86</idCode>
+        <idValue>Normal reading quantity</idValue>
+    <idCode>87</idCode>
+        <idValue>Customer reading quantity</idValue>
+    <idCode>88</idCode>
+        <idValue>Information reading quantity</idValue>
+    <idCode>89</idCode>
+        <idValue>Quality control held</idValue>
+    <idCode>90</idCode>
+        <idValue>As is quantity</idValue>
+    <idCode>91</idCode>
+        <idValue>Open quantity</idValue>
+    <idCode>92</idCode>
+        <idValue>Final delivery quantity</idValue>
+    <idCode>93</idCode>
+        <idValue>Subsequent delivery quantity</idValue>
+    <idCode>94</idCode>
+        <idValue>Substitutional quantity</idValue>
+    <idCode>95</idCode>
+        <idValue>Redelivery after post processing</idValue>
+    <idCode>96</idCode>
+        <idValue>Quality control failed</idValue>
+    <idCode>97</idCode>
+        <idValue>Minimum inventory</idValue>
+    <idCode>98</idCode>
+        <idValue>Maximum inventory</idValue>
+    <idCode>99</idCode>
+        <idValue>Estimated quantity</idValue>
+    <idCode>100</idCode>
+        <idValue>Chargeable weight</idValue>
+    <idCode>101</idCode>
+        <idValue>Chargeable gross weight</idValue>
+    <idCode>102</idCode>
+        <idValue>Chargeable tare weight</idValue>
+    <idCode>103</idCode>
+        <idValue>Chargeable number of axles</idValue>
+    <idCode>104</idCode>
+        <idValue>Chargeable number of containers</idValue>
+    <idCode>105</idCode>
+        <idValue>Chargeable number of rail wagons</idValue>
+    <idCode>106</idCode>
+        <idValue>Chargeable number of packages</idValue>
+    <idCode>107</idCode>
+        <idValue>Chargeable number of units</idValue>
+    <idCode>108</idCode>
+        <idValue>Chargeable period</idValue>
+    <idCode>109</idCode>
+        <idValue>Chargeable volume</idValue>
+    <idCode>110</idCode>
+        <idValue>Chargeable cubic measurements</idValue>
+    <idCode>111</idCode>
+        <idValue>Chargeable surface</idValue>
+    <idCode>112</idCode>
+        <idValue>Chargeable length</idValue>
+    <idCode>113</idCode>
+        <idValue>Quantity to be delivered</idValue>
+    <idCode>114</idCode>
+        <idValue>Number of passengers</idValue>
+    <idCode>115</idCode>
+        <idValue>Number of crew</idValue>
+    <idCode>116</idCode>
+        <idValue>Number of transport documents</idValue>
+    <idCode>117</idCode>
+        <idValue>Quantity landed</idValue>
+    <idCode>118</idCode>
+        <idValue>Quantity manifested</idValue>
+    <idCode>119</idCode>
+        <idValue>Short shipped</idValue>
+    <idCode>120</idCode>
+        <idValue>Split shipment</idValue>
+    <idCode>121</idCode>
+        <idValue>Over shipped</idValue>
+    <idCode>122</idCode>
+        <idValue>Short-landed goods</idValue>
+    <idCode>123</idCode>
+        <idValue>Surplus goods</idValue>
+    <idCode>124</idCode>
+        <idValue>Damaged goods</idValue>
+    <idCode>125</idCode>
+        <idValue>Pilferage goods</idValue>
+    <idCode>126</idCode>
+        <idValue>Lost goods</idValue>
+    <idCode>127</idCode>
+        <idValue>Report difference</idValue>
+    <idCode>128</idCode>
+        <idValue>Quantity loaded</idValue>
+    <idCode>129</idCode>
+        <idValue>Units per unit price</idValue>
+    <idCode>130</idCode>
+        <idValue>Allowance</idValue>
+    <idCode>131</idCode>
+        <idValue>Delivery quantity</idValue>
+    <idCode>132</idCode>
+        <idValue>Cumulative quantity, preceding period, planned</idValue>
+    <idCode>133</idCode>
+        <idValue>Cumulative quantity, preceding period, reached</idValue>
+    <idCode>134</idCode>
+        <idValue>Cumulative quantity, actual planned</idValue>
+    <idCode>135</idCode>
+        <idValue>Period quantity, planned</idValue>
+    <idCode>136</idCode>
+        <idValue>Period quantity, reached</idValue>
+    <idCode>137</idCode>
+        <idValue>Cumulative quantity, preceding period, estimated</idValue>
+    <idCode>138</idCode>
+        <idValue>Cumulative quantity, actual estimated</idValue>
+    <idCode>139</idCode>
+        <idValue>Cumulative quantity, preceding period, measured</idValue>
+    <idCode>140</idCode>
+        <idValue>Cumulative quantity, actual measured</idValue>
+    <idCode>141</idCode>
+        <idValue>Period quantity, measured</idValue>
+    <idCode>142</idCode>
+        <idValue>Total quantity, planned</idValue>
+    <idCode>143</idCode>
+        <idValue>Quantity, remaining</idValue>
+    <idCode>144</idCode>
+        <idValue>Tolerance</idValue>
+    <idCode>145</idCode>
+        <idValue>Actual stock</idValue>
+    <idCode>146</idCode>
+        <idValue>Model or target stock</idValue>
+    <idCode>147</idCode>
+        <idValue>Direct shipment quantity</idValue>
+    <idCode>148</idCode>
+        <idValue>Amortization total quantity</idValue>
+    <idCode>149</idCode>
+        <idValue>Amortization order quantity</idValue>
+    <idCode>150</idCode>
+        <idValue>Amortization cumulated quantity</idValue>
+    <idCode>151</idCode>
+        <idValue>Quantity advised</idValue>
+    <idCode>152</idCode>
+        <idValue>Quantity on hand</idValue>
+    <idCode>153</idCode>
+        <idValue>Statistical sales quantity</idValue>
+    <idCode>154</idCode>
+        <idValue>Sales quantity planned</idValue>
+    <idCode>155</idCode>
+        <idValue>Replenishment quantity</idValue>
+    <idCode>156</idCode>
+        <idValue>Inventory movement quantity</idValue>
+    <idCode>157</idCode>
+        <idValue>Opening stock balance quantity</idValue>
+    <idCode>158</idCode>
+        <idValue>Closing stock balance quantity</idValue>
+    <idCode>159</idCode>
+        <idValue>Number of stops</idValue>
+    <idCode>160</idCode>
+        <idValue>Minimum production batch</idValue>
+    <idCode>161</idCode>
+        <idValue>Dimensional sample quantity</idValue>
+    <idCode>162</idCode>
+        <idValue>Functional sample quantity</idValue>
+    <idCode>163</idCode>
+        <idValue>Pre-production quantity</idValue>
+    <idCode>164</idCode>
+        <idValue>Delivery batch</idValue>
+    <idCode>165</idCode>
+        <idValue>Delivery batch multiple</idValue>
+    <idCode>166</idCode>
+        <idValue>All time buy</idValue>
+    <idCode>167</idCode>
+        <idValue>Total delivery quantity</idValue>
+    <idCode>168</idCode>
+        <idValue>Single delivery quantity</idValue>
+    <idCode>169</idCode>
+        <idValue>Supplied quantity</idValue>
+    <idCode>170</idCode>
+        <idValue>Allocated quantity</idValue>
+    <idCode>171</idCode>
+        <idValue>Maximum stackability</idValue>
+    <idCode>172</idCode>
+        <idValue>Amortisation quantity</idValue>
+    <idCode>173</idCode>
+        <idValue>Previously amortised quantity</idValue>
+    <idCode>174</idCode>
+        <idValue>Total amortisation quantity</idValue>
+    <idCode>175</idCode>
+        <idValue>Number of moulds</idValue>
+    <idCode>176</idCode>
+        <idValue>Concurrent item output of tooling</idValue>
+    <idCode>177</idCode>
+        <idValue>Periodic capacity of tooling</idValue>
+    <idCode>178</idCode>
+        <idValue>Lifetime capacity of tooling</idValue>
+    <idCode>179</idCode>
+        <idValue>Number of deliveries per despatch period</idValue>
+    <idCode>180</idCode>
+        <idValue>Provided quantity</idValue>
+    <idCode>181</idCode>
+        <idValue>Maximum production batch</idValue>
+    <idCode>182</idCode>
+        <idValue>Cancelled quantity</idValue>
+    <idCode>183</idCode>
+        <idValue>No delivery requirement in this instruction</idValue>
+    <idCode>184</idCode>
+        <idValue>Quantity of material in ordered time</idValue>
+    <idCode>185</idCode>
+        <idValue>Rejected quantity</idValue>
+    <idCode>186</idCode>
+        <idValue>Cumulative quantity scheduled up to accumulation start date</idValue>
+    <idCode>187</idCode>
+        <idValue>Quantity scheduled</idValue>
+    <idCode>188</idCode>
+        <idValue>Number of identical handling units</idValue>
+    <idCode>189</idCode>
+        <idValue>Number of packages in handling unit</idValue>
+    <idCode>190</idCode>
+        <idValue>Despatch note quantity</idValue>
+    <idCode>191</idCode>
+        <idValue>Adjustment to inventory quantity</idValue>
+    <idCode>192</idCode>
+        <idValue>Free goods quantity</idValue>
+    <idCode>193</idCode>
+        <idValue>Free quantity included</idValue>
+    <idCode>194</idCode>
+        <idValue>Received and accepted</idValue>
+    <idCode>195</idCode>
+        <idValue>Received, not accepted, to be returned</idValue>
+    <idCode>196</idCode>
+        <idValue>Received, not accepted, to be destroyed</idValue>
+    <idCode>197</idCode>
+        <idValue>Reordering level</idValue>
+    <idCode>198</idCode>
+        <idValue>Quantity in transit</idValue>
+    <idCode>199</idCode>
+        <idValue>Inventory withdrawal quantity</idValue>
+    <idCode>200</idCode>
+        <idValue>Free quantity not included</idValue>
+    <idCode>201</idCode>
+        <idValue>Recommended overhaul and repair quantity</idValue>
+    <idCode>202</idCode>
+        <idValue>Quantity per next higher assembly</idValue>
+    <idCode>203</idCode>
+        <idValue>Quantity per unit of issue</idValue>
+    <idCode>204</idCode>
+        <idValue>Cumulative scrap quantity</idValue>
+    <idCode>205</idCode>
+        <idValue>Publication turn size</idValue>
+    <idCode>206</idCode>
+        <idValue>Recommended maintenance quantity</idValue>
+    <idCode>207</idCode>
+        <idValue>Labour hours</idValue>
+    <idCode>208</idCode>
+        <idValue>Quantity requirement for maintenance and repair of equipment</idValue>
+    <idCode>209</idCode>
+        <idValue>Additional replenishment demand quantity</idValue>
+    <idCode>210</idCode>
+        <idValue>Returned by consumer quantity</idValue>
+    <idCode>211</idCode>
+        <idValue>Replenishment override quantity</idValue>
+    <idCode>212</idCode>
+        <idValue>Quantity sold, net</idValue>
+    <idCode>213</idCode>
+        <idValue>Transferred out quantity</idValue>
+    <idCode>214</idCode>
+        <idValue>Transferred in quantity</idValue>
+    <idCode>215</idCode>
+        <idValue>Unsaleable quantity</idValue>
+    <idCode>216</idCode>
+        <idValue>Consumer reserved quantity</idValue>
+    <idCode>217</idCode>
+        <idValue>Out of inventory quantity</idValue>
+    <idCode>218</idCode>
+        <idValue>Quantity returned, defective or damaged</idValue>
+    <idCode>219</idCode>
+        <idValue>Taxable quantity</idValue>
+    <idCode>220</idCode>
+        <idValue>Meter reading</idValue>
+    <idCode>221</idCode>
+        <idValue>Maximum requestable quantity</idValue>
+    <idCode>222</idCode>
+        <idValue>Minimum requestable quantity</idValue>
+    <idCode>223</idCode>
+        <idValue>Daily average quantity</idValue>
+    <idCode>224</idCode>
+        <idValue>Budgeted hours</idValue>
+    <idCode>225</idCode>
+        <idValue>Actual hours</idValue>
+    <idCode>226</idCode>
+        <idValue>Earned value hours</idValue>
+    <idCode>227</idCode>
+        <idValue>Estimated hours</idValue>
+    <idCode>228</idCode>
+        <idValue>Level resource task quantity</idValue>
+    <idCode>229</idCode>
+        <idValue>Available resource task quantity</idValue>
+    <idCode>230</idCode>
+        <idValue>Work time units</idValue>
+    <idCode>231</idCode>
+        <idValue>Daily work shifts</idValue>
+    <idCode>232</idCode>
+        <idValue>Work time units per shift</idValue>
+    <idCode>233</idCode>
+        <idValue>Work calendar units</idValue>
+    <idCode>234</idCode>
+        <idValue>Elapsed duration</idValue>
+    <idCode>235</idCode>
+        <idValue>Remaining duration</idValue>
+    <idCode>236</idCode>
+        <idValue>Original duration</idValue>
+    <idCode>237</idCode>
+        <idValue>Current duration</idValue>
+    <idCode>238</idCode>
+        <idValue>Total float time</idValue>
+    <idCode>239</idCode>
+        <idValue>Free float time</idValue>
+    <idCode>240</idCode>
+        <idValue>Lag time</idValue>
+    <idCode>241</idCode>
+        <idValue>Lead time</idValue>
+    <idCode>242</idCode>
+        <idValue>Number of months</idValue>
+    <idCode>243</idCode>
+        <idValue>Reserved quantity customer direct delivery sales</idValue>
+    <idCode>244</idCode>
+        <idValue>Reserved quantity retail sales</idValue>
+    <idCode>245</idCode>
+        <idValue>Consolidated discount inventory</idValue>
+    <idCode>246</idCode>
+        <idValue>Returns replacement quantity</idValue>
+    <idCode>247</idCode>
+        <idValue>Additional promotion sales forecast quantity</idValue>
+    <idCode>248</idCode>
+        <idValue>Reserved quantity</idValue>
+    <idCode>249</idCode>
+        <idValue>Quantity displayed not available for sale</idValue>
+    <idCode>250</idCode>
+        <idValue>Inventory discrepancy</idValue>
+    <idCode>251</idCode>
+        <idValue>Incremental order quantity</idValue>
+    <idCode>252</idCode>
+        <idValue>Quantity requiring manipulation before despatch</idValue>
+    <idCode>253</idCode>
+        <idValue>Quantity in quarantine</idValue>
+    <idCode>254</idCode>
+        <idValue>Quantity withheld by owner of goods</idValue>
+    <idCode>255</idCode>
+        <idValue>Quantity not available for despatch</idValue>
+    <idCode>256</idCode>
+        <idValue>Quantity awaiting delivery</idValue>
+    <idCode>257</idCode>
+        <idValue>Quantity in physical inventory</idValue>
+    <idCode>258</idCode>
+        <idValue>Quantity held by logistic service provider</idValue>
+    <idCode>259</idCode>
+        <idValue>Optimal quantity</idValue>
+    <idCode>260</idCode>
+        <idValue>Delivery quantity balance</idValue>
+    <idCode>261</idCode>
+        <idValue>Cumulative quantity shipped</idValue>
+    <idCode>262</idCode>
+        <idValue>Quantity suspended</idValue>
+    <idCode>263</idCode>
+        <idValue>Control quantity</idValue>
+    <idCode>264</idCode>
+        <idValue>Equipment quantity</idValue>
+    <idCode>265</idCode>
+        <idValue>Factor</idValue>
+    <idCode>266</idCode>
+        <idValue>Unsold quantity held by wholesaler</idValue>
+    <idCode>267</idCode>
+        <idValue>Quantity held by delivery vehicle</idValue>
+    <idCode>268</idCode>
+        <idValue>Quantity held by retail outlet</idValue>
+    <idCode>269</idCode>
+        <idValue>Rejected return quantity</idValue>
+    <idCode>270</idCode>
+        <idValue>Accounts</idValue>
+    <idCode>271</idCode>
+        <idValue>Accounts placed for collection</idValue>
+    <idCode>272</idCode>
+        <idValue>Activity codes</idValue>
+    <idCode>273</idCode>
+        <idValue>Agents</idValue>
+    <idCode>274</idCode>
+        <idValue>Airline attendants</idValue>
+    <idCode>275</idCode>
+        <idValue>Authorised shares</idValue>
+    <idCode>276</idCode>
+        <idValue>Employee average</idValue>
+    <idCode>277</idCode>
+        <idValue>Branch locations</idValue>
+    <idCode>278</idCode>
+        <idValue>Capital changes</idValue>
+    <idCode>279</idCode>
+        <idValue>Clerks</idValue>
+    <idCode>280</idCode>
+        <idValue>Companies in same activity</idValue>
+    <idCode>281</idCode>
+        <idValue>Companies included in consolidated financial statement</idValue>
+    <idCode>282</idCode>
+        <idValue>Cooperative shares</idValue>
+    <idCode>283</idCode>
+        <idValue>Creditors</idValue>
+    <idCode>284</idCode>
+        <idValue>Departments</idValue>
+    <idCode>285</idCode>
+        <idValue>Design employees</idValue>
+    <idCode>286</idCode>
+        <idValue>Physicians</idValue>
+    <idCode>287</idCode>
+        <idValue>Domestic affiliated companies</idValue>
+    <idCode>288</idCode>
+        <idValue>Drivers</idValue>
+    <idCode>289</idCode>
+        <idValue>Employed at location</idValue>
+    <idCode>290</idCode>
+        <idValue>Employed by this company</idValue>
+    <idCode>291</idCode>
+        <idValue>Total employees</idValue>
+    <idCode>292</idCode>
+        <idValue>Employees shared</idValue>
+    <idCode>293</idCode>
+        <idValue>Engineers</idValue>
+    <idCode>294</idCode>
+        <idValue>Estimated accounts</idValue>
+    <idCode>295</idCode>
+        <idValue>Estimated employees at location</idValue>
+    <idCode>296</idCode>
+        <idValue>Estimated total employees</idValue>
+    <idCode>297</idCode>
+        <idValue>Executives</idValue>
+    <idCode>298</idCode>
+        <idValue>Agricultural workers</idValue>
+    <idCode>299</idCode>
+        <idValue>Financial institutions</idValue>
+    <idCode>300</idCode>
+        <idValue>Floors occupied</idValue>
+    <idCode>301</idCode>
+        <idValue>Foreign related entities</idValue>
+    <idCode>302</idCode>
+        <idValue>Group employees</idValue>
+    <idCode>303</idCode>
+        <idValue>Indirect employees</idValue>
+    <idCode>304</idCode>
+        <idValue>Installers</idValue>
+    <idCode>305</idCode>
+        <idValue>Invoices</idValue>
+    <idCode>306</idCode>
+        <idValue>Issued shares</idValue>
+    <idCode>307</idCode>
+        <idValue>Labourers</idValue>
+    <idCode>308</idCode>
+        <idValue>Manufactured units</idValue>
+    <idCode>309</idCode>
+        <idValue>Maximum number of employees</idValue>
+    <idCode>310</idCode>
+        <idValue>Maximum number of employees at location</idValue>
+    <idCode>311</idCode>
+        <idValue>Members in group</idValue>
+    <idCode>312</idCode>
+        <idValue>Minimum number of employees at location</idValue>
+    <idCode>313</idCode>
+        <idValue>Minimum number of employees</idValue>
+    <idCode>314</idCode>
+        <idValue>Non-union employees</idValue>
+    <idCode>315</idCode>
+        <idValue>Floors</idValue>
+    <idCode>316</idCode>
+        <idValue>Nurses</idValue>
+    <idCode>317</idCode>
+        <idValue>Office workers</idValue>
+    <idCode>318</idCode>
+        <idValue>Other employees</idValue>
+    <idCode>319</idCode>
+        <idValue>Part time employees</idValue>
+    <idCode>320</idCode>
+        <idValue>Accounts payable average overdue days</idValue>
+    <idCode>321</idCode>
+        <idValue>Pilots</idValue>
+    <idCode>322</idCode>
+        <idValue>Plant workers</idValue>
+    <idCode>323</idCode>
+        <idValue>Previous number of accounts</idValue>
+    <idCode>324</idCode>
+        <idValue>Previous number of branch locations</idValue>
+    <idCode>325</idCode>
+        <idValue>Principals included as employees</idValue>
+    <idCode>326</idCode>
+        <idValue>Protested bills</idValue>
+    <idCode>327</idCode>
+        <idValue>Registered brands distributed</idValue>
+    <idCode>328</idCode>
+        <idValue>Registered brands manufactured</idValue>
+    <idCode>329</idCode>
+        <idValue>Related business entities</idValue>
+    <idCode>330</idCode>
+        <idValue>Relatives employed</idValue>
+    <idCode>331</idCode>
+        <idValue>Rooms</idValue>
+    <idCode>332</idCode>
+        <idValue>Salespersons</idValue>
+    <idCode>333</idCode>
+        <idValue>Seats</idValue>
+    <idCode>334</idCode>
+        <idValue>Shareholders</idValue>
+    <idCode>335</idCode>
+        <idValue>Shares of common stock</idValue>
+    <idCode>336</idCode>
+        <idValue>Shares of preferred stock</idValue>
+    <idCode>337</idCode>
+        <idValue>Silent partners</idValue>
+    <idCode>338</idCode>
+        <idValue>Subcontractors</idValue>
+    <idCode>339</idCode>
+        <idValue>Subsidiaries</idValue>
+    <idCode>340</idCode>
+        <idValue>Law suits</idValue>
+    <idCode>341</idCode>
+        <idValue>Suppliers</idValue>
+    <idCode>342</idCode>
+        <idValue>Teachers</idValue>
+    <idCode>343</idCode>
+        <idValue>Technicians</idValue>
+    <idCode>344</idCode>
+        <idValue>Trainees</idValue>
+    <idCode>345</idCode>
+        <idValue>Union employees</idValue>
+    <idCode>346</idCode>
+        <idValue>Number of units</idValue>
+    <idCode>347</idCode>
+        <idValue>Warehouse employees</idValue>
+    <idCode>348</idCode>
+        <idValue>Shareholders holding remainder of shares</idValue>
+    <idCode>349</idCode>
+        <idValue>Payment orders filed</idValue>
+    <idCode>350</idCode>
+        <idValue>Uncovered cheques</idValue>
+    <idCode>351</idCode>
+        <idValue>Auctions</idValue>
+    <idCode>352</idCode>
+        <idValue>Units produced</idValue>
+    <idCode>353</idCode>
+        <idValue>Added employees</idValue>
+    <idCode>354</idCode>
+        <idValue>Number of added locations</idValue>
+    <idCode>355</idCode>
+        <idValue>Total number of foreign subsidiaries not included in financial statement</idValue>
+    <idCode>356</idCode>
+        <idValue>Number of closed locations</idValue>
+    <idCode>357</idCode>
+        <idValue>Counter clerks</idValue>
+    <idCode>358</idCode>
+        <idValue>Payment experiences in the last 3 months</idValue>
+    <idCode>359</idCode>
+        <idValue>Payment experiences in the last 12 months</idValue>
+    <idCode>360</idCode>
+        <idValue>Total number of subsidiaries not included in the financial statement</idValue>
+    <idCode>361</idCode>
+        <idValue>Paid-in common shares</idValue>
+    <idCode>362</idCode>
+        <idValue>Total number of domestic subsidiaries not included in financial statement</idValue>
+    <idCode>363</idCode>
+        <idValue>Total number of foreign subsidiaries included in financial statement</idValue>
+    <idCode>364</idCode>
+        <idValue>Total number of domestic subsidiaries included in financial statement</idValue>
+    <idCode>365</idCode>
+        <idValue>Total transactions</idValue>
+    <idCode>366</idCode>
+        <idValue>Paid-in preferred shares</idValue>
+    <idCode>367</idCode>
+        <idValue>Employees</idValue>
+</idList>

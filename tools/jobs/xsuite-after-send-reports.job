@@ -1,0 +1,45 @@
+echo $0
+
+lockfile=/tmp/$0.lockfile
+if [ -f $lockfile ]
+then
+  echo "error lock file $lockfile in place."
+  exit
+fi
+
+echo $$ > $lockfile
+
+
+if [ -f  /espendwise/xapp/.profile ]
+then
+        . /espendwise/xapp/.profile
+fi
+
+cd /espendwise/xapp/webapp/EJBServer/xsuite
+. app.sh.env
+
+logtstamp=`date '+%Y%m%d.%H%M%S'`
+
+logDir=$XSUITE_HOME/xsuite/edi/processed_log
+logFile=${logDir}/xsuite_after_send_report_$logtstamp.log
+
+date >> ${logFile} 2>&1
+echo "Running xsuite-after-send-reports.job" >> ${logFile} 2>&1
+cd $XDIR/jobs
+
+sh xsuite-run-generic-reports.job xsuite-after-send-reports.xml  >> ${logFile} 2>&1 &
+
+#echo "Done Running xsuite-after-send-reports.job" >> ${logFile} 2>&1
+#date >> ${logFile} 2>&1
+maillist=jobreporting@espendwise.com
+mail ${maillist} <<EOF
+subject: $0 processed
+
+--- $0
+
+`cat $logFile`
+
+EOF
+
+
+rm $lockfile

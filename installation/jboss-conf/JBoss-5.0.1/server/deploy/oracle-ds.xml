@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- $Id: oracle-ds.xml,v 1.9 2012/08/20 21:19:26 yuri Exp $ -->
+<!-- ==================================================================== -->
+<!--  Datasource config for Oracle originally from Steven Coy             -->
+<!-- ==================================================================== -->
+
+
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>OracleDS</jndi-name>
+    <connection-url>${dbUrl}</connection-url>
+    <driver-class>${dbDriver}</driver-class>
+    <user-name>${dbUser}</user-name>
+    <password>${dbPassword}</password>
+    <!-- Uses the pingDatabase method to check a connection is still valid before handing it out from the pool -->
+    <!--valid-connection-checker-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleValidConnectionChecker</valid-connection-checker-class-name-->
+    <!-- Checks the Oracle error codes and messages for fatal errors -->
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+        <!-- sql to call when connection is created
+        <new-connection-sql>some arbitrary sql</new-connection-sql>
+        -->
+
+        <!-- sql to call on an existing pooled connection when it is obtained from pool - the OracleValidConnectionChecker is prefered
+        <check-valid-connection-sql>some arbitrary sql</check-valid-connection-sql>
+        -->
+
+      <!-- corresponding type-mapping in the standardjbosscmp-jdbc.xml (optional) -->
+      <metadata>
+         <type-mapping>Oracle10g</type-mapping>
+      </metadata>
+      <max-pool-size>20</max-pool-size>
+  </local-tx-datasource>
+  
+  <no-tx-datasource>
+    <jndi-name>OracleDS_NO_TX</jndi-name>
+    <connection-url>${dbUrl}</connection-url>
+    <driver-class>${dbDriver}</driver-class>
+    <user-name>${dbUser}</user-name>
+    <password>${dbPassword}</password>
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+      <metadata>
+         <type-mapping>Oracle10g</type-mapping>
+      </metadata>
+  </no-tx-datasource>
+
+  <local-tx-datasource>
+    <jndi-name>ReportDS</jndi-name>
+    <connection-url>${reportUrl}</connection-url>
+    <driver-class>${reportDriver}</driver-class>
+    <user-name>${reportUser}</user-name>
+    <password>${reportPassword}</password>
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+      <metadata>
+         <type-mapping>Oracle10g</type-mapping>
+      </metadata>
+  </local-tx-datasource>
+
+  <local-tx-datasource>
+    <jndi-name>StagedInfoDS</jndi-name>
+    <connection-url>${stagedinfoUrl}</connection-url>
+    <driver-class>${stagedinfoDriver}</driver-class>
+    <user-name>${stagedinfoUser}</user-name>
+    <password>${stagedinfoPassword}</password>
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+      <metadata>
+         <type-mapping>Oracle10g</type-mapping>
+      </metadata>
+  </local-tx-datasource>
+
+  <local-tx-datasource>
+    <jndi-name>AnalyticDS</jndi-name>
+    <connection-url>${analyticUrl}</connection-url>
+    <driver-class>${analyticDriver}</driver-class>
+    <user-name>${analyticUser}</user-name>
+    <password>${analyticPassword}</password>
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+      <metadata>
+         <type-mapping>Oracle10g</type-mapping>
+      </metadata>
+  </local-tx-datasource>
+  
+  <local-tx-datasource>
+    <jndi-name>JDIntegrationDS</jndi-name>
+    <connection-url>${jdIntegrationUrl}</connection-url>
+    <driver-class>${jdIntegrationDriver}</driver-class>
+    <user-name>${jdIntegrationUser}</user-name>
+    <password>${jdIntegrationPassword}</password>
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+      <metadata>
+         <type-mapping>Oracle10g</type-mapping>
+      </metadata>
+  </local-tx-datasource>
+
+   <local-tx-datasource>
+     <jndi-name>QuartzDS</jndi-name>
+     <connection-url>${dbUrl}</connection-url>
+     <driver-class>${dbDriver}</driver-class>
+     <user-name>${dbUser}</user-name>
+     <password>${dbPassword}</password>
+     <check-valid-connection-sql>select sysdate from dual</check-valid-connection-sql>
+   </local-tx-datasource>
+
+  <!-- local-tx-datasource>
+    <jndi-name>MainDS</jndi-name>
+    <connection-url>@mainDbUrl@</connection-url>
+    <driver-class>@mainDbDriver@</driver-class>
+    <user-name>@mainDbUser@</user-name>
+    <password>@mainDbPassword@</password>
+  </local-tx-datasource>
+
+  <local-tx-datasource>
+    <jndi-name>Store01DS</jndi-name>
+    <connection-url>@store01DbUrl@</connection-url>
+    <driver-class>@store01DbDriver@</driver-class>
+    <user-name>@store01DbUser@</user-name>
+    <password>@store01DbPassword@</password>
+  </local-tx-datasource>
+
+  <local-tx-datasource>
+    <jndi-name>Store02DS</jndi-name>
+    <connection-url>@store02DbUrl@</connection-url>
+    <driver-class>@store02DbDriver@</driver-class>
+    <user-name>@store02DbUser@</user-name>
+    <password>@store02DbPassword@</password>
+  </local-tx-datasource  -->
+
+
+</datasources>

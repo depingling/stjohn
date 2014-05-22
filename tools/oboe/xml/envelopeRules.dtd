@@ -1,0 +1,40 @@
+<?xml encoding="ISO-8859-1"?>
+<!-- OBOE release 2.5.0 -->
+<!ELEMENT envelope (segment+, functionalGroup, segment+)>
+<!ATTLIST envelope type (X12 | EDIFact | other) #REQUIRED>
+<!ELEMENT functionalGroup (segment*, transactionSet, segment*)>
+<!ELEMENT transactionSet EMPTY>
+<!ELEMENT segment (segment*, (compositeDE?, dataElement?)*, elementRule*)*> 
+<!ATTLIST segment name CDATA #REQUIRED>
+<!ATTLIST segment id CDATA #REQUIRED>
+<!ATTLIST segment sequence CDATA #REQUIRED>
+<!ATTLIST segment description CDATA #IMPLIED>
+<!ATTLIST segment occurs CDATA  #IMPLIED>
+<!ATTLIST segment required (M | O | C) "M">
+<!ATTLIST segment xmlTag CDATA  #IMPLIED>
+<!ELEMENT compositeDE (dataElement)+>
+<!ATTLIST compositeDE name CDATA #REQUIRED>
+<!ATTLIST compositeDE id CDATA #REQUIRED>
+<!ATTLIST compositeDE description CDATA #IMPLIED>
+<!ATTLIST compositeDE sequence CDATA #IMPLIED>
+<!ATTLIST compositeDE required CDATA #IMPLIED>
+<!ATTLIST compositeDE xmlTag CDATA #IMPLIED>
+<!ELEMENT dataElement (default)?>
+<!ATTLIST dataElement name CDATA #REQUIRED>
+<!ATTLIST dataElement id CDATA #REQUIRED>
+<!ATTLIST dataElement type CDATA #REQUIRED>
+<!ATTLIST dataElement sequence CDATA #IMPLIED>
+<!ATTLIST dataElement required CDATA #IMPLIED>
+<!ATTLIST dataElement description CDATA #IMPLIED>
+<!ATTLIST dataElement minLength CDATA #REQUIRED>
+<!ATTLIST dataElement maxLength CDATA #REQUIRED>
+<!ATTLIST dataElement xmlTag CDATA  #IMPLIED>
+<!ATTLIST dataElement idListFile CDATA #IMPLIED>
+<!ELEMENT default (#PCDATA)>
+<!ATTLIST default from (constant | property | method) #REQUIRED>
+<!ELEMENT elementRule EMPTY>
+<!ATTLIST elementRule rule (oneOrMoreMustExist |  ifFirstExistsThenAllMustExist
+              | oneAndOnlyOneMayExist | ifFirstExistsThenAtLeastOneMoreMustExist
+         	  | allOrNoneMayExist | ifFirstExistsThenNoOthersMayExist)
+		 #REQUIRED>
+<!ATTLIST elementRule positions CDATA #REQUIRED>

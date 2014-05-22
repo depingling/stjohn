@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>9A</idCode>
+        <idValue>Authentication</idValue>
+    <idCode>9E</idCode>
+        <idValue>Authentication and Encryption</idValue>
+    <idCode>9N</idCode>
+        <idValue>Encryption</idValue>
+    <idCode>OC</idCode>
+        <idValue>Clear Text</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

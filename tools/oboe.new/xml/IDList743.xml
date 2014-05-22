@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>C</idCode>
+        <idValue>Paid By Customer</idValue>
+    <idCode>F</idCode>
+        <idValue>Free</idValue>
+    <idCode>S</idCode>
+        <idValue>Paid By Supplier</idValue>
+    <idCode>Z</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

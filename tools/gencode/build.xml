@@ -1,0 +1,713 @@
+<!-- Project definition file for ANT for the Cleanwise J2EE Project -->
+<project name="StJohnApp" default="all" basedir="../..">
+
+  <!-- set global properties for this build -->
+  <property name="app.name" value="stjohn" />
+  <property name="version" value="V1.0" />
+  <property name="tools" value="tools" />
+  <property name="src" value="src" />
+  <property name="build" value="kit" />
+  <property name="docdir" value="${build}/docs" />
+  <property name="tmpdir" value="${build}/tmp" />
+  <property name="libdir" value="tools/gencode/lib" />
+  <property name="jdbcLib" value="${build}/jar/ojdbc14.jar" />
+  <!-- The properties here must be loaded because other targets and properties,
+       e.g. the classpath depend on properties defined in this file -->
+  <property file="installation.properties" />
+
+  <!-- ARGS is passed to executable programs as command-line arguments,
+       pre-defining it to blank should force it to be set by the user -->
+  <property name="ARGS" value="" />
+
+  <!-- This will include the required xalan.jar and xerces.jar -->
+  <path id="project.class.path">
+     <pathelement path="${build}/tools" />
+     <pathelement path="${libdir}/xerces.jar" />
+     <pathelement path="${libdir}/xalan.jar" />
+<fileset dir="${jbossLibExt}">
+       <include name="**/*.jar" />
+    </fileset>
+<fileset dir="${jbossLib}">
+       <include name="**/*.jar" />
+    </fileset>
+  </path>
+
+  <target name="prepare">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <filter filtersfile="installation.properties" />
+
+    <!-- Compile java classes needed by custom Ant tasks -->
+    <mkdir dir="${build}/tools" />
+    <javac srcdir="tools" destdir="${build}/tools" >
+          <include name="**/XMLTableProcessor.java" />
+          <include name="**/DBtoXML.java" />
+          <classpath refid="project.class.path" />
+    </javac>
+
+    <taskdef name="DBtoXML"
+             classname="com.cleanwise.tools.DBtoXML" >
+         <classpath>
+    <pathelement location="${jdbcLib}" />
+            <pathelement path="${build}/tools" />
+             </classpath>
+    </taskdef>
+    <taskdef name="BeansToXML"
+             classname="com.cleanwise.tools.BeansToXML" >
+         <classpath>
+            <pathelement path="${build}/tools" />
+        </classpath>
+    </taskdef>
+    <taskdef name="GCDbToSql" classname="com.cleanwise.tools.gencode.GCDbToSql" >
+        <classpath>
+            <pathelement location="${jdbcLib}"/>
+            <pathelement path="${build}/tools"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="GCDbToXml" classname="com.cleanwise.tools.gencode.GCDbToXml" >
+        <classpath>
+            <pathelement location="${jdbcLib}"/>
+            <pathelement path="${build}/tools"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="GCXmlToSql" classname="com.cleanwise.tools.gencode.GCXmlToSql" >
+        <classpath>
+            <pathelement location="${jdbcLib}"/>
+            <pathelement path="${build}/tools"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="GCSqlToUpdateDb" classname="com.cleanwise.tools.gencode.GCSqlToUpdateDb" >
+        <classpath>
+            <pathelement location="${jdbcLib}"/>
+            <pathelement path="${build}/tools"/>
+        </classpath>
+    </taskdef>
+  	<taskdef name="GCSqlToUpdateEnterpriseDb" classname="com.cleanwise.tools.gencode.GCSqlToUpdateEnterpriseDb" >
+  	        <classpath>
+  	            <pathelement location="${jdbcLib}"/>
+  	            <pathelement path="${build}/tools"/>
+  	        </classpath>
+  	</taskdef>
+    <taskdef name="SourceCodeObserver" classname="com.cleanwise.tools.srcCodeObserver.SourceCodeObserver">
+        <classpath>
+            <pathelement location="${jdbcLib}"/>
+            <pathelement path="${build}/tools"/>
+            <pathelement path="${tools}/ftp/edtftpj-pro.jar"/>
+        </classpath>
+    </taskdef>
+  </target>
+
+  <!-- The equivalent of 'make all' -->
+  <!--target name="all" depends="prepare,genxml,genjava,genview" >
+  </target-->
+
+    <!-- Generate SQL queries to create DB structure from a database connection -->
+    <!-- target name="oradb_to_sql" depends="prepare">
+        <GCDbToSql
+                driver="oracle.jdbc.driver.OracleDriver"
+                url="${dbUrl}"
+                userid="${dbUser}"
+                password="${dbPassword}"
+                outfile="../../${build}/tools/my_new_db.sql"
+                prefix="CLW"
+                owner=""
+                schemaPattern="${dbUser}"
+                tableSpace=""
+                classVersionUID="../../classSerialUID.properties"
+                classpath="${jdbcLib}">
+        </GCDbToSql>
+    </target-->
+
+    <target name="compare_src_code_on_servers" depends="prepare">
+        <SourceCodeObserver
+                serverName1="127.0.0.1"
+                serverName2="127.0.0.1"
+                port1="0"
+                port2="0"
+                insecure1="yes"
+                insecure2="yes"
+                ftpModeActive1="no"
+                ftpModeActive2="no"
+                userName1="vvs"
+                userName2="vvs2"
+                password1="1"
+                password2="1"
+                path1="/stjohn"
+                path2="/stjohn"
+                includeFiles=".*\.java||.*\.jsp||.*\.html||.*\.xml||.*\.css||.*\.js"
+                excludeDirs="CVS"
+                excludeFiles="\.#.*"
+                resultFile="${build}/tools/comparison_result.txt"
+                logFile="${build}/tools/comparison_logs.log"
+                classpath="${tools}/ftp/*.jar">
+        </SourceCodeObserver>
+    </target>
+
+    <!-- Generate new DBXML from a database connection -->
+    <target name="oradb_to_xml" depends="prepare">
+        <GCDbToXml
+                driver="oracle.jdbc.driver.OracleDriver"
+                url="${dbUrl}"
+                userid="${dbUser}"
+                password="${dbPassword}"
+                outfile="db.xml"
+                prefix="CLW"
+                owner=""
+                tableSpace=""
+                schemaPattern="${dbUser}"
+                classVersionUID="../../classSerialUID.properties"
+                classpath="${jdbcLib}">
+        </GCDbToXml>
+    </target>
+
+    <!-- Generate SQL to update database by data from XML file -->
+	<!-- Multiple prefixes should be separated by comma operator -->
+    <target name="gen_sql_to_update_db" depends="prepare">
+        <GCSqlToUpdateDb
+                driver="oracle.jdbc.driver.OracleDriver"
+                url="${dbUrl}"
+                userid="${dbUser}"
+                password="${dbPassword}"
+                dbXmlFile="dbBase.xml"
+                outfile="../../${build}/tools/sql_to_update_db.sql"
+                prefix="CLW,CLT,CLV,CL_TEMP,CRW,JD_INVOICE,REPORT,ESW"
+        		logPrefix="L"
+                owner="${dbUser}"
+                tableSpace=""
+                schemaPattern="${dbUser}"
+                classVersionUID="../../classSerialUID.properties"
+                classpath="${jdbcLib}">
+        </GCSqlToUpdateDb>
+    </target>
+	
+	<target name="gen_sql_to_update_dw" depends="prepare">
+		<GCSqlToUpdateDb
+	                driver="oracle.jdbc.driver.OracleDriver"
+	                url="${reportUrl}"
+	                userid="${reportUser}"
+	                password="${reportPassword}"
+	                dbXmlFile="dbDW.xml"
+	                outfile="../../${build}/tools/sql_to_update_dw.sql"
+	                prefix="DW"
+	        		logPrefix="L"
+	                owner="${reportUser}"
+	                tableSpace=""
+	                schemaPattern="${reportUser}"
+	                classVersionUID="../../classSerialUID.properties"
+	                classpath="${jdbcLib}">
+		</GCSqlToUpdateDb>
+	</target>
+	
+    <!-- Generate SQL to update database by data from XML file -->
+	<!-- Multiple prefixes should be separated by comma operator -->
+    <target name="gen_sql_to_update_enterprise_db" depends="prepare">
+        <GCSqlToUpdateEnterpriseDb
+                driver="${dbDriver}"
+                url="${dbUrl}"
+                userid="${dbUser}"
+                password="${dbPassword}"
+                dbXmlFile="dbBase.xml"
+                outfile="../../${build}/tools/sql_to_update_db.sql"
+                prefix="${dbPrefix}"
+                owner="${dbUser}"
+                tableSpace=""
+                schemaPattern="${dbSchema}"
+                classVersionUID="../../classSerialUID.properties"
+                classpath="${jdbcLib}">
+        </GCSqlToUpdateEnterpriseDb>
+    </target>
+	
+    <!-- Generate SQL to update database by data from XML file -->
+	<!-- Multiple prefixes should be separated by comma operator -->
+    <target name="gen_sql_to_update_enterprise_db_schema" depends="prepare">
+        <GCSqlToUpdateEnterpriseDb
+                driver="${store01DbDriver}"
+                url="${store01DbUrl}"
+                userid="${store01DbUser}"
+                password="${store01DbPassword}"
+                dbXmlFile="dbBase.xml"
+                outfile="../../${build}/tools/sql_to_update_db.sql"
+                prefix="${dbPrefix}"
+                owner="${store01DbUser}"
+                tableSpace=""
+                schemaPattern="${store01DbSchema}"
+                classVersionUID="../../classSerialUID.properties"
+                classpath="${jdbcLib}">
+        </GCSqlToUpdateEnterpriseDb>
+    </target>
+
+    <!-- Generate SQL to update database by data from XML file -->
+	<!-- Multiple prefixes should be separated by comma operator -->
+    <!--target name="gen_sql_to_update_enterprise_main_db" depends="prepare">
+        <GCSqlToUpdateEnterpriseDb
+                driver="${mainDbDriver}"
+                url="${mainDbUrl}"
+                userid="${mainDbUser}"
+                password="${mainDbPassword}"
+                dbXmlFile="dbBase.xml"
+                outfile="../../${build}/tools/sql_to_update_db.sql"
+                prefix="ESW"
+                owner="${mainDbUser}"
+                tableSpace=""
+                schemaPattern="${mainDbSchema}"
+                classVersionUID="../../classSerialUID.properties"
+                classpath="${jdbcLib}">
+        </GCSqlToUpdateEnterpriseDb>
+    </target-->
+	
+    <!-- Generate new DBXML from a database connection -->
+    <target name="oradw_to_xml" depends="prepare">
+        <GCDbToXml
+                driver="oracle.jdbc.driver.OracleDriver"
+                url="${dbUrl}"
+                userid="${reportUser}"
+                password="${reportPassword}"
+                outfile="dw.xml"
+                prefix="DW"
+                owner=""
+                tableSpace=""
+                schemaPattern="${reportUser}"
+                classVersionUID="../../classSerialUID.properties"
+                classpath="${jdbcLib}">
+        </GCDbToXml>
+    </target>
+
+    <!-- Generate SQL to update database by data from XML file -->
+	<!--
+    <target name="gen_sql_to_update_dw" depends="prepare">
+        <GCSqlToUpdateDb
+                driver="oracle.jdbc.driver.OracleDriver"
+                url="${reportUrl}"
+                userid="${reportUser}"
+                password="${reportPassword}"
+                dbXmlFile="dwBase.xml"
+                outfile="../../${build}/tools/sql_to_update_dw.sql"
+                prefix="DW"
+                owner="${reportUser}"
+                tableSpace=""
+                schemaPattern="${reportUser}"
+                classVersionUID="../../classSerialUID.properties"
+                classpath="${jdbcLib}">
+        </GCSqlToUpdateDb>
+    </target>
+	-->
+    <!-- Generate SQL queries to create DB structure from a XML -->
+    <target name="xmldb_to_sql" depends="prepare">
+        <GCXmlToSql
+                infile="../../${build}/tools/my_new_db.xml"
+                outfile="../../${build}/tools/my_new_db2.sql"
+                tableSpace="${dbDataTablespace}">
+        </GCXmlToSql>
+    </target>
+
+  <!-- Generate DBXML from a database connection -->
+  <!--target name="genxml" depends="prepare">
+    <DBtoXML driver="oracle.jdbc.driver.OracleDriver"
+             url="${dbUrl}"
+             userid="${dbUser}"
+             password="${dbPassword}"
+             outfile="${build}/tools/db.xml"
+             prefix="CLW"
+             dbObjectType="TABLE"
+             classVersionUID="../../classSerialUID.properties"
+         classpath="${jdbcLib}" >
+    </DBtoXML>
+  </target-->
+
+  <!-- Generate DBXML from a analytic database connection -->
+  <target name="genanalyticxml" depends="prepare">
+    <DBtoXML driver="oracle.jdbc.driver.OracleDriver"
+             url="${analyticUrl}"
+             userid="${analyticUser}"
+             password="${analyticPassword}"
+             outfile="${build}/tools/analyticdb.xml"
+             prefix="RPT"
+             dbObjectType="TABLE"
+         classpath="${jdbcLib}">
+    </DBtoXML>
+  </target>
+
+  <!-- Generate DBVIEWXML from a database connection -->
+  <target name="genvwxml" depends="prepare">
+    <DBtoXML driver="oracle.jdbc.driver.OracleDriver"
+             url="${dbUrl}"
+             userid="${dbUser}"
+             password="${dbPassword}"
+             outfile="${build}/tools/dbVw.xml"
+             prefix="CLV"
+             dbObjectType="VIEW"
+         classpath="${jdbcLib}" >
+    </DBtoXML>
+  </target>
+
+  <!-- Generate Java Code from DBXML using XSLT -->
+  <target name="genjava" depends="genvalue2,genaccess2" />
+  <target name="genjavaone" depends="genvalueone2,genvectorone2,genaccessone2" />
+  <!-- Generate Java Code from DBVIEWXML using XSLT -->
+  <target name="genvwjava" depends="genvwvalue,genvwvector,genvwaccess" />
+
+  <!--target name="genvalue" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+      <arg value="-input ${build}/tools/db.xml" />
+      <arg value="-style tools/gencode/ValueObject.xsl" />
+      <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix Data.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target-->
+
+  <target name="genvalueone2" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor2" fork="true">
+      <arg value="-input ${stjohnHome}/tools/gencode/dbBase.xml" />
+      <arg value="-style tools/gencode/ValueObject.xsl" />
+      <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix Data.java" />
+      <arg value="-tableprefix CLW_" />
+      <arg value="-javaname ${javaname}" />
+      <classpath refid="project.class.path" />
+    </java>
+  </target>
+	
+  <target name="genvalueone3" depends="prepare">
+	    <java classname="com.cleanwise.tools.XMLTableProcessor2" fork="true">
+	      <arg value="-input ${stjohnHome}/tools/gencode/dbBase.xml" />
+	      <arg value="-style tools/gencode/ValueObject.xsl" />
+	      <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+	      <arg value="-suffix Data.java" />
+	      <arg value="-tableprefix ESW_" />
+	      <arg value="-javaname ${javaname}" />
+	      <classpath refid="project.class.path" />
+	    </java>
+  </target>	
+
+  <target name="genvalue2" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor2" fork="true">
+      <arg value="-input ${stjohnHome}/tools/gencode/dbBase.xml" />
+      <arg value="-style tools/gencode/ValueObject.xsl" />
+      <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix Data.java" />
+      <arg value="-tableprefix CLW_" />
+      <arg value="-javaname all"/>
+      <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+    <target name="genaccess2" depends="prepare">
+        <java classname="com.cleanwise.tools.XMLTableProcessor2" fork="true">
+            <arg value="-input ${stjohnHome}/tools/gencode/dbBase.xml"/>
+            <arg value="-style tools/gencode/DataAccess.xsl"/>
+            <arg value="-outdir ${src}/com/cleanwise/service/api/dao"/>
+            <arg value="-suffix DataAccess.java"/>
+            <arg value="-tableprefix CLW_"/>
+            <arg value="-javaname all"/>
+            <classpath refid="project.class.path"/>
+        </java>
+    </target>
+
+    <target name="genaccessone2" depends="prepare">
+        <java classname="com.cleanwise.tools.XMLTableProcessor2" fork="true">
+            <arg value="-input ${stjohnHome}/tools/gencode/dbBase.xml"/>
+            <arg value="-style tools/gencode/DataAccess.xsl"/>
+            <arg value="-outdir ${src}/com/cleanwise/service/api/dao"/>
+            <arg value="-suffix DataAccess.java"/>
+            <arg value="-tableprefix CLW_"/>
+            <arg value="-javaname ${javaname}" />
+            <classpath refid="project.class.path"/>
+        </java>
+    </target>
+	<target name="genaccessone3" depends="prepare">
+	        <java classname="com.cleanwise.tools.XMLTableProcessor2" fork="true">
+	            <arg value="-input ${stjohnHome}/tools/gencode/dbBase.xml"/>
+	            <arg value="-style tools/gencode/DataAccess.xsl"/>
+	            <arg value="-outdir ${src}/com/cleanwise/service/api/dao"/>
+	            <arg value="-suffix DataAccess.java"/>
+	            <arg value="-tableprefix ESW_"/>
+	            <arg value="-javaname ${javaname}" />
+	            <classpath refid="project.class.path"/>
+	        </java>
+	</target>
+  <!-- target name="genvalueone" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+      <arg value="-input ${build}/tools/db.xml" />
+      <arg value="-style tools/gencode/ValueObject.xsl" />
+      <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix Data.java" />
+      <arg value="-javaname ${javaname}" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target-->
+  <target name="gentableone" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+      <arg value="-input ${build}/tools/db.xml" />
+      <arg value="-style tools/gencode/Table.xsl" />
+      <arg value="-outdir sql/oracle" />
+      <arg value="-suffix Oracle.sql" />
+      <arg value="-tagname table" />
+      <arg value="-javaname ${javaname}" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="gentable" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+      <arg value="-input ${build}/tools/db.xml" />
+      <arg value="-style tools/gencode/OracleTables.xsl" />
+      <arg value="-outdir sql/oracle" />
+      <arg value="-singleOutFileName Tables.sql" />
+      <arg value="-suffix Oracle.sql" />
+      <arg value="-tagname database" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genvwvalue" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+        <arg value="-input ${build}/tools/dbVw.xml" />
+        <arg value="-style tools/gencode/VwObject.xsl" />
+        <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+        <arg value="-suffix Vw.java" />
+        <arg value="-table ${table}" />
+         <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genvector" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+        <arg value="-input ${build}/tools/db.xml" />
+        <arg value="-style tools/gencode/ValueObjectVector.xsl" />
+        <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+        <arg value="-suffix DataVector.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genvectorone" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+        <arg value="-input ${build}/tools/db.xml" />
+        <arg value="-style tools/gencode/ValueObjectVector.xsl" />
+        <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+        <arg value="-suffix DataVector.java" />
+        <arg value="-javaname ${javaname}" />
+        <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genvectorone2" depends="prepare">
+      <java classname="com.cleanwise.tools.XMLTableProcessor2" fork="true">
+          <arg value="-input ${stjohnHome}/tools/gencode/dbBase.xml" />
+          <arg value="-style tools/gencode/ValueObjectVector.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+          <arg value="-suffix DataVector.java" />
+          <arg value="-tableprefix CLW_" />
+          <arg value="-javaname ${javaname}" />
+          <classpath refid="project.class.path" />
+      </java>
+  </target>
+	
+  <target name="genvectorone3" depends="prepare">
+	      <java classname="com.cleanwise.tools.XMLTableProcessor2" fork="true">
+	          <arg value="-input ${stjohnHome}/tools/gencode/dbBase.xml" />
+	          <arg value="-style tools/gencode/ValueObjectVector.xsl" />
+	          <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+	          <arg value="-suffix DataVector.java" />
+	          <arg value="-tableprefix ESW_" />
+	          <arg value="-javaname ${javaname}" />
+	          <classpath refid="project.class.path" />
+	      </java>
+  </target>	
+
+  <target name="genvwvector" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/dbVw.xml" />
+        <arg value="-style tools/gencode/VwObjectVector.xsl" />
+        <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+        <arg value="-suffix VwVector.java" />
+        <arg value="-table ${table}" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genaccess" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+        <arg value="-input ${build}/tools/db.xml" />
+        <arg value="-style tools/gencode/DataAccess.xsl" />
+        <arg value="-outdir ${src}/com/cleanwise/service/api/dao" />
+        <arg value="-suffix DataAccess.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genaccessone" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+        <arg value="-input ${build}/tools/db.xml" />
+        <arg value="-style tools/gencode/DataAccess.xsl" />
+        <arg value="-outdir ${src}/com/cleanwise/service/api/dao" />
+        <arg value="-suffix DataAccess.java" />
+      <arg value="-javaname ${javaname}" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genvwaccess" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/dbVw.xml" />
+      <arg value="-style tools/gencode/VwAccess.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/dao" />
+      <arg value="-suffix VwAccess.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="gendtd" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/db.xml" />
+      <arg value="-style tools/gencode/DTD.xsl" />
+          <arg value="-outdir docroot/cleanwise/reporting/dtds" />
+      <arg value="-suffix .dtd" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <!-- Generate Java Code from DBANALYTICXML using XSLT -->
+  <target name="genanalyticjava" depends="genanalyticvalue,genanalyticvector,genanalyticaccess" />
+
+  <target name="genanalyticvalue" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/analyticdb.xml" />
+      <arg value="-style tools/gencode/ValueObject.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix Data.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genanalyticvector" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/analyticdb.xml" />
+      <arg value="-style tools/gencode/ValueObjectVector.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix DataVector.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genanalyticaccess" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/analyticdb.xml" />
+      <arg value="-style tools/gencode/AnalyticDataAccess.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/dao" />
+      <arg value="-suffix DataAccess.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="genanalyticdtd" depends="prepare">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/db.xml" />
+      <arg value="-style tools/gencode/DTD.xsl" />
+          <arg value="-outdir docroot/cleanwise/reporting/dtds" />
+      <arg value="-suffix .dtd" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <!-- Generate JNDINames and APIAccess classes -->
+  <target name="genBeansXML" depends="prepare">
+    <BeansToXML
+        beansDirectory="${src}/com/cleanwise/service/api/session/"
+        outfile="${build}/tools/beans.xml">
+    </BeansToXML>
+  </target>
+  <target name="genEJBHelpers" depends="prepare,genBeansXML">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/beans.xml" />
+      <arg value="-style tools/gencode/APIAccess.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/" />
+      <arg value="-singleOutFileName APIAccess.java" />
+      <arg value="-tagname beans" />
+          <classpath refid="project.class.path" />
+    </java>
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/beans.xml" />
+      <arg value="-style tools/gencode/JNDINames.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/util" />
+      <arg value="-singleOutFileName JNDINamesSuper.java" />
+      <arg value="-tagname beans" />
+          <classpath refid="project.class.path" />
+    </java>
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/beans.xml" />
+      <arg value="-style tools/gencode/ejb-jar.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/META-INF" />
+      <arg value="-singleOutFileName ejb-jar.xml" />
+      <arg value="-tagname beans" />
+          <classpath refid="project.class.path" />
+    </java>
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/beans.xml" />
+      <arg value="-style tools/gencode/jboss.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/META-INF" />
+      <arg value="-singleOutFileName jboss.xml" />
+      <arg value="-tagname beans" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <!-- Generate View type Java Classse from DBXML using XSLT -->
+  <target name="genview" depends="genviewvalue,genviewvector" />
+  <target name="genviewone" depends="genviewvalueone,genviewvectorone" />
+
+  <target name="dbviewcopy" depends="prepare">
+    <copy tofile="${build}/tools/dbView.xml"
+          file="tools/gencode/dbView.xml"
+          overwrite="yes"
+          filtering="yes"/>
+  </target>
+  <target name="genviewvalue" depends="prepare,dbviewcopy">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/dbView.xml" />
+      <arg value="-style tools/gencode/ViewObject.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix View.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+  <target name="genviewvalueone" depends="prepare,dbviewcopy">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/dbView.xml" />
+      <arg value="-style tools/gencode/ViewObject.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix View.java" />
+      <arg value="-javaname ${javaname}" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+  <target name="genviewvector" depends="prepare,dbviewcopy">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/dbView.xml" />
+      <arg value="-style tools/gencode/ViewObjectVector.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix ViewVector.java" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+  <target name="genviewvectorone" depends="prepare,dbviewcopy">
+    <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+          <arg value="-input ${build}/tools/dbView.xml" />
+      <arg value="-style tools/gencode/ViewObjectVector.xsl" />
+          <arg value="-outdir ${src}/com/cleanwise/service/api/value" />
+      <arg value="-suffix ViewVector.java" />
+      <arg value="-javaname ${javaname}" />
+          <classpath refid="project.class.path" />
+    </java>
+  </target>
+    <target name="genvaluemeta" depends="prepare">
+        <java classname="com.cleanwise.tools.XMLTableProcessor" fork="true">
+            <arg value="-input ${build}/tools/db.xml" />
+            <arg value="-style tools/gencode/ValueObjectMeta.xsl" />
+            <arg value="-outdir ${src}/com/cleanwise/service/api/meta" />
+            <arg value="-suffix DataMeta.java" />
+            <classpath refid="project.class.path" />
+        </java>
+  </target>
+</project>

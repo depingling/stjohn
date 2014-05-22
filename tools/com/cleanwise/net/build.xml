@@ -1,0 +1,29 @@
+
+<project name="net utility programs" default="compile" basedir=".">
+
+  <target name="init">
+    <property name="cwnet.build" value="."/>
+    <property name="cwnet.home" value="../../../../../../net"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <javac srcdir="."
+           destdir="."
+           includes="*"/>
+  </target>
+
+  <target name="install" depends="init,compile">
+    <mkdir dir="${cwnet.home}"/>
+    <copy toDir="${cwnet.home}" >
+      <fileset dir="." includes="**/*.class,*.properties" />
+    </copy>
+  </target>
+
+  <target name="clean" >
+    <delete>
+      <fileset dir="." includes="**/*.class"/>
+    </delete>
+  </target>
+
+</project>
+

@@ -1,0 +1,20 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ItemList (Item)+>
+<!ELEMENT Item (AddBy,AddDate,EffDate,ExpDate,ItemOrderNum,ItemStatusCd,ItemTypeCd,LongDesc,ModBy,ModDate,ShortDesc,SkuNum)>
+<!ATTLIST Item Id ID #REQUIRED>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT EffDate (#PCDATA)>
+<!ELEMENT ExpDate (#PCDATA)>
+<!ELEMENT ItemOrderNum (#PCDATA)>
+<!ELEMENT ItemStatusCd (#PCDATA)>
+<!ELEMENT ItemTypeCd (#PCDATA)>
+<!ELEMENT LongDesc (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>
+<!ELEMENT SkuNum (#PCDATA)>

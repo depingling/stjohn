@@ -1,0 +1,21 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT WorkflowRuleList (WorkflowRule)+>
+<!ELEMENT WorkflowRule (,WorkflowId,AddBy,AddDate,ModBy,ModDate,NextActionCd,RuleAction,RuleExp,RuleExpValue,RuleSeq,RuleTypeCd,ShortDesc,WorkflowRuleStatusCd)>
+<!ATTLIST WorkflowRule Id ID #REQUIRED>
+<!ELEMENT WorkflowId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT NextActionCd (#PCDATA)>
+<!ELEMENT RuleAction (#PCDATA)>
+<!ELEMENT RuleExp (#PCDATA)>
+<!ELEMENT RuleExpValue (#PCDATA)>
+<!ELEMENT RuleSeq (#PCDATA)>
+<!ELEMENT RuleTypeCd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>
+<!ELEMENT WorkflowRuleStatusCd (#PCDATA)>

@@ -1,0 +1,14 @@
+echo $0
+
+lockfile=/tmp/$0.lockfile
+if [ -f $lockfile ]
+then
+  echo "error lock file $lockfile in place."
+  exit
+fi
+
+echo $$ > $lockfile
+
+sh xsuite-run-generic-reports.job xsuite-pollock-paper-report.xml
+
+rm $lockfile

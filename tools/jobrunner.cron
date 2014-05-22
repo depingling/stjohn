@@ -1,0 +1,10 @@
+MAILTO=jobreporting@cleanwise.com
+
+* * * * * cd /apps/xadminProd/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-event-sys.job
+1,6,11,16,21,26,31,36,41,46,51,56  * * * * cd /apps/xadminProd/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-order-processing.job
+#1 5-21 * * * cd /apps/xadminProd/webapp; sh run-hourly-jobs.sh
+0 * * * * cd /apps/xadminProd/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-process-scheduled-orders.job
+#20 3 * * 1-6 cd /apps/xadminProd/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-run-generic-reports.job xsuite-daily-generic-reports.xml > /tmp/xsuite-daily-generic-reports.log
+##1,21,41 7-20 * * * cd /apps/xadminProd/webapp/jboss-4.0.5/xsuite/jobs; sh xsuite-self-store-dist-invoices.job
+0 * * * * cd /apps/xadminProd/webapp/jboss-4.0.5/xsuite/jobs; sh workflow-queue.job
+1 5,7,9,11,13,15,17,19,21 * * * cd /apps/xadmin3/webapp/jboss-4.0.5/xsuite/jobs; sh order-emails.job

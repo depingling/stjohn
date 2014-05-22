@@ -1,0 +1,15 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT LocalePropertyList (LocaleProperty)+>
+<!ELEMENT LocaleProperty (,LocaleId,AddBy,AddDate,Value,ModBy,ModDate,ShortDesc)>
+<!ATTLIST LocaleProperty Id ID #REQUIRED>
+<!ELEMENT LocaleId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

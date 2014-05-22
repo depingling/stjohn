@@ -1,0 +1,2 @@
+shop.catalog.text.certifiedCompany="""Green"" Classified"
+shoppingItems.detail.text.cerifiedBy=Green Classification(s) :

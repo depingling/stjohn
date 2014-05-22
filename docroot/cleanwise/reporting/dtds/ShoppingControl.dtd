@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ShoppingControlList (ShoppingControl)+>
+<!ELEMENT ShoppingControl (,AccountIdItemId,SiteId,AddBy,AddDate,ControlStatusCd,MaxOrderQty,ModBy,ModDate)>
+<!ATTLIST ShoppingControl Id ID #REQUIRED>
+<!ELEMENT AccountId (#PCDATA)>
+<!ELEMENT ItemId (#PCDATA)>
+<!ELEMENT SiteId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ControlStatusCd (#PCDATA)>
+<!ELEMENT MaxOrderQty (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

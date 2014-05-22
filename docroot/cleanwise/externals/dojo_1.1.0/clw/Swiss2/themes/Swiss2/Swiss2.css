@@ -1,0 +1,347 @@
+@import url("../../../../dijit/themes/dijit.css");
+
+/* Menu.css*/
+.dj_safari .Swiss2 .dijitPopup .dijitTooltipContainer,
+    .dj_safari .Swiss2 .dijitPopup .dijitMenu {
+
+    -webkit-box-shadow: 0px 5px 10px #adadad;
+}
+
+.Swiss2 .dijitPopup > div,
+    .Swiss2 .dijitPopup > table {
+    opacity: 1;
+}
+
+.Swiss2 .dijitMenu {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #003399;
+}
+
+.Swiss2 .dijitMenuItem {
+    background: url( images/submenuBg.gif );
+    text-decoration: none;
+    color: #003399;
+    font-weight: bold;
+}
+
+.Swiss2 .dijitMenuPreviousButton, .Swiss2 .dijitMenuNextButton {
+    font-style: italic;
+}
+
+.Swiss2 .dijitMenuItem td {
+    background: url( images/submenuBg.gif );
+}
+
+.Swiss2 .dijitMenuItemHover {
+}
+
+.Swiss2 .dijitMenuItemIcon {
+    width: 0;
+    height: 0;
+}
+
+.Swiss2 .dijitMenuExpand {
+    display: none;
+}
+
+.Swiss2 .dijitMenuExpandEnabled {
+    width: 0;
+    height: 0;
+
+}
+
+.Swiss2 .dijitMenuExpandInner {
+    display: none;
+}
+
+.Swiss2 .dijitMenuSeparator {
+    background-color: #f7f7f7;
+}
+
+.Swiss2 .dijitMenuSeparatorTop {
+    border-bottom: 1px solid #9b9b9b;
+}
+
+.Swiss2 .dijitMenuSeparatorBottom {
+    border-top: 1px solid #e8e8e8;
+}
+.Swiss2 .xpedxMainMenuTab {
+    text-decoration: none;
+    text-transform: capitalize;
+    border: 0;
+    font-weight: bold;
+    font-size: 12px;
+    padding:0;
+    margin:0;
+    color: #FFFFFF;
+    cursor: pointer;
+    cursor: hand;
+    background: url( images/mainmenubg.gif );
+}
+
+.Swiss2 .xpedxMainMenuTabHover {
+    text-decoration: none;
+    text-transform: capitalize;
+    border: 0;
+    font-weight: bold;
+    font-size: 12px;
+    padding:0;
+    margin:0;
+    color: #FFFFFF;
+    cursor: pointer;
+    cursor: hand;
+    background: url( images/mainmenubg.gif );
+}
+
+.Swiss2 .xpedxMainMenuTabUnhover {
+    cursor: pointer;
+    cursor: hand;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: 0;
+    font-weight: bold;
+    font-size: 12px;
+    padding:0;
+    margin:0;
+    color: #003399;
+    background: url( images/mainmenubgInvert.gif );
+}
+
+.Swiss2 .bgXSubmenuTopCenter {
+    background: transparent url( images/submenuTopCenter.gif ) repeat-x left;
+
+}
+
+.Swiss2 .bgXSubmenuTopLeft {
+    background: transparent url( images/submenuTopLeft.gif ) no-repeat right;
+    width: 11px;
+    height: 8px;
+}
+
+.Swiss2 .bgXSubmenuTopRight {
+    background: transparent url( images/submenuTopRight.gif ) no-repeat left;
+    width: 11px;
+    height: 8px;
+}
+
+.Swiss2 .bgXSubmenuCenterLeft {
+    background: transparent url( images/submenuCenterLeft.gif ) repeat-y right;
+    width: 11px;
+}
+
+.Swiss2 .bgXSubmenuCenterRight {
+    background: transparent url( images/submenuCenterRight.gif ) repeat-y left;
+    width: 11px;
+}
+
+.Swiss2 .bgXSubmenuBottomCenter {
+    background: transparent url( images/submenuBottomCenter.gif ) repeat-x left;
+
+}
+
+.Swiss2 .bgXSubmenuBottomLeft {
+    background: transparent url( images/submenuBottomLeft.gif ) no-repeat right;
+    width: 11px;
+    height: 8px;
+}
+
+.Swiss2 .bgXSubmenuBottomRight {
+    background: transparent url( images/submenuBottomRight.gif ) no-repeat left;
+    width: 11px;
+    height: 8px;
+}
+
+/* Calendar.css*/
+.Swiss2 .dijitCalendarIncrementControl {
+
+    width: 15px;
+    height: 15px;
+    font-size: 1px;
+}
+
+.dj_ie6 .Swiss2 .dijitCalendarIncrementControl {
+    padding: .1em;
+}
+
+.Swiss2 .dijitCalendarIncreaseInner,
+    .Swiss2 .dijitCalendarDecreaseInner {
+    visibility: hidden;
+}
+
+.Swiss2 .dijitCalendarDecrease {
+    background: url( "images/cal_decrease_month.png" ) no-repeat;
+}
+
+.dj_ie6 .Swiss2 .dijitCalendarDecrease {
+    background: url( "images/cal_decrease_month.gif" ) no-repeat bottom;
+}
+
+.Swiss2 .dijitCalendarIncrease {
+    background: url( "images/cal_increase_month.png" ) no-repeat;
+}
+
+.dj_ie6 .Swiss2 .dijitCalendarIncrease {
+    background: url( "images/cal_increase_month.gif" ) no-repeat bottom;
+}
+
+.Swiss2 table.dijitCalendarContainer {
+    font-size: 100%;
+    width:100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 0;
+    margin: 0;
+    background: white;
+}
+
+.Swiss2 .dijitCalendarMainContainer {
+    font-size: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 0;
+    margin: 0;
+    background: #333333;
+
+}
+
+.Swiss2 .dijitCalendarPaddingLeft {
+    width: 1px;  background: #333333;
+}
+
+.Swiss2 .dijitCalendarPaddingRight {
+    width: 1px;   background: #333333;
+}
+
+.Swiss2 .dijitCalendarMonthContainer th {
+    background: #333333;
+    padding-top: .3em;
+    padding-bottom: .2em;
+    text-align: center;
+}
+
+.dj_ie6 .Swiss2 .dijitCalendarMonthContainer th {
+    padding-top: .1em;
+    padding-bottom: 0em;
+    background: #333333;
+}
+
+.Swiss2 .dijitCalendarDayLabelTemplate {
+
+    font-weight: normal;
+    padding-top: .15em;
+    padding-bottom: 0.4em;
+    background: #333333;
+    border: 0;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.Swiss2 .dijitCalendarBodyContainer {
+    background: white;
+}
+
+.Swiss2 .dijitCalendarMonthLabel {
+    color: #ffffff;
+    font-weight: bold;
+    font-size:12px;
+    background: #333333;
+
+}
+
+.dj_ie7 .Swiss2 .dijitCalendarDateTemplate,
+    .dj_ie6 .Swiss2 .dijitCalendarDateTemplate {
+    font-size: 0.8em;
+    background-color: white;
+}
+
+.Swiss2 .dijitCalendarDateTemplate {
+
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 0.3em 0.3em 0.2em 0.3em;
+
+    background-color: white;
+}
+
+.Swiss2 .dijitCalendarWeekTemplate {
+    background: white;
+}
+
+.Swiss2 .dijitCalendarPreviousMonth,
+    .Swiss2 .dijitCalendarNextMonth {
+
+    color: #999999;
+    background: white;
+    visibility: hidden;
+
+}
+
+.Swiss2 .dijitCalendarPreviousMonthDisabled,
+    .Swiss2 .dijitCalendarNextMonthDisabled {
+
+    background: red;
+}
+
+.Swiss2 .dijitCalendarCurrentMonth {
+
+    background: white;
+}
+
+.Swiss2 .dijitCalendarCurrentMonthDisabled {
+
+    background: red !important;
+}
+
+.Swiss2 .dijitCalendarCurrentDate {
+
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.Swiss2 .dijitCalendarCurrentDate {
+
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.Swiss2 .dijitCalendarSelectedDate {
+
+    background-color: #bbc4d0 !important;
+    color: black !important;
+}
+
+.Swiss2 .dijitCalendarFootContainer {
+    border: 0;
+    background-color: #333333 !important;
+}
+
+.Swiss2 .dijitCalendarFooterLabel {
+    text-decoration: underline;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.Swiss2 .dijitCalendarDisabledDate {
+color:gray !important;
+
+}
+.Swiss2 .dijitCalendarFootContent {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;  
+
+}
+
+
+

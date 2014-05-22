@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE transactionSet SYSTEM "transactionSetRules.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs, September 13, 2001, -->
+<transactionSet name="Functional Acknowledgment" id="997"
+  revision="004010"
+  functionalGroup="FA"
+  description="This Draft Standard for Trial Use contains the format and establishes the data contents of the Functional Acknowledgment Transaction Set (997) for use within the context of an Electronic Data Interchange (EDI) environment. The transaction set can be used to define the control structures for a set of acknowledgments to indicate the results of the syntactical analysis of the electronically encoded documents. The encoded documents are the transaction sets, which are grouped in functional groups, used in defining transactions for business data interchange. This standard does not cover the semantic meaning of the information encoded in the transaction sets."
+  xmlTag="FunctionalAcknowledgment">
+    <table section="header">
+        <segment name="Transaction Set Header" id="ST"
+          description="To indicate the start of a transaction set and to assign a control number"
+          sequence="10"
+          occurs="1"
+          required='M'
+          xmlTag="TransactionSetHeader">
+            <dataElement name="Transaction Set Identifier Code" id="143"
+              sequence="1"
+              description="Code uniquely identifying a Transaction Set"
+              type="ID" required="M"
+              minLength="3" maxLength="3"
+              idListFile="IDList143.xml"
+              xmlTag="transactionSetIdentifierCode"/>
+            <dataElement name="Transaction Set Control Number" id="329"
+              sequence="2"
+              description="Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set"
+              type="AN" required="M"
+              minLength="4" maxLength="9"
+              xmlTag="transactionSetControlNumber"/>
+        </segment>
+        <segment name="Functional Group Response Header" id="AK1"
+          description="To start acknowledgment of a functional group"
+          sequence="20"
+          occurs="1"
+          required='M'
+          xmlTag="FunctionalGroupResponseHeader">
+            <dataElement name="Functional Identifier Code" id="479"
+              sequence="1"
+              description="Code identifying a group of application related transaction sets"
+              type="ID" required="M"
+              minLength="2" maxLength="2"
+              idListFile="IDList479.xml"
+              xmlTag="functionalIdentifierCode"/>
+            <dataElement name="Group Control Number" id="28"
+              sequence="2"
+              description="Assigned number originated and maintained by the sender"
+              type="N0" required="M"
+              minLength="1" maxLength="9"
+              xmlTag="groupControlNumber"/>
+        </segment>
+        <segment name="Transaction Set Response Header" id="AK2"
+          occurs="999999"
+          sequence="30"
+          required='O'
+          description="To start acknowledgment of a single transaction set"
+          xmlTag="TransactionSetResponseHeader">
+            <dataElement name="Transaction Set Identifier Code" id="143"
+              sequence="1"
+              description="Code uniquely identifying a Transaction Set"
+              type="ID" required="M"
+              minLength="3" maxLength="3"
+              idListFile="IDList143.xml"
+              xmlTag="transactionSetIdentifierCode"/>
+            <dataElement name="Transaction Set Control Number" id="329"
+              sequence="2"
+              description="Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set"
+              type="AN" required="M"
+              minLength="4" maxLength="9"
+              xmlTag="transactionSetControlNumber"/>
+            <segment name="Data Segment Note" id="AK3"
+              occurs="999999"
+              sequence="40"
+              required='O'
+              description="To report errors in a data segment and identify the location of the data segment"
+              xmlTag="DataSegmentNote">
+                <dataElement name="Segment ID Code" id="721"
+                  sequence="1"
+                  description="Code defining the segment ID of the data segment in error (See Appendix A - Number 77)"
+                  type="ID" required="M"
+                  minLength="2" maxLength="3"
+                  xmlTag="segmentIdCode"/>
+                <dataElement name="Segment Position in Transaction Set" id="719"
+                  sequence="2"
+                  description="The numerical count position of this data segment from the start of the transaction set: the transaction set header is count position 1"
+                  type="N0" required="M"
+                  minLength="1" maxLength="6"
+                  xmlTag="segmentPositionInTransactionSet"/>
+                <dataElement name="Loop Identifier Code" id="447"
+                  sequence="3"
+                  description="The loop ID number given on the transaction set diagram is the value for this data element in segments LS and LE"
+                  type="AN" required="O"
+                  minLength="1" maxLength="6"
+                  xmlTag="loopIdentifierCode"/>
+                <dataElement name="Segment Syntax Error Code" id="720"
+                  sequence="4"
+                  description="Code indicating error found based on the syntax editing of a segment"
+                  type="ID" required="O"
+                  minLength="1" maxLength="3"
+                  idListFile="IDList720.xml"
+                  xmlTag="segmentSyntaxErrorCode"/>
+                <segment name="Data Element Note" id="AK4"
+                  description="To report errors in a data element or composite data structure and identify the location of the data element"
+                  sequence="50"
+                  occurs="99"
+                  required='O'
+                  xmlTag="DataElementNote">
+                    <compositeDE name="Position in Segment" id="C030"
+                      sequence="1"
+                      xmlTag="positionInSegment">
+                        <dataElement name="Element Position in Segment" id="722"
+                          sequence="1"
+                          description="This is used to indicate the relative position of a simple data element, or the relative position of a composite data structure with the relative position of the component within the composite data structure, in error; in the data segment the count starts with 1 for the simple data element or composite data structure immediately following the segment ID"
+                          type="N0" required="M"
+                          minLength="1" maxLength="2"
+                          xmlTag="elementPositionInSegment"/>
+                        <dataElement name="Component Data Element Position in Composite" id="1528"
+                          sequence="2"
+                          description="To identify the component data element position within the composite that is in error"
+                          type="N0" required="O"
+                          minLength="1" maxLength="2"
+                          xmlTag="componentDataElementPositionInComposite"/>
+                    </compositeDE>
+                    <dataElement name="Data Element Reference Number" id="725"
+                      sequence="2"
+                      description="Reference number used to locate the data element in the Data Element Dictionary"
+                      type="N0" required="O"
+                      minLength="1" maxLength="4"
+                      xmlTag="dataElementReferenceNumber"/>
+                    <dataElement name="Data Element Syntax Error Code" id="723"
+                      sequence="3"
+                      description="Code indicating the error found after syntax edits of a data element"
+                      type="ID" required="M"
+                      minLength="1" maxLength="3"
+                      idListFile="IDList723.xml"
+                      xmlTag="dataElementSyntaxErrorCode"/>
+                    <dataElement name="Copy of Bad Data Element" id="724"
+                      sequence="4"
+                      description="This is a copy of the data element in error"
+                      type="AN" required="O"
+                      minLength="1" maxLength="99"
+                      xmlTag="copyOfBadDataElement"/>
+                </segment>
+            </segment>
+            <segment name="Transaction Set Response Trailer" id="AK5"
+              description="To acknowledge acceptance or rejection and report errors in a transaction set"
+              sequence="60"
+              occurs="1"
+              required='M'
+              xmlTag="TransactionSetResponseTrailer">
+                <dataElement name="Transaction Set Acknowledgment Code" id="717"
+                  sequence="1"
+                  description="Code indicating accept or reject condition based on the syntax editing of the transaction set"
+                  type="ID" required="M"
+                  minLength="1" maxLength="1"
+                  idListFile="IDList717.xml"
+                  xmlTag="transactionSetAcknowledgmentCode"/>
+                <dataElement name="Transaction Set Syntax Error Code" id="718"
+                  sequence="2"
+                  description="Code indicating error found based on the syntax editing of a transaction set"
+                  type="ID" required="O"
+                  minLength="1" maxLength="3"
+                  idListFile="IDList718.xml"
+                  xmlTag="transactionSetSyntaxErrorCode"/>
+                <dataElement name="Transaction Set Syntax Error Code" id="718"
+                  sequence="3"
+                  description="Code indicating error found based on the syntax editing of a transaction set"
+                  type="ID" required="O"
+                  minLength="1" maxLength="3"
+                  idListFile="IDList718.xml"
+                  xmlTag="transactionSetSyntaxErrorCode"/>
+                <dataElement name="Transaction Set Syntax Error Code" id="718"
+                  sequence="4"
+                  description="Code indicating error found based on the syntax editing of a transaction set"
+                  type="ID" required="O"
+                  minLength="1" maxLength="3"
+                  idListFile="IDList718.xml"
+                  xmlTag="transactionSetSyntaxErrorCode"/>
+                <dataElement name="Transaction Set Syntax Error Code" id="718"
+                  sequence="5"
+                  description="Code indicating error found based on the syntax editing of a transaction set"
+                  type="ID" required="O"
+                  minLength="1" maxLength="3"
+                  idListFile="IDList718.xml"
+                  xmlTag="transactionSetSyntaxErrorCode"/>
+                <dataElement name="Transaction Set Syntax Error Code" id="718"
+                  sequence="6"
+                  description="Code indicating error found based on the syntax editing of a transaction set"
+                  type="ID" required="O"
+                  minLength="1" maxLength="3"
+                  idListFile="IDList718.xml"
+                  xmlTag="transactionSetSyntaxErrorCode"/>
+            </segment>
+        </segment>
+        <segment name="Functional Group Response Trailer" id="AK9"
+          description="To acknowledge acceptance or rejection of a functional group and report the number of included transaction sets from the original trailer, the accepted sets, and the received sets in this functional group"
+          sequence="70"
+          occurs="1"
+          required='M'
+          xmlTag="FunctionalGroupResponseTrailer">
+            <dataElement name="Functional Group Acknowledge Code" id="715"
+              sequence="1"
+              description="Code indicating accept or reject condition based on the syntax editing of the functional group"
+              type="ID" required="M"
+              minLength="1" maxLength="1"
+              idListFile="IDList715.xml"
+              xmlTag="functionalGroupAcknowledgeCode"/>
+            <dataElement name="Number of Transaction Sets Included" id="97"
+              sequence="2"
+              description="Total number of transaction sets included in the functional group or interchange (transmission) group terminated by the trailer containing this data element"
+              type="N0" required="M"
+              minLength="1" maxLength="6"
+              xmlTag="numberOfTransactionSetsIncluded"/>
+            <dataElement name="Number of Received Transaction Sets" id="123"
+              sequence="3"
+              description="Number of Transaction Sets received"
+              type="N0" required="M"
+              minLength="1" maxLength="6"
+              xmlTag="numberOfReceivedTransactionSets"/>
+            <dataElement name="Number of Accepted Transaction Sets" id="2"
+              sequence="4"
+              description="Number of accepted Transaction Sets in a Functional Group"
+              type="N0" required="M"
+              minLength="1" maxLength="6"
+              xmlTag="numberOfAcceptedTransactionSets"/>
+            <dataElement name="Functional Group Syntax Error Code" id="716"
+              sequence="5"
+              description="Code indicating error found based on the syntax editing of the functional group header and/or trailer"
+              type="ID" required="O"
+              minLength="1" maxLength="3"
+              idListFile="IDList716.xml"
+              xmlTag="functionalGroupSyntaxErrorCode"/>
+            <dataElement name="Functional Group Syntax Error Code" id="716"
+              sequence="6"
+              description="Code indicating error found based on the syntax editing of the functional group header and/or trailer"
+              type="ID" required="O"
+              minLength="1" maxLength="3"
+              idListFile="IDList716.xml"
+              xmlTag="functionalGroupSyntaxErrorCode"/>
+            <dataElement name="Functional Group Syntax Error Code" id="716"
+              sequence="7"
+              description="Code indicating error found based on the syntax editing of the functional group header and/or trailer"
+              type="ID" required="O"
+              minLength="1" maxLength="3"
+              idListFile="IDList716.xml"
+              xmlTag="functionalGroupSyntaxErrorCode"/>
+            <dataElement name="Functional Group Syntax Error Code" id="716"
+              sequence="8"
+              description="Code indicating error found based on the syntax editing of the functional group header and/or trailer"
+              type="ID" required="O"
+              minLength="1" maxLength="3"
+              idListFile="IDList716.xml"
+              xmlTag="functionalGroupSyntaxErrorCode"/>
+            <dataElement name="Functional Group Syntax Error Code" id="716"
+              sequence="9"
+              description="Code indicating error found based on the syntax editing of the functional group header and/or trailer"
+              type="ID" required="O"
+              minLength="1" maxLength="3"
+              idListFile="IDList716.xml"
+              xmlTag="functionalGroupSyntaxErrorCode"/>
+        </segment>
+        <segment name="Transaction Set Trailer" id="SE"
+          description="To indicate the end of the transaction set and provide the count of the transmitted segments (including the beginning (ST) and ending (SE) segments)"
+          sequence="80"
+          occurs="1"
+          required='M'
+          xmlTag="TransactionSetTrailer">
+            <dataElement name="Number of Included Segments" id="96"
+              sequence="1"
+              description="Total number of segments included in a transaction set including ST and SE segments"
+              type="N0" required="M"
+              minLength="1" maxLength="10"
+              xmlTag="numberOfIncludedSegments"/>
+            <dataElement name="Transaction Set Control Number" id="329"
+              sequence="2"
+              description="Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set"
+              type="AN" required="M"
+              minLength="4" maxLength="9"
+              xmlTag="transactionSetControlNumber"/>
+        </segment>
+    </table>
+</transactionSet>

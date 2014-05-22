@@ -1,0 +1,2323 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+
+<!-- Don't change the formatting! Don't use tabs! -->
+
+  <tlibversion>1.0</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>Cleanwise Tag Library</shortname>
+  <uri>http://www.cleanwise.com/taglibs/cleanwise-application-1.0</uri>
+  <info>
+      This tag library contains functionality specific to the Cleanwise
+      StJohn Application.
+  </info>
+
+
+<tag>
+<name>storeMessage</name>
+<tagclass>com.cleanwise.view.taglibs.StoreMessageTag</tagclass>
+<bodycontent>empty</bodycontent>
+<attribute>
+<name>arg0</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg0TypeCd</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg1</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg1TypeCd</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg2</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg2TypeCd</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg3</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg3TypeCd</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg4</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>arg4TypeCd</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>bundle</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>key</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>locale</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>name</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>property</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>scope</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+</tag>
+
+
+  <tag>
+      <name>stylesheet</name>
+      <tagclass>com.cleanwise.view.taglibs.StylesheetTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>
+          Generate a link statement defining the stylesheet specific to
+          the browser being used.
+
+          Stores browser and stylesheet data into the session if they are
+          not currently defined there.
+      </info>
+   </tag>
+
+   <tag>
+    <name>renderStatefulButton</name>
+    <tagclass>com.cleanwise.view.taglibs.RenderStatefulButton</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>
+      Renders a table cell in the form of a header button.  Will switch the link and table cell class
+      back and forth between the on and off value depending on if the requested uri contains the value
+      of the page.  Optionally will make this determiniation based off the optionally passed in param
+      instead of the page name.
+    </info>
+    <attribute>
+      <name>contains</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>link</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>linkClassOff</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>linkClassOn</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>tabClassOff</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>tabClassOn</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>checkLogon</name>
+    <tagclass>com.cleanwise.view.taglibs.CheckLogonTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>
+      Validate that there is a currently logged on user, by checking for
+      the existence of a session-scope bean under the specified name.
+      If there is no such bean, forward control to the specified page,
+      which will typically be a logon form.
+      name - Name of the session-scope bean to check for [user]
+      page - Context-relative path to the logon page [/logon.jsp]
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>page</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>authorizedForFunction</name>
+    <tagclass>com.cleanwise.view.taglibs.AuthorizedForFunction</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>
+      Validates that the user can preform the requested function
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+  <tag>
+    <name>notAuthorizedForFunction</name>
+    <tagclass>com.cleanwise.view.taglibs.NotAuthorizedForFunction</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>
+      Validates that the user can not preform the requested function
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+
+
+  <tag>
+    <name>shouldDisplayOrderItemAction</name>
+    <tagclass>com.cleanwise.view.taglibs.ShouldDisplayOrderItemAction</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>
+      Check the supplied name against the allowed order item action types.  If this should be
+      displayed the body of the tag is rendered.
+    </info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+      <name>setLocaleAndImages</name>
+      <tagclass>com.cleanwise.view.taglibs.SetLocaleAndImagesTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>
+          Gets the Locale object from the request object (otherwise we will select Locale mannully)
+          and sets it in the session object under the known name Action.LOCALE_KEY.
+          It also gets the images path (along with other content path) from the properties file and
+          saves it in the session object under the known name Action.IMAGES_PATH.
+          This tag writes nothing to the JSP page.
+      </info>
+  </tag>
+
+  <tag>
+        <name>textdisplay</name>
+        <tagclass>com.cleanwise.view.taglibs.TextDisplayTag</tagclass>
+        <attribute>
+                <name>accesskey</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>level</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>disabled</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>maxlength</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>name</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onblur</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onchange</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onclick</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>ondblclick</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onfocus</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onkeydown</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onkeypress</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onkeyup</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onmousedown</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onmousemove</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onmouseout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onmouseover</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onmouseup</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>property</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>readonly</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>size</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+                </attribute>
+        <attribute>
+                <name>style</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>styleClass</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>styleId</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>tabindex</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>value</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+  </tag>
+
+  <tag>
+    <name>debugInfo</name>
+    <tagclass>com.cleanwise.view.taglibs.DebugTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>
+        Dump out useful environment information.
+    </info>
+  </tag>
+
+    <tag>
+    <name>custom</name>
+    <tagclass>com.cleanwise.view.taglibs.CustomizeTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>
+    Write out the value for the custom attibute specified.
+    </info>
+        <attribute>
+                <name>pageElement</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>addImagePath</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>imageSubdirectory</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>encodeForHTML</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+  </tag>
+
+    <tag>
+    <name>store</name>
+    <tagclass>com.cleanwise.view.taglibs.StorePageElementTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>
+    Write out the value for the Store attibute specified.
+    </info>
+        <attribute>
+                <name>image</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>pageElement</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+  </tag>
+
+    <tag>
+        <name>writeHTML</name>
+        <tagclass>com.cleanwise.view.taglibs.WriteHTMLTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>
+Writes a property as simple HTML, similar to a pre tag would; However when a pre tag has issues with
+formatting as Internet Explorer sometimes does if it is within a cell this tag may be used instead.
+        </info>
+        <attribute>
+          <name>ignore</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+          <name>name</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+          <name>property</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+          <name>scope</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>
+  </tag>
+
+  <tag>
+    <name>ProfilingSurvey</name>
+    <tagclass>com.cleanwise.view.taglibs.ProfilingSurveyTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Renders a profile for administration.</info>
+    <attribute>
+        <name>elementPostfix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>elementPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <!--will be rendered instead of the element prefix for any children of none master elements (questions)-->
+    <attribute>
+        <name>altChildElementPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>formElementJavascript</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>formElementParentOnlyJavascript</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>formSelectElementParentOnlyJavascript</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>childPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>childPostfix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>childSeperator</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>form</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>helpTextPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>helpTextPostFix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>profileStatusCdPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>readOnlyPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>profileQuestionTypeCdPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>profileMetaPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>profileMetaStatusCdPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>profileOrderPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>metaHelpPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>metaTypeCdPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>otherStyle</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>errorMessgePrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>errorMessgePostfix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>name</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>skipFirst</name>
+        <required>true|false|yes|no</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>tokenize</name>
+        <required>true|false|yes|no</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>useClone</name>
+        <required>true|false|yes|no</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>renderHiddenNumberDependants</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>admin</name>
+        <required>true|false|yes|no</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>readOnly</name>
+        <required>true|false|yes|no</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+<attribute>
+<name>debug</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+    <attribute>
+        <name>datePromptText</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>inputTextPrefix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>inputTextPostfix</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>showModDate</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>showModBy</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>textInputWidth</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+  </tag>
+
+
+<tag>
+<name>currencySymbol</name>
+
+<tagclass>com.cleanwise.view.taglibs.CurrencySymbolTag</tagclass>
+
+<bodycontent>empty</bodycontent>
+
+<attribute>
+<name>currencyCode</name>
+<required>true</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+<attribute>
+<name>locale</name>
+<required>true</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+
+</tag>
+
+<tag>
+ <name>JSCall</name>
+ <tagclass>com.cleanwise.view.taglibs.JSCall</tagclass>
+  <attribute>
+      <name>f_name</name>
+      <required>true</required>
+  </attribute>
+   <attribute>
+       <name>param</name>
+       <required>true</required>  <rtexprvalue>true</rtexprvalue>
+   </attribute>
+</tag>
+
+<!--
+Displays the product attributes in a more dynamic way.  Caller need not worry about this,
+it is setup in the account where which item to display is configured.  The renderMode tells
+the tag what place it is displaying (order screen, detail screen etc.)
+-->
+<tag>
+        <name>displayProd</name>
+        <tagclass>com.cleanwise.view.taglibs.DisplayProductAttributesTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>name</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>link</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>index</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+		<attribute>
+                <name>updateAutoDistro</name>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>physicalInvCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <!-- uses the action parameter<attribute>
+                <name>viewOptionAutoDistro</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>-->
+
+        <attribute>
+                <name>inputNameQuantity</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>inputNameOnHand</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>altThumbImage</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>xhrArgs</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+         <attribute>
+                <name>viewOptionGroupedItemDetail</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>inputNameItemId</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+       
+</tag>
+
+<tag>
+        <name>displayProdHeader</name>
+        <tagclass>com.cleanwise.view.taglibs.DisplayProductHeader</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <!-- uses the action parameter
+        <attribute>
+                <name>viewOptionAutoDistro</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        -->
+        <attribute>
+                <name>viewOptionInventoryList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onClickDeleteAllCheckBox</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>sortLink</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionGroupedItemDetail</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+         <attribute>
+                <name>physicalInvCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+</tag>
+
+<tag>
+        <name>displayProdB2C</name>
+        <tagclass>com.cleanwise.view.taglibs.DisplayProductB2CTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>btwoCElementsPerRow</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>listOfItems</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <!-- in this case the index needs to account for pager and looping behavior -->
+        <attribute>
+                <name>index</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+</tag>
+
+
+<tag>
+        <name>displayProdDetail</name>
+        <tagclass>com.cleanwise.view.taglibs.DefineProductAttributesDetail</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>name</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+</tag>
+
+<!--sets the id to be the count of the configured item attributes, or to the spot
+where the name attribute is to be rendered (defaults to the end of the total count if that
+attribute is not to be rendered-->
+<tag>
+        <name>defineProdColumnCount</name>
+        <tagclass>com.cleanwise.view.taglibs.DefineProdColumnCount</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>id</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>name</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+         <attribute>
+                <name>physicalInvCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        
+</tag>
+
+<tag>
+ <name>breadCrumbBar</name>
+ <tagclass>com.cleanwise.view.taglibs.BreadCrumbBar</tagclass>
+</tag>
+    <tag>
+        <name>clwPager</name>
+        <tagclass>com.cleanwise.view.taglibs.ClwPagerTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>pageIndex</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+          <attribute>
+            <name>pageUrl</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>clwPagerItem</name>
+        <tagclass>com.cleanwise.view.taglibs.ClwPagerItemTag</tagclass>
+        <teiclass>com.cleanwise.view.taglibs.ClwPagerItemTei</teiclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>type</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>clwPagerIndex</name>
+        <tagclass>com.cleanwise.view.taglibs.ClwPagerIndexTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>indexSize</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+  <tag>
+    <name>uiFrameSlotUrlTag</name>
+    <tagclass>com.cleanwise.view.taglibs.UiFrameSlotUrlTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>
+      Show image
+    </info>
+    <attribute>
+      <name>slot</name>
+      <type>com.cleanwise.service.api.value.UiFrameSlotView</type>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+        <attribute>
+      <name>slotWidth</name>
+      <type>int</type>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+        <attribute>
+      <name>slotHeight</name>
+      <type>int</type>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>uiFrameSlotImageTag</name>
+    <tagclass>com.cleanwise.view.taglibs.UiFrameSlotImageTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>
+      Show image
+    </info>
+    <attribute>
+      <name>slot</name>
+      <type>com.cleanwise.service.api.value.UiFrameSlotView</type>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+    <tag>
+        <name>dojoPopup</name>
+        <tagclass>com.cleanwise.view.taglibs.DojoPopupTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>build popup menu</info>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>targets</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+         <attribute>
+            <name>width</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>popupFacade</name>
+        <tagclass>com.cleanwise.view.taglibs.PopupFacadeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>build popup items</info>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>width</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+         <attribute>
+            <name>pic</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>dojoInputDate</name>
+        <tagclass>com.cleanwise.view.taglibs.DojoInputDateTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>build input field</info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>targets</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>module</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+      <tag>
+        <name>dojoInputDateProgrammaticTag</name>
+        <tagclass>com.cleanwise.view.taglibs.DojoInputDateProgrammaticTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>build input field</info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>startupTargetImgSrc</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+          <attribute>
+              <name>startupEvent</name>
+              <required>false</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+        <attribute>
+            <name>module</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>dojoPopupProgrammatic</name>
+        <tagclass>com.cleanwise.view.taglibs.DojoPopupProgrammaticTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>build programmatic popup menu</info>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>module</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>width</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>targetWidth</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>key</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onClick</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>targetTabStyle</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>startupEvent</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>dojoSelectorProgrammatic</name>
+        <tagclass>com.cleanwise.view.taglibs.DojoSelectorProgrammaticTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>build selector</info>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>module</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>targetWidth</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>key</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+         <attribute>
+            <name>onClick</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>targetTabStyle</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>startupEvent</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>xpedxButton</name>
+        <tagclass>com.cleanwise.view.taglibs.XpedxButtonTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>Gradient Button for Xpedx</info>
+        <attribute>
+            <name>label</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>url</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>target</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>onClick</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>styleClass</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>middleImage</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>rightImage</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>leftImage</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+<!-- common display product details -->
+<tag>
+        <name>commonDisplayProd</name>
+        <tagclass>com.cleanwise.view.taglibs.CommonDisplayProductAttributesTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>name</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>link</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>index</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionItemDetail</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>inputNameQuantity</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>inputNameOnHand</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>altThumbImage</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionConfirmCheckout</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+        <attribute>
+                <name>viewOptionInventoryList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionReorder</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionEditOrderGuide</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionCatalog</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionModInventory</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionInvShoppingCart</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionOrderStatus</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>notShowParOnHandCols</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+</tag>
+
+<tag>
+        <name>commonDisplayProdHeader</name>
+        <tagclass>com.cleanwise.view.taglibs.CommonDisplayProductHeader</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>    
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionInventoryList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionItemDetail</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onClickDeleteAllCheckBox</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>sortLink</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionConfirmCheckout</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionReorder</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionEditOrderGuide</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionCatalog</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionModInventory</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionInvShoppingCart</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionOrderStatus</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>notShowParOnHandCols</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+<tag>
+        <name>commonDefineProdColumnCount</name>
+        <tagclass>com.cleanwise.view.taglibs.CommonDefineProdColumnCount</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>id</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>name</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>    
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionConfirmCheckout</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+        <attribute>
+                <name>viewOptionInventoryList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionReorder</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionEditOrderGuide</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionCatalog</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionModInventory</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionInvShoppingCart</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionOrderStatus</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+                <name>viewOptionItemDetail</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>notShowParOnHandCols</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+</tag>
+<tag>
+    <name>autoSuggestTextBox</name>
+    <tagclass>com.cleanwise.view.taglibs.DojoAutoSuggestTextBoxProgrammaticTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>build input field</info>
+    <attribute>
+        <name>name</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>property</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>id</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>startupEvent</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>module</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>elValue</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>action</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>formId</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>searchAttr</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>displayAttr</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>model</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>onEnterKeyPress</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+<tag>
+    <name>i18nStatus</name>
+    <tagclass>com.cleanwise.view.taglibs.I18nStatusTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>
+      Translate messages per user's locale. The key will be constructed from input parameters -refCodeGroup and refCodeName. 
+    </info>
+    <attribute>
+      <name>refCodeName</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>refCodeGroup</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+<tag>
+    <name>productCatalogMenu</name>
+    <tagclass>com.espendwise.view.taglibs.esw.ProductCatalogMenuTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Render product catalog menu items</info>
+    <attribute>
+        <name>menuItems</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>categoryToItemMap</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>parentCssStyle</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>noLinkCssStyle</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>rootUrl</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>rootText</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>menuItemParameterName</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>displayLeftMenu</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>expandCssStyle</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+<tag>
+    <name>showInterstitialMessage</name>
+    <tagclass>com.cleanwise.view.taglibs.ShowInterstitialMessageTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Render an interstitial message</info>
+    <attribute>
+        <name>message</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>action</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>operation</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>anchorCssStyle</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>anchorTitle</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+<!-- Product Catalog Items New UI  -->
+<tag>
+        <name>displayProductCatalogItems</name>
+        <tagclass>com.espendwise.view.taglibs.esw.DisplayProductCatalogItemsTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>name</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>link</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>index</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+        	<name>viewOptionItemDetail</name>
+        	<required>false</required>
+        	<rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>inputNameQuantity</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>inputNameOnHand</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>altThumbImage</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionConfirmCheckout</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+        <attribute>
+                <name>viewOptionInventoryList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionReorder</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionEditOrderGuide</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionCatalog</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+             <name>viewOptionGroupItemDetail</name>
+             <required>false</required>
+             <rtexprvalue>true</rtexprvalue>
+     </attribute>
+    <attribute>
+            <name>viewOptionModInventory</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionInvShoppingCart</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionOrderStatus</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>notShowParOnHandCols</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>formName</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+	<attribute>
+            <name>userShoppingList</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+
+<tag>
+        <name>productCatalogHeader</name>
+        <tagclass>com.espendwise.view.taglibs.esw.DisplayProductCatalogItemsHeaderTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>    
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionInventoryList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionItemDetail</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>onClickDeleteAllCheckBox</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>sortLink</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionConfirmCheckout</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionReorder</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionEditOrderGuide</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionCatalog</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+           <name>viewOptionGroupItemDetail</name>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+   	</attribute>
+    <attribute>
+            <name>viewOptionModInventory</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionInvShoppingCart</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionOrderStatus</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>notShowParOnHandCols</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>index</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>userShoppingList</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    
+</tag>
+<tag>
+        <name>productCatalogColumnCount</name>
+        <tagclass>com.cleanwise.view.taglibs.ProductCatalogItemsColumnCountTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+                <name>id</name>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>name</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionAddToCartList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionQuickOrderView</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionEditCartItems</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>    
+        <attribute>
+                <name>viewOptionOrderGuide</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionShoppingCart</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+                <name>viewOptionCheckout</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionConfirmCheckout</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+        <attribute>
+                <name>viewOptionInventoryList</name>
+                <required>false</required>
+                <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    <attribute>
+            <name>viewOptionReorder</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionEditOrderGuide</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionCatalog</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionModInventory</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionInvShoppingCart</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>viewOptionOrderStatus</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+    	<name>viewOptionItemDetail</name>
+    	<required>false</required>
+    	<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+            <name>notShowParOnHandCols</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+</tag>
+<tag>
+        <name>ordersAtAGlance</name>
+        <tagclass>com.cleanwise.view.taglibs.OrdersReportTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+         <attribute>
+			<name>pieChartDto</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pieChartContainer</name>
+			<required>true</required>
+		</attribute>
+</tag>
+<tag>
+        <name>formatPriceCurrency</name>
+        <tagclass>com.cleanwise.view.taglibs.FormatPriceCurrency</tagclass>
+        <bodycontent>JSP</bodycontent>
+         <attribute>
+			<name>price</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>contractId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>orderId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>checkNegative</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>negativeClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>checkZero</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>zeroClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>appendSymbol</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+</tag>
+
+<tag>
+    <name>orcaAccess</name>
+    <tagclass>com.cleanwise.view.taglibs.OrcaAccessTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+</tag>
+
+<tag>
+    <name>specifyLocations</name>
+    <tagclass>com.espendwise.view.taglibs.esw.SpecifyLocationsTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Locate sites tag</info>
+    <attribute>
+        <name>layout</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>useSelect</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>selectName</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>locationSelected</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>locationIds</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>hiddenName</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>pageForSpecifyLocation</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+<tag>
+    <name>specifyAccounts</name>
+    <tagclass>com.espendwise.view.taglibs.esw.SpecifyAccountsTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Locate sites tag</info>
+    <attribute>
+        <name>layout</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>hiddenName</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+<tag>
+<name>messages</name>
+<tagclass>com.espendwise.view.taglibs.esw.LocaleSpecificMessagesTag</tagclass>
+<teiclass>org.apache.struts.taglib.html.MessagesTei</teiclass>
+<bodycontent>JSP</bodycontent>
+<attribute>
+<name>id</name>
+<required>true</required>
+<rtexprvalue>false</rtexprvalue>
+</attribute>
+<attribute>
+<name>bundle</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>locale</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>name</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>property</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>header</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>footer</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+<attribute>
+<name>message</name>
+<required>false</required>
+<rtexprvalue>true</rtexprvalue>
+</attribute>
+</tag>
+</taglib>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Customer Plant (Receiving Location)</idValue>
+    <idCode>B</idCode>
+        <idValue>Material Release Issuer</idValue>
+    <idCode>S</idCode>
+        <idValue>Supplier Authority</idValue>
+    <idCode>X</idCode>
+        <idValue>Responsibility to be Determined</idValue>
+    <idCode>Z</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

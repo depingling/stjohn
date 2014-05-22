@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>IBM</idCode>
+        <idValue>Invoice By Mail</idValue>
+    <idCode>IEL</idCode>
+        <idValue>Invoice Electronically</idValue>
+    <idCode>INR</idCode>
+        <idValue>Invoice Not Required (Such As Evaluated Receipts Settlements)</idValue>
+</idList>

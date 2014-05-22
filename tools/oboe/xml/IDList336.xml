@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>01</idCode>
+        <idValue>Basic</idValue>
+    <idCode>02</idCode>
+        <idValue>End of Month (EOM)</idValue>
+    <idCode>03</idCode>
+        <idValue>Fixed Date</idValue>
+    <idCode>04</idCode>
+        <idValue>Deferred or Installment</idValue>
+    <idCode>05</idCode>
+        <idValue>Discount Not Applicable</idValue>
+    <idCode>06</idCode>
+        <idValue>Mixed</idValue>
+    <idCode>07</idCode>
+        <idValue>Extended</idValue>
+    <idCode>08</idCode>
+        <idValue>Basic Discount Offered</idValue>
+    <idCode>09</idCode>
+        <idValue>Proximo</idValue>
+    <idCode>10</idCode>
+        <idValue>Instant</idValue>
+    <idCode>11</idCode>
+        <idValue>Elective</idValue>
+    <idCode>12</idCode>
+        <idValue>10 Days After End of Month (10 EOM)</idValue>
+    <idCode>13</idCode>
+        <idValue>Seller to advise buyer</idValue>
+    <idCode>14</idCode>
+        <idValue>Previously agreed upon</idValue>
+    <idCode>15</idCode>
+        <idValue>Special Proximo</idValue>
+    <idCode>16</idCode>
+        <idValue>Prompt Payment Act</idValue>
+    <idCode>17</idCode>
+        <idValue>Terms not Applicable</idValue>
+    <idCode>18</idCode>
+        <idValue>Fixed Date, Late Payment Penalty Applies</idValue>
+    <idCode>19</idCode>
+        <idValue>Liquidation</idValue>
+    <idCode>20</idCode>
+        <idValue>Progress Payment</idValue>
+    <idCode>21</idCode>
+        <idValue>Fast Pay</idValue>
+    <idCode>22</idCode>
+        <idValue>Cash Discount Terms Apply</idValue>
+    <idCode>23</idCode>
+        <idValue>Payment Due Upon Receipt of Invoice</idValue>
+    <idCode>24</idCode>
+        <idValue>Anticipation</idValue>
+    <idCode>25</idCode>
+        <idValue>Cash Account</idValue>
+    <idCode>26</idCode>
+        <idValue>Cash on Advance</idValue>
+    <idCode>27</idCode>
+        <idValue>Cash on Arrival</idValue>
+    <idCode>28</idCode>
+        <idValue>Cash per Vendor Request</idValue>
+    <idCode>29</idCode>
+        <idValue>Cash by State Law</idValue>
+    <idCode>30</idCode>
+        <idValue>Cash with Order</idValue>
+    <idCode>31</idCode>
+        <idValue>Cash on Delivery (COD)</idValue>
+    <idCode>32</idCode>
+        <idValue>Lease Agreement</idValue>
+    <idCode>33</idCode>
+        <idValue>Net Month Following Invoice (MFI)</idValue>
+    <idCode>34</idCode>
+        <idValue>Sell by Note</idValue>
+    <idCode>35</idCode>
+        <idValue>Supplier Floor Plan</idValue>
+    <idCode>36</idCode>
+        <idValue>Contract Basis</idValue>
+    <idCode>37</idCode>
+        <idValue>Credit Controlled</idValue>
+    <idCode>38</idCode>
+        <idValue>Dating Given</idValue>
+    <idCode>39</idCode>
+        <idValue>Trade Acceptance</idValue>
+    <idCode>40</idCode>
+        <idValue>Bill to Bill</idValue>
+    <idCode>41</idCode>
+        <idValue>Letter of Credit</idValue>
+    <idCode>42</idCode>
+        <idValue>Lump Sum</idValue>
+    <idCode>43</idCode>
+        <idValue>Fixed Fee</idValue>
+    <idCode>44</idCode>
+        <idValue>Cost Plus</idValue>
+    <idCode>45</idCode>
+        <idValue>Bank Transfer</idValue>
+    <idCode>46</idCode>
+        <idValue>Basic Commission Terms</idValue>
+    <idCode>47</idCode>
+        <idValue>Bill of Exchange</idValue>
+    <idCode>48</idCode>
+        <idValue>Cash Against Documents</idValue>
+    <idCode>49</idCode>
+        <idValue>Certified Check</idValue>
+    <idCode>50</idCode>
+        <idValue>Discount with Advance Payment</idValue>
+    <idCode>52</idCode>
+        <idValue>Discount with Prompt Pay</idValue>
+    <idCode>54</idCode>
+        <idValue>Installment Payments are Due Annually</idValue>
+    <idCode>55</idCode>
+        <idValue>Installment Payments are Due Semi-annually</idValue>
+    <idCode>56</idCode>
+        <idValue>Installment Payments are Due Monthly</idValue>
+    <idCode>57</idCode>
+        <idValue>Installment Payments are Due Quarterly</idValue>
+    <idCode>58</idCode>
+        <idValue>Irrevocable Letters of Credit</idValue>
+    <idCode>61</idCode>
+        <idValue>Payment Order Through Bank</idValue>
+    <idCode>63</idCode>
+        <idValue>Promissory Notes</idValue>
+    <idCode>64</idCode>
+        <idValue>Secured Account</idValue>
+    <idCode>65</idCode>
+        <idValue>Letters of Credit at Sight</idValue>
+    <idCode>CA</idCode>
+        <idValue>Cancellation Option</idValue>
+    <idCode>CO</idCode>
+        <idValue>Consignment</idValue>
+    <idCode>NC</idCode>
+        <idValue>No Charge</idValue>
+    <idCode>PP</idCode>
+        <idValue>Prepayment</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

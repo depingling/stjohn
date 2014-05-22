@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>ADI</idCode>
+        <idValue>Additional Descriptive Information Not Required by Regulation but Desired to Accompany the Movement by the Shipper</idValue>
+    <idCode>CAO</idCode>
+        <idValue>Cargo Airlift Only</idValue>
+    <idCode>D13</idCode>
+        <idValue>&quot;DOT - 113, Do Not Bump or Cut Off Car While in Motion&quot; Declaration</idValue>
+    <idCode>DRC</idCode>
+        <idValue>Damaged Car Number</idValue>
+    <idCode>DWW</idCode>
+        <idValue>&quot;Dangerous When Wet&quot; Declaration</idValue>
+    <idCode>EMS</idCode>
+        <idValue>Emergency Schedule (EMS) Page Number</idValue>
+    <idCode>HOT</idCode>
+        <idValue>Identifies Products in a Heated Molten State</idValue>
+    <idCode>HZC</idCode>
+        <idValue>Hazardous Substance Constituents</idValue>
+    <idCode>INH</idCode>
+        <idValue>Inhalation Hazard</idValue>
+    <idCode>LQY</idCode>
+        <idValue>&quot;Limited Quantity&quot; Declaration</idValue>
+    <idCode>MFA</idCode>
+        <idValue>Medical First Aid Guide (MFAG) Page Number</idValue>
+    <idCode>MOS</idCode>
+        <idValue>Maximum Operating Speed</idValue>
+    <idCode>MPI</idCode>
+        <idValue>Marine Pollutant</idValue>
+    <idCode>PIH</idCode>
+        <idValue>&quot;Poison - Inhalation Hazard&quot; Declaration</idValue>
+    <idCode>POI</idCode>
+        <idValue>&quot;Poison&quot; Declaration</idValue>
+    <idCode>RAM</idCode>
+        <idValue>Radioactive Material Data</idValue>
+    <idCode>TEC</idCode>
+        <idValue>Technical or Chemical Group Name</idValue>
+    <idCode>TNM</idCode>
+        <idValue>Trade Name</idValue>
+    <idCode>WST</idCode>
+        <idValue>Waste Declaration</idValue>
+</idList>

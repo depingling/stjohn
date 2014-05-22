@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Off Invoice (Deduction from Original Invoice)</idValue>
+    <idCode>B</idCode>
+        <idValue>Debit/Credit Advice No Remittance Detail</idValue>
+    <idCode>C</idCode>
+        <idValue>Payment Accompanies Remittance Advice</idValue>
+    <idCode>D</idCode>
+        <idValue>Make Payment Only</idValue>
+    <idCode>E</idCode>
+        <idValue>Debit/Credit Advice with Remittance Detail</idValue>
+    <idCode>F</idCode>
+        <idValue>Plan and Submit Suggested Purchase Order(s)</idValue>
+    <idCode>G</idCode>
+        <idValue>Plan Order(s) and Ship Product</idValue>
+    <idCode>H</idCode>
+        <idValue>Notification Only</idValue>
+    <idCode>I</idCode>
+        <idValue>Remittance Information Only</idValue>
+    <idCode>J</idCode>
+        <idValue>Payment Requested (Adjustment to Account)</idValue>
+    <idCode>K</idCode>
+        <idValue>Reimbursement to Follow</idValue>
+    <idCode>L</idCode>
+        <idValue>Apply on Account</idValue>
+    <idCode>M</idCode>
+        <idValue>Memo/Additional Remittance Detail</idValue>
+    <idCode>N</idCode>
+        <idValue>Check Issuance Notice</idValue>
+    <idCode>O</idCode>
+        <idValue>Deduct from Next Remittance</idValue>
+    <idCode>P</idCode>
+        <idValue>Prenotification of Future Transfers</idValue>
+    <idCode>Q</idCode>
+        <idValue>Credit Due, Payment Being Issued</idValue>
+    <idCode>R</idCode>
+        <idValue>Recurring Debit Authorization</idValue>
+    <idCode>S</idCode>
+        <idValue>Single Debit Authorization</idValue>
+    <idCode>T</idCode>
+        <idValue>Adjustment Requested</idValue>
+    <idCode>U</idCode>
+        <idValue>Split Payment and Remittance</idValue>
+    <idCode>X</idCode>
+        <idValue>Handling Party&apos;s Option to Split Payment and Remittance</idValue>
+    <idCode>Z</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

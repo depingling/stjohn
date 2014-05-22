@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>01</idCode>
+        <idValue>Palletized</idValue>
+    <idCode>02</idCode>
+        <idValue>Floor Stack/Hand Pile</idValue>
+    <idCode>03</idCode>
+        <idValue>Mixed</idValue>
+    <idCode>04</idCode>
+        <idValue>Slip Sheet</idValue>
+    <idCode>05</idCode>
+        <idValue>Module</idValue>
+    <idCode>06</idCode>
+        <idValue>Clampable</idValue>
+    <idCode>07</idCode>
+        <idValue>Bop Sheet</idValue>
+    <idCode>08</idCode>
+        <idValue>Airbag/Slipsheet Combination</idValue>
+    <idCode>09</idCode>
+        <idValue>Thermal Blanket (Cargo Quilt)</idValue>
+    <idCode>10</idCode>
+        <idValue>Shrink-wrap</idValue>
+    <idCode>11</idCode>
+        <idValue>Loadlock</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

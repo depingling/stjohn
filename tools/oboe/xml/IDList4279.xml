@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Basic</idValue>
+    <idCode>2</idCode>
+        <idValue>End of month</idValue>
+    <idCode>3</idCode>
+        <idValue>Fixed date</idValue>
+    <idCode>4</idCode>
+        <idValue>Deferred</idValue>
+    <idCode>5</idCode>
+        <idValue>Discount not applicable</idValue>
+    <idCode>6</idCode>
+        <idValue>Mixed</idValue>
+    <idCode>7</idCode>
+        <idValue>Extended</idValue>
+    <idCode>8</idCode>
+        <idValue>Basic discount offered</idValue>
+    <idCode>9</idCode>
+        <idValue>Proximo</idValue>
+    <idCode>10</idCode>
+        <idValue>Instant</idValue>
+    <idCode>11</idCode>
+        <idValue>Elective</idValue>
+    <idCode>12</idCode>
+        <idValue>10 days after end of month</idValue>
+    <idCode>13</idCode>
+        <idValue>Seller to advise buyer</idValue>
+    <idCode>14</idCode>
+        <idValue>Paid against statement</idValue>
+    <idCode>15</idCode>
+        <idValue>No charge</idValue>
+    <idCode>16</idCode>
+        <idValue>Not yet defined</idValue>
+    <idCode>17</idCode>
+        <idValue>Ultimo</idValue>
+    <idCode>18</idCode>
+        <idValue>Previously agreed upon</idValue>
+    <idCode>19</idCode>
+        <idValue>United States funds</idValue>
+    <idCode>20</idCode>
+        <idValue>Penalty terms</idValue>
+    <idCode>21</idCode>
+        <idValue>Payment by instalment</idValue>
+    <idCode>22</idCode>
+        <idValue>Discount</idValue>
+    <idCode>23</idCode>
+        <idValue>Available by sight payment</idValue>
+    <idCode>24</idCode>
+        <idValue>Available by deferred payment</idValue>
+    <idCode>25</idCode>
+        <idValue>Available by acceptance</idValue>
+    <idCode>26</idCode>
+        <idValue>Available by negotiation with any bank</idValue>
+    <idCode>27</idCode>
+        <idValue>Available by negotiation with any bank in ...</idValue>
+    <idCode>28</idCode>
+        <idValue>Available by negotiation by named bank</idValue>
+    <idCode>29</idCode>
+        <idValue>Available by negotiation</idValue>
+    <idCode>30</idCode>
+        <idValue>Adjustment payment</idValue>
+    <idCode>31</idCode>
+        <idValue>Late payment</idValue>
+    <idCode>32</idCode>
+        <idValue>Advanced payment</idValue>
+    <idCode>33</idCode>
+        <idValue>Payment by instalments according to progress (as agreed)</idValue>
+    <idCode>34</idCode>
+        <idValue>Payment by instalments according to progress (to be agreed)</idValue>
+    <idCode>35</idCode>
+        <idValue>Nonstandard</idValue>
+    <idCode>36</idCode>
+        <idValue>Tenor payment terms</idValue>
+    <idCode>37</idCode>
+        <idValue>Complete payment</idValue>
+    <idCode>38</idCode>
+        <idValue>Payment terms defined in consolidated invoice</idValue>
+    <idCode>39</idCode>
+        <idValue>Payment upon completion</idValue>
+    <idCode>40</idCode>
+        <idValue>Partial advance</idValue>
+    <idCode>41</idCode>
+        <idValue>Consignment</idValue>
+    <idCode>42</idCode>
+        <idValue>Inter-company account</idValue>
+    <idCode>43</idCode>
+        <idValue>Sell by note</idValue>
+    <idCode>44</idCode>
+        <idValue>Supplier floor plan</idValue>
+    <idCode>45</idCode>
+        <idValue>Contract basis</idValue>
+    <idCode>46</idCode>
+        <idValue>Credit controlled</idValue>
+    <idCode>47</idCode>
+        <idValue>Dating given</idValue>
+    <idCode>48</idCode>
+        <idValue>Trade acceptance</idValue>
+    <idCode>49</idCode>
+        <idValue>Cost plus</idValue>
+    <idCode>50</idCode>
+        <idValue>Letter of credit</idValue>
+    <idCode>51</idCode>
+        <idValue>Lease agreement</idValue>
+    <idCode>52</idCode>
+        <idValue>Cash On Delivery (COD)</idValue>
+    <idCode>53</idCode>
+        <idValue>Cash by state law</idValue>
+    <idCode>54</idCode>
+        <idValue>Bank transfer</idValue>
+    <idCode>55</idCode>
+        <idValue>Cash on arrival</idValue>
+    <idCode>56</idCode>
+        <idValue>Cash</idValue>
+    <idCode>57</idCode>
+        <idValue>Cash discount terms apply</idValue>
+    <idCode>58</idCode>
+        <idValue>Cash with order</idValue>
+    <idCode>59</idCode>
+        <idValue>Cash per vendor request</idValue>
+    <idCode>60</idCode>
+        <idValue>Irrevocable letter of credit</idValue>
+    <idCode>61</idCode>
+        <idValue>Documents against acceptance</idValue>
+    <idCode>62</idCode>
+        <idValue>Charge card</idValue>
+    <idCode>63</idCode>
+        <idValue>Documents against payment</idValue>
+    <idCode>64</idCode>
+        <idValue>Usance bill</idValue>
+    <idCode>65</idCode>
+        <idValue>Letter of credit at sight</idValue>
+    <idCode>66</idCode>
+        <idValue>Secured account</idValue>
+    <idCode>67</idCode>
+        <idValue>Basic commission terms</idValue>
+    <idCode>68</idCode>
+        <idValue>Deposit required</idValue>
+    <idCode>69</idCode>
+        <idValue>Discount with prompt pay</idValue>
+    <idCode>70</idCode>
+        <idValue>Discount with advance payment</idValue>
+    <idCode>71</idCode>
+        <idValue>Certified cheque</idValue>
+    <idCode>72</idCode>
+        <idValue>Cash against documents</idValue>
+    <idCode>73</idCode>
+        <idValue>Bill of exchange</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually defined</idValue>
+</idList>

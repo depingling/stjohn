@@ -1,0 +1,18 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT KnowledgeContentList (KnowledgeContent)+>
+<!ELEMENT KnowledgeContent (KnowledgeId,AddBy,AddDate,AddTime,ContentFormat,ContentSource,ContentUrl,LongDesc,ModBy,ModDate)>
+<!ATTLIST KnowledgeContent Id ID #REQUIRED>
+<!ELEMENT KnowledgeId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT AddTime (#PCDATA)>
+<!ELEMENT ContentFormat (#PCDATA)>
+<!ELEMENT ContentSource (#PCDATA)>
+<!ELEMENT ContentUrl (#PCDATA)>
+<!ELEMENT LongDesc (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database>
+<table name="DW_ACCOUNT_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column isPrimaryKey="true" name="ACCOUNT_DIM_ID" size="22" type="NUMBER"/>
+<column name="ACCOUNT_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ACCOUNT_NAME" size="255" type="VARCHAR2"/>
+<column name="ACCOUNT_NUM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ACCOUNT_STREET_ADDRESS" nullable="true" size="255" type="VARCHAR2"/>
+<column name="ACCOUNT_CITY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ACCOUNT_STATE" nullable="true" size="20" type="VARCHAR2"/>
+<column name="ACCOUNT_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="BRANCH_NAME" nullable="true" size="20" type="VARCHAR2"/>
+<column name="MARKET" nullable="true" size="50" type="VARCHAR2"/>
+<column name="JD_ACCOUNT_NAME" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_ACCOUNT_STREET_ADDRESS" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_ACCOUNT_CITY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_ACCOUNT_STATE" nullable="true" size="20" type="VARCHAR2"/>
+<column name="JD_ACCOUNT_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_ACCOUNT_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_REGION" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_REGION_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_MARKET" nullable="true" size="50" type="VARCHAR2"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<column name="CONNECTION_CUSTOMER" nullable="true" size="5" type="VARCHAR2"/>
+<primaryKey name="DW_ACCOUNT_DIM_PK">
+<columnref name="ACCOUNT_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_CATEGORY_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column isPrimaryKey="true" name="CATEGORY_DIM_ID" size="22" type="NUMBER"/>
+<column name="CATEGORY1" nullable="true" size="255" type="VARCHAR2"/>
+<column name="CATEGORY2" nullable="true" size="255" type="VARCHAR2"/>
+<column name="CATEGORY3" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_CATEGORY1" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_CATEGORY2" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_CATEGORY3" nullable="true" size="255" type="VARCHAR2"/>
+<column name="CATEG1_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="CATEG2_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="CATEG3_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_CATEG1_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_CATEG2_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_CATEG3_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="STORE_CATALOG_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ACCOUNT_CATALOG_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<primaryKey name="DW_CATEGORY_DIM_PK">
+<columnref name="CATEGORY_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_DATE_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column isPrimaryKey="true" name="DATE_DIM_ID" size="22" type="NUMBER"/>
+<column name="CALENDAR_DATE" size="7" type="DATE"/>
+<column name="YEAR" size="22" type="NUMBER"/>
+<column name="MONTH" size="20" type="VARCHAR2"/>
+<column name="DAY_OF_WEEK" size="20" type="VARCHAR2"/>
+<column name="MONTH_NUMBER" size="22" type="NUMBER"/>
+<column name="WEEK_NUMBER" size="22" type="NUMBER"/>
+<column name="QUARTER" nullable="true" size="22" type="NUMBER"/>
+<primaryKey name="DW_DATE_DIM_PK">
+<columnref name="DATE_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_DISTRIBUTOR_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column isPrimaryKey="true" name="DISTRIBUTOR_DIM_ID" size="22" type="NUMBER"/>
+<column name="DIST_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="DIST_NAME" size="255" type="VARCHAR2"/>
+<column name="DIST_CITY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="DIST_STATE" nullable="true" size="20" type="VARCHAR2"/>
+<column name="DIST_ADDRESS" nullable="true" size="255" type="VARCHAR2"/>
+<column name="DIST_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_DIST_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_DIST_NAME" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_DIST_CITY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_DIST_STATE" nullable="true" size="20" type="VARCHAR2"/>
+<column name="JD_DIST_ADDRESS" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_DIST_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<primaryKey name="DW_DISTRIBUTOR_DIM_PK">
+<columnref name="DISTRIBUTOR_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_INVOICE_FACT" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column isPrimaryKey="true" name="INVOICE_FACT_ID" size="22" type="NUMBER"/>
+<column name="INVOICE_DIST_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="INVOICE_DIST_DETAIL_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="MANUFACTURER_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="DATE_DIM_ID" size="22" type="NUMBER"/>
+<column name="DISTRIBUTOR_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ITEM_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column name="SALES_REP_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="REGION_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ACCOUNT_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="SITE_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column digits="3" name="COST" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="PRICE" nullable="true" size="15" type="NUMBER"/>
+<column name="QUANTITY" nullable="true" size="22" type="NUMBER"/>
+<column name="ERP_PO_NUM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="INVOICE_SOURCE_CD" nullable="true" size="20" type="VARCHAR2"/>
+<column name="ERP_PO_REF_NUM" nullable="true" size="30" type="VARCHAR2"/>
+<column digits="3" name="FREIGHT" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="SALES_TAX" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="MISC_CHARGES" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="DISCOUNTS" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="CREDIT" nullable="true" size="15" type="NUMBER"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="ADD_BY" size="30" type="VARCHAR2"/>
+<column name="EXP_DATE" nullable="true" size="7" type="DATE"/>
+<column name="EXP_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="INVOICE_STATAUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="INVOICE_NUM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="LINE_NUM" nullable="true" size="22" type="NUMBER"/>
+<column name="STATUS" nullable="true" size="20" type="VARCHAR2"/>
+<column name="DIST_SKU" nullable="true" size="30" type="VARCHAR2"/>
+<column name="DIST_UOM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="DIST_PACK" nullable="true" size="30" type="VARCHAR2"/>
+<column digits="3" name="LINE_AMOUNT" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="LINE_COST" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="JD_CONV_FACTOR" nullable="true" size="15" type="NUMBER"/>
+<column name="ITEM_ID" nullable="true" size="38" type="NUMBER"/>
+<column name="CATEG1_ID" nullable="true" size="38" type="NUMBER"/>
+<column name="JD_CATEG1_ID" nullable="true" size="38" type="NUMBER"/>
+<column name="MANUF_ID" nullable="true" size="38" type="NUMBER"/>
+<column name="ACCOUNT_ID" nullable="true" size="38" type="NUMBER"/>
+<column name="SITE_ID" nullable="true" size="38" type="NUMBER"/>
+<column name="DISTR_ID" nullable="true" size="38" type="NUMBER"/>
+<column name="REGION_NUM" nullable="true" size="15" type="VARCHAR2"/>
+<column name="DSR_NUM" nullable="true" size="15" type="VARCHAR2"/>
+<column name="DSR_NAME" nullable="true" size="50" type="VARCHAR2"/>
+<column name="JD_FLAG" nullable="true" size="5" type="VARCHAR2"/>
+<primaryKey name="DW_INVOICE_FACT_PK">
+<columnref name="INVOICE_FACT_ID"/>
+</primaryKey>
+</table>
+<table name="DW_ITEM_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column isPrimaryKey="true" name="ITEM_DIM_ID" size="22" type="NUMBER"/>
+<column name="CATEGORY_DIM_ID" size="22" type="NUMBER"/>
+<column name="MANUFACTURER_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ITEM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ITEM_DESC" nullable="true" size="255" type="VARCHAR2"/>
+<column name="ITEM_PACK" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ITEM_UOM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="CLW_SKU" nullable="true" size="22" type="NUMBER"/>
+<column name="MANUF_SKU" nullable="true" size="50" type="VARCHAR2"/>
+<column name="JD_ITEM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_ITEM_DESC" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_ITEM_PACK" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_ITEM_UOM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_ITEM_FL" nullable="true" size="5" type="VARCHAR2"/>
+<column name="JD_CLW_SKU" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_MANUF_SKU" nullable="true" size="50" type="VARCHAR2"/>
+<column name="MANUF_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_MANUF_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="STORE_CATALOG_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ACCOUNT_CATALOG_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<column name="ITEM_SIZE" nullable="true" size="50" type="VARCHAR2"/>
+<column name="JD_ITEM_SIZE" nullable="true" size="50" type="VARCHAR2"/>
+<primaryKey name="DW_ITEM_DIM_PK">
+<columnref name="ITEM_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_ITEM_DISTRIBUTOR" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column isPrimaryKey="true" name="ITEM_DISTRIBUTOR_ID" size="22" type="NUMBER"/>
+<column name="ITEM_DIM_ID" size="22" type="NUMBER"/>
+<column name="DISTRIBUTOR_DIM_ID" size="22" type="NUMBER"/>
+<column name="DIST_SKU" nullable="true" size="60" type="VARCHAR2"/>
+<column name="DIST_PACK" nullable="true" size="30" type="VARCHAR2"/>
+<column name="DIST_UOM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="DIST_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_DIST_SKU" nullable="true" size="60" type="VARCHAR2"/>
+<column name="JD_DIST_PACK" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_DIST_UOM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_DIST_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<primaryKey name="DW_ITEM_DISTRIBUTOR_PK">
+<columnref name="ITEM_DISTRIBUTOR_ID"/>
+</primaryKey>
+</table>
+<table name="DW_MANUFACTURER_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column isPrimaryKey="true" name="MANUFACTURER_DIM_ID" size="22" type="NUMBER"/>
+<column name="MANUF_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="MANUF_NAME" size="40" type="VARCHAR2"/>
+<column name="MANUF_CITY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MANUF_STATE" nullable="true" size="20" type="VARCHAR2"/>
+<column name="MAMUF_ADDRESS" nullable="true" size="255" type="VARCHAR2"/>
+<column name="MANUF_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_MANUF_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="JD_MANUF_NAME" nullable="true" size="40" type="VARCHAR2"/>
+<column name="JD_MANUF_CITY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_MANUF_STATE" nullable="true" size="20" type="VARCHAR2"/>
+<column name="JD_MANUF_ADDRESS" nullable="true" size="255" type="VARCHAR2"/>
+<column name="JD_MANUF_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="JD_MANUF_FL" nullable="true" size="5" type="VARCHAR2"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<primaryKey name="DW_MANUFACTURER_DIM_PK">
+<columnref name="MANUFACTURER_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_ORDER_FACT" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column isPrimaryKey="true" name="ORDER_FACT_ID" size="22" type="NUMBER"/>
+<column name="ORDER_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ORDER_ITEM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ORDER_MOD_DATE" nullable="true" size="7" type="DATE"/>
+<column name="MANUFACTURER_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="DATE_DIM_ID" size="22" type="NUMBER"/>
+<column name="DISTRIBUTOR_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ITEM_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column name="SALES_REP_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="REGION_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ACCOUNT_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="SITE_DIM_ID" nullable="true" size="22" type="NUMBER"/>
+<column digits="3" name="COST" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="PRICE" nullable="true" size="15" type="NUMBER"/>
+<column name="QUANTITY" nullable="true" size="22" type="NUMBER"/>
+<column name="ERP_PO_NUM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ORDER_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ORDER_ITEM_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="CUST_ITEM_SKU_NUM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="DIST_SKU" nullable="true" size="30" type="VARCHAR2"/>
+<column name="DIST_UOM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="DIST_PACK" nullable="true" size="30" type="VARCHAR2"/>
+<column name="LOCALE_CD" nullable="true" size="20" type="VARCHAR2"/>
+<column name="CURRENCY_CD" nullable="true" size="20" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="ADD_BY" size="30" type="VARCHAR2"/>
+<column name="EXP_DATE" nullable="true" size="7" type="DATE"/>
+<column name="EXP_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ORDER_NUM" nullable="true" size="50" type="VARCHAR2"/>
+<column name="REQUEST_PO_NUM" nullable="true" size="50" type="VARCHAR2"/>
+<column digits="3" name="TAX_AMOUNT" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="TOTAL_FREIGHT_COST" nullable="true" size="15" type="NUMBER"/>
+<column digits="3" name="TOTAL_MISC_COST" nullable="true" size="15" type="NUMBER"/>
+<column name="SALE_TYPE" nullable="true" size="20" type="VARCHAR2"/>
+<primaryKey name="DW_ORDER_FACT_PK">
+<columnref name="ORDER_FACT_ID"/>
+</primaryKey>
+</table>
+<table name="DW_REGION_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column isPrimaryKey="true" name="REGION_DIM_ID" size="22" type="NUMBER"/>
+<column name="REGION_NAME" size="50" type="VARCHAR2"/>
+<column name="REGION_CODE" nullable="true" size="20" type="VARCHAR2"/>
+<column name="REGION_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<primaryKey name="DW_REGION_DIM_PK">
+<columnref name="REGION_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_SALES_REP_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column isPrimaryKey="true" name="SALES_REP_DIM_ID" size="22" type="NUMBER"/>
+<column name="REP_NAME" size="50" type="VARCHAR2"/>
+<column name="REP_CODE" nullable="true" size="20" type="VARCHAR2"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<column name="LW_ID" nullable="true" size="20" type="VARCHAR2"/>
+<primaryKey name="DW_SALES_REP_DIM_PK">
+<columnref name="SALES_REP_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_SITE_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column name="ACCOUNT_DIM_ID" size="22" type="NUMBER"/>
+<column name="ACCOUNT_ID" nullable="true" size="22" type="NUMBER"/>
+<column isPrimaryKey="true" name="SITE_DIM_ID" size="22" type="NUMBER"/>
+<column name="SITE_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="SITE_NAME" size="255" type="VARCHAR2"/>
+<column name="SITE_NUM" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_STREET_ADDRESS" nullable="true" size="255" type="VARCHAR2"/>
+<column name="SITE_CITY" nullable="true" size="255" type="VARCHAR2"/>
+<column name="SITE_STATE" nullable="true" size="50" type="VARCHAR2"/>
+<column name="SITE_POSTAL_CODE" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_COUNTRY" nullable="true" size="50" type="VARCHAR2"/>
+<column name="TYPE" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_STATUS_CD" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_REGION" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_MARKET" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_DISTRICT" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_TYPE" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_SQUARE_FOOTAGE" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_AVERAGE_CUSTOMER_COUNT" nullable="true" size="30" type="VARCHAR2"/>
+<column name="SITE_BSC" nullable="true" size="255" type="VARCHAR2"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<column name="SITE_DIST_REF_CD" nullable="true" size="30" type="VARCHAR2"/>
+<primaryKey name="DW_SITE_DIM_PK">
+<columnref name="SITE_DIM_ID"/>
+</primaryKey>
+</table>
+<table name="DW_STORE_DIM" serialVersionDataUID="1L" serialVersionVectorUID="1L">
+<column isPrimaryKey="true" name="STORE_DIM_ID" size="22" type="NUMBER"/>
+<column name="STORE_NAME" size="40" type="VARCHAR2"/>
+<column name="STORE_ID" nullable="true" size="22" type="NUMBER"/>
+<column name="ADD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="ADD_DATE" size="7" type="DATE"/>
+<column name="MOD_BY" nullable="true" size="30" type="VARCHAR2"/>
+<column name="MOD_DATE" size="7" type="DATE"/>
+<column name="LAST_UPLOAD_ORDER_DATE" nullable="true" size="7" type="DATE"/>
+<column name="LAST_UPLOAD_INVOICE_DATE" nullable="true" size="7" type="DATE"/>
+<primaryKey name="DW_STORE_DIM_PK">
+<columnref name="STORE_DIM_ID"/>
+</primaryKey>
+</table>
+<fkey fkTable="DW_ITEM_DIM" name="FK_DW_CATEGORY_DIM" pkName="DW_CATEGORY_DIM_PK" pkTable="DW_CATEGORY_DIM">
+<fkeyref fkColumnName="CATEGORY_DIM_ID" pkColumnName="CATEGORY_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_INVOICE_FACT" name="FK_DW_ACCOUNT_DIM" pkName="DW_ACCOUNT_DIM_PK" pkTable="DW_ACCOUNT_DIM">
+<fkeyref fkColumnName="ACCOUNT_DIM_ID" pkColumnName="ACCOUNT_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_ORDER_FACT" name="FK1_DW_ACCOUNT_DIM" pkName="DW_ACCOUNT_DIM_PK" pkTable="DW_ACCOUNT_DIM">
+<fkeyref fkColumnName="ACCOUNT_DIM_ID" pkColumnName="ACCOUNT_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_INVOICE_FACT" name="FK_DW_DATE_DIM" pkName="DW_DATE_DIM_PK" pkTable="DW_DATE_DIM">
+<fkeyref fkColumnName="DATE_DIM_ID" pkColumnName="DATE_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_ORDER_FACT" name="FK1_DW_DATE_DIM" pkName="DW_DATE_DIM_PK" pkTable="DW_DATE_DIM">
+<fkeyref fkColumnName="DATE_DIM_ID" pkColumnName="DATE_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_INVOICE_FACT" name="FK_DW_DISTRIBUTOR_DIM" pkName="DW_DISTRIBUTOR_DIM_PK" pkTable="DW_DISTRIBUTOR_DIM">
+<fkeyref fkColumnName="DISTRIBUTOR_DIM_ID" pkColumnName="DISTRIBUTOR_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_ORDER_FACT" name="FK1_DW_DISTRIBUTOR_DIM" pkName="DW_DISTRIBUTOR_DIM_PK" pkTable="DW_DISTRIBUTOR_DIM">
+<fkeyref fkColumnName="DISTRIBUTOR_DIM_ID" pkColumnName="DISTRIBUTOR_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_INVOICE_FACT" name="FK_DW_ITEM_DIM" pkName="DW_ITEM_DIM_PK" pkTable="DW_ITEM_DIM">
+<fkeyref fkColumnName="ITEM_DIM_ID" pkColumnName="ITEM_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_ORDER_FACT" name="FK1_DW_ITEM_DIM" pkName="DW_ITEM_DIM_PK" pkTable="DW_ITEM_DIM">
+<fkeyref fkColumnName="ITEM_DIM_ID" pkColumnName="ITEM_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_INVOICE_FACT" name="FK_DW_MANUFACTURER_DIM" pkName="DW_MANUFACTURER_DIM_PK" pkTable="DW_MANUFACTURER_DIM">
+<fkeyref fkColumnName="MANUFACTURER_DIM_ID" pkColumnName="MANUFACTURER_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_ORDER_FACT" name="FK1_DW_MANUFACTURER_DIM" pkName="DW_MANUFACTURER_DIM_PK" pkTable="DW_MANUFACTURER_DIM">
+<fkeyref fkColumnName="MANUFACTURER_DIM_ID" pkColumnName="MANUFACTURER_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_INVOICE_FACT" name="FK_DW_SALES_REP_DIM" pkName="DW_SALES_REP_DIM_PK" pkTable="DW_SALES_REP_DIM">
+<fkeyref fkColumnName="SALES_REP_DIM_ID" pkColumnName="SALES_REP_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_ORDER_FACT" name="FK1_DW_SALES_REP_DIM" pkName="DW_SALES_REP_DIM_PK" pkTable="DW_SALES_REP_DIM">
+<fkeyref fkColumnName="SALES_REP_DIM_ID" pkColumnName="SALES_REP_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_INVOICE_FACT" name="FK_DW_SITE_DIM" pkName="DW_SITE_DIM_PK" pkTable="DW_SITE_DIM">
+<fkeyref fkColumnName="SITE_DIM_ID" pkColumnName="SITE_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_ORDER_FACT" name="FK1_DW_SITE_DIM" pkName="DW_SITE_DIM_PK" pkTable="DW_SITE_DIM">
+<fkeyref fkColumnName="SITE_DIM_ID" pkColumnName="SITE_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_INVOICE_FACT" name="FK_DW_STORE_DIM" pkName="DW_STORE_DIM_PK" pkTable="DW_STORE_DIM">
+<fkeyref fkColumnName="STORE_DIM_ID" pkColumnName="STORE_DIM_ID"/>
+</fkey>
+<fkey fkTable="DW_ORDER_FACT" name="FK1_DW_STORE_DIM" pkName="DW_STORE_DIM_PK" pkTable="DW_STORE_DIM">
+<fkeyref fkColumnName="STORE_DIM_ID" pkColumnName="STORE_DIM_ID"/>
+</fkey>
+<index name="DW_ACCOUNT_DIM_I1" table="DW_ACCOUNT_DIM">
+<columnref name="ACCOUNT_ID"/>
+</index>
+<index name="DW_DATE_DIM_I" table="DW_DATE_DIM">
+<columnref name="CALENDAR_DATE"/>
+</index>
+<index name="DW_DISTRIBUTOR_DIM_I1" table="DW_DISTRIBUTOR_DIM">
+<columnref name="DIST_ID"/>
+</index>
+<index name="DW_ITEM_DIM_I1" table="DW_ITEM_DIM">
+<columnref name="ITEM_ID"/>
+</index>
+<index name="DW_ITEM_DISTRIBUTOR_I1" table="DW_ITEM_DISTRIBUTOR">
+<columnref name="ITEM_DIM_ID"/>
+</index>
+<index name="DW_ITEM_DISTRIBUTOR_I2" table="DW_ITEM_DISTRIBUTOR">
+<columnref name="DISTRIBUTOR_DIM_ID"/>
+</index>
+<index name="DW_MANUFACTURER_DIM_I1" table="DW_MANUFACTURER_DIM">
+<columnref name="MANUF_ID"/>
+</index>
+<index name="DW_REGION_DIM_I1" table="DW_REGION_DIM">
+<columnref name="REGION_CODE"/>
+</index>
+<index name="DW_SALES_REP_DIM_I1" table="DW_SALES_REP_DIM">
+<columnref name="REP_CODE"/>
+</index>
+<index name="DW_SALES_REP_DIM_I2" table="DW_SALES_REP_DIM">
+<columnref keyseq="1" name="REP_CODE"/>
+<columnref keyseq="2" name="REP_NAME"/>
+</index>
+<index name="DW_SITE_DIM_I1" table="DW_SITE_DIM">
+<columnref name="SITE_ID"/>
+</index>
+<sequence name="DW_ACCOUNT_DIM_SEQ"/>
+<sequence name="DW_CATEGORY_DIM_SEQ"/>
+<sequence name="DW_DATE_DIM_SEQ"/>
+<sequence name="DW_DISTRIBUTOR_DIM_SEQ"/>
+<sequence name="DW_INVOICE_FACT_SEQ"/>
+<sequence name="DW_ITEM_DIM_SEQ"/>
+<sequence name="DW_ITEM_DISTRIBUTOR_SEQ"/>
+<sequence name="DW_MANUFACTURER_DIM_SEQ"/>
+<sequence name="DW_ORDER_FACT_SEQ"/>
+<sequence name="DW_REGION_DIM_SEQ"/>
+<sequence name="DW_SALES_REP_DIM_SEQ"/>
+<sequence name="DW_SITE_DIM_SEQ"/>
+<sequence name="DW_STORE_DIM_SEQ"/>
+</database>

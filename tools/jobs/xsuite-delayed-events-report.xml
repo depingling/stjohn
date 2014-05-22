@@ -1,0 +1,18 @@
+<?xml version ="1.0"?>
+<xml>
+<!-- # Report Events older than 10 minutes 
+5,20,35,55 * * * * cd /espendwise/xapp/webapp/EJBServer/xsuite/jobs;  sh xsuite-run-generic-reports.job xsuite-delayed-events-report.xml
+-->
+  <system-properties>
+    <mail.transport.protocol>smtp</mail.transport.protocol>
+    <mail.smtp.host>localhost</mail.smtp.host>
+  </system-properties>
+  <report>
+       <category>Operations</category>
+       <name>Delayed Events</name>
+       <emailrecipient>ykupershmidt@espendwise.com,phathaway@espendwise.com,jriendeau@espendwise.com,notifications@espendwise.com,msonavane@espendwise.com</emailrecipient>
+       <email-message>Delayed Events</email-message>
+       <send-only-if-data>true</send-only-if-data>
+       <param name="STORE">1</param>
+  </report>
+</xml>

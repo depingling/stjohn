@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT column (javatype, javaname, rsgetter, name, type)>
+<!ATTLIST column
+	nullable (true|false) #REQUIRED
+	primary_key (true|false) #REQUIRED
+	foreign_key (true|false) #REQUIRED
+>
+<!ELEMENT database (table+)>
+<!ATTLIST database
+	name CDATA #REQUIRED
+>
+<!ELEMENT javaname (#PCDATA)>
+<!ELEMENT javatype (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT rsgetter (#PCDATA)>
+<!ELEMENT table (column+)>
+<!ATTLIST table
+	name (#PCDATA) #REQUIRED
+	javaname (#PCDATA) #REQUIRED
+	type CDATA #REQUIRED
+>
+<!ELEMENT type (#PCDATA)>
+

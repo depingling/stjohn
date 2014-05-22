@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>N</idCode>
+        <idValue>No</idValue>
+    <idCode>U</idCode>
+        <idValue>Unknown</idValue>
+    <idCode>W</idCode>
+        <idValue>Not Applicable</idValue>
+    <idCode>Y</idCode>
+        <idValue>Yes</idValue>
+</idList>

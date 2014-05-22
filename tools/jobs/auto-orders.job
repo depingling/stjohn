@@ -1,0 +1,26 @@
+cd ../util
+
+
+
+##
+## The following repeated calls are intentional.
+## The process needs to run through the inventory
+## order queue 3 times each day.
+##
+
+
+# Enter an entry in the inventory order queue for the
+# next order cycle.
+sh appcmd.sh -Dcmd=process_inventory_orders
+
+# Check for notification due dates.
+sh appcmd.sh -Dcmd=process_inventory_orders
+
+# Place orders for sites set for inventory shopping
+# for which the cutoff date has been exceeded and an
+# order is due.
+sh appcmd.sh -Dcmd=process_inventory_orders
+
+cd ../jobs
+sh xsuite-run-generic-reports.job inventory-missed-order-report.xml
+

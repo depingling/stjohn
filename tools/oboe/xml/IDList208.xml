@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>4</idCode>
+        <idValue>46 Level DOT Code</idValue>
+    <idCode>6</idCode>
+        <idValue>Airline Tariff 6D</idValue>
+    <idCode>9</idCode>
+        <idValue>Title 49, Code of Federal Regulations (CFR)</idValue>
+    <idCode>A</idCode>
+        <idValue>International Civil Aviation Organization (ICAO) Code</idValue>
+    <idCode>C</idCode>
+        <idValue>Storage Compatibility Group</idValue>
+    <idCode>D</idCode>
+        <idValue>Hazardous Materials ID, DOT</idValue>
+    <idCode>E</idCode>
+        <idValue>Endorsement</idValue>
+    <idCode>F</idCode>
+        <idValue>Air Force Joint Manual 24-204</idValue>
+    <idCode>I</idCode>
+        <idValue>Intergovernmental Maritime Organization (IMO) Code</idValue>
+    <idCode>R</idCode>
+        <idValue>Bureau of Explosives (BOE) 6000 Tariff</idValue>
+    <idCode>T</idCode>
+        <idValue>International Air Transport Association Dangerous Goods Code List</idValue>
+    <idCode>U</idCode>
+        <idValue>United Nations</idValue>
+    <idCode>X</idCode>
+        <idValue>Hazard Class or Division</idValue>
+</idList>

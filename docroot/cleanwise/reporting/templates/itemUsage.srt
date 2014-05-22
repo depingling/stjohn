@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report Type="TabularSheet" Top="0.8" Left="0.5" Bottom="0.5" Right="0.5" HeaderFromEdge="0.2" FooterFromEdge="0.25" PageNumbering="1" HorizontalWrap="false" TabStops="0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.0,7.5,8.0">
+<onLoad><![CDATA[if(parameter["isBadDistSku"]== "true") {
+log("Filter on Bad Skus");
+tblItemUsage.query = "ItemUsageNullVenSkuLoc";
+}
+else {
+log("Show all item usage");
+tblItemUsage.query = "ItemUsageLoc";
+}]]></onLoad>
+<ReportProperty Name="report.modified">
+<![CDATA[2002-07-18 17:12:44]]>
+</ReportProperty>
+<ReportProperty Name="TextMode">
+<![CDATA[false]]>
+</ReportProperty>
+<ReportProperty Name="PageSize">
+<![CDATA[Letter [8.5x11 in]]]>
+</ReportProperty>
+<ReportProperty Name="Orientation">
+<![CDATA[Landscape]]>
+</ReportProperty>
+<ReportProperty Name="edit.layout">
+<![CDATA[false]]>
+</ReportProperty>
+<ReportProperty Name="report.created">
+<![CDATA[2002-06-26 16:45:13]]>
+</ReportProperty>
+<Parameters>
+</Parameters>
+<RunningTotals>
+</RunningTotals>
+<Header Type="256">
+<TextElement ID="Text2" Alignment="66" Indent="0.0" Hindent="0" Spacing="0" Block="false" Continuation="false" Visible="true" KeepWithNext="false" Font="SansSerif-BOLD-12"
+ Foreground="-16777216" FillStyle="0" TabStops="0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.0,7.5,8.0" Justify="false" Orphan="false" TextAdvance="3">
+<![CDATA[Item Usage - {D}, {T}]]>
+</TextElement>
+<NewlineElement ID="Newline7" Alignment="1" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="Serif-PLAIN-10"
+ Foreground="-16777216" Count="1">
+</NewlineElement>
+<TableElement ID="Table6" Alignment="65" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="SansSerif-PLAIN-8"
+ Foreground="-16777216" TableWidth="0.0" Layout="1" TableAdvance="1" OrphanControl="false" Padding="0,1,0,1" Style="CleanwiseTable" EmbedWidth="false" Embedded="true">
+<property><name><![CDATA[query]]></name><value><![CDATA[itemInfo]]></value></property>
+<property><name><![CDATA[grow]]></name><value><![CDATA[true]]></value></property>
+<Style RowBorderC="true" ColBorderC="true" RowBorder="true" ColBorder="true" Insets="false" Alignment="false" Font="true" LineWrap="false" Foreground="true" Background="true" FirstRow="true" FirstCol="true" LastRow="true" LastCol="true"/>
+<RowGroup>
+</RowGroup>
+<ColGroup>
+</ColGroup>
+<conditionFilter>
+<dataselection frommodel="false">
+<source><![CDATA[itemInfo]]></source>
+<attributeref entity="" attribute="ITEM_ID">
+</attributeref>
+<attributeref entity="" attribute="SKU_NUM">
+</attributeref>
+<attributeref entity="" attribute="ITEM_DESC">
+</attributeref>
+<attributeref entity="" attribute="MANUFACTURER">
+</attributeref>
+<attributeref entity="" attribute="MANU_SKU">
+</attributeref>
+<attributeref entity="" attribute="UOM">
+</attributeref>
+<attributeref entity="" attribute="PACK">
+</attributeref>
+<attributeref entity="" attribute="SIZE">
+</attributeref>
+<attributeref entity="" attribute="COLOR">
+</attributeref>
+<attributeref entity="" attribute="LIST_PRICE">
+</attributeref>
+<attributeref entity="" attribute="CATEGORY">
+</attributeref>
+</dataselection>
+<hiddenColumn>
+</hiddenColumn>
+</conditionFilter>
+<Header>
+</Header>
+<Table Rows="2" Cols="11" HeaderRow="1" HeaderCol="0" TrailerRow="0" TrailerCol="0">
+<TR>
+<TD Type="String"><![CDATA[Item ID]]></TD><TD Type="String"><![CDATA[SKU]]></TD><TD Type="String"><![CDATA[Description]]></TD><TD Type="String"><![CDATA[Manufacturer]]></TD><TD Type="String"><![CDATA[Manu SKU]]></TD><TD Type="String"><![CDATA[UOM]]></TD><TD Type="String"><![CDATA[Pack]]></TD><TD Type="String"><![CDATA[Item Size]]></TD><TD Type="String"><![CDATA[Color]]></TD><TD Type="String"><![CDATA[List Price]]></TD><TD Type="String"><![CDATA[Category]]></TD></TR>
+<TR>
+<TD Type="Double"><![CDATA[99999.99]]></TD><TD Type="Double"><![CDATA[99999.99]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXX]]></TD><TD Type="String"><![CDATA[XXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD></TR>
+</Table>
+<highlightGroups>
+</highlightGroups>
+</TableElement>
+<TableElement ID="Table7" Alignment="65" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="SansSerif-PLAIN-8"
+ Foreground="-16777216" TableWidth="0.0" Layout="1" TableAdvance="1" OrphanControl="false" Padding="0,1,0,1" Style="CleanwiseTable" EmbedWidth="false" Embedded="true">
+<property><name><![CDATA[query]]></name><value><![CDATA[itemInfo]]></value></property>
+<property><name><![CDATA[grow]]></name><value><![CDATA[true]]></value></property>
+<Style RowBorderC="true" ColBorderC="true" RowBorder="true" ColBorder="true" Insets="false" Alignment="false" Font="true" LineWrap="false" Foreground="true" Background="true" FirstRow="true" FirstCol="true" LastRow="true" LastCol="true"/>
+<RowGroup>
+</RowGroup>
+<ColGroup>
+</ColGroup>
+<conditionFilter>
+<dataselection frommodel="false">
+<source><![CDATA[itemInfo]]></source>
+<attributeref entity="" attribute="ITEM_ID">
+</attributeref>
+<attributeref entity="" attribute="SKU_NUM">
+</attributeref>
+<attributeref entity="" attribute="ITEM_DESC">
+</attributeref>
+<attributeref entity="" attribute="MANUFACTURER">
+</attributeref>
+<attributeref entity="" attribute="MANU_SKU">
+</attributeref>
+<attributeref entity="" attribute="UOM">
+</attributeref>
+<attributeref entity="" attribute="PACK">
+</attributeref>
+<attributeref entity="" attribute="SIZE">
+</attributeref>
+<attributeref entity="" attribute="COLOR">
+</attributeref>
+<attributeref entity="" attribute="LIST_PRICE">
+</attributeref>
+<attributeref entity="" attribute="CATEGORY">
+</attributeref>
+</dataselection>
+<hiddenColumn>
+</hiddenColumn>
+</conditionFilter>
+<Header>
+</Header>
+<Table Rows="2" Cols="11" HeaderRow="1" HeaderCol="0" TrailerRow="0" TrailerCol="0">
+<TR>
+<TD Type="String"><![CDATA[Item ID]]></TD><TD Type="String"><![CDATA[SKU]]></TD><TD Type="String"><![CDATA[Description]]></TD><TD Type="String"><![CDATA[Manufacturer]]></TD><TD Type="String"><![CDATA[Manu SKU]]></TD><TD Type="String"><![CDATA[UOM]]></TD><TD Type="String"><![CDATA[Pack]]></TD><TD Type="String"><![CDATA[Item Size]]></TD><TD Type="String"><![CDATA[Color]]></TD><TD Type="String"><![CDATA[List Price]]></TD><TD Type="String"><![CDATA[Category]]></TD></TR>
+<TR>
+<TD Type="Double"><![CDATA[99999.99]]></TD><TD Type="Double"><![CDATA[99999.99]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXX]]></TD><TD Type="String"><![CDATA[XXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD></TR>
+</Table>
+<highlightGroups>
+</highlightGroups>
+</TableElement>
+</Header>
+<Shapes>
+</Shapes>
+<Grid Rows="2" Cols="1">
+<GR Height="566" Orientation="0">
+<GD Borders="0,0,0,0" BorderColor="-16777216" Width="720.0" Repeat="false">
+<NewlineElement ID="Newline3" Alignment="1" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="SansSerif-PLAIN-8"
+ Foreground="-16777216" Count="1">
+</NewlineElement>
+<TableElement ID="tblItemUsage" Alignment="65" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="Serif-PLAIN-10"
+ Foreground="-16777216" TableWidth="0.0" Layout="1" TableAdvance="1" OrphanControl="false" Padding="0,1,0,1" Style="CleanwiseTable" EmbedWidth="false" Embedded="true">
+<property><name><![CDATA[query]]></name><value><![CDATA[ItemUsageLoc]]></value></property>
+<property><name><![CDATA[grow]]></name><value><![CDATA[true]]></value></property>
+<Style RowBorderC="true" ColBorderC="true" RowBorder="true" ColBorder="true" Insets="false" Alignment="false" Font="true" LineWrap="false" Foreground="true" Background="true" FirstRow="true" FirstCol="true" LastRow="true" LastCol="true"/>
+<RowGroup>
+<Row name="__ALL CELLS__" linewrap="false" suppressIfZero="false" suppressIfDuplicate="false"/>
+<Row name="__TRAILER_ROW__" format="DecimalFormat" format_spec=".00" linewrap="false" suppressIfZero="false" suppressIfDuplicate="false"/>
+<Row name="__HEADER_ROW__" format="DecimalFormat" format_spec="" linewrap="false" suppressIfZero="false" suppressIfDuplicate="false"/>
+</RowGroup>
+<ColGroup>
+<Col name="Contract ID" linewrap="false" suppressIfZero="false" suppressIfDuplicate="false"/>
+</ColGroup>
+<conditionFilter>
+<dataselection frommodel="false">
+<source><![CDATA[ItemUsageLoc]]></source>
+<attributeref entity="" attribute="Contract ID">
+</attributeref>
+<attributeref entity="" attribute="Contract Name">
+</attributeref>
+<attributeref entity="" attribute="Dist Name">
+</attributeref>
+<attributeref entity="" attribute="Dist ERP Num">
+</attributeref>
+<attributeref entity="" attribute="Dist SKU">
+</attributeref>
+<attributeref entity="" attribute="Dist UOM">
+</attributeref>
+<attributeref entity="" attribute="Dist Pack">
+</attributeref>
+<attributeref entity="" attribute="Contract Price">
+</attributeref>
+<attributeref entity="" attribute="Dist Cost">
+</attributeref>
+<attributeref entity="" attribute="Profit">
+</attributeref>
+<attributeref entity="" attribute="Margin">
+</attributeref>
+<attributeref entity="" attribute="Last Date Ord">
+</attributeref>
+<attributeref entity="" attribute="Tot Qty Purch">
+</attributeref>
+</dataselection>
+<hiddenColumn>
+</hiddenColumn>
+</conditionFilter>
+<filter type="group">
+<group sorted="true" showHeader="true" showGroupCols="false" inplace="true" breakAfter="false" grandTotal="true" topN="0" topNReverse="false">
+<sumCol formula="Average&lt;0&gt;"><![CDATA[Contract Price]]></sumCol>
+<sumCol formula="Average&lt;0&gt;"><![CDATA[Dist Cost]]></sumCol>
+<sumCol formula="Average&lt;0&gt;"><![CDATA[Profit]]></sumCol>
+<sumCol formula="Average&lt;0&gt;"><![CDATA[Margin]]></sumCol>
+</group>
+</filter>
+<Header>
+</Header>
+<Table Rows="3" Cols="13" HeaderRow="1" HeaderCol="0" TrailerRow="1" TrailerCol="0">
+<TR>
+<TD Type="String"><![CDATA[Contract ID]]></TD><TD Type="String"><![CDATA[Contract Name]]></TD><TD Type="String"><![CDATA[Dist Name]]></TD><TD Type="String"><![CDATA[Dist ERP Num]]></TD><TD Type="String"><![CDATA[Dist SKU]]></TD><TD Type="String"><![CDATA[Dist UOM]]></TD><TD Type="String"><![CDATA[Dist Pack]]></TD><TD Type="String"><![CDATA[Contract Price]]></TD><TD Type="String"><![CDATA[Dist Cost]]></TD><TD Type="String"><![CDATA[Profit]]></TD><TD Type="String"><![CDATA[Margin]]></TD><TD Type="String"><![CDATA[Last Date Ord]]></TD><TD Type="String"><![CDATA[Tot Qty Purch]]></TD></TR>
+<TR>
+<TD Type="Double"><![CDATA[99999.99]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="Double"><![CDATA[99999.99]]></TD><TD Type="Double"><![CDATA[99999.99]]></TD><TD Type="String"><![CDATA[XXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="Double"><![CDATA[99999.99]]></TD></TR>
+<TR>
+<TD Type="null"><![CDATA[null]]></TD><TD Type="null"><![CDATA[null]]></TD><TD Type="null"><![CDATA[null]]></TD><TD Type="null"><![CDATA[null]]></TD><TD Type="null"><![CDATA[null]]></TD><TD Type="null"><![CDATA[null]]></TD><TD Type="null"><![CDATA[null]]></TD><TD Type="String"><![CDATA[99999.99]]></TD><TD Type="String"><![CDATA[99999.99]]></TD><TD Type="String"><![CDATA[.00]]></TD><TD Type="String"><![CDATA[.00]]></TD><TD Type="null"><![CDATA[null]]></TD><TD Type="null"><![CDATA[null]]></TD></TR>
+</Table>
+<highlightGroups>
+</highlightGroups>
+</TableElement>
+</GD>
+</GR>
+<GR Height="6">
+<GD Width="720.0" Repeat="false">
+</GD>
+</GR>
+</Grid>
+</Report>

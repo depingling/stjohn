@@ -1,0 +1,5 @@
+<?xml encoding="ISO-8859-1"?>
+<!-- Revision 1.5.0 data/OBOE, docs, August 29, 2000, -->
+<!ELEMENT idList (idCode, idValue)*>
+<!ELEMENT idCode (#PCDATA)>
+<!ELEMENT idValue (#PCDATA)>

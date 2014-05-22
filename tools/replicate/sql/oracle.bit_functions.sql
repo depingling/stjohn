@@ -1,0 +1,11 @@
+CREATE OR REPLACE FUNCTION bitor(x IN NUMBER, y IN NUMBER) RETURN NUMBER AS
+BEGIN
+    RETURN x + y - bitand(x,y);
+END;
+/
+CREATE FUNCTION bitxor(x IN NUMBER, y IN NUMBER) RETURN NUMBER AS
+BEGIN
+    RETURN bitor(x,y) - bitand(x,y);
+END;
+/
+

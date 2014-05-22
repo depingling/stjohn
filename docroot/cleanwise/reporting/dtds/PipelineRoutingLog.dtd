@@ -1,0 +1,12 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PipelineRoutingLogList (PipelineRoutingLog)+>
+<!ELEMENT PipelineRoutingLog (RoutingId,Change,Date,Time)>
+<!ATTLIST PipelineRoutingLog Id ID #REQUIRED>
+<!ELEMENT RoutingId (#PCDATA)>
+<!ELEMENT Change (#PCDATA)>
+<!ELEMENT Date (#PCDATA)>
+<!ELEMENT Time (#PCDATA)>

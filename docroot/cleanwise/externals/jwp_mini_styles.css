@@ -1,0 +1,144 @@
+
+		
+li				{color: #000066;
+				margin-left: 0px;
+				}
+		
+a:link			{color: #000066;
+				font-weight: normal;
+				}
+		
+a:active		{color: #006699;
+				font-weight: normal;
+				}
+			
+a:visited		{color: #000000;
+				}
+
+
+				
+.address		{	
+				
+				color: #000066;
+				line-spacing: 18px;
+				font-weight: bold;
+				}
+			
+.another		{	
+				
+				color: #000066;
+				line-spacing: 16px;
+				}
+			
+.login			{	
+				
+				font-weight: normal;
+				color: #000066;
+				line-spacing: 16px;
+				}
+			
+.date			{	
+				
+				font-weight: bold;
+				color: #000066;
+				line-spacing: 16px;
+				}
+			
+.linkpath		{	
+				
+				color: #ffffff;
+				}
+			
+.addcart		{	
+				
+				color: #000066;
+				line-spacing: 16px;
+				letter-spacing: 1px;
+				}
+				
+.subheadergeneric	{
+					font-size: 11px;
+					font-weight: bold;
+					color: #000066;
+					}
+
+.trainingsubhead	{
+					font-size: 11px;
+					font-weight: bold;
+					color: #000066;
+					}
+					
+.genericerror		{
+					font-size: 14px;
+					font-weight: bold;
+					color: #000066;
+					}
+					
+			
+.formtext		{
+				
+				font-weight: bold;
+				color: #000066;
+				}
+			
+.greenformtext	{
+				
+				font-weight: bold;
+				color: #000066;
+				}
+				
+.blueformtext	{
+				
+				font-weight: bold;
+				color: #000066;
+				}				
+			
+.bullettext		{
+				
+				
+				}
+			
+				/* add bullet style later */
+
+.shopitemhead	{
+				
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #000066;
+				}
+				
+.shopcategory    {
+                        
+				font-weight: bold;
+				color: #ffffff;
+				background-color: #000066;
+                       }				
+
+.proditemhead	{
+				
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #000066;
+				}				
+			
+
+				
+.charthead		{
+				
+				color: #000066;
+				}
+				
+.shopcharthead	{color: #000066;
+				
+				
+				font-weight: bold;
+/*				background-color: #99CCCC; */
+				}
+				
+.prodcharthead	{color: #000066;
+				
+				
+				font-weight: bold;
+				}
+                
+.contenttext {font-size: 11px; }

@@ -1,0 +1,407 @@
+DROP TABLE TMP_TCSLOAD;
+CREATE TABLE TMP_TCSLOAD
+AS
+    SELECT * FROM CLW_STAGED_ASSET;
+
+
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (40, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70040', 'Makita', 'Sander', 'This is long description', 'Sander 70040', 'xxx', 'xxx', 'xxx', 'Sander 70040', '70040', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (41, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70041', 'Metabo', 'Table Saw', 'This is long description', 'Table Saw 70041', 'xxx', 'xxx', 'xxx', 'Table Saw 70041', '70041', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (42, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70042', 'Bocsh', 'Router', 'This is long description', 'Router 70042', 'xxx', 'xxx', 'xxx', 'Router 70042', '70042', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (43, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70043', 'Bocsh', 'Router', 'This is long description', 'Router 70043', 'xxx', 'xxx', 'xxx', 'Router 70043', '70043', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (44, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70044', 'Festool', 'Planner', 'This is long description', 'Planner 70044', 'xxx', 'xxx', 'xxx', 'Planner 70044', '70044', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (45, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70045', 'Makita', 'Sander', 'This is long description', 'Sander 70045', 'xxx', 'xxx', 'xxx', 'Sander 70045', '70045', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (46, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70046', 'Makita', 'Sander', 'This is long description', 'Sander 70046', 'xxx', 'xxx', 'xxx', 'Sander 70046', '70046', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (47, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70047', 'Hilty', 'Table Saw', 'This is long description', 'Table Saw 70047', 'xxx', 'xxx', 'xxx', 'Table Saw 70047', '70047', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (48, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70048', 'Bocsh', 'Table Saw', 'This is long description', 'Table Saw 70048', 'xxx', 'xxx', 'xxx', 'Table Saw 70048', '70048', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (49, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70049', 'Bocsh', 'Table Saw', 'This is long description', 'Table Saw 70049', 'xxx', 'xxx', 'xxx', 'Table Saw 70049', '70049', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (50, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70050', 'Hilty', 'Sander', 'This is long description', 'Sander 70050', 'xxx', 'xxx', 'xxx', 'Sander 70050', '70050', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (51, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70051', 'Festool', 'Sander', 'This is long description', 'Sander 70051', 'xxx', 'xxx', 'xxx', 'Sander 70051', '70051', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (52, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70052', 'Makita', 'Drill Press', 'This is long description', 'Drill Press 70052', 'xxx', 'xxx', 'xxx', 'Drill Press 70052', '70052', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (53, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70053', 'Hilty', 'Router', 'This is long description', 'Router 70053', 'xxx', 'xxx', 'xxx', 'Router 70053', '70053', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (54, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70054', 'Hilty', 'Sander', 'This is long description', 'Sander 70054', 'xxx', 'xxx', 'xxx', 'Sander 70054', '70054', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (55, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70055', 'Festool', 'Router', 'This is long description', 'Router 70055', 'xxx', 'xxx', 'xxx', 'Router 70055', '70055', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (56, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70056', 'Festool', 'Sander', 'This is long description', 'Sander 70056', 'xxx', 'xxx', 'xxx', 'Sander 70056', '70056', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (57, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70057', 'Metabo', 'Drill Press', 'This is long description', 'Drill Press 70057', 'xxx', 'xxx', 'xxx', 'Drill Press 70057', '70057', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (58, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70058', 'Hilty', 'Router', 'This is long description', 'Router 70058', 'xxx', 'xxx', 'xxx', 'Router 70058', '70058', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (59, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70059', 'Bocsh', 'Sander', 'This is long description', 'Sander 70059', 'xxx', 'xxx', 'xxx', 'Sander 70059', '70059', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (60, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70060', 'Metabo', 'Router', 'This is long description', 'Router 70060', 'xxx', 'xxx', 'xxx', 'Router 70060', '70060', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (61, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70061', 'Hilty', 'Router', 'This is long description', 'Router 70061', 'xxx', 'xxx', 'xxx', 'Router 70061', '70061', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (62, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70062', 'Makita', 'Drill Press', 'This is long description', 'Drill Press 70062', 'xxx', 'xxx', 'xxx', 'Drill Press 70062', '70062', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (63, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70063', 'Makita', 'Table Saw', 'This is long description', 'Table Saw 70063', 'xxx', 'xxx', 'xxx', 'Table Saw 70063', '70063', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (64, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70064', 'Metabo', 'Sander', 'This is long description', 'Sander 70064', 'xxx', 'xxx', 'xxx', 'Sander 70064', '70064', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (65, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70065', 'Hilty', 'Sander', 'This is long description', 'Sander 70065', 'xxx', 'xxx', 'xxx', 'Sander 70065', '70065', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (66, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70066', 'Bocsh', 'Planner', 'This is long description', 'Planner 70066', 'xxx', 'xxx', 'xxx', 'Planner 70066', '70066', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (67, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70067', 'Festool', 'Table Saw', 'This is long description', 'Table Saw 70067', 'xxx', 'xxx', 'xxx', 'Table Saw 70067', '70067', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (68, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70068', 'Makita', 'Table Saw', 'This is long description', 'Table Saw 70068', 'xxx', 'xxx', 'xxx', 'Table Saw 70068', '70068', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (69, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70069', 'Festool', 'Sander', 'This is long description', 'Sander 70069', 'xxx', 'xxx', 'xxx', 'Sander 70069', '70069', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (70, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70070', 'Metabo', 'Sander', 'This is long description', 'Sander 70070', 'xxx', 'xxx', 'xxx', 'Sander 70070', '70070', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (71, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70071', 'Bocsh', 'Planner', 'This is long description', 'Planner 70071', 'xxx', 'xxx', 'xxx', 'Planner 70071', '70071', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (72, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70072', 'Makita', 'Drill Press', 'This is long description', 'Drill Press 70072', 'xxx', 'xxx', 'xxx', 'Drill Press 70072', '70072', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (73, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70073', 'Bocsh', 'Planner', 'This is long description', 'Planner 70073', 'xxx', 'xxx', 'xxx', 'Planner 70073', '70073', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (74, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70074', 'Metabo', 'Sander', 'This is long description', 'Sander 70074', 'xxx', 'xxx', 'xxx', 'Sander 70074', '70074', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (75, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70075', 'Bocsh', 'Sander', 'This is long description', 'Sander 70075', 'xxx', 'xxx', 'xxx', 'Sander 70075', '70075', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (76, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70076', 'Festool', 'Router', 'This is long description', 'Router 70076', 'xxx', 'xxx', 'xxx', 'Router 70076', '70076', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (77, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70077', 'Metabo', 'Planner', 'This is long description', 'Planner 70077', 'xxx', 'xxx', 'xxx', 'Planner 70077', '70077', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (78, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70078', 'Metabo', 'Planner', 'This is long description', 'Planner 70078', 'xxx', 'xxx', 'xxx', 'Planner 70078', '70078', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (79, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70079', 'Bocsh', 'Router', 'This is long description', 'Router 70079', 'xxx', 'xxx', 'xxx', 'Router 70079', '70079', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (80, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70080', 'Hilty', 'Router', 'This is long description', 'Router 70080', 'xxx', 'xxx', 'xxx', 'Router 70080', '70080', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (81, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70081', 'Bocsh', 'Drill Press', 'This is long description', 'Drill Press 70081', 'xxx', 'xxx', 'xxx', 'Drill Press 70081', '70081', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (82, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70082', 'Makita', 'Table Saw', 'This is long description', 'Table Saw 70082', 'xxx', 'xxx', 'xxx', 'Table Saw 70082', '70082', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (83, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70083', 'Festool', 'Table Saw', 'This is long description', 'Table Saw 70083', 'xxx', 'xxx', 'xxx', 'Table Saw 70083', '70083', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (84, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70084', 'Hilty', 'Sander', 'This is long description', 'Sander 70084', 'xxx', 'xxx', 'xxx', 'Sander 70084', '70084', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (85, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70085', 'Bocsh', 'Router', 'This is long description', 'Router 70085', 'xxx', 'xxx', 'xxx', 'Router 70085', '70085', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (86, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70086', 'Hilty', 'Sander', 'This is long description', 'Sander 70086', 'xxx', 'xxx', 'xxx', 'Sander 70086', '70086', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (87, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70087', 'Makita', 'Table Saw', 'This is long description', 'Table Saw 70087', 'xxx', 'xxx', 'xxx', 'Table Saw 70087', '70087', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (88, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70088', 'Makita', 'Drill Press', 'This is long description', 'Drill Press 70088', 'xxx', 'xxx', 'xxx', 'Drill Press 70088', '70088', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (89, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70089', 'Festool', 'Planner', 'This is long description', 'Planner 70089', 'xxx', 'xxx', 'xxx', 'Planner 70089', '70089', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (90, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70090', 'Hilty', 'Table Saw', 'This is long description', 'Table Saw 70090', 'xxx', 'xxx', 'xxx', 'Table Saw 70090', '70090', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (91, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70091', 'Metabo', 'Sander', 'This is long description', 'Sander 70091', 'xxx', 'xxx', 'xxx', 'Sander 70091', '70091', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (92, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70092', 'Hilty', 'Drill Press', 'This is long description', 'Drill Press 70092', 'xxx', 'xxx', 'xxx', 'Drill Press 70092', '70092', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (93, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70093', 'Makita', 'Planner', 'This is long description', 'Planner 70093', 'xxx', 'xxx', 'xxx', 'Planner 70093', '70093', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (94, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70094', 'Bocsh', 'Drill Press', 'This is long description', 'Drill Press 70094', 'xxx', 'xxx', 'xxx', 'Drill Press 70094', '70094', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (95, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70095', 'Festool', 'Drill Press', 'This is long description', 'Drill Press 70095', 'xxx', 'xxx', 'xxx', 'Drill Press 70095', '70095', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (96, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70096', 'Makita', 'Sander', 'This is long description', 'Sander 70096', 'xxx', 'xxx', 'xxx', 'Sander 70096', '70096', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (97, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70097', 'Bocsh', 'Sander', 'This is long description', 'Sander 70097', 'xxx', 'xxx', 'xxx', 'Sander 70097', '70097', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (98, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70098', 'Hilty', 'Planner', 'This is long description', 'Planner 70098', 'xxx', 'xxx', 'xxx', 'Planner 70098', '70098', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (99, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70099', 'Festool', 'Router', 'This is long description', 'Router 70099', 'xxx', 'xxx', 'xxx', 'Router 70099', '70099', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (100, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU700100', 'Bocsh', 'Drill Press', 'This is long description', 'Drill Press 700100', 'xxx', 'xxx', 'xxx', 'Drill Press 700100', '700100', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (1, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7001', 'Makita', 'Router', 'This is long description', 'Router 7001', 'xxx', 'xxx', 'xxx', 'Router 7001', '7001', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (2, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7002', 'Metabo', 'Drill Press', 'This is long description', 'Drill Press 7002', 'xxx', 'xxx', 'xxx', 'Drill Press 7002', '7002', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (3, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7003', 'Bocsh', 'Planner', 'This is long description', 'Planner 7003', 'xxx', 'xxx', 'xxx', 'Planner 7003', '7003', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (4, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7004', 'Festool', 'Drill Press', 'This is long description', 'Drill Press 7004', 'xxx', 'xxx', 'xxx', 'Drill Press 7004', '7004', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (5, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7005', 'Festool', 'Planner', 'This is long description', 'Planner 7005', 'xxx', 'xxx', 'xxx', 'Planner 7005', '7005', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (6, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7006', 'Bocsh', 'Planner', 'This is long description', 'Planner 7006', 'xxx', 'xxx', 'xxx', 'Planner 7006', '7006', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (7, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7007', 'Festool', 'Table Saw', 'This is long description', 'Table Saw 7007', 'xxx', 'xxx', 'xxx', 'Table Saw 7007', '7007', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (8, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7008', 'Metabo', 'Sander', 'This is long description', 'Sander 7008', 'xxx', 'xxx', 'xxx', 'Sander 7008', '7008', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (9, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU7009', 'Metabo', 'Router', 'This is long description', 'Router 7009', 'xxx', 'xxx', 'xxx', 'Router 7009', '7009', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (10, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70010', 'Bocsh', 'Planner', 'This is long description', 'Planner 70010', 'xxx', 'xxx', 'xxx', 'Planner 70010', '70010', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (11, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70011', 'Bocsh', 'Planner', 'This is long description', 'Planner 70011', 'xxx', 'xxx', 'xxx', 'Planner 70011', '70011', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (12, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70012', 'Metabo', 'Drill Press', 'This is long description', 'Drill Press 70012', 'xxx', 'xxx', 'xxx', 'Drill Press 70012', '70012', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (13, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70013', 'Makita', 'Sander', 'This is long description', 'Sander 70013', 'xxx', 'xxx', 'xxx', 'Sander 70013', '70013', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (14, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70014', 'Makita', 'Planner', 'This is long description', 'Planner 70014', 'xxx', 'xxx', 'xxx', 'Planner 70014', '70014', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (15, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70015', 'Metabo', 'Table Saw', 'This is long description', 'Table Saw 70015', 'xxx', 'xxx', 'xxx', 'Table Saw 70015', '70015', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (16, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70016', 'Festool', 'Drill Press', 'This is long description', 'Drill Press 70016', 'xxx', 'xxx', 'xxx', 'Drill Press 70016', '70016', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (17, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70017', 'Festool', 'Planner', 'This is long description', 'Planner 70017', 'xxx', 'xxx', 'xxx', 'Planner 70017', '70017', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (18, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70018', 'Bocsh', 'Table Saw', 'This is long description', 'Table Saw 70018', 'xxx', 'xxx', 'xxx', 'Table Saw 70018', '70018', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (19, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70019', 'Metabo', 'Table Saw', 'This is long description', 'Table Saw 70019', 'xxx', 'xxx', 'xxx', 'Table Saw 70019', '70019', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (20, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70020', 'Bocsh', 'Router', 'This is long description', 'Router 70020', 'xxx', 'xxx', 'xxx', 'Router 70020', '70020', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (21, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70021', 'Makita', 'Sander', 'This is long description', 'Sander 70021', 'xxx', 'xxx', 'xxx', 'Sander 70021', '70021', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (22, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70022', 'Bocsh', 'Table Saw', 'This is long description', 'Table Saw 70022', 'xxx', 'xxx', 'xxx', 'Table Saw 70022', '70022', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (23, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70023', 'Hilty', 'Router', 'This is long description', 'Router 70023', 'xxx', 'xxx', 'xxx', 'Router 70023', '70023', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (24, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70024', 'Festool', 'Sander', 'This is long description', 'Sander 70024', 'xxx', 'xxx', 'xxx', 'Sander 70024', '70024', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (25, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70025', 'Hilty', 'Table Saw', 'This is long description', 'Table Saw 70025', 'xxx', 'xxx', 'xxx', 'Table Saw 70025', '70025', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (26, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70026', 'Hilty', 'Drill Press', 'This is long description', 'Drill Press 70026', 'xxx', 'xxx', 'xxx', 'Drill Press 70026', '70026', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (27, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70027', 'Hilty', 'Sander', 'This is long description', 'Sander 70027', 'xxx', 'xxx', 'xxx', 'Sander 70027', '70027', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (28, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70028', 'Makita', 'Sander', 'This is long description', 'Sander 70028', 'xxx', 'xxx', 'xxx', 'Sander 70028', '70028', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (29, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70029', 'Hilty', 'Sander', 'This is long description', 'Sander 70029', 'xxx', 'xxx', 'xxx', 'Sander 70029', '70029', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (30, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70030', 'Makita', 'Planner', 'This is long description', 'Planner 70030', 'xxx', 'xxx', 'xxx', 'Planner 70030', '70030', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (31, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70031', 'Bocsh', 'Router', 'This is long description', 'Router 70031', 'xxx', 'xxx', 'xxx', 'Router 70031', '70031', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (32, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70032', 'Metabo', 'Router', 'This is long description', 'Router 70032', 'xxx', 'xxx', 'xxx', 'Router 70032', '70032', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (33, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70033', 'Festool', 'Planner', 'This is long description', 'Planner 70033', 'xxx', 'xxx', 'xxx', 'Planner 70033', '70033', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (34, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70034', 'Hilty', 'Table Saw', 'This is long description', 'Table Saw 70034', 'xxx', 'xxx', 'xxx', 'Table Saw 70034', '70034', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (35, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70035', 'Metabo', 'Router', 'This is long description', 'Router 70035', 'xxx', 'xxx', 'xxx', 'Router 70035', '70035', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (36, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70036', 'Hilty', 'Planner', 'This is long description', 'Planner 70036', 'xxx', 'xxx', 'xxx', 'Planner 70036', '70036', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (37, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70037', 'Festool', 'Planner', 'This is long description', 'Planner 70037', 'xxx', 'xxx', 'xxx', 'Planner 70037', '70037', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (38, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70038', 'Hilty', 'Sander', 'This is long description', 'Sander 70038', 'xxx', 'xxx', 'xxx', 'Sander 70038', '70038', 'xxx', 'xxx', 'xxx');
+Insert into STJOHN.TMP_TCSLOAD
+   (STAGED_ASSET_ID, VERSION_NUMBER, ACTION, ASSET, STORE_ID, STORE_NAME, MFG_SKU, MANUFACTURER, CATEGORY_NAME, LONG_DESCRIPTION, SHORT_DESCRIPTION, IMAGE, MSDS, SPECIFICATION, ASSET_NAME, MODEL_NUMBER, ASSOC_DOC_1, ASSOC_DOC_2, ASSOC_DOC_3)
+ Values
+   (39, 1, 'A', 'TRUE', 172427, 'Eastern Bag and Paper Group ', 'SKU70039', 'Hilty', 'Drill Press', 'This is long description', 'Drill Press 70039', 'xxx', 'xxx', 'xxx', 'Drill Press 70039', '70039', 'xxx', 'xxx', 'xxx');
+COMMIT;

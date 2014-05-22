@@ -1,0 +1,16 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT NoteList (Note)+>
+<!ELEMENT Note (,BusEntityId,PropertyId,AddBy,AddDate,ModBy,ModDate,NoteTypeCd,Title)>
+<!ATTLIST Note Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT PropertyId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT NoteTypeCd (#PCDATA)>
+<!ELEMENT Title (#PCDATA)>

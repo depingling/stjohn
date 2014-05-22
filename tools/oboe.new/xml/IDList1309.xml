@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>01</idCode>
+        <idValue>Government Property Required</idValue>
+    <idCode>02</idCode>
+        <idValue>Government Property Not Required</idValue>
+    <idCode>03</idCode>
+        <idValue>Contract Financing Required</idValue>
+    <idCode>04</idCode>
+        <idValue>Contract Financing Not Required</idValue>
+    <idCode>05</idCode>
+        <idValue>Awarded Contract for the Same or Similar Items</idValue>
+    <idCode>06</idCode>
+        <idValue>Not Awarded Contract for the Same or Similar Items</idValue>
+    <idCode>07</idCode>
+        <idValue>Proposal Consistent with Established Practices, Procedures, and Principles</idValue>
+    <idCode>08</idCode>
+        <idValue>Proposal Not Consistent with Established Practices, Procedures, and Principles</idValue>
+    <idCode>09</idCode>
+        <idValue>Contract Subject to Cost Accounting Standards Board (CASB) Regulations</idValue>
+    <idCode>10</idCode>
+        <idValue>Contract Not Subject to Cost Accounting Standards Board (CASB) Regulations</idValue>
+    <idCode>11</idCode>
+        <idValue>Adequate Cost Accounting Standards Board (CASB) Disclosure Statement Submitted</idValue>
+    <idCode>12</idCode>
+        <idValue>Inadequate Cost Accounting Standards Board (CASB) Disclosure Statement Determined</idValue>
+    <idCode>13</idCode>
+        <idValue>Cost Accounting Standards Board (CASB) Disclosure Statement Not Submitted</idValue>
+    <idCode>14</idCode>
+        <idValue>Notified of Actual or Potential Disclosure Statement or Cost Accounting Standards Board (CASB) Noncompliance</idValue>
+    <idCode>15</idCode>
+        <idValue>Not Notified of Actual or Potential Disclosure Statement or Cost Accounting Standards Board (CASB) Noncompliance</idValue>
+    <idCode>16</idCode>
+        <idValue>Proposal Consistent with Disclosed Practices or Standards</idValue>
+    <idCode>17</idCode>
+        <idValue>Proposal Not Consistent With Disclosed Practices or Standards</idValue>
+    <idCode>18</idCode>
+        <idValue>Access to Communications Security Information Required</idValue>
+    <idCode>19</idCode>
+        <idValue>Access to Communication Security Information Not Required</idValue>
+    <idCode>20</idCode>
+        <idValue>Access to Restricted Data Required</idValue>
+    <idCode>21</idCode>
+        <idValue>Access to Restricted Data Not Required</idValue>
+    <idCode>22</idCode>
+        <idValue>Access to Critical Nuclear Weapon Design Information Required</idValue>
+    <idCode>23</idCode>
+        <idValue>Access to Critical Nuclear Weapon Design Information Not Required</idValue>
+    <idCode>24</idCode>
+        <idValue>Access to Formerly Restricted Data Required</idValue>
+    <idCode>25</idCode>
+        <idValue>Access to Formerly Restricted Data Not Required</idValue>
+    <idCode>26</idCode>
+        <idValue>Access to Sensitive Compartmented Information Required</idValue>
+    <idCode>27</idCode>
+        <idValue>Access to Sensitive Compartmented Information Not Required</idValue>
+    <idCode>28</idCode>
+        <idValue>Access to Non-sensitive Compartmented Information Required</idValue>
+    <idCode>29</idCode>
+        <idValue>Access to Non-sensitive Compartmented Information Not Required</idValue>
+    <idCode>30</idCode>
+        <idValue>Access to Special Access Information Required</idValue>
+    <idCode>31</idCode>
+        <idValue>Access to Special Access Information Not Required</idValue>
+    <idCode>32</idCode>
+        <idValue>Access to North Atlantic Treaty Organization Information Required</idValue>
+    <idCode>33</idCode>
+        <idValue>Access to North Atlantic Treaty Organization Information Not Required</idValue>
+    <idCode>34</idCode>
+        <idValue>Access to Foreign Government Information Required</idValue>
+    <idCode>35</idCode>
+        <idValue>Access to Foreign Government Information Not Required</idValue>
+    <idCode>36</idCode>
+        <idValue>Access to Limited Dissemination Information Required</idValue>
+    <idCode>37</idCode>
+        <idValue>Access to Limited Dissemination Information Not Required</idValue>
+    <idCode>38</idCode>
+        <idValue>Access to For Official Use Only Information Required</idValue>
+    <idCode>39</idCode>
+        <idValue>Access to For Official Use Only Information Not Required</idValue>
+    <idCode>40</idCode>
+        <idValue>Access to Other Type of Information Required</idValue>
+    <idCode>41</idCode>
+        <idValue>Access to Other Type of Information Not Required</idValue>
+    <idCode>42</idCode>
+        <idValue>Contractor Will Have Access to United States Classified Information at another Contractor&apos;s Facility or a Government Activity</idValue>
+    <idCode>43</idCode>
+        <idValue>Contractor Will Not Have Access to United States Classified Information at another Contractor&apos;s Facility or a Government Activity</idValue>
+    <idCode>44</idCode>
+        <idValue>Contractor Will Receive Classified Documents Only</idValue>
+    <idCode>45</idCode>
+        <idValue>Contractor Will Not Receive Classified Documents Only</idValue>
+    <idCode>46</idCode>
+        <idValue>Contractor Will Receive or Generate Classified Material</idValue>
+    <idCode>47</idCode>
+        <idValue>Contractor Will Not Receive or Generate Classified Material</idValue>
+    <idCode>48</idCode>
+        <idValue>Contractor Will Fabricate, Modify, or Store Classified Hardware</idValue>
+    <idCode>49</idCode>
+        <idValue>Contractor Will Not Fabricate, Modify, or Store Classified Hardware</idValue>
+    <idCode>50</idCode>
+        <idValue>Contractor Will Perform Services Only</idValue>
+    <idCode>51</idCode>
+        <idValue>Contractor Will Not Perform Services Only</idValue>
+    <idCode>52</idCode>
+        <idValue>Contractor Will Have Access to United States Classified Information outside the United States, Puerto Rico, United States Possessions and Trust Territories</idValue>
+    <idCode>53</idCode>
+        <idValue>Contractor Will Not Have Access to United States Classified Information outside the United States, Puerto Rico, United States Possessions and Trust Territories</idValue>
+    <idCode>54</idCode>
+        <idValue>Contractor Will Be Authorized to use the Services of Defense Technical Information Center or other Secondary Distribution Center</idValue>
+    <idCode>55</idCode>
+        <idValue>Contractor Will Not Be Authorized to use the Services of Defense Technical Information Center or other Secondary Distribution Center</idValue>
+    <idCode>56</idCode>
+        <idValue>Contractor Will Require a Communications Security Account</idValue>
+    <idCode>57</idCode>
+        <idValue>Contractor Will Not Require a Communications Security Account</idValue>
+    <idCode>58</idCode>
+        <idValue>Contractor Will Have Tempest Requirements</idValue>
+    <idCode>59</idCode>
+        <idValue>Contractor Will Not Have Tempest Requirements</idValue>
+    <idCode>60</idCode>
+        <idValue>Contractor Will Have Operations Security Requirements</idValue>
+    <idCode>61</idCode>
+        <idValue>Contractor Will Not Have Operations Security Requirements</idValue>
+    <idCode>62</idCode>
+        <idValue>Contractor Will Be Authorized to use the Defense Courier Service</idValue>
+    <idCode>63</idCode>
+        <idValue>Contractor Will Not Be Authorized to use the Defense Courier Service</idValue>
+    <idCode>64</idCode>
+        <idValue>Contractor Will Have some other Authorization in the Performance of the Contract</idValue>
+    <idCode>65</idCode>
+        <idValue>Contractor Will Not Have some other Authorization in the Performance of the Contract</idValue>
+    <idCode>66</idCode>
+        <idValue>Facility Clearance Required</idValue>
+    <idCode>67</idCode>
+        <idValue>Facility Clearance Not Required</idValue>
+    <idCode>68</idCode>
+        <idValue>Follow-on Contract</idValue>
+    <idCode>69</idCode>
+        <idValue>Not a Follow-on Contract</idValue>
+    <idCode>70</idCode>
+        <idValue>Final Contract Security Classification Specification</idValue>
+    <idCode>71</idCode>
+        <idValue>Not a Final Contract Security Classification Specification</idValue>
+    <idCode>72</idCode>
+        <idValue>Direct Public Release Authorized</idValue>
+    <idCode>73</idCode>
+        <idValue>Direct Public Release Not Authorized</idValue>
+    <idCode>74</idCode>
+        <idValue>Additional Materials being Forwarded</idValue>
+    <idCode>75</idCode>
+        <idValue>No Additional Materials being Forwarded</idValue>
+    <idCode>76</idCode>
+        <idValue>Additional Requirements Established</idValue>
+    <idCode>77</idCode>
+        <idValue>Additional Requirements Not Established</idValue>
+    <idCode>78</idCode>
+        <idValue>Elements of the Contract are outside the Inspection Responsibility of the Cognizant Security Office</idValue>
+    <idCode>79</idCode>
+        <idValue>No Element of the Contract Is Outside the Inspection Responsibility of the Cognizant Security Office</idValue>
+    <idCode>80</idCode>
+        <idValue>Contractor Distribution Required</idValue>
+    <idCode>81</idCode>
+        <idValue>Contractor Distribution Not Required</idValue>
+    <idCode>82</idCode>
+        <idValue>Subcontractor Distribution Required</idValue>
+    <idCode>83</idCode>
+        <idValue>Subcontractor Distribution Not Required</idValue>
+    <idCode>84</idCode>
+        <idValue>Cognizant Security Office for Prime and Subcontractor Distribution Required</idValue>
+    <idCode>85</idCode>
+        <idValue>Cognizant Security Office for Prime and Subcontractor Distribution Not Required</idValue>
+    <idCode>86</idCode>
+        <idValue>United States Activity Responsible for Overseas Security Administration Distribution Required</idValue>
+    <idCode>87</idCode>
+        <idValue>United States Activity Responsible for Overseas Security Administration Distribution Not Required</idValue>
+    <idCode>88</idCode>
+        <idValue>Administrative Contracting Office Distribution Required</idValue>
+    <idCode>89</idCode>
+        <idValue>Administrative Contracting Office Distribution Not Required</idValue>
+    <idCode>90</idCode>
+        <idValue>Other Distribution Required</idValue>
+    <idCode>91</idCode>
+        <idValue>Other Distribution Not Required</idValue>
+    <idCode>K1</idCode>
+        <idValue>Subcontract Costs</idValue>
+    <idCode>K2</idCode>
+        <idValue>Inter-Division Transfer</idValue>
+    <idCode>K3</idCode>
+        <idValue>Profit/Fee</idValue>
+    <idCode>K4</idCode>
+        <idValue>Labor History</idValue>
+    <idCode>K5</idCode>
+        <idValue>Bill of Materials and Purchase History</idValue>
+    <idCode>K6</idCode>
+        <idValue>Other Unlisted Proposal Type</idValue>
+    <idCode>KH</idCode>
+        <idValue>General and Administrative Expenses (G&amp;A)</idValue>
+    <idCode>KI</idCode>
+        <idValue>Overhead Expenses</idValue>
+    <idCode>KJ</idCode>
+        <idValue>Intermediate Expense Pool Allocation</idValue>
+    <idCode>KK</idCode>
+        <idValue>Bases Used to Allocate Indirect Expense</idValue>
+    <idCode>KL</idCode>
+        <idValue>Claimed Rates for Each Expense Pool</idValue>
+    <idCode>KM</idCode>
+        <idValue>Facilities Capital Cost of Money Factors Computation</idValue>
+    <idCode>KN</idCode>
+        <idValue>Reconciliation of Books of Account and Claimed Direct Cost-Incurred Costs</idValue>
+    <idCode>KO</idCode>
+        <idValue>Contract Direct Costs Claimed and Not Claimed, IR&amp;D/B&amp;P Direct Costs Incurred (Overhead, G&amp;A and Cost of Money Applied at Claimed Rates)-Incurred Costs</idValue>
+    <idCode>KP</idCode>
+        <idValue>Government Participation in Indirect Expense Pools-Incurred Costs</idValue>
+    <idCode>KQ</idCode>
+        <idValue>Reconciliation of Claimed G&amp;A Pool to G&amp;A Claimed on Contracts-Incurred Costs</idValue>
+    <idCode>KR</idCode>
+        <idValue>Schedule of Cumulative Direct and Indirect Costs Claimed and Billed-Incurred Costs</idValue>
+    <idCode>KS</idCode>
+        <idValue>Computation of Allowable IR&amp;D/B&amp;P Costs-Incurred Costs</idValue>
+    <idCode>KT</idCode>
+        <idValue>Summary of Hours and Amounts on T&amp;M/Labor Hour Contracts-Incurred Costs</idValue>
+    <idCode>KU</idCode>
+        <idValue>Reconciliation of Total Payroll to Total Labor Distributed-Incurred Costs</idValue>
+    <idCode>KV</idCode>
+        <idValue>Listing of Decisions/Agreements/Approvals and Description of Accounting/Organization Changes</idValue>
+    <idCode>KW</idCode>
+        <idValue>Indirect Costs Certification</idValue>
+    <idCode>KX</idCode>
+        <idValue>Direct Labor</idValue>
+    <idCode>KY</idCode>
+        <idValue>Other Direct Costs</idValue>
+    <idCode>KZ</idCode>
+        <idValue>Direct Material</idValue>
+    <idCode>L2</idCode>
+        <idValue>Other Unlisted Type of Proposal</idValue>
+</idList>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UnitTest01" parallel="none">
+  <parameter name="street_address_good_test"  value="123 Hobart street"/>
+  <!--<parameter name="street_address_good_test"  value="123 Hobart st"/>
+  street_address_bad_test-->
+  <test name="UnitTest01" preserve-order="false">
+    <classes>
+      <class name="com.cleanwise.service.api.wrapper.BudgetViewWrapperTest"/>
+      <class name="com.cleanwise.service.api.util.UtilityTest"/>
+      <class name="com.cleanwise.service.api.session.NoteBeanTest"/>
+    </classes>
+  </test>
+</suite>

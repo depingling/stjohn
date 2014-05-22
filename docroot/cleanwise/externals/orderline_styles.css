@@ -1,0 +1,1153 @@
+body			{
+        font-family: Verdana, Arial, sans-serif;
+        background-color: #ffffff;
+        background-layer-color: #ffffff;
+        font-size: 11px;
+        color: #000000;
+        }
+td {font-size: 11px;}
+
+
+
+/*
+by default not used
+tr.shop_header_top_address, span.shop_header_top_address, a.shop_header_top_addresslink:link, a.shop_header_top_address:visited, a.shop_header_top_address:active,a.shop_header_top_address{}
+*/
+a.shop_header_top_address {
+  color: #636163;
+}
+a.shop_header_top_address:link, a.shop_header_top_address:visited {
+  color: #636163;
+  background-color: #ffffff;
+}
+a.shop_header_top_address:hover {
+  color: #66CC66;
+  background-color: #ffffff;
+}
+
+
+li				{
+        margin-left: 0px;
+        }
+
+a:link			{color: #003399;
+        font-weight: normal;
+        }
+
+a:active		{color: #66CC66;
+        font-weight: normal;
+        }
+
+a:visited		{color: #66CC66; }
+a:hover		{background-color: #66CC66;  color:white; }
+
+a.tbar:link, a.tbar:visited, a.tbar:active{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 8pt;
+    padding-right: 3px;
+    padding-left: 3px;
+    text-decoration: none
+}
+a.tbarOn{
+    background-color: #ffffff;
+    font-weight: bold;
+    color: black;
+    font-size: 8pt;
+    padding-right: 3px;
+    padding-left: 3px;
+    text-decoration: none
+}
+
+a.tbar:hover {
+    background-color: white;
+    color: black;
+}
+
+a.tbar2:link, a.tbar2:visited, a.tbar2:active	{color: #000000;
+  font-weight: bold;    font-size: 8pt;
+    text-decoration: none
+  }
+
+a.tableheader:link, a.tableheader:visited, a.tableheader:active {color:#000000;
+                     font-weight: bold;
+                     font-size: 8pt;
+                    }
+.tableheader    {color: #000000;
+                 font-weight: bold;
+                 font-size: 8pt;
+                }
+
+.tbartext       { color: #ffffff;
+                font-weight: normal;
+                  font-size: 8pt;
+    }
+.tbar2text      { color: #000000;
+            font-weight: bold;
+                  font-size: 8pt;
+            text-decoration: none
+                }
+
+.address		{
+    color: #000000;
+    font-size: 10px;
+        line-spacing: 16px;
+        font-weight: bold;
+        }
+
+.another		{
+
+        color: #669966;
+        line-spacing: 16px;
+        }
+
+.login			{
+
+        font-weight: normal;
+        line-spacing: 16px;
+        }
+
+.date			{
+
+        font-weight: bold;
+        line-spacing: 16px;
+        }
+
+.linkpath		{
+
+        color: #ffffff;
+        }
+
+.addcart		{
+
+        color: #669966;
+        line-spacing: 16px;
+        letter-spacing: 1px;
+        }
+
+        /* the next element has to change later */
+
+.categories		{
+
+        letter-spacing: 1px;
+        }
+
+
+        /* the next element has to change later - color coded for sections */
+
+.subheaders		{
+        font-size: 11px;
+        font-weight: bold;
+        }
+
+.subheadergeneric	{
+          font-size: 11px;
+          font-weight: bold;
+          }
+
+.trainingsubhead	{
+          font-size: 11px;
+          font-weight: bold;
+          color: #990000;
+          }
+
+.genericerror		{
+          font-size: 14px;
+          font-weight: bold;
+          }
+
+
+
+.freighttext    		{
+        background-color: #E0D6BC;
+                       }
+
+.textreadonly {
+    background-color: #99CC99;
+        }
+
+th { font-size: 10px; }
+
+.sectext		{
+        font-size: 11px;
+        color: #000000;
+        letter-spacing: 1px;
+        }
+
+        /* the next element has to change later */
+
+.formtext		{
+
+        font-weight: bold;
+        }
+
+.greenformtext	{
+
+        font-weight: bold;
+        color: #336666;
+        }
+
+.blueformtext	{
+
+        font-weight: bold;
+        color: #003366;
+        }
+
+.bullettext		{
+
+
+        }
+
+        /* add bullet style later */
+
+.shopitemhead	{
+
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #336633;
+        }
+.shopassetdetailtxt	{
+
+        font-size: 11px;
+        color: #000000;
+        }
+.shopcategory    {
+
+        font-weight: bold;
+        color: #5a595a;
+        background-color: #C6C7C6;
+                       }
+
+.proditemhead	{
+
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #003366;
+        }
+
+.fivesidemargin	{margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        }
+
+.gloswmargin	{margin-top: 9px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        }
+
+.margin			{margin-top: 20px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        }
+
+.mycwmargin		{margin-top: 6px;
+        margin-bottom: 7px;
+        margin-left: 60px;
+        margin-right: 10px;
+        }
+
+.mycwdate		{
+
+        }
+
+.searchmargin	{margin-top: 1px;
+        margin-bottom: 8px;
+        margin-left: 4px;
+        margin-right: 3px;
+
+        }
+
+.twomargin		{margin-top: 15px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 15px;
+        }
+
+.twotopmargin	{margin-top: 15px;
+        margin-bottom: 10px;
+        }
+
+.twentytop		{margin-top: 20px;
+        }
+
+.charthead		{
+
+        color: #6C6D71;
+        }
+
+.shopcharthead	{color: #000000;
+        font-weight: bold;
+        background-color:  #E3E3E3; /*#8D8E8D;*/
+        }
+
+.prodcharthead	{color: #003366;
+
+
+        font-weight: bold;
+        }
+
+.msdscharthead	{color: #310063;
+
+
+        font-weight: bold;
+        background-color: #836FAB;
+}
+
+.smallmargin	{margin: 2px;
+        }
+
+.smalltopmargin	{margin-top: 10px;
+        }
+
+.nomargin		{margin: 0px;
+        padding: 0px;
+        }
+
+.noindent		{margin: 2px;
+        padding: 0px;
+        background-color: red;
+        }
+
+.fivemargin		{margin-top: 5px;
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-bottom: 5px;
+        }
+
+.itemheadmargin	{margin-top: 2px;
+        margin-left: 22px;
+        margin-right: 10px;
+        margin-bottom: 2px;
+        }
+
+.itemdesctext	{
+        font-size: 13px;
+
+        }
+
+.linkpathmargin	{margin-top: 6px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        }
+
+.navigatemargin	{margin-top: 2px;
+        margin-bottom: 3px;
+        margin-left: 0px;
+        margin-right: 0px;
+        }
+
+.itemmargin		{margin-top: 2px;
+        margin-bottom: 3px;
+        margin-left: 10px;
+        margin-right: 0px;
+        }
+
+
+.JUMPCELL {
+
+           font-weight: normal}
+
+.indent	 {margin-left: 15px;}
+
+ .columntitle	{
+          text-transform: uppercase;
+          font-weight: bold;
+
+
+          color: white;
+          padding: 3px;
+         }
+
+ .typeofreport	{
+
+
+          font-weight: bold;
+         }
+
+ .rtext			{
+
+
+          padding-left: 3px;
+          padding-top: 1px;
+          padding-bottom: 1px;
+         }
+
+.rtext2			{
+
+
+          padding-left: 3px;
+          padding-top: 1px;
+          padding-bottom: 1px;
+         border-bottom: solid 1px #6C6D71;
+         }
+
+ .rtitle			{
+
+
+          font-weight: bold;
+         }
+
+ .cityhead		{
+          text-transform: uppercase;
+          font-weight: bold;
+
+
+          padding: 3px;
+         }
+
+ .cityhead1		{
+          font-weight: bold;
+
+
+          color: white;
+          padding: 3px;
+         }
+
+ .columnheads	{
+
+
+          color: white;
+         }
+.abs1 {
+       position: absolute;
+     top:363px;
+     left:325px;
+     }
+
+.abs2 {
+       position: absolute;
+     top:373px;
+     left:325px;
+     }
+
+.abs3 {
+       position: absolute;
+     top:383px;
+     left:325px;
+     }
+
+.currentrange { background-color: #99CCFF; }
+
+
+.trainingrulecolor{
+
+
+  background-color : #990000;
+  color : #990000;
+
+}
+
+.troubleshooterdk {
+  background-color : #FF9900;
+}
+
+
+.msdsdk {
+  background-color : #330066;
+}
+
+.msdsmed{
+  background-color : #6633CC;
+}
+
+
+.troubleshooterrulecolor {
+  color : #CC6600;
+  background-color : #CC6600;
+  background : #CC6600 url("/en_US/000/images/cw_spacer.gif");
+
+
+}
+
+LI.trainingbullet { color : #990000; }
+
+LI.reversebullet { color : #FFFFFF; }
+
+LI.troubleshootingbullet {
+  color : #CC6600;
+}
+
+.customer_home_tiptext { color: #444444;
+  background-color : #ffffcc;
+  border: solid 1px #444444;
+}
+
+.tiptext {
+/* used to reverse text for training tips.  White text on subheader color background */
+ color: #FFFFFF; }
+
+.changeshippingdk {
+  background-color : #003366;
+}
+
+.changeshippingmed {
+  background-color : #6C6D71;
+}
+
+.changeshippinglt {
+  background-color : #99CCFF;
+}
+
+.customerltbkground {
+  background-color : #99CC99;
+}
+
+.selectorcontent{
+  background-color : #66CCFF;
+}
+
+.selectorcontentdk{
+  background-color : #003366;
+}
+
+.reportsmed{
+  background-color : #336699;
+}
+
+.reportsdate {
+  color: #336699;
+  font-size: 12pt;
+
+}
+
+.reportsubmit {
+  color: white; background-color: #004080;
+  font-size: 12pt pt;
+}
+
+.reportbold {
+  background-color: #99CCFF; layer-background-color: #99CCFF;
+  color: #336699;
+  font-size: 12pt; font-weight: bold;
+
+}
+
+
+
+.itemcolumnheader{
+  background-color : #99CCCC;
+}
+
+
+.greenruleandlinks{
+  background-color : #669966;
+}
+
+.jcminheader{
+  background-color : #CCFFFF;
+}
+
+.shoponsiteservemed{
+  background-color : #003399;
+}
+
+.shoponsiteservelt{
+  background-color : #669999; /*#efefef;*/
+  color: white;
+}
+
+.trainingdk{
+  background-color :#990000;
+}
+
+.trainingmed{
+  background-color :#CC3333;
+}
+
+
+.dedlt{
+  background-color :#9999ff;
+}
+
+.errormsg{
+  font-family: sans-serif;
+  color: #990000;
+  font-size : 12pt;
+  font : bold;
+}
+
+
+.selectorbracketsshop {
+  background-color :#000099;
+}
+
+.selectorbracketsselector {
+  background-color :#000099;
+}
+
+.selectorbracketsmsds {
+  background-color :#000099;
+}
+
+.rowcolorshop  {
+  background-color :#cccccc;
+}
+
+.headerrowcolorshop  {
+  background-color : #999999;
+}
+
+.rowcolorselector  {
+  background-color :#cccccc;
+}
+
+.headerrowcolorselector  {
+  background-color : #999999;
+}
+
+.results		{background-color: #FFFFCC;
+        layer-background-color: #FFFFCC;
+        }
+
+.admres	{
+  background-color: #FFFFCC;
+  layer-background-color: #FFFFCC;
+  width: 769;
+  border: solid 1px #669966;
+  }
+
+
+.resultslocatename {
+  border:none;
+  background-color: #FFFFCC;
+}
+
+.resultscolumna		{background-color: #EEEEDD;
+          layer-background-color: #EEEEDD;
+          }
+
+.mainbody {background-color: #cccccc;
+           layer-background-color: #cccccc;
+       }
+
+.mainbodylocatename {
+  border:none;
+  background-color: #cccccc;
+}
+
+
+.rowalocatename { border:none; background-color: #99CC99; }
+
+.rowa {background-color: #99CCFF; layer-background-color: #99CCFF; }
+.rowb {background-color: #ffffff; layer-background-color: #ffffff; }
+.rowc {background-color: #E9FDDF; layer-background-color: #E9FDDF;}
+
+.boxa {background-color: #99CCED;
+      layer-background-color: #99CC99;
+      border:none;
+
+
+}
+.boxb {background-color: #FFFFEC;
+      layer-background-color: #FFFFCC;
+      border:none;
+
+
+}
+
+.rowblocatename {
+  border:none;
+  background-color: #FFFFCC;
+}
+
+.reqind	{color: red; font-weight: bold; }
+.rederror	{color: red; font-size: 12px; font-weight: bold; }
+
+.tableoutline	{
+border-top: solid 1px #ffffff;
+BACKGROUND-COLOR: #ffffff;
+}
+
+.warningline	{
+  BACKGROUND-COLOR: #f4f6cd; color: black; font-size: 11px;
+  border-top: solid 1px #003366;
+}
+
+.tbstd	{
+  border: 0;
+  width: 769;
+}
+
+.adm_panel	{
+  border: solid 1px #6C6D71; width: 769;
+}
+
+.top3dk	{ BACKGROUND-COLOR: #6C6D71; }
+
+.largeheader {
+               font-size: 15px;
+         font-weight: bold;
+}
+
+.mediumheader {
+               font-size: 12px;
+         font-weight: bold;
+}
+
+.smallbutton {
+
+
+         font-style: Italic;
+}
+
+
+.aton { background-color : #6C6D71;
+  border-right: solid 1px lightgrey;
+  border-top  : solid 1px grey;
+  color : white;
+  text-align: center;  font-size: 8pt;
+}
+.atoff { background-color : #99CCFF;   border-right: solid 1px lightgrey;   border-top  : solid 1px grey;
+  text-align: center;  font-size: 8pt;
+}
+.atoff A:hover {
+  BACKGROUND-color: #ffffff; TEXT-DECORATION: none
+  text-align: center;
+  font-size: 8pt;
+}
+
+.msbon {
+  background-color : #99CCFF;
+  font-size: 8pt;
+
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+}
+
+.msbon_button {
+  background-color : #99CCFF;
+  font-size: 8pt;
+
+  border-top: solid 1px black;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+}
+
+.msbon_button A:hover {
+  BACKGROUND-color: #ffffff; TEXT-DECORATION: none
+}
+
+.msbon_bar {
+  background-color : #E3E3E3;
+  border: 0;
+}
+.msb_bar {
+  background-color : white;
+  border: 0;
+}
+
+.msbdef {
+  background-color : #ffffff;
+  font-size: 8pt;
+  font-family: ariel;
+  border: 0;
+
+}
+.msbdef_buttonr {
+  background-color : #777777;
+  font-size: 8pt;
+font-family: ariel;
+
+  border-top: solid 1px #222222;
+  border-right: solid 1px #222222;
+}
+.msbdef_buttonr A:hover {
+  BACKGROUND: #ffffff; COLOR: #000000; TEXT-DECORATION: none
+}
+.msbdef_buttonr A {
+  COLOR: #ffffff; TEXT-DECORATION: none
+}
+
+.msbdef_buttonl {
+  background-color : #777777;
+  font-size: 8pt;
+font-family: ariel;
+  border-top: solid 1px #222222;
+  border-left: solid 1px #222222;
+}
+.msbdef_buttonl A:hover {
+  BACKGROUND: #ffffff; COLOR: #000000; TEXT-DECORATION: none
+}
+.msbdef_buttonl A {
+  COLOR: #ffffff; TEXT-DECORATION: none
+}
+
+
+/* Start Text only toolbar definitions */
+
+.textToolBar_cl { background : #ffffff;
+  font-weight: bold; font-size: 6pt;
+  text-align: center;
+  border: solid 1px black;
+}
+.textToolBar_cl A {
+  font-weight: bold; font-size: 7pt;
+  text-align: center; padding-left: 2em; padding-right: 2em;
+  color: #336666; font-weight: bold; font-size: 7pt; text-decoration: none
+}
+.textToolBar_cl A:visited {
+  font-weight: bold; font-size: 7pt;
+  text-align: center; padding-left: 2em; padding-right: 2em;
+  color: #336666; font-weight: bold; font-size: 7pt; text-decoration: none
+}
+.textToolBar_cl A:hover {
+  text-align: center; padding-left: 2em; padding-right: 2em;
+  BACKGROUND: black; COLOR: yellow; TEXT-DECORATION: none
+}
+
+
+/* End Text only toolbar definitions */
+
+/* Start - Workflow styles */
+.wkrule {
+
+  font-size: 10px;
+  font-weight: bold;
+  color : blue;
+}
+/* End - Workflow styles */
+
+/* Start - of admin fields */
+.adf {
+  color : black;
+  background-color : white;
+}
+/* End   - of admin fields */
+
+.store_fb {
+
+  font-size: 10px;
+  font-weight: bold;
+  color : #636163;
+  background-color: #ffffff;
+}
+.store_mr { border-left: solid 1px black;
+ border-right: solid 1px black; }
+
+/*Start Navigation links for portals (upper rigth)*/
+a.headernavlinkstart:link,a.headernavlinkstart:visited,a.headernavlinkstart:active       {
+        background-color: #FFFFFF;
+        border-left: solid 1px #000000;
+        border-bottom: solid 1px #000000;
+        padding-left: .5em;
+        padding-right: .5em;
+        TEXT-DECORATION: none; text-align:center; white-space: nowrap;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003399;
+}
+a.headernavlink:link,a.headernavlink:visited,a.headernavlink:active       {
+        background-color: #FFFFFF;
+        border-left: solid 1px #000000;
+        border-right: solid 1px #000000;
+        border-bottom: solid 1px #000000;
+        padding-left: .5em;
+        padding-right: .5em;
+        TEXT-DECORATION: none;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003399;
+}
+a.headernavlink:hover {
+        background-color: #ffffff;
+        border-left: solid 1px #000000;
+        border-right: solid 1px #000000;
+        border-bottom: solid 1px #000000;
+        padding-left: .5em;
+        padding-right: .5em;
+        TEXT-DECORATION: none;
+        font-size: 11px;
+        font-weight: bold;
+        color: #66CC66;}
+a.headernavlinkstart:hover {
+        background-color: #ffffff;
+        border-left: solid 1px #000000;
+        border-bottom: solid 1px #000000;
+        padding-left: .5em;
+        padding-right: .5em;
+        TEXT-DECORATION: none;
+        font-size: 11px;
+        font-weight: bold;
+        color: #66CC66;}
+
+table.headernavtable {padding-left: 0em;padding-top: 0em;padding-right: 0em;padding-bottom: 1em;}
+/*End Navigation links for portals (upper right)*/
+
+.bar_a                {
+  padding-left: 2em;  padding-right: 2em;
+  background-color: #99ccff;
+  color: #003366;
+  width: 500;
+  border: solid 1px #003366;
+  font-weight: bold;
+  text-decoration: none
+}
+
+.invqty_box {
+  background-color: #dddddd;
+}
+
+.order_status_addr          {
+  padding-left: 1em;  padding-right: 1em;
+  background-color: #EEEEDD;
+  color: #003366;
+  border-top: solid 1px white;
+  border-left: solid 1px white;
+  border-right: solid 1px #003366;
+  border-bottom: solid 1px #003366;
+
+  text-decoration: none
+}
+
+.order_shipper {
+  background-color: white;
+  border-top: solid 2px #660099;;
+  border-left: solid 1px #660099;
+  border-right: solid 1px grey;
+  border-bottom: solid 2px grey;
+ }
+
+
+.rep_line	{
+ background-color: #FFffCC;
+ layer-background-color: #FFFFCC;
+ border-top: solid 1px black;
+  }
+
+.a_tab1 {
+ border: solid 1px black;
+ background-color: #d9d9d9;
+}
+
+.a_td1 {
+ border: solid 1px #d9d9d9;
+ background-color: #cccccc;
+}
+
+.rptmid {
+ padding: 1px;
+ width: 769;
+ background: white;
+ border-top: solid 2px #6C6D71;
+ border-left: solid 1px #6C6D71;
+ border-right: solid 1px #6C6D71;
+ border-bottom: solid 2px #6C6D71;
+ color: #6C6D71;
+}
+.rptmid_blue, A:link.rptmid_blue, A:visited.rptmid_blue, A:active.rptmid_blue  {
+ padding: 2px;
+ background: #6C6D71;
+ color: white;
+ font-weight: bold; font-size: 8pt;
+}
+
+.inv_item {
+  font-size: 10pt; background-color: #f0f4b7 ;font-style: italic;
+}
+
+.survey_question	{ background-color: lightblue; }
+
+
+.loginSubmit {
+  color: white; background-color: #004080;
+  font-size: 9 pt; font-weight: bold;
+}
+
+/* store portal definitions - start */
+
+.stpTable_sortable	{
+  color: black;
+  background-color: white;
+  width: 769;
+  cell-spacing: 0px;  cell-padding: 1px;
+
+  font-size: 10 pt;
+}
+
+.stpTD			{
+  border-bottom: solid 1px grey;
+  font-size: 10 pt;
+}
+
+.stpTH A {
+  font-size: 10 pt;
+  color: black;
+  text-align: center;
+  background-color: lightgrey;
+  font-weight: bold;
+}
+
+.stpTH :active{
+  font-size: 10 pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+.stpTH {
+  font-size: 10 pt;
+  color: black;
+  text-align: center;
+  background-color: lightgrey;
+  font-weight: bold;
+}
+
+
+.stpLabel {
+  color: black;
+  background-color: lightgrey;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* store portal definitions - end */
+.linkButtonBorder {
+  text-align:center; white-space: nowrap;
+  border: solid 1px #636163;  padding:5px;
+}
+
+TABLE.viewcart,A.linkButton:link {
+  FONT-WEIGHT: bold;  background-color:#FFFFFF; COLOR: #636163; TEXT-DECORATION: none;FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+A.linkButton:visited {
+  FONT-WEIGHT: bold;  background-color:#FFFFFF; COLOR: #636163; TEXT-DECORATION: none; FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+A.linkButton:active {
+  FONT-WEIGHT: bold;  background-color:#FFFFFF; COLOR: #636163; TEXT-DECORATION: none; FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+
+.notesheader    {color: #000000;
+                 font-weight: bold;
+
+                }
+.notestxt    {color: #000000;
+                 font-size: 8pt;
+                }
+.addnotelnk    {color: #000000;
+                 font-size: 8pt;
+                 padding-top: 6px;
+                 padding-bottom: 6px;
+                }
+.greencert	{
+
+        font-size: 14px;
+        font-weight: bold;
+        color: #009933;
+        }
+
+.greencerthead {
+
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.shoppingCartSubHeader {
+    color: #FFFFFF;
+    background-color: #669999;
+    font-size: 14px;
+    font-weight: bold;
+    TEXT-DECORATION: none;
+    padding-left: .5em;
+    padding-right: .5em;
+
+}
+
+
+
+.checkoutSummaryHeader {
+    color: #ffffff;
+    background-color: #E3E3E3;
+    font-size: 12px;
+    font-weight: bold;
+    TEXT-DECORATION: none;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #636163;
+
+}
+
+.categoryline {
+    background-color: #F0FFFF;
+}
+
+.orderInfoHeader {
+    background-color: #E0DFDF;
+    layer-background-color: #E0DFDF;
+    font-size: 14px;
+    font-weight: bold;
+    TEXT-DECORATION: none;
+}
+
+A.reorder:link {
+  FONT-WEIGHT: bold; FONT-SIZE: 8pt; background-color:#636163; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #FFFFFF; TEXT-DECORATION: none
+}
+A.reorder:visited {
+  FONT-WEIGHT: bold; FONT-SIZE: 8pt; background-color:#636163; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #FFFFFF; TEXT-DECORATION: none
+}
+A.reorder:active {
+  FONT-WEIGHT: bold; FONT-SIZE: 8pt; background-color:#636163; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #FFFFFF; TEXT-DECORATION: none
+}
+.specSearchSubmit {
+  color: white;
+  background-color: #4c0198;
+  font-family: Verdana, sans-serif;
+  font-size: 9 pt;
+  font-weight: bold;
+}
+
+.catalogSearchSubmit {
+  color: white;
+  background-color: #5A595A;
+  font-family: Verdana, sans-serif;
+  font-size: 9 pt;
+  font-weight: bold;
+}
+
+.checkoutSubHeader {
+    color: #ffffff;
+    background-color:  #669999; /*#efefef;*/
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    TEXT-DECORATION: none;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+td.systemLoginHeader {
+  color: #ffffff;
+  background-color:  #003399;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: Italic;
+  text-align: center;
+}
+
+.welcomeLogin {
+ color: #000000;
+ font-size: 14px;
+ text-align: center;
+
+}
+
+td.systemLoginCopyright {
+ color: #ffffff;
+ background-color: #003399;
+ font-size: 10px;
+ text-align: center;
+}
+
+.systemLoginInputField {
+  border: solid 1px #6699CC;
+}
+
+.smalltext {
+color: #636163;
+font-size: 8pt;
+}

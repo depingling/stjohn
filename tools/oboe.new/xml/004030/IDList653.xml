@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>AMT</idCode>
+        <idValue>Fixed Amount Discount</idValue>
+    <idCode>CSH</idCode>
+        <idValue>% Discount for Cash Payment</idValue>
+    <idCode>DOR</idCode>
+        <idValue>Cash Discount per Units Ordered</idValue>
+    <idCode>DPU</idCode>
+        <idValue>Cash Discount per Units Purchased</idValue>
+    <idCode>DSH</idCode>
+        <idValue>Cash Discount per Units Shipped</idValue>
+    <idCode>DSV</idCode>
+        <idValue>Cash Discount per Service</idValue>
+    <idCode>POR</idCode>
+        <idValue>% Discount per Units Ordered</idValue>
+    <idCode>PPU</idCode>
+        <idValue>% Discount per Units Purchased</idValue>
+    <idCode>PSH</idCode>
+        <idValue>% Discount per Units Shipped</idValue>
+    <idCode>PSV</idCode>
+        <idValue>% Discount per Service</idValue>
+    <idCode>UNT</idCode>
+        <idValue>Additional Units per Units Purchased</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

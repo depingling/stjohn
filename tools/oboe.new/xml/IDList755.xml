@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>01</idCode>
+        <idValue>Product Transfer</idValue>
+    <idCode>02</idCode>
+        <idValue>Resale</idValue>
+    <idCode>03</idCode>
+        <idValue>Report Justifying Treatment Beyond Utilization Guidelines</idValue>
+    <idCode>04</idCode>
+        <idValue>Drugs Administered</idValue>
+    <idCode>05</idCode>
+        <idValue>Treatment Diagnosis</idValue>
+    <idCode>06</idCode>
+        <idValue>Initial Assessment</idValue>
+    <idCode>07</idCode>
+        <idValue>Functional Goals</idValue>
+    <idCode>08</idCode>
+        <idValue>Plan of Treatment</idValue>
+    <idCode>09</idCode>
+        <idValue>Progress Report</idValue>
+    <idCode>10</idCode>
+        <idValue>Continued Treatment</idValue>
+    <idCode>11</idCode>
+        <idValue>Chemical Analysis</idValue>
+    <idCode>12</idCode>
+        <idValue>Mechanical Properties</idValue>
+    <idCode>13</idCode>
+        <idValue>Certified Test Report</idValue>
+    <idCode>14</idCode>
+        <idValue>Core Loss Test Report</idValue>
+    <idCode>15</idCode>
+        <idValue>Justification for Admission</idValue>
+    <idCode>16</idCode>
+        <idValue>Western Region 01 (Internal Revenue Service Summary of line 31 on 1040)</idValue>
+    <idCode>17</idCode>
+        <idValue>Return From Tax Payer Report (Internal Revenue Service Summary)</idValue>
+    <idCode>18</idCode>
+        <idValue>Note Receivable</idValue>
+    <idCode>19</idCode>
+        <idValue>Credit Report</idValue>
+    <idCode>20</idCode>
+        <idValue>Process Plan</idValue>
+    <idCode>21</idCode>
+        <idValue>Recovery Plan</idValue>
+    <idCode>22</idCode>
+        <idValue>Functional Plan</idValue>
+    <idCode>23</idCode>
+        <idValue>Contractual Plan</idValue>
+    <idCode>24</idCode>
+        <idValue>Non-Contractual Plan</idValue>
+    <idCode>25</idCode>
+        <idValue>Purchase Plan</idValue>
+    <idCode>26</idCode>
+        <idValue>Production Plan</idValue>
+    <idCode>27</idCode>
+        <idValue>Contract Delivery Schedule</idValue>
+    <idCode>28</idCode>
+        <idValue>Master Delivery Schedule</idValue>
+    <idCode>29</idCode>
+        <idValue>Assembly Plan</idValue>
+    <idCode>30</idCode>
+        <idValue>Lead Time Chart</idValue>
+    <idCode>31</idCode>
+        <idValue>Master Schedule</idValue>
+    <idCode>32</idCode>
+        <idValue>Master Production Schedule</idValue>
+    <idCode>33</idCode>
+        <idValue>Manufacturing Flow Diagram</idValue>
+    <idCode>34</idCode>
+        <idValue>Lot Release Plan</idValue>
+    <idCode>35</idCode>
+        <idValue>Subcontractor Plan</idValue>
+    <idCode>36</idCode>
+        <idValue>Development Plan</idValue>
+    <idCode>37</idCode>
+        <idValue>Lease Agreement</idValue>
+    <idCode>38</idCode>
+        <idValue>Court Judgment</idValue>
+    <idCode>39</idCode>
+        <idValue>Lottery Winning Letter</idValue>
+    <idCode>40</idCode>
+        <idValue>Curb Side Inspection</idValue>
+    <idCode>41</idCode>
+        <idValue>Statistical Model</idValue>
+    <idCode>42</idCode>
+        <idValue>Interior and Exterior Inspection</idValue>
+    <idCode>43</idCode>
+        <idValue>Non-Inspection Report</idValue>
+    <idCode>44</idCode>
+        <idValue>Review Appraisal</idValue>
+    <idCode>45</idCode>
+        <idValue>Investor Guidelines</idValue>
+    <idCode>46</idCode>
+        <idValue>Sole Discretion Inspection</idValue>
+    <idCode>47</idCode>
+        <idValue>Brokers Price Opinion</idValue>
+    <idCode>48</idCode>
+        <idValue>Social Security Benefit Letter</idValue>
+    <idCode>49</idCode>
+        <idValue>Divorce Decree</idValue>
+    <idCode>50</idCode>
+        <idValue>Contract</idValue>
+    <idCode>51</idCode>
+        <idValue>Gift Letter</idValue>
+    <idCode>52</idCode>
+        <idValue>Will</idValue>
+    <idCode>53</idCode>
+        <idValue>Trust Agreement</idValue>
+    <idCode>54</idCode>
+        <idValue>Award Letter</idValue>
+    <idCode>55</idCode>
+        <idValue>Rental Agreement</idValue>
+    <idCode>56</idCode>
+        <idValue>Preliminary Real Estate Settlement Statement</idValue>
+    <idCode>57</idCode>
+        <idValue>Income Statement (Internal Revenue Service Form 1099)</idValue>
+    <idCode>58</idCode>
+        <idValue>Utility Bill</idValue>
+    <idCode>59</idCode>
+        <idValue>Benefit Letter</idValue>
+    <idCode>60</idCode>
+        <idValue>Canceled Check</idValue>
+    <idCode>61</idCode>
+        <idValue>Individual Tax Return (Internal Revenue Service Form 1040)</idValue>
+    <idCode>62</idCode>
+        <idValue>Asset Account Statement</idValue>
+    <idCode>63</idCode>
+        <idValue>Statement of Profit and Loss</idValue>
+    <idCode>64</idCode>
+        <idValue>Partner Share of Income, Credit, Deductions, (Internal Revenue Service Form K1)</idValue>
+    <idCode>65</idCode>
+        <idValue>Partnership Tax Return (Internal Revenue Service Form 1120)</idValue>
+    <idCode>66</idCode>
+        <idValue>Pay Stub</idValue>
+    <idCode>67</idCode>
+        <idValue>Wage and Tax Statement (Internal Revenue Service Form W2)</idValue>
+    <idCode>68</idCode>
+        <idValue>Year End Statement</idValue>
+    <idCode>69</idCode>
+        <idValue>Bank Statement</idValue>
+    <idCode>70</idCode>
+        <idValue>Verification of Loan/Installment Debt Form</idValue>
+    <idCode>71</idCode>
+        <idValue>Verification of Deposit Form</idValue>
+    <idCode>72</idCode>
+        <idValue>Verification of Mortgage/Rent Form</idValue>
+    <idCode>73</idCode>
+        <idValue>Verification of Employment Form</idValue>
+    <idCode>74</idCode>
+        <idValue>Corporation Tax Return (Internal Revenue Service Form 1065)</idValue>
+    <idCode>75</idCode>
+        <idValue>Title Certificates</idValue>
+    <idCode>76</idCode>
+        <idValue>Real Estate Settlement Statement (Housing and Urban Development Form - 1 &quot;HUD1&quot;)</idValue>
+    <idCode>77</idCode>
+        <idValue>Support Data for Verification</idValue>
+    <idCode>78</idCode>
+        <idValue>Visa/Export License</idValue>
+    <idCode>79</idCode>
+        <idValue>Multi-Country Textile Declaration</idValue>
+    <idCode>80</idCode>
+        <idValue>Single Country Textile Declaration</idValue>
+    <idCode>81</idCode>
+        <idValue>Negative Textile Declaration</idValue>
+    <idCode>82</idCode>
+        <idValue>Endangered Species Convention on International Trade in Endangered Species (CITES)</idValue>
+    <idCode>83</idCode>
+        <idValue>Trademark Release</idValue>
+    <idCode>84</idCode>
+        <idValue>Water Resistance Statement</idValue>
+    <idCode>85</idCode>
+        <idValue>Certificate of Ceramicware Ceramics Commodities Inspection Bureau (CCIB)</idValue>
+    <idCode>86</idCode>
+        <idValue>Wearing Apparel Detail Sheet (WADS)</idValue>
+    <idCode>87</idCode>
+        <idValue>Interim Footwear Invoice</idValue>
+    <idCode>88</idCode>
+        <idValue>Impact Resistance Statement</idValue>
+    <idCode>89</idCode>
+        <idValue>Toxic Substance Compliance Statement</idValue>
+    <idCode>90</idCode>
+        <idValue>Foreign Shippers Declaration</idValue>
+    <idCode>91</idCode>
+        <idValue>Veterinarian Certificate</idValue>
+    <idCode>92</idCode>
+        <idValue>Child Labor Certificate</idValue>
+    <idCode>93</idCode>
+        <idValue>Prison Labor Certificate</idValue>
+    <idCode>94</idCode>
+        <idValue>Purchase Order Copy</idValue>
+    <idCode>95</idCode>
+        <idValue>Product Analysis</idValue>
+    <idCode>96</idCode>
+        <idValue>American Automotive Labeling Act Certificate</idValue>
+    <idCode>97</idCode>
+        <idValue>Broker Market Analysis</idValue>
+    <idCode>A1</idCode>
+        <idValue>Air Emissions Statements</idValue>
+    <idCode>A2</idCode>
+        <idValue>Anti-Dumping Gasoline Program Report</idValue>
+    <idCode>A3</idCode>
+        <idValue>Allergies/Sensitivities Document</idValue>
+    <idCode>A4</idCode>
+        <idValue>Autopsy Report</idValue>
+    <idCode>AA</idCode>
+        <idValue>Agent Inventory Report</idValue>
+    <idCode>AB</idCode>
+        <idValue>Assembly Drawing</idValue>
+    <idCode>AC</idCode>
+        <idValue>Assay Certificate</idValue>
+    <idCode>AD</idCode>
+        <idValue>Agent/Distributor Inventory Report</idValue>
+    <idCode>AE</idCode>
+        <idValue>Attachment</idValue>
+    <idCode>AF</idCode>
+        <idValue>Aid Form</idValue>
+    <idCode>AG</idCode>
+        <idValue>Actual</idValue>
+    <idCode>AH</idCode>
+        <idValue>Easement Report</idValue>
+    <idCode>AI</idCode>
+        <idValue>Conditions, Covenant, and Restrictions Report</idValue>
+    <idCode>AJ</idCode>
+        <idValue>Impound Account Escrow Analysis Report</idValue>
+    <idCode>AK</idCode>
+        <idValue>Closing Escrow Analysis Report</idValue>
+    <idCode>AL</idCode>
+        <idValue>Reserved Escrow Analysis Report</idValue>
+    <idCode>AM</idCode>
+        <idValue>Ambulance Certification</idValue>
+    <idCode>AN</idCode>
+        <idValue>Title Policy</idValue>
+    <idCode>AO</idCode>
+        <idValue>Average Outgoing Quality Report</idValue>
+    <idCode>AP</idCode>
+        <idValue>Advanced Problem Notification</idValue>
+    <idCode>AQ</idCode>
+        <idValue>Housing and Urban Development (HUD) 1 Report</idValue>
+    <idCode>AR</idCode>
+        <idValue>Asset Reclassification Extension Request</idValue>
+    <idCode>AS</idCode>
+        <idValue>Admission Summary</idValue>
+    <idCode>AT</idCode>
+        <idValue>Purchase Order Attachment</idValue>
+    <idCode>AU</idCode>
+        <idValue>Automobile Claim Report</idValue>
+    <idCode>AV</idCode>
+        <idValue>Averaging Areas Report</idValue>
+    <idCode>AW</idCode>
+        <idValue>Air Waybill</idValue>
+    <idCode>AX</idCode>
+        <idValue>Asset Reclassification Extension Response</idValue>
+    <idCode>AY</idCode>
+        <idValue>Tax Certificate</idValue>
+    <idCode>AZ</idCode>
+        <idValue>Home Owner Authorization</idValue>
+    <idCode>B1</idCode>
+        <idValue>Batch Report</idValue>
+    <idCode>B2</idCode>
+        <idValue>Prescription</idValue>
+    <idCode>B3</idCode>
+        <idValue>Physician Order</idValue>
+    <idCode>B4</idCode>
+        <idValue>Referral Form</idValue>
+    <idCode>BA</idCode>
+        <idValue>Budget</idValue>
+    <idCode>BB</idCode>
+        <idValue>Buy or Sell Exchange Contract Status Statement</idValue>
+    <idCode>BC</idCode>
+        <idValue>Bill of Lading Copy</idValue>
+    <idCode>BE</idCode>
+        <idValue>Benzene Content Averaging Report</idValue>
+    <idCode>BF</idCode>
+        <idValue>Bailment Warehouse Withdrawal Request</idValue>
+    <idCode>BL</idCode>
+        <idValue>Bill of Lading</idValue>
+    <idCode>BM</idCode>
+        <idValue>Bill of Material</idValue>
+    <idCode>BN</idCode>
+        <idValue>Beneficiary Certificate</idValue>
+    <idCode>BO</idCode>
+        <idValue>Bill of Lading Original</idValue>
+    <idCode>BR</idCode>
+        <idValue>Benchmark Testing Results</idValue>
+    <idCode>BS</idCode>
+        <idValue>Baseline</idValue>
+    <idCode>BT</idCode>
+        <idValue>Blanket Test Results</idValue>
+    <idCode>BW</idCode>
+        <idValue>Bill of Sale</idValue>
+    <idCode>BY</idCode>
+        <idValue>Biennial Report</idValue>
+    <idCode>C1</idCode>
+        <idValue>Cost Data Summary</idValue>
+    <idCode>C2</idCode>
+        <idValue>Functional Cost and Hour</idValue>
+    <idCode>C3</idCode>
+        <idValue>Progress Curve</idValue>
+    <idCode>C4</idCode>
+        <idValue>Plant-Wide Data</idValue>
+    <idCode>C5</idCode>
+        <idValue>Certified Cost and Price Data</idValue>
+    <idCode>C6</idCode>
+        <idValue>Wage Determination</idValue>
+    <idCode>C7</idCode>
+        <idValue>Credit Transfer Summary Report</idValue>
+    <idCode>C8</idCode>
+        <idValue>Chemical/Radiological Report</idValue>
+    <idCode>C9</idCode>
+        <idValue>Certification/Authorization Document</idValue>
+    <idCode>CA</idCode>
+        <idValue>Certificate of Analysis</idValue>
+    <idCode>CB</idCode>
+        <idValue>Chiropractic Justification</idValue>
+    <idCode>CC</idCode>
+        <idValue>C.A.A. Certificate of Conformance (British CAA)</idValue>
+    <idCode>CD</idCode>
+        <idValue>Customer/Distributor Inventory Report</idValue>
+    <idCode>CE</idCode>
+        <idValue>Constable Report</idValue>
+    <idCode>CF</idCode>
+        <idValue>Capability</idValue>
+    <idCode>CG</idCode>
+        <idValue>Certificate of Origin</idValue>
+    <idCode>CH</idCode>
+        <idValue>Certificate of Weight</idValue>
+    <idCode>CI</idCode>
+        <idValue>Certificate of Inspection Report</idValue>
+    <idCode>CJ</idCode>
+        <idValue>Complications Document</idValue>
+    <idCode>CK</idCode>
+        <idValue>Consent Form(s)</idValue>
+    <idCode>CL</idCode>
+        <idValue>Cable</idValue>
+    <idCode>CM</idCode>
+        <idValue>Customer/Manufacturer Inventory Report</idValue>
+    <idCode>CN</idCode>
+        <idValue>Customer&apos;s Report of Nonconformance</idValue>
+    <idCode>CO</idCode>
+        <idValue>Consignment Order</idValue>
+    <idCode>CP</idCode>
+        <idValue>Certificate of Compliance (Material Certification)</idValue>
+    <idCode>CQ</idCode>
+        <idValue>County Record</idValue>
+    <idCode>CR</idCode>
+        <idValue>Letter of Credit</idValue>
+    <idCode>CS</idCode>
+        <idValue>Consigned Inventory Sales Report</idValue>
+    <idCode>CT</idCode>
+        <idValue>Certification</idValue>
+    <idCode>CU</idCode>
+        <idValue>Customer Notification Letter</idValue>
+    <idCode>CW</idCode>
+        <idValue>Corrective Work Order</idValue>
+    <idCode>CX</idCode>
+        <idValue>Cost/Schedule Status Report (C/SSR)</idValue>
+    <idCode>CY</idCode>
+        <idValue>Contract Funds Status Report (CFSR)</idValue>
+    <idCode>CZ</idCode>
+        <idValue>Campus Police Report</idValue>
+    <idCode>D2</idCode>
+        <idValue>Drug Profile Document</idValue>
+    <idCode>DA</idCode>
+        <idValue>Dental Models</idValue>
+    <idCode>DB</idCode>
+        <idValue>Durable Medical Equipment Prescription</idValue>
+    <idCode>DC</idCode>
+        <idValue>Distributor/Customer Inventory Report</idValue>
+    <idCode>DD</idCode>
+        <idValue>Distributor Inventory Report</idValue>
+    <idCode>DE</idCode>
+        <idValue>Certificate of Quality</idValue>
+    <idCode>DF</idCode>
+        <idValue>DA59 Special Customs Invoice for South Africa</idValue>
+    <idCode>DG</idCode>
+        <idValue>Diagnostic Report</idValue>
+    <idCode>DH</idCode>
+        <idValue>Nitrogen Certificate</idValue>
+    <idCode>DI</idCode>
+        <idValue>Directory</idValue>
+    <idCode>DJ</idCode>
+        <idValue>Discharge Monitoring Report</idValue>
+    <idCode>DK</idCode>
+        <idValue>Drawback Affidavit</idValue>
+    <idCode>DL</idCode>
+        <idValue>Draft and Transmittal Letter</idValue>
+    <idCode>DM</idCode>
+        <idValue>Distributor/Manufacturer Inventory Report</idValue>
+    <idCode>DN</idCode>
+        <idValue>Deviation/Nonconformance Test Results and Request for Action</idValue>
+    <idCode>DQ</idCode>
+        <idValue>Delinquency</idValue>
+    <idCode>DR</idCode>
+        <idValue>Datalog Report</idValue>
+    <idCode>DS</idCode>
+        <idValue>Discharge Summary</idValue>
+    <idCode>DT</idCode>
+        <idValue>Department of Transportation</idValue>
+    <idCode>DU</idCode>
+        <idValue>Commercial</idValue>
+    <idCode>DV</idCode>
+        <idValue>Condominium</idValue>
+    <idCode>DW</idCode>
+        <idValue>Drawing(s)</idValue>
+    <idCode>E1</idCode>
+        <idValue>Exporter&apos;s Certificate and Agreement</idValue>
+    <idCode>EA</idCode>
+        <idValue>Electrical Average Outgoing Quality Report</idValue>
+    <idCode>EB</idCode>
+        <idValue>Explanation of Benefits (Coordination of Benefits or Medicare Secondary Payor)</idValue>
+    <idCode>EC</idCode>
+        <idValue>Engineering Change Order</idValue>
+    <idCode>ED</idCode>
+        <idValue>Environmental Exposure Document</idValue>
+    <idCode>EL</idCode>
+        <idValue>Eligibility</idValue>
+    <idCode>EP</idCode>
+        <idValue>Experimental Material Purchase Order</idValue>
+    <idCode>ER</idCode>
+        <idValue>Engineering Change Request</idValue>
+    <idCode>EX</idCode>
+        <idValue>Shippers Export Declaration</idValue>
+    <idCode>EY</idCode>
+        <idValue>Barrel for Barrel Exchange Contract Status Statement</idValue>
+    <idCode>F1</idCode>
+        <idValue>Cost Performance Report (CPR) Format 1</idValue>
+    <idCode>F2</idCode>
+        <idValue>Cost Performance Report (CPR) Format 2</idValue>
+    <idCode>F3</idCode>
+        <idValue>Cost Performance Report (CPR) Format 3</idValue>
+    <idCode>F4</idCode>
+        <idValue>Cost Performance Report (CPR) Format 4</idValue>
+    <idCode>F5</idCode>
+        <idValue>Cost Performance Report (CPR) Format 5</idValue>
+    <idCode>F6</idCode>
+        <idValue>Transportation Carrier Inspection Report</idValue>
+    <idCode>F7</idCode>
+        <idValue>Government Inspection Report</idValue>
+    <idCode>F8</idCode>
+        <idValue>Inspection Waiver (Written)</idValue>
+    <idCode>F9</idCode>
+        <idValue>Inspection Waiver (Oral)</idValue>
+    <idCode>FB</idCode>
+        <idValue>Federal Bureau of Investigation</idValue>
+    <idCode>FC</idCode>
+        <idValue>Fumigation Certificate</idValue>
+    <idCode>FD</idCode>
+        <idValue>Federal Specification Compliance</idValue>
+    <idCode>FE</idCode>
+        <idValue>Federal Emergency Management Agency</idValue>
+    <idCode>FH</idCode>
+        <idValue>Limitation of Heavy Elements</idValue>
+    <idCode>FI</idCode>
+        <idValue>Fire Report</idValue>
+    <idCode>FM</idCode>
+        <idValue>Family Medical History Document</idValue>
+    <idCode>FS</idCode>
+        <idValue>Certificate of Free Sale</idValue>
+    <idCode>GP</idCode>
+        <idValue>Gas Processor&apos;s Report</idValue>
+    <idCode>GT</idCode>
+        <idValue>Gas Transporter&apos;s Report</idValue>
+    <idCode>HC</idCode>
+        <idValue>Health Certificate</idValue>
+    <idCode>HR</idCode>
+        <idValue>Health Clinic Records</idValue>
+    <idCode>HW</idCode>
+        <idValue>Hazardous Waste Manifest</idValue>
+    <idCode>I2</idCode>
+        <idValue>Consular Invoice</idValue>
+    <idCode>I3</idCode>
+        <idValue>Customs Invoice</idValue>
+    <idCode>I4</idCode>
+        <idValue>Forwarder&apos;s Invoice</idValue>
+    <idCode>I5</idCode>
+        <idValue>Immunization Record</idValue>
+    <idCode>I6</idCode>
+        <idValue>Carrier&apos;s Invoice</idValue>
+    <idCode>IA</idCode>
+        <idValue>Insurance Attachment</idValue>
+    <idCode>IC</idCode>
+        <idValue>Insurance Certificate</idValue>
+    <idCode>IM</idCode>
+        <idValue>Import License</idValue>
+    <idCode>IN</idCode>
+        <idValue>Inspection Request</idValue>
+    <idCode>IP</idCode>
+        <idValue>Inventory Parameter Report</idValue>
+    <idCode>IR</idCode>
+        <idValue>State School Immunization Records</idValue>
+    <idCode>IS</idCode>
+        <idValue>Index System</idValue>
+    <idCode>IT</idCode>
+        <idValue>Certified Inspection and Test Results</idValue>
+    <idCode>IU</idCode>
+        <idValue>Inspection Result</idValue>
+    <idCode>IV</idCode>
+        <idValue>Invoice</idValue>
+    <idCode>JA</idCode>
+        <idValue>Certificate of Good Standing</idValue>
+    <idCode>JB</idCode>
+        <idValue>Tax Status Clearance</idValue>
+    <idCode>JC</idCode>
+        <idValue>Consent to Use Name</idValue>
+    <idCode>JD</idCode>
+        <idValue>Certificate of Registration</idValue>
+    <idCode>JE</idCode>
+        <idValue>Certificate of Existence</idValue>
+    <idCode>JF</idCode>
+        <idValue>Certificate of Status</idValue>
+    <idCode>JG</idCode>
+        <idValue>Certificate of Name Change</idValue>
+    <idCode>JH</idCode>
+        <idValue>Certificate of Merger</idValue>
+    <idCode>JI</idCode>
+        <idValue>Certificate of Significant Change</idValue>
+    <idCode>JK</idCode>
+        <idValue>Balance Sheet</idValue>
+    <idCode>JL</idCode>
+        <idValue>Application of Name Reservation</idValue>
+    <idCode>JM</idCode>
+        <idValue>Schedule of Capital</idValue>
+    <idCode>JN</idCode>
+        <idValue>Foreign Tax Return</idValue>
+    <idCode>JO</idCode>
+        <idValue>Permit Application</idValue>
+    <idCode>JP</idCode>
+        <idValue>Admission Tax Return</idValue>
+    <idCode>JQ</idCode>
+        <idValue>Addendum to Articles</idValue>
+    <idCode>JR</idCode>
+        <idValue>Articles and Amendments</idValue>
+    <idCode>JS</idCode>
+        <idValue>Appointment of Commissioner as Registered Agent</idValue>
+    <idCode>JT</idCode>
+        <idValue>Certificate of Disclosure</idValue>
+    <idCode>JV</idCode>
+        <idValue>Notice of Registered Office</idValue>
+    <idCode>JW</idCode>
+        <idValue>Notice of Directors</idValue>
+    <idCode>JX</idCode>
+        <idValue>Organization and First Biennial Report</idValue>
+    <idCode>JY</idCode>
+        <idValue>Agreement of Statutory Agent</idValue>
+    <idCode>JZ</idCode>
+        <idValue>Consent to Act</idValue>
+    <idCode>KA</idCode>
+        <idValue>Contract Data Requirements List (CDRL)</idValue>
+    <idCode>KC</idCode>
+        <idValue>Kosher Certificate</idValue>
+    <idCode>KD</idCode>
+        <idValue>Engineering Drawing List</idValue>
+    <idCode>KE</idCode>
+        <idValue>Purchased Engineering Data List</idValue>
+    <idCode>KF</idCode>
+        <idValue>Support Documents</idValue>
+    <idCode>KG</idCode>
+        <idValue>Purchased Documents</idValue>
+    <idCode>KH</idCode>
+        <idValue>Proposal Support Data</idValue>
+    <idCode>KI</idCode>
+        <idValue>Purchased Drawings</idValue>
+    <idCode>KJ</idCode>
+        <idValue>Change Proposal Data</idValue>
+    <idCode>KY</idCode>
+        <idValue>Report of Assignment or Modification of Key Events</idValue>
+    <idCode>KZ</idCode>
+        <idValue>Request for Assignment or Modification of Key Events</idValue>
+    <idCode>LA</idCode>
+        <idValue>Laboratory Results</idValue>
+    <idCode>LB</idCode>
+        <idValue>Legalized Bill of Lading</idValue>
+    <idCode>LC</idCode>
+        <idValue>Location Inventory Report</idValue>
+    <idCode>LD</idCode>
+        <idValue>Laboratory Quality Review Variation, Deviation</idValue>
+    <idCode>LE</idCode>
+        <idValue>Latest Revised Estimate</idValue>
+    <idCode>LG</idCode>
+        <idValue>Legalized Certificate of Origin</idValue>
+    <idCode>LI</idCode>
+        <idValue>Legalized Invoice</idValue>
+    <idCode>LO</idCode>
+        <idValue>Laboratory Quality Review Order, Waiver</idValue>
+    <idCode>LP</idCode>
+        <idValue>Labor Plan</idValue>
+    <idCode>LR</idCode>
+        <idValue>Laboratory Quality Review Order, Deviation</idValue>
+    <idCode>LS</idCode>
+        <idValue>Lease Settlement Statement</idValue>
+    <idCode>LT</idCode>
+        <idValue>License Application Attachment</idValue>
+    <idCode>LW</idCode>
+        <idValue>Laboratory Quality Review Variation, Waiver</idValue>
+    <idCode>M1</idCode>
+        <idValue>Medical Record Attachment</idValue>
+    <idCode>MA</idCode>
+        <idValue>Manufacturer/Agent Inventory Report</idValue>
+    <idCode>MB</idCode>
+        <idValue>Manufacturer/Distributor Inventory Report</idValue>
+    <idCode>MC</idCode>
+        <idValue>Manufacturer/Customer Inventory Report</idValue>
+    <idCode>MD</idCode>
+        <idValue>Material Data Sheets</idValue>
+    <idCode>ME</idCode>
+        <idValue>Major Deviation Request</idValue>
+    <idCode>MF</idCode>
+        <idValue>Manufacturing Specification</idValue>
+    <idCode>MG</idCode>
+        <idValue>Migrant Student Records Transfer System (MSRTS) Record</idValue>
+    <idCode>MH</idCode>
+        <idValue>Report of Full Maintenance Period Detail</idValue>
+    <idCode>MI</idCode>
+        <idValue>Mortgage Insurance Certification</idValue>
+    <idCode>MJ</idCode>
+        <idValue>Request for Maintenance Period Status</idValue>
+    <idCode>MK</idCode>
+        <idValue>Report of Maintenance Period Status</idValue>
+    <idCode>ML</idCode>
+        <idValue>Request for Full Maintenance Period Detail</idValue>
+    <idCode>MM</idCode>
+        <idValue>Manufacturer Inventory Report</idValue>
+    <idCode>MN</idCode>
+        <idValue>Minor Deviation Request</idValue>
+    <idCode>MO</idCode>
+        <idValue>Manufacturer&apos;s Statement of Origin</idValue>
+    <idCode>MP</idCode>
+        <idValue>Request for Establishment, Modification, or Cancellation of Maintenance Period</idValue>
+    <idCode>MQ</idCode>
+        <idValue>Report of Establishment, Modification, or Cancellation of Maintenance Period</idValue>
+    <idCode>MR</idCode>
+        <idValue>Material Inspection and Receiving Report</idValue>
+    <idCode>MS</idCode>
+        <idValue>Material Safety Data Sheet</idValue>
+    <idCode>MT</idCode>
+        <idValue>Models</idValue>
+    <idCode>MV</idCode>
+        <idValue>Metered Volumes</idValue>
+    <idCode>MZ</idCode>
+        <idValue>Motor Vehicle Report</idValue>
+    <idCode>NA</idCode>
+        <idValue>National Insurance Crime Bureau Assignment</idValue>
+    <idCode>NC</idCode>
+        <idValue>Certificate of Quantity</idValue>
+    <idCode>ND</idCode>
+        <idValue>Commercial Invoice</idValue>
+    <idCode>NI</idCode>
+        <idValue>National Insurance Crime Bureau</idValue>
+    <idCode>NL</idCode>
+        <idValue>National Insurance Crime Bureau Total Loss</idValue>
+    <idCode>NM</idCode>
+        <idValue>Monthly Contractor Financial Management Report</idValue>
+    <idCode>NN</idCode>
+        <idValue>Nursing Notes</idValue>
+    <idCode>NO</idCode>
+        <idValue>National Insurance Crime Bureau Other than Theft</idValue>
+    <idCode>NQ</idCode>
+        <idValue>Quarterly Contractor Financial Management Report</idValue>
+    <idCode>NR</idCode>
+        <idValue>NOx Emissions Averaging Report</idValue>
+    <idCode>NT</idCode>
+        <idValue>National Insurance Crime Bureau Total Theft</idValue>
+    <idCode>OB</idCode>
+        <idValue>Operative Note</idValue>
+    <idCode>OC</idCode>
+        <idValue>Oxygen Content Averaging Report</idValue>
+    <idCode>OD</idCode>
+        <idValue>Orders and Treatments Document</idValue>
+    <idCode>OE</idCode>
+        <idValue>Objective Physical Examination (including vital signs) Document</idValue>
+    <idCode>OL</idCode>
+        <idValue>Ocean Bill of Lading</idValue>
+    <idCode>OP</idCode>
+        <idValue>Outside Production Operation Sheet</idValue>
+    <idCode>OR</idCode>
+        <idValue>Oil Storer&apos;s Report</idValue>
+    <idCode>OS</idCode>
+        <idValue>Organization Breakdown Structure</idValue>
+    <idCode>OT</idCode>
+        <idValue>Oil Transporter&apos;s Report</idValue>
+    <idCode>OX</idCode>
+        <idValue>Oxygen Therapy Certification</idValue>
+    <idCode>OZ</idCode>
+        <idValue>Support Data for Claim</idValue>
+    <idCode>P1</idCode>
+        <idValue>Packing List</idValue>
+    <idCode>P2</idCode>
+        <idValue>Protest</idValue>
+    <idCode>P3</idCode>
+        <idValue>Receipt</idValue>
+    <idCode>P4</idCode>
+        <idValue>Pathology Report</idValue>
+    <idCode>P5</idCode>
+        <idValue>Patient Medical History Document</idValue>
+    <idCode>P6</idCode>
+        <idValue>Periodontal Charts</idValue>
+    <idCode>P7</idCode>
+        <idValue>Periodontal Reports</idValue>
+    <idCode>P8</idCode>
+        <idValue>Property Claim Report</idValue>
+    <idCode>PA</idCode>
+        <idValue>Part Drawing</idValue>
+    <idCode>PB</idCode>
+        <idValue>Product Catalog</idValue>
+    <idCode>PC</idCode>
+        <idValue>Process Change Notice</idValue>
+    <idCode>PD</idCode>
+        <idValue>Proof of Delivery</idValue>
+    <idCode>PE</idCode>
+        <idValue>Parenteral or Enteral Certification</idValue>
+    <idCode>PF</idCode>
+        <idValue>Product Specification</idValue>
+    <idCode>PG</idCode>
+        <idValue>Packaging Specification</idValue>
+    <idCode>PH</idCode>
+        <idValue>Production History - Property Level</idValue>
+    <idCode>PI</idCode>
+        <idValue>Product Availability Inquiry</idValue>
+    <idCode>PJ</idCode>
+        <idValue>Purchasing Specification</idValue>
+    <idCode>PK</idCode>
+        <idValue>Storage Information Inquiry</idValue>
+    <idCode>PL</idCode>
+        <idValue>Property Insurance Loss Register</idValue>
+    <idCode>PM</idCode>
+        <idValue>Proof of Insurance</idValue>
+    <idCode>PN</idCode>
+        <idValue>Physical Therapy Notes</idValue>
+    <idCode>PO</idCode>
+        <idValue>Prosthetics or Orthotic Certification</idValue>
+    <idCode>PP</idCode>
+        <idValue>Proposal</idValue>
+    <idCode>PQ</idCode>
+        <idValue>Paramedical Results</idValue>
+    <idCode>PR</idCode>
+        <idValue>Purchase Report</idValue>
+    <idCode>PS</idCode>
+        <idValue>Pipeline/Shipper Inventory Report</idValue>
+    <idCode>PT</idCode>
+        <idValue>Inter-Plant Inventory Report</idValue>
+    <idCode>PV</idCode>
+        <idValue>Police Report</idValue>
+    <idCode>PW</idCode>
+        <idValue>Production History - Well Level</idValue>
+    <idCode>PX</idCode>
+        <idValue>Production, Injection and Disposition Report</idValue>
+    <idCode>PY</idCode>
+        <idValue>Physician&apos;s Report</idValue>
+    <idCode>PZ</idCode>
+        <idValue>Physical Therapy Certification</idValue>
+    <idCode>QC</idCode>
+        <idValue>Cause and Corrective Action Report</idValue>
+    <idCode>QD</idCode>
+        <idValue>Quality Review Order, Purchasing</idValue>
+    <idCode>QE</idCode>
+        <idValue>Quality Detail</idValue>
+    <idCode>QM</idCode>
+        <idValue>Quality Review Order, Manufacturing</idValue>
+    <idCode>QR</idCode>
+        <idValue>Quality Report</idValue>
+    <idCode>QS</idCode>
+        <idValue>Quality Review Order Supplement</idValue>
+    <idCode>QT</idCode>
+        <idValue>Quality Summary</idValue>
+    <idCode>R1</idCode>
+        <idValue>Reformulated Gasoline/Anti-Dumping Company Registration</idValue>
+    <idCode>R2</idCode>
+        <idValue>Reformulated Gasoline/Anti-Dumping Facility Registration</idValue>
+    <idCode>R3</idCode>
+        <idValue>Technical Information Package</idValue>
+    <idCode>R4</idCode>
+        <idValue>Purchased Technical Information Package</idValue>
+    <idCode>R5</idCode>
+        <idValue>Technical Information</idValue>
+    <idCode>R6</idCode>
+        <idValue>Miscellaneous Information</idValue>
+    <idCode>RA</idCode>
+        <idValue>Revision Announcement</idValue>
+    <idCode>RB</idCode>
+        <idValue>Radiology Films</idValue>
+    <idCode>RC</idCode>
+        <idValue>Request for Cause and Corrective Action Report</idValue>
+    <idCode>RD</idCode>
+        <idValue>Payment Bond</idValue>
+    <idCode>RE</idCode>
+        <idValue>Performance Bond</idValue>
+    <idCode>RF</idCode>
+        <idValue>Reliability Fail Rate Report</idValue>
+    <idCode>RG</idCode>
+        <idValue>Residential</idValue>
+    <idCode>RM</idCode>
+        <idValue>Request for Manufacturing Engineer Appraisal</idValue>
+    <idCode>RN</idCode>
+        <idValue>Supplier&apos;s Report of Nonconformance</idValue>
+    <idCode>RO</idCode>
+        <idValue>Regular Order</idValue>
+    <idCode>RR</idCode>
+        <idValue>Radiology Reports</idValue>
+    <idCode>RT</idCode>
+        <idValue>Report of Tests and Analysis Report</idValue>
+    <idCode>RV</idCode>
+        <idValue>Reid Vapor Pressure (RVP) Averaging Report</idValue>
+    <idCode>RX</idCode>
+        <idValue>Renewable Oxygen Content Averaging Report</idValue>
+    <idCode>S1</idCode>
+        <idValue>Supply and Shipment Status Report</idValue>
+    <idCode>S2</idCode>
+        <idValue>Supply Status Report</idValue>
+    <idCode>S3</idCode>
+        <idValue>Exception Supply Status Report</idValue>
+    <idCode>S4</idCode>
+        <idValue>Exception Supply and Shipment Status Report</idValue>
+    <idCode>S5</idCode>
+        <idValue>Product Quality Deficiency Report Category I</idValue>
+    <idCode>S6</idCode>
+        <idValue>Product Quality Deficiency Report Category II</idValue>
+    <idCode>S7</idCode>
+        <idValue>&quot;Walsh-Healey Act&quot; Manufacturer or Regular Dealer</idValue>
+    <idCode>S8</idCode>
+        <idValue>Report of Findings</idValue>
+    <idCode>S9</idCode>
+        <idValue>Representation</idValue>
+    <idCode>SA</idCode>
+        <idValue>State Police Report</idValue>
+    <idCode>SB</idCode>
+        <idValue>Sample Approval and Rejection List</idValue>
+    <idCode>SC</idCode>
+        <idValue>Sanitary Certificate</idValue>
+    <idCode>SD</idCode>
+        <idValue>Support Data for a Request for Quote</idValue>
+    <idCode>SE</idCode>
+        <idValue>Security Police Report</idValue>
+    <idCode>SF</idCode>
+        <idValue>Contract Security Classification Specification</idValue>
+    <idCode>SG</idCode>
+        <idValue>Symptoms Document</idValue>
+    <idCode>SH</idCode>
+        <idValue>Sheriff Report</idValue>
+    <idCode>SI</idCode>
+        <idValue>Seller Inventory Report</idValue>
+    <idCode>SL</idCode>
+        <idValue>Sample Bale List</idValue>
+    <idCode>SM</idCode>
+        <idValue>Shipping Manifests</idValue>
+    <idCode>SN</idCode>
+        <idValue>Shipping Notice</idValue>
+    <idCode>SO</idCode>
+        <idValue>Secretary Certificate</idValue>
+    <idCode>SP</idCode>
+        <idValue>Specification</idValue>
+    <idCode>SQ</idCode>
+        <idValue>Statistical Quality Documents</idValue>
+    <idCode>SR</idCode>
+        <idValue>Statistical Report</idValue>
+    <idCode>SS</idCode>
+        <idValue>Seller Sales Report</idValue>
+    <idCode>ST</idCode>
+        <idValue>Student Educational Record (Transcript)</idValue>
+    <idCode>SU</idCode>
+        <idValue>Supplier&apos;s Certificate</idValue>
+    <idCode>SV</idCode>
+        <idValue>Survey</idValue>
+    <idCode>SW</idCode>
+        <idValue>Sea Waybill</idValue>
+    <idCode>SX</idCode>
+        <idValue>Steamship Due Bill</idValue>
+    <idCode>SY</idCode>
+        <idValue>Train Sheet</idValue>
+    <idCode>T1</idCode>
+        <idValue>Title Bill</idValue>
+    <idCode>T2</idCode>
+        <idValue>Preliminary Title Work</idValue>
+    <idCode>T3</idCode>
+        <idValue>Loan Documents</idValue>
+    <idCode>T4</idCode>
+        <idValue>Tax Information</idValue>
+    <idCode>T5</idCode>
+        <idValue>Toxics Emissions Performance Averaging Report</idValue>
+    <idCode>T6</idCode>
+        <idValue>Toxics Release Inventory</idValue>
+    <idCode>TA</idCode>
+        <idValue>Asset Support Inquiry</idValue>
+    <idCode>TB</idCode>
+        <idValue>Asset Support Advice</idValue>
+    <idCode>TC</idCode>
+        <idValue>Physical Inventory Request</idValue>
+    <idCode>TD</idCode>
+        <idValue>Asset Reclassification Response</idValue>
+    <idCode>TE</idCode>
+        <idValue>Asset Reclassification Request</idValue>
+    <idCode>TF</idCode>
+        <idValue>Transaction History Request</idValue>
+    <idCode>TG</idCode>
+        <idValue>Two to Four Family</idValue>
+    <idCode>TH</idCode>
+        <idValue>Total Theft Claim Report</idValue>
+    <idCode>TI</idCode>
+        <idValue>Asset Status Inquiry</idValue>
+    <idCode>TJ</idCode>
+        <idValue>Asset Status Advice</idValue>
+    <idCode>TK</idCode>
+        <idValue>Logistics Transfer Inquiry</idValue>
+    <idCode>TL</idCode>
+        <idValue>Logistics Transfer Advice</idValue>
+    <idCode>TM</idCode>
+        <idValue>Stock Sale Report</idValue>
+    <idCode>TN</idCode>
+        <idValue>Delayed Sale Report</idValue>
+    <idCode>TO</idCode>
+        <idValue>Demand Report</idValue>
+    <idCode>TP</idCode>
+        <idValue>Treatments Certificate</idValue>
+    <idCode>TQ</idCode>
+        <idValue>Storage Information Advice</idValue>
+    <idCode>TR</idCode>
+        <idValue>Transmittal Letter</idValue>
+    <idCode>TS</idCode>
+        <idValue>Sulfur, Olefins, and T90 Averaging Report</idValue>
+    <idCode>TT</idCode>
+        <idValue>Title Transfer</idValue>
+    <idCode>TX</idCode>
+        <idValue>Tax-exempt Certificate</idValue>
+    <idCode>U1</idCode>
+        <idValue>Survey Report</idValue>
+    <idCode>UA</idCode>
+        <idValue>Union Agreement</idValue>
+    <idCode>UB</idCode>
+        <idValue>Certificate of Designation of Registered Agent</idValue>
+    <idCode>UD</idCode>
+        <idValue>List of Officers and Directors</idValue>
+    <idCode>UE</idCode>
+        <idValue>Resolution and Consent Form</idValue>
+    <idCode>UF</idCode>
+        <idValue>Domestic Business Corporation Initial Report</idValue>
+    <idCode>UG</idCode>
+        <idValue>Registered Agent Application</idValue>
+    <idCode>UH</idCode>
+        <idValue>Articles of Incorporation</idValue>
+    <idCode>UI</idCode>
+        <idValue>Certificate of Compliance</idValue>
+    <idCode>UJ</idCode>
+        <idValue>Certificate of Authorization</idValue>
+    <idCode>UK</idCode>
+        <idValue>Charter</idValue>
+    <idCode>UL</idCode>
+        <idValue>Other Type of Report</idValue>
+    <idCode>UM</idCode>
+        <idValue>Affidavit of Acceptance</idValue>
+    <idCode>UN</idCode>
+        <idValue>Resolution Adopting Fictitious Name</idValue>
+    <idCode>UO</idCode>
+        <idValue>Trade Name Application</idValue>
+    <idCode>UP</idCode>
+        <idValue>Declaration of Solicitor</idValue>
+    <idCode>UQ</idCode>
+        <idValue>Memorandum of Association</idValue>
+    <idCode>UR</idCode>
+        <idValue>Notice of Registered Agent</idValue>
+    <idCode>US</idCode>
+        <idValue>&quot;BUY AMERICA&quot; Certification of Compliance</idValue>
+    <idCode>UT</idCode>
+        <idValue>Notice of Registered Office</idValue>
+    <idCode>UU</idCode>
+        <idValue>Dissolution of Existing Registration</idValue>
+    <idCode>UV</idCode>
+        <idValue>Appointment of Statutory Agent</idValue>
+    <idCode>UX</idCode>
+        <idValue>Regulatory Approval for Professional Association</idValue>
+    <idCode>UY</idCode>
+        <idValue>Initial Annual Report</idValue>
+    <idCode>UZ</idCode>
+        <idValue>Certificate of Fact</idValue>
+    <idCode>V1</idCode>
+        <idValue>Voter Registration Application</idValue>
+    <idCode>V2</idCode>
+        <idValue>Voter Registration Application Disposition</idValue>
+    <idCode>V3</idCode>
+        <idValue>Voter Information Record</idValue>
+    <idCode>V4</idCode>
+        <idValue>Change of Name and/or Address</idValue>
+    <idCode>V5</idCode>
+        <idValue>Death Notification</idValue>
+    <idCode>V6</idCode>
+        <idValue>Felony Conviction Notification</idValue>
+    <idCode>V7</idCode>
+        <idValue>Incompetency Notification</idValue>
+    <idCode>VA</idCode>
+        <idValue>Variance Analysis</idValue>
+    <idCode>VC</idCode>
+        <idValue>Volatile Organic Compounds (VOC) Emissions Averaging Report</idValue>
+    <idCode>VD</idCode>
+        <idValue>Data Request for Vendor&apos;s Specifications or Drawings.</idValue>
+    <idCode>VM</idCode>
+        <idValue>Visual/Mechanical Average Outgoing Quality Report</idValue>
+    <idCode>W1</idCode>
+        <idValue>Safe Drinking Water Bacteriological Report</idValue>
+    <idCode>W2</idCode>
+        <idValue>Safe Drinking Water Report</idValue>
+    <idCode>WA</idCode>
+        <idValue>Fictitious Name Statement</idValue>
+    <idCode>WB</idCode>
+        <idValue>Work Breakdown Structure</idValue>
+    <idCode>WC</idCode>
+        <idValue>Request for Assignment or Deletion of Work Candidate</idValue>
+    <idCode>WD</idCode>
+        <idValue>Report of Assignment or Deletion of Work Candidate</idValue>
+    <idCode>WE</idCode>
+        <idValue>Business Conducted Prior to Qualification Form</idValue>
+    <idCode>WF</idCode>
+        <idValue>By-Laws</idValue>
+    <idCode>WG</idCode>
+        <idValue>Appointment of Agent for Service and Consent to Act</idValue>
+    <idCode>WH</idCode>
+        <idValue>Certificate of Name Clearance</idValue>
+    <idCode>WI</idCode>
+        <idValue>Well Information</idValue>
+    <idCode>WP</idCode>
+        <idValue>Work Progress</idValue>
+    <idCode>WT</idCode>
+        <idValue>Well Test Information</idValue>
+    <idCode>X1</idCode>
+        <idValue>Complete Appraisal</idValue>
+    <idCode>X2</idCode>
+        <idValue>Limited Appraisal</idValue>
+    <idCode>X3</idCode>
+        <idValue>Self-contained Report</idValue>
+    <idCode>X4</idCode>
+        <idValue>Summary Report</idValue>
+    <idCode>X5</idCode>
+        <idValue>Restricted Report</idValue>
+    <idCode>XE</idCode>
+        <idValue>Equipment Test Results</idValue>
+    <idCode>XP</idCode>
+        <idValue>Photographs</idValue>
+    <idCode>Y1</idCode>
+        <idValue>Appraisal</idValue>
+    <idCode>Y2</idCode>
+        <idValue>Broker Price Opinion</idValue>
+    <idCode>Y3</idCode>
+        <idValue>Real Estate Property Information</idValue>
+    <idCode>ZA</idCode>
+        <idValue>Flood Determination Report</idValue>
+    <idCode>ZB</idCode>
+        <idValue>Conventional Ammunition Suspension Report</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

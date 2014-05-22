@@ -1,0 +1,759 @@
+body			{background-color: #ffffff;
+				background-layer-color: #ffffff;
+				}
+		
+li				{color: #000066;
+				margin-left: 0px;
+				}
+		
+a:link			{color: #000066;
+				font-weight: normal;
+				}
+		
+a:active		{color: #006699;
+				font-weight: normal;
+				}
+			
+a:visited		{color: #999999;
+				}
+
+a.tbar:link, a.tbar:visited, a.tbar:active	{color: #ffffff; 
+	font-weight: bold;    font-size: 10pt; 	
+	text-decoration: none
+	}
+a.tbarOn                {background-color: #ffffff;
+                         color: #000000; 
+                         font-weight: bold;
+                         font-size: 10pt;	
+                         text-decoration: none
+        }
+
+a.tbar:hover {background-color: white; color: black; }
+
+a.tbar2:link, a.tbar2:visited, a.tbar2:active	{color: #000000; 
+	font-weight: bold;    font-size: 10pt; 	
+    text-decoration: none
+  }
+
+a.tableheader:link, a.tableheader:visited, a.tableheader:active {color:#000000; 
+                     font-weight: bold; 
+                     font-size: 10pt;
+                    }
+.tableheader    {color: #000000;
+                 font-weight: bold;
+                 font-size: 10pt;
+                }
+		
+.tbartext       { color: #ffffff;
+            	  font-weight: normal;    
+                  font-size: 10pt;
+		}
+.tbar2text      { color: #000000; 
+	          font-weight: bold;
+                  font-size: 10pt; 	
+	          text-decoration: none
+                }		
+				
+.address		{font-family: Verdana, Arial, sans-serif;	
+				font-size: 9px;
+				color: #000066;
+				line-spacing: 18px;
+				font-weight: bold;
+				}
+			
+.another		{font-family: Verdana, Arial, sans-serif;	
+				font-size: 9px;
+				color: #000066;
+				line-spacing: 16px;
+				}
+			
+.login			{font-family: Verdana, Arial, sans-serif;	
+				font-size: 9px;
+				font-weight: normal;
+				color: #000066;
+				line-spacing: 16px;
+				}
+			
+.date			{font-family: Verdana, Arial, sans-serif;	
+				font-size: 9px;
+				font-weight: bold;
+				color: #000066;
+				line-spacing: 16px;
+				}
+			
+.linkpath		{font-family: Verdana, Arial, sans-serif;	
+				font-size: 9px;
+				color: #ffffff;
+				}
+			
+.addcart		{font-family: Verdana, Arial, sans-serif;	
+				font-size: 9px;
+				color: #000066;
+				line-spacing: 16px;
+				letter-spacing: 1px;
+				}
+			
+				/* the next element has to change later */
+
+.categories		{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				letter-spacing: 1px;
+				}
+			
+.charttext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				color: #333333;
+				}
+			
+				/* the next element has to change later - color coded for sections */
+			
+.subheaders		{font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+				}
+				
+.subheadergeneric	{font-family: Verdana, Arial, sans-serif;
+					font-size: 11px;
+					font-weight: bold;
+					color: #000066;
+					}
+
+.trainingsubhead	{font-family: Verdana, Arial, sans-serif;
+					font-size: 11px;
+					font-weight: bold;
+					color: #000066;
+					}
+					
+.genericerror		{font-family: Verdana, Arial, sans-serif;
+					font-size: 14px;
+					font-weight: bold;
+					color: #000066;
+					}
+					
+.smalltext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				color: #333333;
+				}
+			
+.text			{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				color: #333333;
+				}
+.textreadonly {
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				color: #333333;								
+				background-color: #99CC99;
+			  }				
+td {font-family: Verdana, Arial, sans-serif; font-size: 9px; }
+			
+.sectext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				color: #000000;
+				letter-spacing: 1px;
+				}
+			
+				/* the next element has to change later */
+			
+.formtext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				font-weight: bold;
+				color: #000066;
+				}
+			
+.greenformtext	{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				font-weight: bold;
+				color: #000066;
+				}
+				
+.blueformtext	{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				font-weight: bold;
+				color: #000066;
+				}				
+			
+.bullettext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				color: #333333;
+				}
+			
+				/* add bullet style later */
+
+.shopitemhead	{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #000066;
+				}
+				
+.shopcategory    {font-family: Verdana, Arial, sans-serif;
+                        font-size: 9px;
+				font-weight: bold;
+				color: #ffffff;
+				background-color: #000066;
+                       }				
+
+.proditemhead	{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #000066;
+				}				
+			
+.fivesidemargin	{margin-left: 5px;
+				margin-right: 5px;
+				margin-top: 1px;
+				margin-bottom: 1px;
+				}
+			
+.gloswmargin	{margin-top: 9px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+				}
+			
+.margin			{margin-top: 20px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+				}
+				
+.mycwmargin		{margin-top: 6px;
+				margin-bottom: 7px;
+				margin-left: 60px;
+				margin-right: 10px;
+				}
+				
+.mycwdate		{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				}
+
+.searchmargin	{margin-top: 1px;
+				margin-bottom: 8px;
+				margin-left: 4px;
+				margin-right: 3px;
+				font-size: 9px;
+				}
+				
+.twomargin		{margin-top: 15px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				margin-right: 15px;
+				}
+
+.twotopmargin	{margin-top: 15px;
+				margin-bottom: 10px;
+				}
+
+.twentytop		{margin-top: 20px;
+				}
+				
+.charthead		{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				color: #000066;
+				}
+				
+.shopcharthead	{color: #000066;
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				font-weight: bold;
+/*				background-color: #99CCCC; */
+				}
+				
+.prodcharthead	{color: #000066;
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				font-weight: bold;
+				}
+
+.msdscharthead	{color: #310063;
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				font-weight: bold;
+        color: white;
+				background-color: #836FAB;
+}			
+				
+.smallmargin	{margin: 2px;
+				}
+				
+.smalltopmargin	{margin-top: 10px;
+				}
+				
+.nomargin		{margin: 0px;
+				padding: 0px;
+				}
+				
+.noindent		{margin: 2px;
+				padding: 0px;
+				background-color: red;
+				}
+				
+.fivemargin		{margin-top: 5px;
+				margin-left: 2px;
+				margin-right: 2px;
+				margin-bottom: 5px;
+				}
+				
+.itemheadmargin	{margin-top: 2px;
+				margin-left: 22px;
+				margin-right: 10px;
+				margin-bottom: 2px;
+				}
+				
+.itemdesctext	{font-family: Verdana, Arial, sans-serif;
+				font-size: 13px;
+				color: #333333;
+				}
+				
+.linkpathmargin	{margin-top: 6px;
+				margin-left: 0px;
+				margin-right: 0px;
+				margin-bottom: 0px;
+				}
+
+.navigatemargin	{margin-top: 2px;
+				margin-bottom: 3px;
+				margin-left: 0px;
+				margin-right: 0px;
+				}
+				
+.itemmargin		{margin-top: 2px;
+				margin-bottom: 3px;
+				margin-left: 10px;
+				margin-right: 0px;
+				}
+
+                                
+.JUMPCELL {font-size: 9pt;
+           font-family: Verdana, Arial, Helvetica, sans-serif;
+           font-weight: normal}
+
+.indent	 {margin-left: 15px;}
+
+ .columntitle	{
+ 				 text-transform: uppercase;
+ 				 font-weight: bold;
+ 				 font-family: Verdana, sans-serif;
+ 				 font-size: 9px;
+ 				 color: white;
+ 				 padding: 3px;
+ 				}
+ 
+ .typeofreport	{
+ 				 font-family: Verdana, sans-serif;
+ 				 font-size: 9px;
+ 				 font-weight: bold;
+ 				 color: #ffffff;
+ 				}
+ 
+ .rtext			{
+ 				 font-family: Verdana, sans-serif;
+ 				 font-size: 9px;
+ 				 color: #000066;
+ 				 padding-left: 3px;
+ 				 padding-top: 1px;
+ 				 padding-bottom: 1px;
+ 				}
+ 
+ .rtitle			{
+ 				 font-family: Verdana, sans-serif;
+ 				 font-size: 9px;
+ 				 color: #000066;
+ 				 font-weight: bold;
+ 				}
+ 
+ .cityhead		{
+ 				 text-transform: uppercase;
+ 				 font-weight: bold;
+ 				 font-family: Verdana, sans-serif;
+ 				 font-size: 9px;
+ 				 color: #000066;
+ 				 padding: 3px;
+ 				}
+ 
+ .cityhead1		{
+ 				 font-weight: bold;
+ 				 font-family: Verdana, sans-serif;
+ 				 font-size: 9px;
+ 				 color: white;
+ 				 padding: 3px;
+ 				}
+
+ .columnheads	{
+				 font-family: Verdana, sans-serif;
+ 				 font-size: 9px;
+ 				 color: white;
+ 				}
+.abs1 {
+       position: absolute;		   
+	   top:363px;	
+	   left:325px;   
+     }		
+
+.abs2 {
+       position: absolute;
+	   top:373px;	
+	   left:325px; 
+     }		
+	 
+.abs3 {
+       position: absolute;
+	   top:383px;
+	   left:325px;  	   
+     }	
+
+.currentrange { background-color: #CCCCCC; }
+
+
+.trainingrulecolor{
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 9px;
+	background-color : #000066;
+	color : #000066;
+
+}
+
+.troubleshooterdk {
+	background-color : #CC9933;
+}
+
+
+.msdsdk {
+	background-color : #CC9933;
+}
+
+.msdsmed{
+	background-color : #CC9933;
+}
+
+ 
+.troubleshooterrulecolor {
+	color : #000066;
+	background-color : #000066;
+	background : #000066 url("/en_US/000/images/cw_spacer.gif");
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 9px;
+}
+
+LI.trainingbullet { color : #000066; }
+
+LI.reversebullet { color : #FFFFFF; }
+
+LI.troubleshootingbullet {
+	color : #000066;
+}
+
+.customer_home_tiptext { color: #000066; 
+  background-color : #ffffff; 
+  border: solid 1px #444444;
+}
+
+.tiptext {
+/* used to reverse text for training tips.  White text on subheader color background */
+ color: #FFFFFF; }
+
+.changeshippingdk {
+	background-color : #000066;
+}
+
+.changeshippingmed {
+	background-color : #CC9933;
+}
+
+.changeshippinglt {
+	background-color : #CCCCCC;
+}
+
+.customerltbkground {
+	background-color : #CCCCCC;
+}
+
+.selectorcontent{
+	background-color : #CCCCCC;
+}
+
+.selectorcontentdk{
+	background-color : #000066;
+}
+
+.reportsmed{
+	background-color : #000066;
+}
+
+.reportsdate {
+	color: #000066;
+	font-size: 12pt;
+	font-family: Verdana, Arial, sans-serif;
+}
+
+
+.itemcolumnheader{
+	background-color : #99CCCC;
+}
+
+
+.greenruleandlinks{
+	background-color : #000066;
+}
+
+.jcminheader{
+	background-color : #CCCCCC;
+}
+
+.shoponsiteservemed{
+	background-color : #000066;
+}
+
+.shoponsiteservelt{
+	background-color : #CC9933;
+}
+
+.trainingdk{
+	background-color :#000066;
+}
+
+.trainingmed{
+	background-color :#CC9933;
+}
+
+
+.dedlt{
+	background-color :#CCCCCC;
+}
+
+.errormsg{
+	font-family: sans-serif;
+	color: #990000;
+	font-size : 12pt;
+	font : bold;
+}
+
+
+.selectorbracketsshop {
+	background-color :#000099;
+}
+
+.selectorbracketsselector {
+	background-color :#000099;
+}
+
+.selectorbracketsmsds {
+	background-color :#000099;
+}
+
+.rowcolorshop  {
+	background-color :#cccccc;
+}
+
+.headerrowcolorshop  {
+	background-color : #999999;
+}
+
+.rowcolorselector  {
+	background-color :#cccccc;
+}
+
+.headerrowcolorselector  {
+	background-color : #999999;
+}
+
+.results		{background-color: #FFFFCC;
+				layer-background-color: #FFFFCC;
+				}		
+
+.admres	{background-color: #FFFFCC;
+	layer-background-color: #FFFFCC;
+  width: 769;
+  border-bottom: solid 5px #669966;
+  border-top: solid 5px #669966;
+  border-right: solid 1px #669966;
+  border-left: solid 1px #669966;
+	}		
+
+
+.resultslocatename {
+	border:none;
+	background-color: #FFFFCC;
+}
+
+.resultscolumna		{background-color: #EEEEDD;
+					layer-background-color: #EEEEDD;
+					}		
+
+.mainbody {background-color: #cccccc;
+           layer-background-color: #cccccc;
+		   }
+           
+.mainbodylocatename {
+	border:none;
+	background-color: #cccccc;
+}
+
+.rowa {background-color: #cccccc;
+	    layer-background-color: #cccccc;
+}
+
+.rowalocatename {
+	border:none; 
+	background-color: #99CC99;
+}
+
+.rowb {background-color: #FFFFFF;
+	    layer-background-color: #FFFFFF;
+}
+.boxa {background-color: #99CCED;
+	    layer-background-color: #99CC99;
+      border:none;
+      font-family: Verdana, Arial, sans-serif;
+			font-size: 9px;
+}
+.boxb {background-color: #FFFFEC;
+	    layer-background-color: #FFFFCC;
+      border:none;
+      font-family: Verdana, Arial, sans-serif;
+			font-size: 9px;
+}
+
+.rowblocatename {
+	border:none;
+	background-color: #FFFFCC; 
+}
+
+.reqind	{color: red;
+    	 font-weight: bold;
+		}
+
+.tableoutline	{ BACKGROUND-COLOR: #000066; }
+
+.top3dk	{ BACKGROUND-COLOR: #000066; }
+
+.largeheader {
+               font-size: 15px;
+			   font-weight: bold;
+}
+
+.mediumheader {
+               font-size: 12px;
+			   font-weight: bold;
+}
+
+.smallbutton {
+			   font-family: Verdana, Arial, sans-serif;
+               font-size: 9px;
+			   font-style: Italic;			   
+}
+
+.aton {	background-color : #000066; }
+.atoff { background-color : #99CCFF; border-right: solid 1px #000066; }
+.atoff A:hover {
+	BACKGROUND-color: #ffffff; TEXT-DECORATION: none
+}
+
+.msbon {	
+  background-color : white; 
+  font-color: black;
+  font-size: 10pt; 	
+  font-family: Verdana, Arial, sans-serif;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+}
+
+.msbon_button {	
+  background-color : #99CCFF; 
+  font-size: 10pt; 	
+  font-family: Verdana, Arial, sans-serif;
+  border-top: solid 1px black;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+}
+
+.msbon_button A:hover {
+	BACKGROUND-color: #ffffff; TEXT-DECORATION: none
+}
+
+.msbon_bar {	
+  background-color : #99CCFF; 
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+}
+.msb_bar {	
+  background-color : white; 
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+}
+
+.msbdef {	
+  background-color : #000066; 
+  font-size: 10pt; 	font-family: ariel;
+  font-family: Verdana, Arial, sans-serif;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+}
+.msbdef_buttonr {	
+  background-color : #777777; 
+  font-size: 10pt; 	font-family: ariel;
+  font-family: Verdana, Arial, sans-serif;
+  border-top: solid 1px #222222;
+  border-right: solid 1px #222222;
+}
+.msbdef_buttonr A:hover {
+	BACKGROUND: #ffffff; COLOR: #000000; TEXT-DECORATION: none
+}
+.msbdef_buttonr A {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+
+.msbdef_buttonl {	
+  background-color : #777777; 
+  font-size: 10pt; 	font-family: ariel;
+  font-family: Verdana, Arial, sans-serif;
+  border-top: solid 1px #222222;
+  border-left: solid 1px #222222;
+}
+.msbdef_buttonl A:hover {
+	BACKGROUND: #ffffff; COLOR: #000000; TEXT-DECORATION: none
+}
+.msbdef_buttonl A {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+
+
+/* Start Text only toolbar definitions */
+
+.textToolBar_cl { background : #ffffff; 
+  text-align: center;
+  border-top: solid 1px black; border-bottom: solid 1px black; 
+  border-right: solid 1px #336666;
+}
+.textToolBar_cl A {
+        font-weight: bold; font-size: 7pt; 
+        color: #336666; font-weight: bold; font-size: 7pt; text-decoration: none
+}
+.textToolBar_cl A:visited {
+        font-weight: bold; font-size: 7pt; 
+        color: #336666; font-weight: bold; font-size: 7pt; text-decoration: none
+}
+.textToolBar_cl A:hover {
+	BACKGROUND: #000000; COLOR: #ffffff; TEXT-DECORATION: none
+}
+
+
+/* End Text only toolbar definitions */
+
+/* Start - Workflow styles */
+.wkrule {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color : blue;
+}
+/* End - Workflow styles */
+
+/* Start - of admin fields */
+.adf {
+	color : black;
+	background-color : white;
+}
+/* End   - of admin fields */

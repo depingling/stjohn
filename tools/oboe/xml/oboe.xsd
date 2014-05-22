@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified">
+	<xsd:element name="envelope">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="segment" maxOccurs="unbounded"/>
+				<xsd:element ref="functionalGroup"/>
+				<xsd:element ref="segment" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="functionalGroup">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="segment" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="transactionSet"/>
+				<xsd:element ref="segment" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="transactionSet">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="table" maxOccurs="3">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="segment" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="section" use="default" value="header">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:NMTOKEN">
+									<xsd:enumeration value="header"/>
+									<xsd:enumeration value="detail"/>
+									<xsd:enumeration value="summary"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:attribute>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="id" type="xsd:string" use="required"/>
+			<xsd:attribute name="revision" type="xsd:string"/>
+			<xsd:attribute name="functionalGroup" type="xsd:string"/>
+			<xsd:attribute name="description" type="xsd:string"/>
+			<xsd:attribute name="xmlTag" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="segment">
+		<xsd:complexType>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="segment" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="compositeDE" minOccurs="0"/>
+					<xsd:element ref="dataElement" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:element ref="elementRule" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="id" type="xsd:string" use="required"/>
+			<xsd:attribute name="sequence" type="xsd:positiveInteger" use="required"/>
+			<xsd:attribute name="description" type="xsd:string"/>
+			<xsd:attribute name="occurs" type="xsd:int"/>
+			<xsd:attribute name="required" use="default" value="M">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:NMTOKEN">
+						<xsd:enumeration value="M"/>
+						<xsd:enumeration value="O"/>
+						<xsd:enumeration value="C"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="xmlTag" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="compositeDE">
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element ref="dataElement"/>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="id" type="xsd:string" use="required"/>
+			<xsd:attribute name="description" type="xsd:string"/>
+			<xsd:attribute name="sequence" type="xsd:positiveInteger"/>
+			<xsd:attribute name="required" type="xsd:string"/>
+			<xsd:attribute name="xmlTag" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="dataElement">
+		<xsd:complexType>
+			<xsd:sequence minOccurs="0">
+				<xsd:element ref="default" minOccurs="0"/>
+				<xsd:element ref="idList" minOccurs="0" maxOccurs='1'/>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="id" type="xsd:string" use="required"/>
+			<xsd:attribute name="type" type="xsd:string" use="required"/>
+			<xsd:attribute name="sequence" type="xsd:positiveInteger"/>
+			<xsd:attribute name="required" type="xsd:string"/>
+			<xsd:attribute name="description" type="xsd:string"/>
+			<xsd:attribute name="minLength" type="xsd:positiveInteger" use="required"/>
+			<xsd:attribute name="maxLength" type="xsd:positiveInteger" use="required"/>
+			<xsd:attribute name="xmlTag" type="xsd:string"/>
+			<xsd:attribute name="idListFile" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="default">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:restriction base="xsd:string">
+					<xsd:attribute name="from" use="required">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:NMTOKEN">
+								<xsd:enumeration value="constant"/>
+								<xsd:enumeration value="property"/>
+								<xsd:enumeration value="method"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+				</xsd:restriction>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="elementRule">
+		<xsd:complexType>
+			<xsd:attribute name="rule" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:NMTOKEN">
+						<xsd:enumeration value="oneOrMoreMustExist"/>
+						<xsd:enumeration value="ifFirstExistsThenAllMustExist"/>
+						<xsd:enumeration value="oneAndOnlyOneMayExist"/>
+						<xsd:enumeration value="ifFirstExistsThenAtLeastOneMoreMustExist"/>
+						<xsd:enumeration value="allOrNoneMayExist"/>
+						<xsd:enumeration value="ifFirstExistsThenNoOthersMayExist"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="positions" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="idList">
+		<xsd:complexType>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="idCode" type="xsd:string"/>
+				<xsd:element name="idValue" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

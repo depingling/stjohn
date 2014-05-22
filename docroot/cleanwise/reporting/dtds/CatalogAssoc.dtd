@@ -1,0 +1,15 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT CatalogAssocList (CatalogAssoc)+>
+<!ELEMENT CatalogAssoc (,BusEntityId,CatalogId,AddBy,AddDate,CatalogAssocCd,ModBy,ModDate)>
+<!ATTLIST CatalogAssoc Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT CatalogId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT CatalogAssocCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

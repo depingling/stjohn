@@ -1,0 +1,14 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+        <report>
+                <category>DBM</category>
+                <name>Last Fedsrip Update</name>
+                <emailrecipient>cleanwise@networkdistribution.com</emailrecipient>
+                <email-message>New fedstrip address update file</email-message>
+        </report>
+
+</xml>

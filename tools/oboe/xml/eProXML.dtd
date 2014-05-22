@@ -1,0 +1,32 @@
+<?xml encoding="UTF-8"?>
+<!--mechanism for display OBOE Objects in JavaServlet pages -->
+<!-- Revision 2.0.0 data/OBOE, docs, Sept. 25, 2000, -->
+<!ELEMENT eProXML ((HTML)?,  transactionSet, (HTML)?)>
+
+<!ELEMENT transactionSet ((HTML)?,  (table+), (HTML)?)>
+<!ATTLIST transactionSet id CDATA #REQUIRED>
+
+<!ELEMENT table ( (HTML)?, (segment)*, (HTML)? )>
+<!ATTLIST table section (header | detail | summary) "header">
+
+<!ELEMENT segment ((HTML)?, ((compositeDE?, dataElement?)*, segment*), (HTML)?)>
+<!ATTLIST segment id CDATA #REQUIRED>
+<!ATTLIST segment display (YES | NO | COMPUTE) "NO">
+<!ATTLIST segment displayCount CDATA #IMPLIED>
+
+<!ELEMENT compositeDE ( (HTML)?, (dataElement)+, (HTML)? )>
+<!ATTLIST compositeDE id CDATA #REQUIRED>
+<!ATTLIST compositeDE display (YES | NO | COMPUTE) "NO">
+
+<!ELEMENT dataElement ((HTML)?, (source)*, (HTML)?)>
+<!ATTLIST dataElement id CDATA #REQUIRED>
+<!ATTLIST dataElement display (YES | NO | COMPUTE | CONSTANT | LIST) "NO">
+<!ATTLIST dataElement showOnSameLineWithPrevious (YES | NO) "NO">
+
+<!ELEMENT source (#PCDATA)>
+
+
+<!ELEMENT HTML (#PCDATA)>
+<!ATTLIST HTML tags CDATA #IMPLIED>
+ 	 
+		 

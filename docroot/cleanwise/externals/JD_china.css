@@ -1,0 +1,99 @@
+body			{
+        font-family: Verdana, Arial, sans-serif;
+        background-color: #ffffff;
+        background-layer-color: #ffffff;
+        font-size: 22px;
+        color: #333333;
+        }
+td {font-size: 12px;}
+
+a.tbar:link, a.tbar:visited, a.tbar:active{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12pt;
+    padding-right: 3px;
+    padding-left: 3px;
+    text-decoration: none
+}
+a.tbarOn{
+    background-color: #ffffff;
+    font-weight: bold; 
+    color: black;
+    font-size: 12pt;
+    padding-right: 3px; 
+    padding-left: 3px;
+    text-decoration: none
+}
+
+
+a.mainheadernav:link,a.mainheadernav:visited,a.mainheadernav:active       {
+        TEXT-DECORATION: none;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        color: #006699;
+}
+a.mainheadernav:hover       {
+        TEXT-DECORATION: none;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        color: #FFFFFF;
+        background-color: #006699;
+}
+
+
+
+
+
+/*Start Navigation links for portals (upper rigth)*/
+a.headernavlinkstart:link,a.headernavlinkstart:visited,a.headernavlinkstart:active       {
+        background-color: #FFFFFF;
+        border-left: solid 1px #000000;
+        border-bottom: solid 1px #000000;
+        padding-left: .5em;
+        padding-right: .5em;
+        TEXT-DECORATION: none; text-align:center; white-space: nowrap;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        color: #006699;
+}
+a.headernavlink:link,a.headernavlink:visited,a.headernavlink:active       {
+        background-color: #FFFFFF;
+        border-left: solid 1px #000000;
+        border-right: solid 1px #000000;
+        border-bottom: solid 1px #000000;
+        padding-left: .5em;
+        padding-right: .5em;
+        TEXT-DECORATION: none;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        color: #006699;
+}
+a.headernavlink:hover {
+        background-color: #99CCFF;
+        border-left: solid 1px #000000;
+        border-right: solid 1px #000000;
+        border-bottom: solid 1px #000000;
+        padding-left: .5em;
+        padding-right: .5em;
+        TEXT-DECORATION: none;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        color: #006699;}
+a.headernavlinkstart:hover {
+        background-color: #99CCFF;
+        border-left: solid 1px #000000;
+        border-bottom: solid 1px #000000;
+        padding-left: .5em;
+        padding-right: .5em;
+        TEXT-DECORATION: none;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        color: #006699;}
+table.headernavtable {padding-left: 0em;padding-top: 0em;padding-right: 0em;padding-bottom: 1em;}
+/*End Navigation links for portals (upper right)*/

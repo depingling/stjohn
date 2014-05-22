@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>Actual Amount</idValue>
+    <idCode>AB</idCode>
+        <idValue>Estimated Amount</idValue>
+    <idCode>AC</idCode>
+        <idValue>Negotiated Amount</idValue>
+    <idCode>AD</idCode>
+        <idValue>Mixed Amount</idValue>
+    <idCode>AE</idCode>
+        <idValue>Estimated Quantity</idValue>
+    <idCode>AF</idCode>
+        <idValue>Negotiated Quantity</idValue>
+    <idCode>AG</idCode>
+        <idValue>Actual Rate</idValue>
+    <idCode>AH</idCode>
+        <idValue>Estimated Rate</idValue>
+    <idCode>AI</idCode>
+        <idValue>Negotiated Rate</idValue>
+    <idCode>AJ</idCode>
+        <idValue>Mixed Amounts</idValue>
+    <idCode>AK</idCode>
+        <idValue>Mixed Quantities</idValue>
+    <idCode>AL</idCode>
+        <idValue>Mixed Rates</idValue>
+    <idCode>AM</idCode>
+        <idValue>Actual</idValue>
+    <idCode>AN</idCode>
+        <idValue>Estimated</idValue>
+    <idCode>AO</idCode>
+        <idValue>Negotiated</idValue>
+    <idCode>AP</idCode>
+        <idValue>Mixed</idValue>
+    <idCode>AQ</idCode>
+        <idValue>Cost Share Amount</idValue>
+</idList>

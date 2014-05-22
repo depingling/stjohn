@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Immediate</idValue>
+    <idCode>B</idCode>
+        <idValue>Pilot/Prevolume</idValue>
+    <idCode>C</idCode>
+        <idValue>Firm</idValue>
+    <idCode>D</idCode>
+        <idValue>Planning</idValue>
+    <idCode>E</idCode>
+        <idValue>Rounded Container Quantity</idValue>
+    <idCode>F</idCode>
+        <idValue>Potential Order Increase</idValue>
+    <idCode>G</idCode>
+        <idValue>Average Plant Usage</idValue>
+    <idCode>H</idCode>
+        <idValue>First Time Reported Firm</idValue>
+    <idCode>K</idCode>
+        <idValue>Final Model Year Requirements or Orders</idValue>
+    <idCode>L</idCode>
+        <idValue>Engineering Change Pending</idValue>
+    <idCode>M</idCode>
+        <idValue>Maximum Tooling Capacity</idValue>
+    <idCode>N</idCode>
+        <idValue>Normal Tooling Capacity</idValue>
+    <idCode>P</idCode>
+        <idValue>Prototype</idValue>
+    <idCode>Q</idCode>
+        <idValue>Order Release Authorization</idValue>
+    <idCode>S</idCode>
+        <idValue>Strike Protection</idValue>
+    <idCode>T</idCode>
+        <idValue>Required Tooling Capacity</idValue>
+    <idCode>U</idCode>
+        <idValue>Cooperative Logistics Planning</idValue>
+    <idCode>V</idCode>
+        <idValue>Cooperative Logistics Firm</idValue>
+    <idCode>W</idCode>
+        <idValue>Cancellation</idValue>
+    <idCode>X</idCode>
+        <idValue>Modification</idValue>
+    <idCode>Z</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

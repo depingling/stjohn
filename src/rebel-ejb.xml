@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<application>
+<classpath>
+<dir  name="@build_full_path@">
+    <include name="com/cleanwise/service/apps/dataexchange/**"/>
+    <include name="com/cleanwise/service/apps/quartz/**"/>
+    <include name="com/cleanwise/service/crypto/**"/>
+    <include name="com/lawson/bizbean/prod/**"/>
+    <include name="com/lawson/ejb/**"/>
+    <include name="com/cleanwise/service/apps/**"/>
+    <include name="com/cleanwise/compass/**"/>
+    <include name="com/protus/www/**"/>
+    <include name="com/avalara/avatax/services/address/**"/>
+    <include name="com/avalara/avatax/services/base/**"/>
+    <include name="com/avalara/avatax/services/base/ser/**"/>
+    <include name="com/avalara/avatax/services/base/wss/**"/>
+    <include name="com/avalara/avatax/services/tax/**"/>
+    <include name="com/johnsondiversey/msds/msdswebservice/jdimsds/**"/>			
+    <include name="com/cleanwise/service/api/*"/>
+    <include name="com/cleanwise/service/api/cachecos/**"/>
+    <include name="com/cleanwise/service/api/dao/**"/>
+    <include name="com/cleanwise/service/api/dto/**"/>
+    <include name="com/cleanwise/service/api/eventsys/**"/>
+    <include name="com/cleanwise/service/api/framework/**"/>
+    <include name="com/cleanwise/service/api/meta/**"/>
+    <include name="com/cleanwise/service/api/pipeline/**"/>
+    <include name="com/cleanwise/service/api/process/**"/>
+    <include name="com/cleanwise/service/api/session/**"/>
+    <include name="com/cleanwise/service/api/tree/**"/>
+    <include name="com/cleanwise/service/api/plugin/**"/>
+    <include name="com/cleanwise/service/api/util/**"/>
+    <include name="com/cleanwise/service/api/value/**"/>
+    <include name="com/cleanwise/service/api/wrapper/**"/>
+    <include name="com/cleanwise/service/api/reporting/*"/>
+    <exclude name="com/cleanwise/service/apps/ws/*.class"/>
+</dir>
+    
+</classpath>
+
+</application>

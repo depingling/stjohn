@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>01</idCode>
+        <idValue>Request For Quote</idValue>
+    <idCode>02</idCode>
+        <idValue>Solicitation for Offer</idValue>
+    <idCode>03</idCode>
+        <idValue>Invitation for Bid</idValue>
+    <idCode>04</idCode>
+        <idValue>Request for Proposal</idValue>
+    <idCode>05</idCode>
+        <idValue>Sealed Bid</idValue>
+    <idCode>06</idCode>
+        <idValue>Amendment to Solicitation</idValue>
+    <idCode>07</idCode>
+        <idValue>Request for Technical Proposal</idValue>
+    <idCode>08</idCode>
+        <idValue>Request for Price Proposal</idValue>
+    <idCode>09</idCode>
+        <idValue>Request for Information</idValue>
+    <idCode>10</idCode>
+        <idValue>Request for Lease and Purchase Terms</idValue>
+    <idCode>11</idCode>
+        <idValue>Broad Announcement</idValue>
+    <idCode>BF</idCode>
+        <idValue>Best and Final</idValue>
+    <idCode>CB</idCode>
+        <idValue>Presolicitation Announcement</idValue>
+</idList>

@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>Party to be billed (AAR Accounting rule 11)</idValue>
+    <idCode>AB</idCode>
+        <idValue>Buyer&apos;s agent/representative</idValue>
+    <idCode>AE</idCode>
+        <idValue>Declarant&apos;s agent/representative</idValue>
+    <idCode>AF</idCode>
+        <idValue>Transit principal</idValue>
+    <idCode>AG</idCode>
+        <idValue>Agent/representative</idValue>
+    <idCode>AH</idCode>
+        <idValue>Transit principal&apos;s agent/representative</idValue>
+    <idCode>AI</idCode>
+        <idValue>Successful job applicant</idValue>
+    <idCode>AJ</idCode>
+        <idValue>Party issuing mutually agreed codes</idValue>
+    <idCode>AK</idCode>
+        <idValue>Acknowledgement recipient</idValue>
+    <idCode>AL</idCode>
+        <idValue>Principal</idValue>
+    <idCode>AM</idCode>
+        <idValue>Authorized official</idValue>
+    <idCode>AN</idCode>
+        <idValue>Approved importer</idValue>
+    <idCode>AO</idCode>
+        <idValue>Account of</idValue>
+    <idCode>AP</idCode>
+        <idValue>Accepting party</idValue>
+    <idCode>AQ</idCode>
+        <idValue>Approved consignor</idValue>
+    <idCode>AR</idCode>
+        <idValue>Authorized exporter</idValue>
+    <idCode>AS</idCode>
+        <idValue>Account servicing financial institution</idValue>
+    <idCode>AT</idCode>
+        <idValue>Authorized importer</idValue>
+    <idCode>AU</idCode>
+        <idValue>Authorized trader (transit)</idValue>
+    <idCode>AV</idCode>
+        <idValue>Authorizing official</idValue>
+    <idCode>AW</idCode>
+        <idValue>Applicant&apos;s bank</idValue>
+    <idCode>AX</idCode>
+        <idValue>Authenticating party</idValue>
+    <idCode>AY</idCode>
+        <idValue>Animal being investigated</idValue>
+    <idCode>AZ</idCode>
+        <idValue>Issuing bank</idValue>
+    <idCode>B1</idCode>
+        <idValue>Contact bank 1</idValue>
+    <idCode>B2</idCode>
+        <idValue>Contact bank 2</idValue>
+    <idCode>BA</idCode>
+        <idValue>Booking agent</idValue>
+    <idCode>BB</idCode>
+        <idValue>Buyer&apos;s bank</idValue>
+    <idCode>BC</idCode>
+        <idValue>Negotiating bank</idValue>
+    <idCode>BD</idCode>
+        <idValue>Documentary credit reimbursing bank</idValue>
+    <idCode>BE</idCode>
+        <idValue>Beneficiary</idValue>
+    <idCode>BF</idCode>
+        <idValue>Beneficiary&apos;s bank</idValue>
+    <idCode>BG</idCode>
+        <idValue>Employer</idValue>
+    <idCode>BH</idCode>
+        <idValue>Previous employer</idValue>
+    <idCode>BI</idCode>
+        <idValue>Buyer&apos;s financial institution</idValue>
+    <idCode>BJ</idCode>
+        <idValue>Release to party</idValue>
+    <idCode>BK</idCode>
+        <idValue>Financial institution</idValue>
+    <idCode>BL</idCode>
+        <idValue>Bill of lading recipient</idValue>
+    <idCode>BM</idCode>
+        <idValue>Insured</idValue>
+    <idCode>BN</idCode>
+        <idValue>Insurance beneficiary</idValue>
+    <idCode>BO</idCode>
+        <idValue>Broker or sales office</idValue>
+    <idCode>BP</idCode>
+        <idValue>Building site purchaser</idValue>
+    <idCode>BQ</idCode>
+        <idValue>Cheque drawn bank</idValue>
+    <idCode>BS</idCode>
+        <idValue>Bill and ship to</idValue>
+    <idCode>BT</idCode>
+        <idValue>Party to be billed for other than freight (bill to)</idValue>
+    <idCode>BU</idCode>
+        <idValue>Service bureau</idValue>
+    <idCode>BV</idCode>
+        <idValue>Member</idValue>
+    <idCode>BW</idCode>
+        <idValue>Borrower</idValue>
+    <idCode>BX</idCode>
+        <idValue>Building site engineer</idValue>
+    <idCode>BY</idCode>
+        <idValue>Buyer</idValue>
+    <idCode>BZ</idCode>
+        <idValue>Building site forwarder</idValue>
+    <idCode>C1</idCode>
+        <idValue>In care of party no. 1</idValue>
+    <idCode>C2</idCode>
+        <idValue>In care of party no. 2</idValue>
+    <idCode>CA</idCode>
+        <idValue>Carrier</idValue>
+    <idCode>CB</idCode>
+        <idValue>Customs broker</idValue>
+    <idCode>CC</idCode>
+        <idValue>Claimant</idValue>
+    <idCode>CD</idCode>
+        <idValue>Agent&apos;s bank</idValue>
+    <idCode>CE</idCode>
+        <idValue>Ceding company</idValue>
+    <idCode>CF</idCode>
+        <idValue>Container operator/lessee</idValue>
+    <idCode>CG</idCode>
+        <idValue>Carrier&apos;s agent</idValue>
+    <idCode>CH</idCode>
+        <idValue>Connecting carrier</idValue>
+    <idCode>CI</idCode>
+        <idValue>Commission processor</idValue>
+    <idCode>CJ</idCode>
+        <idValue>Previous member</idValue>
+    <idCode>CK</idCode>
+        <idValue>Empty equipment despatch party</idValue>
+    <idCode>CL</idCode>
+        <idValue>Container location party</idValue>
+    <idCode>CM</idCode>
+        <idValue>Customs</idValue>
+    <idCode>CN</idCode>
+        <idValue>Consignee</idValue>
+    <idCode>CO</idCode>
+        <idValue>Corporate office</idValue>
+    <idCode>COP</idCode>
+        <idValue>Convoying party</idValue>
+    <idCode>COQ</idCode>
+        <idValue>Nominated bank</idValue>
+    <idCode>CP</idCode>
+        <idValue>Party to receive certificate of compliance</idValue>
+    <idCode>CPA</idCode>
+        <idValue>Advising bank</idValue>
+    <idCode>CPB</idCode>
+        <idValue>Reimbursing bank</idValue>
+    <idCode>CPC</idCode>
+        <idValue>Advise through bank</idValue>
+    <idCode>CPD</idCode>
+        <idValue>Charges payer at destination</idValue>
+    <idCode>CPE</idCode>
+        <idValue>Vessel master</idValue>
+    <idCode>CPF</idCode>
+        <idValue>Means of transport charterer</idValue>
+    <idCode>CQ</idCode>
+        <idValue>Cheque order</idValue>
+    <idCode>CR</idCode>
+        <idValue>Empty equipment return party</idValue>
+    <idCode>CS</idCode>
+        <idValue>Consolidator</idValue>
+    <idCode>CT</idCode>
+        <idValue>Consignee to be specified</idValue>
+    <idCode>CU</idCode>
+        <idValue>Container return company</idValue>
+    <idCode>CV</idCode>
+        <idValue>Consignee of vessel</idValue>
+    <idCode>CW</idCode>
+        <idValue>Equipment owner</idValue>
+    <idCode>CX</idCode>
+        <idValue>Consignee&apos;s agent</idValue>
+    <idCode>CY</idCode>
+        <idValue>Commissionable agent</idValue>
+    <idCode>CZ</idCode>
+        <idValue>Consignor</idValue>
+    <idCode>DA</idCode>
+        <idValue>Available with bank (documentary credits)</idValue>
+    <idCode>DB</idCode>
+        <idValue>Distributor branch</idValue>
+    <idCode>DC</idCode>
+        <idValue>Deconsolidator</idValue>
+    <idCode>DCP</idCode>
+        <idValue>Despatch charge payer</idValue>
+    <idCode>DD</idCode>
+        <idValue>Documentary credit account party&apos;s bank</idValue>
+    <idCode>DE</idCode>
+        <idValue>Depositor</idValue>
+    <idCode>DF</idCode>
+        <idValue>Documentary credit applicant</idValue>
+    <idCode>DG</idCode>
+        <idValue>Documentary credit beneficiary</idValue>
+    <idCode>DH</idCode>
+        <idValue>Documentary credit account party</idValue>
+    <idCode>DI</idCode>
+        <idValue>Documentary credit second beneficiary</idValue>
+    <idCode>DJ</idCode>
+        <idValue>Party according to documentary credit transaction</idValue>
+    <idCode>DK</idCode>
+        <idValue>Documentary credit beneficiary&apos;s bank</idValue>
+    <idCode>DL</idCode>
+        <idValue>Factor</idValue>
+    <idCode>DM</idCode>
+        <idValue>Party to whom documents are to be presented</idValue>
+    <idCode>DN</idCode>
+        <idValue>Owner of operation</idValue>
+    <idCode>DO</idCode>
+        <idValue>Document recipient</idValue>
+    <idCode>DP</idCode>
+        <idValue>Delivery party</idValue>
+    <idCode>DQ</idCode>
+        <idValue>Owner&apos;s agent</idValue>
+    <idCode>DR</idCode>
+        <idValue>Driver</idValue>
+    <idCode>DS</idCode>
+        <idValue>Distributor</idValue>
+    <idCode>DT</idCode>
+        <idValue>Declarant</idValue>
+    <idCode>DU</idCode>
+        <idValue>Owner&apos;s representative</idValue>
+    <idCode>DV</idCode>
+        <idValue>Project management office</idValue>
+    <idCode>DW</idCode>
+        <idValue>Drawee</idValue>
+    <idCode>DX</idCode>
+        <idValue>Engineer (construction)</idValue>
+    <idCode>DY</idCode>
+        <idValue>Engineer, resident (construction)</idValue>
+    <idCode>DZ</idCode>
+        <idValue>Architect</idValue>
+    <idCode>EA</idCode>
+        <idValue>Architect-designer</idValue>
+    <idCode>EB</idCode>
+        <idValue>Building inspectorate</idValue>
+    <idCode>EC</idCode>
+        <idValue>Exchanger</idValue>
+    <idCode>ED</idCode>
+        <idValue>Engineer, consultant</idValue>
+    <idCode>EE</idCode>
+        <idValue>Location of goods for customs examination before clearance</idValue>
+    <idCode>EF</idCode>
+        <idValue>Project coordination office</idValue>
+    <idCode>EG</idCode>
+        <idValue>Surveyor, topographical</idValue>
+    <idCode>EH</idCode>
+        <idValue>Engineer, measurement</idValue>
+    <idCode>EI</idCode>
+        <idValue>Controller, quality</idValue>
+    <idCode>EJ</idCode>
+        <idValue>Surveyor, quantity</idValue>
+    <idCode>EK</idCode>
+        <idValue>Surveyor (professional), quantity</idValue>
+    <idCode>EL</idCode>
+        <idValue>Project</idValue>
+    <idCode>EM</idCode>
+        <idValue>Party to receive electronic memo of invoice</idValue>
+    <idCode>EN</idCode>
+        <idValue>Tenderer</idValue>
+    <idCode>EO</idCode>
+        <idValue>Owner of equipment</idValue>
+    <idCode>EP</idCode>
+        <idValue>Equipment drop-off party</idValue>
+    <idCode>EQ</idCode>
+        <idValue>Empty container responsible party</idValue>
+    <idCode>ER</idCode>
+        <idValue>Empty container return agent</idValue>
+    <idCode>ES</idCode>
+        <idValue>Contractor, lead</idValue>
+    <idCode>ET</idCode>
+        <idValue>Co-contractor</idValue>
+    <idCode>EU</idCode>
+        <idValue>Contractor, general</idValue>
+    <idCode>EV</idCode>
+        <idValue>Subcontractor</idValue>
+    <idCode>EW</idCode>
+        <idValue>Subcontractor with direct payment</idValue>
+    <idCode>EX</idCode>
+        <idValue>Exporter</idValue>
+    <idCode>EY</idCode>
+        <idValue>Subcontractor, nominated</idValue>
+    <idCode>EZ</idCode>
+        <idValue>Operator, essential services</idValue>
+    <idCode>FA</idCode>
+        <idValue>Operator, communication channel</idValue>
+    <idCode>FB</idCode>
+        <idValue>Nominated freight company</idValue>
+    <idCode>FC</idCode>
+        <idValue>Contractor, main</idValue>
+    <idCode>FD</idCode>
+        <idValue>Buyer&apos;s parent company</idValue>
+    <idCode>FE</idCode>
+        <idValue>Credit rating agency</idValue>
+    <idCode>FF</idCode>
+        <idValue>Factor, correspondent</idValue>
+    <idCode>FG</idCode>
+        <idValue>Buyer as officially registered</idValue>
+    <idCode>FH</idCode>
+        <idValue>Seller as officially registered</idValue>
+    <idCode>FI</idCode>
+        <idValue>Copy message to</idValue>
+    <idCode>FJ</idCode>
+        <idValue>Trade Union</idValue>
+    <idCode>FK</idCode>
+        <idValue>Previous Trade Union</idValue>
+    <idCode>FL</idCode>
+        <idValue>Passenger</idValue>
+    <idCode>FM</idCode>
+        <idValue>Crew member</idValue>
+    <idCode>FN</idCode>
+        <idValue>Tariff issuer</idValue>
+    <idCode>FO</idCode>
+        <idValue>Party performing inspection</idValue>
+    <idCode>FP</idCode>
+        <idValue>Freight/charges payer</idValue>
+    <idCode>FQ</idCode>
+        <idValue>Container survey agent</idValue>
+    <idCode>FR</idCode>
+        <idValue>Message from</idValue>
+    <idCode>FS</idCode>
+        <idValue>Party authorized to make definite a contract action</idValue>
+    <idCode>FT</idCode>
+        <idValue>Party responsible for financial settlement</idValue>
+    <idCode>FU</idCode>
+        <idValue>Hazardous material office</idValue>
+    <idCode>FV</idCode>
+        <idValue>Party providing government furnished property</idValue>
+    <idCode>FW</idCode>
+        <idValue>Freight forwarder</idValue>
+    <idCode>FX</idCode>
+        <idValue>Current receiver</idValue>
+    <idCode>FY</idCode>
+        <idValue>Current sender</idValue>
+    <idCode>FZ</idCode>
+        <idValue>Grouping centre</idValue>
+    <idCode>GA</idCode>
+        <idValue>Road carrier</idValue>
+    <idCode>GB</idCode>
+        <idValue>Chamber of commerce</idValue>
+    <idCode>GC</idCode>
+        <idValue>Goods custodian</idValue>
+    <idCode>GD</idCode>
+        <idValue>Producer</idValue>
+    <idCode>GE</idCode>
+        <idValue>Registration tribunal</idValue>
+    <idCode>GF</idCode>
+        <idValue>Slot charter party</idValue>
+    <idCode>GG</idCode>
+        <idValue>Warehouse</idValue>
+    <idCode>GH</idCode>
+        <idValue>Applicant for job</idValue>
+    <idCode>GI</idCode>
+        <idValue>Spouse</idValue>
+    <idCode>GJ</idCode>
+        <idValue>Mother</idValue>
+    <idCode>GK</idCode>
+        <idValue>Father</idValue>
+    <idCode>GL</idCode>
+        <idValue>Socially insured person</idValue>
+    <idCode>GM</idCode>
+        <idValue>Inventory controller</idValue>
+    <idCode>GN</idCode>
+        <idValue>Processor</idValue>
+    <idCode>GO</idCode>
+        <idValue>Goods owner</idValue>
+    <idCode>GP</idCode>
+        <idValue>Packer</idValue>
+    <idCode>GQ</idCode>
+        <idValue>Slaughterer</idValue>
+    <idCode>GR</idCode>
+        <idValue>Goods releaser</idValue>
+    <idCode>GS</idCode>
+        <idValue>Consignor&apos;s representative</idValue>
+    <idCode>GT</idCode>
+        <idValue>Rail carrier</idValue>
+    <idCode>GU</idCode>
+        <idValue>Originator of article number</idValue>
+    <idCode>GV</idCode>
+        <idValue>Procurement responsibility for order</idValue>
+    <idCode>GW</idCode>
+        <idValue>Party fulfilling all operations</idValue>
+    <idCode>GX</idCode>
+        <idValue>Central catalogue party</idValue>
+    <idCode>GY</idCode>
+        <idValue>Inventory reporting party</idValue>
+    <idCode>GZ</idCode>
+        <idValue>Substitute supplier</idValue>
+    <idCode>HA</idCode>
+        <idValue>Party which delivers consignments to the terminal</idValue>
+    <idCode>HB</idCode>
+        <idValue>Party which picks up consignments from the terminal</idValue>
+    <idCode>HC</idCode>
+        <idValue>Transit freight forwarder</idValue>
+    <idCode>HD</idCode>
+        <idValue>Inspection and acceptance party</idValue>
+    <idCode>HE</idCode>
+        <idValue>Transportation office</idValue>
+    <idCode>HF</idCode>
+        <idValue>Contract administration office</idValue>
+    <idCode>HG</idCode>
+        <idValue>Investigator</idValue>
+    <idCode>HH</idCode>
+        <idValue>Audit office</idValue>
+    <idCode>HI</idCode>
+        <idValue>Requestor</idValue>
+    <idCode>HJ</idCode>
+        <idValue>Foreign disclosure information office</idValue>
+    <idCode>HK</idCode>
+        <idValue>Mark-for party</idValue>
+    <idCode>HL</idCode>
+        <idValue>Party to receive reports</idValue>
+    <idCode>HM</idCode>
+        <idValue>Alternative manufacturer</idValue>
+    <idCode>HN</idCode>
+        <idValue>Service performer</idValue>
+    <idCode>HO</idCode>
+        <idValue>Shipper&apos;s association</idValue>
+    <idCode>HP</idCode>
+        <idValue>Final message recipient</idValue>
+    <idCode>HQ</idCode>
+        <idValue>Account owner</idValue>
+    <idCode>HR</idCode>
+        <idValue>Shipping line service</idValue>
+    <idCode>HS</idCode>
+        <idValue>Creditor</idValue>
+    <idCode>HT</idCode>
+        <idValue>Clearing house</idValue>
+    <idCode>HU</idCode>
+        <idValue>Ordering bank</idValue>
+    <idCode>HV</idCode>
+        <idValue>Receiver of funds</idValue>
+    <idCode>HW</idCode>
+        <idValue>Sender of funds</idValue>
+    <idCode>HX</idCode>
+        <idValue>Debtor</idValue>
+    <idCode>HY</idCode>
+        <idValue>Presenting bank</idValue>
+    <idCode>HZ</idCode>
+        <idValue>Work team</idValue>
+    <idCode>I1</idCode>
+        <idValue>Intermediary bank 1</idValue>
+    <idCode>I2</idCode>
+        <idValue>Intermediary bank 2</idValue>
+    <idCode>IB</idCode>
+        <idValue>Intermediary/broker</idValue>
+    <idCode>IC</idCode>
+        <idValue>Intermediate consignee</idValue>
+    <idCode>ID</idCode>
+        <idValue>Replacing manufacturer</idValue>
+    <idCode>IE</idCode>
+        <idValue>Non-resident third party company with whom financial account is held</idValue>
+    <idCode>IF</idCode>
+        <idValue>Non-resident group company with whom financial account is held</idValue>
+    <idCode>IG</idCode>
+        <idValue>Non-resident beneficiary</idValue>
+    <idCode>IH</idCode>
+        <idValue>Resident beneficiary</idValue>
+    <idCode>II</idCode>
+        <idValue>Issuer of invoice</idValue>
+    <idCode>IJ</idCode>
+        <idValue>Non-resident instructing party</idValue>
+    <idCode>IL</idCode>
+        <idValue>Resident instructing party</idValue>
+    <idCode>IM</idCode>
+        <idValue>Importer</idValue>
+    <idCode>IN</idCode>
+        <idValue>Insurer</idValue>
+    <idCode>IO</idCode>
+        <idValue>Insurance company</idValue>
+    <idCode>IP</idCode>
+        <idValue>Insurance claim adjuster</idValue>
+    <idCode>IQ</idCode>
+        <idValue>Domestic financial institution</idValue>
+    <idCode>IR</idCode>
+        <idValue>Non-domestic financial institution</idValue>
+    <idCode>IS</idCode>
+        <idValue>Party to receive certified inspection report</idValue>
+    <idCode>IT</idCode>
+        <idValue>Installation on site</idValue>
+    <idCode>IU</idCode>
+        <idValue>Non-resident debtor</idValue>
+    <idCode>IV</idCode>
+        <idValue>Invoicee</idValue>
+    <idCode>IW</idCode>
+        <idValue>Non-resident creditor</idValue>
+    <idCode>IX</idCode>
+        <idValue>Supplier work team</idValue>
+    <idCode>IY</idCode>
+        <idValue>Tenant manager</idValue>
+    <idCode>IZ</idCode>
+        <idValue>Party mandated to liquidate an enterprise</idValue>
+    <idCode>LA</idCode>
+        <idValue>Party designated to provide living animal care</idValue>
+    <idCode>LB</idCode>
+        <idValue>Co-producer</idValue>
+    <idCode>LC</idCode>
+        <idValue>Party declaring the Value Added Tax (VAT)</idValue>
+    <idCode>LD</idCode>
+        <idValue>Party recovering the Value Added Tax (VAT)</idValue>
+    <idCode>LE</idCode>
+        <idValue>Person on claim</idValue>
+    <idCode>LF</idCode>
+        <idValue>Buyer&apos;s corporate office</idValue>
+    <idCode>LG</idCode>
+        <idValue>Supplier&apos;s corporate office</idValue>
+    <idCode>LH</idCode>
+        <idValue>Liquidator</idValue>
+    <idCode>LI</idCode>
+        <idValue>Account coordinator</idValue>
+    <idCode>LJ</idCode>
+        <idValue>Inspection leader</idValue>
+    <idCode>LK</idCode>
+        <idValue>Patient</idValue>
+    <idCode>LL</idCode>
+        <idValue>Patient companion</idValue>
+    <idCode>LM</idCode>
+        <idValue>Medical treatment executant</idValue>
+    <idCode>LN</idCode>
+        <idValue>Lender</idValue>
+    <idCode>LO</idCode>
+        <idValue>Medical treatment prescriber</idValue>
+    <idCode>LP</idCode>
+        <idValue>Loading party</idValue>
+    <idCode>LQ</idCode>
+        <idValue>Debt payment authorisation party</idValue>
+    <idCode>LR</idCode>
+        <idValue>Administration centre</idValue>
+    <idCode>LS</idCode>
+        <idValue>Product services and repairs centre</idValue>
+    <idCode>LT</idCode>
+        <idValue>Secretariat</idValue>
+    <idCode>LU</idCode>
+        <idValue>Entry point technical assessment group</idValue>
+    <idCode>LV</idCode>
+        <idValue>Party assigning a status</idValue>
+    <idCode>MA</idCode>
+        <idValue>Party for whom item is ultimately intended</idValue>
+    <idCode>MF</idCode>
+        <idValue>Manufacturer of goods</idValue>
+    <idCode>MG</idCode>
+        <idValue>Party designated to execute re-icing</idValue>
+    <idCode>MI</idCode>
+        <idValue>Planning schedule/material release issuer</idValue>
+    <idCode>MP</idCode>
+        <idValue>Manufacturing plant</idValue>
+    <idCode>MR</idCode>
+        <idValue>Message recipient</idValue>
+    <idCode>MS</idCode>
+        <idValue>Document/message issuer/sender</idValue>
+    <idCode>MT</idCode>
+        <idValue>Party designated to execute sanitary procedures</idValue>
+    <idCode>N1</idCode>
+        <idValue>Notify party no. 1</idValue>
+    <idCode>N2</idCode>
+        <idValue>Notify party no. 2</idValue>
+    <idCode>NI</idCode>
+        <idValue>Notify party</idValue>
+    <idCode>OA</idCode>
+        <idValue>Break bulk berth operator</idValue>
+    <idCode>OB</idCode>
+        <idValue>Ordered by</idValue>
+    <idCode>OC</idCode>
+        <idValue>Party data responsible party</idValue>
+    <idCode>OD</idCode>
+        <idValue>Equipment repair party</idValue>
+    <idCode>OE</idCode>
+        <idValue>Owner of property</idValue>
+    <idCode>OF</idCode>
+        <idValue>On behalf of</idValue>
+    <idCode>OG</idCode>
+        <idValue>Owner or lessor&apos;s surveyor</idValue>
+    <idCode>OH</idCode>
+        <idValue>Lessee&apos;s surveyor</idValue>
+    <idCode>OI</idCode>
+        <idValue>Outside inspection agency</idValue>
+    <idCode>OJ</idCode>
+        <idValue>Third party</idValue>
+    <idCode>OK</idCode>
+        <idValue>Receiver&apos;s sub-entity</idValue>
+    <idCode>OL</idCode>
+        <idValue>Case of need party</idValue>
+    <idCode>OM</idCode>
+        <idValue>Collecting bank</idValue>
+    <idCode>ON</idCode>
+        <idValue>Remitting bank</idValue>
+    <idCode>OO</idCode>
+        <idValue>Order of shipper</idValue>
+    <idCode>OP</idCode>
+        <idValue>Operator of property or unit</idValue>
+    <idCode>OQ</idCode>
+        <idValue>Collection principal</idValue>
+    <idCode>OR</idCode>
+        <idValue>Ordered bank</idValue>
+    <idCode>OS</idCode>
+        <idValue>Original shipper</idValue>
+    <idCode>OT</idCode>
+        <idValue>Outside test agency</idValue>
+    <idCode>OU</idCode>
+        <idValue>Account owner&apos;s servicing bank on the sending side</idValue>
+    <idCode>OV</idCode>
+        <idValue>Owner of means of transport</idValue>
+    <idCode>OW</idCode>
+        <idValue>Account owner&apos;s servicing bank on the receiving side</idValue>
+    <idCode>OX</idCode>
+        <idValue>Sender&apos;s correspondent bank</idValue>
+    <idCode>OY</idCode>
+        <idValue>Ordering customer</idValue>
+    <idCode>OZ</idCode>
+        <idValue>Receiver&apos;s correspondent bank</idValue>
+    <idCode>P1</idCode>
+        <idValue>Contact party 1</idValue>
+    <idCode>P2</idCode>
+        <idValue>Contact party 2</idValue>
+    <idCode>P3</idCode>
+        <idValue>Contact party 3</idValue>
+    <idCode>P4</idCode>
+        <idValue>Contact party 4</idValue>
+    <idCode>PA</idCode>
+        <idValue>Party to receive inspection report</idValue>
+    <idCode>PB</idCode>
+        <idValue>Paying financial institution</idValue>
+    <idCode>PC</idCode>
+        <idValue>Actual purchaser&apos;s customer</idValue>
+    <idCode>PD</idCode>
+        <idValue>Purchaser&apos;s department buyer</idValue>
+    <idCode>PE</idCode>
+        <idValue>Payee</idValue>
+    <idCode>PF</idCode>
+        <idValue>Party to receive freight bill</idValue>
+    <idCode>PG</idCode>
+        <idValue>Prime contractor</idValue>
+    <idCode>PH</idCode>
+        <idValue>Payer&apos;s financial institution</idValue>
+    <idCode>PI</idCode>
+        <idValue>Payee&apos;s company name/ID</idValue>
+    <idCode>PJ</idCode>
+        <idValue>Party to receive correspondence</idValue>
+    <idCode>PK</idCode>
+        <idValue>Contact party</idValue>
+    <idCode>PL</idCode>
+        <idValue>Payor</idValue>
+    <idCode>PM</idCode>
+        <idValue>Party to receive paper memo of invoice</idValue>
+    <idCode>PN</idCode>
+        <idValue>Party to receive shipping notice</idValue>
+    <idCode>PO</idCode>
+        <idValue>Ordering party</idValue>
+    <idCode>PQ</idCode>
+        <idValue>Certifying party</idValue>
+    <idCode>PR</idCode>
+        <idValue>Payer</idValue>
+    <idCode>PS</idCode>
+        <idValue>Payer&apos;s company name/ID (Check, Draft or Wire)</idValue>
+    <idCode>PT</idCode>
+        <idValue>Party to receive test report</idValue>
+    <idCode>PW</idCode>
+        <idValue>Despatch party</idValue>
+    <idCode>PX</idCode>
+        <idValue>Party to receive all documents</idValue>
+    <idCode>PY</idCode>
+        <idValue>Checking party</idValue>
+    <idCode>PZ</idCode>
+        <idValue>Party to print some document</idValue>
+    <idCode>RA</idCode>
+        <idValue>Central bank or regulatory authority</idValue>
+    <idCode>RB</idCode>
+        <idValue>Receiving financial institution</idValue>
+    <idCode>RE</idCode>
+        <idValue>Party to receive commercial invoice remittance</idValue>
+    <idCode>RF</idCode>
+        <idValue>Received from</idValue>
+    <idCode>RH</idCode>
+        <idValue>Seller&apos;s financial institution</idValue>
+    <idCode>RI</idCode>
+        <idValue>Reinsurance intermediary/broker</idValue>
+    <idCode>RL</idCode>
+        <idValue>Reporting carrier (Customs)</idValue>
+    <idCode>RM</idCode>
+        <idValue>Reporting carrier&apos;s nominated agent/representative (Customs)</idValue>
+    <idCode>RP</idCode>
+        <idValue>Routing party</idValue>
+    <idCode>RS</idCode>
+        <idValue>Party to receive statement of account</idValue>
+    <idCode>RV</idCode>
+        <idValue>Receiver of cheque</idValue>
+    <idCode>RW</idCode>
+        <idValue>Issuer of waybill</idValue>
+    <idCode>SB</idCode>
+        <idValue>Sales responsibility</idValue>
+    <idCode>SE</idCode>
+        <idValue>Seller</idValue>
+    <idCode>SF</idCode>
+        <idValue>Ship from</idValue>
+    <idCode>SG</idCode>
+        <idValue>Store group</idValue>
+    <idCode>SI</idCode>
+        <idValue>Shipping schedule issuer</idValue>
+    <idCode>SK</idCode>
+        <idValue>Plant</idValue>
+    <idCode>SN</idCode>
+        <idValue>Store keeper</idValue>
+    <idCode>SO</idCode>
+        <idValue>Sold to if different than bill to</idValue>
+    <idCode>SR</idCode>
+        <idValue>Seller&apos;s agent/representative</idValue>
+    <idCode>SS</idCode>
+        <idValue>Social securities collector&apos;s office</idValue>
+    <idCode>ST</idCode>
+        <idValue>Ship to</idValue>
+    <idCode>SU</idCode>
+        <idValue>Supplier</idValue>
+    <idCode>SX</idCode>
+        <idValue>Surety for additions</idValue>
+    <idCode>SY</idCode>
+        <idValue>Surety</idValue>
+    <idCode>SZ</idCode>
+        <idValue>Surety for antidumping/countervailing duty</idValue>
+    <idCode>TA</idCode>
+        <idValue>Legal receiver</idValue>
+    <idCode>TB</idCode>
+        <idValue>Submitter</idValue>
+    <idCode>TC</idCode>
+        <idValue>Tax collector&apos;s office</idValue>
+    <idCode>TCP</idCode>
+        <idValue>Transit charge payer</idValue>
+    <idCode>TD</idCode>
+        <idValue>Party to receive technical documentation</idValue>
+    <idCode>TE</idCode>
+        <idValue>Bankruptcy referee</idValue>
+    <idCode>TF</idCode>
+        <idValue>Source of information</idValue>
+    <idCode>TG</idCode>
+        <idValue>Judge</idValue>
+    <idCode>TH</idCode>
+        <idValue>Attorney</idValue>
+    <idCode>TI</idCode>
+        <idValue>Law firm</idValue>
+    <idCode>TJ</idCode>
+        <idValue>Trustee</idValue>
+    <idCode>TK</idCode>
+        <idValue>Signatory</idValue>
+    <idCode>TL</idCode>
+        <idValue>Occupant</idValue>
+    <idCode>TM</idCode>
+        <idValue>Co-occupant</idValue>
+    <idCode>TN</idCode>
+        <idValue>Subject of inquiry</idValue>
+    <idCode>TO</idCode>
+        <idValue>Lessor</idValue>
+    <idCode>TP</idCode>
+        <idValue>Owner of residence</idValue>
+    <idCode>TQ</idCode>
+        <idValue>Founder</idValue>
+    <idCode>TR</idCode>
+        <idValue>Terminal operator</idValue>
+    <idCode>TS</idCode>
+        <idValue>Party to receive certified test results</idValue>
+    <idCode>TT</idCode>
+        <idValue>Transfer to</idValue>
+    <idCode>TU</idCode>
+        <idValue>President</idValue>
+    <idCode>TV</idCode>
+        <idValue>Chairperson</idValue>
+    <idCode>TW</idCode>
+        <idValue>Legal title holder</idValue>
+    <idCode>TX</idCode>
+        <idValue>Shareholder</idValue>
+    <idCode>TY</idCode>
+        <idValue>Provider</idValue>
+    <idCode>TZ</idCode>
+        <idValue>Military branch</idValue>
+    <idCode>UA</idCode>
+        <idValue>Educational institution</idValue>
+    <idCode>UB</idCode>
+        <idValue>Assignor</idValue>
+    <idCode>UC</idCode>
+        <idValue>Ultimate consignee</idValue>
+    <idCode>UD</idCode>
+        <idValue>Ultimate customer</idValue>
+    <idCode>UE</idCode>
+        <idValue>Advisor</idValue>
+    <idCode>UF</idCode>
+        <idValue>Co-defendant</idValue>
+    <idCode>UG</idCode>
+        <idValue>Merged company with retained identity</idValue>
+    <idCode>UH</idCode>
+        <idValue>Party represented</idValue>
+    <idCode>UHP</idCode>
+        <idValue>Unexpected handling party</idValue>
+    <idCode>UI</idCode>
+        <idValue>Assignee</idValue>
+    <idCode>UJ</idCode>
+        <idValue>Key person</idValue>
+    <idCode>UK</idCode>
+        <idValue>Author</idValue>
+    <idCode>UL</idCode>
+        <idValue>Ultimate parent company</idValue>
+    <idCode>UM</idCode>
+        <idValue>Party not to be confused with</idValue>
+    <idCode>UN</idCode>
+        <idValue>Accountant</idValue>
+    <idCode>UO</idCode>
+        <idValue>Plaintiff</idValue>
+    <idCode>UP</idCode>
+        <idValue>Unloading party</idValue>
+    <idCode>UQ</idCode>
+        <idValue>Parent company</idValue>
+    <idCode>UR</idCode>
+        <idValue>Affiliated company</idValue>
+    <idCode>US</idCode>
+        <idValue>Bailiff</idValue>
+    <idCode>UT</idCode>
+        <idValue>Merged company</idValue>
+    <idCode>UU</idCode>
+        <idValue>Defendant</idValue>
+    <idCode>UV</idCode>
+        <idValue>Petitioning creditor</idValue>
+    <idCode>UW</idCode>
+        <idValue>Guarantee agency</idValue>
+    <idCode>UX</idCode>
+        <idValue>Organization group</idValue>
+    <idCode>UY</idCode>
+        <idValue>Subsidiary</idValue>
+    <idCode>UZ</idCode>
+        <idValue>Industry association</idValue>
+    <idCode>VA</idCode>
+        <idValue>Joint owner</idValue>
+    <idCode>VB</idCode>
+        <idValue>Joint venture</idValue>
+    <idCode>VC</idCode>
+        <idValue>Filing office</idValue>
+    <idCode>VE</idCode>
+        <idValue>Court</idValue>
+    <idCode>VF</idCode>
+        <idValue>Liability holder</idValue>
+    <idCode>VG</idCode>
+        <idValue>Local government sponsor</idValue>
+    <idCode>VH</idCode>
+        <idValue>Mortgage company</idValue>
+    <idCode>VI</idCode>
+        <idValue>Notary public</idValue>
+    <idCode>VJ</idCode>
+        <idValue>Officer</idValue>
+    <idCode>VK</idCode>
+        <idValue>Publisher</idValue>
+    <idCode>VL</idCode>
+        <idValue>Party manufactured for</idValue>
+    <idCode>VM</idCode>
+        <idValue>Previous owner</idValue>
+    <idCode>VN</idCode>
+        <idValue>Vendor</idValue>
+    <idCode>VO</idCode>
+        <idValue>Purchased company</idValue>
+    <idCode>VP</idCode>
+        <idValue>Receiver manager</idValue>
+    <idCode>VQ</idCode>
+        <idValue>Responsible government agency</idValue>
+    <idCode>VR</idCode>
+        <idValue>Sole proprietor</idValue>
+    <idCode>VS</idCode>
+        <idValue>Auctioneer</idValue>
+    <idCode>VT</idCode>
+        <idValue>Branch</idValue>
+    <idCode>VU</idCode>
+        <idValue>Business</idValue>
+    <idCode>VV</idCode>
+        <idValue>Ultimate same country parent company</idValue>
+    <idCode>VW</idCode>
+        <idValue>Responsible party</idValue>
+    <idCode>VX</idCode>
+        <idValue>Secured party</idValue>
+    <idCode>VY</idCode>
+        <idValue>Other related party</idValue>
+    <idCode>VZ</idCode>
+        <idValue>Co-debtor</idValue>
+    <idCode>WA</idCode>
+        <idValue>Company which holds financial interest</idValue>
+    <idCode>WB</idCode>
+        <idValue>Rating organization</idValue>
+    <idCode>WC</idCode>
+        <idValue>Information reference agency</idValue>
+    <idCode>WD</idCode>
+        <idValue>Warehouse depositor</idValue>
+    <idCode>WE</idCode>
+        <idValue>Compilation agency</idValue>
+    <idCode>WF</idCode>
+        <idValue>Information maintenance agency</idValue>
+    <idCode>WG</idCode>
+        <idValue>Information dissemination agency</idValue>
+    <idCode>WH</idCode>
+        <idValue>Warehouse keeper</idValue>
+    <idCode>WI</idCode>
+        <idValue>Inspection address</idValue>
+    <idCode>WJ</idCode>
+        <idValue>Refusal party</idValue>
+    <idCode>WK</idCode>
+        <idValue>Value added network provider</idValue>
+    <idCode>WL</idCode>
+        <idValue>Agency</idValue>
+    <idCode>WM</idCode>
+        <idValue>Works manager</idValue>
+    <idCode>WN</idCode>
+        <idValue>Party to receive order to supply</idValue>
+    <idCode>WO</idCode>
+        <idValue>Party to receive invitation to offer</idValue>
+    <idCode>WP</idCode>
+        <idValue>Sub-entity</idValue>
+    <idCode>WPA</idCode>
+        <idValue>Weighting party</idValue>
+    <idCode>WQ</idCode>
+        <idValue>Doing business as</idValue>
+    <idCode>WR</idCode>
+        <idValue>Party submitting quote</idValue>
+    <idCode>WS</idCode>
+        <idValue>Wholesaler</idValue>
+    <idCode>WT</idCode>
+        <idValue>Affiliated party</idValue>
+    <idCode>WU</idCode>
+        <idValue>Previous name</idValue>
+    <idCode>WV</idCode>
+        <idValue>Party performing task</idValue>
+    <idCode>WW</idCode>
+        <idValue>Registering party</idValue>
+    <idCode>XX</idCode>
+        <idValue>No heading</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually defined</idValue>
+</idList>

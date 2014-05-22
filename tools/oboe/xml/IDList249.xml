@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>F</idCode>
+        <idValue>Specified Flag Required</idValue>
+    <idCode>M</idCode>
+        <idValue>Must Comply</idValue>
+    <idCode>O</idCode>
+        <idValue>Forwarder Option</idValue>
+    <idCode>R</idCode>
+        <idValue>Roll Booking to Another Vessel</idValue>
+    <idCode>S</idCode>
+        <idValue>Substitution OK</idValue>
+</idList>

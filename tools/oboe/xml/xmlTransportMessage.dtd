@@ -1,0 +1,12 @@
+<?xml encoding="UTF-8"?>
+<!--xml transport message -->
+<!-- Revision 1.6.0 data/OBOE, docs, October 17, 2000, -->
+<!ELEMENT XMLEDI (#PCDATA)>
+<!ATTLIST XMLEDI format (EDI | XML) #REQUIRED>
+<!ATTLIST XMLEDI content (X12 | EDIFACT | VALID | WELLFORMED) #REQUIRED>
+<!ATTLIST XMLEDI from CDATA #REQUIRED>
+<!ATTLIST XMLEDI password CDATA #IMPLIED>
+<!ATTLIST XMLEDI optionalData CDATA #IMPLIED>
+<!ATTLIST XMLEDI responseRequired (Y | N) #REQUIRED>
+<!ATTLIST XMLEDI test (Y | N) #REQUIRED>		 
+		 

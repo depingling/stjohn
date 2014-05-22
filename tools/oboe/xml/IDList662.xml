@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Add</idValue>
+    <idCode>D</idCode>
+        <idValue>Delete</idValue>
+    <idCode>I</idCode>
+        <idValue>Included</idValue>
+    <idCode>O</idCode>
+        <idValue>Information Only</idValue>
+    <idCode>S</idCode>
+        <idValue>Substituted</idValue>
+</idList>

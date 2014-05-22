@@ -1,0 +1,83 @@
+#!/bin/sh
+
+lcmd=outbound_invoices
+
+## common for all scripts
+
+lockfile=/tmp/xsuite.lock.$lcmd
+if [ -f $lockfile ]
+then
+  echo "error lock on for $lcmd"
+  exit
+fi
+
+echo $$ > $lockfile
+
+if [ -f /apps/ixtendx/.profile ]
+then
+. /apps/ixtendx/.profile
+fi
+
+if [ -f /apps/xadmin2/.profile ]
+then
+. /apps/xadmin2/.profile
+fi
+
+if [ -f /apps/xadmin3/.profile ]
+then
+. /apps/xadmin3/.profile
+fi
+
+
+if [ -f ../app.sh.env ]
+then
+. ../app.sh.env
+fi
+
+cd $XDIR/util
+
+tstamp=`date '+Date-%Y.%m.%d-Time-%H.%M.%S'`
+logfile="../reports/$tstamp.$0.log"
+
+echo "--- PID $$ " > $logfile
+
+# make sure that the host and ports match the JBoss 
+# installation that you are trying to talk to.
+
+if [ -z ${XSUITE_HOME} ] 
+then
+  echo "XSUITE_HOME is not defined."
+  exit
+fi
+
+
+set >> $logfile
+
+
+if [ ! -d ${XDIR}/output ]
+then
+   mkdir ${XDIR}/output
+fi
+
+WEB_DEPPLOY=@webdeploy@/
+
+
+java -classpath "${TJCPATH}" \
+-Dwebdeploy=${WEB_DEPPLOY} \
+-Dconf="${XSUITE_HOME}/xsuite/app.properties" -DXSUITE_HOME=${XSUITE_HOME} $* \
+com.cleanwise.service.apps.dataexchange.OutboundInvoice ${XDIR}/output/invoices${tstamp}.pdf >> $logfile 2>&1
+
+mailmsg="..."
+if [ -s ${XDIR}/output/invoices${tstamp}.pdf ]
+then
+  mailmsg="Invoice report generated."
+else
+  mailmsg="No invoices found."
+fi
+
+sh ../util/send-email.sh "Yesterdays Customer Invoices $tstamp" CustomerInvoices@cleanwise.com "$mailmsg" ${XDIR}/output/invoices${tstamp}.pdf
+
+
+echo "--- PID $$ done " >> $logfile
+
+rm $lockfile

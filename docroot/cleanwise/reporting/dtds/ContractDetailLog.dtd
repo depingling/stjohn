@@ -1,0 +1,12 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ContractDetailLogList (ContractDetailLog)+>
+<!ELEMENT ContractDetailLog (ContractItemId,Change,Date,Time)>
+<!ATTLIST ContractDetailLog Id ID #REQUIRED>
+<!ELEMENT ContractItemId (#PCDATA)>
+<!ELEMENT Change (#PCDATA)>
+<!ELEMENT Date (#PCDATA)>
+<!ELEMENT Time (#PCDATA)>

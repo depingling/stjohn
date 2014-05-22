@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>Bill</idValue>
+    <idCode>AB</idCode>
+        <idValue>Pay</idValue>
+    <idCode>AP</idCode>
+        <idValue>Advise Price</idValue>
+    <idCode>AW</idCode>
+        <idValue>Average Wholesale Price</idValue>
+    <idCode>BD</idCode>
+        <idValue>Before Discount</idValue>
+    <idCode>BR</idCode>
+        <idValue>Broker</idValue>
+    <idCode>BW</idCode>
+        <idValue>Biweekly Price per Unit</idValue>
+    <idCode>CA</idCode>
+        <idValue>Catalog</idValue>
+    <idCode>CP</idCode>
+        <idValue>Current Price (Subject to Change)</idValue>
+    <idCode>CR</idCode>
+        <idValue>Carnet</idValue>
+    <idCode>CT</idCode>
+        <idValue>Contract</idValue>
+    <idCode>DI</idCode>
+        <idValue>Distributor</idValue>
+    <idCode>DP</idCode>
+        <idValue>Daily Price per Unit</idValue>
+    <idCode>DR</idCode>
+        <idValue>Dealer</idValue>
+    <idCode>DS</idCode>
+        <idValue>Discount</idValue>
+    <idCode>EC</idCode>
+        <idValue>Estimated Credit</idValue>
+    <idCode>EH</idCode>
+        <idValue>Shift Differential</idValue>
+    <idCode>ES</idCode>
+        <idValue>Estimated</idValue>
+    <idCode>FB</idCode>
+        <idValue>Fabrication Cost</idValue>
+    <idCode>FO</idCode>
+        <idValue>Formula</idValue>
+    <idCode>FX</idCode>
+        <idValue>Fixed Price</idValue>
+    <idCode>HF</idCode>
+        <idValue>Per 100 Feet</idValue>
+    <idCode>HP</idCode>
+        <idValue>Price per Hundred</idValue>
+    <idCode>HT</idCode>
+        <idValue>Price Per 100,000</idValue>
+    <idCode>KA</idCode>
+        <idValue>Price with Government Furnished Property</idValue>
+    <idCode>KP</idCode>
+        <idValue>Escalated Price</idValue>
+    <idCode>KR</idCode>
+        <idValue>In Stock</idValue>
+    <idCode>LC</idCode>
+        <idValue>Catalog Price per Hundred</idValue>
+    <idCode>LD</idCode>
+        <idValue>Catalog Price per Dozen</idValue>
+    <idCode>LE</idCode>
+        <idValue>Catalog Price per Each</idValue>
+    <idCode>LM</idCode>
+        <idValue>Catalog Price per Thousand</idValue>
+    <idCode>LR</idCode>
+        <idValue>Previous Catalog Price</idValue>
+    <idCode>ME</idCode>
+        <idValue>Midterm Endorsement Price per Unit</idValue>
+    <idCode>ML</idCode>
+        <idValue>Price per Milliliter</idValue>
+    <idCode>NC</idCode>
+        <idValue>No Charge</idValue>
+    <idCode>NE</idCode>
+        <idValue>Not to Exceed</idValue>
+    <idCode>NQ</idCode>
+        <idValue>No Quote</idValue>
+    <idCode>NS</idCode>
+        <idValue>Not Separately Priced</idValue>
+    <idCode>NT</idCode>
+        <idValue>Net</idValue>
+    <idCode>PA</idCode>
+        <idValue>Price per Troy Ounce</idValue>
+    <idCode>PB</idCode>
+        <idValue>Annual Price Per Unit</idValue>
+    <idCode>PD</idCode>
+        <idValue>Price per Dozen</idValue>
+    <idCode>PE</idCode>
+        <idValue>Price per Each</idValue>
+    <idCode>PF</idCode>
+        <idValue>Price Per Foot</idValue>
+    <idCode>PG</idCode>
+        <idValue>Price per Gram</idValue>
+    <idCode>PK</idCode>
+        <idValue>Price per Kilogram</idValue>
+    <idCode>PL</idCode>
+        <idValue>Price per Liter</idValue>
+    <idCode>PM</idCode>
+        <idValue>Monthly Price Per Unit</idValue>
+    <idCode>PN</idCode>
+        <idValue>Price per Ten</idValue>
+    <idCode>PO</idCode>
+        <idValue>Price per Ounce</idValue>
+    <idCode>PP</idCode>
+        <idValue>Price per Pound</idValue>
+    <idCode>PQ</idCode>
+        <idValue>Posted</idValue>
+    <idCode>PR</idCode>
+        <idValue>Promotion</idValue>
+    <idCode>PS</idCode>
+        <idValue>Price Per Thousand Square Foot</idValue>
+    <idCode>PT</idCode>
+        <idValue>Price per Ton</idValue>
+    <idCode>PU</idCode>
+        <idValue>Quarterly Price per Unit</idValue>
+    <idCode>PV</idCode>
+        <idValue>Provisional Price</idValue>
+    <idCode>PY</idCode>
+        <idValue>Price per Yard</idValue>
+    <idCode>QE</idCode>
+        <idValue>Quoted Price per Each</idValue>
+    <idCode>QH</idCode>
+        <idValue>Quoted Price per Hundred</idValue>
+    <idCode>QR</idCode>
+        <idValue>Previous Quoted Price</idValue>
+    <idCode>QS</idCode>
+        <idValue>Quoted Price per Thousand</idValue>
+    <idCode>QT</idCode>
+        <idValue>Quoted</idValue>
+    <idCode>RC</idCode>
+        <idValue>Retail Price per Hundred</idValue>
+    <idCode>RD</idCode>
+        <idValue>Retail Price per Dozen</idValue>
+    <idCode>RE</idCode>
+        <idValue>Retail Price per Each</idValue>
+    <idCode>RM</idCode>
+        <idValue>Retail Price per Thousand</idValue>
+    <idCode>RS</idCode>
+        <idValue>Resale Price</idValue>
+    <idCode>RT</idCode>
+        <idValue>Retail</idValue>
+    <idCode>SA</idCode>
+        <idValue>Semi Annual Price per Unit</idValue>
+    <idCode>SC</idCode>
+        <idValue>Submitted Contract</idValue>
+    <idCode>SM</idCode>
+        <idValue>Semi Monthly Price per Unit</idValue>
+    <idCode>SR</idCode>
+        <idValue>Suggested Retail</idValue>
+    <idCode>ST</idCode>
+        <idValue>Standard</idValue>
+    <idCode>SW</idCode>
+        <idValue>Submitted Wholesale</idValue>
+    <idCode>TB</idCode>
+        <idValue>To be negotiated.</idValue>
+    <idCode>TC</idCode>
+        <idValue>Contract Price per Hundred</idValue>
+    <idCode>TD</idCode>
+        <idValue>Contract Price per Dozen</idValue>
+    <idCode>TE</idCode>
+        <idValue>Contract Price per Each</idValue>
+    <idCode>TF</idCode>
+        <idValue>Per 1000 Feet</idValue>
+    <idCode>TM</idCode>
+        <idValue>Contract Price per Thousand</idValue>
+    <idCode>TP</idCode>
+        <idValue>Price per Thousand</idValue>
+    <idCode>TT</idCode>
+        <idValue>Price Per 10,000</idValue>
+    <idCode>UM</idCode>
+        <idValue>Price per Unit of Measure</idValue>
+    <idCode>VQ</idCode>
+        <idValue>Verbal Quote</idValue>
+    <idCode>WC</idCode>
+        <idValue>Wholesale Price per Hundred</idValue>
+    <idCode>WD</idCode>
+        <idValue>Wholesale Price per Dozen</idValue>
+    <idCode>WE</idCode>
+        <idValue>Wholesale Price per Each</idValue>
+    <idCode>WH</idCode>
+        <idValue>Wholesale</idValue>
+    <idCode>WI</idCode>
+        <idValue>Weekly Price per Unit</idValue>
+    <idCode>WM</idCode>
+        <idValue>Wholesale Price per Thousand</idValue>
+</idList>

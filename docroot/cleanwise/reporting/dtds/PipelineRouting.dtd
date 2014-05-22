@@ -1,0 +1,17 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT PipelineRoutingList (PipelineRouting)+>
+<!ELEMENT PipelineRouting (,PipelineId,ActionCd,AddBy,AddDate,ExceptionCd,ModBy,ModDate,ProgramCd,SequenceNum)>
+<!ATTLIST PipelineRouting Id ID #REQUIRED>
+<!ELEMENT PipelineId (#PCDATA)>
+<!ELEMENT ActionCd (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ExceptionCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ProgramCd (#PCDATA)>
+<!ELEMENT SequenceNum (#PCDATA)>

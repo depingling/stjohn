@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,July 9, 2001, -->
+<idList>
+    <idCode>U</idCode>
+        <idValue>U.S. EDI Community of ASC X12, TDCC, and UCS</idValue>
+</idList>

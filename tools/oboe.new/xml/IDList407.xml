@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.0.0 data/OBOE, docs,June 11, 2007, -->
+<idList>
+    <idCode>01</idCode>
+        <idValue>Intact</idValue>
+    <idCode>02</idCode>
+        <idValue>Broken</idValue>
+    <idCode>03</idCode>
+        <idValue>Missing</idValue>
+    <idCode>04</idCode>
+        <idValue>Replaced</idValue>
+</idList>

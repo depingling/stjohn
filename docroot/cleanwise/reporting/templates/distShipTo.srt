@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report Type="TabularSheet" Top="0.8" Left="0.25" Bottom="0.25" Right="0.25" HeaderFromEdge="0.2" FooterFromEdge="0.25" PageNumbering="1" HorizontalWrap="false" TabStops="0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.0,7.5,8.0">
+<ReportProperty Name="report.modified">
+<![CDATA[2002-07-18 18:24:19]]>
+</ReportProperty>
+<ReportProperty Name="TextMode">
+<![CDATA[false]]>
+</ReportProperty>
+<ReportProperty Name="PageSize">
+<![CDATA[Letter [8.5x11 in]]]>
+</ReportProperty>
+<ReportProperty Name="Orientation">
+<![CDATA[Landscape]]>
+</ReportProperty>
+<ReportProperty Name="edit.layout">
+<![CDATA[false]]>
+</ReportProperty>
+<ReportProperty Name="report.created">
+<![CDATA[2002-07-12 13:12:14]]>
+</ReportProperty>
+<Parameters>
+</Parameters>
+<RunningTotals>
+</RunningTotals>
+<Header Type="256">
+<TextElement ID="txtTitle" Alignment="66" Indent="0.0" Hindent="0" Spacing="0" Block="false" Continuation="false" Visible="true" KeepWithNext="false" Font="SansSerif-BOLD-12"
+ Foreground="-16777216" FillStyle="0" TabStops="0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.0,7.5,8.0" Justify="false" Orphan="false" TextAdvance="3">
+<![CDATA[Distributor Ship To Report - {D}, {T}]]>
+</TextElement>
+<NewlineElement ID="Newline3" Alignment="1" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="Serif-PLAIN-10"
+ Foreground="-16777216" Count="1">
+</NewlineElement>
+<TableElement ID="Table4" Alignment="65" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="Serif-PLAIN-10"
+ Foreground="-16777216" TableWidth="0.0" Layout="1" TableAdvance="1" OrphanControl="false" Padding="0,1,0,1" Style="CleanwiseTable" EmbedWidth="false" Embedded="true">
+<property><name><![CDATA[query]]></name><value><![CDATA[distInfo]]></value></property>
+<property><name><![CDATA[grow]]></name><value><![CDATA[true]]></value></property>
+<Style RowBorderC="true" ColBorderC="true" RowBorder="true" ColBorder="true" Insets="false" Alignment="false" Font="true" LineWrap="false" Foreground="true" Background="true" FirstRow="true" FirstCol="true" LastRow="true" LastCol="true"/>
+<RowGroup>
+<Row name="__HEADER_ROW__" suppressIfZero="false" suppressIfDuplicate="false"/>
+</RowGroup>
+<ColGroup>
+</ColGroup>
+<conditionFilter>
+<dataselection frommodel="false">
+<source><![CDATA[distInfo]]></source>
+<attributeref entity="" attribute="Distributor Name">
+</attributeref>
+<attributeref entity="" attribute="Distributor ERP Num">
+</attributeref>
+</dataselection>
+<hiddenColumn>
+</hiddenColumn>
+</conditionFilter>
+<Header>
+</Header>
+<Table Rows="2" Cols="2" HeaderRow="1" HeaderCol="0" TrailerRow="0" TrailerCol="0">
+<TR>
+<TD Type="String"><![CDATA[Distributor Name]]></TD><TD Type="String"><![CDATA[Distributor ERP Num]]></TD></TR>
+<TR>
+<TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD></TR>
+</Table>
+<highlightGroups>
+</highlightGroups>
+</TableElement>
+</Header>
+<Shapes>
+</Shapes>
+<Grid Rows="1" Cols="1">
+<GR Height="539">
+<GD Width="1*" Repeat="false">
+<NewlineElement ID="Newline1" Alignment="1" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="Serif-PLAIN-10"
+ Foreground="-16777216" Count="1">
+</NewlineElement>
+<TableElement ID="Table5" Alignment="65" Indent="0.0" Hindent="0" Spacing="0" Block="true" Continuation="false" Visible="true" KeepWithNext="false" Font="Serif-PLAIN-10"
+ Foreground="-16777216" TableWidth="0.0" FixedWidths="139,119,89,81,73,60,73,71,51"  Layout="1" TableAdvance="1" OrphanControl="false" Padding="0,1,0,1" Style="CleanwiseTable" EmbedWidth="true" Embedded="true">
+<property><name><![CDATA[query]]></name><value><![CDATA[distributorShipTo]]></value></property>
+<property><name><![CDATA[grow]]></name><value><![CDATA[true]]></value></property>
+<Style RowBorderC="true" ColBorderC="true" RowBorder="true" ColBorder="true" Insets="false" Alignment="false" Font="true" LineWrap="false" Foreground="true" Background="true" FirstRow="true" FirstCol="true" LastRow="true" LastCol="true"/>
+<RowGroup>
+</RowGroup>
+<ColGroup>
+</ColGroup>
+<conditionFilter>
+<dataselection frommodel="false">
+<source><![CDATA[unkown]]></source>
+<attributeref entity="" attribute="Account Name">
+</attributeref>
+<attributeref entity="" attribute="Site Name">
+</attributeref>
+<attributeref entity="" attribute="Add 1">
+</attributeref>
+<attributeref entity="" attribute="Add 2">
+</attributeref>
+<attributeref entity="" attribute="Add 3">
+</attributeref>
+<attributeref entity="" attribute="City">
+</attributeref>
+<attributeref entity="" attribute="State">
+</attributeref>
+<attributeref entity="" attribute="Zip">
+</attributeref>
+</dataselection>
+<hiddenColumn>
+</hiddenColumn>
+</conditionFilter>
+<Header>
+</Header>
+<Table Rows="2" Cols="9" HeaderRow="1" HeaderCol="0" TrailerRow="0" TrailerCol="0">
+<TR>
+<TD Type="String"><![CDATA[Account Name]]></TD><TD Type="String"><![CDATA[Site Name]]></TD><TD Type="String"><![CDATA[Add 1]]></TD><TD Type="String"><![CDATA[Add 2]]></TD><TD Type="String"><![CDATA[Add 3]]></TD><TD Type="String"><![CDATA[Add 4]]></TD><TD Type="String"><![CDATA[City]]></TD><TD Type="String"><![CDATA[State]]></TD><TD Type="String"><![CDATA[Zip]]></TD></TR>
+<TR>
+<TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXXXXX]]></TD><TD Type="String"><![CDATA[XXXXX]]></TD><TD Type="String"><![CDATA[XXXXX]]></TD><TD Type="String"><![CDATA[XXXXX]]></TD><TD Type="String"><![CDATA[XXXXX]]></TD><TD Type="String"><![CDATA[XXXX]]></TD><TD Type="String"><![CDATA[XXXXX]]></TD><TD Type="String"><![CDATA[XXX]]></TD></TR>
+</Table>
+<highlightGroups>
+</highlightGroups>
+</TableElement>
+</GD>
+</GR>
+</Grid>
+</Report>

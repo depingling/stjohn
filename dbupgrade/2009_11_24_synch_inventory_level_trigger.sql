@@ -1,0 +1,18 @@
+CREATE OR REPLACE
+TRIGGER SYNCH_INVENTORY_LEVEL
+    AFTER INSERT OR UPDATE ON CLW_INVENTORY_LEVEL_DETAIL
+    FOR EACH ROW
+DECLARE
+update_block VARCHAR2(200);
+BEGIN
+  IF (:new.PERIOD <= 13) THEN
+  BEGIN
+    update_block := 'UPDATE CLW_INVENTORY_LEVEL ' ||
+                    ' SET PAR_VALUE' || :new.PERIOD || ' = ' || :new.CLW_VALUE
+                    || ' WHERE INVENTORY_LEVEL_ID = ' || :new.INVENTORY_LEVEL_ID ;
+    EXECUTE IMMEDIATE update_block;
+  END;
+  END IF ;
+END;
+
+alter trigger "SYNCH_INVENTORY_LEVEL" enable;

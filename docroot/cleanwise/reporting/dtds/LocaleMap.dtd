@@ -1,0 +1,16 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT LocaleMapList (LocaleMap)+>
+<!ELEMENT LocaleMap (,LocaleId,AddBy,AddDate,ColumnName,ModBy,ModDate,Path,TableName)>
+<!ATTLIST LocaleMap Id ID #REQUIRED>
+<!ELEMENT LocaleId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ColumnName (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT Path (#PCDATA)>
+<!ELEMENT TableName (#PCDATA)>

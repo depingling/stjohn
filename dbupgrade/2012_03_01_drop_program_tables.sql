@@ -1,0 +1,11 @@
+drop table clw_program_item_product;
+drop table clw_program_item;
+drop table clw_program_content;
+drop table clw_program_assoc;
+drop table clw_program;
+drop sequence clw_program_seq;
+drop sequence clw_program_assoc_seq;
+drop sequence clw_program_content_seq;
+drop sequence clw_program_item_seq;
+drop sequence clw_program_item_product_seq;
+commit;

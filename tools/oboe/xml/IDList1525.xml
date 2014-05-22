@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AR</idCode>
+        <idValue>Admission Review</idValue>
+    <idCode>BA</idCode>
+        <idValue>Batch</idValue>
+    <idCode>HS</idCode>
+        <idValue>Health Services Review</idValue>
+    <idCode>IN</idCode>
+        <idValue>Individual</idValue>
+    <idCode>PR</idCode>
+        <idValue>Program Referral</idValue>
+    <idCode>RE</idCode>
+        <idValue>Recurring</idValue>
+    <idCode>SC</idCode>
+        <idValue>Specialty Care Review</idValue>
+</idList>

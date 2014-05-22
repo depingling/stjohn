@@ -1,0 +1,15 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT BusEntityAssocList (BusEntityAssoc)+>
+<!ELEMENT BusEntityAssoc (,BusEntity1IdBusEntity2Id,AddBy,AddDate,BusEntityAssocCd,ModBy,ModDate)>
+<!ATTLIST BusEntityAssoc Id ID #REQUIRED>
+<!ELEMENT BusEntity1Id (#PCDATA)>
+<!ELEMENT BusEntity2Id (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT BusEntityAssocCd (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>

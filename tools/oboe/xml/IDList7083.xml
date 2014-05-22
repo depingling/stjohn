@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,October 12, 2000, -->
+<idList>
+    <idCode>A</idCode>
+        <idValue>Added to the configuration</idValue>
+    <idCode>D</idCode>
+        <idValue>Deleted from the configuration</idValue>
+    <idCode>I</idCode>
+        <idValue>Included in the configuration</idValue>
+</idList>

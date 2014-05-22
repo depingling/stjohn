@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 2.5.0 data/OBOE, docs,June 16, 2004, -->
+<idList>
+    <idCode>01</idCode>
+        <idValue>Pricing Error</idValue>
+    <idCode>02</idCode>
+        <idValue>Allowance/Charge Error</idValue>
+    <idCode>03</idCode>
+        <idValue>Extension Error</idValue>
+    <idCode>04</idCode>
+        <idValue>Item Not Accepted - Damaged</idValue>
+    <idCode>05</idCode>
+        <idValue>Item Not Accepted - Quality</idValue>
+    <idCode>06</idCode>
+        <idValue>Quantity Contested</idValue>
+    <idCode>07</idCode>
+        <idValue>Incorrect Product</idValue>
+    <idCode>08</idCode>
+        <idValue>Substitute Product</idValue>
+    <idCode>09</idCode>
+        <idValue>Terms of Sale Error</idValue>
+    <idCode>10</idCode>
+        <idValue>Pallet/Container Charge Error</idValue>
+    <idCode>11</idCode>
+        <idValue>Returns - Damage</idValue>
+    <idCode>12</idCode>
+        <idValue>Returns - Quality</idValue>
+    <idCode>13</idCode>
+        <idValue>Returns - Dating</idValue>
+    <idCode>14</idCode>
+        <idValue>Returns - Promotion</idValue>
+    <idCode>15</idCode>
+        <idValue>Returns - Recall</idValue>
+    <idCode>16</idCode>
+        <idValue>Non-Invoice Related Allowance/Charge</idValue>
+    <idCode>17</idCode>
+        <idValue>Required Data Missing</idValue>
+    <idCode>18</idCode>
+        <idValue>Not Company Bill</idValue>
+    <idCode>19</idCode>
+        <idValue>Duplicate Billing</idValue>
+    <idCode>20</idCode>
+        <idValue>Balance Due Declined</idValue>
+    <idCode>21</idCode>
+        <idValue>Shipment Method of Payment Incorrect</idValue>
+    <idCode>22</idCode>
+        <idValue>Weight Error</idValue>
+    <idCode>23</idCode>
+        <idValue>Special Charge Not Authorized</idValue>
+    <idCode>24</idCode>
+        <idValue>Incorrect Discount</idValue>
+    <idCode>25</idCode>
+        <idValue>Item Not Accepted</idValue>
+    <idCode>26</idCode>
+        <idValue>Invoice Cancelled</idValue>
+    <idCode>27</idCode>
+        <idValue>Product Transfers Subject to Charge Back</idValue>
+    <idCode>28</idCode>
+        <idValue>Rebated Shipments</idValue>
+    <idCode>29</idCode>
+        <idValue>Fee Incorrect</idValue>
+    <idCode>30</idCode>
+        <idValue>Delivery Charge Incorrect</idValue>
+    <idCode>31</idCode>
+        <idValue>Pickup Charge Incorrect</idValue>
+    <idCode>32</idCode>
+        <idValue>Oversize Premium Invalid</idValue>
+    <idCode>33</idCode>
+        <idValue>Currency Exchange Incorrect</idValue>
+    <idCode>34</idCode>
+        <idValue>Declared Value Incorrect</idValue>
+    <idCode>35</idCode>
+        <idValue>Commodity Code Incorrect</idValue>
+    <idCode>36</idCode>
+        <idValue>Scale Number Incorrect</idValue>
+    <idCode>37</idCode>
+        <idValue>Dimensions Incorrect</idValue>
+    <idCode>38</idCode>
+        <idValue>Service Incorrect</idValue>
+    <idCode>39</idCode>
+        <idValue>Shipper/Consignee Ref. Number Missing</idValue>
+    <idCode>40</idCode>
+        <idValue>Address Incorrect</idValue>
+    <idCode>41</idCode>
+        <idValue>Item Not Accepted-Delay</idValue>
+    <idCode>42</idCode>
+        <idValue>Item Not Accepted - Loss</idValue>
+    <idCode>43</idCode>
+        <idValue>Missing Discount</idValue>
+    <idCode>44</idCode>
+        <idValue>Required Documents Missing</idValue>
+    <idCode>45</idCode>
+        <idValue>Stale Bill Over 180 Days Old</idValue>
+    <idCode>46</idCode>
+        <idValue>Transportation Charge Incorrect</idValue>
+    <idCode>47</idCode>
+        <idValue>Advanced Charge Incorrect</idValue>
+    <idCode>48</idCode>
+        <idValue>Service Charge</idValue>
+    <idCode>49</idCode>
+        <idValue>Processing Charge</idValue>
+    <idCode>50</idCode>
+        <idValue>Late Charge</idValue>
+    <idCode>51</idCode>
+        <idValue>Interest Penalty Charge</idValue>
+    <idCode>52</idCode>
+        <idValue>Credit for Previous Overpayment</idValue>
+    <idCode>53</idCode>
+        <idValue>Remittance for Previous Underpayment</idValue>
+    <idCode>54</idCode>
+        <idValue>Freight Deducted</idValue>
+    <idCode>55</idCode>
+        <idValue>Tax Deducted</idValue>
+    <idCode>56</idCode>
+        <idValue>Advertising Allowance Taken</idValue>
+    <idCode>57</idCode>
+        <idValue>Volume Discount Taken</idValue>
+    <idCode>58</idCode>
+        <idValue>Invoice billing received after final billing</idValue>
+    <idCode>59</idCode>
+        <idValue>Item not received</idValue>
+    <idCode>60</idCode>
+        <idValue>No open item on file</idValue>
+    <idCode>61</idCode>
+        <idValue>No open order on file</idValue>
+    <idCode>62</idCode>
+        <idValue>Material/Item Description Error</idValue>
+    <idCode>63</idCode>
+        <idValue>Customer Paid Invoice Which Was Previously Disputed</idValue>
+    <idCode>64</idCode>
+        <idValue>Sale of Property</idValue>
+    <idCode>65</idCode>
+        <idValue>Claim Paid on Appraisal</idValue>
+    <idCode>66</idCode>
+        <idValue>Disability Insurance or Income</idValue>
+    <idCode>68</idCode>
+        <idValue>Death Benefit Reduction</idValue>
+    <idCode>69</idCode>
+        <idValue>Employer Provided Pension</idValue>
+    <idCode>70</idCode>
+        <idValue>Advanced Ship Notice Not Received</idValue>
+    <idCode>71</idCode>
+        <idValue>Advertising Allowance</idValue>
+    <idCode>72</idCode>
+        <idValue>Authorized Return</idValue>
+    <idCode>73</idCode>
+        <idValue>Bill of Lading Not Received</idValue>
+    <idCode>74</idCode>
+        <idValue>Cancel or Adjust Prior Credit/Debit Adjustment</idValue>
+    <idCode>75</idCode>
+        <idValue>Total Order Not Received</idValue>
+    <idCode>76</idCode>
+        <idValue>Cash Discount</idValue>
+    <idCode>77</idCode>
+        <idValue>Competitive Allowance</idValue>
+    <idCode>78</idCode>
+        <idValue>Competitive Price</idValue>
+    <idCode>79</idCode>
+        <idValue>Cooperative Advertising</idValue>
+    <idCode>80</idCode>
+        <idValue>Overpayment</idValue>
+    <idCode>81</idCode>
+        <idValue>Credit as Agreed</idValue>
+    <idCode>82</idCode>
+        <idValue>Defective Allowance</idValue>
+    <idCode>83</idCode>
+        <idValue>Delivery Charge</idValue>
+    <idCode>84</idCode>
+        <idValue>Deviation from Order Date</idValue>
+    <idCode>85</idCode>
+        <idValue>Distribution Discount/Allowance</idValue>
+    <idCode>86</idCode>
+        <idValue>Duplicate Payment</idValue>
+    <idCode>87</idCode>
+        <idValue>Duplicate Shipment</idValue>
+    <idCode>88</idCode>
+        <idValue>Duty Charge Variance</idValue>
+    <idCode>89</idCode>
+        <idValue>Early Buy Allowance</idValue>
+    <idCode>90</idCode>
+        <idValue>Early Payment Allowance</idValue>
+    <idCode>91</idCode>
+        <idValue>Engraving Charge</idValue>
+    <idCode>92</idCode>
+        <idValue>Entire Shipment Not Ordered</idValue>
+    <idCode>93</idCode>
+        <idValue>Field Destroy</idValue>
+    <idCode>94</idCode>
+        <idValue>Fixtures Charge</idValue>
+    <idCode>95</idCode>
+        <idValue>Floor Stock Protection</idValue>
+    <idCode>96</idCode>
+        <idValue>Goods to Follow</idValue>
+    <idCode>97</idCode>
+        <idValue>Handling Charge</idValue>
+    <idCode>98</idCode>
+        <idValue>Labor Charges</idValue>
+    <idCode>99</idCode>
+        <idValue>Late Shipment of Goods</idValue>
+    <idCode>A1</idCode>
+        <idValue>Layout/Design Charge</idValue>
+    <idCode>A2</idCode>
+        <idValue>Misshipped (Wrong Product Received)</idValue>
+    <idCode>A3</idCode>
+        <idValue>New Store Allowance</idValue>
+    <idCode>A4</idCode>
+        <idValue>Nonreceipt of Goods</idValue>
+    <idCode>A5</idCode>
+        <idValue>Overage</idValue>
+    <idCode>A6</idCode>
+        <idValue>Packing Violations</idValue>
+    <idCode>A7</idCode>
+        <idValue>Payment on Account</idValue>
+    <idCode>A8</idCode>
+        <idValue>Promotional Allowance</idValue>
+    <idCode>A9</idCode>
+        <idValue>Proof of Delivery Not Received</idValue>
+    <idCode>AA</idCode>
+        <idValue>Prepaid Benefit or Advances</idValue>
+    <idCode>AB</idCode>
+        <idValue>Partial Wage Continuation</idValue>
+    <idCode>AC</idCode>
+        <idValue>Apportionment or Contribution</idValue>
+    <idCode>AE</idCode>
+        <idValue>Unemployment Compensation</idValue>
+    <idCode>AF</idCode>
+        <idValue>Guarantee Fee</idValue>
+    <idCode>AG</idCode>
+        <idValue>Guaranteed Amount</idValue>
+    <idCode>AH</idCode>
+        <idValue>Origination Fee</idValue>
+    <idCode>AL</idCode>
+        <idValue>Released to Borrower</idValue>
+    <idCode>AM</idCode>
+        <idValue>Applied to Borrower&apos;s Account</idValue>
+    <idCode>AN</idCode>
+        <idValue>Auto No Fault</idValue>
+    <idCode>AO</idCode>
+        <idValue>Returned to Lender</idValue>
+    <idCode>AP</idCode>
+        <idValue>Acceleration of Benefits</idValue>
+    <idCode>AQ</idCode>
+        <idValue>Returns - Overstock</idValue>
+    <idCode>AR</idCode>
+        <idValue>Acceleration of Reimbursement of Attorney Fees</idValue>
+    <idCode>AS</idCode>
+        <idValue>Returns - Discontinued</idValue>
+    <idCode>AT</idCode>
+        <idValue>Account Closed</idValue>
+    <idCode>AU</idCode>
+        <idValue>Accessory Payment</idValue>
+    <idCode>AV</idCode>
+        <idValue>Advertising Contribution</idValue>
+    <idCode>AW</idCode>
+        <idValue>Student Card Payment</idValue>
+    <idCode>AX</idCode>
+        <idValue>Person No Longer Employed</idValue>
+    <idCode>AY</idCode>
+        <idValue>Employee on Leave</idValue>
+    <idCode>AZ</idCode>
+        <idValue>Employee on Strike</idValue>
+    <idCode>B1</idCode>
+        <idValue>Proof of Shipment Not Received</idValue>
+    <idCode>B2</idCode>
+        <idValue>Rebate</idValue>
+    <idCode>B3</idCode>
+        <idValue>Recovery Allowance</idValue>
+    <idCode>B4</idCode>
+        <idValue>Refurbishing Charge</idValue>
+    <idCode>B5</idCode>
+        <idValue>Repair of Goods</idValue>
+    <idCode>B6</idCode>
+        <idValue>Repay Discount</idValue>
+    <idCode>B7</idCode>
+        <idValue>Restocking Charge</idValue>
+    <idCode>B8</idCode>
+        <idValue>Routing Violation</idValue>
+    <idCode>B9</idCode>
+        <idValue>Samples Not Received</idValue>
+    <idCode>BA</idCode>
+        <idValue>Canadian Goods and Services Tax</idValue>
+    <idCode>BB</idCode>
+        <idValue>Quebec Goods and Services Tax</idValue>
+    <idCode>BC</idCode>
+        <idValue>Canadian Harmonized Goods and Services Tax</idValue>
+    <idCode>BD</idCode>
+        <idValue>Bad Debt Adjustment</idValue>
+    <idCode>BE</idCode>
+        <idValue>Fixture Allowance</idValue>
+    <idCode>BF</idCode>
+        <idValue>Return Allowance</idValue>
+    <idCode>BG</idCode>
+        <idValue>Bag Charge</idValue>
+    <idCode>BH</idCode>
+        <idValue>Opportunity Buy</idValue>
+    <idCode>BI</idCode>
+        <idValue>Hanger Charge</idValue>
+    <idCode>BJ</idCode>
+        <idValue>Insurance Charge</idValue>
+    <idCode>BK</idCode>
+        <idValue>Postage Charge</idValue>
+    <idCode>BL</idCode>
+        <idValue>Net Check Returned</idValue>
+    <idCode>BM</idCode>
+        <idValue>Net Collection Expense (Factor)</idValue>
+    <idCode>BN</idCode>
+        <idValue>Bonus</idValue>
+    <idCode>BO</idCode>
+        <idValue>Change to Box Office Gross</idValue>
+    <idCode>BP</idCode>
+        <idValue>Net Chargeback of Client Risk (Factor)</idValue>
+    <idCode>BR</idCode>
+        <idValue>Benefit Rate</idValue>
+    <idCode>BS</idCode>
+        <idValue>Paid During Period</idValue>
+    <idCode>C1</idCode>
+        <idValue>Settlement of Account</idValue>
+    <idCode>C2</idCode>
+        <idValue>Special Allowance</idValue>
+    <idCode>C3</idCode>
+        <idValue>Special Finish</idValue>
+    <idCode>C4</idCode>
+        <idValue>Stock Balance</idValue>
+    <idCode>C5</idCode>
+        <idValue>Temporary Allowance</idValue>
+    <idCode>C6</idCode>
+        <idValue>Testing Charge</idValue>
+    <idCode>C7</idCode>
+        <idValue>Third Party Allowance</idValue>
+    <idCode>C8</idCode>
+        <idValue>Ticketing Error</idValue>
+    <idCode>C9</idCode>
+        <idValue>Ticketing Service</idValue>
+    <idCode>CB</idCode>
+        <idValue>Collected Balance Adjustment Incorrect</idValue>
+    <idCode>CE</idCode>
+        <idValue>Employer&apos;s Legal Expenses Paid to Date</idValue>
+    <idCode>CK</idCode>
+        <idValue>Valuation As Of</idValue>
+    <idCode>CM</idCode>
+        <idValue>Covered by Credit Memo</idValue>
+    <idCode>CO</idCode>
+        <idValue>Adjusted Compensation Rate</idValue>
+    <idCode>CP</idCode>
+        <idValue>Employer Paid Benefits due</idValue>
+    <idCode>CQ</idCode>
+        <idValue>Change</idValue>
+    <idCode>CR</idCode>
+        <idValue>Capitation Interest</idValue>
+    <idCode>CS</idCode>
+        <idValue>Adjustment</idValue>
+    <idCode>CT</idCode>
+        <idValue>Capitation Payment</idValue>
+    <idCode>CU</idCode>
+        <idValue>Charge for Unrequested Service</idValue>
+    <idCode>CV</idCode>
+        <idValue>Capital Passthru</idValue>
+    <idCode>CW</idCode>
+        <idValue>Certified Registered Nurse Anesthetist Passthru</idValue>
+    <idCode>D1</idCode>
+        <idValue>Transfer Between Accounts</idValue>
+    <idCode>D2</idCode>
+        <idValue>Transportation Direct Billing</idValue>
+    <idCode>D3</idCode>
+        <idValue>Unauthorized Deduction</idValue>
+    <idCode>D4</idCode>
+        <idValue>Unauthorized Product</idValue>
+    <idCode>D5</idCode>
+        <idValue>Volume Discount</idValue>
+    <idCode>D6</idCode>
+        <idValue>Recovery of Standard Allowances</idValue>
+    <idCode>D7</idCode>
+        <idValue>Cost Associated with Reworked Material</idValue>
+    <idCode>D8</idCode>
+        <idValue>Count and Recount Allowance</idValue>
+    <idCode>D9</idCode>
+        <idValue>Store Stock Price Protection</idValue>
+    <idCode>DA</idCode>
+        <idValue>Daylight Overdraft Charge Reversed</idValue>
+    <idCode>DB</idCode>
+        <idValue>Pension or Retirement Plan Disability Benefits</idValue>
+    <idCode>DC</idCode>
+        <idValue>Canadian Pension Plan</idValue>
+    <idCode>DD</idCode>
+        <idValue>Railroad Disability</idValue>
+    <idCode>DE</idCode>
+        <idValue>Deposited Item Price Incorrect</idValue>
+    <idCode>DF</idCode>
+        <idValue>Family Social Security</idValue>
+    <idCode>DG</idCode>
+        <idValue>Deduction Film Rental</idValue>
+    <idCode>DH</idCode>
+        <idValue>District Advance</idValue>
+    <idCode>DI</idCode>
+        <idValue>Social Security Supplemental Income</idValue>
+    <idCode>DJ</idCode>
+        <idValue>Jones Act (Merchant Seaman Injured on the Job)</idValue>
+    <idCode>DK</idCode>
+        <idValue>Damaged Film</idValue>
+    <idCode>DL</idCode>
+        <idValue>Deposited Item Volume Error</idValue>
+    <idCode>DM</idCode>
+        <idValue>Direct Medical Education Passthru</idValue>
+    <idCode>DO</idCode>
+        <idValue>Other Group Insurance</idValue>
+    <idCode>DP</idCode>
+        <idValue>Pension or Retirement Benefits</idValue>
+    <idCode>DR</idCode>
+        <idValue>Social Security Retirements</idValue>
+    <idCode>DS</idCode>
+        <idValue>Social Security Disability</idValue>
+    <idCode>DT</idCode>
+        <idValue>Railroad Retirement</idValue>
+    <idCode>DV</idCode>
+        <idValue>Civil Servants Plan</idValue>
+    <idCode>DW</idCode>
+        <idValue>Subrogation</idValue>
+    <idCode>DX</idCode>
+        <idValue>Royalty Deduction Type</idValue>
+    <idCode>E1</idCode>
+        <idValue>Recoupment</idValue>
+    <idCode>E2</idCode>
+        <idValue>Covered By Debit Memo</idValue>
+    <idCode>E3</idCode>
+        <idValue>Withholding</idValue>
+    <idCode>E4</idCode>
+        <idValue>Warehouse Stock Price Protection</idValue>
+    <idCode>E5</idCode>
+        <idValue>Invoice Price Protection</idValue>
+    <idCode>E6</idCode>
+        <idValue>Goods and Services Tax 0% Rate, International Documentation Will Follow</idValue>
+    <idCode>E7</idCode>
+        <idValue>Goods and Services Tax Decreased Due to Billing Error</idValue>
+    <idCode>E8</idCode>
+        <idValue>Goods and Services Tax Increased Due to Billing Error</idValue>
+    <idCode>E9</idCode>
+        <idValue>Order Cancelled</idValue>
+    <idCode>EE</idCode>
+        <idValue>Encoding Error</idValue>
+    <idCode>ER</idCode>
+        <idValue>Employer Reimbursement</idValue>
+    <idCode>EX</idCode>
+        <idValue>Expenses</idValue>
+    <idCode>F1</idCode>
+        <idValue>Defective</idValue>
+    <idCode>F3</idCode>
+        <idValue>Social Security</idValue>
+    <idCode>F4</idCode>
+        <idValue>No-Fault</idValue>
+    <idCode>F5</idCode>
+        <idValue>Other Long-term Disability Offset</idValue>
+    <idCode>F6</idCode>
+        <idValue>Indirect Offset Excess</idValue>
+    <idCode>F7</idCode>
+        <idValue>Black Lung Disease</idValue>
+    <idCode>F8</idCode>
+        <idValue>Rehabilitation</idValue>
+    <idCode>F9</idCode>
+        <idValue>Educational Benefit</idValue>
+    <idCode>FA</idCode>
+        <idValue>Anticipation Taken</idValue>
+    <idCode>FB</idCode>
+        <idValue>Forwarding Balance</idValue>
+    <idCode>FC</idCode>
+        <idValue>Fund Allocation</idValue>
+    <idCode>FI</idCode>
+        <idValue>Late Interest Paid</idValue>
+    <idCode>FR</idCode>
+        <idValue>Film Rental</idValue>
+    <idCode>FT</idCode>
+        <idValue>Change to Film Rental Terms</idValue>
+    <idCode>G1</idCode>
+        <idValue>Profit Sharing</idValue>
+    <idCode>G2</idCode>
+        <idValue>Workmen&apos;s Compensation</idValue>
+    <idCode>G3</idCode>
+        <idValue>Pension</idValue>
+    <idCode>G4</idCode>
+        <idValue>Other Disability Plan</idValue>
+    <idCode>G5</idCode>
+        <idValue>Other Income</idValue>
+    <idCode>G6</idCode>
+        <idValue>Salary Continuance</idValue>
+    <idCode>G7</idCode>
+        <idValue>Short-term Disability</idValue>
+    <idCode>G8</idCode>
+        <idValue>Permanent and Total Disability</idValue>
+    <idCode>G9</idCode>
+        <idValue>State Disability Plan</idValue>
+    <idCode>GA</idCode>
+        <idValue>Free Goods</idValue>
+    <idCode>GB</idCode>
+        <idValue>Coupon Related</idValue>
+    <idCode>GC</idCode>
+        <idValue>Market Development Fund Deduction</idValue>
+    <idCode>GD</idCode>
+        <idValue>Samples</idValue>
+    <idCode>GE</idCode>
+        <idValue>Slotting Charge</idValue>
+    <idCode>GF</idCode>
+        <idValue>Invalid</idValue>
+    <idCode>GG</idCode>
+        <idValue>Unsalable Merchandise</idValue>
+    <idCode>GH</idCode>
+        <idValue>Billback Allowance Deduction</idValue>
+    <idCode>GJ</idCode>
+        <idValue>Unsalable Payments Deduction</idValue>
+    <idCode>GK</idCode>
+        <idValue>Split Commission Deduction - Basis Amount</idValue>
+    <idCode>GL</idCode>
+        <idValue>Unresolved Customer Deduction</idValue>
+    <idCode>GM</idCode>
+        <idValue>Split Commissions Deduction - Commission Amount</idValue>
+    <idCode>GN</idCode>
+        <idValue>General Advance</idValue>
+    <idCode>GO</idCode>
+        <idValue>Graduate Medical Education Passthru</idValue>
+    <idCode>GR</idCode>
+        <idValue>Guarantee</idValue>
+    <idCode>H1</idCode>
+        <idValue>Information Forthcoming</idValue>
+    <idCode>H2</idCode>
+        <idValue>Payment Previously Sent</idValue>
+    <idCode>H3</idCode>
+        <idValue>Loan Paid in Full</idValue>
+    <idCode>H4</idCode>
+        <idValue>Bill Insured</idValue>
+    <idCode>H5</idCode>
+        <idValue>Loan Service Released</idValue>
+    <idCode>H6</idCode>
+        <idValue>Partial Payment Remitted</idValue>
+    <idCode>H7</idCode>
+        <idValue>Payment Forthcoming</idValue>
+    <idCode>H8</idCode>
+        <idValue>Bill Mortgagee</idValue>
+    <idCode>H9</idCode>
+        <idValue>Coverage Summary Needed</idValue>
+    <idCode>HA</idCode>
+        <idValue>Change to House Allowance</idValue>
+    <idCode>HB</idCode>
+        <idValue>Medical Payment</idValue>
+    <idCode>HC</idCode>
+        <idValue>Indemnity Payment</idValue>
+    <idCode>HD</idCode>
+        <idValue>Expense Payment</idValue>
+    <idCode>HE</idCode>
+        <idValue>Comprehensive Payment</idValue>
+    <idCode>HF</idCode>
+        <idValue>Collision Payment</idValue>
+    <idCode>HG</idCode>
+        <idValue>Bodily Injury Payment</idValue>
+    <idCode>HI</idCode>
+        <idValue>Property Damage Payment</idValue>
+    <idCode>IA</idCode>
+        <idValue>Invoice Amount Does Not Match Account Analysis Statement</idValue>
+    <idCode>IC</idCode>
+        <idValue>Interest Charge-Rate Reduced to New York Prime Rate</idValue>
+    <idCode>IE</idCode>
+        <idValue>Interest Charge - Rate Reduced to Earnings Credit Rate</idValue>
+    <idCode>IF</idCode>
+        <idValue>Insufficient Funds</idValue>
+    <idCode>IL</idCode>
+        <idValue>Interest Charge-Rate Reduced to London Inter-bank Offer Rate (LIBOR)</idValue>
+    <idCode>IP</idCode>
+        <idValue>Incentive Premium Payment</idValue>
+    <idCode>IR</idCode>
+        <idValue>Internal Revenue Service Withholding</idValue>
+    <idCode>IS</idCode>
+        <idValue>Interim Settlement</idValue>
+    <idCode>J1</idCode>
+        <idValue>Nonreimbursable</idValue>
+    <idCode>J2</idCode>
+        <idValue>Transportation Discrepancy Report (TDR) Submitted</idValue>
+    <idCode>J3</idCode>
+        <idValue>Promised Adjustment Not Received</idValue>
+    <idCode>J4</idCode>
+        <idValue>Deficiency Report Authorized Adjustment</idValue>
+    <idCode>J5</idCode>
+        <idValue>Duplicate Summary Billing (Same Bill Number)</idValue>
+    <idCode>J6</idCode>
+        <idValue>Duplicate Summary Billing (Different Bill Number)</idValue>
+    <idCode>J7</idCode>
+        <idValue>Duplicate Summary Billing (Second Billing)</idValue>
+    <idCode>J8</idCode>
+        <idValue>Unable to Process</idValue>
+    <idCode>J9</idCode>
+        <idValue>Noninterfund Bill</idValue>
+    <idCode>JE</idCode>
+        <idValue>Journal Entry</idValue>
+    <idCode>K1</idCode>
+        <idValue>Other Coverage Placed</idValue>
+    <idCode>K2</idCode>
+        <idValue>Invalid Policy Number</idValue>
+    <idCode>K3</idCode>
+        <idValue>Renewal Not Received</idValue>
+    <idCode>L1</idCode>
+        <idValue>Audit</idValue>
+    <idCode>L2</idCode>
+        <idValue>Discount</idValue>
+    <idCode>L3</idCode>
+        <idValue>Penalty</idValue>
+    <idCode>L4</idCode>
+        <idValue>Administrative Fees</idValue>
+    <idCode>L5</idCode>
+        <idValue>Interest Due</idValue>
+    <idCode>L6</idCode>
+        <idValue>Interest Owed</idValue>
+    <idCode>L7</idCode>
+        <idValue>Miscellaneous Deductions</idValue>
+    <idCode>L8</idCode>
+        <idValue>Miscellaneous Credits</idValue>
+    <idCode>L9</idCode>
+        <idValue>Military Distribution Adjustment</idValue>
+    <idCode>LA</idCode>
+        <idValue>Loans against Future Compensations</idValue>
+    <idCode>LE</idCode>
+        <idValue>Levy</idValue>
+    <idCode>LF</idCode>
+        <idValue>Lawyer or Claimant Attorney Fees</idValue>
+    <idCode>LO</idCode>
+        <idValue>Ledger Overdraft Charge Reversed</idValue>
+    <idCode>LP</idCode>
+        <idValue>Late Payment</idValue>
+    <idCode>LS</idCode>
+        <idValue>Lump Sum</idValue>
+    <idCode>M1</idCode>
+        <idValue>Advertising - Unidentified</idValue>
+    <idCode>M2</idCode>
+        <idValue>Commissions Deductions</idValue>
+    <idCode>M3</idCode>
+        <idValue>Gift Certificates</idValue>
+    <idCode>M4</idCode>
+        <idValue>Salary Deduction</idValue>
+    <idCode>MA</idCode>
+        <idValue>Marketing Allowance</idValue>
+    <idCode>MC</idCode>
+        <idValue>Miscellaneous Costs</idValue>
+    <idCode>ML</idCode>
+        <idValue>Maximum Allowable Levy Exceeded</idValue>
+    <idCode>NA</idCode>
+        <idValue>Cash Receipt</idValue>
+    <idCode>NB</idCode>
+        <idValue>Non-Billable</idValue>
+    <idCode>NC</idCode>
+        <idValue>Negative Charge</idValue>
+    <idCode>ND</idCode>
+        <idValue>Royalty</idValue>
+    <idCode>NR</idCode>
+        <idValue>Negative Repayment</idValue>
+    <idCode>OA</idCode>
+        <idValue>Organ Acquisition Passthru</idValue>
+    <idCode>OB</idCode>
+        <idValue>Offset for Affiliated Providers</idValue>
+    <idCode>OL</idCode>
+        <idValue>Court Ordered Lien</idValue>
+    <idCode>PA</idCode>
+        <idValue>Picture Advance</idValue>
+    <idCode>PD</idCode>
+        <idValue>Paid to Date</idValue>
+    <idCode>PF</idCode>
+        <idValue>Payment First</idValue>
+    <idCode>PI</idCode>
+        <idValue>Periodic Interim Payment</idValue>
+    <idCode>PL</idCode>
+        <idValue>Payment Final</idValue>
+    <idCode>PM</idCode>
+        <idValue>Previous Month&apos;s Earnings Credit Carried Forward</idValue>
+    <idCode>PO</idCode>
+        <idValue>Federal Deposit Insurance Corporation (FDIC) Premium Overcharge</idValue>
+    <idCode>PP</idCode>
+        <idValue>Quebec Pension Plan</idValue>
+    <idCode>PR</idCode>
+        <idValue>Prior Film Rental Payment</idValue>
+    <idCode>PT</idCode>
+        <idValue>Payment</idValue>
+    <idCode>R1</idCode>
+        <idValue>Returned Deposited Item Price Incorrect</idValue>
+    <idCode>R2</idCode>
+        <idValue>Returned Deposited Item Volume Error</idValue>
+    <idCode>R3</idCode>
+        <idValue>Returned Deposited Item Notification Volume Error</idValue>
+    <idCode>RA</idCode>
+        <idValue>Retro-activity Adjustment</idValue>
+    <idCode>RD</idCode>
+        <idValue>Receiving Discrepancy</idValue>
+    <idCode>RE</idCode>
+        <idValue>Return on Equity</idValue>
+    <idCode>RM</idCode>
+        <idValue>Returned Material</idValue>
+    <idCode>SC</idCode>
+        <idValue>Service Cancelled</idValue>
+    <idCode>SD</idCode>
+        <idValue>Screening Deduction</idValue>
+    <idCode>SF</idCode>
+        <idValue>Shipping and Freight Charge</idValue>
+    <idCode>SL</idCode>
+        <idValue>Student Loan Repayment</idValue>
+    <idCode>SP</idCode>
+        <idValue>Sales Promotion</idValue>
+    <idCode>TA</idCode>
+        <idValue>Theatre Advance</idValue>
+    <idCode>TD</idCode>
+        <idValue>Total Deductions</idValue>
+    <idCode>TL</idCode>
+        <idValue>Third Party Liability</idValue>
+    <idCode>UB</idCode>
+        <idValue>Uncollected Balance Charge Reversed</idValue>
+    <idCode>UL</idCode>
+        <idValue>Unable to Locate Account</idValue>
+    <idCode>VC</idCode>
+        <idValue>Value Date Incorrect for Credit</idValue>
+    <idCode>VD</idCode>
+        <idValue>Value Date Incorrect for Debit</idValue>
+    <idCode>VO</idCode>
+        <idValue>Void</idValue>
+    <idCode>W6</idCode>
+        <idValue>Safety Violations</idValue>
+    <idCode>W8</idCode>
+        <idValue>Intoxication</idValue>
+    <idCode>W9</idCode>
+        <idValue>Noncooperation: Rehabilitation, Training, Education, Medical</idValue>
+    <idCode>WA</idCode>
+        <idValue>Actual Reduced Earnings</idValue>
+    <idCode>WB</idCode>
+        <idValue>Regular Wage Minus Disability Benefit</idValue>
+    <idCode>WC</idCode>
+        <idValue>Subrogation Recovery</idValue>
+    <idCode>WH</idCode>
+        <idValue>Payment Partial</idValue>
+    <idCode>WO</idCode>
+        <idValue>Overpayment Recovery</idValue>
+    <idCode>WR</idCode>
+        <idValue>Deemed Reduced Earnings</idValue>
+    <idCode>WS</idCode>
+        <idValue>Special Fund Recovery</idValue>
+    <idCode>WT</idCode>
+        <idValue>Deductibles Recovery</idValue>
+    <idCode>WU</idCode>
+        <idValue>Unspecified Recovery</idValue>
+    <idCode>WW</idCode>
+        <idValue>Overpayment Credit</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

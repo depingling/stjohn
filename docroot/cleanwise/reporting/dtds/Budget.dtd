@@ -1,0 +1,32 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT BudgetList (Budget)+>
+<!ELEMENT Budget (BusEntityId,CostCenterId,AddBy,AddDate,Amount1,Amount10,Amount11,Amount12,Amount13,Amount2,Amount3,Amount4,Amount5,Amount6,Amount7,Amount8,Amount9,BudgetStatusCd,BudgetTypeCd,EffDate,ExpDate,ModBy,ModDate,ShortDesc)>
+<!ATTLIST Budget Id ID #REQUIRED>
+<!ELEMENT BusEntityId (#PCDATA)>
+<!ELEMENT CostCenterId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT Amount1 (#PCDATA)>
+<!ELEMENT Amount10 (#PCDATA)>
+<!ELEMENT Amount11 (#PCDATA)>
+<!ELEMENT Amount12 (#PCDATA)>
+<!ELEMENT Amount13 (#PCDATA)>
+<!ELEMENT Amount2 (#PCDATA)>
+<!ELEMENT Amount3 (#PCDATA)>
+<!ELEMENT Amount4 (#PCDATA)>
+<!ELEMENT Amount5 (#PCDATA)>
+<!ELEMENT Amount6 (#PCDATA)>
+<!ELEMENT Amount7 (#PCDATA)>
+<!ELEMENT Amount8 (#PCDATA)>
+<!ELEMENT Amount9 (#PCDATA)>
+<!ELEMENT BudgetStatusCd (#PCDATA)>
+<!ELEMENT BudgetTypeCd (#PCDATA)>
+<!ELEMENT EffDate (#PCDATA)>
+<!ELEMENT ExpDate (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

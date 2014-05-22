@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Brake End</idValue>
+    <idCode>2</idCode>
+        <idValue>2nd from Brake End</idValue>
+    <idCode>3</idCode>
+        <idValue>3rd from Brake End</idValue>
+    <idCode>4</idCode>
+        <idValue>4th from Brake End</idValue>
+    <idCode>5</idCode>
+        <idValue>5th from Brake End</idValue>
+    <idCode>6</idCode>
+        <idValue>6th from Brake End</idValue>
+</idList>

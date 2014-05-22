@@ -1,0 +1,104 @@
+<mapping-config>
+    <mapping id="EventMapping" type="resultSet">
+      <property name="alias"><value>Event</value></property>
+      <property name="indexUnMappedColumns"><value>true</value></property>
+      <property name="selectQuery"><value>
+          select a.event_id, a.type as event_type, a.status, a.mod_date as event_mod_date,
+                 COALESCE(b.event_property_id,0) as event_property_id, b.short_desc, b.type as event_property_type,
+                 b.blob_value, b.string_val, b.date_val, b.number_val, COALESCE(b.mod_date,to_date('01/01/1970','MM/DD/YYYY')) as event_property_mod_date,
+                 COALESCE(c.event_email_id,0) as event_email_id, c.to_address, c.cc_address, c.subject, c.text, c.email_status_cd, COALESCE(c.mod_date,to_date('01/01/1970','MM/DD/YYYY')) as event_email_mod_date
+          from (clw_event a left join clw_event_property b on a.event_id = b.event_id) left join clw_event_email c on a.event_id = c.event_id
+      </value></property>
+      <property name="versionQuery"><value>
+          select a.event_id, a.mod_date as event_mod_date,
+                 COALESCE(b.event_property_id,0) as event_property_id, COALESCE(b.mod_date,to_date('01/01/1980','MM/DD/YYYY')) as event_property_mod_date,
+                 COALESCE(c.event_email_id,0) as event_email_id, COALESCE(c.mod_date,to_date('01/01/1970','MM/DD/YYYY')) as event_email_mod_date
+          from (clw_event a left join clw_event_property b on a.event_id = b.event_id) left join clw_event_email c on a.event_id = c.event_id
+      </value></property>
+      <property name="idMappings">
+        <list>
+          <map>
+            <property name="columnName"><value>event_id</value></property>
+            <property name="propertyName"><value>event_id</value></property>
+            <property name="columnNameForVersion"><value>a.event_id</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>event_property_id</value></property>
+            <property name="propertyName"><value>event_property_id</value></property>
+            <property name="columnNameForVersion"><value>COALESCE(b.event_property_id, 0)</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>event_email_id</value></property>
+            <property name="propertyName"><value>event_email_id</value></property>
+            <property name="columnNameForVersion"><value>COALESCE(c.event_email_id, 0)</value></property>
+          </map>
+        </list>
+      </property>
+      <property name="dataMappings">
+        <list>
+          <map>
+            <property name="columnName"><value>event_type</value></property>
+            <property name="propertyName"><value>event_type</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>short_desc</value></property>
+            <property name="propertyName"><value>short_desc</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>event_property_type</value></property>
+            <property name="propertyName"><value>event_property_type</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>blob_value</value></property>
+            <property name="propertyName"><value>blob_value</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>string_val</value></property>
+            <property name="propertyName"><value>string_val</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>date_val</value></property>
+            <property name="propertyName"><value>date_val</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>number_val</value></property>
+            <property name="propertyName"><value>number_val</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>to_address</value></property>
+            <property name="propertyName"><value>to_address</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>cc_address</value></property>
+            <property name="propertyName"><value>cc_address</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>subject</value></property>
+            <property name="propertyName"><value>subject</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>text</value></property>
+            <property name="propertyName"><value>text</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>email_status_cd</value></property>
+            <property name="propertyName"><value>email_status_cd</value></property>
+          </map>
+        </list>
+      </property>
+      <property name="versionMappings">
+        <list>
+          <map>
+            <property name="columnName"><value>event_mod_date</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>event_property_mod_date</value></property>
+          </map>
+          <map>
+            <property name="columnName"><value>event_email_mod_date</value></property>
+          </map>
+        </list>
+      </property>
+    </mapping>
+</mapping-config>
+

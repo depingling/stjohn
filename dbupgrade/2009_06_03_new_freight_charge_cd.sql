@@ -1,0 +1,26 @@
+INSERT INTO CLW_REF_CD
+(
+    REF_CD_ID,
+    REF_CD,
+    SHORT_DESC,
+    CLW_VALUE,
+    REF_CD_TYPE,
+    REF_STATUS_CD,
+    ADD_DATE,
+    ADD_BY,
+    MOD_DATE,
+    MOD_BY
+)
+VALUES
+(
+    CLW_REF_CD_SEQ.NEXTVAL,
+    'CHARGE_CD',
+    'DISCOUNT',
+    'DISCOUNT',
+    'UNKNOWN',
+    'ORDERED',
+    sysdate,
+    'RefCodeToDB',
+    sysdate,
+    'RefCodeToDB'
+);

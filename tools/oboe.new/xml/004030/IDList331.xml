@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
+<idList>
+    <idCode>01</idCode>
+        <idValue>Bill Back</idValue>
+    <idCode>02</idCode>
+        <idValue>Off Invoice</idValue>
+    <idCode>03</idCode>
+        <idValue>Vendor Check to Customer</idValue>
+    <idCode>04</idCode>
+        <idValue>Credit Customer Account</idValue>
+    <idCode>05</idCode>
+        <idValue>Charge to be Paid by Vendor</idValue>
+    <idCode>06</idCode>
+        <idValue>Charge to be Paid by Customer</idValue>
+    <idCode>07</idCode>
+        <idValue>Optional</idValue>
+    <idCode>08</idCode>
+        <idValue>Off Gross Quantity Invoiced</idValue>
+    <idCode>09</idCode>
+        <idValue>Allowance To Be Issued by Vendor</idValue>
+    <idCode>10</idCode>
+        <idValue>Allowance To Be Issued by Reseller</idValue>
+    <idCode>11</idCode>
+        <idValue>Charge Denied by Vendor</idValue>
+    <idCode>12</idCode>
+        <idValue>Cancel Allowance</idValue>
+    <idCode>13</idCode>
+        <idValue>Provide Amount</idValue>
+    <idCode>15</idCode>
+        <idValue>Information Only</idValue>
+    <idCode>18</idCode>
+        <idValue>Non-Payable Tax</idValue>
+    <idCode>20</idCode>
+        <idValue>Accrual Fund</idValue>
+    <idCode>21</idCode>
+        <idValue>Flat Fund</idValue>
+    <idCode>25</idCode>
+        <idValue>Cash in Advance</idValue>
+    <idCode>CA</idCode>
+        <idValue>Calculate and Add to Invoice</idValue>
+    <idCode>CC</idCode>
+        <idValue>Collect</idValue>
+    <idCode>PP</idCode>
+        <idValue>Prepaid</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

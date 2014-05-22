@@ -1,0 +1,27 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT ContractList (Contract)+>
+<!ELEMENT Contract (,CatalogId,FreightTableId,AcceptanceDate,AddBy,AddDate,ContractItemsOnlyInd,ContractStatusCd,ContractTypeCd,EffDate,ExpDate,HidePricingInd,LocaleCd,LongDesc,ModBy,ModDate,QuoteExpDate,RankWeight,RefContractNum,ShortDesc)>
+<!ATTLIST Contract Id ID #REQUIRED>
+<!ELEMENT CatalogId (#PCDATA)>
+<!ELEMENT FreightTableId (#PCDATA)>
+<!ELEMENT AcceptanceDate (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT ContractItemsOnlyInd (#PCDATA)>
+<!ELEMENT ContractStatusCd (#PCDATA)>
+<!ELEMENT ContractTypeCd (#PCDATA)>
+<!ELEMENT EffDate (#PCDATA)>
+<!ELEMENT ExpDate (#PCDATA)>
+<!ELEMENT HidePricingInd (#PCDATA)>
+<!ELEMENT LocaleCd (#PCDATA)>
+<!ELEMENT LongDesc (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT QuoteExpDate (#PCDATA)>
+<!ELEMENT RankWeight (#PCDATA)>
+<!ELEMENT RefContractNum (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

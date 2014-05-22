@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Item List Cost</idValue>
+    <idCode>2</idCode>
+        <idValue>Item Net Cost</idValue>
+    <idCode>3</idCode>
+        <idValue>Discount/Gross</idValue>
+    <idCode>4</idCode>
+        <idValue>Discount/Net</idValue>
+    <idCode>5</idCode>
+        <idValue>Base Price per Unit</idValue>
+    <idCode>6</idCode>
+        <idValue>Base Price Amount</idValue>
+    <idCode>7</idCode>
+        <idValue>Base Price Amount Less Previous Discount</idValue>
+    <idCode>8</idCode>
+        <idValue>Net Monthly On All Invoices Past Due</idValue>
+    <idCode>9</idCode>
+        <idValue>Late Payment Charge Base Amount</idValue>
+    <idCode>A</idCode>
+        <idValue>Fuel Rate</idValue>
+    <idCode>Z</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

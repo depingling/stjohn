@@ -1,0 +1,1 @@
+tail -f @jbossHome@/server/@serverName@/log/server.log

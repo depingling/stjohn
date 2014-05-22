@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 3.1.0 OBOE  October 6, 2003 -->
+<idList>
+    <idCode>1</idCode>
+        <idValue>Bill back</idValue>
+    <idCode>2</idCode>
+        <idValue>Off invoice</idValue>
+    <idCode>3</idCode>
+        <idValue>Vendor check to customer</idValue>
+    <idCode>4</idCode>
+        <idValue>Credit customer account</idValue>
+    <idCode>5</idCode>
+        <idValue>Charge to be paid by vendor</idValue>
+    <idCode>6</idCode>
+        <idValue>Charge to be paid by customer</idValue>
+    <idCode>7</idCode>
+        <idValue>Optional</idValue>
+    <idCode>8</idCode>
+        <idValue>Off gross quantity invoiced</idValue>
+    <idCode>9</idCode>
+        <idValue>Electric cost recovery factor</idValue>
+    <idCode>10</idCode>
+        <idValue>Gas cost recovery factor</idValue>
+    <idCode>11</idCode>
+        <idValue>Prior credit balance</idValue>
+    <idCode>12</idCode>
+        <idValue>Non-dutiable</idValue>
+    <idCode>13</idCode>
+        <idValue>All charges borne by payee</idValue>
+    <idCode>14</idCode>
+        <idValue>Each pay own cost</idValue>
+    <idCode>15</idCode>
+        <idValue>All charges borne by payor</idValue>
+    <idCode>16</idCode>
+        <idValue>All bank charges to be borne by applicant</idValue>
+    <idCode>17</idCode>
+        <idValue>All bank charges except confirmation commission to be borne by applicant</idValue>
+    <idCode>18</idCode>
+        <idValue>All bank charges to be borne by beneficiary</idValue>
+    <idCode>20</idCode>
+        <idValue>Amendment charges to be borne by applicant</idValue>
+    <idCode>21</idCode>
+        <idValue>Amendment charges to be borne by beneficiary</idValue>
+    <idCode>22</idCode>
+        <idValue>Discount charges to be borne by applicant</idValue>
+    <idCode>23</idCode>
+        <idValue>Discount charges to be borne by beneficiary</idValue>
+    <idCode>24</idCode>
+        <idValue>All bank charges other than those of the issuing bank to be borne by beneficiary</idValue>
+    <idCode>25</idCode>
+        <idValue>Amendment charges other than those of the issuing bank to be borne by beneficiary</idValue>
+    <idCode>26</idCode>
+        <idValue>All charges to be paid by the principal of the collection</idValue>
+    <idCode>27</idCode>
+        <idValue>All charges to be paid by the drawee of the collection</idValue>
+    <idCode>28</idCode>
+        <idValue>All charges to be borne by the drawee except those levied by the remitting bank, to be paid by principal</idValue>
+    <idCode>29</idCode>
+        <idValue>All bank charges are to be paid by the principal of the documentary credit collection</idValue>
+    <idCode>30</idCode>
+        <idValue>All bank charges to be borne by receiving bank</idValue>
+    <idCode>31</idCode>
+        <idValue>All bank charges to be borne by sending bank</idValue>
+    <idCode>32</idCode>
+        <idValue>Charges levied by a third bank</idValue>
+    <idCode>33</idCode>
+        <idValue>Information charges levied by a third bank</idValue>
+    <idCode>34</idCode>
+        <idValue>Total payment borne by patient</idValue>
+    <idCode>35</idCode>
+        <idValue>Part payment borne by patient</idValue>
+    <idCode>ZZZ</idCode>
+        <idValue>Mutually defined</idValue>
+</idList>

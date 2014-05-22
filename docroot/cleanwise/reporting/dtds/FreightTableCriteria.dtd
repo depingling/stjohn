@@ -1,0 +1,21 @@
+
+<!-- DO NOT EDIT - Generated code from XSL file DTD.xsl -->
+
+<?xml encoding="US-ASCII"?>
+
+<!ELEMENT FreightTableCriteriaList (FreightTableCriteria)+>
+<!ELEMENT FreightTableCriteria (,FreightHandlerId,FreightTableId,AddBy,AddDate,FreightAmount,FreightCriteriaTypeCd,HandlingAmount,HigherAmount,LowerAmount,ModBy,ModDate,RuntimeTypeCd,ShortDesc)>
+<!ATTLIST FreightTableCriteria Id ID #REQUIRED>
+<!ELEMENT FreightHandlerId (#PCDATA)>
+<!ELEMENT FreightTableId (#PCDATA)>
+<!ELEMENT AddBy (#PCDATA)>
+<!ELEMENT AddDate (#PCDATA)>
+<!ELEMENT FreightAmount (#PCDATA)>
+<!ELEMENT FreightCriteriaTypeCd (#PCDATA)>
+<!ELEMENT HandlingAmount (#PCDATA)>
+<!ELEMENT HigherAmount (#PCDATA)>
+<!ELEMENT LowerAmount (#PCDATA)>
+<!ELEMENT ModBy (#PCDATA)>
+<!ELEMENT ModDate (#PCDATA)>
+<!ELEMENT RuntimeTypeCd (#PCDATA)>
+<!ELEMENT ShortDesc (#PCDATA)>

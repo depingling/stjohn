@@ -1,0 +1,326 @@
+body			{background-color: #ffffff;
+				layer-background-color: #ffffff;
+				}
+				
+.bodyalt		{background-color: #FFFFCC;
+				layer-background-color: #FFFFCC;
+				}				
+		
+li				{
+				margin-left: 0px;
+				}
+		
+a:link			{color: #336633;
+				font-weight: normal;
+				}
+		
+a:active		{color: #006699;
+				font-weight: normal;
+				}
+			
+a:visited		{color: #666666;
+				}
+				
+.news			{font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				color: #333333;
+				}
+				
+.more			{font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				color: #660000;
+				}				
+				
+.address		{font-family: Verdana, Arial, sans-serif;	
+				font-size: 10px;
+				color: #006699;
+				line-spacing: 18px;
+				font-weight: bold;
+				}
+			
+.another		{font-family: Verdana, Arial, sans-serif;	
+				font-size: 10px;
+				color: #669966;
+				line-spacing: 16px;
+				}
+			
+.login			{font-family: Verdana, Arial, sans-serif;	
+				font-size: 10px;
+				font-weight: normal;
+				color: #006699;
+				line-spacing: 16px;
+				}
+			
+.date			{font-family: Verdana, Arial, sans-serif;	
+				font-size: 10px;
+				color: #666666;
+				}
+			
+.linkpath		{font-family: Verdana, Arial, sans-serif;	
+				font-size: 10px;
+				color: #ffffff;
+				}
+			
+.addcart		{font-family: Verdana, Arial, sans-serif;	
+				font-size: 10px;
+				color: #669966;
+				line-spacing: 16px;
+				letter-spacing: 1px;
+				}
+			
+				/* the next element has to change later */
+
+.categories		{font-family: Verdana, Arial, sans-serif;
+				font-size: 9px;
+				letter-spacing: 1px;
+				}
+			
+.charttext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				color: #333333;
+				}
+			
+				/* the next element has to change later - color coded for sections */
+			
+.subheaders		{font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				font-weight: bold;
+				}
+				
+.subheadergeneric	{font-family: Verdana, Arial, sans-serif;
+					font-size: 11px;
+					font-weight: bold;
+					color: #006699;
+					}
+
+.trainingsubhead	{font-family: Verdana, Arial, sans-serif;
+					font-size: 11px;
+					font-weight: bold;
+					color: #990000;
+					}
+					
+.genericerror		{font-family: Verdana, Arial, sans-serif;
+					font-size: 14px;
+					font-weight: bold;
+					color: #006699;
+					}
+					
+.smalltext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				color: #333333;
+				}
+			
+.text			{font-family: Verdana, Arial, sans-serif;
+				color: #000000;
+				}
+			
+.sectext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				color: #000000;
+				letter-spacing: 1px;
+				}
+			
+				/* the next element has to change later */
+			
+.formtext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+				color: #006699;
+				}
+			
+.greenformtext	{font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+				color: #336666;
+				}
+				
+.blueformtext	{font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+				color: #003366;
+				}				
+			
+.bullettext		{font-family: Verdana, Arial, sans-serif;
+				font-size: 12px;
+				color: #333333;
+				}
+			
+				/* add bullet style later */
+
+.shopitemhead	{font-family: Verdana, Arial, sans-serif;
+				font-size: 12px;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #336633;
+				}
+				
+.proditemhead	{font-family: Verdana, Arial, sans-serif;
+				font-size: 12px;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #003366;
+				}				
+			
+.fivesidemargin	{margin-left: 5px;
+				margin-right: 5px;
+				margin-top: 1px;
+				margin-bottom: 1px;
+				}
+			
+.gloswmargin	{margin-top: 12px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+				}
+			
+.margin			{margin-top: 20px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+				}
+				
+.mycwmargin		{margin-top: 6px;
+				margin-bottom: 7px;
+				margin-left: 60px;
+				margin-right: 10px;
+				}
+				
+.mycwdate		{font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				}
+
+.searchmargin	{margin-top: 1px;
+				margin-bottom: 8px;
+				margin-left: 4px;
+				margin-right: 3px;
+				font-size: 10px;
+				}
+				
+.twomargin		{margin-top: 15px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				margin-right: 15px;
+				}
+
+.twotopmargin	{margin-top: 15px;
+				margin-bottom: 10px;
+				}
+
+.twentytop		{margin-top: 20px;
+				}
+				
+.charthead		{font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				color: #006699;
+				}
+				
+.shopcharthead	{color: #336666;
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+				}
+				
+.prodcharthead	{color: #003366;
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+				}			
+				
+.smallmargin	{margin: 2px;
+				}
+				
+.smalltopmargin	{margin-top: 10px;
+				}
+				
+.nomargin		{margin: 0px;
+				padding: 0px;
+				}
+				
+.noindent		{margin: 2px;
+				padding: 0px;
+				background-color: red;
+				}
+				
+.fivemargin		{margin-top: 5px;
+				margin-left: 10px;
+				margin-right: 10px;
+				margin-bottom: 5px;
+				}
+				
+.itemheadmargin	{margin-top: 2px;
+				margin-left: 22px;
+				margin-right: 10px;
+				margin-bottom: 2px;
+				}
+				
+.itemdesctext	{font-family: Verdana, Arial, sans-serif;
+				font-size: 13px;
+				color: #333333;
+				}
+				
+.linkpathmargin	{margin-top: 6px;
+				margin-left: 0px;
+				margin-right: 0px;
+				margin-bottom: 0px;
+				}
+
+.navigatemargin	{margin-top: 2px;
+				margin-bottom: 3px;
+				margin-left: 0px;
+				margin-right: 0px;
+				}
+				
+.itemmargin		{margin-top: 2px;
+				margin-bottom: 3px;
+				margin-left: 10px;
+				margin-right: 0px;
+				}
+				
+/* secondary page */
+
+.centermargin	{margin-left: 22px;
+				margin-right: 10px;
+				margin-bottom: 15px;
+				margin-top: 5px;
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				font-color: #333333;
+				}
+
+.tourmargin		{margin-left: 37px;
+				margin-right: 30px;
+				margin-bottom: 15px;
+				margin-top: 0px;
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				font-color: #333333;
+				}
+
+.texttext		{
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				font-color: #333333;
+				}
+				
+.litext			{
+				font-family: Verdana, Arial, sans-serif;
+				font-size: 11px;
+				}
+
+.tourgreen              {       background-color: #99CC99;
+                                }
+
+.tableoutline        	{ background-color: #003366; }
+
+
+.largeheader            {
+                                font-size: 15px;
+			        font-weight: bold;
+                                }
+
+.errormsg{
+	font-family: sans-serif;
+	color: #990000;
+	font-size : 12pt;
+	font : bold;
+}

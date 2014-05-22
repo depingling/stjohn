@@ -1,0 +1,16 @@
+<?xml version ="1.0"?>
+<xml>
+        <system-properties>
+                <mail.transport.protocol>smtp</mail.transport.protocol>
+                <mail.smtp.host>localhost</mail.smtp.host>
+        </system-properties>
+
+        <report>
+                <category>Operational</category>
+                <name>Automated Event report</name>
+                <emailrecipient>jriendeau@espendwise.com,msonavane@espendwise.com,tzelano@espendwise.com</emailrecipient>
+                <email-message>Rejected events in NSC UAT</email-message>
+                <send-only-if-data>true</send-only-if-data>
+        </report>
+</xml>
+

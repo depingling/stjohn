@@ -1,0 +1,2732 @@
+<!-- Project definition file for ANT for the Cleanwise J2EE Project -->
+<project name="Util" default="StJohnBuild.compile" basedir=".">
+
+   <record name="build.log" loglevel="info"/>
+
+   <!-- set global properties for this build -->
+   <property file="local.properties"/>
+   <property file="build.properties"/>
+   <property file="installation${store}.properties" />
+   <property file="installation.properties" />
+
+   <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+      <classpath>
+         <pathelement location="${tools}/ant-contrib/lib/ant-contrib-1.0b3.jar"/>
+      </classpath>
+   </taskdef>
+
+   <!-- ARGS is passed to executable programs as command-line arguments.
+        Pre-defining it to blank should force it to be set by the user -->
+   <property name="ARGS" value="" />
+
+   <include file="${basedir}/buildpaths.xml"/>
+
+   <include file="${basedir}/build.xml"/>
+
+   <condition property="project.path" value="jboss5.project.class.path" else="project.class.path">
+      <equals arg1="${jbossVersion}" arg2="5.0.1" />
+   </condition>
+
+   <tstamp/>
+
+<!-- ====================================================================== -->
+   <macrodef name="logUsage">
+      <attribute name="targetName"/>
+      <sequential>
+         <record name="usage.log" action="start" append="yes"/>
+         <echo message="@{targetName} | ${DSTAMP} | ${TSTAMP}"/>
+         <record name="usage.log" action="stop"/>
+      </sequential>
+   </macrodef>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+<target name="clean" description="Delete the all directories built by this build file.">
+   <logUsage targetName="clean"/>
+   <antcall target="StJohnBuild.clean"/>
+</target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="makedoc" depends="StJohnBuild.prepare"
+           description="Generate the javadoc from all java files found in src.">
+
+      <logUsage targetName="makedoc"/>
+      <mkdir dir="${docdir}" />
+      <javadoc packagenames="com.cleanwise.*"
+         sourcepath="${src}"
+         destdir="${docdir}"
+         author="true"
+         version="true"
+         use="true"
+         maxmemory="256m"
+         classpathref="${project.path}"
+         private="true" >
+      </javadoc>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="install_tomcat" depends="StJohnBuild.prepare" if="useTomcat"
+           description="Install the Tomcat specific config files.">
+
+      <logUsage targetName="install_tomcat"/>
+      <copy todir="${servletContainerHome}/conf"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="installation/tomcat-conf/${servletContainer}" />
+      </copy>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="install" depends="install_tomcat, StJohnBuild.prepare"
+           description="Install the cleanwise configuration files into the jbossHome configuration area.
+           Note, this must be run prior to starting jboss.">
+
+      <logUsage targetName="install"/>
+      <copy todir="${jbossHome}/conf/${configuration}"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="installation/jboss-conf/JBoss-${jbossVersion}/${servletContainer}" />
+      </copy>
+      <copy file="run.sh"
+         tofile="${jbossHome}/bin/run.sh" />
+      <copy file="run.bat"
+         tofile="${jbossHome}/bin/run.bat" />
+      <copy file="keystore"
+         tofile="${jbossHome}/bin/keystore" />
+      <copy file="${javaHome}/lib/tools.jar"
+         tofile="${jbossHome}/lib/ext/tools.jar" />
+      <copy file="${jdbcLib}"
+         todir="${jbossHome}/lib/ext" />
+      <copy file="${tools}/lawson/LawsonBizBeansCommon.jar"
+         tofile="${jbossHome}/lib/ext/LawsonBizBeansCommon.jar" />
+      <copy file="${tools}/itext/iText-2.1.0.jar"
+           tofile="${jbossHome}/lib/ext/iText-2.1.0.jar" />
+
+      <!-- gets rid of the old itext.jar...may be removed in a couple weeks.  7/15/2009.-->
+      <delete file="${jbossHome}/lib/ext/itext.jar" failonerror="false"/>
+
+      <copy file="${tools}/crypto/bcprov-jdk14.jar"
+         tofile="${jbossHome}/lib/ext/bcprov-jdk14.jar" />
+      <copy file="${tools}/dom4j/dom4j.jar"
+         tofile="${jbossHome}/lib/ext/dom4j.jar" />
+      <copy file="${tools}/POI/jakarta-poi-3.2.jar"
+         tofile="${jbossHome}/lib/ext/jakarta-poi.jar" overwrite="true"/>
+      <copy file="${tools}/POI/jakarta-poi-ooxml.jar"
+         tofile="${jbossHome}/lib/ext/jakarta-poi-ooxml.jar" overwrite="true"/>
+
+      <!--here for upgrade can be remvoved-->
+      <delete file="${jbossHome}/lib/ext/commons-httpclient-2.0.jar"/>
+
+      <copy file="${tools}/httpclient/commons-httpclient.jar"
+         tofile="${jbossHome}/lib/ext/commons-httpclient.jar"
+         overwrite="true"/>                                         <!--overwrite = true only for upgrade reasons-->
+      <copy file="${tools}/jakarta-commons/commons-logging.jar"
+         tofile="${jbossHome}/lib/ext/commons-logging.jar" />
+      <copy file="${tools}/jakarta-commons/commons-codec-1.3.jar"
+         tofile="${jbossHome}/lib/ext/commons-codec-1.3.jar" />
+      <!-- Copying jars, needed for execution of MyFax Cleanwise(user) classes and MyFax external proxy classes -->
+      <!-- SVC: Do I need it here ?  -->
+      <echo message = "Copying MyFax .jar files and .properties file..." />
+      <copy file="${tools}/MyFax/activation.jar"
+         tofile="${jbossHome}/lib/ext/MyFax/activation.jar" />
+      <copy file="${tools}/MyFax/axis-ant.jar"
+         tofile="${jbossHome}/lib/ext/MyFax/axis-ant.jar" />
+      <copy file="${tools}/MyFax/axis-schema.jar"
+         tofile="${jbossHome}/lib/ext/MyFax/axis-schema.jar" />
+      <copy file="${tools}/MyFax/log4j.properties"
+         tofile="${jbossHome}/lib/ext/MyFax/log4j.properties" />
+      <copy file="${tools}/MyFax/log4j-1.2.8.jar"
+         tofile="${jbossHome}/lib/ext/MyFax/log4j-1.2.8.jar" />
+      <copy file="${tools}/MyFax/mailapi.jar"
+         tofile="${jbossHome}/lib/ext/MyFax/mailapi.jar" />
+
+      <!-- Copying jars, needed for execution of AvalaraTax Cleanwise(user) classes and AvalaraTax external proxy classes -->
+      <!-- SVC: Do I need it here ?  -->
+      <echo message = "Copying Avalara .jar files and .properties file..." />
+      <copy file="${tools}/AvalaraTax/activation.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/activation.jar" />
+      <copy file="${tools}/AvalaraTax/axis-1.2.1.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/axis-1.2.1.jar" />
+      <copy file="${tools}/AvalaraTax/axis-ant.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/axis-ant.jar" />
+      <copy file="${tools}/AvalaraTax/bcprov-jdk13-128.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/bcprov-jdk13-128.jar" />
+      <copy file="${tools}/AvalaraTax/commons-discovery-0.2.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/commons-discovery-0.2.jar" />
+      <copy file="${tools}/AvalaraTax/commons-logging-1.0.4.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/commons-logging-1.0.4.jar" />
+      <copy file="${tools}/AvalaraTax/jaxrpc.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/jaxrpc.jar" />
+      <copy file="${tools}/AvalaraTax/junit-3.8.1.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/junit-3.8.1.jar" />
+      <copy file="${tools}/AvalaraTax/log4j.properties"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/log4j.properties" />
+      <copy file="${tools}/AvalaraTax/log4j-1.2.8.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/log4j-1.2.8.jar" />
+      <copy file="${tools}/AvalaraTax/mailapi.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/mailapi.jar" />
+      <copy file="${tools}/AvalaraTax/saaj.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/saaj.jar" />
+      <copy file="${tools}/AvalaraTax/wsdl4j-1.5.1.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/wsdl4j-1.5.1.jar" />
+      <copy file="${tools}/AvalaraTax/xalan-2.6.0.jar"
+         tofile="${jbossHome}/lib/ext/AvalaraTax/xalan-2.6.0.jar" />
+
+      <copy file="cleanwiseks"
+         tofile="${jbossHome}/bin/keystorefile" />
+      <copy file="${tools}/ftp/edtftpj-pro.jar"
+         tofile="${jbossHome}/lib/ext/edtftpj-pro.jar" />
+      <copy file="${tools}/ftp/j2ssh-core.jar"
+         tofile="${jbossHome}/lib/ext/j2ssh-core.jar" />
+
+      <antcall target="install-jobs"/>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="install-jobs" depends="StJohnBuild.prepare"
+           description="Adds jobs subsystem.  Called from install">
+
+      <logUsage targetName="install-jobs"/>
+      <mkdir dir="${jbossHome}/${app.name}" />
+      <mkdir dir="${jbossHome}/${app.name}/jobs" />
+      <mkdir dir="${jbossHome}/${app.name}/reports" />
+      <mkdir dir="${jbossHome}/${app.name}/dataexchange/inbound" />
+      <mkdir dir="${jbossHome}/${app.name}/lib" />
+      <mkdir dir="${jbossHome}/${app.name}/util" />
+      <mkdir dir="${jbossHome}/${app.name}/edi/inbound" />
+      <mkdir dir="${jbossHome}/${app.name}/edi/processed" />
+      <mkdir dir="${jbossHome}/${app.name}/edi/processed_log" />
+      <mkdir dir="${jbossHome}/${app.name}/edi/outbound_log" />
+      <mkdir dir="${jbossHome}/${app.name}/edi/outbound" />
+      <mkdir dir="${jbossHome}/${app.name}/edi/sent" />
+
+      <copy file="${tools}/oboe.new/oboe.jar"
+         todir="${jbossHome}/${app.name}/edi/lib" />
+      
+      <copy todir="${jbossHome}/${app.name}/edi/util"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="tools/edi/util/">
+            <include name="*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${jbossHome}/${app.name}/edi/util"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="${src}/com/cleanwise/service/apps/loaders">
+            <include name="*sh" />
+            <include name="*job" />
+         </fileset>
+      </copy>
+
+      <copy todir="${jbossHome}/${app.name}/util"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="tools/script_util">
+            <include name="*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${jbossHome}/${app.name}/jobs"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="tools/jobs">
+            <include name="*job" />
+            <include name="*sh" />
+            <include name="*xml" />
+            <include name="*sql" />
+            <exclude name="run-daily-evening-jobs.sh" />
+            <exclude name="run-daily-jobs.sh" />
+            <exclude name="run-hourly-jobs.sh" />
+            <exclude name="run-morning-jobs.sh" />
+            <exclude name="run-weekly-jobs.sh" />
+         </fileset>
+      </copy>
+
+      <!-- START some production/unix specific install instructions -->
+      <copy todir="${base.production.dir}"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="tools/jobs">
+            <include name="run-daily-evening-jobs.sh" />
+            <include name="run-daily-jobs.sh" />
+            <include name="run-hourly-jobs.sh" />
+            <include name="run-morning-jobs.sh" />
+            <include name="run-weekly-jobs.sh" />
+         </fileset>
+      </copy>
+
+      <mkdir dir="tools/com/cleanwise/util"/>
+      <copy todir="${base.production.dir}/util"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="tools/com/cleanwise/util/classes">
+            <include name="*.class" />
+         </fileset>
+      </copy>
+
+      <copy todir="${base.production.dir}/util"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="tools/com/cleanwise/util/">
+            <include name="*.sh" />
+         </fileset>
+      </copy>
+      <!-- END some production/unix specific install instructions -->
+
+      <copy todir="${jbossHome}/${app.name}/lib"
+         overwrite="yes">
+         <fileset dir="tools/httpunit">
+            <include name="*jar" />
+         </fileset>
+      </copy>
+
+      <copy todir="${jbossHome}/${app.name}/edi/tools/oboe"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="tools/oboe"/>
+      </copy>
+
+      <echo file="${build}/OBOE.properties">
+         # specify location of OBOE rules files
+         xmlPath=${jbossHome}/${app.name}/edi/tools/oboe/xml/
+         searchDirective=V
+      </echo>
+
+      <copy file="${build}/OBOE.properties"
+         tofile="${jbossHome}/${app.name}/edi/tools/oboe/OBOE.properties"
+         filtering="no" />
+
+      <!-- copy fonts -->
+      <mkdir dir="${jbossHome}/xsuite/fonts" />
+      <copy todir="${jbossHome}/xsuite/fonts"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="${tools}/fonts/">
+            <include name="*" />
+         </fileset>
+      </copy>
+
+
+      <!-- copy Avalara Avatax properties file -->
+      <copy file="${tools}/AvalaraTax/avatax4j.properties"
+         overwrite="yes"
+         filtering="yes"
+         tofile="${jbossConf}/avatax4j.properties" />
+
+
+      <!-- copy Ocean Storage System properties file -->
+      <copy file="${tools}/ocean/StorageSystem/storagesystem.properties"
+         overwrite="yes"
+         filtering="yes"
+         tofile="${jbossConf}/storagesystem.properties" />
+         
+      <echo file="${jbossHome}/${app.name}/app.properties">
+         #
+         # configuration for this appserver installation
+         #
+         java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory
+         java.naming.provider.url=${host.address}:${NamingServicePort}
+         dbUrl=${dbUrl}
+         dbUser=${dbUser}
+         dbPassword=${dbPassword}
+         httpType=${httpType}
+         reportUrl=${reportUrl}
+         reportUser=${reportUser}
+         reportPassword=${reportPassword}
+      </echo>
+
+      <echo file="${jbossHome}/${app.name}/app.sh.env">
+         #
+         # environment variables for the shell scripts used
+         #
+         XDIR=${jbossHome}/xsuite
+         export XDIR
+
+         XFTP_DIR=${jbossHome}/../../ftpx
+         export XFTP_DIR
+
+         XSUITE_HOME=${jbossHome}
+         export XSUITE_HOME
+
+         XSUITE_DBUSER=${dbUser}
+         export XSUITE_DBUSER
+
+         XSUITE_DBPASS=${dbPassword}
+         export XSUITE_DBPASS
+
+         XSUITE_DBSERVER=${dbServer}
+         export XSUITE_DBSERVER
+
+         XSUITE_ERP_DBSERVER=${lawsonServer}
+         export XSUITE_ERP_DBSERVER
+
+         XSUITE_ERP_DBUSER=${lawsonUser}
+         export XSUITE_ERP_DBUSER
+
+         XSUITE_ERP_DBPASS=${lawsonPassword}
+         export XSUITE_ERP_DBPASS
+
+         XSUITE_ERP_DBURL=${lawsonUrl}
+         export XSUITE_ERP_DBPASS
+
+         XSUITE_REPORT_DBSERVER=${reportServer}
+         export XSUITE_ERP_DBSERVER
+
+         XSUITE_REPORT_DBUSER=${reportUser}
+         export XSUITE_REPORT_USER
+
+         XSUITE_REPORT_DBPASS=${reportPassword}
+         export XSUITE_REPORT_DBPASS
+
+         PSEP=":"
+         case `uname` in
+         CYGWIN_NT-*)
+             PSEP="\;"
+         esac
+
+         export PSEP
+
+         PATH=${javaHome}/bin${PSEP}$PATH
+         export PATH
+
+         TJCPATH=""
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/lib/commons-httpclient.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/lib/commons-codec.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XFTP_DIR}"
+         TJCPATH="${TJCPATH}${PSEP}${XFTP_DIR}/j2ssh-core.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XDIR}/../../stjohn/tools/httpunit/js.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/lib/dom4j.jar${PSEP}${XSUITE_HOME}/xsuite/lib/jakarta-poi.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/lib/dom4j.jar${PSEP}${XSUITE_HOME}/xsuite/lib/jakarta-poi-ooxml.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/xsuite/lib/activation.jar${PSEP}${XSUITE_HOME}/xsuite/lib/mail.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/lib/xsuite-apps.jar${PSEP}${XSUITE_HOME}/xsuite/lib/xsuite-ejb.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/deploy/xsuite-ejb.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/lib/jboss-client.jar${PSEP}${XSUITE_HOME}/xsuite/lib/jbosssx-client.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/lib/jnp-client.jar${PSEP}${XSUITE_HOME}/xsuite/lib/xerces.jar"
+         TJCPATH="${TJCPATH}${PSEP}/${webdeploy}/WEB-INF/classes"
+         TJCPATH="${TJCPATH}${PSEP}/${webdeploy}/xsuite-ejb.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/xsuite-apps.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/xsuite/edi/lib/oboe.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/edi/lib/oboe.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/client/jnp-client.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/client/jndi.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/client/jbosssx-client.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/client/jbossmq-client.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/client/jboss-j2ee.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/client/jboss-client.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/client/jaas.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/jakarta-poi.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/jakarta-poi-ooxml.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/dom4j.jar"
+
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/jakarta-poi.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/jakarta-poi-ooxml.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/log4j.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/${app.name}/lib/commons-logging.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/RFJavaInt.zip"
+         # TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/MyFax.zip"
+         ### Path elements below needed for MyFax proxy classes
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/MyFax/activation.jar"
+
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/MyFax/axis-ant.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/MyFax/axis-schema.jar"
+
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/MyFax/log4j-1.2.8.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/MyFax/mailapi.jar"
+
+         ### Path elements below needed for AvalaraTax proxy classes
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/activation.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/axis-1.2.1.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/axis-ant.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/bcprov-jdk13-128.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/commons-discovery-0.2.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/commons-logging-1.0.4.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/jaxrpc.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/junit-3.8.1.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/log4j.properties"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/log4j-1.2.8.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/mailapi.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/saaj.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/wsdl4j-1.5.1.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/AvalaraTax/xalan-2.6.0.jar"
+
+         ####################################################
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/deploy/cleanwise.war/WEB-INF/lib/jxl.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/edtftpj-pro.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/j2ssh-core.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/itext.jar"
+         TJCPATH="${TJCPATH}${PSEP}${XSUITE_HOME}/lib/ext/activation.jar${PSEP}${XSUITE_HOME}/lib/ext/mail.jar"
+      </echo>
+
+      <copy file="${tools}/jakarta-commons/commons-codec-1.3.jar"
+         tofile="${jbossHome}/${app.name}/lib/commons-codec.jar" />
+      <copy file="${tools}/httpclient/commons-httpclient.jar"
+         tofile="${jbossHome}/${app.name}/lib/commons-httpclient.jar"
+         overwrite="true"/>
+      <copy file="${tools}/jakarta-commons/commons-logging.jar"
+         tofile="${jbossHome}/${app.name}/lib/commons-logging.jar" />
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="export_index_file" depends="StJohnBuild.compile"
+           description="Creates an index file of all the indexes in the currently configured database">
+
+      <logUsage targetName="export_index_file"/>
+      <DBIndexReader
+         driver="oracle.jdbc.driver.OracleDriver"
+         url="${dbUrl}"
+         userid="${dbUser}"
+         password="${dbPassword}"
+         classpath="${jdbcLib}"
+         outFile="${build}/index_file.dat">
+      </DBIndexReader>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="import_index_file" depends="StJohnBuild.compile"
+           description="Loads an index file created using the make_index_file target">
+
+      <logUsage targetName="import_index_file"/>
+      <DBIndexLoader
+         driver="oracle.jdbc.driver.OracleDriver"
+         url="${dbUrl}"
+         userid="${dbUser}"
+         password="${dbPassword}"
+         classpath="${jdbcLib}"
+         inFile="${build}/index_file.dat">
+      </DBIndexLoader>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="rebuildIndexes" depends="StJohnBuild.compile"
+           description="Rebuilds all of the CLW_ indexes in your currently configured database and schema">
+
+      <logUsage targetName="rebuildIndexes"/>
+      <antcall target="export_index_file"/>
+      <antcall target="import_index_file"/>
+   </target>
+
+<!-- ====================================================================== -->
+<!--  Refresh the CLW_REF_CD table                                          -->
+<!-- ====================================================================== -->
+   <target name="dbrefcd" depends="StJohnBuild.prepare"
+           description="Refresh the CLW_REF_CD table with latest values from com.cleanwise.service.api.util.RefCodeNames.">
+
+      <logUsage targetName="dbrefcd"/>
+      <mkdir dir="${tmpdir}" />
+      <!-- Populate database with the reference codes -->
+      <javac srcdir="${src}" destdir="${build}"
+          optimize="${compileopt}" debug="${compiledebug}" includeAntRuntime="no">
+          <include name="**/RefCodeNames.java" />
+          <classpath refid="${project.path}" />
+      </javac>
+
+      <mkdir dir="${build}/tools" />
+      <javac srcdir="${tools}" destdir="${build}/tools" includeAntRuntime="no">
+         <include name="**/RefCodeToDB.java" />
+         <classpath refid="project.class.tools" />
+      </javac>
+
+      <java classname="com.cleanwise.tools.RefCodeToDB" fork="true">
+         <arg value="-outfile ${tmpdir}/refcodes.sql" />
+         <classpath refid="project.class.tools" />
+      </java>
+
+      <sql
+         driver="oracle.jdbc.driver.OracleDriver"
+         classpath="${jdbcLib}"
+         url="${dbUrl}"
+         userid="${dbUser}"
+         password="${dbPassword}"
+         src="${tmpdir}/refcodes.sql"
+      >
+         <classpath refid="project.class.tools" />
+	  </sql>	 
+   </target>
+
+	<!-- ====================================================================== -->
+	<!--  Refresh the CLW_REF_CD table in Enertprise DB                                          -->
+	<!-- ====================================================================== -->
+	   <target name="dbrefcdPostgres" depends="StJohnBuild.prepare"
+	           description="Refresh the CLW_REF_CD table in Postgres DB with latest values from com.cleanwise.service.api.util.RefCodeNames.">
+
+	      <logUsage targetName="dbrefcdPostgres"/>
+	      <mkdir dir="${tmpdir}" />
+	      <!-- Populate database with the reference codes -->
+	      <javac srcdir="${src}" destdir="${build}"
+	          optimize="${compileopt}" debug="${compiledebug}" includeAntRuntime="no">
+	          <include name="**/RefCodeNames.java" />
+	          <classpath refid="${project.path}" />
+	      </javac>
+
+	      <mkdir dir="${build}/tools" />
+	      <javac srcdir="${tools}" destdir="${build}/tools" includeAntRuntime="no">
+	         <include name="**/RefCodeToDB.java" />
+	         <classpath refid="project.class.tools" />
+	      </javac>
+
+	      <java classname="com.cleanwise.tools.RefCodeToDB" fork="true">
+	         <arg value="-outfile ${tmpdir}/refcodes.sql" />
+	         <classpath refid="project.class.tools" />
+	      </java>
+
+	      <sql
+	            driver="${store01DbDriver}"
+	            classpath="${jdbcLib}"
+	            url="${store01DbUrl}"
+	            userid="${store01DbUser}"
+	            password="${store01DbPassword}"
+	            src="${tmpdir}/refcodes.sql"
+	       />
+
+	       <sql
+	            driver="${store02DbDriver}"
+	            classpath="${jdbcLib}"
+	            url="${store02DbUrl}"
+	            userid="${store02DbUser}"
+	            password="${store02DbPassword}"
+	            src="${tmpdir}/refcodes.sql"
+	       />
+	   </target>
+<!-- ====================================================================== -->
+<!--  Recreate the database sequences                                       -->
+<!-- ====================================================================== -->
+   <target name="dbseq" depends="StJohnBuild.prepare"
+           description="Recreate all the database sequences seed with proper start value.">
+
+      <logUsage targetName="dbseq"/>
+      <DBSequence
+         driver="oracle.jdbc.driver.OracleDriver"
+         url="${dbUrl}"
+         userid="${dbUser}"
+         password="${dbPassword}"
+         classpath="${jdbcLib}">
+      </DBSequence>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="webappncust_edi" depends="compile_edi"
+           description="Copy the web files to a deployment area." >
+
+      <logUsage targetName="webappncust_edi"/>
+      <mkdir dir="${webdeploy}/" />
+      <copy todir="${webdeploy}">
+         <fileset dir="${docroot}/cleanwise" >
+            <exclude name="CVS" />
+            <exclude name="**/*.properties" />
+            <exclude name="**/*.xml" />
+            <exclude name="store/en_US/JWP" />
+            <exclude name="WEB-INF/*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/store/">
+         <fileset dir="${baselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/esw/">
+         <fileset dir="${eswBaselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}" filtering="yes">
+         <fileset dir="${docroot}/cleanwise">
+            <exclude name="CVS" />
+            <include name="**/*.properties" />
+            <include name="**/*.xml" />
+            <exclude name="store/en_US/JWP" />
+            <exclude name="WEB-INF/*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF" filtering="true" overwrite="true">
+         <fileset dir="${docroot}/cleanwise/WEB-INF">
+            <include name="*" />
+            <exclude name="web.xml"/>
+            <exclude name="web4.xml"/>
+               <exclude name="application.xml"/>
+         </fileset>
+      </copy>
+
+      <condition property="web.xml.version" value="4">
+         <equals arg1="${jbossVersion}" arg2="4.0.2" />
+      </condition>
+
+      <condition property="web.xml.version" value="4">
+         <equals arg1="${jbossVersion}" arg2="4.0.5" />
+      </condition>
+
+      <condition property="web.xml.version" value="">
+         <equals arg1="${jbossVersion}" arg2="2.4.4" />
+      </condition>
+
+      <echo message = "MMMMMMMMMMMMMMMMMMMMMMMMMMMM ${jbossVersion}" />
+      <echo message = "MMMMMMMMMMMMMMMMMMMMMMMMMMMM ${web.xml.version}" />
+
+      <copy file="${docroot}/cleanwise/WEB-INF/web${web.xml.version}.xml"
+         tofile="${webdeploy}/WEB-INF/web.xml"
+         filtering="yes"
+         overwrite="yes"/>
+
+      <copy file="${docroot}/cleanwise/externals/${configuration}.default.properties"
+         tofile="${jbossConf}/${configuration}.default.properties"
+         filtering="yes"
+         overwrite="true"/>
+
+      <mkdir dir="${webdeploy}/WEB-INF/classes" />
+      <copy todir="${webdeploy}/WEB-INF/classes" >
+         <fileset dir="${build}">
+            <patternset>
+               <include name="**/*.java" />
+               <include name="com/cleanwise/view/**/*" />
+               <include name="com/espendwise/view/**/*" />
+               <include name="com/cleanwise/service/apps/ClientServicesAPI.class" />
+               <include name="com/cleanwise/service/apps/dataexchange/**/*" />
+               <include name="com/cleanwise/service/apps/loaders/**/*" />
+               <include name="com/cleanwise/service/api/value/**/*" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/reporting"
+         filtering="yes">
+         <fileset dir="docroot/cleanwise/reporting" >
+            <patternset>
+               <exclude name="CVS" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF/lib">
+         <fileset dir="tools/inetsoft">
+            <patternset>
+               <exclude name="CVS" />
+            </patternset>
+         </fileset>
+         <fileset dir="tools/crypto">
+            <patternset>
+               <include name="jce1_2_2.jar" />
+               <include name="bcprov-jdk14.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <mkdir dir="${webdeploy}/WEB-INF/classes/com/cleanwise/view/i18n" />
+      <copy file="${src}/com/cleanwise/view/i18n/CleanwiseResources.properties"
+         tofile="${webdeploy}/WEB-INF/classes/com/cleanwise/view/i18n/CleanwiseResources.properties"
+         filtering="yes"/>
+
+      <mkdir dir="${webdeploy}/WEB-INF/lib" />
+      <copy todir="${webdeploy}/WEB-INF" >
+         <fileset dir="${tools}/struts/">
+            <patternset>
+               <include name="*.tld" />
+               <include name="*.dtd" />
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF" >
+         <fileset dir="${tools}/jakarta-commons/">
+            <patternset>
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF/lib" >
+         <fileset dir="${tools}/struts/">
+            <patternset>
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+     <copy todir="${webdeploy}/WEB-INF/lib" >
+         <fileset dir="${tools}/jakarta-commons/">
+            <patternset>
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+      <!--The new versions of struts replaced the templates system with tiles.  They are the
+          same, just the name was changed.  For backwards compatibility we will maintain the
+          use of this file, but it should be removed at some point in the future -->
+      <copy file="${tools}/struts/struts-tiles.tld"
+         tofile="${webdeploy}/WEB-INF/struts-template.tld" />
+      <copy file="${tools}/struts/i18n/i18n.jar"
+         tofile="${webdeploy}/WEB-INF/lib/i18n.jar" />
+      <copy file="${tools}/struts/i18n/i18n.tld"
+         tofile="${webdeploy}/WEB-INF/i18n.tld" />
+      <copy file="${tools}/struts/pager/pager-taglib.jar"
+         tofile="${webdeploy}/WEB-INF/lib/pager-taglib.jar" />
+      <copy file="${tools}/struts/pager/pager-taglib.tld"
+         tofile="${webdeploy}/WEB-INF/pager-taglib.tld" />
+      <copy file="${build}/lib/${app.name}-ejb.jar"
+         tofile="${webdeploy}/WEB-INF/lib/${app.name}-ejb.jar" />
+      <copy file="${build}/lib/${app.name}-lib.jar"
+         tofile="${webdeploy}/WEB-INF/lib/${app.name}-lib.jar"
+         overwrite="true" />
+      <copy todir="${webdeploy}/WEB-INF/lib" >
+         <fileset dir="${tools}/inetsoft">
+            <patternset>
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <mkdir dir="${webdeploy}/en/notes" />
+      <mkdir dir="${webdeploy}/en/products" />
+      <mkdir dir="${webdeploy}/en/products/images" />
+      <mkdir dir="${webdeploy}/en/products/msds" />
+      <mkdir dir="${webdeploy}/en/products/ded" />
+      <mkdir dir="${webdeploy}/en/products/spec" />
+      <mkdir dir="${webdeploy}/en/products/thumbnails" />
+      <mkdir dir="${webdeploy}/en/knowledgebase/contents" />
+
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="jsp"
+           description="Copy the only jsp files to a deployment area." depends="StJohnBuild.prepare">
+
+      <logUsage targetName="jsp"/>
+      <copy todir="${webdeploy}">
+         <fileset dir="${docroot}/cleanwise">
+            <patternset>
+               <!-- exclude the jsps that include build information - they are handled below. -->
+               <exclude name="pub_debug.jsp"/>
+               <exclude name="adminportal/applicationInfo.jsp"/>
+               <include name="**/*.jsp" />
+            </patternset>
+         </fileset>
+      </copy>
+
+    <copy file="${docroot}/cleanwise/server_status.jsp"
+          tofile="${webdeploy}/server_status.jsp"
+          filtering="yes"
+          overwrite="yes"/>
+      <!-- update jsps that include the build and/or database information.  Only do this if the       -->
+      <!-- build.number and build.date properties have a value (since this task is used independently -->
+      <!-- from deployall it can be invoked without the build information being determined, and       -->
+      <!-- doing a copy without that information being determined causes the values "${build.number}" -->
+      <!-- and "${build.date}" to appear on those pages).                                             -->
+      <!-- NOTE: due to problems with Ant 1.6.5 not working correctly with both a property file and   -->
+      <!--     <filter> elements, create a properties file containing all of the properties used by   -->
+      <!--     the jsps below and specify that file for the copy.                                     -->
+      <condition property="copyBuildInfoJsps">
+         <and>
+            <isset property="build.number"/>
+            <isset property="build.date"/>
+         </and>
+      </condition>
+
+      <if>
+         <equals arg1="${copyBuildInfoJsps}" arg2="true" />
+         <then>
+            <echo file="${build}/buildInfoSummary.properties">
+               build.number=${build.number}
+               build.date=${build.date}
+               dbUrl=${dbUrl}
+               dbUser=${dbUser}
+            </echo>
+            <copy file="${docroot}/cleanwise/pub_debug.jsp"
+                  tofile="${webdeploy}/pub_debug.jsp"
+                  filtering="yes"
+                  overwrite="yes">
+                  <filterset>
+                     <filtersfile file="${build}/buildInfoSummary.properties"/>
+                  </filterset>
+            </copy>
+            <copy file="${docroot}/cleanwise/adminportal/applicationInfo.jsp"
+                  tofile="${webdeploy}/adminportal/applicationInfo.jsp"
+                  filtering="yes"
+                  overwrite="yes">
+                  <filterset>
+                     <filtersfile file="${build}/buildInfoSummary.properties"/>
+                  </filterset>
+            </copy>
+            <!-- remove the property file we just created, as it is no longer needed. -->
+            <delete file="${build}/buildInfoSummary.properties"/>
+         </then>
+      </if>
+
+      <condition property="root.name" value="ROOT.war" else="root.war">
+         <equals arg1="${jbossVersion}" arg2="5.0.1" />
+      </condition>
+
+      <copy todir="${jbossDeploy}/${root.name}" filtering="true"
+         overwrite="true"
+         failonerror="false">
+         <fileset dir="${docroot}/root.war">
+            <patternset>
+               <include name="**/*" />
+               <exclude name="CVS" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${jbossDeploy}/appleshop.war" filtering="false"
+         overwrite="true"
+         failonerror="false">
+         <fileset dir="${docroot}/appleshop.war">
+            <patternset>
+               <include name="**/*" />
+               <exclude name="CVS" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${jbossDeploy}/w3c.war" filtering="false" overwrite="true" failonerror="false">
+         <fileset dir="${docroot}/w3c.war">
+            <patternset>
+               <include name="**/*" />
+               <exclude name="CVS" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/store/">
+         <fileset dir="${baselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/store/">
+         <fileset dir="${customStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/esw/">
+         <fileset dir="${eswBaselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/esw/">
+         <fileset dir="${eswCustomStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy file="${docroot}/cleanwise/index.jsp"
+         tofile="${webdeploy}/index.jsp" filtering="yes" overwrite="yes"/>
+
+      <!--specific deployment for the estore translator.
+      GCA continues to have "cleanwise" hard coded in their url and will not change it.
+      We are therefore going to make a mini deployment under this context"-->
+      <copy todir="${webdeploy}/../cleanwise.war/WEB-INF">
+         <fileset dir="${webdeploy}/WEB-INF">
+            <include name="**/*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/../cleanwise.war/estoreclientportal">
+         <fileset dir="${webdeploy}/estoreclientportal">
+            <include name="*.**" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/../cleanwise.war" filtering="yes" overwrite="yes">
+         <fileset dir="${docroot}/legacy_cleanwise_overides.war">
+            <patternset>
+               <include name="**/*" />
+               <exclude name="CVS" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy file="${webdeploy}/index.jsp"
+         tofile="${webdeploy}/../cleanwise.war/index.jsp"
+         overwrite="yes"/>
+
+      <if>
+         <equals arg1="${jbossVersion}" arg2="5.0.1" />
+         <then>
+            <copy todir="${webdeploy}/../cleanwise.war/META-INF">
+               <fileset dir="${webdeploy}/META-INF">
+                  <include name="**/*" />
+               </fileset>
+            </copy>
+         </then>
+      </if>
+
+  </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="webapp" depends="webappncust,jsp"
+           description="Copy customized files to a deployment area." >
+   <!-- just a "shell" for executing other targets -->
+   <logUsage targetName="webapp"/>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="webappncust" depends="StJohnBuild.compile"
+           description="Copy the web files to a deployment area." >
+
+      <logUsage targetName="webappncust"/>
+      <mkdir dir="${webdeploy}/" />
+      <copy todir="${webdeploy}">
+         <fileset dir="${docroot}/cleanwise" >
+            <exclude name="CVS" />
+            <exclude name="**/*.properties" />
+            <exclude name="**/*.xml" />
+            <exclude name="**/*.js" />
+            <exclude name="**/*.css" />
+            <exclude name="WEB-INF/*" />
+         </fileset>
+      </copy>
+
+      <echo message = "MMMMMMMMMMMMMMMM Minifying js, css files ...." />
+
+      <available file="${tools}/yuicompress/YUIAnt.jar" property="YUIANT_AVAILABLE" />
+      <fail unless="YUIANT_AVAILABLE" message="Run jar target to generate the required task"/>
+
+      <taskdef name="yuicompress" classname="com.yahoo.platform.yui.compressor.YUICompressTask">
+         <classpath>
+            <pathelement path="${tools}/yuicompress/yuicompressor.jar" />
+            <pathelement path="${tools}/yuicompress/YUIAnt.jar" />
+         </classpath>
+      </taskdef>
+
+      <yuicompress linebreak="300" warn="false" munge="yes" preserveallsemicolons="true" outputfolder="${webdeploy}">
+         <fileset dir="${docroot}/cleanwise" >
+            <exclude name="**/*dojo*/**" />
+            <exclude name="**/*fckeditor*/**" />
+            <include name="**/*.js" />
+            <include name="**/*.css" />
+         </fileset>
+      </yuicompress>
+
+      <copy todir="${webdeploy}/" >
+         <fileset dir="${docroot}/cleanwise">
+            <include name="**/*dojo*/**" />
+            <include name="**/*fckeditor*/**" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/store/">
+         <fileset dir="${baselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/esw">
+         <fileset dir="${eswBaselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}" filtering="yes" overwrite="true">
+         <fileset dir="${docroot}/cleanwise">
+            <exclude name="CVS" />
+            <include name="**/*.properties" />
+            <include name="**/*.xml" />
+            <exclude name="WEB-INF/*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF" filtering="true" overwrite="true">
+         <fileset dir="${docroot}/cleanwise/WEB-INF">
+            <include name="*" />
+            <exclude name="web.xml"/>
+            <exclude name="web4.xml"/>
+            <exclude name="web5.xml"/>
+            <exclude name="web-ws.xml"/>
+            <exclude name="application.xml"/>
+         </fileset>
+      </copy>
+
+      <condition property="web.xml.version" value="5">
+         <equals arg1="${jbossVersion}" arg2="5.0.1" />
+      </condition>
+
+      <condition property="web.xml.version" value="4">
+         <equals arg1="${jbossVersion}" arg2="4.0.2" />
+      </condition>
+
+      <condition property="web.xml.version" value="4">
+         <equals arg1="${jbossVersion}" arg2="4.0.5" />
+      </condition>
+
+      <condition property="web.xml.version" value="">
+         <equals arg1="${jbossVersion}" arg2="2.4.4" />
+      </condition>
+
+      <echo message = "MMMMMMMMMMMMMMMMMMMMMMMMMMMM ${jbossVersion}" />
+      <echo message = "MMMMMMMMMMMMMMMMMMMMMMMMMMMM ${web.xml.version}" />
+
+      <copy file="${docroot}/cleanwise/WEB-INF/web${web.xml.version}.xml"
+         tofile="${webdeploy}/WEB-INF/web.xml"
+         filtering="yes" overwrite="yes"/>
+
+      <condition property="copyBuildInfoProperties">
+         <and>
+            <isset property="build.number"/>
+            <isset property="build.date"/>
+         </and>
+      </condition>
+      <if>
+         <equals arg1="${copyBuildInfoProperties}" arg2="true" />
+            <then>
+               <echo file="${jbossConf}/stjohn.buildInfoSummary.properties">
+                  build.number.stjohn=${build.number}
+                  build.date.stjohn=${build.date}
+               </echo>
+            </then>
+      </if>
+
+      <copy file="${docroot}/cleanwise/externals/${configuration}.default.properties"
+         tofile="${jbossConf}/${configuration}.default.properties"
+         filtering="yes"
+         overwrite="true"/>
+
+      <mkdir dir="${webdeploy}/WEB-INF/classes" />
+      <if>
+         <equals arg1="${jbossVersion}" arg2="5.0.1" />
+         <then>
+            <copy todir="${webdeploy}/WEB-INF/classes" >
+               <fileset dir="${build}">
+                  <patternset>
+                  <include name="**/*.java" />
+                  <include name="com/cleanwise/view/**/*" />
+                  <include name="com/espendwise/view/**/*" />
+                  </patternset>
+               </fileset>
+            </copy>
+         </then>
+         <else>
+            <copy todir="${webdeploy}/WEB-INF/classes" >
+               <fileset dir="${build}">
+                  <patternset>
+                     <include name="**/*.java" />
+                     <include name="com/cleanwise/view/**/*" />
+                     <include name="com/espendwise/view/**/*" />
+                     <include name="com/cleanwise/service/apps/ClientServicesAPI.class" />
+                     <include name="com/cleanwise/service/apps/dataexchange/**/*" />
+                     <include name="com/cleanwise/service/apps/loaders/**/*" />
+                     <include name="com/cleanwise/service/api/value/**/*" />
+                     <include name="com/cleanwise/service/apps/quartz/**/*" />
+                     <include name="com/cleanwise/compass/**/*" />
+                  </patternset>
+               </fileset>
+            </copy>
+         </else>
+      </if>
+
+      <copy todir="${webdeploy}/reporting"
+         filtering="yes">
+         <fileset dir="docroot/cleanwise/reporting" >
+            <patternset>
+               <exclude name="CVS" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <if>
+         <equals arg1="${jbossVersion}" arg2="5.0.1" />
+         <then>
+            <copy todir="${webdeploy}/WEB-INF/lib">
+               <fileset dir="tools/inetsoft">
+                  <patternset>
+                     <exclude name="CVS" />
+                  </patternset>
+               </fileset>
+            </copy>
+         </then>
+         <else>
+            <copy todir="${webdeploy}/WEB-INF/lib">
+               <fileset dir="tools/inetsoft">
+                  <patternset>
+                     <exclude name="CVS" />
+                  </patternset>
+               </fileset>
+            </copy>
+         </else>
+     </if>
+
+      <copy todir="${webdeploy}/WEB-INF/lib">
+         <fileset dir="tools/crypto">
+            <patternset>
+               <include name="jce1_2_2.jar" />
+               <include name="bcprov-jdk14.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <mkdir dir="${webdeploy}/WEB-INF/classes/com/cleanwise/view/i18n" />
+      <copy file="${src}/com/cleanwise/view/i18n/CleanwiseResources.properties"
+           tofile="${webdeploy}/WEB-INF/classes/com/cleanwise/view/i18n/CleanwiseResources.properties"
+           filtering="yes"/>
+
+      <mkdir dir="${webdeploy}/WEB-INF/lib" />
+      <copy todir="${webdeploy}/WEB-INF" >
+         <fileset dir="${tools}/struts/">
+            <patternset>
+               <include name="*.tld" />
+               <include name="*.dtd" />
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF" >
+         <fileset dir="${tools}/jakarta-commons/">
+            <patternset>
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF/lib" >
+         <fileset dir="${tools}/struts/">
+            <patternset>
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF/lib" >
+      <fileset dir="${tools}/jakarta-commons/">
+         <patternset>
+            <include name="*.jar" />
+         </patternset>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/WEB-INF/lib" >
+         <fileset dir="${tools}/pjl-comp-filter/">
+            <patternset>
+               <include name="pjl-comp-filter*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+    <!--The new versions of struts replaced the templates system with tiles.  They are the
+        same, just the name was changed.  For backwards compatibility we will maintain the
+        use of this file, but it should be removed at some point in the future -->
+      <copy file="${tools}/struts/struts-tiles.tld"
+         tofile="${webdeploy}/WEB-INF/struts-template.tld" />
+      <copy file="${tools}/struts/i18n/i18n.jar"
+         tofile="${webdeploy}/WEB-INF/lib/i18n.jar" />
+      <copy file="${tools}/struts/i18n/i18n.tld"
+         tofile="${webdeploy}/WEB-INF/i18n.tld" />
+      <copy file="${tools}/struts/pager/pager-taglib.jar"
+         tofile="${webdeploy}/WEB-INF/lib/pager-taglib.jar" />
+      <copy file="${tools}/struts/pager/pager-taglib.tld"
+         tofile="${webdeploy}/WEB-INF/pager-taglib.tld" />
+      <if>
+         <equals arg1="${jbossVersion}" arg2="5.0.1" />
+         <then>
+            <mkdir dir="${webdeploy}/META-INF" />
+            <manifest file="${webdeploy}/META-INF/MANIFEST.MF">
+               <attribute name="Class-Path" value="../${app.name}-ejb.jar ../${app.name}-reporting.jar" />
+            </manifest>
+         </then>
+         <else>
+            <copy file="${build}/lib/${app.name}-ejb.jar"
+               tofile="${webdeploy}/WEB-INF/lib/${app.name}-ejb.jar" />
+         </else>
+      </if>
+
+      <copy file="${build}/lib/${app.name}-lib.jar"
+         tofile="${webdeploy}/WEB-INF/lib/${app.name}-lib.jar"
+         overwrite="true" />
+
+      <mkdir dir="${webdeploy}/en/notes" />
+      <mkdir dir="${webdeploy}/en/products" />
+      <mkdir dir="${webdeploy}/en/products/images" />
+      <mkdir dir="${webdeploy}/en/products/msds" />
+      <mkdir dir="${webdeploy}/en/products/ded" />
+      <mkdir dir="${webdeploy}/en/products/spec" />
+      <mkdir dir="${webdeploy}/en/products/thumbnails" />
+      <mkdir dir="${webdeploy}/en/knowledgebase/contents" />
+
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target  name="basewebapp"  depends="ejbdeploy,webappncust"
+           description="Copy basic store files to a deployment area." >
+
+      <mkdir dir="${webdeploy}/store" />
+
+      <copy todir="${webdeploy}/"
+         overwrite="true">
+         <fileset dir="docroot/cleanwise">
+            <exclude name="CVS" />
+            <exclude name="**/*.property"/>
+            <exclude name="**/*.xml"/>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/"
+         overwrite="true"
+         filtering="yes">
+         <fileset dir="docroot/cleanwise">
+            <exclude name="CVS" />
+            <include name="**/*.property"/>
+            <include name="**/*.xml"/>
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/store/" >
+         <fileset dir="${baselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/store/" >
+         <fileset dir="${customStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/esw" >
+         <fileset dir="${eswBaselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/esw/" >
+         <fileset dir="${eswCustomStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <echo message="Base store pages done."/>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="rephotdeploy" depends="repjar"
+           description="Copy the reporting jar file to jbossDeploy">
+
+   <logUsage targetName="rephotdeploy"/>
+   <copy file="${build}/lib/${app.name}-reporting.jar"
+      tofile="${jbossDeploy}/${app.name}-reporting.jar"
+      overwrite="true" />
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="ejb_deploy" depends="ejbjar"
+           description="Copy the application EJB jar file to jbossDeploy">
+
+      <logUsage targetName="ejb_deploy"/>
+      <copy file="${build}/lib/${app.name}-ejb.jar"
+         tofile="${jbossDeploy}/${app.name}-ejb.jar"
+         overwrite="true" />
+      <copy file="${build}/lib/${app.name}-apps.jar"
+         tofile="${jbossDeploy}/${app.name}-apps.jar"
+         overwrite="true" />
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="genxml" depends="StJohnBuild.prepare"
+           description="Generate the XML describing the db schema.">
+
+      <logUsage targetName="genxml"/>
+      <ant antfile="tools/gencode/build.xml" target="genxml"/>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="genjava" depends="StJohnBuild.prepare"
+          description="Generate the data access objects (DAO) used to access the database tables.">
+
+      <logUsage targetName="genjava"/>
+      <ant antfile="tools/gencode/build.xml" target="genjava"/>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="gendtd" depends="StJohnBuild.prepare"
+           description="Generate the DTDs.">
+
+      <logUsage targetName="gendtd"/>
+      <ant antfile="tools/gencode/build.xml" target="gendtd"/>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="clobber" depends="StJohnBuild.clean"
+           description="Perform the clean and delete jsps deployed." >
+
+      <logUsage targetName="clobber"/>
+      <!--Deletes the jsp cache-->
+      <delete includeEmptyDirs="true" >
+         <fileset dir="${servletContainerHome}/${configuration}Conf" />
+      </delete>
+   </target>
+
+<!-- ====================================================================== -->
+<!--  increment the major portion of the build number.                      -->
+<!--  To be done at the beginning of each major release cycle.              -->
+<!-- ====================================================================== -->
+   <target name="incrementMajorBuildNumber">
+
+      <logUsage targetName="incrementMajorBuildNumber"/>
+      <taskdef name="buildVersion"  classname="com.espendwise.ocean.buildUtils.ant.BuildVersionTask" >
+         <classpath>
+            <pathelement location="${tools}/ocean/eSpendwiseOceanBuildUtils.jar" />
+         </classpath>
+      </taskdef>
+
+      <buildVersion buildNumProperty="build.number"
+                    buildDateProperty="build.date"
+                    buildType="major"
+                    buildPropertiesFile="buildVersion/build_info.properties"/>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="delconfig"
+           description="Delete the all directories built by this build file.">
+
+      <logUsage targetName="delconfig"/>
+      <delete dir="${webdeploy}" />
+      <delete dir="${jbossConf}/${configuration}" />
+   </target>
+
+<!-- ====================================================================== -->
+<!--  create UI for the stand alone store customization                     -->
+<!-- ====================================================================== -->
+   <target name="storewebapp" depends="webapp"
+           description="Copy the web files for a stand alone store installation." >
+
+      <logUsage targetName="storewebapp"/>
+      <delete dir="${webdeploy}/store" />
+      <mkdir dir="${webdeploy}/store" />
+      <copy todir="${webdeploy}/store/${store}/"
+         overwrite="true">
+         <fileset dir="${baselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+      <copy todir="${webdeploy}/esw/${store}/"
+         overwrite="true">
+         <fileset dir="${eswBaselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+      <copy todir="${webdeploy}"
+         overwrite="true">
+         <fileset dir="storeCustomization/${configuration}/${docroot}/${configuration}">
+            <exclude name="CVS" />
+            <exclude name="WEB-INF/web.xml" />
+         </fileset>
+      </copy>
+   </target>
+
+<!-- ====================================================================== -->
+<!--  Recreate the analytic reporting database                              -->
+<!-- ====================================================================== -->
+   <target name="analyticdbinit" depends="StJohnBuild.prepare"
+           description="Create/recreate an empty database.">
+
+      <logUsage targetName="analyticdbinit"/>
+      <mkdir dir="${tmpdir}" />
+      <copy todir="${tmpdir}"
+         filtering="yes"
+         overwrite="yes" >
+         <fileset dir="sql">
+            <include name="CreateAnalyticSchema.sql" />
+            <include name="AnalyticJ2EEModel.DDL" />
+         </fileset>
+      </copy>
+
+      <!-- Create the schema -->
+      <sql
+         driver="oracle.jdbc.driver.OracleDriver"
+         classpath="${jdbcLib}"
+         url="${analyticUrl}"
+         userid="${analyticDBAUser}"
+         password="${analyticDBAPassword}"
+         onerror="continue"
+         src="${tmpdir}/CreateAnalyticSchema.sql"
+      />
+
+      <sql
+         driver="oracle.jdbc.driver.OracleDriver"
+         classpath="${jdbcLib}"
+         url="${analyticUrl}"
+         userid="${analyticUser}"
+         password="${analyticPassword}"
+         src="${tmpdir}/AnalyticJ2EEModel.DDL"
+      />
+
+      <!-- Create a sequence for each table -->
+      <copy file="sql/CreateAnalyticSequences.sql"
+            tofile="${tmpdir}/CreateAnalyticSequences.sql"
+            overwrite="yes"
+            filtering="yes" />
+
+      <sql
+         driver="oracle.jdbc.driver.OracleDriver"
+         classpath="${jdbcLib}"
+         url="${analyticUrl}"
+         userid="${analyticUser}"
+         password="${analyticPassword}"
+         print="true"
+         showheaders="false"
+         output="${tmpdir}/analyticSequences.sql"
+         onerror="continue"
+         src="${tmpdir}/CreateAnalyticSequences.sql"
+      />
+
+      <sql
+         driver="oracle.jdbc.driver.OracleDriver"
+         classpath="${jdbcLib}"
+         url="${analyticUrl}"
+         userid="${analyticUser}"
+         password="${analyticPassword}"
+         onerror="continue"
+         src="${tmpdir}/analyticSequences.sql"
+      />
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="copyDefaultFiles" depends="StJohnBuild.prepare"
+           description="Copies all of the default store files.">
+
+      <logUsage targetName="copyDefaultFiles"/>
+      <StoreCustomization
+         driver="oracle.jdbc.driver.OracleDriver"
+         url="${dbUrl}"
+         userid="${dbUser}"
+         password="${dbPassword}"
+         classpath="${jdbcLib}"
+         defaultSourceDirectory="${baselineStorePagesDir}"
+         customFilesDirectory="${customStorePagesDir}"
+         destDirectory="${webdeploy}/store"
+         filtering="false"
+         stores="${stores}">
+         <patternset>
+            <include name="**/*" />
+            <exclude name="CVS" />
+         </patternset>
+      </StoreCustomization>
+
+      <StoreCustomization
+         driver="oracle.jdbc.driver.OracleDriver"
+         url="${dbUrl}"
+         userid="${dbUser}"
+         password="${dbPassword}"
+         classpath="${jdbcLib}"
+         defaultSourceDirectory="${eswBaselineStorePagesDir}"
+         customFilesDirectory="${eswCustomStorePagesDir}"
+         destDirectory="${webdeploy}/esw"
+         filtering="false"
+         stores="${stores}">
+         <patternset>
+            <include name="**/*" />
+            <exclude name="CVS" />
+         </patternset>
+      </StoreCustomization>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="config">
+
+      <logUsage targetName="config"/>
+      <switch value="${jbossVersion}">
+         <case value="5.0.1">
+            <antcall target="jboss5.config"/>
+         </case>
+      </switch>
+  </target>
+
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_en_US0" depends="StJohnBuild.prepare"
+           description="Loads messages for en_US location all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/i18n/Message_All_en_US.txt" />
+         <arg value="en_US" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_ts_US" depends="StJohnBuild.prepare"
+           description="Loads messages for ts_US this is a test locale">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_ts_US.txt" />
+         <arg value="ts_US" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+  </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_en_US_NewXpedx" depends="StJohnBuild.prepare"
+           description="Loads messages for en_US location of Xpedx Orderline store">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_NewXpedx_en_US.txt" />
+         <arg value="en_US" />
+         <arg value="176648" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_en_GB_NewXpedx" depends="StJohnBuild.prepare"
+           description="Loads messages for en_GB location of Xpedx Orderline store">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+      <sysproperty
+         key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_NewXpedx_en_US.txt" />
+         <arg value="en_GB" />
+         <arg value="176648" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_en_AU_NewXpedx" depends="StJohnBuild.prepare"
+           description="Loads messages for en_AU location of Xpedx Orderline store">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+      <sysproperty
+         key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_NewXpedx_en_US.txt" />
+         <arg value="en_AU" />
+         <arg value="176648" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_piglatin" depends="StJohnBuild.prepare"
+           description="Loads messages for piglatin_US location all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_en_US.txt" />
+         <arg value="xx-piglatin" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_ru0" depends="StJohnBuild.prepare"
+           description="Loads messages for ru location all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+            <arg value="docroot/cleanwise/i18n/Message_All_ru.txt" />
+            <arg value="ru" />
+            <arg value="0" />
+            <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_nl0" depends="StJohnBuild.prepare"
+           description="Loads messages for ru location all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+            <arg value="docroot/cleanwise/i18n/Message_All_nl.txt" />
+            <arg value="nl" />
+            <arg value="0" />
+            <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_currency" depends="StJohnBuild.prepare"
+           description="Loads messages for en_US location all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.CurrencyLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Currency.txt" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_en_XXPO" depends="StJohnBuild.prepare"
+           description="Loads messages for pollock locale code">
+
+      <!--first do their locale-->
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/i18n/Message_All_en_XXPO.txt" />
+         <arg value="en_XXPO" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+      <!-- now do their store in case we ever move them back to a regular locale -->
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/i18n/Message_All_en_XXPO.txt" />
+         <arg value="en_US" />
+         <arg value="540236" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_pl" depends="StJohnBuild.prepare"
+           description="Loads messages for pl (Polish) locle for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/i18n/Message_All_pl.txt" />
+         <arg value="pl" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_hu" depends="StJohnBuild.prepare"
+           description="Loads messages for hu (hungarian) locle for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_hu.txt" />
+         <arg value="hu" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_tr" depends="StJohnBuild.prepare"
+           description="Loads messages for tr locle for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_tr.txt" />
+         <arg value="tr" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_en_GB" depends="StJohnBuild.prepare"
+           description="Loads messages for en_GB locle for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+            <arg value="docroot/cleanwise/i18n/Message_All_en_GB.txt" />
+            <arg value="en_GB" />
+            <arg value="0" />
+            <classpath refid="${project.path}" />
+      </java>
+  </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_el" depends="StJohnBuild.prepare"
+           description="Loads messages for el locle for all stores (greek)">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+      <sysproperty
+         key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_el.txt" />
+         <arg value="el" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_es" depends="StJohnBuild.prepare"
+           description="Loads messages for es (Spanish) lang for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader"
+         fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/i18n/Message_All_es.txt" />
+         <arg value="es" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader"
+         fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/i18n/Message_All_es.txt" />
+         <arg value="es_US" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_fr" depends="StJohnBuild.prepare"
+           description="Loads messages for fr locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_fr.txt" />
+         <arg value="fr" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_fr_CA" depends="StJohnBuild.prepare"
+           description="Loads messages for fr_CA locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_fr_CA.txt" />
+         <arg value="fr_CA" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_fr_CH" depends="StJohnBuild.prepare"
+           description="Loads messages for fr_CH locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_fr_CH.txt" />
+         <arg value="fr_CH" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_it" depends="StJohnBuild.prepare"
+           description="Loads messages for it locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_it.txt" />
+         <arg value="it" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_ja" depends="StJohnBuild.prepare"
+           description="Loads messages for it locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_ja.txt" />
+         <arg value="ja" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_en_AU" depends="StJohnBuild.prepare"
+           description="Loads messages for load_en_AU locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_en_AU.txt" />
+         <arg value="en_AU" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_es_CL" depends="StJohnBuild.prepare"
+           description="Loads messages for es_CL locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_es_CL.txt" />
+         <arg value="es_CL" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_es_ES" depends="StJohnBuild.prepare"
+           description="Loads messages for es_ES locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_es_ES.txt" />
+         <arg value="es_ES" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_de" depends="StJohnBuild.prepare"
+           description="Loads messages for de locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_de.txt" />
+         <arg value="de" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_zh" depends="StJohnBuild.prepare"
+           description="Loads messages for zh locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_zh.txt" />
+         <arg value="zh" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_pt_BR" depends="StJohnBuild.prepare"
+           description="Loads messages for pt_BR locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_pt_BR.txt" />
+         <arg value="pt_BR" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_sl" depends="StJohnBuild.prepare"
+           description="Loads messages for Slovenian (SL) locale for all stores">
+
+      <java classname="com.cleanwise.service.apps.loaders.MessageLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+
+         <arg value="docroot/cleanwise/i18n/Message_All_sl.txt" />
+         <arg value="sl" />
+         <arg value="0" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_i18n"
+           description="Load all the known i18n values"
+           depends="load_currency,
+                    load_en_US0,
+                    load_en_GB,
+                    load_es,
+                    load_fr_CA,
+                    load_fr_CH,
+                    load_fr,
+                    load_it,
+                    load_ja,
+                    load_hu,
+                    load_tr,
+                    load_de,
+                    load_es_CL,
+                    load_en_AU,
+                    load_es_ES,
+                    load_zh,
+                    load_pt_BR,
+                    load_el,
+                    load_pl,
+                    load_sl,
+                    load_en_AU_NewXpedx,
+                    load_en_US_NewXpedx,
+                    load_en_GB_NewXpedx"
+       />
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="load_processes" depends="StJohnBuild.prepare"
+           description="Loads process templates">
+
+      <logUsage targetName="load_processes"/>
+      <java classname="com.cleanwise.service.apps.loaders.ProcessLoader" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/process/${tfile}" />
+         <classpath refid="project.class.tools" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="adjust_ja" depends="StJohnBuild.prepare"
+           description="">
+
+      <logUsage targetName="adjust_ja"/>
+      <java classname="com.cleanwise.service.apps.MessageAdjuster" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/i18n/Message_All_en_US.txt" />
+         <arg value="docroot/cleanwise/i18n/Message_All_ja.txt" />
+         <arg value="docroot/cleanwise/i18n/Message_All_ja1.txt" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="adjust_ru" depends="StJohnBuild.prepare"
+           description="Adjusts Russian message file by en_US">
+
+      <logUsage targetName="adjust_ru"/>
+      <java classname="com.cleanwise.service.apps.MessageAdjuster" fork="true">
+         <sysproperty
+            key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <arg value="docroot/cleanwise/i18n/Message_All_en_US.txt" />
+         <arg value="docroot/cleanwise/i18n/Message_All_ru.txt" />
+         <arg value="docroot/cleanwise/i18n/Message_All_ru1.txt" />
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="compile_edi" depends="StJohnBuild.prepare"
+           description="compile the com.cleanwise.service.edi package with new oboe lib">
+
+      <logUsage targetName="compile_edi"/>
+      <echo message = "MMMMMMMMMMMMMMMMMMMMMMMMMMMM ${jdbcLib}" />
+      <mkdir dir="${build}" />
+
+         <javac srcdir="${src}"
+         destdir="${build}"
+         memoryMaximumSize="512M"
+         fork ="true"
+         optimize="${compileopt}" debug="${compiledebug}" includeAntRuntime="no">
+         <!-- debuglevel="lines,vars,source"  debug="true" -->
+         <!-- replace the previous line with this one to see the source line numbers
+            in stack traces
+            debuglevel="lines,vars,source"  debug="true"
+         -->
+         <include name="**/*.java" />
+         <exclude name="**/apps/edi/*.java" />
+         <exclude name="**/apps/dataexchange/VerifyCustInvoices.java" />
+         <classpath refid="${project.path}" />
+      </javac>
+
+      <mkdir dir="${build}/tools" />
+      <javac srcdir="tools" destdir="${build}/tools" includeAntRuntime="no">
+         <include name="**/tools/*.java" />
+         <classpath refid="${project.path}" />
+      </javac>
+      <javac srcdir="${oboe.src}" destdir="${build}"
+         optimize="${compileopt}" debug="${compiledebug}" includeAntRuntime="no">
+         <include name="**/apps/edi/*.java" />
+         <classpath refid="project.oboe.test.class.path"/>
+      </javac>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="install_edi" depends="StJohnBuild.prepare"
+           description="replace oboe files with a new">
+
+      <logUsage targetName="install_edi"/>
+      <delete dir="${jbossHome}/${app.name}/edi/tools/oboe" />
+
+      <copy file="${tools}/oboe.new/oboe.jar"
+         todir="${jbossHome}/${app.name}/edi/lib" />
+
+      <copy todir="${jbossHome}/${app.name}/edi/tools/oboe"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="tools/oboe.new">
+            <include name="xml/**" />
+            <include name="*.jar" />
+         </fileset>
+      </copy>
+
+      <echo file="${build}/OBOE.properties">
+         # specify location of OBOE rules files
+         xmlPath=${jbossHome}/${app.name}/edi/tools/oboe/xml/
+         searchDirective=V
+
+         # indicates that it's okay to use object files if newer than the xml file
+         useObject=false
+
+         # used by well formed parser to find correct ts rules file
+         # in this case the 840 file is defined in the xml file as by the RequestForQuotation node
+         RequestForQuotation=840
+
+         #for long running applications, check to see if this file changed.
+         checkPropertyFileForChanges=true
+
+         #other parameters may be used, refer to "how to use" doc on website
+      </echo>
+
+      <copy file="${build}/OBOE.properties"
+         tofile="${jbossHome}/${app.name}/edi/tools/oboe/OBOE.properties"
+         filtering="no" />
+
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="ejbjar" depends="StJohnBuild.compile"
+           description="Create a jar file with the application EJBs.">
+
+      <logUsage targetName="ejbjar"/>
+      <mkdir dir="${build}/lib" />
+      <mkdir dir="${build}/META-INF" />
+      <copy todir="${build}/META-INF"
+         overwrite="yes" filtering ="yes">
+         <fileset dir="${src}/com/cleanwise/service/api/META-INF">
+            <include name="*.xml" />
+         </fileset>
+      </copy>
+      <copy file="${jbossConf}/standardjboss.xml"
+         tofile="${build}/standardjboss.xml" />
+
+      <jar jarfile="${build}/lib/${app.name}Services.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/api/util/Semaphore*.class"/>
+            </patternset>
+         </fileset>
+      </jar>
+
+      <jar jarfile="${build}/lib/${app.name}-lib.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/crypto/**"/>
+               <include name="com/cleanwise/service/apps/dataexchange/*.class" />
+            </patternset>
+         </fileset>
+      </jar>
+
+      <jar jarfile="${build}/lib/${app.name}-apps.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/apps/**"/>
+               <exclude name="**/apps/dataexchange/*.class" />
+            </patternset>
+         </fileset>
+      </jar>
+
+      <jar jarfile="${build}/lib/${app.name}-ejb.jar">
+         <fileset dir="${build}">
+            <include name="META-INF/**"/>
+            <include name="standardjboss.xml"/>
+            <include name="com/cleanwise/service/apps/dataexchange/**"/>
+            <include name="com/cleanwise/service/apps/quartz/**"/>
+            <include name="com/cleanwise/service/crypto/**"/>
+            <include name="com/lawson/bizbean/prod/**"/>
+            <include name="com/lawson/ejb/**"/>
+            <include name="com/cleanwise/service/apps/**"/>
+            <include name="com/cleanwise/compass/**"/>
+            <include name="com/protus/www/**"/>
+            <include name="com/avalara/avatax/services/address/**"/>
+            <include name="com/avalara/avatax/services/base/**"/>
+            <include name="com/avalara/avatax/services/base/ser/**"/>
+            <include name="com/avalara/avatax/services/base/wss/**"/>
+            <include name="com/avalara/avatax/services/tax/**"/>
+            <include name="com/johnsondiversey/msds/msdswebservice/jdimsds/**"/>
+            <include name="com/cleanwise/service/api/*"/>
+            <include name="com/cleanwise/service/api/cachecos/**"/>
+            <include name="com/cleanwise/service/api/dao/**"/>
+            <include name="com/cleanwise/service/api/dto/**"/>
+            <include name="com/cleanwise/service/api/eventsys/**"/>
+            <include name="com/cleanwise/service/api/framework/**"/>
+            <include name="com/cleanwise/service/api/meta/**"/>
+            <include name="com/cleanwise/service/api/pipeline/**"/>
+            <include name="com/cleanwise/service/api/process/**"/>
+            <include name="com/cleanwise/service/api/session/**"/>
+            <include name="com/cleanwise/service/api/tree/**"/>
+            <include name="com/cleanwise/service/api/plugin/**"/>
+            <include name="com/cleanwise/service/api/util/**"/>
+            <include name="com/cleanwise/service/api/value/**"/>
+            <include name="com/cleanwise/service/api/wrapper/**"/>
+            <include name="com/cleanwise/service/api/reporting/GenericReport.class"/>
+            <include name="com/cleanwise/service/api/reporting/GenericReportMulti.class"/>
+            <include name="com/cleanwise/service/api/reporting/DomUniversalReport.class"/>
+         </fileset>
+      </jar>
+
+      <if>
+         <equals arg1="${jbossVersion}" arg2="5.0.1" />
+         <else>
+            <java classname="org.jboss.verifier.Main" fork="true">
+               <classpath refid="project.verifier.path" />
+               <arg value="${build}/lib/${app.name}-ejb.jar" />
+            </java>
+         </else>
+      </if>
+
+  </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="repjar" depends="StJohnBuild.compile"
+           description="Create a jar file with reporting classes for hot deploying.">
+
+      <logUsage targetName="repjar"/>
+      <mkdir dir="${build}/lib" />
+      <jar jarfile="${build}/lib/${app.name}-reporting.jar">
+         <fileset dir="${build}">
+            <include name="com/cleanwise/service/api/reporting/**"/>
+            <exclude name="com/cleanwise/service/api/reporting/GenericReport.class"/>
+            <exclude name="com/cleanwise/service/api/reporting/GenericReportMulti.class"/>
+            <exclude name="com/cleanwise/service/api/reporting/DomUniversalReport.class"/>
+         </fileset>
+      </jar>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="ejbjar_edi" depends="compile_edi"
+           description="Create a jar file with the application EJBs.">
+
+      <logUsage targetName="ejbjar_edi"/>
+      <mkdir dir="${build}/lib" />
+      <mkdir dir="${build}/META-INF" />
+      <copy todir="${build}/META-INF"
+         overwrite="yes" filtering ="yes">
+         <fileset dir="${src}/com/cleanwise/service/api/META-INF">
+            <include name="*.xml" />
+         </fileset>
+      </copy>
+
+      <copy file="${jbossConf}/standardjboss.xml"
+         tofile="${build}/standardjboss.xml" />
+
+      <jar jarfile="${build}/lib/${app.name}Services.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/api/util/Semaphore*.class"/>
+            </patternset>
+         </fileset>
+      </jar>
+
+      <jar jarfile="${build}/lib/${app.name}-lib.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/crypto/**"/>
+               <include name="com/cleanwise/service/apps/dataexchange/*.class" />
+            </patternset>
+         </fileset>
+      </jar>
+
+      <jar jarfile="${build}/lib/${app.name}-apps.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/apps/**"/>
+               <exclude name="**/apps/dataexchange/*.class" />
+            </patternset>
+         </fileset>
+      </jar>
+
+      <jar jarfile="${build}/lib/${app.name}-ejb.jar"
+            basedir="${build}"
+            includes="META-INF/**,standardjboss.xml,com/cleanwise/service/apps/dataexchange/**,
+                      com/cleanwise/service/api/**,com/cleanwise/service/crypto/**,,com/lawson/bizbean/prod/**,
+                      com/lawson/ejb/**,com/protus/www/**,com/avalara/avatax/services/address/**,
+                      com/avalara/avatax/services/base/**,com/avalara/avatax/services/base/ser/**,
+                      com/avalara/avatax/services/base/wss/**,com/avalara/avatax/services/tax/**,
+                      com/johnsondiversey/msds/msdswebservice/jdimsds/**" />
+
+      <java classname="org.jboss.verifier.Main" fork="true">
+         <classpath refid="project.verifier.path" />
+         <arg value="${build}/lib/${app.name}-ejb.jar" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="ejbdeploy" depends="ejbjar,repjar"
+           description="Copy the application EJB jar file to jbossDeploy">
+
+      <logUsage targetName="ejbdeploy"/>
+      <copy file="${build}/lib/${app.name}-ejb.jar"
+         tofile="${jbossDeploy}/${app.name}-ejb.jar"
+         overwrite="true" />
+      <copy file="${build}/lib/${app.name}-reporting.jar"
+         tofile="${jbossDeploy}/${app.name}-reporting.jar"
+         overwrite="true" />
+      <copy file="${build}/lib/${app.name}-apps.jar"
+         tofile="${jbossLibExt}/${app.name}-apps.jar"
+         overwrite="true" />
+      <copy file="${build}/lib/${app.name}Services.jar"
+         tofile="${jbossLibExt}/${app.name}Services.jar"
+         overwrite="true" />
+
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="ejbdeploy_edi" depends="ejbjar_edi"
+           description="Copy the application EJB jar file to jbossDeply">
+
+      <logUsage targetName="ejbdeploy_edi"/>
+      <copy file="${build}/lib/${app.name}-ejb.jar"
+         tofile="${jbossDeploy}/${app.name}-ejb.jar"
+         overwrite="true" />
+      <copy file="${build}/lib/${app.name}-apps.jar"
+         tofile="${jbossDeploy}/${app.name}-apps.jar"
+         overwrite="true" />
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="webapp_edi" depends="webappncust_edi"
+           description="Copy customized files to a deployment area." >
+
+      <logUsage targetName="webapp_edi"/>
+      <copy todir="${webdeploy}/store/">
+         <fileset dir="${baselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/store/">
+         <fileset dir="${customStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+      <copy todir="${webdeploy}/esw">
+         <fileset dir="${eswBaselineStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+      <copy todir="${webdeploy}/esw/">
+         <fileset dir="${eswCustomStorePagesDir}">
+            <exclude name="CVS" />
+         </fileset>
+      </copy>
+
+  </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="event_sys_add" depends="StJohnBuild.compile"
+           description="Run workflow bean - invoice dist">
+
+      <logUsage targetName="event_sys_add"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="event_sys_add"/>
+         <sysproperty key="file" value="event_file"/>
+         <classpath refid="${project.path}" />
+      </java>
+
+   </target>
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="event_sys_job" depends="StJohnBuild.compile"
+           description="Run workflow bean - invoice dist">
+
+      <logUsage targetName="event_sys_job"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="event_sys_job"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="process_event" depends="StJohnBuild.compile"
+           description="Run single event">
+
+      <logUsage targetName="process_event"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="process_event"/>
+         <jvmarg value="-DeventIds=${eventIds}"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="invoices_to_lawson" depends="StJohnBuild.compile"
+           description="Run workflow bean">
+
+      <logUsage targetName="invoices_to_lawson"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="invoices_to_lawson"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="orders_to_lawson" depends="StJohnBuild.compile"
+           description="Run workflow bean - invoice dist">
+
+      <logUsage targetName="orders_to_lawson"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="orders_to_lawson"/>
+         <sysproperty key="stores" value="101250"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="process_scheduled_orders" depends="StJohnBuild.compile"
+           description="Run workflow bean - invoice dist">
+
+      <logUsage targetName="process_scheduled_orders"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="process_scheduled_orders"/>
+         <sysproperty key="siteIds" value="176652"/>
+         <sysproperty key="begDate" value="200810091300"/>
+         <sysproperty key="endDate" value="200810091600"/>
+         <sysproperty key="stores" value="1"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="send_inventory_missing_email" depends="StJohnBuild.compile"
+           description="Sends emails to notify about missing of inventory items">
+
+      <logUsage targetName="send_inventory_missing_email"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="send_inventory_missing_email"/>
+         <sysproperty key="reportName" value="Inventory Missing Emails"/>
+         <sysproperty key="userName" value="inv_order"/>
+         <sysproperty key="storeId" value="0"/>
+         <sysproperty key="accountId" value="0"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="process_workflow" depends="StJohnBuild.compile"
+           description="Run workflow bean - invoice dist">
+
+      <logUsage targetName="process_workflow"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="process_workflow"/>
+         <sysproperty key="stores" value="1"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="send_order_emails" depends="StJohnBuild.compile"
+           description="Run workflow bean - sent order emails">
+
+      <logUsage targetName="send_order_emails"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="send_order_emails"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+   <!-- this task is for testing email template functionality -->
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="order_through_pipeline" depends="StJohnBuild.compile"
+           description="Run pipeline process_pipeline">
+
+      <logUsage targetName="order_through_pipeline"/>
+      <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+         <sysproperty key="conf" value="${jbossHome}/xsuite/app.properties"/>
+         <sysproperty key="cmd" value="order_through_pipeline"/>
+         <sysproperty key="order_id" value="3068065"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="quartzconfig" depends="StJohnBuild.prepare"
+           description="Copy quartz config files to jboss" if="jbossQuartz">
+
+      <logUsage targetName="quartzconfig"/>
+      <echo message="configuring quartz" />
+
+      <copy todir="${jbossQuartz}/META-INF"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="${tools}/quartz/META-INF" >
+            <include name="jboss-service.xml" />
+         </fileset>
+      </copy>
+      <copy todir="${jbossQuartz}"
+         overwrite="yes">
+         <fileset dir="${tools}/cryptix" >
+            <include name="cryptix-jce-api-20050328.jar" />
+            <include name="cryptix-jce-provider-20050328.jar" />
+            <include name="cryptix-message-api-20050405.jar" />
+            <include name="cryptix-openpgp-provider-20050405.jar" />
+            <include name="cryptix-pki-api-20050405.jar" />
+         </fileset>
+      </copy>
+
+      <manifest file="${jbossQuartz}/META-INF/MANIFEST.MF">
+         <attribute name="Class-Path" value="../${app.name}-ejb.jar" />
+      </manifest>
+
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="jsp_scanner" depends="StJohnBuild.compile"
+           description="Target is to insert unic ID to tags">
+
+      <logUsage targetName="jsp_scanner"/>
+      <java classname="com.cleanwise.service.api.util.JspScanner" fork="true">
+         <sysproperty key="scanConf" value="${jbossHome}/xsuite/jspScanConfig.properties"/>
+         <classpath refid="${project.path}" />
+      </java>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="event" depends="StJohnBuild.prepare"
+           description="Copy event system config files to jboss" if="jbossEvent">
+
+      <logUsage targetName="events"/>
+      <echo message="configuring event system" />
+      <copy todir="${jbossEvent}/META-INF"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="${tools}/event/META-INF" >
+            <include name="jboss-service.xml" />
+         </fileset>
+      </copy>
+
+      <manifest file="${jbossEvent}/META-INF/MANIFEST.MF">
+         <attribute name="Class-Path" value="../${app.name}-ejb.jar" />
+      </manifest>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="test"
+      description="Runs all of the unit tests for this project" depends="StJohnBuild.compile">
+
+      <logUsage targetName="test"/>
+      <path id="project.unittests.path">
+         <pathelement location="${build}/test/" />
+         <pathelement location="${test}/data/" />
+         <pathelement path="${build}" />
+         <pathelement location="${test}/lib/testng-6.2.jar" />
+         <pathelement location="${test}/lib/eSpendwiseOceanTest.jar" />
+         <pathelement location="${build}/tools/" />
+         <pathelement location="${jbossLibExt}/log4j.jar" />
+         <path refid="${project.path}"/>
+      </path>
+
+      <mkdir dir="${build}/test"/>
+      <javac srcdir="${test}" destdir="${build}/test"
+         debuglevel="lines,vars,source"
+         optimize="false" debug="true" nowarn = "${nowarn}"
+         includeAntRuntime="no">
+         <include name="**/*.java" />
+         <classpath refid="project.unittests.path" />
+      </javac>
+
+      <taskdef name="testng" classpathref="project.unittests.path" classname="org.testng.TestNGAntTask" />
+      <testng classpathref="project.unittests.path"  outputdir="${build}/test-output" >
+         <xmlfileset dir="${test}" includes="testng.xml" />
+      </testng>
+   </target>
+
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="deploywsejb"
+           description="deploy ws" depends="ejbjar">
+
+      <logUsage targetName="deploywsejb"/>
+      <copy file="${build}/lib/${app.name}-ws.jar"
+         tofile="${jbossDeploy}/${app.name}-ws.jar" />
+      <delete file="${jbossLibExt}/wsdl4j-1.5.1.jar" failonerror="false"/>
+   </target>
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+	<target name="resource bundle check" description="This task checks resourcebundles for correctnes.">
+			   <logUsage targetName="resource bundle check"/>
+			<taskdef name="resourceCheck" classpath="${tools}/resourceCheck/rscbundlecheck-1.31-bin.jar" classname="org.dyndns.fichtner.rsccheck.ant.RscBundleCheckTask"/> 
+			<resourceCheck sortResult="true" failonerror="false"> 
+			<fileset dir="docroot/cleanwise/i18n/" includes="*">
+			</fileset>
+			<checks>
+				<include name="*"/>
+				<!-- "*" performs all the below checks"-->
+				<!--<include name="unicode check"/>
+				<include name="upper lower check"/>
+				<include name="line end check"/>
+				<include name="empty key check"/>
+				<include name="duplicate key check"/>
+				<include name="placeholder check"/>
+				<include name="empty value check"/>
+				<include name="invalid char check"/>
+				<include name="messageformat check"/>
+				<include name="cross bundle check"/>
+				<exclude name="invalid char check"/>-->
+			</checks>
+			</resourceCheck> 
+	</target>
+
+    <!-- Move/Copy Blob Data from DB to FTP -->
+    <target name="BlobDBtoFTP" description="Move/Copy Blob Data from DB to FTP">
+        <filter filtersfile="installation.properties"/>
+        <ant antfile="build.xml" target="jboss5.compile" /> 
+        <mkdir dir="${build}/tools" />
+        <copy  file="${tools}/com/cleanwise/postdeploy/transfer.properties"
+               tofile="${build}/tools/com/cleanwise/postdeploy/transfer.properties"
+               overwrite="yes" filtering="yes" />
+        <copy  file="${tools}/com/cleanwise/postdeploy/log4j.properties"
+               tofile="${build}/tools/com/cleanwise/postdeploy/log4j.properties"
+               overwrite="yes" filtering="yes" />
+        <javac  srcdir="${tools}" destdir="${build}/tools" fork="true" debug="true">
+                <include name="**/postdeploy/BlobDBtoFtpTransfer.java" />
+                <classpath refid="${project.path}" />
+        </javac>
+        <java classname="com.cleanwise.postdeploy.BlobDBtoFtpTransfer"
+              fork="true"
+              dir="${build}/tools/com/cleanwise/postdeploy">
+
+            <arg value="${dbDriver}" />
+            <arg value="${dbUrl}" />
+            <arg value="${dbUser}" />
+            <arg value="${dbPassword}" />
+
+            <classpath refid="${project.path}" />
+            <classpath>
+                <pathelement path="${build}/tools" />
+            </classpath>
+        </java>
+    </target>
+    
+    <!-- Compile User Activity Tool -->
+    <target name="compileUserActivityInfo" description="Compile User Activity Tool">
+        <mkdir dir="${build}/tools" />
+        <javac  srcdir="${tools}" destdir="${build}/tools" fork="true" debug="true">
+                <include name="**/useractivity/*.java" />
+                <classpath refid="${project.path}" />
+        </javac>
+    </target>
+
+</project>

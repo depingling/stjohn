@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AB</idCode>
+        <idValue>Assortment Against Blanket</idValue>
+    <idCode>AC</idCode>
+        <idValue>AOG (Aircraft on Ground) Critical</idValue>
+    <idCode>AO</idCode>
+        <idValue>AOG (Aircraft on Ground) Service</idValue>
+    <idCode>BD</idCode>
+        <idValue>Bidding</idValue>
+    <idCode>BE</idCode>
+        <idValue>Blanket Order/Estimated Quantities (Not firm Commitment)</idValue>
+    <idCode>BH</idCode>
+        <idValue>Bill and Hold</idValue>
+    <idCode>BK</idCode>
+        <idValue>Blanket Order (Quantity Firm)</idValue>
+    <idCode>BL</idCode>
+        <idValue>Bailment</idValue>
+    <idCode>BQ</idCode>
+        <idValue>Budgetary Quote</idValue>
+    <idCode>BY</idCode>
+        <idValue>Buying</idValue>
+    <idCode>CA</idCode>
+        <idValue>Contract Award Notification</idValue>
+    <idCode>CC</idCode>
+        <idValue>Change to Contract</idValue>
+    <idCode>CF</idCode>
+        <idValue>Confirmation</idValue>
+    <idCode>CN</idCode>
+        <idValue>Consigned Order</idValue>
+    <idCode>CO</idCode>
+        <idValue>Catalog Order</idValue>
+    <idCode>CP</idCode>
+        <idValue>Change to Purchase Order</idValue>
+    <idCode>CR</idCode>
+        <idValue>Change to Release</idValue>
+    <idCode>DR</idCode>
+        <idValue>Direct Ship</idValue>
+    <idCode>DS</idCode>
+        <idValue>Dropship</idValue>
+    <idCode>EO</idCode>
+        <idValue>Emergency Order</idValue>
+    <idCode>FH</idCode>
+        <idValue>Fabricate and Hold</idValue>
+    <idCode>IN</idCode>
+        <idValue>Information Copy</idValue>
+    <idCode>JL</idCode>
+        <idValue>Job Lot</idValue>
+    <idCode>KA</idCode>
+        <idValue>Agreement</idValue>
+    <idCode>KB</idCode>
+        <idValue>Blanket Purchase Agreement</idValue>
+    <idCode>KC</idCode>
+        <idValue>Contract</idValue>
+    <idCode>KD</idCode>
+        <idValue>Basic Agreement</idValue>
+    <idCode>KE</idCode>
+        <idValue>Basic Ordering Agreement</idValue>
+    <idCode>KG</idCode>
+        <idValue>Grant</idValue>
+    <idCode>KI</idCode>
+        <idValue>Indefinite Delivery Indefinite Quantity</idValue>
+    <idCode>KN</idCode>
+        <idValue>Purchase Order</idValue>
+    <idCode>KO</idCode>
+        <idValue>Close Out</idValue>
+    <idCode>KP</idCode>
+        <idValue>Authority to Proceed</idValue>
+    <idCode>KQ</idCode>
+        <idValue>Indefinite Delivery Definite Quantity</idValue>
+    <idCode>KR</idCode>
+        <idValue>Requirements</idValue>
+    <idCode>KS</idCode>
+        <idValue>Letter Contract</idValue>
+    <idCode>KT</idCode>
+        <idValue>Task Order</idValue>
+    <idCode>LB</idCode>
+        <idValue>Lease (Blanket Agreement)</idValue>
+    <idCode>LS</idCode>
+        <idValue>Lease</idValue>
+    <idCode>NE</idCode>
+        <idValue>New Order</idValue>
+    <idCode>NO</idCode>
+        <idValue>Not for Sale</idValue>
+    <idCode>NP</idCode>
+        <idValue>New Product Introduction</idValue>
+    <idCode>NS</idCode>
+        <idValue>New Store Opening</idValue>
+    <idCode>OS</idCode>
+        <idValue>Special Order</idValue>
+    <idCode>PR</idCode>
+        <idValue>Promotion</idValue>
+    <idCode>RA</idCode>
+        <idValue>Release Against Assortment</idValue>
+    <idCode>RC</idCode>
+        <idValue>Retailer Pre-commitment</idValue>
+    <idCode>RE</idCode>
+        <idValue>Reorder</idValue>
+    <idCode>RL</idCode>
+        <idValue>Release or Delivery Order</idValue>
+    <idCode>RN</idCode>
+        <idValue>Renewal Order</idValue>
+    <idCode>RO</idCode>
+        <idValue>Rush Order</idValue>
+    <idCode>RR</idCode>
+        <idValue>Repair and Return</idValue>
+    <idCode>RT</idCode>
+        <idValue>Rental</idValue>
+    <idCode>RU</idCode>
+        <idValue>Record Update Service</idValue>
+    <idCode>RW</idCode>
+        <idValue>Resume Work Order</idValue>
+    <idCode>SA</idCode>
+        <idValue>Stand-alone Order</idValue>
+    <idCode>SO</idCode>
+        <idValue>Shipped Order</idValue>
+    <idCode>SP</idCode>
+        <idValue>Sample</idValue>
+    <idCode>SS</idCode>
+        <idValue>Supply or Service Order</idValue>
+    <idCode>ST</idCode>
+        <idValue>Standing Order</idValue>
+    <idCode>SW</idCode>
+        <idValue>Stop Work</idValue>
+    <idCode>TC</idCode>
+        <idValue>Toll Conversion Order</idValue>
+    <idCode>TM</idCode>
+        <idValue>Time &amp; Materials</idValue>
+    <idCode>TR</idCode>
+        <idValue>Termination</idValue>
+    <idCode>UD</idCode>
+        <idValue>Unit Down</idValue>
+    <idCode>UE</idCode>
+        <idValue>Unit Exchange</idValue>
+    <idCode>US</idCode>
+        <idValue>Urgent Service Request</idValue>
+    <idCode>WO</idCode>
+        <idValue>Warranty Order</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

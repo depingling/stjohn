@@ -1,0 +1,8 @@
+Since the system has been in production for more than 1 year, we have
+decided to remove all the images, msds, etc from the CVS module.  These
+are no longer needed as updates are continually made in the production system.
+
+Go to the CVS Attic directory in the CVS server to recover these.
+
+-durval
+Mon Jun 16 14:10:05 EDT 2003

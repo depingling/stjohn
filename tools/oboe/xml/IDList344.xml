@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE idList SYSTEM "idList.dtd">
+<!-- Revision 1.6.0 data/OBOE, docs,September 13, 2001, -->
+<idList>
+    <idCode>AA</idCode>
+        <idValue>More Than One Year</idValue>
+    <idCode>AD</idCode>
+        <idValue>Average Daily</idValue>
+    <idCode>AM</idCode>
+        <idValue>Average Monthly</idValue>
+    <idCode>AN</idCode>
+        <idValue>Annual</idValue>
+    <idCode>AP</idCode>
+        <idValue>Academic Period</idValue>
+    <idCode>AY</idCode>
+        <idValue>Average Year</idValue>
+    <idCode>BD</idCode>
+        <idValue>Buyer&apos;s Manufacturing Days</idValue>
+    <idCode>BM</idCode>
+        <idValue>Bimonthly</idValue>
+    <idCode>BW</idCode>
+        <idValue>Bi-weekly</idValue>
+    <idCode>CC</idCode>
+        <idValue>Cycles</idValue>
+    <idCode>CY</idCode>
+        <idValue>Calendar Year</idValue>
+    <idCode>DA</idCode>
+        <idValue>Calendar Days</idValue>
+    <idCode>DW</idCode>
+        <idValue>Work Days</idValue>
+    <idCode>DY</idCode>
+        <idValue>Day</idValue>
+    <idCode>EL</idCode>
+        <idValue>Option Period at End of Lease</idValue>
+    <idCode>F1</idCode>
+        <idValue>Fiscal Year Plus One Year</idValue>
+    <idCode>F2</idCode>
+        <idValue>Fiscal Year Plus Two Years</idValue>
+    <idCode>FY</idCode>
+        <idValue>Fiscal Year</idValue>
+    <idCode>HR</idCode>
+        <idValue>Hours</idValue>
+    <idCode>ID</idCode>
+        <idValue>Inception to Date</idValue>
+    <idCode>KK</idCode>
+        <idValue>Maximum Calendar Days</idValue>
+    <idCode>KL</idCode>
+        <idValue>As Required</idValue>
+    <idCode>LN</idCode>
+        <idValue>Lease Termination Notification Period</idValue>
+    <idCode>LT</idCode>
+        <idValue>Lease Term</idValue>
+    <idCode>MD</idCode>
+        <idValue>Month to Date</idValue>
+    <idCode>MI</idCode>
+        <idValue>Minutes</idValue>
+    <idCode>MO</idCode>
+        <idValue>Month</idValue>
+    <idCode>MS</idCode>
+        <idValue>Mean Time Between Stops</idValue>
+    <idCode>MT</idCode>
+        <idValue>Mean Time Between Failure</idValue>
+    <idCode>NX</idCode>
+        <idValue>Next Six Months</idValue>
+    <idCode>PA</idCode>
+        <idValue>Plan Year to Date</idValue>
+    <idCode>PD</idCode>
+        <idValue>Period to Date</idValue>
+    <idCode>PM</idCode>
+        <idValue>Preceding 12 Months</idValue>
+    <idCode>PR</idCode>
+        <idValue>Preceding Six Months</idValue>
+    <idCode>Q1</idCode>
+        <idValue>First Quarter</idValue>
+    <idCode>Q2</idCode>
+        <idValue>Second Quarter</idValue>
+    <idCode>Q3</idCode>
+        <idValue>Third Quarter</idValue>
+    <idCode>Q4</idCode>
+        <idValue>Fourth Quarter</idValue>
+    <idCode>QY</idCode>
+        <idValue>Quarter of a Year</idValue>
+    <idCode>SA</idCode>
+        <idValue>Semiannual</idValue>
+    <idCode>SD</idCode>
+        <idValue>Seller&apos;s Manufacturing Days</idValue>
+    <idCode>SH</idCode>
+        <idValue>Shift</idValue>
+    <idCode>SM</idCode>
+        <idValue>Semimonthly</idValue>
+    <idCode>SP</idCode>
+        <idValue>Summer Period</idValue>
+    <idCode>TY</idCode>
+        <idValue>Tax Year</idValue>
+    <idCode>WK</idCode>
+        <idValue>Weeks</idValue>
+    <idCode>WW</idCode>
+        <idValue>Work Week</idValue>
+    <idCode>WY</idCode>
+        <idValue>Weekly</idValue>
+    <idCode>YD</idCode>
+        <idValue>Year to Date</idValue>
+    <idCode>ZZ</idCode>
+        <idValue>Mutually Defined</idValue>
+</idList>

@@ -1,0 +1,116 @@
+Tomcat 3.1 Instructions
+
+    1. Choose the context in which to install. I'll use the "/examples"
+       context created in the default Tomcat configuration for the
+       following instructions.
+
+    2. Edit the tomcat/webapps/examples/WEB-INF/web.xml file and add the
+       following lines inside the body of the <web-app>...</web-app> tags.
+
+      <taglib>
+        <taglib-uri>
+          http://jsptags.com/tags/navigation/pager
+        </taglib-uri>
+        <taglib-location>
+          /WEB-INF/jsp/pager-taglib.tld
+        </taglib-location>
+      </taglib>
+
+    3. Copy the file pager-taglib.tld to the
+       tomcat/webapps/examples/WEB-INF/jsp directory.
+
+    4. Copy pager-taglib.jar to the
+       tomcat/webapps/examples/WEB-INF/lib directory. You may need to
+       create a tomcat/webapps/examples/WEB-INF/lib directory if it does
+       not already exist.
+
+       Please Note: The 3.1 Beta version of Tomcat does not support tag
+       libraries in jar files. The following steps will install for Tomcat
+       3.1 Beta.
+
+         1. Copy pager-taglib.jar to the
+            tomcat/webapps/examples/WEB-INF/classes directory.
+
+         2. Change current working directory to the
+            tomcat/webapps/examples/WEB-INF/classes directory.
+
+         3. Extract the contents of the pager-taglib.jar file with
+            the command:
+
+                jar xvf pager-taglib.jar
+
+         4. There will be a META-INF directory created during the
+            extraction, this can be removed.
+
+         5. The pager-taglib.jar file can now be removed from the
+            tomcat/webapps/examples/WEB-INF/classes directory.
+
+    5. Copy the files pager-demo.jsp and jsptags.gif to the
+       tomcat/webapps/examples directory.
+
+    6. Shutdown and restart tomcat.
+
+    7. Check out http://<yourserver>/examples/pager-demo.jsp
+
+
+JRun 3.0 Instructions
+
+    1. Choose the server and web-app in which to install. The following
+       instructions will install in JRun's default server and default
+       web-app which is jrun/servers/default/default-app.
+
+    2. Edit the jrun/servers/default/default-app/WEB-INF/web.xml file and
+       add the following lines inside the body of the <web-app>...</web-app>
+       tags.
+
+      <taglib>
+        <taglib-uri>
+          http://jsptags.com/tags/navigation/pager
+        </taglib-uri>
+        <taglib-location>
+          /WEB-INF/jsp/pager-taglib.tld
+        </taglib-location>
+      </taglib>
+
+    3. Copy the file pager-taglib.tld to the
+       jrun/servers/default/default-app/WEB-INF/jsp directory.
+
+    4. Copy pager-taglib.jar to the
+       jrun/servers/default/default-app/WEB-INF/lib directory.
+
+    5. Copy the files pager-demo.jsp and jsptags.gif to the
+       jrun/servers/default/default-app directory.
+
+    6. Restart JRun Default Server.
+
+    7. Check out http://<yourserver>/pager-demo.jsp
+
+
+Generic Instructions
+
+    1. Choose the web-app in which to install. I'll use web-app/ to
+       represent a generic web-app directory.
+
+    2. Edit the web-app/WEB-INF/web.xml file and add the following lines
+       inside the body of the <web-app>...</web-app> tags.
+
+      <taglib>
+        <taglib-uri>
+          http://jsptags.com/tags/navigation/pager
+        </taglib-uri>
+        <taglib-location>
+          /WEB-INF/jsp/pager-taglib.tld
+        </taglib-location>
+      </taglib>
+
+    3. Copy the file pager-taglib.tld to the web-app/WEB-INF/jsp directory.
+
+    4. Copy pager-taglib.jar to the web-app/WEB-INF/lib directory.
+
+    5. Copy the files pager-demo.jsp and jsptags.gif to the web-app/
+       directory.
+
+    6. Restart your Servlet/JSP engine.
+
+    7. Check out http://<yourserver>/pager-demo.jsp
+

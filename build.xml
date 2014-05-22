@@ -1,0 +1,2046 @@
+<!-- Ant build file for St. John -->
+<project name="StJohnBuild" default="dev.deploy" basedir=".">
+   <record name="build.log" loglevel="info"/>
+   <!-- set global properties for this build -->
+   
+    <property name="src.dirBranchPath" value="tools/getBranchStJohn/src"/>
+    <property name="package.targetBranchPath" value="tools/getBranchStJohn/target"/>
+    <property name="targetBranchPath" value="${package.targetBranchPath}"/>
+    <property name="classes.dirBranchPath" value="tools/getBranchStJohn/bin/BranchStJohn"/>
+    <property name="jar.dirBranchPath" value="${targetBranchPath}"/>
+    <property name="main-classBranchPath"  value="BranchStJohn.getBranchStJohn"/>
+   <!-- property file="local.properties"/ -->
+   <property file="build.properties"/>
+   <!--property file="installation${store}.properties" /-->
+   <!--property file="installation.properties" /-->
+  	<property environment="env"/>
+	
+	<property name="javaHome" value="${env.JAVA_HOME}"/>
+    <echo message="JAVA_HOME: ${env.JAVA_HOME}"/>
+    <echo message="javaHome: ${javaHome}"/>
+   <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+      <classpath>
+         <pathelement location="${tools}/ant-contrib/lib/ant-contrib-1.0b3.jar"/>
+      </classpath>
+   </taskdef>
+   <!-- ARGS is passed to executable programs as command-line arguments.
+        Pre-defining it to blank should force it to be set by the user -->
+   <property name="ARGS" value="" />
+   <include file="${basedir}/buildpaths.xml"/>
+   <condition property="project.path" value="jboss5.project.class.path" else="project.class.path">
+      <equals arg1="${jbossVersion}" arg2="5.0.1" />
+   </condition>
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="clean" description="Delete the all directories built by this build file.">
+      <delete dir="${targetBranchPath}"/>
+      <!-- Delete the all directories built by this build file -->
+      <delete dir="${build}" failonerror="false"/>
+      <!-- Delete EJB deployment jar -->
+      <delete file="${jbossDeploy}/${app.name}-ejb.jar" quiet="true" failonerror="false"/>
+      <!--delete our deployed root.war file-->
+      <delete dir="${jbossDeploy}/root.war" failonerror="false"/>
+      <!--delete our deployed cleanwise.war file-->
+      <delete dir="${jbossDeploy}/cleanwise.war" failonerror="false" />
+      <delete dir="${jbossDeploy}/appleshop.war" failonerror="false" />
+      <delete dir="${jbossDeploy}/w3c.war" failonerror="false" />
+   </target>
+<!-- ====================================================================== -->
+<!--  Get branch version.                         -->
+<!-- ====================================================================== -->
+   <target name="getBranchVersion" depends="jboss.verify, jboss5.prepare" description="get branch version">
+        <mkdir dir="${targetBranchPath}"/> 
+        <javac srcdir="${src.dirBranchPath}" destdir="${classes.dirBranchPath}"/>  
+        <jar destfile="${jar.dirBranchPath}/${ant.project.name}.jar"  basedir="${classes.dirBranchPath}">
+          <manifest>
+            <attribute name="Main-Class" value="${main-classBranchPath}"/>
+          </manifest>
+        </jar>    
+        <java jar="${jar.dirBranchPath}/${ant.project.name}.jar" fork="true"/>   
+  </target>
+<!-- ====================================================================== -->
+<!--  Configure the server, build  the application.                         -->
+<!-- ====================================================================== -->
+   <target name="package" depends="jboss.verify, jboss5.prepare"
+           description="Configures the server and builds the application.">
+      <antcall target="getBranchVersion"/>
+      <antcall target="jboss5.configure"/>
+      <antcall target="jboss5.build"/>
+      <antcall target="jboss5.additionalWars"/>
+      <antcall target="jboss5.oboe"/>
+      <antcall target="jboss5.configureJobs"/>
+      <antcall target="jboss5.quartzconfig"/>
+      <antcall target="jboss5.event"/>
+      <tstamp/>
+      <echo>
+         Server configuration and application build completed at (yyyymmdd:hhmm): ${DSTAMP}:${TSTAMP}.
+      </echo>
+   </target>
+<!-- ====================================================================== -->
+<!--  Copies espnedwise.properties to <JBoss>/bin                           -->
+<!-- ====================================================================== -->
+   <target name="jboss5.copy.espendwise.properties" depends="setJbossHome" 
+   description="Copies espnedwise.properties to jbossHome/bin  ">
+    <property file="installation.properties" />
+    <filter filtersfile="installation.properties"/>
+    <copy file="espendwise.properties"  
+	     tofile="${jbossHome}/bin/espendwise.properties"
+         filtering="yes"
+         overwrite="true"/>
+    </target>
+<!-- ======================================================================
+       Set setJbossHome
+===========================================================================-->	   
+    <target name="setJbossHome">
+		<property file="build.properties" />
+		<property file="installation.properties" />
+		<property environment="env"/>
+		<tstamp/>
+		<condition property="jbossHome" value="${env.JBOSS_HOME}">
+			<not>  
+				<isset property="jbossHome"/>
+			</not>
+		</condition>
+        <filter token="jbossHome" value="${jbossHome}"/>
+		<condition property="javaHome" value="${env.JAVA_HOME}">
+			<not>  
+				<isset property="javaHome"/>
+			</not>
+		</condition>
+        <filter token="javaHome" value="${javaHome}"/>
+		
+	</target>	
+   
+<!-- ====================================================================== -->
+<!--  Configure the server, build  the application.                         -->
+<!-- ====================================================================== -->
+    <target name="jboss5.deployall" depends="jboss5.copy.espendwise.properties" 
+           description="Builds and deploys the application.">        
+           
+      <antcall target="package"/>
+      <antcall target="jboss5.deploy"/>
+      <antcall target="jboss5.deployJobs" />
+		   
+    </target>
+    <target name="jboss5.deploy" depends="jboss5.copy.espendwise.properties, setJbossHome" 
+           description="Deploys the application.">
+		<property file="build.properties" />
+		<property file="installation.properties" />
+		<property environment="env"/>
+		<tstamp/>
+		<copy todir="${jbossHome}/bin" overwrite="yes" filtering="no">
+			<fileset dir="${build}/artifacts/bin">
+				<patternset>
+					<include name="**/*"/>
+				</patternset>
+			</fileset>
+		</copy>
+		<!-- property file="${jbossHome}/bin/espendwise.properties" / -->
+		<copy todir="${jbossHome}/server/${serverName}/deploy" overwrite="no" >
+			<fileset dir="${build}/artifacts/deploy/">
+				<patternset>
+					<exclude name="**/${ear.file}/**/*"/>
+					<exclude name="**/ROOT.war/**/*"/>
+				</patternset>
+			</fileset>
+		</copy>
+			
+		<copy todir="${jbossHome}/server/${serverName}/deploy" overwrite="no" failonerror="false">
+			<fileset dir="${build}/artifacts/deploy/">
+				<patternset>
+					<include name="**/ROOT.war/**/*"/>
+				</patternset>
+			</fileset>
+		</copy>
+			
+			<sync todir="${jbossHome}/server/${serverName}/deploy/${ear.file}" overwrite="no">
+			<fileset dir="${build}/artifacts/deploy/${ear.file}"/>
+			<preserveintarget>
+				<include name="**/en/products/**"/>
+			</preserveintarget>
+		</sync>
+		<copy todir="${jbossHome}/server/${serverName}/conf" overwrite="yes" filtering="no">
+			<fileset dir="${build}/artifacts/conf">
+				<patternset>
+					<include name="**/*"/>
+				</patternset>
+			</fileset>
+		</copy>
+		<copy todir="${jbossHome}/server/${serverName}/lib" overwrite="no" filtering="no">
+			<fileset dir="${build}/artifacts/lib">
+				<patternset>
+					<include name="**/*"/>
+				</patternset>
+			</fileset>
+		</copy>
+		<copy todir="${jbossHome}/server/${serverName}/resources/fonts" overwrite="no" filtering="no">
+			<fileset dir="${build}/artifacts/resources/fonts">
+				<patternset>
+					<include name="**/*"/>
+				</patternset>
+			</fileset>
+		</copy>
+		<copy file="${build}/artifacts/edi/tools/oboe/OBOE.properties"  
+					tofile="${jbossHome}/bin/OBOE.properties"
+					filtering="yes"
+					overwrite="true"/>
+		<copy todir="${jbossHome}/server/${serverName}/lib" overwrite="no" filtering="no">
+			<fileset dir="${build}/artifacts/edi/tools/oboe">
+				<patternset>
+					<include name="**/oboe.jar"/>
+				</patternset>
+			</fileset>
+		</copy>
+		<!--
+         specific deployment for the estore translator.  GCA continues to have "cleanwise" hard coded
+         in their url and will not change it.  We are therefore going to make a mini deployment under
+         this context ("cleanwise").
+      -->
+		<copy todir="${jbossHome}/server/${serverName}/deploy/cleanwise.war/WEB-INF">
+			<fileset dir="${jbossHome}/server/${serverName}/deploy/xsuite.ear/defst.war/WEB-INF">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<copy todir="${jbossHome}/server/${serverName}/deploy/cleanwise.war/estoreclientportal">
+			<fileset dir="${jbossHome}/server/${serverName}/deploy/xsuite.ear/defst.war/estoreclientportal">
+				<include name="*.**" />
+			</fileset>
+		</copy>
+		<copy todir="${jbossHome}/server/${serverName}/deploy/cleanwise.war" filtering="no" overwrite="yes">
+			<fileset dir="${build}/artifacts/legacy_cleanwise_overides.war">
+				<patternset>
+					<include name="**/*" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy file="${jbossHome}/server/${serverName}/deploy/xsuite.ear/defst.war/index.jsp" 
+				tofile="${jbossHome}/server/${serverName}/deploy/cleanwise.war/index.jsp" overwrite="yes"/>
+		<!--
+		Assumption is that the ear and war files have been exploded, so the application's
+		META-INF directory is accessible.
+		-->
+		<copy todir="${jbossHome}/server/${serverName}/deploy/cleanwise.war/META-INF">
+			<fileset dir="${jbossHome}/server/${serverName}/deploy/${ear.file}/${war.file}/META-INF">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+		
+	</target>
+<!-- ====================================================================== -->
+<!--  Verify Jboss version                                                  -->
+<!-- ====================================================================== -->
+   <target name="jboss.verify"
+           description="Verify jboss5 configuration.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <if>
+         <not>
+            <!-- equals arg1="${jbossVersion}" arg2="${Specification-Version}"/ -->
+            <equals arg1="${jbossVersion}" arg2="5.0.1"/>
+         </not>
+         <then>
+            <fail message="jboss5 specific target invoked but jbossVersion = ${jbossVersion}."/>
+         </then>
+      </if>
+   </target>
+<!-- ====================================================================== -->
+<!--  Prepare the environment for building the application.                 -->
+<!-- ====================================================================== -->
+   <target name="jboss5.prepare" depends="jboss.verify"
+           description="Prepare the build environment.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <condition property="nowarn" value="off" else="${nowarning}">
+         <not>
+            <isset property="nowarning"/>
+         </not>
+      </condition>
+      <condition property="isJDK1.4">
+         <equals arg1="${ant.java.version}" arg2="1.4"/>
+      </condition>
+      <mkdir dir="${build}/artifacts/conf"/>
+      <mkdir dir="${build}/artifacts/bin"/>
+      <mkdir dir="${build}/artifacts/deploy"/>
+ 
+ 
+   </target>
+   <!-- jboss5.prepare -->
+<!-- ====================================================================== -->
+<!--  Configure the server.                                                 -->
+<!-- ====================================================================== -->
+   <target name="jboss5.configure" depends="jboss.verify, jboss5.prepare"
+           description="Configure the server.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <!--
+         the following jspCache functionality is a candidate for deletion, since jspCache is not
+         defined in installation.properties.baseline
+         ?DELETE?
+      <condition property="createjspCache">
+         <isset property="jspCache"/>
+      </condition>
+      <if>
+         <equals arg1="${createjspCache}" arg2="true"/>
+         <then>
+            <mkdir dir="${jspCache}"/>
+         </then>
+      </if>
+      -->
+      <copy todir="${build}/artifacts/conf" overwrite="yes" filtering="no">
+         <fileset dir="installation/jboss-conf/JBoss-${jbossVersion}/server/conf">
+            <patternset>
+               <include name="**/*.xml"/>
+               <include name="**/*.properties"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/conf" overwrite="yes" filtering="no">
+         <fileset dir="${tools}/input-filter/">
+            <include name="*.properties"/>
+         </fileset>
+      </copy>
+      <!-- moved from create.war, since it's part of configuration -->
+      <copy file="${docroot}/cleanwise/externals/${configuration}.default.properties"
+         tofile="${build}/artifacts/conf/${configuration}.default.properties"
+         filtering="no"
+         overwrite="true"/>
+	  <!-- copy Avalara Avatax properties file -->
+      <copy file="${tools}/AvalaraTax/avatax4j.properties" overwrite="yes" filtering="no"
+         tofile="${build}/artifacts/conf/avatax4j.properties"/>
+      <!-- copy Ocean Storage System properties file -->
+      <copy file="${tools}/ocean/StorageSystem/storagesystem.properties" overwrite="yes" filtering="no"
+            tofile="${build}/artifacts/conf/storagesystem.properties"/>
+      <copy todir="${build}/artifacts/deploy"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="installation/jboss-conf/JBoss-${jbossVersion}/server/deploy">
+            <patternset>
+               <include name="**/*"/>
+               <exclude name="CVS"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/bin"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="installation/jboss-conf/JBoss-${jbossVersion}/bin">
+            <patternset>
+               <include name="**/*.*"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <!-- To think -->
+      <copy todir="${jbossHome}/xsuite"
+         overwrite="yes"
+         filtering="yes">
+         <fileset dir="installation/jboss-conf/JBoss-${jbossVersion}/scripts">
+            <patternset>
+               <include name="**/*"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <copy file="keystore" tofile="${build}/artifacts/bin/keystore"/>
+      <copy todir="${build}/artifacts/resources/fonts"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="${tools}/fonts/">
+            <exclude name="CVS"/>
+         </fileset>
+      </copy>
+      <!-- copied here from jar task, as this jar is needed during startup -->
+      <copy file="${tools}/jdbcappender/jdbcappender.jar" tofile="${build}/artifacts/lib/jdbcappender.jar"/>
+      <copy file="${tools}/bzip2/bzip2.jar" tofile="${build}/artifacts/lib/bzip2.jar"/>
+      <!-- copy .jar files from the JBOSS_HOME/client directory to the JBOSS_HOME/lib/endorsed directory -->
+      <!-- so that the JAX-WS 2.0 APIs supported by JBossWS are used (needed for JD Web Services)        -->
+      <!-- necessary for JBoss 5.0.1  m                                                                   -->
+      <!-- commented by YK because it should be a part of  JBOSS installation                             
+      <echo message = "Copying jar files from the JBOSS_HOME/client directory to the JBOSS_HOME/lib/endorsed directory" />
+      <copy todir="${jbossHome}/lib/endorsed"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="${jbossHome}/client">
+            <patternset>
+               <include name="jbossws-native-saaj.jar" />
+               <include name="jbossws-native-jaxrpc.jar" />
+               <include name="jbossws-native-jaxws.jar" />
+               <include name="jbossws-native-jaxws-ext.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+      -->
+   </target>
+   <!-- jboss5.configure -->
+<!-- ====================================================================== -->
+<!--  determine the build number to be utilized for the build               -->
+<!-- ====================================================================== -->
+   <target name="determineBuildInfo">
+        <taskdef name="buildVersion" classname="com.espendwise.ocean.buildUtils.ant.BuildVersionTask" >
+            <classpath>
+                <pathelement path="${tools}/ocean/eSpendwiseOceanBuildUtils.jar"/>
+                <pathelement location="${tools}/ocean/eSpendwiseOceanBuildUtils.jar" />
+            </classpath>
+        </taskdef>
+   
+       <buildVersion buildNumProperty="build.number"
+                     buildDateProperty="build.date"
+                     buildBranchProperty="build.branch.number"
+                     buildType="${buildType}"
+					 autoBuildValue="${env.BUILD_NUMBER}"
+        	         buildNoPrompt="${buildNoPrompt}"
+                     buildPropertiesFile="buildVersion/build_info.properties"/>
+ 
+   </target>
+<!-- ==================================================================== -->
+<!--  Build the application.  Results in an application ear file.         -->
+<!-- ==================================================================== -->
+   <target name="jboss5.build" depends="jboss.verify, determineBuildInfo, jboss5.prepare"
+           description="Build the application.">
+      <antcall target="build.info"/>
+      <antcall target="createCustomAntTasks"/>
+      <antcall target="create.ear"/>
+      <!-- although the following functionality is technically configuration related in nature,
+          it's being placed here because 1) the build number and date have not been determined
+          when the configuration task is called and 2) it produces an artifact that really
+          should only be produced when a build is performed. -->
+      <condition property="copyBuildInfoProperties">
+         <and>
+            <isset property="build.number"/>
+            <isset property="build.date"/>
+            
+            <isset property="build.branch.number"/>
+         </and>
+      </condition>
+      <if>
+         <equals arg1="${copyBuildInfoProperties}" arg2="true" />
+         <then>
+            <echo file="${build}/artifacts/conf/stjohn.buildInfoSummary.properties">
+               build.number.stjohn=${build.number}
+               build.date.stjohn=${build.date}
+               
+               build.branch.stjohn=${build.branch.number}
+            </echo>
+         </then>
+      </if>
+      <echo>
+         Build number ${build.number}, build date ${build.date} complete.
+      </echo>
+   </target>
+   <!-- jboss5.build -->
+<!-- ====================================================================== -->
+<!--  Output build specifics to the console.                                -->
+<!-- ====================================================================== -->
+   <target name="build.info" depends="jboss.verify, jboss5.prepare"
+           description="Display build specifics.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <local name="Specification-Version"/>
+      <loadproperties>
+         <zipentry zipfile="${jbossDir}/server/lib/jboss-main.jar" name="META-INF/MANIFEST.MF"/>
+         <filterchain>
+            <linecontains>
+               <contains value="Specification-Version"/>
+            </linecontains>
+         </filterchain>
+      </loadproperties>
+      <echo message="Configuration: ${configuration}"/>
+  	  <property environment="env"/>
+      <echo message="JAVA_HOME: ${env.JAVA_HOME}"/>
+      <echo message="compiledebug: ${compiledebug}"/>
+      <echo message="compileopt: ${compileopt}"/>
+      <echo message="nowarn: ${nowarn}"/>
+      <echo message="jboss-main.jar version = ${Specification-Version}"/>
+   </target>
+<!-- ====================================================================== -->
+<!--  Compile java classes needed by custom Ant tasks and define            -->
+<!--  those tasks.                                                          -->
+<!-- ====================================================================== -->
+   <target name="createCustomAntTasks" depends="jboss.verify"
+           description="Create custom Ant tasks.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <mkdir dir="${build}/tools"/>
+      <javac srcdir="tools" destdir="${build}/tools">
+         <include name="**/DBDump.java"/>
+         <include name="**/DBLoad.java"/>
+         <include name="**/DBExport.java"/>
+         <include name="**/DBImport.java"/>
+         <include name="**/DBSequence.java"/>
+         <include name="**/DBIndexReader.java"/>
+         <include name="**/DBIndexLoader.java"/>
+         <include name="**/DBRefConstraints.java"/>
+         <include name="**/BeansToXML.java"/>
+         <include name="**/XMLTableProcessor.java"/>
+         <include name="**/StoreCustomization.java"/>
+         <include name="**/gencode/*.java"/>
+         <include name="**/gencode/item/*.java"/>
+         <include name="**/gencode/logic/*.java"/>
+         <include name="**/gencode/utils/*.java"/>
+         <include name="**/gencode/logic/spec/*.java"/>
+         <include name="**/GZipFileSet.java"/>
+         <include name="**/srcCodeObserver/*.java"/>
+         <classpath refid="${project.path}"/>
+      </javac>
+      <taskdef name="StoreCustomization" classname="com.cleanwise.tools.StoreCustomization">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/-->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+      <taskdef name="DBSequence" classname="com.cleanwise.tools.DBSequence">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/-->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+      <taskdef name="DBIndexReader" classname="com.cleanwise.tools.DBIndexReader">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/-->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+      <taskdef name="DBIndexLoader" classname="com.cleanwise.tools.DBIndexLoader">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/ -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+      <taskdef name="DBExport" classname="com.cleanwise.tools.DBExport">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/-->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+      <taskdef name="DBImport" classname="com.cleanwise.tools.DBImport">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/ -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+      <taskdef name="DBDump" classname="com.cleanwise.tools.DBDump">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/ -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+      <taskdef name="DBLoad" classname="com.cleanwise.tools.DBLoad">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/ -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+      <taskdef name="DBRefConstraints" classname="com.cleanwise.tools.DBRefConstraints">
+         <classpath>
+            <!-- pathelement path="${jdbcLib}"/ -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools"/>
+         </classpath>
+      </taskdef>
+   </target>
+   <!-- createCustomAntTasks -->
+<!-- ====================================================================== -->
+<!--  Compile the java files.                                               -->
+<!-- ====================================================================== -->
+   <target name="jboss5.compile" depends="jboss.verify, jboss5.prepare"
+           description="Compile all java files in the src directory.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <mkdir dir="${build}"/>
+      <javac srcdir="${src}" destdir="${build}" memoryMaximumSize="1024M" optimize="${compileopt}" fork="true"
+         debug="true" nowarn="${nowarn}" debuglevel="lines,vars,source">
+         <include name="**/*.java"/>
+         <exclude name="**/apps/edi/*.java"/>
+         <exclude name="com/cleanwise/compass/**/*.java"/>
+         <classpath refid="${project.path}"/>
+      </javac>
+      <javac srcdir="${src}" destdir="${build}" optimize="${compileopt}"
+         debug="${compiledebug}" nowarn="${nowarn}">
+         <include name="**/apps/edi/*.java"/>
+         <classpath refid="${project.path}"/>
+      </javac>
+      <mkdir dir="${build}/tools"/>
+      <javac srcdir="tools" destdir="${build}/tools" nowarn = "${nowarn}">
+         <include name="**/tools/*.java"/>
+         <classpath refid="${project.path}"/>
+      </javac>
+      <copy todir="${build}/com/cleanwise/service/api/util/synchronizer/sql">
+         <fileset dir="${src}/com/cleanwise/service/api/util/synchronizer/sql">
+            <patternset>
+               <include name="**/*.sql"/>
+            </patternset>
+         </fileset>
+      </copy>
+   </target>
+<!-- ====================================================================== -->
+<!--  Create application jar files.                                         -->
+<!-- ====================================================================== -->
+   <target name="createJars" depends="jboss.verify, jboss5.compile"
+           description="Create application jar files.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <delete dir="${jar.dir}" failonerror="false"/>
+      <mkdir dir="${jar.dir}"/>
+      <!-- YK.Why ??? copy file="${jbossConf}/standardjboss.xml" tofile="${build}/standardjboss.xml"/ -->
+      <!--
+         the following ${app.name}Services.jar creation is a candidate for deletion, since
+         there no longer appear to be any Semaphore*.classes.  Therefore the created jar file
+         is empty save for a META-INF directory containing a MANIFEST.MF file.
+      
+      <jar jarfile="${jar.dir}/${app.name}Services.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/api/util/Semaphore*.class"/>
+            </patternset>
+         </fileset>
+      </jar -->
+      <jar jarfile="${jar.dir}/${app.name}-apps.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/apps/**"/>
+               <exclude name="**/apps/dataexchange/*.class"/>
+            </patternset>
+         </fileset>
+         <fileset dir="${build}/tools">
+            <patternset>
+               <include name="com/cleanwise/tools/RefCodeToDB.class"/>
+            </patternset>
+         </fileset>
+      </jar>
+      <mkdir dir="${build}/META-INF"/>
+      <copy todir="${build}/META-INF" overwrite="yes" filtering="yes">
+         <fileset dir="${src}/com/cleanwise/service/api/META-INF">
+            <include name="*.xml"/>
+         </fileset>
+      </copy>
+      <jar jarfile="${jar.dir}/${app.name}-ejb.jar">
+         <fileset dir="${build}">
+            <include name="META-INF/**"/>
+            <include name="standardjboss.xml"/>
+            <include name="com/cleanwise/service/apps/dataexchange/**"/>
+            <include name="com/cleanwise/service/apps/quartz/**"/>
+            <include name="com/cleanwise/service/crypto/**"/>
+            <include name="com/cleanwise/service/apps/**"/>
+            <include name="com/cleanwise/compass/**"/>
+            <include name="com/protus/www/**"/>
+            <include name="com/avalara/avatax/services/address/**"/>
+            <include name="com/avalara/avatax/services/base/**"/>
+            <include name="com/avalara/avatax/services/base/ser/**"/>
+            <include name="com/avalara/avatax/services/base/wss/**"/>
+            <include name="com/avalara/avatax/services/tax/**"/>
+            <include name="com/johnsondiversey/msds/msdswebservice/jdimsds/**"/>
+            <include name="com/cleanwise/service/api/*"/>
+            <include name="com/cleanwise/service/api/cachecos/**"/>
+            <include name="com/cleanwise/service/api/dao/**"/>
+            <include name="com/cleanwise/service/api/dto/**"/>
+            <include name="com/cleanwise/service/api/eventsys/**"/>
+            <include name="com/cleanwise/service/api/framework/**"/>
+            <include name="com/cleanwise/service/api/meta/**"/>
+            <include name="com/cleanwise/service/api/pipeline/**"/>
+            <include name="com/cleanwise/service/api/process/**"/>
+            <include name="com/cleanwise/service/api/session/**"/>
+            <include name="com/cleanwise/service/api/tree/**"/>
+            <include name="com/cleanwise/service/api/plugin/**"/>
+            <include name="com/cleanwise/service/api/util/**"/>
+            <include name="com/cleanwise/service/api/value/**"/>
+            <include name="com/cleanwise/service/api/wrapper/**"/>
+            <include name="com/cleanwise/service/api/reporting/GenericReport.class"/>
+            <include name="com/cleanwise/service/api/reporting/GenericReportMulti.class"/>
+            <include name="com/cleanwise/service/api/reporting/DomUniversalReport.class"/>
+         </fileset>
+      </jar>
+      <jar jarfile="${jar.dir}/${app.name}-reporting.jar">
+         <fileset dir="${build}">
+            <include name="com/cleanwise/service/api/reporting/**"/>
+            <exclude name="com/cleanwise/service/api/reporting/GenericReport.class"/>
+            <exclude name="com/cleanwise/service/api/reporting/GenericReportMulti.class"/>
+            <exclude name="com/cleanwise/service/api/reporting/DomUniversalReport.class"/>
+         </fileset>
+      </jar>
+      <!-- YK Move to developer build property location="${build}" name="build_full_path"/>
+      <filter token="build_full_path" value="${build_full_path}"/>
+      <copy file="${src}/rebel-ejb.xml" tofile="${jar.dir}/rebel.xml" filtering="yes" / -->
+   </target>
+	
+	<target name="createAppJars" 
+	           description="Create application jar files.">
+	      <jar jarfile="${jar.dir}/${app.name}-apps.jar">
+	         <fileset dir="${build}">
+	            <patternset>
+	               <include name="com/cleanwise/service/apps/**"/>
+	               <exclude name="**/apps/dataexchange/*.class"/>
+	            </patternset>
+	         </fileset>
+	         <fileset dir="${build}/tools">
+	            <patternset>
+	               <include name="com/cleanwise/tools/RefCodeToDB.class"/>
+	            </patternset>
+	         </fileset>
+	      </jar>		
+	</target>
+			
+	<target name="createEjbJars" description="Create ejb jar files.">
+	      <jar jarfile="${jar.dir}/${app.name}-ejb.jar">
+	         <fileset dir="${build}">
+	            <include name="META-INF/**"/>
+	            <include name="standardjboss.xml"/>
+	            <include name="com/cleanwise/service/apps/dataexchange/**"/>
+	            <include name="com/cleanwise/service/apps/quartz/**"/>
+	            <include name="com/cleanwise/service/crypto/**"/>
+	            <include name="com/cleanwise/service/apps/**"/>
+	            <include name="com/cleanwise/compass/**"/>
+	            <include name="com/protus/www/**"/>
+	            <include name="com/avalara/avatax/services/address/**"/>
+	            <include name="com/avalara/avatax/services/base/**"/>
+	            <include name="com/avalara/avatax/services/base/ser/**"/>
+	            <include name="com/avalara/avatax/services/base/wss/**"/>
+	            <include name="com/avalara/avatax/services/tax/**"/>
+	            <include name="com/johnsondiversey/msds/msdswebservice/jdimsds/**"/>
+	            <include name="com/cleanwise/service/api/*"/>
+	            <include name="com/cleanwise/service/api/cachecos/**"/>
+	            <include name="com/cleanwise/service/api/dao/**"/>
+	            <include name="com/cleanwise/service/api/dto/**"/>
+	            <include name="com/cleanwise/service/api/eventsys/**"/>
+	            <include name="com/cleanwise/service/api/framework/**"/>
+	            <include name="com/cleanwise/service/api/meta/**"/>
+	            <include name="com/cleanwise/service/api/pipeline/**"/>
+	            <include name="com/cleanwise/service/api/process/**"/>
+	            <include name="com/cleanwise/service/api/session/**"/>
+	            <include name="com/cleanwise/service/api/tree/**"/>
+	            <include name="com/cleanwise/service/api/plugin/**"/>
+	            <include name="com/cleanwise/service/api/util/**"/>
+	            <include name="com/cleanwise/service/api/value/**"/>
+	            <include name="com/cleanwise/service/api/wrapper/**"/>
+	            <include name="com/cleanwise/service/api/reporting/GenericReport.class"/>
+	            <include name="com/cleanwise/service/api/reporting/GenericReportMulti.class"/>
+	            <include name="com/cleanwise/service/api/reporting/DomUniversalReport.class"/>
+	         </fileset>
+	      </jar>
+		</target>
+				
+		<target name="createReportingJars" description="Create reporting jar files.">
+	      <jar jarfile="${jar.dir}/${app.name}-reporting.jar">
+	         <fileset dir="${build}">
+	            <include name="com/cleanwise/service/api/reporting/**"/>
+	            <exclude name="com/cleanwise/service/api/reporting/GenericReport.class"/>
+	            <exclude name="com/cleanwise/service/api/reporting/GenericReportMulti.class"/>
+	            <exclude name="com/cleanwise/service/api/reporting/DomUniversalReport.class"/>
+	         </fileset>
+	      </jar>
+	   </target>
+   <!-- createJars -->
+<!-- ====================================================================== -->
+<!--  Copy all of the jar files to a staging directory.                     -->
+<!-- ====================================================================== -->
+   <target name="copyJars" depends="jboss.verify"
+           description="Copy all application jars (internal and external) together.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <!--
+         application and reporting jars will have been created in the jar.dir directory (see
+         the createJars tasks), so just copy the various external jars we use.
+      -->
+      <copy file="${javaHome}/lib/tools.jar"
+         tofile="${jar.dir}/tools.jar"/>
+      <!--copy file="${jdbcLib}" todir="${jar.dir}"/ -->
+      <copy todir="${jar.dir}"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="${jdbcDir}">
+            <patternset>
+               <include name="**/*"/>
+               <exclude name="CVS"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <copy file="${tools}/itext/iText-2.1.0.jar"
+         tofile="${jar.dir}/iText-2.1.0.jar"/>
+      <copy file="${tools}/crypto/bcprov-jdk14.jar"
+         tofile="${jar.dir}/bcprov-jdk14.jar"/>
+      <copy file="${tools}/dom4j/dom4j.jar"
+         tofile="${jar.dir}/dom4j.jar"/>
+      <copy file="${tools}/xerces/xerces.jar"
+         tofile="${jar.dir}/xerces.jar"/>
+      <copy file="${tools}/inetsoft/jxl.jar"
+         tofile="${jar.dir}/jxl.jar"/>
+      <copy file="${tools}/input-filter/esapi-2.0_RC7-SNAPSHOT.jar"
+         tofile="${jar.dir}/esapi-2.0_RC7-SNAPSHOT.jar"/>
+      <copy file="${tools}/freemarker/freemarker-2.3.16.jar"
+         tofile="${jar.dir}/freemarker-2.3.16.jar"/>
+      <copy file="${tools}/netsuite/netsuite.jar"
+         tofile="${jar.dir}/netsuite.jar"/>
+   	
+    <copy file="${tools}/soap/axis.jar"
+       tofile="${jar.dir}/axis.jar"/>
+      <copy file="${tools}/jakarta-commons/commons-logging-1.0.4.jar"
+         tofile="${jar.dir}/commons-logging-1.0.4.jar"/>
+      <copy file="${tools}/jakarta-commons/commons-discovery-0.2.jar"
+         tofile="${jar.dir}/commons-discovery-0.2.jar"/>
+      <copy file="${tools}/POI/jakarta-poi-3.2.jar"
+         tofile="${jar.dir}/jakarta-poi.jar"/>
+      <copy file="${tools}/POI/jakarta-poi-ooxml.jar"
+         tofile="${jar.dir}/jakarta-poi-ooxml.jar"/>
+      <copy file="${tools}/POI/ooxml-schemas-1.0.jar"
+         tofile="${jar.dir}/ooxml-schemas-1.0.jar"/>
+      <copy file="${tools}/POI/openxml4j-1.0-beta.jar"
+         tofile="${jar.dir}/openxml4j-1.0-beta.jar"/>
+      <copy file="${tools}/POI/xmlbeans-2.3.0.jar"
+         tofile="${jar.dir}/xmlbeans-2.3.0.jar"/>
+      <copy file="${tools}/oboe.new/oboe.jar"
+         tofile="${jar.dir}/oboe.jar"/>
+      <copy file="${tools}/httpclient/commons-httpclient.jar"
+         tofile="${jar.dir}/commons-httpclient.jar"/>
+      <copy file="${tools}/jakarta-commons/commons-logging.jar"
+         tofile="${jar.dir}/commons-logging.jar"/>
+      <copy file="${tools}/jakarta-commons/commons-codec-1.3.jar"
+         tofile="${jar.dir}/commons-codec-1.3.jar"/>
+      <copy file="${tools}/jakarta-commons/commons-lang-2.2.jar"
+         tofile="${jar.dir}/commons-lang-2.2.jar"/>
+      <copy file="${tools}/paymetric/paymetric.jar"
+         tofile="${jar.dir}/paymetric.jar"/>
+      <copy file="${tools}/paymetric/gnu-crypto.jar"
+         tofile="${jar.dir}/gnu-crypto.jar"/>
+      <copy file="${tools}/paymetric/xom-1.2.4.jar"
+         tofile="${jar.dir}/xom-1.2.4.jar"/>
+      <copy file="${tools}/ftp/edtftpj-pro.jar"
+         tofile="${jar.dir}/edtftpj-pro.jar"/>
+      <copy file="${tools}/ftp/j2ssh-core.jar"
+         tofile="${jar.dir}/j2ssh-core.jar"/>
+      <copy file="${tools}/ocean/eSpendwiseOceanUtil.jar"
+         tofile="${jar.dir}/eSpendwiseOceanUtil.jar"/>
+      <copy file="${tools}/ocean/eSpendwiseOceanCommon.jar"
+         tofile="${jar.dir}/eSpendwiseOceanCommon.jar"/>
+      <copy file="${tools}/qrgen/qrgen-1.1.jar"
+         tofile="${jar.dir}/qrgen-1.1.jar"/>
+      <copy todir="${jar.dir}">
+         <fileset dir="${tools}/qrgen" includes="**/*.jar"/>
+      </copy>
+   </target>
+   <!-- copyJars -->
+<!-- ====================================================================== -->
+<!-- Create the jar file for the application code.                          -->
+<!-- ====================================================================== -->
+   <target name="jboss5.jar" depends="jboss.verify, createJars, copyJars"
+           description="Create the application jar.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <!-- create the property to hold the class-path value for the jar manifest file.-->
+      <pathconvert property="jar.manifest.classpath" pathsep=" ">
+         <path>
+            <fileset dir="${jar.dir}">
+               <include name="**/*.jar"/>
+               <include name="**/*.zip"/>
+               <exclude name="**/${app.name}-ws.jar"/>
+            </fileset>
+         </path>
+         <flattenmapper/>
+      </pathconvert>
+      <jar basedir="${jar.dir}" jarfile="${jar.dir}/${jar.file}">
+         <!-- exclude xsuite-ws.jar as it was not copied in the old build process -->
+         <exclude name="**/${app.name}-ws.jar"/>
+         <manifest>
+            <attribute name="Application-Title" value="${app.name}"/>
+            <attribute name="Application-Vendor" value="${app.vendor}"/>
+            <attribute name="Build-Number" value="${build.number}"/>
+            <attribute name="Build-Date" value="${build.date}"/>
+            <attribute name="Class-Path" value="${jar.manifest.classpath}"/>
+         </manifest>
+      </jar>
+   </target>
+<!-- ====================================================================== -->
+<!-- Create the war file for the application code.                          -->
+<!-- ====================================================================== -->
+   <target name="create.war" depends="jboss.verify,jboss5.compile"
+           description="Create the application war.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <delete dir="${war.dir}}" failonerror="false"/>
+      <mkdir dir="${war.dir}"/>
+   	<antcall  target="create.i18n.messages.piglatin"/>
+      <copy todir="${war.dir}">
+         <fileset dir="${docroot}/cleanwise">
+            <exclude name="CVS"/>
+            <exclude name="**/*.properties"/>
+            <exclude name="**/*.xml"/>
+            <exclude name="**/*.js"/>
+            <exclude name="**/*.css"/>
+            <exclude name="WEB-INF/*"/>
+         </fileset>
+      </copy>
+      <!-- handle jsps that require filtering -->
+      <copy file="${docroot}/cleanwise/server_status.jsp"
+         tofile="${war.dir}/server_status.jsp" filtering="yes" overwrite="yes"/>
+      <!--
+         update jsps that include the build and/or database information.  Only do this if the build
+         related properties have a value as doing an update without that   information being determined
+         causes the values "${build.number}" and "${build.date}" to appear on those pages.
+         NOTE: due to problems with Ant 1.6.5 not working correctly with both a property file and
+               <filter> elements, create a properties file containing all of the properties used
+               by the jsps below and specify that file for the copy.
+      -->
+      <condition property="copyBuildInfoJsps">
+         <and>
+            <isset property="build.number"/>
+            <isset property="build.date"/>
+         </and>
+      </condition>
+      <if>
+         <equals arg1="${copyBuildInfoJsps}" arg2="true"/>
+         <then>
+            <echo file="${build}/buildInfoSummary.properties">
+               build.number=${build.number}
+               build.date=${build.date}
+               dbUrl=${dbUrl}
+               dbUser=${dbUser}
+            </echo>
+            <copy file="${docroot}/cleanwise/pub_debug.jsp" tofile="${war.dir}/pub_debug.jsp"
+               filtering="yes" overwrite="yes">
+               <filterset>
+                  <filtersfile file="${build}/buildInfoSummary.properties"/>
+               </filterset>
+            </copy>
+            <copy file="${docroot}/cleanwise/adminportal/applicationInfo.jsp"
+               tofile="${war.dir}/adminportal/applicationInfo.jsp" filtering="yes" overwrite="yes">
+               <filterset>
+                  <filtersfile file="${build}/buildInfoSummary.properties"/>
+               </filterset>
+            </copy>
+            <!-- remove the property file we just created, as it is no longer needed. -->
+            <delete file="${build}/buildInfoSummary.properties"/>
+         </then>
+      </if>
+      <copy todir="${war.dir}/store/">
+         <fileset dir="${baselineStorePagesDir}">
+            <exclude name="CVS"/>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/store/">
+         <fileset dir="${customStorePagesDir}">
+            <exclude name="CVS"/>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/esw/">
+         <fileset dir="${eswBaselineStorePagesDir}">
+            <exclude name="CVS"/>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/esw/">
+         <fileset dir="${eswCustomStorePagesDir}">
+            <exclude name="CVS"/>
+         </fileset>
+      </copy>
+      <copy file="${docroot}/cleanwise/index.jsp"
+         tofile="${war.dir}/index.jsp" filtering="yes"
+         overwrite="yes"/>
+      <available file="${tools}/yuicompress/YUIAnt.jar" property="YUIANT_AVAILABLE"/>
+      <fail unless="YUIANT_AVAILABLE" message="Unable to find ${tools}/yuicompress/YUIAnt.jar"/>
+      <taskdef name="yuicompress" classname="com.yahoo.platform.yui.compressor.YUICompressTask">
+         <classpath>
+            <pathelement path="${tools}/yuicompress/yuicompressor.jar"/>
+            <pathelement path="${tools}/yuicompress/YUIAnt.jar"/>
+         </classpath>
+      </taskdef>
+      <yuicompress outputfolder="${war.dir}" linebreak="300" warn="false" munge="yes" preserveallsemicolons="true">
+         <fileset dir="${docroot}/cleanwise">
+            <exclude name="**/*dojo*/**"/>
+            <!--exclude fck and ck editors as they are already minified -->
+            <exclude name="**/*ckeditor*/**"/>
+            <include name="**/*.js"/>
+            <exclude name="**/jquery.min.js"/>
+            <exclude name="**/jquery-ui.min.js"/>
+            <exclude name="**/jquery-ui-i18n.min.js"/>
+            <include name="**/*.css"/>
+         </fileset>
+      </yuicompress>
+      <copy todir="${war.dir}" filtering="no" overwrite="true">
+         <fileset dir="${docroot}/cleanwise">
+            <include name="**/jquery.min.js"/>
+            <include name="**/jquery-ui.min.js"/>
+            <include name="**/jquery-ui-i18n.min.js"/>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/">
+         <fileset dir="${docroot}/cleanwise">
+            <include name="**/*dojo*/**"/>
+            <!--fck and ck editors-->
+            <include name="**/*ckeditor*/**"/>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}" filtering="yes" overwrite="true">
+         <fileset dir="${docroot}/cleanwise">
+            <exclude name="CVS"/>
+            <include name="**/*.properties"/>
+            <include name="**/*.xml"/>
+            <exclude name="WEB-INF/*"/>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/WEB-INF" filtering="true" overwrite="true">
+         <fileset dir="${docroot}/cleanwise/WEB-INF">
+            <include name="*"/>
+            <exclude name="web.xml"/>
+            <exclude name="web4.xml"/>
+            <exclude name="web5.xml"/>
+            <exclude name="web-ws.xml"/>
+            <exclude name="application.xml"/>
+         </fileset>
+      </copy>
+      <property location="${build}" name="build_full_path"/>
+      <filter token="build_full_path" value="${build_full_path}"/>
+      <copy file="${src}/rebel-web.xml"
+         tofile="${war.dir}/WEB-INF/classes/rebel.xml"
+         filtering="yes"/>
+      <copy file="${docroot}/cleanwise/WEB-INF/web${web.xml.version}.xml"
+         tofile="${war.dir}/WEB-INF/web.xml"
+         filtering="yes"
+         overwrite="yes"/>
+      <mkdir dir="${war.dir}/WEB-INF/classes"/>
+      <copy todir="${war.dir}/WEB-INF/classes">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="**/*.java"/>
+               <include name="com/cleanwise/view/**/*"/>
+               <include name="com/espendwise/view/**/*"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/reporting" filtering="yes">
+         <fileset dir="docroot/cleanwise/reporting">
+            <patternset>
+               <exclude name="CVS"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <mkdir dir="${war.dir}/WEB-INF/lib" />
+      <copy todir="${war.dir}/WEB-INF/lib">
+         <fileset dir="tools/inetsoft">
+            <patternset>
+               <exclude name="CVS"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/WEB-INF/lib">
+         <fileset dir="tools/crypto">
+            <patternset>
+               <include name="jce1_2_2.jar"/>
+               <include name="bcprov-jdk14.jar"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/WEB-INF/lib">
+         <fileset dir="${tools}/struts/">
+            <patternset>
+               <include name="*.jar" />
+            </patternset>
+         </fileset>
+      </copy>
+      <copy todir="${war.dir}/WEB-INF/lib">
+         <fileset dir="${tools}/jakarta-commons/">
+            <patternset>
+               <include name="*.jar"/>
+            </patternset>
+         </fileset>
+      </copy>
+      
+      <jar jarfile="${war.dir}/WEB-INF/lib/${app.name}-lib.jar">
+         <fileset dir="${build}">
+            <patternset>
+               <include name="com/cleanwise/service/crypto/**"/>
+               <include name="com/cleanwise/service/apps/dataexchange/*.class"/>
+            </patternset>
+         </fileset>
+      </jar>
+      <mkdir dir="${war.dir}/WEB-INF/classes/com/cleanwise/view/i18n" />
+      <copy file="${src}/com/cleanwise/view/i18n/CleanwiseResources.properties" filtering="yes"
+            tofile="${war.dir}/WEB-INF/classes/com/cleanwise/view/i18n/CleanwiseResources.properties"/>
+      <copy todir="${war.dir}/WEB-INF">
+         <fileset dir="${tools}/struts/">
+            <patternset>
+               <include name="*.tld"/>
+               <include name="*.dtd"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <!-- JEETODO determine what if anything can be removed based on the comment below... -->
+      <!--The new versions of struts replaced the templates system with tiles.  They are the
+          same, just the name was changed.  For backwards compatibility we will maintain the
+          use of this file, but it should be removed at some point in the future -->
+       <copy file="${tools}/struts/struts-tiles.tld"
+         tofile="${war.dir}/WEB-INF/struts-template.tld"/>
+       <copy file="${tools}/struts/i18n/i18n.jar"
+         tofile="${war.dir}/WEB-INF/lib/i18n.jar"/>
+       <copy file="${tools}/struts/i18n/i18n.tld"
+         tofile="${war.dir}/WEB-INF/i18n.tld"/>
+       <copy file="${tools}/struts/pager/pager-taglib.jar"
+         tofile="${war.dir}/WEB-INF/lib/pager-taglib.jar"/>
+       <copy file="${tools}/struts/pager/pager-taglib.tld"
+         tofile="${war.dir}/WEB-INF/pager-taglib.tld"/>
+       <mkdir dir="${war.dir}/en/notes"/>
+       <mkdir dir="${war.dir}/en/products"/>
+       <mkdir dir="${war.dir}/en/products/images"/>
+       <mkdir dir="${war.dir}/en/products/msds"/>
+       <mkdir dir="${war.dir}/en/products/ded"/>
+       <mkdir dir="${war.dir}/en/products/spec"/>
+       <mkdir dir="${war.dir}/en/products/thumbnails"/>
+       <mkdir dir="${war.dir}/en/knowledgebase/contents"/>
+      <!-- prepare the jasper reports
+      <antcall target="jboss5.prepareJasperReports"/>
+ -->
+      <!-- create the property to hold the class-path value for the war manifest file.-->
+      <pathconvert property="war.manifest.classpath" pathsep=" ">
+         <path>
+            <fileset dir="${war.dir}/WEB-INF/lib">
+               <include name="**/*.jar"/>
+            </fileset>
+         </path>
+         <chainedmapper>
+            <flattenmapper/>
+            <globmapper from="*" to="WEB-INF/lib/*"/>
+         </chainedmapper>
+      </pathconvert>
+      <!-- create war manifest file.-->
+      <mkdir dir="${war.dir}/META-INF" />
+      <manifest file="${war.dir}/META-INF/MANIFEST.MF">
+         <attribute name="Application-Title" value="${app.name}" />
+         <attribute name="Application-Vendor" value="${app.vendor}" />
+         <attribute name="Build-Number" value="${build.number}"/>
+         <attribute name="Build-Date" value="${build.date}"/>
+         <attribute name="Class-Path" value="${war.manifest.classpath}"/>
+      </manifest>
+   </target>
+   <!-- create.war -->
+<!-- ====================================================================== -->
+<!-- Create the ear file for the application.                               -->
+<!-- ====================================================================== -->
+   <target name="create.ear" depends="jboss5.jar,create.war,create.restws.war"
+      description="Create the application ear.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <filter token="jar.file" value="${jar.file}"/>
+      <filter token="war.file" value="${war.file}"/>
+      <filter token="restws.file" value="${restws.file}"/>
+      <filter token="restws.root" value="${restws.root}"/>
+      <delete dir="${ear.dir}" failonerror="false"/>
+      <mkdir dir="${ear.dir}"/>
+      <copy todir="${build}" filtering="true">
+         <fileset dir="${docroot}/cleanwise/WEB-INF">
+            <include name="application.xml"/>
+         </fileset>
+      </copy>
+      <!-- move application jar file to the ear directory -->
+      <echo>Move file "${jar.dir}/${jar.file}" to directory "${ear.dir}</echo>
+      <move file="${jar.dir}/${jar.file}" todir="${ear.dir}"/>
+      <!-- move the application war directory to the ear directory -->
+      <echo>Move directory "${war.dir}" to "${ear.dir}/${war.file}" </echo>
+      <move file="${war.dir}" tofile="${ear.dir}/${war.file}"/>
+    <!-- move the restws war directory to the ear directory -->
+    <echo>Move directory "${restws.dir}" to "${ear.dir}/${restws.file}" </echo>
+    <move file="${restws.dir}" tofile="${ear.dir}/${restws.file}"/>
+   	
+      <!-- create manifest file for application ear -->
+      <mkdir dir="${ear.dir}/META-INF" />
+      <manifest file="${ear.dir}/META-INF/MANIFEST.MF">
+         <attribute name="Application-Title" value="${app.name}" />
+         <attribute name="Application-Vendor" value="${app.vendor}" />
+         <attribute name="Build-Number" value="${build.number}"/>
+         <attribute name="Build-Date" value="${build.date}"/>
+      </manifest>
+      <copy todir="${ear.dir}/META-INF">
+         <fileset dir="${build}" >
+            <include name="application.xml"/>
+         </fileset>
+      </copy>
+   </target>
+<!-- ====================================================================== -->
+<!-- Deploy the additional war files used by the application.               -->
+<!-- ====================================================================== -->
+   <target name="jboss5.additionalWars"
+           description="Deploy additional war files used by the application.">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+      <copy todir="${build}/artifacts/deploy/${root.name}" filtering="true" overwrite="true" failonerror="false">
+         <fileset dir="${docroot}/root.war">
+            <patternset>
+               <include name="**/*"/>
+               <exclude name="CVS"/>
+            </patternset>
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/deploy/appleshop.war" filtering="false" overwrite="true" failonerror="false">
+         <fileset dir="${docroot}/appleshop.war">
+            <patternset>
+               <include name="**/*"/>
+               <exclude name="CVS"/>
+            </patternset>
+         </fileset>
+      </copy>
+		<copy todir="${build}/artifacts/deploy/w3c.war" filtering="false" overwrite="true" failonerror="false">
+			<fileset dir="${docroot}/w3c.war">
+				<patternset>
+					<include name="**/*" />
+					<exclude name="CVS" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy todir="${build}/artifacts/legacy_cleanwise_overides.war" filtering="yes" overwrite="true" failonerror="false">
+			<fileset dir="${docroot}/legacy_cleanwise_overides.war">
+				<patternset>
+					<include name="**/*" />
+					<exclude name="CVS" />
+				</patternset>
+			</fileset>
+		</copy>
+		<!-- deployAdditionalWars -->
+   </target>
+<!-- ====================================================================== -->
+<!-- OBOE                                                                   -->
+<!-- ====================================================================== -->
+   <target name="jboss5.oboe" depends="jboss.verify, jboss5.prepare">
+      <filter filtersfile="build.properties"/>
+      <copy todir="${build}/artifacts/edi/tools/oboe" overwrite="yes" filtering="no">
+         <fileset dir="tools/oboe.new">
+            <include name="xml/**"/>
+            <include name="oboe.jar"/>
+         </fileset>
+      </copy>
+      <copy file="tools/oboe.new/OBOE.properties" overwrite="yes" filtering="yes" 
+         tofile="${build}/artifacts/edi/tools/oboe/OBOE.properties"/>
+   </target>
+<!-- ====================================================================== -->
+<!-- Deploy the jobs subsystem.                                             -->
+<!-- ====================================================================== -->
+   <target name="jboss5.configureJobs" depends="jboss.verify, jboss5.prepare">
+      <filter filtersfile="build.properties"/>
+      <!-- filter token="app.name" value="${app.name}"/ -->
+      <mkdir dir="${build}/artifacts/${app.name}"/>
+      <mkdir dir="${build}/artifacts/${app.name}/jobs"/>
+      <mkdir dir="${build}/artifacts/${app.name}/reports"/>
+      <mkdir dir="${build}/artifacts/${app.name}/dataexchange/inbound"/>
+      <mkdir dir="${build}/artifacts/${app.name}/lib"/>
+      <mkdir dir="${build}/artifacts/${app.name}/util"/>
+      <mkdir dir="${build}/artifacts/${app.name}/edi/inbound"/>
+      <mkdir dir="${build}/artifacts/${app.name}/edi/processed"/>
+      <mkdir dir="${build}/artifacts/${app.name}/edi/processed_log"/>
+      <mkdir dir="${build}/artifacts/${app.name}/edi/outbound_log"/>
+      <mkdir dir="${build}/artifacts/${app.name}/edi/outbound"/>
+      <mkdir dir="${build}/artifacts/${app.name}/edi/sent"/>
+      <mkdir dir="${build}/artifacts/${app.name}/edi/tools/oboe"/>
+      <copy file="${tools}/oboe.new/oboe.jar" todir="${build}/artifacts/${app.name}/edi/lib"/>
+      <copy todir="${build}/artifacts/${app.name}/edi/util" overwrite="yes" filtering="yes">
+         <fileset dir="tools/edi/util/">
+            <include name="*"/>
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/${app.name}/edi/util" overwrite="yes" filtering="yes">
+         <fileset dir="${src}/com/cleanwise/service/apps/loaders">
+            <include name="*sh"/>
+            <include name="*job"/>
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/${app.name}/util" overwrite="yes" filtering="yes">
+         <fileset dir="tools/script_util">
+            <include name="*"/>
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/${app.name}/jobs" overwrite="yes" filtering="yes">
+         <fileset dir="tools/jobs">
+            <include name="*job"/>
+            <include name="*sh"/>
+            <include name="*xml"/>
+            <include name="*sql"/>
+            <exclude name="run-daily-evening-jobs.sh"/>
+            <exclude name="run-daily-jobs.sh"/>
+            <exclude name="run-hourly-jobs.sh"/>
+            <exclude name="run-morning-jobs.sh"/>
+            <exclude name="run-weekly-jobs.sh"/>
+         </fileset>
+      </copy>
+      <!-- START some production/unix specific install instructions -->
+      <copy todir="${build}/artifacts/base" overwrite="yes" filtering="yes">
+         <fileset dir="tools/jobs">
+            <include name="run-daily-evening-jobs.sh"/>
+            <include name="run-daily-jobs.sh"/>
+            <include name="run-hourly-jobs.sh"/>
+            <include name="run-morning-jobs.sh"/>
+            <include name="run-weekly-jobs.sh"/>
+         </fileset>
+      </copy>
+      <ant dir="tools/com/cleanwise/util"/>
+      <copy todir="${build}/artifacts/base/util" overwrite="yes" filtering="no">
+         <fileset dir="tools/com/cleanwise/util/classes">
+            <include name="*.class"/>
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/base/util" overwrite="yes" filtering="yes">
+         <fileset dir="tools/com/cleanwise/util/">
+            <include name="*.sh"/>
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/base/util" overwrite="yes" filtering="no">
+         <fileset dir="tools/httpunit">
+            <include name="*jar"/>
+         </fileset>
+      </copy>
+      <!-- END some production/unix specific install instructions -->
+      <copy todir="${build}/artifacts/${app.name}/lib" overwrite="yes">
+         <fileset dir="tools/httpunit">
+            <include name="*jar" />
+         </fileset>
+      </copy>
+      <copy file="${tools}/MyFax/activation.jar"
+         tofile="${build}/artifacts/${app.name}/lib/MyFax/activation.jar"/>
+      <copy file="${tools}/MyFax/axis-ant.jar"
+         tofile="${build}/artifacts/${app.name}/lib/MyFax/axis-ant.jar"/>
+      <copy file="${tools}/MyFax/axis-schema.jar"
+         tofile="${build}/artifacts/${app.name}/lib/MyFax/axis-schema.jar"/>
+      <copy file="${tools}/MyFax/log4j.properties"
+         tofile="${build}/artifacts/${app.name}/lib/MyFax/log4j.properties"/>
+      <copy file="${tools}/MyFax/log4j-1.2.8.jar"
+         tofile="${build}/artifacts/${app.name}/lib/MyFax/log4j-1.2.8.jar"/>
+      <copy file="${tools}/MyFax/mailapi.jar"
+         tofile="${build}/artifacts/${app.name}/lib/MyFax/mailapi.jar"/>
+      <copy file="${tools}/AvalaraTax/activation.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/activation.jar"/>
+      <copy file="${tools}/AvalaraTax/axis-1.2.1.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/axis-1.2.1.jar"/>
+      <copy file="${tools}/AvalaraTax/axis-ant.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/axis-ant.jar"/>
+      <copy file="${tools}/AvalaraTax/bcprov-jdk13-128.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/bcprov-jdk13-128.jar"/>
+      <copy file="${tools}/AvalaraTax/commons-discovery-0.2.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/commons-discovery-0.2.jar"/>
+      <copy file="${tools}/AvalaraTax/commons-logging-1.0.4.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/commons-logging-1.0.4.jar"/>
+      <copy file="${tools}/AvalaraTax/jaxrpc.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/jaxrpc.jar"/>
+      <copy file="${tools}/AvalaraTax/junit-3.8.1.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/junit-3.8.1.jar"/>
+      <copy file="${tools}/AvalaraTax/log4j.properties"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/log4j.properties"/>
+      <copy file="${tools}/AvalaraTax/log4j-1.2.8.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/log4j-1.2.8.jar"/>
+      <copy file="${tools}/AvalaraTax/mailapi.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/mailapi.jar"/>
+      <copy file="${tools}/AvalaraTax/saaj.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/saaj.jar"/>
+      <copy file="${tools}/AvalaraTax/wsdl4j-1.5.1.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax/wsdl4j-1.5.1.jar"/>
+      <copy file="${tools}/AvalaraTax/xalan-2.6.0.jar"
+         tofile="${build}/artifacts/${app.name}/lib/AvalaraTax//xalan-2.6.0.jar"/>
+      <!-- copy fonts -->
+      <mkdir dir="${build}/artifacts/${app.name}/fonts"/>
+      <copy todir="${build}/artifacts/${app.name}/fonts" overwrite="yes" filtering="no">
+         <fileset dir="${tools}/fonts/">
+            <include name="*"/>
+         </fileset>
+      </copy>
+      <!-- copy Avalara Avatax properties file 
+      <copy file="${tools}/AvalaraTax/avatax4j.properties" overwrite="yes" filtering="yes"
+         tofile="${jbossConf}/avatax4j.properties"/ -->
+      <!-- copy Ocean Storage System properties file 
+      <copy file="${tools}/ocean/StorageSystem/storagesystem.properties" overwrite="yes" filtering="yes"
+            tofile="${jbossConf}/storagesystem.properties"/ -->
+      <!-- replace with espenwise.properties -->
+      <!-- echo file="${jbossHome}/${app.name}/app.properties" -->
+      <copy file="installation/jboss-conf/JBoss-${jbossVersion}/scripts/app.sh.env"
+			tofile="${build}/artifacts/${app.name}/app.sh.env"
+			overwrite="true"  filtering="yes"/>
+		
+      <copy file="${jar.dir}/${app.name}-reporting.jar"
+         tofile="${build}/artifacts/${app.name}/lib/${app.name}-reporting.jar"
+         overwrite="true"/>
+      <copy file="${jar.dir}/${app.name}-ejb.jar"
+         tofile="${build}/artifacts/${app.name}/lib/${app.name}-ejb.jar"
+         overwrite="true"/>
+      <copy file="${jar.dir}/${app.name}-apps.jar"
+         tofile="${build}/artifacts/${app.name}/lib/${app.name}-apps.jar"
+         overwrite="true"/>
+<!--
+      <copy file="${jbossHome}/client/jbossall-client.jar"
+         tofile="${jbossHome}/${app.name}/lib/jbossall-client.jar"/>
+      <copy file="${jbossHome}/client/mail.jar"
+         tofile="${jbossHome}/${app.name}/lib/mail.jar"/>
+      <copy file="${jbossHome}/client/activation.jar"
+         tofile="${jbossHome}/${app.name}/lib/activation.jar"/>
+-->
+      <if>
+         <not>
+            <equals arg1="${isJDK1.4}" arg2="true"/>
+         </not>
+         <then>
+            <copy file="${tools}/xerces/xerces.jar"
+               tofile="${build}/artifacts/${app.name}/lib/xerces.jar" />
+         </then>
+      </if>
+<!--
+      <copy file="${jbossHome}/client/log4j.jar"
+         tofile="${jbossHome}/${app.name}/lib/log4j.jar"/>
+		 
+      <copy file="${jbossHome}/client/jnp-client.jar"
+         tofile="${jbossHome}/${app.name}/lib/jnp-client.jar"/>
+		 
+      <copy file="${jbossHome}/client/jboss-client.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-client.jar"
+         failonerror="false"/>
+		 
+      <copy file="${jbossHome}/client/jboss-logging-spi.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-logging-spi.jar"
+         failonerror="false"/>
+		 
+      <copy file="${jbossHome}/client/jboss-javaee.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-javaee.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-security-spi.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-security-spi.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-serialization.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-serialization.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/lib/jboss-common-core.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-common-coreLIB.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-common-core.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-common-coreCLIENT.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-remoting.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-remoting.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/concurrent.jar"
+         tofile="${jbossHome}/${app.name}/lib/concurrent.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jbosssx-client.jar"
+         tofile="${jbossHome}/${app.name}/lib/jbosssx-client.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-integration.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-integration.jar"
+         failonerror="false"/>
+-->
+      <copy file="${jar.dir}/jxl.jar"
+         tofile="${jbossHome}/${app.name}/lib/jxl.jar"/>
+      <copy file="${jar.dir}/commons-logging.jar"
+         tofile="${build}/artifacts/${app.name}/lib/commons-logging.jar"/>
+      <copy file="${jar.dir}/commons-codec-1.3.jar"
+         tofile="${build}/artifacts/${app.name}/lib/commons-codec.jar"/>
+      <copy file="${jar.dir}/commons-httpclient.jar"
+         tofile="${build}/artifacts/${app.name}/lib/commons-httpclient.jar"/>
+      <copy file="${jar.dir}/dom4j.jar"
+         tofile="${build}/artifacts/${app.name}/lib/dom4j.jar"/>
+		 
+	  <copy file="${jar.dir}/jakarta-poi.jar"
+         tofile="${build}/artifacts/${app.name}/lib/jakarta-poi.jar"
+         overwrite="true"/>
+	  <copy file="${jar.dir}/jakarta-poi-ooxml.jar"
+         tofile="${build}/artifacts/${app.name}/lib/jakarta-poi-ooxml"
+         overwrite="true"/>
+	  <copy file="${jar.dir}/ooxml-schemas-1.0.jar"
+         tofile="${build}/artifacts/${app.name}/lib/ooxml-schemas-1.0.jar"
+         overwrite="true"/>
+	  <copy file="${jar.dir}/openxml4j-1.0-beta.jar"
+         tofile="${build}/artifacts/${app.name}/lib/openxml4j-1.0-beta.jar"
+         overwrite="true"/>
+      <copy file="${jar.dir}/xmlbeans-2.3.0.jar"
+         tofile="${build}/artifacts/${app.name}/lib/xmlbeans-2.3.0.jar"
+         overwrite="true"/>
+      <copy file="${jar.dir}/iText-2.1.0.jar"
+         tofile="${build}/artifacts/${app.name}/lib/iText-2.1.0.jar"
+         overwrite="true"/>
+      <copy file="${jar.dir}/ojdbc14.jar"
+         tofile="${build}/artifacts/${app.name}/lib/ojdbc14.jar"
+         overwrite="true"/>
+      <copy file="${jar.dir}/edb-jdbc14.jar"
+         tofile="${build}/artifacts/${app.name}/lib/edb-jdbc14.jar"
+         overwrite="true"/>
+	  <copy file="${jar.dir}/esapi-2.0_RC7-SNAPSHOT.jar"
+         tofile="${build}/artifacts/${app.name}/lib/esapi-2.0_RC7-SNAPSHOT.jar"
+         overwrite="true"/>
+      <copy file="${jar.dir}/freemarker-2.3.16.jar"
+         tofile="${build}/artifacts/${app.name}/lib/freemarker-2.3.16.jar"
+         overwrite="true"/>
+   </target>
+   <!-- jboss5.configureJobs -->
+<!-- ====================================================================== -->
+   <target name="jboss5.event" 
+           description="Copy event system config files to jboss">
+      <echo message="configuring event system" />
+      <copy todir="${build}/artifacts/jboss.event.sar/META-INF"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="${tools}/event/META-INF" >
+            <include name="jboss-service.xml" />
+         </fileset>
+      </copy>
+      <manifest file="${build}/artifacts/jboss.event.sar/META-INF/MANIFEST.MF">
+         <attribute name="Class-Path" value="../${app.name}-ejb.jar" />
+      </manifest>
+   </target>
+<!-- ====================================================================== -->
+   <target name="jboss5.quartzconfig" 
+           description="Copy quartz config files to jboss" >
+      <echo message="configuring quartz" />
+      <copy todir="${build}/artifacts/jboss-quartz.sar/META-INF"
+         overwrite="yes"
+         filtering="no">
+         <fileset dir="${tools}/quartz/META-INF" >
+            <include name="jboss-service.xml" />
+         </fileset>
+      </copy>
+      <copy todir="${build}/artifacts/jboss-quartz.sar"
+         overwrite="yes" filtering="no">
+         <fileset dir="${tools}/cryptix" >
+            <include name="cryptix-jce-api-20050328.jar" />
+            <include name="cryptix-jce-provider-20050328.jar" />
+            <include name="cryptix-message-api-20050405.jar" />
+            <include name="cryptix-openpgp-provider-20050405.jar" />
+            <include name="cryptix-pki-api-20050405.jar" />
+         </fileset>
+      </copy>
+      <manifest file="${build}/artifacts/jboss-quartz.sar/META-INF/MANIFEST.MF">
+         <attribute name="Class-Path" value="../${app.name}-ejb.jar" />
+      </manifest>
+   </target>
+<!-- ====================================================================== -->
+   <target name="compile" depends="prepare"
+           description="Compile all java files in the src directory.">
+      <echo message = "MMMMMMMMMMMMMMMMMMMMMMMMMMMM ${jdbcLib}" />
+      <mkdir dir="${build}" />
+      <javac srcdir="${src}"
+         destdir="${build}"
+         memoryMaximumSize="1024M"
+         fork ="true"
+         optimize="${compileopt}" debug="true" nowarn = "${nowarn}"
+         debuglevel="lines,vars,source">
+         <!-- debuglevel="lines,vars,source"  debug="true" -->
+         <!--
+         replace the previous line with this one to see the source line numbers
+         in stack traces
+         debuglevel="lines,vars,source"  debug="true"
+         -->
+         <include name="**/*.java" />
+         <exclude name="**/apps/edi/*.java" />
+         <exclude name="com/cleanwise/compass/**/*.java" />
+         <classpath refid="${project.path}" />
+      </javac>
+      <mkdir dir="${build}/tools" />
+      <condition property="edi.path" value="jboss5.project.edi.path" else="project.edi.path">
+         <equals arg1="${jbossVersion}" arg2="5.0.1" />
+      </condition>
+      <javac srcdir="tools" destdir="${build}/tools"  nowarn = "${nowarn}">
+         <include name="**/tools/*.java" />
+         <classpath refid="${project.path}" />
+      </javac>
+      <echo message = "Done Compile ${build}/tools" />
+      <javac srcdir="${oboe.src}"
+         destdir="${build}"
+         optimize="${compileopt}" debug="${compiledebug}" nowarn = "${nowarn}">
+         <include name="**/apps/edi/*.java" />
+         <classpath refid="${edi.path}" />
+      </javac>
+      <copy todir="${build}/com/cleanwise/service/api/util/synchronizer/sql">
+         <fileset dir="${src}/com/cleanwise/service/api/util/synchronizer/sql">
+            <patternset>
+               <include name="**/*.sql" />
+            </patternset>
+         </fileset>
+      </copy>
+   </target>
+   <!-- compile -->
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+   <target name="prepare"
+           description="Make the directories needed for compilation.">
+      <echo>******* Configuration ${configuration}</echo>
+      <!-- Create the time stamp -->
+      <tstamp/>
+      <condition property="nowarn" value="off" else="${nowarning}">
+         <not>
+            <isset property="nowarning" />
+         </not>
+      </condition>
+      <filter filtersfile="${filterFile}" />
+      <filter token="app.name" value="${app.name}"/>
+      <echo message="javaHome = ${javaHome}" />
+      <echo message="compiledebug = ${compiledebug}" />
+      <echo message="compileopt = ${compileopt}" />
+      <echo message="nowarn = ${nowarn}" />
+      <!-- Compile java classes needed by custom Ant tasks -->
+      <mkdir dir="${jbossLib}" />
+      <mkdir dir="${build}/tools" />
+      <javac srcdir="tools" destdir="${build}/tools">
+         <include name="**/DBDump.java" />
+         <include name="**/DBLoad.java" />
+         <include name="**/DBExport.java" />
+         <include name="**/DBImport.java" />
+         <include name="**/DBSequence.java" />
+         <include name="**/DBIndexReader.java" />
+         <include name="**/DBIndexLoader.java" />
+         <include name="**/DBRefConstraints.java" />
+         <include name="**/BeansToXML.java" />
+         <include name="**/XMLTableProcessor.java" />
+         <include name="**/StoreCustomization.java" />
+         <include name="**/gencode/*.java" />
+         <include name="**/gencode/item/*.java" />
+         <include name="**/gencode/logic/*.java" />
+         <include name="**/gencode/utils/*.java" />
+         <include name="**/gencode/logic/spec/*.java" />
+         <include name="**/GZipFileSet.java" />
+         <include name="**/srcCodeObserver/*.java" />
+         <classpath refid="${project.path}" />
+      </javac>
+      <taskdef name="StoreCustomization"
+         classname="com.cleanwise.tools.StoreCustomization" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" / -->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <taskdef name="DBSequence"
+         classname="com.cleanwise.tools.DBSequence" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" / -->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <taskdef name="DBIndexReader"
+         classname="com.cleanwise.tools.DBIndexReader" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" / -->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <taskdef name="DBIndexLoader"
+         classname="com.cleanwise.tools.DBIndexLoader" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" /-->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <taskdef name="DBExport"
+         classname="com.cleanwise.tools.DBExport" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" / -->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <taskdef name="DBImport"
+         classname="com.cleanwise.tools.DBImport" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" / -->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <taskdef name="DBDump"
+         classname="com.cleanwise.tools.DBDump" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" / -->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <taskdef name="DBLoad"
+         classname="com.cleanwise.tools.DBLoad" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" / -->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <taskdef name="DBRefConstraints"
+         classname="com.cleanwise.tools.DBRefConstraints" >
+         <classpath>
+            <!-- pathelement path="${jdbcLib}" / -->
+			<!-- pathelement path="${jdbcDir}/edb-jdbc14.jar" / -->
+  		    <fileset dir="${jdbcDir}">
+				 <include name="**/*.jar" />
+			</fileset>
+            <pathelement path="${build}/tools" />
+         </classpath>
+      </taskdef>
+      <condition property="isJDK1.4">
+         <equals arg1="${ant.java.version}" arg2="1.4"/>
+      </condition>
+   </target>
+   <!-- #############################################################
+     Deploy xsuite jobs
+   ############################################################# -->	 
+   <target name="jboss5.deployJobs" depends="jboss.verify, jboss5.prepare, setJbossHome">
+      <filter filtersfile="build.properties"/>
+      <filter token="app.name" value="${app.name}"/>
+		<echo>javaHome1=${javaHome}</echo>
+      <!-- Copy to xsuite -->
+      <mkdir dir="${jbossHome}/${app.name}"/>
+      <mkdir dir="${jbossHome}/${app.name}/jobs"/>
+      <mkdir dir="${jbossHome}/${app.name}/reports"/>
+      <mkdir dir="${jbossHome}/${app.name}/dataexchange/inbound"/>
+      <mkdir dir="${jbossHome}/${app.name}/lib"/>
+      <mkdir dir="${jbossHome}/${app.name}/util"/>
+      <mkdir dir="${jbossHome}/${app.name}/edi/inbound"/>
+      <mkdir dir="${jbossHome}/${app.name}/edi/processed"/>
+      <mkdir dir="${jbossHome}/${app.name}/edi/processed_log"/>
+      <mkdir dir="${jbossHome}/${app.name}/edi/outbound_log"/>
+      <mkdir dir="${jbossHome}/${app.name}/edi/outbound"/>
+      <mkdir dir="${jbossHome}/${app.name}/edi/sent"/>
+      <mkdir dir="${jbossHome}/${app.name}/edi/tools/oboe"/>
+      <copy file="${jbossHome}/bin/espendwise.properties"
+			tofile="${jbossHome}/${app.name}/app.properties"
+			overwrite="true" filtering="no"/>
+	  <filter filtersfile="${jbossHome}/${app.name}/app.properties"/>
+      <copy todir="${jbossHome}/${app.name}" overwrite="yes" filtering="yes">
+         <fileset dir="${build}/artifacts/${app.name}/">
+            <include name="**/*.env"/>
+            <include name="**/*.sh"/>
+            <include name="**/*.job"/>
+            <include name="**/*.xml"/>
+            <include name="**/*.sql"/>
+            <include name="**/*.properties"/>
+         </fileset>
+      </copy>
+      <copy todir="${jbossHome}/${app.name}" overwrite="yes" filtering="no">
+         <fileset dir="${build}/artifacts/${app.name}/">
+            <exclude name="**/*.env"/>
+            <exclude name="**/*.sh"/>
+            <exclude name="**/*.job"/>
+            <exclude name="**/*.xml"/>
+            <exclude name="**/*.sql"/>
+            <exclude name="**/*.properties"/>
+         </fileset>
+      </copy>
+      <copy file="${jbossHome}/client/jbossall-client.jar"
+         tofile="${jbossHome}/${app.name}/lib/jbossall-client.jar"/>
+      <copy file="${jbossHome}/client/mail.jar"
+         tofile="${jbossHome}/${app.name}/lib/mail.jar"/>
+      <copy file="${jbossHome}/client/activation.jar"
+         tofile="${jbossHome}/${app.name}/lib/activation.jar"/>
+      <copy file="${jbossHome}/client/log4j.jar"
+         tofile="${jbossHome}/${app.name}/lib/log4j.jar"/>
+		 
+      <copy file="${jbossHome}/client/jnp-client.jar"
+         tofile="${jbossHome}/${app.name}/lib/jnp-client.jar"/>
+		 
+      <copy file="${jbossHome}/client/jboss-client.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-client.jar"
+         failonerror="false"/>
+		 
+      <copy file="${jbossHome}/client/jboss-logging-spi.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-logging-spi.jar"
+         failonerror="false"/>
+		 
+      <copy file="${jbossHome}/client/jboss-javaee.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-javaee.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-security-spi.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-security-spi.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-serialization.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-serialization.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/lib/jboss-common-core.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-common-coreLIB.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-common-core.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-common-coreCLIENT.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-remoting.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-remoting.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/concurrent.jar"
+         tofile="${jbossHome}/${app.name}/lib/concurrent.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jbosssx-client.jar"
+         tofile="${jbossHome}/${app.name}/lib/jbosssx-client.jar"
+         failonerror="false"/>
+      <copy file="${jbossHome}/client/jboss-integration.jar"
+         tofile="${jbossHome}/${app.name}/lib/jboss-integration.jar"
+         failonerror="false"/>
+	  <!-- Copy to webapp -->	 
+      <copy todir="${base.production.dir}" overwrite="yes" filtering="yes">
+         <fileset dir="${build}/artifacts/base">
+            <include name="**/*.sh"/>
+         </fileset>
+      </copy>
+      <copy todir="${base.production.dir}" overwrite="yes" filtering="no">
+         <fileset dir="${build}/artifacts/base">
+            <exclude name="**/*.sh"/>
+         </fileset>
+      </copy>
+  </target>
+   <!-- prepare -->
+	<target name="load_processes" depends="prepare"
+	   description="Loads process templates">
+	    <java classname="com.cleanwise.service.apps.loaders.ProcessLoader" fork="true">
+		<sysproperty
+	          key="conf" value="${jbossHome}/xsuite/app.properties"/>
+	          <arg value="docroot/cleanwise/process/${tfile}" />
+	          <classpath refid="${project.path}" />
+	    </java>
+	</target>
+	
+	<target name="jsp" description="Copy the only jsp files to a deployment area." depends="jboss5.prepare">
+	   <property file="installation.properties" />
+	   <copy todir="${webdeploy}">
+	        <fileset dir="${docroot}/cleanwise">
+	         <patternset>
+	         <!-- exclude the jsps that include build information - they are handled below. -->
+	          <exclude name="pub_debug.jsp"/>
+	          <exclude name="adminportal/applicationInfo.jsp"/>
+	          <include name="**/*.jsp" />
+		    </patternset>
+	      </fileset>
+	    </copy>
+		
+		<copy todir="${webdeploy}/store/">
+		         <fileset dir="${baselineStorePagesDir}">
+		            <exclude name="CVS"/>
+		         </fileset>
+	      </copy>
+	      <copy todir="${webdeploy}/store/">
+	         <fileset dir="${customStorePagesDir}">
+	            <exclude name="CVS"/>
+	         </fileset>
+	      </copy>
+	      <copy todir="${webdeploy}/esw/">
+	         <fileset dir="${eswBaselineStorePagesDir}">
+	            <exclude name="CVS"/>
+	         </fileset>
+	      </copy>
+	      <copy todir="${webdeploy}/esw/">
+	         <fileset dir="${eswCustomStorePagesDir}">
+	            <exclude name="CVS"/>
+	         </fileset>
+	      </copy>
+	</target>
+	
+	<!-- Refresh the CLW_REF_CD table -->
+	  <target name="dbrefcd" depends="prepare"
+	    description="Refresh the CLW_REF_CD table with latest values from com.cleanwise.service.api.util.RefCodeNames.">
+	  	<property file="installation.properties" />
+	  	<mkdir dir="${tmpdir}" />
+	    <!-- Populate database with the reference codes -->
+	    <javac srcdir="${src}" destdir="${build}"
+	           optimize="${compileopt}" debug="${compiledebug}">
+	      <include name="**/RefCodeNames.java" />
+	      <classpath refid="${project.path}" />
+	    </javac>
+	    <mkdir dir="${build}/tools" />
+	    <javac srcdir="${tools}" destdir="${build}/tools">
+	      <include name="**/RefCodeToDB.java" />
+	      <classpath refid="project.class.tools" />
+	    </javac>
+	    <java classname="com.cleanwise.tools.RefCodeToDB" fork="true">
+	          <arg value="-outfile ${tmpdir}/refcodes.sql" />
+	          <classpath refid="project.class.tools" />
+	    </java>
+	    <sql
+	        driver="oracle.jdbc.driver.OracleDriver"
+	        classpath="${jdbcLib}"
+	        url="${dbUrl}"
+	        userid="${dbUser}"
+	        password="${dbPassword}"
+		src="${tmpdir}/refcodes.sql"
+	    />
+	  </target>
+		
+	 <!-- This target is intend to be used by developer with quick and partial depolyment -->
+	<!-- Use this if java class or jsp page need to be updated -->
+	   <target name="dev.deploy" depends="jboss.verify, jboss5.prepare"
+	           description="Configures the server, update ${jbossHome}/server/${serverName}/deploy/${ear.file}/${jar.file}, update class to ${webdeploy}/WEB-INF/classes/com/cleanwise/view and update jsp files .">
+	      <antcall target="dev.config"/>
+	      <antcall target="dev.jar"/>
+	      <antcall target="dev.web"/>
+	   	  <antcall target="jsp"/>
+	   </target>	
+		
+	<target name="dev.jar" depends="jboss5.compile"
+	           description="Create the application jar.">
+		<property file="installation.properties"/>
+		<delete file="${jar.dir}/${app.name}-apps.jar"/>
+		<delete file="${jar.dir}/${app.name}-ejb.jar"/>
+		<delete file="${jar.dir}/${app.name}-reporting.jar"/>
+		<antcall target="createAppJars"/>
+        <antcall target="createEjbJars"/>
+        <antcall target="createReportingJars"/>
+		
+		<delete file="${jar.dir}/${jar.file}"/>		
+		<jar basedir="${jar.dir}" jarfile="${jar.dir}/${jar.file}">
+	         <!-- exclude xsuite-ws.jar as it was not copied in the old build process -->
+	         <exclude name="**/${app.name}-ws.jar"/>
+	         <manifest>
+	            <attribute name="Application-Title" value="${app.name}"/>
+	            <attribute name="Application-Vendor" value="${app.vendor}"/>
+	            <attribute name="Build-Number" value="${build.number}"/>
+	            <attribute name="Build-Date" value="${build.date}"/>
+	            <attribute name="Class-Path" value="${jar.manifest.classpath}"/>
+	         </manifest>
+	      </jar>
+		
+	  <copy file="${jar.dir}/${jar.file}"
+			 tofile="${jbossHome}/server/${serverName}/deploy/${ear.file}/${jar.file}"
+	         overwrite="true"/>
+   </target>
+	
+	<target name="dev.web" depends="jboss5.compile"
+		      description="Replace xsuite.jar on jboss server.">
+		<property file="installation.properties"/>
+		<echo>Copy files "${build}/com/cleanwise/view/**/*" to directory "${webdeploy}/WEB-INF/classes/com/cleanwise/view"</echo>
+		<echo>Copy files "${build}/com/espendwise/view/**/*" to directory "${webdeploy}/WEB-INF/classes/com/cleanwise/view"</echo>
+		<copy todir="${webdeploy}/WEB-INF/classes">
+	         <fileset dir="${build}">
+	            <patternset>
+	               <include name="**/*.java"/>
+	               <include name="com/cleanwise/view/**/*"/>
+	               <include name="com/espendwise/view/**/*"/>
+	            </patternset>
+	         </fileset>
+		</copy>	
+		<copy file="${docroot}/cleanwise/WEB-INF/struts-config.xml"
+					 tofile="${webdeploy}/WEB-INF/struts-config.xml"
+			         overwrite="true"/>
+		<copy file="${docroot}/cleanwise/i18n/Message_All_en.txt"
+			   				 tofile="${webdeploy}/i18n/Message_All_en.txt"
+			   		         overwrite="true"/>
+		<jar jarfile="${webdeploy}/WEB-INF/lib/${app.name}-lib.jar">
+         	<fileset dir="${build}">
+	            <patternset>
+	               <include name="com/cleanwise/service/crypto/**"/>
+	               <include name="com/cleanwise/service/apps/dataexchange/*.class"/>
+	            </patternset>
+         	</fileset>
+      	</jar>
+	</target>
+	
+	<target name="process_event" depends="jboss5.compile"
+		   description="Run single event">
+		<filter filtersfile="build.properties"/>
+		<filter token="app.name" value="${app.name}"/>
+		    <java classname="com.cleanwise.service.apps.AppCmd" fork="true">
+				<sysproperty key="conf" value="installation.properties"/>
+		    	<sysproperty key="cmd" value="process_event"/>
+		    	<jvmarg value="-DeventIds=${eventIds}"/>
+		    	<classpath refid="${project.path}" />
+		    </java>
+	 </target>
+	<!-- ====================================================================== -->
+	<!--Target to translate and create Message_All_xx-piglatin.txt file using Message_All_en.txt and copying to war file -->
+	<!-- ====================================================================== -->
+	<target name="create.i18n.messages.piglatin" depends="prepare-i18n-tools">
+			
+				<translateToPigLatin src="${docroot}/cleanwise/i18n/Message_All_en.txt" 
+								dest="${docroot}/cleanwise/i18n/Message_All_xx-piglatin.txt" keyExcludesPattern="shop.input.*Format" />
+			
+		</target>
+		<target name="prepare-i18n-tools" >
+			<taskdef name="translateToPigLatin"  classname="com.espendwise.ocean.buildUtils.ant.TranslatePropertiesToPigLatin" >
+				<classpath>
+					<pathelement location="${tools}/ocean/eSpendwiseOceanBuildUtils.jar" />
+				</classpath>
+			</taskdef>
+		</target>
+	<!-- ====================================================================== -->
+	<!-- Create the war file for the rest ws.                                   -->
+	<!-- ====================================================================== -->
+	   <target name="create.restws.war" depends="jboss.verify,jboss5.compile"
+	           description="Create the restws war.">
+        <filter filtersfile="build.properties"/>
+        <mkdir dir="${restws.dir}"/>
+        <mkdir dir="${restws.dir}/WEB-INF/"/>
+        <mkdir dir="${restws.dir}/WEB-INF/classes"/>
+        <copy file="${tools}/restws/WEB-INF/web.xml"
+              tofile="${restws.dir}/WEB-INF/web.xml"
+              filtering="yes"
+              overwrite="yes"/>
+        <copy todir="${restws.dir}/WEB-INF/classes/">
+            <fileset dir="${build}">
+                <patternset>
+                    <include name="com/espendwise/webservice/restful/**"/>
+                    <include name="com/espendwise/ocean/common/webaccess/**"/>
+                </patternset>
+            </fileset>
+        </copy>
+        <copy todir="${restws.dir}/WEB-INF/classes/">
+           <fileset dir="${build}">
+               <patternset>
+                   <include name="com/cleanwise/view/utils/CleanwiseUser*.class"/>
+	               <include name="com/cleanwise/view/utils/InformationState*.class"/>
+               </patternset>
+           </fileset>
+       </copy>
+	   	
+	   	
+        <copy todir="${restws.dir}/WEB-INF/lib">
+            <fileset dir="${tools}/restws/lib">
+                <patternset>
+                    <include name="*.jar"/>
+                </patternset>
+            </fileset>
+        </copy>
+    </target>
+	
+	<target name="dev.config" depends="jboss5.copy.espendwise.properties"
+		           description="Update config files directly to jboss server.">
+	</target>
+	
+	<target name="test" depends="jboss5.compile"
+			   description="Test Class">
+		<echo>project.path= "${project.path}"</echo>
+		<property file="installation.properties"/>
+			<filter filtersfile="build.properties"/>
+			<filter token="app.name" value="${app.name}"/>
+			    <java classname="com.cleanwise.service.apps.Test" fork="true">
+					<sysproperty key="conf" value="installation.properties"/>
+			    	<classpath refid="${project.path}" />
+			    </java>
+		 </target>
+	
+</project>

@@ -1,0 +1,38 @@
+<compass-core-config xmlns="http://www.opensymphony.com/compass/schema/core-config"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.opensymphony.com/compass/schema/core-config
+http://www.opensymphony.com/compass/schema/compass-core-config.xsd">
+  <compass name="CLW_COMPASS">
+
+    <connection>
+      <jdbc>
+        <dataSourceProvider>
+          <jndi lookup="java:/OracleDS"/>
+          <!--jndi lookup="java:/CompassMySqlDS"/-->
+        </dataSourceProvider>
+      </jdbc>
+      <!--
+      <file path="target/index"/>
+      -->
+      <!--localCache subIndex="__default__" connection="ram://" /-->
+      <!--localCache subIndex="__default__" connection="file://tmp/cache" /-->
+    </connection>
+    <transaction lockTimeout="500" lockPollInterval="200" />
+    <!--transaction isolation="read_committed" lockTimeout="20" lockPollInterval="200">
+      <readCommittedSettings>
+        <ramTransLog/>
+      </readCommittedSettings>
+    </transaction-->
+
+    <searchEngine>
+      <analyzer name="deault" type="Snowball" snowballType="English">
+        <!--stopWords>
+          <stopWord value="+tanzania" />
+        </stopWords-->
+      </analyzer>
+      <optimizer scheduleInterval="100" schedule="true" /> <!--(in seconds)-->
+    </searchEngine>
+
+  </compass>
+</compass-core-config>
+

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE idList SYSTEM "idList.dtd">
-<!-- Revision 3.0.0 data/OBOE, docs,January 17, 2008, -->
-<idList>
-    <idCode>LX1</idCode>
-        <idValue>London (England) Exchange - First Closing</idValue>
-    <idCode>LX2</idCode>
-        <idValue>London (England) Exchange - Second Closing</idValue>
-</idList>

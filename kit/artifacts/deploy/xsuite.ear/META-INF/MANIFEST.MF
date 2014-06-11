@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.8.2
-Created-By: 1.6.0_20-b02 (Sun Microsystems Inc.)
-Application-Title: xsuite
-Application-Vendor: eSpendwise,Inc.
-Build-Number: 36.00.267.04
-Build-Date: March 13, 2014 02:25:06PM
-

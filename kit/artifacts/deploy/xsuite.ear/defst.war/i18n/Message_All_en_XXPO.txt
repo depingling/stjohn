@@ -1,6 +1,0 @@
-#shop.budgetInfo.label.setBudgetedOrder=Non-Rebill.  Order will affect budget.
-#shop.budgetInfo.label.setNotBudgetedOrder=Rebill.  Order will not affect budget but requires approval.
-#shop.budgetInfo.text.oderWillNotAffectBudgetButWillRequireApproval=Rebill.  Order will not affect budget but requires approval.
-
-shop.catalog.text.certifiedCompany="Green" Classified
-shoppingItems.detail.text.cerifiedBy=Green Classification(s) :

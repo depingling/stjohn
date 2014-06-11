@@ -1,2 +1,0 @@
-PdfOrderGuide=com.cleanwise.view.utils.pdf.PdfOrderGuideSwiss
-PdfCatalog=com.cleanwise.view.utils.pdf.PdfCatalogProductSwiss

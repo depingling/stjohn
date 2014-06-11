@@ -1,5 +1,0 @@
-label.display.item.tax.exempt=Tax Exempt
-shop.budgetInfo.label.setBudgetedOrder=Set as normal order
-shop.budgetInfo.label.setNotBudgetedOrder=Set as supplemental order
-shop.budgetInfo.text.oderWillNotAffectBudgetButWillRequireApproval=Supplemental Billing order will not affect budget but will require approval.
-shop.confirm.text.additional="<b><br><br><font color=""red"">Please remember to receive your order once it has been delivered!</font></b><br><br>"

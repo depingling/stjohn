@@ -1,6 +1,0 @@
-#user prompt should reflect the inputDateFormat but be locally translated
-shop.dateFormatPrompt=mm/dd/aaaa
-shop.timeFormatPrompt=hh:mm
-#application format validation.  Must use MM for month, dd for day and yyyy for year
-shop.inputDateFormat=MM/dd/yyyy
-shop.inputTimeFormat=HH:mm

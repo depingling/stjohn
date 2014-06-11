@@ -1,1 +1,0 @@
-Create a folder with the store prefix you want to customize (CLW for example) and place the custom pages in this folder.  They will overide anything that is in the baseline folder for this store.

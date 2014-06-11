@@ -1,2 +1,0 @@
-function shopMenu(A){if(navigator.appName.indexOf("Netscape")!=-1){return ;}var F=document.all.shopMenu;F.style.left=A.offsetLeft+168;var D=A.style.pixelTop;var E=A.offsetHeight;var C=F.style.pixelHeight;var B=document.body.scrollTop;if(D-C>=B&&D+E+C>document.body.clientHeight+B){F.style.top=D-C;}else{F.style.top=D+E;
-}if("none"==F.style.display){F.style.display="block";}}

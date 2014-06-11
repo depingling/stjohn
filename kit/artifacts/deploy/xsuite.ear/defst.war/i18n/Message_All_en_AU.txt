@@ -1,4 +1,0 @@
-﻿
-format.date.abbrev.month=mm
-format.date.abbrev.day=dd
-format.date.abbrev.year=yyyy

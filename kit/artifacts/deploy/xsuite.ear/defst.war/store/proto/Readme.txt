@@ -1,1 +1,0 @@
-This template is for testing the mobile prototype.

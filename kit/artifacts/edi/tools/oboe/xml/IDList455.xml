@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE idList SYSTEM "idList.dtd">
-<!-- Revision 1.6.0 data/OBOE, docs,July 9, 2001, -->
-<idList>
-    <idCode>T</idCode>
-        <idValue>Transportation Data Coordinating Committee (TDCC)</idValue>
-    <idCode>X</idCode>
-        <idValue>Accredited Standards Committee X12</idValue>
-</idList>

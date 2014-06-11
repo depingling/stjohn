@@ -1,1 +1,0 @@
-PdfOrderGuide=com.cleanwise.view.utils.pdf.PdfOrderGuideInventorySeparated

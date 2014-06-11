@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE idList SYSTEM "idList.dtd">
-<!-- Revision 3.5.0 data/OBOE, docs,June 1, 2007, -->
-<idList>
-    <idCode>DAT</idCode>
-        <idValue>Time Limits for Discount</idValue>
-    <idCode>DOF</idCode>
-        <idValue>Dollars of Purchase</idValue>
-</idList>

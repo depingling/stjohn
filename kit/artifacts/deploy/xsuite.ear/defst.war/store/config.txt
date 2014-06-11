@@ -1,2 +1,0 @@
-PdfOrderGuide=com.cleanwise.view.utils.pdf.PdfOrderGuide
-orderGuideSecondarySorting=proudctName

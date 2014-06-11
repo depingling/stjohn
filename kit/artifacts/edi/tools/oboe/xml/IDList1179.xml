@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE idList SYSTEM "idList.dtd">
-<!-- Revision 3.0.0 data/OBOE, docs,June 1, 2007, -->
-<idList>
-    <idCode>C</idCode>
-        <idValue>Consumption Entry</idValue>
-    <idCode>W</idCode>
-        <idValue>Warehouse Entry</idValue>
-</idList>

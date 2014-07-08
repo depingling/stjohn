@@ -1,6 +1,8 @@
 build
 kit
 build.log
+buildVersion/build_info.properties
 docroot/cleanwise/i18n/Message_All_xx-piglatin.txt
 installation.properties
 tools/getBranchStJohn/target
+

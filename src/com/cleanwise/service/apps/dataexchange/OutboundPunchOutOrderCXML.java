@@ -95,10 +95,12 @@ public class OutboundPunchOutOrderCXML extends cXML implements OutboundTransacti
         poOrdMsgEle = null;
         Element scratchEle = null;
         Iterator it = currReq.getOrderItemDV().iterator();
+        int lineNum = 1;
         while(it.hasNext()){
             OrderItemData ordI = (OrderItemData) it.next();
             Element itemInEle = punchOutOrderEle.addElement("ItemIn");
             itemInEle.addAttribute("quantity",Integer.toString(ordI.getTotalQuantityOrdered()));
+            itemInEle.addAttribute("lineNumber",Integer.toString(lineNum++));
             Element itemIDEle = itemInEle.addElement("ItemID");
             if(mTradingPartner.getSkuTypeCd().equals(RefCodeNames.SKU_TYPE_CD.CUSTOMER) && Utility.isSet(ordI.getCustItemSkuNum())){
                 itemIDEle.addElement("SupplierPartID").addText(ordI.getCustItemSkuNum());

@@ -102,13 +102,13 @@ BAD GCA Data.
                 </email-message>
                 <send-only-if-data>true</send-only-if-data>
         </report>
-        <report>
+        <!--<report>
                 <category>Operational</category>
                 <name>Config Report - HHS</name>
                 <emailrecipient>kaselbekian@espendwise.com</emailrecipient>
                 <email-message>BAD HHS Data.</email-message>
                 <send-only-if-data>true</send-only-if-data>
-        </report>
+        </report>-->
         <!--<report>
                 <category>Operational</category>
                 <name>Config Report - Basic</name>

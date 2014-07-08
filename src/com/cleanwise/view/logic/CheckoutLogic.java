@@ -1116,7 +1116,7 @@ public class CheckoutLogic {
       oItem.setItemId(cartItem.getProduct().getProductId());
       oItem.setCustItemSkuNum(cartItem.getProduct().getActualCustomerSkuNum());
       oItem.setManuItemSkuNum(cartItem.getProduct().getManufacturerSku());
-      oItem.setDistItemSkuNum(cartItem.getProduct().getCatalogDistrMapping().getItemNum());      
+      oItem.setDistItemSkuNum(cartItem.getProduct().getCatalogDistrMapping().getItemNum());
       oItem.setItemSkuNum(cartItem.getProduct().getSkuNum());
       oItem.setItemUom(cartItem.getProduct().getUom());
       oItem.setTotalQuantityOrdered(cartItem.getQuantity());
@@ -3931,6 +3931,7 @@ public class CheckoutLogic {
             oid.setCustItemSkuNum(itm.getProduct().getActualCustomerSkuNum());
             oid.setManuItemSkuNum(itm.getProduct().getManufacturerSku());
             oid.setDistItemSkuNum(itm.getProduct().getCatalogDistrMapping().getItemNum());
+            oid.setDistItemUom(itm.getProduct().getCatalogDistrMapping().getItemUom());            
             oid.setItemSkuNum(itm.getProduct().getSkuNum());
             oid.setItemShortDesc(itm.getProduct().getShortDesc());
             oid.setCustContractPrice(new BigDecimal(itm.getPrice()));
@@ -4696,6 +4697,7 @@ public class CheckoutLogic {
      }
 
      orderReq.setAccountId(account.getBusEntity().getBusEntityId());
+          
      // check store properties ALLOW_PO_NUM_BY_VENDER
      boolean allowPoByVender = Utility.isTrue(PropertyUtil.getPropertyValue(appUser.getUserStore().getMiscProperties(),
     		 		RefCodeNames.PROPERTY_TYPE_CD.ALLOW_PO_NUM_BY_VENDER));

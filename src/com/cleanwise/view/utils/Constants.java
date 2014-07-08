@@ -34,7 +34,7 @@ public final class Constants {
 	public static final String SEMICOLON = ";";
 	public static final String PORTAL_ESW = "esw";
 	public static final String PORTAL_CLASSIC = "classic";
-	public static final String COMPANY_NAME = "eSpendwise";
+	public static final String COMPANY_NAME = "orderline";
 	public static final String COOKIE_USERNAME = "STJOHN_USERNAME";
 	public static final int COOKIE_AGE_ONE_YEAR = 60*60*24*365;
 	public static final String ORIGIN_URL="originURL"; //url to return user to on logoff or failed logon.
@@ -58,6 +58,7 @@ public final class Constants {
     public static final String PARAMETER_OPERATION_VALUE_LOGIN = "login";
     public static final String PARAMETER_OPERATION_VALUE_PROXY_LOGIN = "proxyLogin";
     public static final String PARAMETER_OPERATION_VALUE_LOGOUT = "logout";
+    public static final String PARAMETER_OPERATION_VALUE_END_SHOPPING = "endShopping";
     public static final String PARAMETER_OPERATION_VALUE_SHOW_CONTENT = "showContent";
     public static final String PARAMETER_OPERATION_VALUE_SEND_PASSWORD = "sendPassword";
     public static final String PARAMETER_OPERATION_VALUE_USE_NEW_UI = "useNewUI";
@@ -950,7 +951,7 @@ public final class Constants {
   public static final String PROCESSING_FAILED = "FAILED";
   public static final String ERROR = "Error: ";
   public static final String FILE_LOADER_ACKNOWLEDGEMENT = "File Loader Acknowledgement: ";
-  public static final String EMAIL_ADDR_NO_REPLY = "No Reply<noreply@espendwise.com>";
+  public static final String EMAIL_ADDR_NO_REPLY = "No Reply<noreply@xpedx.com>";
   
   //Constant that can be used for Account Fiscal Calendar.
   public static final String ALL="All";

@@ -104,6 +104,8 @@
         <idValue>Radians Per Second Squared</idValue>
     <idCode>2C</idCode>
         <idValue>Roentgen</idValue>
+    <idCode>2D</idCode>
+        <idValue>Ship Set</idValue>
     <idCode>2F</idCode>
         <idValue>Volts Per Meter</idValue>
     <idCode>2G</idCode>

@@ -5244,7 +5244,7 @@ userportal.esw.shoppingCart.addShoppingList.popUp.text=This button will perform 
 ##Begin: New UI - Standard Report Filter
 userportal.esw.standardReports.beginMonth=Begin Month
 userportal.esw.standardReports.beginYear=Begin Year
-userportal.esw.standardReports.endMonth=End Year
+userportal.esw.standardReports.endMonth=End Month
 userportal.esw.standardReports.endYear=End Year
 userportal.esw.standardReports.selectEndMonth=Select End Month
 userportal.esw.standardReports.selectEndYear=Select End Year

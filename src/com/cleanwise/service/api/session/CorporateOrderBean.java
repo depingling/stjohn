@@ -51,55 +51,50 @@ public class CorporateOrderBean
 	{
     	Connection conn = null;
     	try {
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-    		conn = getConnection();
+			conn = getConnection();
 			String sql =  
-			"select \n\r"+
-			"  s.schedule_id, s.short_desc, s.bus_entity_id as store_id,  \n\r"+
-			"  trim(sdate.value)||' '||trim(stime.value) as cutoff, last_processed_dt \n\r"+
-			"from clw_schedule s, clw_schedule_detail sdate, clw_schedule_detail stime \n\r"+
-			"where s.schedule_id = sdate.schedule_id  \n\r"+
-			"  and sdate.schedule_detail_cd = 'ALSO_DATE' \n\r"+
-			"  and s.schedule_id = stime.schedule_id  \n\r"+
-			"  and stime.schedule_detail_cd = 'CUTOFF_TIME' \n\r"+
-			"  and s.schedule_type_cd = 'CORPORATE' \n\r"+
-			"  and s.schedule_rule_cd = 'DATE_LIST' \n\r"+
-			"  and s.eff_date < sysdate \n\r"+
-			"  and nvl(exp_date,sysdate) >= sysdate \n\r"+
-			"  and s.schedule_status_cd = 'ACTIVE' \n\r"+
-			(scheduleIdV.size()>0?(" and s.schedule_id in ("+IdVector.toCommaString(scheduleIdV)+") \n\r"):(""))+
-			"order by s.bus_entity_id, schedule_id, cutoff";
+			"select store_id, schedule_id, short_desc, last_processed_dt, max(cutoff) cutoff from (\r\n"+
+			"select \r\n"+
+			"  s.schedule_id, s.short_desc, s.bus_entity_id as store_id,  \r\n"+
+			"  to_date(trim(sdate.value)||' '||trim(stime.value), 'MM/DD/YYYY HH24:MI') as cutoff, last_processed_dt \r\n"+
+			"from clw_schedule s, clw_schedule_detail sdate, clw_schedule_detail stime \r\n"+
+			"where s.schedule_id = sdate.schedule_id  \r\n"+
+			"  and sdate.schedule_detail_cd = 'ALSO_DATE' \r\n"+
+			"  and s.schedule_id = stime.schedule_id  \r\n"+
+			"  and stime.schedule_detail_cd = 'CUTOFF_TIME' \r\n"+
+			"  and s.schedule_type_cd = 'CORPORATE' \r\n"+
+			"  and s.schedule_rule_cd = 'DATE_LIST' \r\n"+
+			"  and s.eff_date < sysdate \r\n"+
+			"  and nvl(exp_date,sysdate) >= sysdate \r\n"+
+			"  and s.schedule_status_cd = 'ACTIVE' \r\n"+
+			(scheduleIdV.size()>0?("  and s.schedule_id in ("+IdVector.toCommaString(scheduleIdV)+") \r\n"):(""))+
+			"  and s.schedule_type_cd = 'CORPORATE' \r\n"+
+			") a \r\n"+
+			"where 1=1 \r\n"+
+			(beginDate!=null ? "and cutoff >= ? \r\n" : "") +
+			(endDate!=null ? "and cutoff <= ? \r\n" : "") +
+			"and (last_processed_dt is null or (cutoff > last_processed_dt)) \r\n"+
+			"group by store_id, schedule_id, short_desc, last_processed_dt \r\n"+
+			"order by store_id, schedule_id, last_processed_dt";
 			
 			log.info("Pick corporate schedules: "+sql);
 
 			PreparedStatement stmt = conn.prepareStatement(sql);
+			int ix = 1;
+			if (beginDate!=null){
+				stmt.setTimestamp(ix++, DBAccess.toSQLTimestamp(beginDate));
+			}
+			if (endDate!=null){
+				stmt.setTimestamp(ix++, DBAccess.toSQLTimestamp(endDate));
+			}
+			
 			ResultSet rs=stmt.executeQuery();
 			ArrayList<DeliveryScheduleView> schVwV = new ArrayList<DeliveryScheduleView>();
-            DeliveryScheduleView schVwWrk = null;
-			while (rs.next()) {
-				String cutoffS = rs.getString("cutoff");
-				
-				Date cutoffD = null;
-				try {
-					cutoffD = sdf.parse(cutoffS);
-				} catch (ParseException exc) {
-					int scheduleId = rs.getInt("schedule_id");
-					int storeId = rs.getInt("store_id");
-					String errorMess = "Invalid inventory date or cutoff time format: "+cutoffS+
-					" StoreId: "+storeId+ "Schedule id: "+scheduleId;
-					throw (new ParseException(errorMess,0));
-				}
+            while (rs.next()) {
+				Date cutoffD = rs.getTimestamp("cutoff");			
 
 				Date lastProcessedDt = rs.getTimestamp("last_processed_dt");
 
-				if(beginDate!=null && cutoffD.before(beginDate)) {
-					continue;
-				} else if(endDate!=null && !cutoffD.before(endDate)) {
-					continue;
-				}
-				if(lastProcessedDt!=null && cutoffD.before(lastProcessedDt) ) {
-					continue;
-				}
 				DeliveryScheduleView schVw = new DeliveryScheduleView();
 				int scheduleId = rs.getInt("schedule_id");
 				int storeId = rs.getInt("store_id");
@@ -109,28 +104,11 @@ public class CorporateOrderBean
 				schVw.setScheduleId(scheduleId);
 				schVw.setScheduleName(schName);
 				schVw.setLastProcessedDt(lastProcessedDt);
-				if(schVwWrk==null) {
-					schVwWrk = schVw;
-				} else {
-					if(schVwWrk.getScheduleId()==schVw.getScheduleId()) {
-						if(schVwWrk.getNextDelivery().before(schVw.getNextDelivery())) {
-							schVwWrk = schVw;
-						}
-					} else {
-						schVwV.add(schVwWrk);
-						schVwWrk = null;
-					}
-				}
-				
-			}
-			if(schVwWrk!=null) {
-				schVwV.add(schVwWrk);
+				schVwV.add(schVw);				
 			}
 			rs.close();
 			stmt.close();
 			return schVwV;
-		} catch (ParseException exc) {
-			throw exc;
 		} catch (Exception e) {
             throw processException(e);
         } finally {
@@ -180,7 +158,7 @@ public class CorporateOrderBean
 			StringBuffer siteFilterSB = new StringBuffer();
 			siteFilterSB.append("(");
 			for(int ii=0; ii<siteAL.size(); ii++) {
-			   if(ii>0) siteFilterSB.append("\n\r or \n\r");
+			   if(ii>0) siteFilterSB.append("\n\r or \r\n");
 			   siteFilterSB.append("be.bus_entity_id in (");
 			   siteFilterSB.append((String) siteAL.get(ii));
 			   siteFilterSB.append(")");
@@ -190,22 +168,22 @@ public class CorporateOrderBean
 			
 						
 			String sql = 
-				"select c.catalog_id, be.bus_entity_id as site_id, acct.bus_entity_id as account_id \n\r"+
-				" from clw_catalog c, clw_catalog_assoc ca, clw_bus_entity be,  \n\r"+
-				"	clw_bus_entity_assoc bea, clw_bus_entity acct  \n\r"+
-				" where 1=1 \n\r"+
-				" and ca.CATALOG_ASSOC_CD = 'CATALOG_SITE' \n\r"+
-				" and c.catalog_id = ca.catalog_id \n\r"+
-				" and c.catalog_type_cd = 'SHOPPING' \n\r"+
-				" and c.catalog_status_cd = 'ACTIVE' \n\r"+
-				" and "+siteFilter+" \n\r"+
-				" and ca.bus_entity_id = be.bus_entity_id  \n\r"+
-				" and be.bus_entity_type_cd = 'SITE' \n\r"+
-				" and be.bus_entity_status_cd = 'ACTIVE'  \n\r"+
-				" and bea.bus_entity1_id = be.bus_entity_id \n\r"+
-				" and bea.bus_entity2_id = acct.bus_entity_id \n\r"+
-				" and acct.bus_entity_type_cd = 'ACCOUNT' \n\r"+
-				" and acct.bus_entity_status_cd = 'ACTIVE' \n\r"+
+				"select c.catalog_id, be.bus_entity_id as site_id, acct.bus_entity_id as account_id \r\n"+
+				" from clw_catalog c, clw_catalog_assoc ca, clw_bus_entity be,  \r\n"+
+				"	clw_bus_entity_assoc bea, clw_bus_entity acct  \r\n"+
+				" where 1=1 \r\n"+
+				" and ca.CATALOG_ASSOC_CD = 'CATALOG_SITE' \r\n"+
+				" and c.catalog_id = ca.catalog_id \r\n"+
+				" and c.catalog_type_cd = 'SHOPPING' \r\n"+
+				" and c.catalog_status_cd = 'ACTIVE' \r\n"+
+				" and "+siteFilter+" \r\n"+
+				" and ca.bus_entity_id = be.bus_entity_id  \r\n"+
+				" and be.bus_entity_type_cd = 'SITE' \r\n"+
+				" and be.bus_entity_status_cd = 'ACTIVE'  \r\n"+
+				" and bea.bus_entity1_id = be.bus_entity_id \r\n"+
+				" and bea.bus_entity2_id = acct.bus_entity_id \r\n"+
+				" and acct.bus_entity_type_cd = 'ACCOUNT' \r\n"+
+				" and acct.bus_entity_status_cd = 'ACTIVE' \r\n"+
  				" order by account_id, catalog_id";
 
 			log.info("Pick sites, account and catalogs  : "+sql);
@@ -254,13 +232,13 @@ public class CorporateOrderBean
     	try {
     		conn = getConnection();
             String sql = 
-			" select cs.item_id, con.contract_id \n\r"+
-			" from clw_catalog_structure cs, clw_contract con, clw_contract_item coni \n\r"+
-			" where cs.catalog_id = " + pCatalogId + " \n\r"+
-			" and cs.catalog_structure_cd = 'CATALOG_PRODUCT' \n\r"+
-			" and cs.catalog_id = con.catalog_id \n\r"+
-			" and con.contract_status_cd = 'ACTIVE' \n\r"+
-			" and con.contract_id = coni.contract_id \n\r"+
+			" select cs.item_id, con.contract_id \r\n"+
+			" from clw_catalog_structure cs, clw_contract con, clw_contract_item coni \r\n"+
+			" where cs.catalog_id = " + pCatalogId + " \r\n"+
+			" and cs.catalog_structure_cd = 'CATALOG_PRODUCT' \r\n"+
+			" and cs.catalog_id = con.catalog_id \r\n"+
+			" and con.contract_status_cd = 'ACTIVE' \r\n"+
+			" and con.contract_id = coni.contract_id \r\n"+
 			" and coni.item_Id = cs.item_id ";
 
 			log.info("Pick catalog items  : "+sql);
@@ -376,17 +354,17 @@ and acct.bus_entity_status_cd = 'ACTIVE'
         ArrayList<Integer> siteIds = new ArrayList<Integer>();
     	try {
     		conn = getConnection();
-			String sql = "SELECT distinct site.BUS_ENTITY_ID \n\r"+
-				" FROM CLW_BUS_ENTITY site, CLW_PROPERTY inv_prop \n\r"+
-				" WHERE site.BUS_ENTITY_ID = inv_prop.BUS_ENTITY_ID \n\r"+
-				" AND site.BUS_ENTITY_TYPE_CD = 'SITE' \n\r"+
-				" AND site.BUS_ENTITY_STATUS_CD = 'ACTIVE' \n\r"+
-				" AND inv_prop.PROPERTY_TYPE_CD = 'ALLOW_CORPORATE_SCHED_ORDER' \n\r"+
-				" AND inv_prop.CLW_VALUE = 'true' \n\r"+
-				" AND exists(select 1 from clw_schedule_detail sd \n\r"+
-				"	where sd.schedule_id = "+scheduleId+" \n\r"+
-				"	and sd.schedule_detail_cd = 'SITE_ID' \n\r"+ 
-				"   and trim(sd.VALUE) = TO_CHAR(site.BUS_ENTITY_ID)) \n\r"+
+			String sql = "SELECT distinct site.BUS_ENTITY_ID \r\n"+
+				" FROM CLW_BUS_ENTITY site, CLW_PROPERTY inv_prop \r\n"+
+				" WHERE site.BUS_ENTITY_ID = inv_prop.BUS_ENTITY_ID \r\n"+
+				" AND site.BUS_ENTITY_TYPE_CD = 'SITE' \r\n"+
+				" AND site.BUS_ENTITY_STATUS_CD = 'ACTIVE' \r\n"+
+				" AND inv_prop.PROPERTY_TYPE_CD = 'ALLOW_CORPORATE_SCHED_ORDER' \r\n"+
+				" AND inv_prop.CLW_VALUE = 'true' \r\n"+
+				" AND exists(select 1 from clw_schedule_detail sd \r\n"+
+				"	where sd.schedule_id = "+scheduleId+" \r\n"+
+				"	and sd.schedule_detail_cd = 'SITE_ID' \r\n"+ 
+				"   and trim(sd.VALUE) = TO_CHAR(site.BUS_ENTITY_ID)) \r\n"+
 				" order by bus_entity_id";
 
 			log.info("Get sites for a corporate schedule: "+sql);

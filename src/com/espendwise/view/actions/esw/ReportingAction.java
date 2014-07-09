@@ -706,6 +706,9 @@ public final class ReportingAction extends EswAction {
             saveErrors(request, errors);
             Utility.getSessionDataUtil(request).setErrors(errors);
         } else {
+        	if (RefCodeNames.CUSTOMER_REPORT_TYPE_CD.DELIVERY_SCHEDULE.equals(theForm.getCustomerReportingForm().getReportTypeCd()) ) {
+				  return null;
+			}
         	forwardName = MAPPING_STANDARD_REPORTS_SEARCH_RESULTS;
         	GenericReportResultView reportResult = (GenericReportResultView) theForm.getCustomerReportingForm().getReportResults().get(0);
         	if (reportResult.getName().equals(RefCodeNames.CUSTOMER_REPORT_TYPE_CD.INVOICE_LISTING)){        	

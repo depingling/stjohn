@@ -4,7 +4,7 @@
                 <mail.transport.protocol>smtp</mail.transport.protocol>
                 <mail.smtp.host>localhost</mail.smtp.host>
         </system-properties>
-		<report>
+		<!--<report>
                 <category>Distribution</category>
                 <name>Short pay report revised</name>
                 <emailrecipient>DistributorShortPays@cleanwise.com</emailrecipient>
@@ -17,5 +17,5 @@
                 <param name="Released Only t/f">f</param>
                 <param name="DISTRIBUTOR_OPT"></param>
                 <param name="GROUP_OPT"></param>
-        </report>
+        </report>-->
 </xml>

@@ -1,6 +1,10 @@
 package com.cleanwise.service.api.process.operations;
 
 import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -56,10 +60,97 @@ public class ProcessCorporateOrders extends ApplicationServicesAPI {
 		int poolSize = 1;
 	    ExecutorService service = Executors.newFixedThreadPool(poolSize);
 	    
+	    String checkDupInvCartSql = "select bus_entity_id, max(order_guide_id) as max_og_id, min(order_guide_id) as min_og_id \r\n" +
+	    		"from clw_order_guide where order_guide_type_cd = 'INVENTORY_CART' \r\n" +
+	    		"group by bus_entity_id \r\n" +
+	    		"having count(*) >1";
+	    
+	    String insertScheduleSql = "insert into dl_schedules \r\n" +
+	    		"select \r\n" +
+	    		"s.schedule_id, \r\n" +
+	    		"s.short_desc as schedule_name, \r\n" +
+	    		"sday.value as order_date, \r\n" +
+	    		"stime.value as order_time, \r\n" +
+	    		"sday.schedule_detail_cd, \r\n" +
+	    		"sd.schedule_detail_id, \r\n" +
+	    		"ss.short_desc as site_name," +
+	    		"to_number(sd.value) site_id, \r\n" +
+	    		"bea.bus_entity2_id account_id, \r\n" +
+	    		"s.bus_entity_id store_id, schedule_rule_cd, \r\n" +
+	    		"sprop.clw_value, sysdate \r\n" +
+	    		"from clw_schedule_detail sd, clw_schedule s, clw_bus_entity_assoc bea,  \r\n" +
+	    		"     clw_bus_entity ss, clw_schedule_detail sday, clw_schedule_detail stime, \r\n" +
+	    		"     clw_property sprop \r\n" +
+	    		"where s.schedule_id = ? \r\n" +
+	    		"and schedule_type_cd = 'CORPORATE' \r\n" +
+	    		"and sd.schedule_id = s.schedule_id \r\n" +
+	    		"and ss.bus_entity_id = to_number(sd.value) \r\n" +
+	    		"and sd.schedule_detail_cd = 'SITE_ID' \r\n" +
+	    		"and ss.bus_entity_status_cd = 'ACTIVE' \r\n" +
+	    		"and sprop.bus_entity_id(+) = ss.bus_entity_id \r\n" +
+	    		"and sprop.short_desc(+) = 'ALLOW_CORPORATE_SCHED_ORDER' \r\n" +
+	    		"and lower(sprop.clw_value(+)) = 'true' \r\n" +
+	    		"and sday.schedule_id = s.schedule_id \r\n" +
+	    		"and sday.schedule_detail_cd = 'ALSO_DATE' \r\n" +
+	    		"and ss.bus_entity_id = bea.bus_entity1_id  \r\n" +
+	    		"and bea.bus_entity_assoc_cd= 'SITE OF ACCOUNT' \r\n" +
+	    		"and to_date(sday.value,'mm/dd/yyyy') = trunc(sysdate) \r\n" +
+	    		"and sday.value = ? \r\n" +
+	    		"and stime.schedule_id(+) = s.schedule_id \r\n" +
+	    		"and stime.schedule_detail_cd(+) = 'CUTOFF_TIME'";
+	    
+	    String insertInvCartSql = "insert into dl_inv_cart \r\n" +
+	    		"select tm.order_date, tm.order_time, sch_site, order_guide_id, catalog_id, og_item_id,  quantity, sysdate \r\n" +
+	    		"from   \r\n" +
+	    		"( \r\n" +
+	    		"select to_number(value) as sch_site, schedule_id \r\n" +
+	    		"from clw_schedule_detail sd \r\n" +
+	    		"where schedule_detail_cd = 'SITE_ID' \r\n" +
+	    		")sch, \r\n" +
+	    		"( \r\n" +
+	    		"select distinct schedule_id, order_date, order_time from dl_schedules \r\n" +
+	    		") tm, \r\n" +
+	    		"( \r\n" +
+	    		"select c.catalog_id, ca.bus_entity_id as cat_site_id, cs.item_id as cat_item_id \r\n" +
+	    		"from clw_catalog_assoc ca, clw_catalog c, clw_catalog_structure cs \r\n" +
+	    		"where 1=1 \r\n" +
+	    		"and ca.catalog_id = c.catalog_id \r\n" +
+	    		"and c.catalog_type_cd = 'SHOPPING' \r\n" +
+	    		"and c.catalog_status_cd = 'ACTIVE' \r\n" +
+	    		"and c.catalog_id = cs.catalog_id \r\n" +
+	    		") cat, \r\n" +
+	    		"( \r\n" +
+	    		"select og.order_guide_id, og.bus_entity_id as og_site_id, ogs.item_id  as og_item_id, ogs.quantity \r\n" +
+	    		"from clw_order_guide og, clw_order_guide_structure ogs \r\n" +
+	    		"where og.order_guide_id = ogs.order_guide_id (+) \r\n" +
+	    		"and og.user_id  is null \r\n" +
+	    		"and og.order_guide_type_cd = 'INVENTORY_CART' \r\n" +
+	    		") og \r\n" +
+	    		"where sch.schedule_id = ? \r\n" +
+	    		"and sch.schedule_id = tm.schedule_id \r\n" +
+	    		"and tm.order_date = ? \r\n" +
+	    		"and tm.order_time = ? \r\n" +
+	    		"and og_site_id = cat_site_id(+) \r\n" +
+	    		"and og_item_id = cat_item_id(+) \r\n" +
+	    		"and og_site_id(+) = sch.sch_site";
+	    		
 		logInfo("@@@@@@@ process corportate orders START @@@@@@@@@ " + new Date());
+		Connection conn = null;
 
 		try {
 			APIAccess factory = new APIAccess();
+			conn = this.getConnection();
+			Statement stmt = conn.createStatement();
+			logInfo("Sql: " + checkDupInvCartSql);
+			ResultSet rs = stmt.executeQuery(checkDupInvCartSql);
+			if (rs.next()){
+				throw new Exception("Some Inventory cart are not unique");
+			}
+			
+			logInfo("Sql: " + insertScheduleSql);
+			PreparedStatement pstmt1 = conn.prepareStatement(insertScheduleSql);
+			logInfo("Sql: " + insertInvCartSql);
+			PreparedStatement pstmt2 = conn.prepareStatement(insertInvCartSql);
 
 			PropertyService propertyEjb = factory.getPropertyServiceAPI();
 			Site siteEjb = factory.getSiteAPI();
@@ -152,7 +243,7 @@ public class ProcessCorporateOrders extends ApplicationServicesAPI {
 				}
 			}
 			for(DeliveryScheduleView schVw: schedules) {
-				int schId = schVw.getScheduleId();
+				int schId = schVw.getScheduleId();				
 				Date cutoffDate = schVw.getNextDelivery();
 				Date lastProcessedDt = schVw.getLastProcessedDt();
 
@@ -163,6 +254,17 @@ public class ProcessCorporateOrders extends ApplicationServicesAPI {
 								 (lastProcessedDt!=null?sdf.format(lastProcessedDt):" Undefined");								 
 				logInfo(logMess);
 				Date schStartDate = new Date();
+				String scheduledDate = sdf.format(cutoffDate).substring(0,10);
+				String scheduledTime = sdf.format(cutoffDate).substring(11);
+				// insert temp table dl_schedules
+				pstmt1.setInt(1, schId);
+				pstmt1.setString(2, scheduledDate);
+				pstmt1.execute();
+				// insert temp table dl_inv_cart
+				pstmt2.setInt(1, schId);
+				pstmt2.setString(2, scheduledDate);
+				pstmt2.setString(3, scheduledTime);
+				pstmt2.execute();
 				
 				//Get account - contact map for the schedule
 				HashMap<Integer,HashMap> acctCatalogSiteHM = 
@@ -368,6 +470,7 @@ public class ProcessCorporateOrders extends ApplicationServicesAPI {
 			throw new Exception("processScheduledOrders:: caught error: "+e.getMessage());            
 		} finally {
 			service.shutdownNow();
+			closeConnection(conn);
 		}
 
 		logInfo("@@@@@@@ process scheduled orders DONE @@@@@@@@@ " + new Date());

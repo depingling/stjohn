@@ -127,7 +127,7 @@ public class SaveWebOrderRequest  implements OrderPipeline
        preOrderD.setOrderTypeCd(orderTypeCd);
 
        //Customer Po number
-       preOrderD.setCustomerPoNumber(custOrderReq.getCustomerPoNumber());
+       preOrderD.setCustomerPoNumber(custOrderReq.getCustomerPoNumber()==null ? null : custOrderReq.getCustomerPoNumber().trim());
 
        //StoreId
        DBCriteria dbc = new DBCriteria();

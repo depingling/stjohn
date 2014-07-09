@@ -375,7 +375,21 @@ public class ShoppingLogic {
 				form.setCatalogItemKey(previousCategory);
 			}
 			else{
-				if(allProductsCount != null && allProductsCount <= 500){
+				if (allProductsCount == null){
+					MenuItemViewVector menuItemViewVector = userShopForm.getCatalogMenu().getSubItems();
+					MenuItemView menuItem = null;
+					Map<Integer,ProductDataVector> categoryToItemMap = userShopForm.getCatalogMenuCategoryToItemMap();
+					int i = 0;
+					int productCount = 0;
+					for(;menuItemViewVector != null && i < menuItemViewVector.size(); i++){
+						menuItem = (MenuItemView)menuItemViewVector.get(i);
+						productCount += calculateItemCount(menuItem,categoryToItemMap);						
+					}
+					allProductsCount = new Integer(productCount);
+					sessionDataUtil.setAllProductsCount(allProductsCount);
+					
+				}
+				if(allProductsCount <= 500){
 					ShoppingCartItemDataVector catalogItemsList =new ShoppingCartItemDataVector();
 					MenuItemView menuItemView = form.getUserShopForm().getCatalogMenu();
 					MenuItemViewVector menuItemViewVector = (menuItemView != null ? menuItemView.getSubItems() : new MenuItemViewVector());

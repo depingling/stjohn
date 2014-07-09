@@ -35,16 +35,21 @@ import org.w3c.dom.NodeList;
 import com.cleanwise.service.api.APIAccess;
 import com.cleanwise.service.api.session.EmailClient;
 import com.cleanwise.service.api.session.EmailClientHome;
+import com.cleanwise.service.api.session.Event;
 import com.cleanwise.service.api.session.Report;
 import com.cleanwise.service.api.session.ReportHome;
 import com.cleanwise.service.api.util.JNDINames;
 import com.cleanwise.service.api.util.Utility;
+import com.cleanwise.service.api.value.EventData;
+import com.cleanwise.service.api.value.EventEmailDataView;
+import com.cleanwise.service.api.value.EventEmailView;
 import com.cleanwise.service.api.value.GenericReportResultView;
 import com.cleanwise.service.api.value.GenericReportResultViewVector;
 import com.cleanwise.service.apps.ApplicationsEmailTool;
 import com.cleanwise.view.utils.Constants;
 import com.cleanwise.service.api.util.RefCodeNames;
 import com.cleanwise.service.apps.*;
+import com.cleanwise.service.api.eventsys.FileAttach;
 import com.cleanwise.service.api.reporting.ReportWriterUtil;
 
 import org.apache.log4j.Logger;
@@ -363,23 +368,29 @@ public class GenericReportRunnerOperations {
           //"no data found" message is from xpedx...might need to parameterize it later.
           message = report.getMessage() + "\nno data found";
         }
-        if(fromAddr!=null){
-        	if(report.isImportanceHigh()){
-        		ApplicationsEmailTool.sendEmail(to,null,subject,message,fromAddr,
-        				Constants.EMAIL_IMPORTANCE_HIGH,rep);
-        	}else{
-        		ApplicationsEmailTool.sendEmail(to,null,subject,message,fromAddr,
-        				Constants.EMAIL_IMPORTANCE_NORMAL,rep);
-        	}
-        }else{
-        	if(report.isImportanceHigh()){
-        		ApplicationsEmailTool.sendEmail(to, subject, message, rep,
-        				Constants.EMAIL_IMPORTANCE_HIGH);
-        	}else{
-        		ApplicationsEmailTool.sendEmail(to, subject, message, rep,
-        				Constants.EMAIL_IMPORTANCE_NORMAL);
-        	}
+        
+        // create e-mail event instead of sending e-mail directly so that e-mail can be kept in event system 
+        // for tracking report e-mail history purpose
+        EventEmailDataView eventEmailData = new EventEmailDataView();
+		eventEmailData.setEventEmailId(0);
+		eventEmailData.setFromAddress(fromAddr);
+		eventEmailData.setToAddress(to);
+		eventEmailData.setSubject(subject);
+		eventEmailData.setEmailStatusCd(Event.STATUS_READY);
+		eventEmailData.setImportance(report.isImportanceHigh()? Constants.EMAIL_IMPORTANCE_HIGH : Constants.EMAIL_IMPORTANCE_NORMAL);
+		eventEmailData.setText(message);
+		FileAttach[] fileAttach;
+        if(rep!=null){
+            fileAttach = (new ApplicationsEmailTool()).fromFilesToAttachs(rep);
+        } else{
+            fileAttach = new FileAttach[0];
         }
+		eventEmailData.setAttachments(fileAttach);
+		EventData eventData = Utility.createEventDataForEmail();
+		EventEmailView eev = new EventEmailView(eventData, eventEmailData);
+		Event eventEjb = APIAccess.getAPIAccess().getEventAPI();
+		eventEjb.addEventEmail(eev, "GenericReportRunnerOperations");	
+		log.info("Created email event for report - " + report.getName());
     }
     
     private String emailListToString(List emails){

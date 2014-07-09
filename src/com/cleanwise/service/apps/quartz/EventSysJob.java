@@ -78,12 +78,13 @@ public class EventSysJob extends EventJobImpl {
 
     public void sendEvent(String eFullName, JobDetail eJobDetail) throws Exception {
         try {
-            if (eventSysReadyToAcceptJob(eJobDetail.getFullName())) {
+        	int processId = getProcessId();
+            if (eventSysReadyToAcceptJob(processId, "jobFullName", "STRING_VALUE", eJobDetail.getFullName())) {
 
                 log.info("execute => event system is ready to accept job.JobFullName:" + eJobDetail.getFullName());
                 Event eventEjb = APIAccess.getAPIAccess().getEventAPI();
 
-                EventProcessView epv = Utility.createEventProcessView(getProcessId(), priorityOverride, subProcessPriority);
+                EventProcessView epv = Utility.createEventProcessView(processId, priorityOverride, subProcessPriority);
                 
                 epv.getProperties().add(Utility.createEventPropertyData("jobFullName",
                         Event.PROCESS_VARIABLE,
@@ -104,19 +105,6 @@ public class EventSysJob extends EventJobImpl {
             e.printStackTrace();
             throw new Exception(e.getMessage(), e);
         }
-    }
-
-    private boolean eventSysReadyToAcceptJob(String fullName) throws Exception {
-        Event eventEjb = APIAccess.getAPIAccess().getEventAPI();
-
-        ArrayList<String> statusList = new ArrayList<String>();
-
-        statusList.add(Event.STATUS_READY);
-        statusList.add(Event.STATUS_IN_PROGRESS);
-
-        EventDataVector events = eventEjb.getEventVProcessTypeOnly(getProcessId(), statusList, "jobFullName", "STRING_VALUE", fullName);
-
-        return events.isEmpty();
     }
 
     private int getProcessId() throws NamingException, APIServiceAccessException, DataNotFoundException, RemoteException {

@@ -1,5 +1,5 @@
 <!-- Project definition file for ANT for the Cleanwise J2EE Project -->
-<project name="StJohnApp" default="all" basedir="../..">
+<project name="StJohnApp" default="prepare" basedir="../..">
 
   <!-- set global properties for this build -->
   <property name="app.name" value="stjohn" />

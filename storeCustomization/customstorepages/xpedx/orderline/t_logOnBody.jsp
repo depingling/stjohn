@@ -94,7 +94,6 @@ td.systemLoginCopyright {
                     <input type='image'
                       src='<%=ClwCustomizer.getSIP(request,"login.gif")%>'
                       property="action"
-                      onClick="javascript:this.form.submit();"
                       value='<app:storeMessage key="global.action.label.submit" />'
                       tabIndex="3"/>
                   </td>
@@ -135,10 +134,10 @@ td.systemLoginCopyright {
     <table width="700" height="40" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td class="systemLoginCopyright">
-          &copy; 2007 xpedx, an International Paper Company. All Rights Reserved.
+          &copy; 2007. All Rights Reserved.
         </td>
         <td class="systemLoginCopyright">
-          <img src='<%=ClwCustomizer.getSIP(request,"xpedxLogo.gif")%>'>
+          <!-- <img src='<%=ClwCustomizer.getSIP(request,"xpedxLogo.gif")%>'>  -->
         </td>
       </tr>
     </table>

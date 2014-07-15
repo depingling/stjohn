@@ -385,7 +385,12 @@ public final class ModuleIntegrationAction extends EswAction {
 			String previousTab = Utility.getSessionDataUtil(request)
 					.getPreviousShoppingModuleTab();
 			if (!Utility.isSet(previousTab)) {
-				previousTab = Constants.TAB_DASHBOARD;
+				boolean authorizedForDashboard = user
+						.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.ACCESS_DASHBOARD);
+				if (authorizedForDashboard)
+					previousTab = Constants.TAB_DASHBOARD;
+				else
+					previousTab = Constants.TAB_PRODUCTS;
 			}
 			if (Constants.TAB_ORDERS.equals(previousTab)) {
 				returnValue = mapping.findForward(MAPPING_MODULE_SHOPPING_ORDERS);

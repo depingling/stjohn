@@ -291,6 +291,7 @@ header.label.selectLocation=Select a Location
 header.label.changeLocation=Change Location
 header.label.orders.corporateOrder=Corporate Order
 header.label.viewCart=View Cart
+header.label.endShopping=End Shopping
 
 #Shopping tab labels
 shopping.label.dashboard=Dashboard
@@ -5380,7 +5381,7 @@ userportal.esw.shoppingCart.addShoppingList.popUp.text=This button will perform 
 ##Begin: New UI - Standard Report Filter
 userportal.esw.standardReports.beginMonth=Begin Month
 userportal.esw.standardReports.beginYear=Begin Year
-userportal.esw.standardReports.endMonth=End Year
+userportal.esw.standardReports.endMonth=End Month
 userportal.esw.standardReports.endYear=End Year
 userportal.esw.standardReports.selectEndMonth=Select End Month
 userportal.esw.standardReports.selectEndYear=Select End Year

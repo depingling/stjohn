@@ -248,6 +248,10 @@ public class TradingPartnerMgrLogic {
 					outClassList,
 					"com.cleanwise.service.apps.dataexchange.OutboundPunchOutOrderCXMLUnicco",
 					addedOutOption);
+			addOption(
+					inClassList,
+					"com.cleanwise.service.apps.dataexchange.InboundToysRusCXmlPunchOutLogon",
+					addedInOption);
 		}else{
 			// non type specific
 	
@@ -416,6 +420,9 @@ public class TradingPartnerMgrLogic {
 			addOption(inClassList,
 					"com.cleanwise.service.apps.dataexchange.InboundcXML856",
 					addedInOption);
+			addOption(inClassList,
+					"com.cleanwise.service.apps.dataexchange.InboundKohlsParLoader",
+					addedInOption);
 	
 			addOption(inTransactionOptions, RefCodeNames.EDI_TYPE_CD.TFLAT_FILE_IN,
 					addedInOption);
@@ -486,6 +493,10 @@ public class TradingPartnerMgrLogic {
 				addOption(
 						inClassList,
 						"com.cleanwise.service.apps.dataexchange.InboundBatchOrder",
+						addedInOption);
+				addOption(
+						inClassList,
+						"com.cleanwise.service.apps.dataexchange.InboundToysRusCXmlPunchOutLogon",
 						addedInOption);
 
 				addOption(inTransactionOptions,

@@ -280,7 +280,7 @@ MM_reloadPage(true);
     </tr>
     <tr align="center" valign="middle">
       <td width="400" align="center" bgcolor="#000000"> <p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="1">
-          &copy; 2007 xpedx, an International Paper Company. All Rights Reserved.</font>
+          &copy; 2007. All Rights Reserved.</font>
         </p></td>
       <td bgcolor="#000000">&nbsp;</td>
       <td width="200" align="center" bgcolor="#000000"><img src="<%=ClwCustomizer.getSIP(request,"xpedx_white.jpg")%>" ></td>

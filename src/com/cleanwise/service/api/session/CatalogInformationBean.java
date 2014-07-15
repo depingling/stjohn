@@ -2120,7 +2120,7 @@ public class CatalogInformationBean extends CatalogServicesAPI {
             JoinDataAccess.selectTableInto(new ItemAssocDataAccess(), itemAssocs, con, dbc, 0);
 
 			//---- STJ-6114: Performance Improvements - Optimize Pollock 
-			applyPollockFilter(itemAssocs, pShoppingItemRequest);
+			//applyPollockFilter(itemAssocs, pShoppingItemRequest);
 			//----
   			
   			//iterate over the results to:

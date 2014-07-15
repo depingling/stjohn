@@ -752,25 +752,30 @@ public class FileTransferClient {
             PostMethod postMethod = new PostMethod(endpoint);
             postMethod.setRequestBody(uploadData);
             postMethod.setRequestHeader("Content-type","text/xml; charset=UTF-8");
-            int statusCode1 = client.executeMethod(postMethod);
-            String responseText = postMethod.getResponseBodyAsString();
-            String responseCheckText = responseText;
-
-            log.debug("statusLine>>>" + postMethod.getStatusLine());
-            postMethod.releaseConnection();
-            responseText = responseText.replaceAll("&lt;","<");
-            responseText = responseText.replaceAll("&gt;",">");
-            log.info(responseText);
-            if (statusCode1 != 200){
-            	throw new IOException("FileTransferClient - put() -SIMPLE_HTTP_POST- failed \r\n" + postMethod.getStatusLine() + "\r\n" + responseText);
-            }
-
-            if(responseCheck != null && responseCheckText.indexOf(responseCheck) < 0){
-            	throw new IOException("FileTransferClient - put() -SIMPLE_HTTP_POST- Incorrect response \r\n" + postMethod.getStatusLine() + "\r\n" + responseText);
-            }
-
-        	ByteArrayInputStream bais = new ByteArrayInputStream(responseText.getBytes());
-        	return bais;
+            
+            try {
+	            int statusCode1 = client.executeMethod(postMethod);
+	            String responseText = postMethod.getResponseBodyAsString();
+	            String responseCheckText = responseText;
+	
+	            log.debug("statusLine>>>" + postMethod.getStatusLine());	            
+	            responseText = responseText.replaceAll("&lt;","<");
+	            responseText = responseText.replaceAll("&gt;",">");
+	            log.info(responseText);
+	            if (statusCode1 != 200){
+	            	throw new IOException("FileTransferClient - put() -SIMPLE_HTTP_POST- failed \r\n" + postMethod.getStatusLine() + "\r\n" + responseText);
+	            }
+	
+	            if(responseCheck != null && responseCheckText.indexOf(responseCheck) < 0){
+	            	throw new IOException("FileTransferClient - put() -SIMPLE_HTTP_POST- Incorrect response \r\n" + postMethod.getStatusLine() + "\r\n" + responseText);
+	            }
+	
+	        	ByteArrayInputStream bais = new ByteArrayInputStream(responseText.getBytes());
+	        	return bais;
+            } finally {
+                // Release the connection.
+            	postMethod.releaseConnection();
+             } 
         /*} else if(connectionType == MQ){
         	try {
       	      // Setup the MQSeries client environment
@@ -913,16 +918,19 @@ public class FileTransferClient {
 
             postMethod.setRequestBody(uploadData);
             postMethod.setRequestHeader("Content-type","text/xml; charset=ISO-8859-1");
-
-            int statusCode1 = client.executeMethod(postMethod);
-            String responseText = postMethod.getResponseBodyAsString();
-            log.debug("statusLine>>>" + postMethod.getStatusLine());
-            postMethod.releaseConnection();
-            responseText = responseText.replaceAll("&lt;","<");
-            responseText = responseText.replaceAll("&gt;",">");
-            log.info(responseText);
-        	ByteArrayInputStream bais = new ByteArrayInputStream(responseText.getBytes());
-        	return bais;
+            try {
+	            int statusCode1 = client.executeMethod(postMethod);
+	            String responseText = postMethod.getResponseBodyAsString();
+	            log.debug("statusLine>>>" + postMethod.getStatusLine());
+	            responseText = responseText.replaceAll("&lt;","<");
+	            responseText = responseText.replaceAll("&gt;",">");
+	            log.info(responseText);
+	        	ByteArrayInputStream bais = new ByteArrayInputStream(responseText.getBytes());
+	        	return bais;
+	        } finally {
+	            // Release the connection.
+	        	postMethod.releaseConnection();
+	         } 
         /*}else if(connectionType == MQ){
         	try {
       	      // Setup the MQSeries client environment

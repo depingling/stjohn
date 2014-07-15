@@ -53,7 +53,7 @@
         var prtwin = window.open(loc, "printer_friendly",
                 "menubar=yes,resizable=yes,scrollbars=yes,toolbar=yes,status=yes,height=500, width=775,left=100,top=165");
         prtwin.focus();
-        window.location.href = "customerAccountManagement.do?action=done_with_report"
+        window.location.href = ""<%=request.getContextPath()%>/userportal/customerAccountManagement.do?action=done_with_report"
         return false;
     }
 

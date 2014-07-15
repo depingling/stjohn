@@ -5287,17 +5287,18 @@ log.info("uploadFile(): boo2: "+boo);
         log.info("response = " + response);
         
         if(response != null) {
-        	if (contentD.getPath() != null && contentD.getPath().endsWith(".pdf")) { //.pdf file
+        	path = contentD.getPath() == null ? "" : contentD.getPath().toLowerCase();
+        	if (path.endsWith(".pdf")) { //.pdf file
         	    response.setContentType( "application/pdf" );
         	    response.setHeader("cache-control", "no-cache");
         	    response.setHeader("Pragma", "public");        	
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".gif")){ //.gif file: sometimes it doesn't work      	        	
+            } else if (path.endsWith(".gif")){ //.gif file: sometimes it doesn't work      	        	
                 response.setContentType("image/gif");
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".jpg")){ //.jpg file  
+            } else if (path.endsWith(".jpg")){ //.jpg file  
                 response.setContentType("image/jpeg");                
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".doc")){ //.doc file (MSWord)     	        	
+            } else if (path.endsWith(".doc")){ //.doc file (MSWord)     	        	
                 response.setContentType("application/msword");
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".docx")){ //.docx file (MSWord 2007)     	        	
+            } else if (path.endsWith(".docx")){ //.docx file (MSWord 2007)     	        	
                 response.setContentType("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
             } else {
         	    String errorMess = "Cannot load the Document " + contentD.getPath() + " : unknown type";
@@ -5392,23 +5393,24 @@ log.info("uploadFile(): boo2: "+boo);
         log.info("response = " + response);
         
         if(response != null) {
-        	if (contentD.getPath() != null && contentD.getPath().endsWith(".pdf")) { //.pdf file
+        	path = contentD.getPath() == null ? "" : contentD.getPath().toLowerCase();
+        	if (path.endsWith(".pdf")) { //.pdf file
         	    response.setContentType( "application/pdf" );
         	    response.setHeader("cache-control", "no-cache");
         	    response.setHeader("Pragma", "public");        	
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".gif")){ //.gif file: sometimes it doesn't work      	        	
+            } else if (path.endsWith(".gif")){ //.gif file: sometimes it doesn't work      	        	
                 response.setContentType("image/gif");
-            } else if (contentD.getPath() != null && (contentD.getPath().endsWith(".jpg") || 
-            		contentD.getPath().endsWith(".jpeg"))){ //.jpg && .jpeg file  
+            } else if (path.endsWith(".jpg") || 
+            		path.endsWith(".jpeg")){ //.jpg && .jpeg file  
             	//STJ-5516
                 response.setContentType("image/jpeg");                
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".png")){ //.png file      	        	
+            } else if (path.endsWith(".png")){ //.png file      	        	
                 response.setContentType("image/png");
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".bmp")){ //.bmp file      	        	
+            } else if (path.endsWith(".bmp")){ //.bmp file      	        	
                 response.setContentType("image/bmp");
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".doc")){ //.doc file (MSWord)     	        	
+            } else if (path.endsWith(".doc")){ //.doc file (MSWord)     	        	
                 response.setContentType("application/msword");
-            } else if (contentD.getPath() != null && contentD.getPath().endsWith(".docx")){ //.docx file (MSWord 2007)     	        	
+            } else if (path.endsWith(".docx")){ //.docx file (MSWord 2007)     	        	
                 response.setContentType("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
             } else {
         	    String errorMess = "Cannot load the Document " + contentD.getPath() + " : unknown type";

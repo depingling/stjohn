@@ -47,7 +47,7 @@ public class InboundcXMLPunchOutLogon extends InboundXMLSuper {
     private UserAcessTokenViewData tokenView;
     protected boolean changeLocation;
     protected String uniqueName = null;
-    protected String siteRefNumType = RefCodeNames.PROPERTY_TYPE_CD.DIST_SITE_REFERENCE_NUMBER; // set default to DIST_SITE_REFERENCE_NUMBER
+    protected String siteRefNumType = RefCodeNames.PROPERTY_TYPE_CD.DIST_SITE_REFERENCE_NUMBER; // set default to SITE_REFERENCE_NUMBER
     
     public void translate(String s) throws Exception {
         try{

@@ -1972,6 +1972,8 @@ public interface RefCodeNames {
                 ACCESS_SHOPPING = "Access to Shopping",
                 ACCESS_CONTENT = "Access to Content",
                 ACCESS_HISTORY = "Access to History Records",
+                ACCESS_DASHBOARD = "Access to Dashboard",
+                ACCESS_ORDERS = "Access to Orders",
                 MANTA_STORE_MGR_TAB_ACCOUNT = "New Admin - Accounts",
                 MANTA_STORE_MGR_TAB_COST_CENTERS = "New Admin - Cost Centers",
                 MANTA_STORE_MGR_TAB_DISTRIBUTOR = "New Admin - Distributor",

@@ -129,6 +129,9 @@
       <fileset dir="${jbossDir}/server/client">
          <include name="jbossall-client.jar" />
       </fileset>
+      <fileset dir="${jbossDir}/server/client">
+      	 <include name="jnp-client.jar" />
+      </fileset>
       <fileset dir="${jbossDir}/server/common/lib">
          <include name="**/*.jar" />
       </fileset>

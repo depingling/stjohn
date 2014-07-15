@@ -419,7 +419,7 @@ public final class ShoppingAction extends EswAction  {
             }
 			
 			Integer allProductsCount = sessionDataUtil.getAllProductsCount();
-			if (allProductsCount == 0){
+			if (allProductsCount != null && allProductsCount == 0){
 				ActionMessages messages = new ActionMessages();
 	        	String message = ClwI18nUtil.getMessage(request,"shoppingCatalog.noItems", null);
 	        	messages.add("message", new ActionMessage("message.simpleMessage", message));

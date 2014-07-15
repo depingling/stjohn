@@ -113,6 +113,9 @@
     	cssStyles.append(" ");
     	cssStyles.append(additionalCssStyles);
     }
+    
+    CleanwiseUser user = ShopTool.getCurrentUser(request);
+	
 
 %>
 <script language="JavaScript">
@@ -126,6 +129,8 @@
     <div id="headerWrapper" class="<%=cssStyles%>">
 		<div id="header" class="tabbedHeader">
 			<ul class="clearfix">
+<%if (user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.ACCESS_DASHBOARD)) {
+%>
 				<li <%=dashboardTabClass%>>
            			<html:link action="<%=dashboardLink %>">
    						<span>
@@ -133,6 +138,7 @@
    						</span>
      				</html:link>
            		</li>
+<%}%>
 				<li <%=productsTabClass%>>
      				<html:link action="<%=productsLink %>">
    						<span>
@@ -142,7 +148,6 @@
                     <ul>
                 	<%
 						//if a location with a product catalog has been selected, display Catalog links
-						CleanwiseUser user = ShopTool.getCurrentUser(request);
 						SiteData location = user.getSite();
 						if (location != null) {
 							SessionDataUtil sessionData = Utility.getSessionDataUtil(request);
@@ -266,6 +271,8 @@
                         </li>
                 	</ul>
    				</li>
+<%if (user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.ACCESS_ORDERS)) {
+%>
    				<li <%=ordersTabClass%>>
      				<html:link action="<%=ordersLink %>">
    						<span>
@@ -290,6 +297,7 @@
      					</li>
      				</ul>
    				</li>
+<%}%>
 <%if (user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.VIEW_SITE_PAR_VALUES)
         || user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.VIEW_SHOPPING_CONTROLS)) {
 %>

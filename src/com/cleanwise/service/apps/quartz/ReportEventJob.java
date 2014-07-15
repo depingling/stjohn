@@ -50,6 +50,13 @@ public class ReportEventJob extends EventJobImpl {
 			}
             ProcessData processD = APIAccess.getAPIAccess().getProcessAPI().getProcessByName(processName);
             int processId = processD.getProcessId();
+            
+            
+            if (command!= null && !eventSysReadyToAcceptJob(processId, COMMAND, "STRING_VALUE", command)) {
+            	log.info("execute => event system contains job already. jobName:"+jobName);
+            	return;
+            }
+            
             TaskPropertyDataVector taskPropDV =
                     APIAccess.getAPIAccess().getProcessAPI().getTaskPropertyByTemplateProcessId(processId);
 

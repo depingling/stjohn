@@ -3,7 +3,6 @@ package com.cleanwise.service.apps;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,12 +10,9 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Properties;
 import java.util.Set;
 
 import javax.imageio.ImageIO;
-import javax.naming.InitialContext;
-import javax.rmi.PortableRemoteObject;
 
 import net.coobird.thumbnailator.Thumbnails;
 
@@ -24,9 +20,7 @@ import org.apache.log4j.Logger;
 
 import com.cleanwise.service.api.dao.ItemMetaDataAccess;
 import com.cleanwise.service.api.session.Content;
-import com.cleanwise.service.api.session.ContentHome;
 import com.cleanwise.service.api.util.DBCriteria;
-import com.cleanwise.service.api.util.JNDINames;
 import com.cleanwise.service.api.value.ContentData;
 import com.cleanwise.service.api.value.IdVector;
 import com.cleanwise.service.api.value.ItemMetaData;
@@ -37,7 +31,7 @@ import com.cleanwise.service.api.value.ItemMetaDataVector;
 */
 public class GenerateThumbnails extends ClientServicesAPI{
     private static final Logger log = Logger.getLogger(GenerateThumbnails.class);
-	private static final String jbossRoot = "/espendwise/xapp/webapp/EJBServer/server/defst/deploy/xsuite.ear/defst.war";
+	static String jbossRoot = "/espendwise/xapp/webapp/EJBServer/server/defst/deploy/xsuite.ear/defst.war";
 	private static final String thumbPath = "en/products/thumbnails";
 	private static final String signature = "Thumbnails Generator";
 	private Content contentBean = null;
@@ -48,6 +42,8 @@ public class GenerateThumbnails extends ClientServicesAPI{
 		log.info("Create Thumbnails for accounts: "+accounts);
 		String strategy = arg[1]; //Interval, New, Items
         GenerateThumbnails gt = new GenerateThumbnails();
+        gt.getAPIAccess();
+        jbossRoot = System.getProperty ("webdeploy");
 		if("Interval".equalsIgnoreCase(strategy)) {
 			//Not done yet
 			log.info("Strategy 'Interval' not implemented yet");
@@ -362,14 +358,7 @@ public class GenerateThumbnails extends ClientServicesAPI{
 		if(contentBean!=null) {
 			return;
 		}
-        Properties props = new Properties();
-        props.load(new FileInputStream ("/espendwise/xapp/webapp/EJBServer/bin/espendwise.properties") );
-		InitialContext jndiContext = new InitialContext(props);
-		Object ref  = jndiContext.lookup
-				(JNDINames.CONTENT_EJBHOME);
-		ContentHome cHome = (ContentHome)
-				PortableRemoteObject.narrow (ref, ContentHome.class);
-		contentBean = cHome.create();
+        contentBean = getAPIAccess().getContentAPI();
 	}
 
 }

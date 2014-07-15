@@ -271,6 +271,20 @@
 			document.getElementById("loadingMessageHidden").value = message;
 		}
     }
+		
+	function downloadDeliverySchedule() {
+		var loc = "reporting.do?operation=<%=Constants.PARAMETER_OPERATION_VALUE_SEARCH_STANDARD_REPORT %>"
+            + "&beginMonth="
+            + document.getElementById('beginMonthId').value
+            + "&beginYear="
+            + document.getElementById('beginYearId').value
+            + "&endMonth="
+            + document.getElementById('endMonthId').value
+            + "&endYear="
+            + document.getElementById('endYearId').value
+            ;
+		window.location.href = loc;
+	}
     
 </script>
 
@@ -365,7 +379,15 @@
 								if (reportType == null) {
 									reportType = reportName;
 							    }
-								if(!reportType.equals(Constants.REPORT_NAME_DAILY_BACK_ORDER_REPORT)){
+								
+								if(reportType.equals(RefCodeNames.CUSTOMER_REPORT_TYPE_CD.DELIVERY_SCHEDULE)){
+									%>
+									
+										<html:link href="#" onclick="downloadDeliverySchedule();" styleClass="blueBtnLargeExt">
+							                  <span><app:storeMessage  key="global.action.label.exportExcelSheet" /></span>
+										 </html:link>
+								<%} 								
+								else if(!reportType.equals(Constants.REPORT_NAME_DAILY_BACK_ORDER_REPORT)){
 							%>
 							
 								<html:link href="javascript:generateReport()" styleClass="blueBtnLargeExt">
@@ -477,7 +499,7 @@
 											<td><app:storeMessage key="userportal.esw.standardReports.beginMonth" /></td>
 											<td>
 												<html:select name="esw.ReportingForm"
-																property="customerReportingForm.beginMonth"
+																property="customerReportingForm.beginMonth" styleId="beginMonthId"
 																disabled="<%=reportTypeFlag.booleanValue()%>">
 													<html:options	collection="Report.month.vector"
 																	property="label" labelProperty="value"/>
@@ -487,7 +509,7 @@
 										<tr>
 											<td><app:storeMessage key="userportal.esw.standardReports.beginYear" /></td>
 											<td>
-												<html:select name="esw.ReportingForm" property="customerReportingForm.beginYear">
+												<html:select name="esw.ReportingForm" property="customerReportingForm.beginYear" styleId="beginYearId">
 													<html:options	collection="Report.year.vector"
 																	property="label" labelProperty="value"/>
 												</html:select>
@@ -497,7 +519,7 @@
 											<td><app:storeMessage key="userportal.esw.standardReports.endMonth" /></td>
 											<td>
 												<html:select name="esw.ReportingForm"
-																property="customerReportingForm.endMonth"
+																property="customerReportingForm.endMonth" styleId="endMonthId"
 																disabled="<%=reportTypeFlag.booleanValue()%>">
 										
 													<html:options collection="Report.month.vector"
@@ -508,7 +530,7 @@
 										<tr>
 											<td><app:storeMessage key="userportal.esw.standardReports.endYear" /></td>
 											<td>
-											<html:select name="esw.ReportingForm" property="customerReportingForm.endYear">
+											<html:select name="esw.ReportingForm" property="customerReportingForm.endYear" styleId="endYearId">
 												<html:options collection="Report.year.vector" property="label" labelProperty="value"/>
 											</html:select>
 											</td>

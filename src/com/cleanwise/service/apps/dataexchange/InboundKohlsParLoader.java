@@ -40,10 +40,11 @@ import java.util.*;
  * 7. Validate item exists for each dist sku number and distributor combination
  * 8. Clean up data by deleting duplicated rows in temp table
  * 9. Validate if duplicated rows exists in clw_inventory for site and item in temp table. Throw exception if duplicated rows exists and data need to be fixed manually
- * 10. Add new records into clw_inventory_level and clw_inventory_level_detail tables if item exists in temp table but not in clw_inventory_level table.
- * 11. Populate column inventory_level_id column in table temp_par_value if par value temp table is different from current value in table clw_inventory_level.par_value4
- * 12. Update table column clw_inventory_level.par_value4 with temp_par_value.period4 where inventroy_level_id match
- * 13. Update table column clw_inventory_level_detail.clw_value with temp_par_value.period4 where period and inventroy_level_id match.
+ * 10. Remove clw_inventory_level record if no clw_inventory_level_detail exists
+ * 11. Add new records into clw_inventory_level and clw_inventory_level_detail tables if item exists in temp table but not in clw_inventory_level table.
+ * 12. Populate column inventory_level_id column in table temp_par_value if par value temp table is different from current value in table clw_inventory_level.par_value4
+ * 13. Update table column clw_inventory_level.par_value4 with temp_par_value.period4 where inventroy_level_id match
+ * 14. Update table column clw_inventory_level_detail.clw_value with temp_par_value.period4 where period and inventroy_level_id match.
  * 
  * Beside par value updated, mod_by, mod_date, pars_mod_by and pars_mod_date also been updated for table clw_inventory_level
  * Beside par value updated, mod_by, mod_date also been updated for table clw_inventory_level
@@ -151,7 +152,9 @@ public class InboundKohlsParLoader extends InboundFlatFile {
 			
 			Statement stmt = conn.createStatement();
 			try{// drop temp table if exists
-				stmt.executeQuery("drop table temp_par_value");
+				String dropTempTable = "drop table temp_par_value";
+				log.info("Drop temp table: dropTempTable");
+				stmt.executeQuery(dropTempTable);
 			}catch(Exception e){}
 			
 			// create temp table
@@ -208,18 +211,22 @@ public class InboundKohlsParLoader extends InboundFlatFile {
 		log.info("Distritutor ID for par lader: " + distributorId);   
         
         // update site id column in temp table
+		log.info("Update site id column in temp table: " + updateSiteIdSql);
         updateSiteIdStmt = conn.prepareStatement(updateSiteIdSql);
         updateSiteIdStmt.setInt(1, accountId);
         updateSiteIdStmt.execute();
         
         // update item id in temp table
+        log.info("Update item id in temp table: " + updateItemIdSql);
 		updateItemIdStmt = conn.prepareStatement(updateItemIdSql);	
 		updateItemIdStmt.setInt(1, distributorId);
 		updateItemIdStmt.execute();
 
 		// validate site exists
 		Statement stmt = conn.createStatement();
-		stmt.execute("select line_num from temp_par_value where site_id is null");
+		String selSiteIdIsNull = "select line_num from temp_par_value where site_id is null";
+		log.info("Validate site exists: " + selSiteIdIsNull);		
+		stmt.execute(selSiteIdIsNull);
 		ResultSet rs = stmt.getResultSet();
 		List<Integer> lineNums = new ArrayList<Integer>();
 		while (rs.next()){
@@ -230,7 +237,9 @@ public class InboundKohlsParLoader extends InboundFlatFile {
 		}
 		
 		// validate item exists
-		stmt.execute("select line_num from temp_par_value where item_id is null");
+		String selItemIdIsNull = "select line_num from temp_par_value where item_id is null";
+		log.info("Validate item exists: " + selItemIdIsNull);
+		stmt.execute(selItemIdIsNull);
 		rs = stmt.getResultSet();
 		lineNums = new ArrayList<Integer>();
 		while (rs.next()){
@@ -268,6 +277,13 @@ public class InboundKohlsParLoader extends InboundFlatFile {
             throw new Exception(mess);
         }
 		
+        // Remove clw_inventory_level record if no clw_inventory_level_detail exists        
+        String deleteInvLevel = "delete from clw_inventory_level cil \r\n" +
+    			"where exists (select * from temp_par_value t where cil.item_id = t.item_id and bus_entity_id = t.site_id) \r\n" +
+    			"and not exists (select * from clw_inventory_level_detail d where cil.inventory_level_id=d.inventory_level_id)";
+        log.info("Remove clw_inventory_level record if no clw_inventory_level_detail exists: " + deleteInvLevel);
+        stmt.execute(deleteInvLevel);
+        
 		// insert inventory leval and its detail if item exists in temp_par_value and not clw_inventory_level
 		rs = stmt.executeQuery(getQuery(selectMissingParSql));
 		while (rs.next()){
@@ -299,6 +315,18 @@ public class InboundKohlsParLoader extends InboundFlatFile {
 		// update clw_inventory_level_detail.clw_value
 		stmt.execute(getQuery(updateInvLevelDetailParVarlue));
 		
+		// double check data
+		String checkSql = "select cild.inventory_level_detail_id,t.period#PERIOD_COL#,cild.clw_value \r\n" +
+    			"from clw_item ci,clw_bus_entity cbe,clw_inventory_level cil,temp_par_value t,clw_inventory_level_detail cild \r\n" +
+    			"where t.site_id = cbe.bus_entity_id and cbe.bus_entity_id = cil.bus_entity_id \r\n" +
+    			"and cil.inventory_level_id = cild.inventory_level_id \r\n" +
+    			"and cild.period =#PERIOD_COL# \r\n" +
+    			"and ci.item_id = t.item_id and cil.item_id = ci.item_id \r\n" +
+    			"and (t.period#PERIOD_COL# != cild.clw_value or cil.par_value#PERIOD_COL#!=cild.clw_value)";
+		rs = stmt.executeQuery(getQuery(checkSql));
+		if (rs.next()){
+			throw new Exception("Par value has not updated correctly");
+		}
 		
         log.info("doPostProcessing()=> END.");
 

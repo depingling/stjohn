@@ -1757,6 +1757,17 @@
             <exclude name="**/*.properties"/>
          </fileset>
       </copy>
+   	
+   	   <!-- #############################################################
+   	     Deploy edi related files
+   	   ############################################################# -->	 
+   	  <copy todir="${jbossHome}/${app.name}/edi" overwrite="yes" filtering="no">
+			<fileset dir="${build}/artifacts/edi">
+				<patternset>
+					<include name="**/*"/>
+				</patternset>
+			</fileset>
+	  </copy>
       <copy file="${jbossHome}/client/jbossall-client.jar"
          tofile="${jbossHome}/${app.name}/lib/jbossall-client.jar"/>
       <copy file="${jbossHome}/client/mail.jar"
@@ -1827,8 +1838,7 @@
 	    </java>
 	</target>
 	
-	<target name="jsp" description="Copy the only jsp files to a deployment area." depends="jboss5.prepare">
-	   <property file="installation.properties" />
+	<target name="jsp" description="Copy the only jsp files to a deployment area." depends="jboss5.prepare,setJbossHome">
 	   <copy todir="${webdeploy}">
 	        <fileset dir="${docroot}/cleanwise">
 	         <patternset>
@@ -1865,7 +1875,6 @@
 	<!-- Refresh the CLW_REF_CD table -->
 	  <target name="dbrefcd" depends="prepare"
 	    description="Refresh the CLW_REF_CD table with latest values from com.cleanwise.service.api.util.RefCodeNames.">
-	  	<property file="installation.properties" />
 	  	<mkdir dir="${tmpdir}" />
 	    <!-- Populate database with the reference codes -->
 	    <javac srcdir="${src}" destdir="${build}"
@@ -1899,12 +1908,13 @@
 	      <antcall target="dev.config"/>
 	      <antcall target="dev.jar"/>
 	      <antcall target="dev.web"/>
+	   	  <antcall target="dev.webservice"/>
 	   	  <antcall target="jsp"/>
 	   </target>	
 		
-	<target name="dev.jar" depends="jboss5.compile"
+
+	<target name="dev.jar" depends="jboss5.compile,setJbossHome"
 	           description="Create the application jar.">
-		<property file="installation.properties"/>
 		<delete file="${jar.dir}/${app.name}-apps.jar"/>
 		<delete file="${jar.dir}/${app.name}-ejb.jar"/>
 		<delete file="${jar.dir}/${app.name}-reporting.jar"/>
@@ -1930,9 +1940,8 @@
 	         overwrite="true"/>
    </target>
 	
-	<target name="dev.web" depends="jboss5.compile"
+	<target name="dev.web" depends="jboss5.compile,setJbossHome"
 		      description="Replace xsuite.jar on jboss server.">
-		<property file="installation.properties"/>
 		<echo>Copy files "${build}/com/cleanwise/view/**/*" to directory "${webdeploy}/WEB-INF/classes/com/cleanwise/view"</echo>
 		<echo>Copy files "${build}/com/espendwise/view/**/*" to directory "${webdeploy}/WEB-INF/classes/com/cleanwise/view"</echo>
 		<copy todir="${webdeploy}/WEB-INF/classes">
@@ -1958,6 +1967,18 @@
 	            </patternset>
          	</fileset>
       	</jar>
+	</target>
+	
+	<target name="dev.webservice" depends="jboss5.compile,setJbossHome"
+			      description="Replace xsuite.jar on jboss server.">
+		<echo>Copy files "${build}/com/espendwise/webservice/**/*" to directory "${jbossDeploy}/xsuite.ear/restws.war/WEB-INF/classes/com/espendwise/webservice"</echo>
+		<copy todir="${jbossDeploy}/xsuite.ear/restws.war/WEB-INF/classes/com/espendwise/webservice">
+	         <fileset dir="${build}/com/espendwise/webservice">
+	            <patternset>
+	               <include name="**/*"/>
+	            </patternset>
+	         </fileset>
+		</copy>	
 	</target>
 	
 	<target name="process_event" depends="jboss5.compile"
@@ -2031,10 +2052,9 @@
 		           description="Update config files directly to jboss server.">
 	</target>
 	
-	<target name="test" depends="jboss5.compile"
+	<target name="test" depends="jboss5.compile,setJbossHome"
 			   description="Test Class">
 		<echo>project.path= "${project.path}"</echo>
-		<property file="installation.properties"/>
 			<filter filtersfile="build.properties"/>
 			<filter token="app.name" value="${app.name}"/>
 			    <java classname="com.cleanwise.service.apps.Test" fork="true">

@@ -94,7 +94,7 @@ public class ProcessCorporateOrders extends ApplicationServicesAPI {
 	    		"and sday.schedule_detail_cd = 'ALSO_DATE' \r\n" +
 	    		"and ss.bus_entity_id = bea.bus_entity1_id  \r\n" +
 	    		"and bea.bus_entity_assoc_cd= 'SITE OF ACCOUNT' \r\n" +
-	    		"and to_date(sday.value,'mm/dd/yyyy') = trunc(sysdate) \r\n" +
+	    		//"and to_date(sday.value,'mm/dd/yyyy') = trunc(sysdate) \r\n" +
 	    		"and sday.value = ? \r\n" +
 	    		"and stime.schedule_id(+) = s.schedule_id \r\n" +
 	    		"and stime.schedule_detail_cd(+) = 'CUTOFF_TIME'";

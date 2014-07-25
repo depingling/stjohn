@@ -150,10 +150,12 @@ public class InboundKohlsParLoader extends InboundFlatFile {
 				throw new Exception("Failed to find current period");
 			}
 			
+			log.info("Current period="+parValuePeriod);
+			
 			Statement stmt = conn.createStatement();
 			try{// drop temp table if exists
 				String dropTempTable = "drop table temp_par_value";
-				log.info("Drop temp table: dropTempTable");
+				log.info("Drop temp table: temp_par_value");
 				stmt.executeQuery(dropTempTable);
 			}catch(Exception e){}
 			

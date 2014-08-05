@@ -173,6 +173,8 @@ public class CustAcctMgtReportLogic {
         //add the reports, need to add some of the custom ones that are not in the generic reporting framework
         GenericReportViewVector reports = (GenericReportViewVector) appUser.getAuthorizedRuntimeReports().clone();
 
+        // Remove Delivery Schedule report since no customer need it
+        /*
         //Site schedule
         SiteData currentSiteD = appUser.getSite();
         if (null != currentSiteD &&
@@ -184,7 +186,7 @@ public class CustAcctMgtReportLogic {
             grd.setReportCategory(CUSTOMER_REPORT_CATEGORY);
             grd.setLongDesc("Displays order cut-off dates and delivery dates (if applicable).");
             reports.add(grd);
-        }
+        }*/
         
         //Budget (JCI) reports
         if (hasAccountReports == true) {

@@ -2027,6 +2027,8 @@ public class ReportingLogic {
                     .getAuthorizedRuntimeReports().clone();
             
             ReportingUtils.restrictNotSupportedReports(reports);
+            // Remove Delivery Schedule report since no customer need it
+            /*
             // Site schedule
             SiteData currentSiteD = user.getSite();
             if (null != currentSiteD
@@ -2037,7 +2039,7 @@ public class ReportingLogic {
                 grd.setLongDesc(ClwMessageResourcesImpl.getMessage(request,
                         "reporting.name.displaysOrderCut-off"));
                 reports.add(grd);
-            }
+            }*/
             // Budget (JCI) reports
             /*if (user.hasAccountReports() == true) {
                 APIAccess factory = (APIAccess) request.getSession()

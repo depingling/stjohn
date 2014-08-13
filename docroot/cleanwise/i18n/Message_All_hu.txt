@@ -933,12 +933,12 @@ template.xpedx.maxTextSize=***Szöveg mérete - a szöveg legfeljebb {0} karakte
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>E-mail:appleservice@xpedx.com<br>Telefon: 1-800-545-1175
+template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>E-mail:appleservice@veritivcorp.com<br>Telefon: 1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=Kérdései vannak a megrendeléssel kapcsolatban? Lépjen kapcsolatba az xpedx ügyfélszolgálattal közvetlenül a következő elérhetőségeken:
@@ -2129,7 +2129,7 @@ error.store.itemManuf.notUnique=Nem hozható létre főtétel. Ehhez a gyártóh
 error.store.itemManuf.notUniqueUpdate=Nem frissíthető a főtétel. Ehhez a gyártóhoz, gyártói leltári számhoz és mértékegységhez már van főtétel.
 error.store.itemManuf.ParentMasterItemExist=Nem hozható létre főtétel. Ehhez a gyártóhoz, gyártói leltári számhoz és mértékegységhez már van főtétel a szülő tárhelyen.
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=Nem frissíthető a főtétel. Ehhez a gyártóhoz, gyártói leltári számhoz és mértékegységhez már van főtétel a szülő tárhelyen.
-error.store.synchronize.ParentChildStore=Rendszerhiba < {0} > történt a szülő-gyermek szinkronizálása során. Küldje el a hibakódot az orderline.notifications@ipaper.com címre a megoldásért.
+error.store.synchronize.ParentChildStore=Rendszerhiba < {0} > történt a szülő-gyermek szinkronizálása során. Küldje el a hibakódot az orderline.notifications@veritivcorp.com címre a megoldásért.
 error.shop.checkout.attnRequired=A Részére mező kitöltése kötelező az alternatív szállítási címhez
 variable.empty.error=A(z) '{0}' mező információt igényel.
 variable.required.error=A(z) {0} megadása kötelező.

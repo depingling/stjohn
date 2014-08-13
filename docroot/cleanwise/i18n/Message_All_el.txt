@@ -933,12 +933,12 @@ template.xpedx.maxTextSize=***Μέγεθος κειμένου. Το μέγιστ
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Email:appleservice@xpedx.com<br>Τηλέφωνο: 1-800-545-1175
+template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Email:appleservice@veritivcorp.com<br>Τηλέφωνο: 1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=Έχετε ερωτήσεις ή ανησυχίες σχετικά με την παραγγελία; Επικοινωνήστε απευθείας με το τμήμα εξυπηρέτησης πελατών xpedx στο:
@@ -2129,7 +2129,7 @@ error.store.itemManuf.notUnique=Δεν είναι δυνατή η δημιουρ
 error.store.itemManuf.notUniqueUpdate=Δεν είναι δυνατή η ενημέρωση του κύριου στοιχείου για αυτόν τον κατασκευαστή. Η μονάδα SKU του κατασκευαστή και ο κωδικός UOM υπάρχουν ήδη.
 error.store.itemManuf.ParentMasterItemExist=Δεν είναι δυνατή η δημιουργία κύριου στοιχείου.Το κύριο στοιχείο για αυτόν τον κατασκευαστή, SKU κατασκευαστή και UOM υπάρχει ήδη στο γονικό κατάστημα.
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=Δεν είναι δυνατή η ενημέρωση του κύριου στοιχείου.Το κύριο στοιχείο για αυτόν τον κατασκευαστή, SKU κατασκευαστή και UOM υπάρχει ήδη στο κεντρικό κατάστημα.
-error.store.synchronize.ParentChildStore=Το σφάλμα συστήματος < {0} > παρουσιάστηκε κατά τη διάρκεια συγχρονισμού κεντρικών-θυγατρικών καταστημάτων. Για την επίλυση του προβλήματος στείλτε τον κωδικό σφάλματος στην διεύθυνση orderline.notifications@ipaper.com.
+error.store.synchronize.ParentChildStore=Το σφάλμα συστήματος < {0} > παρουσιάστηκε κατά τη διάρκεια συγχρονισμού κεντρικών-θυγατρικών καταστημάτων. Για την επίλυση του προβλήματος στείλτε τον κωδικό σφάλματος στην διεύθυνση orderline.notifications@veritivcorp.com.
 error.shop.checkout.attnRequired=Το πεδίο κοινοποίησης είναι υποχρεωτικό για να υπάρχει μια εναλλακτική διεύθυνση αποστολής
 variable.empty.error=Το πεδίο '{0}' χρειάζεται πληροφορίες.
 variable.required.error=το {0} είναι υποχρεωτικό.

@@ -33,7 +33,7 @@
   </span>
 <span class="text">
 <p>
-<app:storeMessage key="contactus.text.email:"/>   <a href="mailto:distribution.webmaster@xpedx.com">distribution.webmaster@xpedx.com</a><br>
+<app:storeMessage key="contactus.text.email:"/>   <a href="mailto:<%=Constants.EMAIL_ADDR_EBUSINESS%>"><%=Constants.EMAIL_ADDR_EBUSINESS%></a><br>
 <app:storeMessage key="contactus.text.phone:"/>  877-269-1784<br>
   </p>
       </span>

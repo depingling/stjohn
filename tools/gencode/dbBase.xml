@@ -1431,7 +1431,7 @@
 <table name="CLW_CONTRACT" serialVersionDataUID="-8132757524672175518L" serialVersionVectorUID="-7092565610648861041L" cache="true">
 <column isPrimaryKey="true" name="CONTRACT_ID" size="38" type="NUMBER"/>
 <column name="REF_CONTRACT_NUM" size="30" type="VARCHAR2"/>
-<column name="SHORT_DESC" size="30" type="VARCHAR2"/>
+<column name="SHORT_DESC" size="50" type="VARCHAR2"/>
 <column name="LONG_DESC" nullable="true" size="255" type="VARCHAR2"/>
 <column name="CATALOG_ID" size="38" type="NUMBER"/>
 <column name="CONTRACT_STATUS_CD" size="30" type="VARCHAR2"/>

@@ -934,12 +934,12 @@ template.xpedx.maxTextSize=***文本大小 - 最大文本大小不得超过 {0} 
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=xpedx 美国帐户<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>电子邮件:appleservice@xpedx.com<br>电话: 1-800-545-1175
+template.xpedx.apple.text.contactUs.add=xpedx 美国帐户<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>电子邮件:appleservice@veritivcorp.com<br>电话: 1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=是否有与订单相关的问题或疑问? 请直接联系 xpedx 客户服务部门，电话为:
@@ -2130,7 +2130,7 @@ error.store.itemManuf.notUnique=无法创建主货品。此制造商的主货品
 error.store.itemManuf.notUniqueUpdate=无法更新主货品。此制造商的主货品以及制造商 SKU 和度量单位(UOM)已经存在。
 error.store.itemManuf.ParentMasterItemExist=无法创建主货品。此制造商的主货品以及制造商 SKU 和度量单位(UOM)已经存在于父商店中。
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=无法更新主货品。此制造商的主货品以及制造商 SKU 和度量单位(UOM)已经存在于父商店中。
-error.store.synchronize.ParentChildStore=父子商店同步期间发生系统错误 < {0} >。请将错误代码发送至 orderline.notifications@ipaper.com 以便消除错误。
+error.store.synchronize.ParentChildStore=父子商店同步期间发生系统错误 < {0} >。请将错误代码发送至 orderline.notifications@veritivcorp.com 以便消除错误。
 error.shop.checkout.attnRequired=对于备用装运地址而言，“注意”字段为必填字段
 variable.empty.error=字段 '{0}' 要求输入信息。
 variable.required.error={0} 是必填项。

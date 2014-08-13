@@ -68,16 +68,16 @@ Order related questions or concerns? Contact the xpedx Customer Service departme
                     <%}%>
 --%>
 <%
-String EmailLink ="kohls@xpedx.com";
+String EmailLink ="kohls@veritivcorp.com";
 %>
 Email:<a href="mailto:<%=EmailLink %>"><%=EmailLink %></a><br>
 Phone:1-800-704-1377<br>
 <br>
 <br>
 xpedx eBusiness Support Desk<br>
-<%--Email:  distribution.webmaster@xpedx.com<br>--%>
+<%--Email:  <%=Constants.EMAIL_ADDR_EBUSINESS%><br>--%>
 <%
-String webmasterLink ="distribution.webmaster@xpedx.com";
+String webmasterLink ="<%=Constants.EMAIL_ADDR_EBUSINESS%>";
 %>
 Email: <a href="mailto:<%=webmasterLink %>"><%=webmasterLink %></a><br>
 Phone:  877-269-1784<br>

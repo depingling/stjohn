@@ -24,7 +24,6 @@
 	<classpathentry kind="lib" path="tools/POI/jakarta-poi-ooxml.jar"/>
 	<classpathentry kind="lib" path="tools/restws/lib/jaxrs-api-2.2.2.GA.jar"/>
 	<classpathentry kind="lib" path="tools/inetsoft/jxl.jar"/>
-	<classpathentry kind="lib" path="tools/replicate/lib/log4j.jar"/>
 	<classpathentry kind="lib" path="tools/netsuite/netsuite.jar"/>
 	<classpathentry kind="lib" path="tools/oboe.new/oboe.jar"/>
 	<classpathentry kind="lib" path="installation/jdbc/lib/ojdbc14.jar"/>

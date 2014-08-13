@@ -157,7 +157,7 @@
 
 <br>
 xpedx eBusiness Support Desk<br>
-Email:  distribution.webmaster@xpedx.com<br>
+Email:  <%=Constants.EMAIL_ADDR_EBUSINESS%><br>
 Phone:  877-269-1784<br>
                      </td>
 

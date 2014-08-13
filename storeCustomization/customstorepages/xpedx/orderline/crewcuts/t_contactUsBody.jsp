@@ -41,7 +41,7 @@
 <br>
                                         2001 Enterprise Drive<br>
                     Forest, VA 24551-2653<br>
-                    <app:storeMessage key="contactus.text.email:"/> <a href="mailto:">michele.cardwell@xpedx.com</a><br>
+                    <app:storeMessage key="contactus.text.email:"/> <a href="mailto:">michele.cardwell@veritivcorp.com</a><br>
                     <app:storeMessage key="contactus.text.phone:"/> 1-800-410-2660 Ext. 249<br>
                     
 <br>

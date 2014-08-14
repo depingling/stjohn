@@ -43,7 +43,7 @@
                     613 Main Street <br>
                                         Wilmington, MA  01887-3236 <br>
                                         Phone: 978-988-7447 <br>
-                <%--    <app:storeMessage key="contactus.text.email:"/> <a href="mailto:">michele.cardwell@xpedx.com</a><br>
+                <%--    <app:storeMessage key="contactus.text.email:"/> <a href="mailto:">michele.cardwell@veritivcorp.com</a><br>
                     <app:storeMessage key="contactus.text.phone:"/> 1-800-410-2660 Ext. 249<br> --%>
                     
 <br>
@@ -52,7 +52,7 @@
 For technical support, please contact the xpedx eBusiness Support Desk at: <br>
 <br>
 Phone: 877-269-1784 <br>
-Email: distribution.webmaster@xpedx.com <mailto:distribution.webmaster@xpedx.com> <br>
+Email: <%=Constants.EMAIL_ADDR_EBUSINESS%> <mailto:<%=Constants.EMAIL_ADDR_EBUSINESS%>> <br>
 <br>
 <%
    String webmasterLink = ClwI18nUtil.getMessage(request,"template.xpedx.apple.text.contactUs.webmasterLink",null);  

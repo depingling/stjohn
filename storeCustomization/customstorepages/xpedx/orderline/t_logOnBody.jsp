@@ -123,7 +123,7 @@ td.systemLoginCopyright {
         </td>
         <td width="9%">&nbsp;</td>
         <td class="text" width="43%">
-          <b>Email:</b> <a href='mailto:distribution.webmaster@ipaper.com' tabIndex="5">distribution.webmaster@ipaper.com</a><br>
+          <b>Email:</b> <a href='mailto:<%=Constants.EMAIL_ADDR_EBUSINESS%>' tabIndex="5"><%=Constants.EMAIL_ADDR_EBUSINESS%></a><br>
           <b>Phone:</b><br>
           <i>United States:</i> 877 269-1784<br>
           <i>Europe:</i> (31) 24 37 22 380

@@ -59,7 +59,7 @@ Order related questions or concerns? Contact the xpedx Customer Service departme
 <br>
 9105 Sabal Industrial Blvd<br>
 Tampa, FL 33619<br>
-Email: <a href="target@xpedx.com">target@xpedx.com</a><br>
+Email: <a href="target@veritivcorp.com">target@veritivcorp.com</a><br>
 Phone: 1-800-258-7976<br>
 <br>
 <br>
@@ -68,7 +68,7 @@ Technical issues with the website should be directed to:<br>
 xpedx eBusiness Support Desk<br>
 <br>
 xpedx eBusiness Support Desk<br>
-Email: <a href="distribution.webmaster@xpedx.com">distribution.webmaster@xpedx.com</a><br>
+Email: <a href="<%=Constants.EMAIL_ADDR_EBUSINESS%>"><%=Constants.EMAIL_ADDR_EBUSINESS%></a><br>
 Phone: 877-269-1784<br>
                      </td>
             <tr>

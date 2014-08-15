@@ -1435,12 +1435,12 @@ template.xpedx.maxTextSize=***Tamaño del texto: el texto no debe tener más de 
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Correo electrónico: appleservice@xpedx.com<br>Teléfono: 1-800-545-1175
+template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Correo electrónico: appleservice@veritivcorp.com<br>Teléfono: 1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=¿Tiene dudas o consultas sobre sus órdenes? Póngase en contacto con el departamento de Servicio al cliente de xpedx directamente en:
@@ -2628,7 +2628,7 @@ error.store.itemManuf.notUnique=No se puede crear el artículo maestro. El artí
 error.store.itemManuf.notUniqueUpdate=No se puede actualizar el artículo maestro. El artículo maestro para este fabricante, el SKU del fabricante y la UDM ya existen.
 error.store.itemManuf.ParentMasterItemExist=No se puede crear el artículo maestro. El artículo maestro para este fabricante, el SKU del fabricante y la UDM ya existen en la tienda principal.
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=No se puede actualizar el artículo maestro. El artículo maestro para este fabricante, el SKU del fabricante y la UDM ya existen en la tienda principal.
-error.store.synchronize.ParentChildStore=El error del sistema < {0} > se produjo durante la sincronización de las tiendas principal y secundaria. Envíe el código de error a orderline.notifications@ipaper.com para obtener una solución.
+error.store.synchronize.ParentChildStore=El error del sistema < {0} > se produjo durante la sincronización de las tiendas principal y secundaria. Envíe el código de error a orderline.notifications@veritivcorp.com para obtener una solución.
 error.shop.checkout.attnRequired=Debe completar el campo Atención para una dirección de envío alternativa
 variable.empty.error=El campo '{0}' requiere información.
 variable.required.error=Se requiere {0}.

@@ -201,7 +201,7 @@ public final class NewXpedxContactUsAction extends ActionSuper {
         body.append("\n");
         body.append("Questions/Comments: " + form.getComment() + "\n");
         //String fromEmail = emc.getDefaultEmailAddress();
-        String fromEmail = "Orderline@xpedx.com";
+        String fromEmail = Constants.EMAIL_ADDR_ORDERLINE;
 
         firstLine.append(body.toString());
 

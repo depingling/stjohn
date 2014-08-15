@@ -59,7 +59,7 @@ During (EST), please contact<BR>
 xpedx National Accounts <BR>
 9105 Sabal Industrial Blvd <BR>
 Tampa, FL 33619<BR>
-email:appleservice@xpedx.com <BR>
+email:appleservice@veritivcorp.com <BR>
 Phone: +1 800 545 1175 <BR>
 <BR>
  <BR>
@@ -83,7 +83,7 @@ Technical issues with the website should be directed to:<BR>
 <BR>
 <BR>
 xpedx eBusiness support desk<BR>
-email: distribution.webmaster@xpedx.com<BR>
+email: <%=Constants.EMAIL_ADDR_EBUSINESS%><BR>
 Phone: +1 877 269 1784<BR>
 <BR>
 <%
@@ -97,7 +97,7 @@ Gli ordini che richiedono una spedizione prioritaria o con consegna il giorno la
 xpedx National Accounts <BR>
 9105 Sabal Industrial Blvd <BR>
 Tampa, FL 33619 <BR>
-E-mail:appleservice@xpedx.com <BR>
+E-mail:appleservice@veritivcorp.com <BR>
 Telefono: +1 800 545 1175 <BR>
 <BR>
 
@@ -113,7 +113,7 @@ Inviate un.e-mail a: retailsupply@apple.com <BR>
 I problemi tecnici del sito web devono essere segnalati a:<BR>
 <BR><BR>
 xpedx eBusiness support desk<BR>
-E-mail: distribution.webmaster@xpedx.com<BR>
+E-mail: <%=Constants.EMAIL_ADDR_EBUSINESS%><BR>
 Telefono: +1 877 269 1784<BR>
 <BR>
 <%}else if(appUser.getUser().getPrefLocaleCd() != null && "CN".equals(countryCode)){%>
@@ -124,7 +124,7 @@ Telefono: +1 877 269 1784<BR>
 xpedx National Accounts <br>
 9105 Sabal Industrial Blvd <br>
 Tampa, FL 33619<br>
-电子邮件：appleservice@xpedx.com<br> 
+电子邮件：appleservice@veritivcorp.com<br> 
 电话： +1-800-545-1175 <br>
 <br>
 对紧急发货的定单，如果时区的不同,xpedx在美国已下班，请与以下联系：<br>
@@ -144,7 +144,7 @@ Tampa, FL 33619<br>
 <br>
 对与网站技术问题,请与以下联系:<br>
 xpedx eBusiness 支持服务台<br>
-电子邮件： distribution.webmaster@xpedx.com<br>
+电子邮件： <%=Constants.EMAIL_ADDR_EBUSINESS%><br>
 电话：+1-877-269-1784<br>
 
 <br>
@@ -159,7 +159,7 @@ Between the hours of 13:00 to 18:00, please contact<BR>
 xpedx National Accounts <BR>
 9105 Sabal Industrial Blvd <BR>
 Tampa, FL 33619<BR>
-email:appleservice@xpedx.com <BR>
+email:appleservice@veritivcorp.com <BR>
 Phone: +1 800 545 1175 <BR><BR>
 
 Between the hours of 9:00 - 13:00<br>
@@ -175,7 +175,7 @@ email: retailsupply@apple.com <BR>
 Technical issues with the website should be directed to:<BR>
 <BR><BR>
 xpedx eBusiness support desk<BR>
-email: distribution.webmaster@xpedx.com<BR>
+email: <%=Constants.EMAIL_ADDR_EBUSINESS%><BR>
 Phone: +1 877 269 1784<BR>
 <BR>
 <%}else{%>

@@ -934,12 +934,12 @@ template.xpedx.maxTextSize=***Dimensione del testo: la dimensione massima non pu
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>E-mail:appleservice@xpedx.com<br>Telefono: 1-800-545-1175
+template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>E-mail:appleservice@veritivcorp.com<br>Telefono: 1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=Domande o problemi relativi agli ordini? Contattare direttamente il reparto di assistenza clienti di xpedx:
@@ -2130,7 +2130,7 @@ error.store.itemManuf.notUnique=Impossibile creare articolo principale. Esiste g
 error.store.itemManuf.notUniqueUpdate=Impossibile aggiornare articolo principale. Esiste già un articolo principale per questo produttore, SKU produttore e UdM.
 error.store.itemManuf.ParentMasterItemExist=Impossibile creare articolo principale. Esiste già un articolo principale per questo produttore, SKU produttore e UdM nel deposito principale.
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=Impossibile aggiornare articolo principale. Esiste già un articolo principale per questo produttore, SKU produttore e UdM nel deposito principale.
-error.store.synchronize.ParentChildStore=Si è verificato l'errore di sistema < {0} > durante la sincronizzazione dei depositi principale-secondario. Inviare il codice di errore a orderline.notifications@ipaper.com per consentirne la risoluzione.
+error.store.synchronize.ParentChildStore=Si è verificato l'errore di sistema < {0} > durante la sincronizzazione dei depositi principale-secondario. Inviare il codice di errore a orderline.notifications@veritivcorp.com per consentirne la risoluzione.
 error.shop.checkout.attnRequired=Il campo Attn è obbligatorio per un indirizzo di spedizione alternativo.
 variable.empty.error=Per il campo '{0}' sono necessarie informazioni.
 variable.required.error={0} è obbligatorio.

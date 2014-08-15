@@ -935,12 +935,12 @@ template.xpedx.maxTextSize=***Rozmiar tekstu: maksymalny rozmiar tekstu nie powi
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Adres e-mail:appleservice@xpedx.com<br>Telefon: 1-800-545-1175
+template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Adres e-mail:appleservice@veritivcorp.com<br>Telefon: 1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=Masz pytania lub uwagi dotyczące zamówienia? Skontaktuj się bezpośrednio z działem obsługi klienta xpedx:
@@ -2131,7 +2131,7 @@ error.store.itemManuf.notUnique=Nie można utworzyć elementu głównego. Istnie
 error.store.itemManuf.notUniqueUpdate=Nie można zaktualizować elementu głównego. Istnieje już element główny dla danego producenta, SKU producenta oraz jednostki miary.
 error.store.itemManuf.ParentMasterItemExist=Nie można utworzyć elementu głównego. W sklepie nadrzędnym istnieje już element główny dla danego producenta, SKU producenta oraz jednostki miary.
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=Nie można zaktualizować elementu głównego. W sklepie nadrzędnym istnieje już element główny dla danego producenta, SKU producenta oraz jednostki miary.
-error.store.synchronize.ParentChildStore=W trakcie synchronizacji elementów nadrzędnym i podrzędnych sklepu wystąpił błąd systemowy < {0} >. Aby rozwiązać problem, wyślij kod błędu na adres orderline.notifications@ipaper.com.
+error.store.synchronize.ParentChildStore=W trakcie synchronizacji elementów nadrzędnym i podrzędnych sklepu wystąpił błąd systemowy < {0} >. Aby rozwiązać problem, wyślij kod błędu na adres orderline.notifications@veritivcorp.com.
 error.shop.checkout.attnRequired=Alternatywny adres dostawy wymaga uzupełnienia pola Do wiadomości
 variable.empty.error=Pole {0} wymaga informacji.
 variable.required.error={0} jest wymagane.

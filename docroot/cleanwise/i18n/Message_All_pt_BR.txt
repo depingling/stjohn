@@ -667,12 +667,12 @@ template.xpedx.apple.text.contactUs2= Nao encontra o que esta procurando?  Neces
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=Contas nacionais xpedx 9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Email:appleservice@xpedx.com / TelÈfono: 1-800-545-1175
+template.xpedx.apple.text.contactUs.add=Contas nacionais xpedx 9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Email:appleservice@veritivcorp.com / TelÈfono: 1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1= Deseja realizar alguma pergunta ou consulta sobre seu pedido?  Contacte-se diretamente com o departamento de Servico ao Cliente de xpedx ao:

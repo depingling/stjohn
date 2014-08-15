@@ -1435,12 +1435,12 @@ template.xpedx.maxTextSize=***テキストサイズ - 最大テキストサイ�
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>電子メール：appleservice@xpedx.com<br>電話：1-800-545-1175
+template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>電子メール：appleservice@veritivcorp.com<br>電話：1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=注文に関する質問やお問い合わせは、次の連絡先の xpedx カスタマーサービスにご連絡ください：
@@ -2628,7 +2628,7 @@ error.store.itemManuf.notUnique=マスター製品を作成できません。こ
 error.store.itemManuf.notUniqueUpdate=マスター製品を更新できません。このメーカーのマスター製品、メーカー品番、および出荷単位はすでに存在しています。
 error.store.itemManuf.ParentMasterItemExist=マスター製品を作成できません。このメーカーのマスター製品、メーカー品番、および出荷単位はすでに親販売店に存在しています。
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=マスター製品を更新できません。このメーカーのマスター製品、メーカー品番、および出荷単位はすでに親販売店に存在しています。
-error.store.synchronize.ParentChildStore=親-子販売店の同期時にステムエラー < {0} > が発生しました。エラーコードを orderline.notifications@ipaper.com に送信してください。
+error.store.synchronize.ParentChildStore=親-子販売店の同期時にステムエラー < {0} > が発生しました。エラーコードを orderline.notifications@veritivcorp.com に送信してください。
 error.shop.checkout.attnRequired=代わりの配送先住所として、[宛先] フィールドが必要です。
 variable.empty.error=フィールド「{0}」には情報が必要です。
 variable.required.error={0} が必要です。

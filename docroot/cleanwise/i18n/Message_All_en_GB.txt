@@ -1434,12 +1434,12 @@ template.xpedx.maxTextSize=***Text size - maximum text size should not exceed {0
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=1-800-545-1175
-template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Email:appleservice@xpedx.com<br>Phone: 1-800-545-1175
+template.xpedx.apple.text.contactUs.add=xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619<br>Email:appleservice@veritivcorp.com<br>Phone: 1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=Order related questions or concerns?  Contact the xpedx Customer Service department directly at:
@@ -2627,7 +2627,7 @@ error.store.itemManuf.notUnique=Cannot create Master Item. Master Item for this 
 error.store.itemManuf.notUniqueUpdate=Cannot update Master Item. Master Item for this Manufacturer, Manufacturer SKU and UOM already exists.
 error.store.itemManuf.ParentMasterItemExist=Cannot create Master Item. Master Item for this Manufacturer, Manufacturer SKU and UOM already exists in the Parent Store.
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=Cannot update Master Item. Master Item for this Manufacturer, Manufacturer SKU and UOM already exists in the Parent Store.
-error.store.synchronize.ParentChildStore=System error < {0} > happened during parent-child store synchronisation. Please send the error code to 'orderline.notifications@ipaper.com' for resolution.
+error.store.synchronize.ParentChildStore=System error < {0} > happened during parent-child store synchronisation. Please send the error code to 'orderline.notifications@veritivcorp.com' for resolution.
 error.shop.checkout.attnRequired=The Attn field is required for an alternate shipping address
 variable.empty.error=Field '{0}' requires information.
 variable.required.error={0} is required.

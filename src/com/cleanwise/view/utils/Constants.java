@@ -951,7 +951,9 @@ public final class Constants {
   public static final String PROCESSING_FAILED = "FAILED";
   public static final String ERROR = "Error: ";
   public static final String FILE_LOADER_ACKNOWLEDGEMENT = "File Loader Acknowledgement: ";
-  public static final String EMAIL_ADDR_NO_REPLY = "No Reply<noreply@xpedx.com>";
+  public static final String EMAIL_ADDR_NO_REPLY = "No Reply<noreply@veritivcorp.com>";
+  public static final String EMAIL_ADDR_ORDERLINE = "orderline@veritivcorp.com";
+  public static final String EMAIL_ADDR_EBUSINESS = "ebusiness@veritivcorp.com";
   
   //Constant that can be used for Account Fiscal Calendar.
   public static final String ALL="All";

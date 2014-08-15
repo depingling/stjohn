@@ -54,7 +54,7 @@ Phone: 311 049 45 709<br>
 Technical issues with the website should be directed to:<br>
 <br>
 xpedx eBusiness Support Desk<br>
-Email: <a href="mailto:distribution.webmaster@xpedx.com">distribution.webmaster@xpedx.com</a><br>
+Email: <a href="mailto:<%=Constants.EMAIL_ADDR_EBUSINESS%>"><%=Constants.EMAIL_ADDR_EBUSINESS%></a><br>
 Phone: 877-269-1784<br>
 <br>
 

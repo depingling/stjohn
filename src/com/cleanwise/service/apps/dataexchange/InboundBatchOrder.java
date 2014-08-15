@@ -240,7 +240,7 @@ public class InboundBatchOrder extends InboundFlatFile {
         
         EventEmailDataView eventEmailData = new EventEmailDataView();
         eventEmailData.setEventEmailId(0);
-        eventEmailData.setToAddress(exceptionEmailTo);//distribution.webmaster@ipaper.com
+        eventEmailData.setToAddress(exceptionEmailTo);
         eventEmailData.setFromAddress(Constants.EMAIL_ADDR_NO_REPLY);
         eventEmailData.setSubject("Batch Order Errors");
         eventEmailData.setText(message);

@@ -1123,12 +1123,12 @@ template.xpedx.maxTextSize=***Textlänge: Der Text darf höchstens {0} Zeichen u
 #template.xpedx.apple.text.contactUs.address3=
 #template.xpedx.apple.text.contactUs.address4=
 #template.xpedx.apple.text.contactUs.cityStateZip=Tampa, FL 33619
-#template.xpedx.apple.text.contactUs.email=appleservice@xpedx.com
+#template.xpedx.apple.text.contactUs.email=appleservice@veritivcorp.com
 template.xpedx.apple.text.contactUs.pNum=+1-800-545-1175
-template.xpedx.apple.text.contactUs.add=Xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619, USA<br>E-Mail: appleservice@xpedx.com<br>Telefon: +1-800-545-1175
+template.xpedx.apple.text.contactUs.add=Xpedx National Accounts<br>9105 Sabal Industrial Blvd<br>Tampa, FL 33619, USA<br>E-Mail: appleservice@veritivcorp.com<br>Telefon: +1-800-545-1175
 
 template.xpedx.apple.text.contactUs.retailLink=retailsupply@apple.com
-template.xpedx.apple.text.contactUs.webmasterLink=distribution.webmaster@xpedx.com
+template.xpedx.apple.text.contactUs.webmasterLink=ebusiness@veritivcorp.com
 template.xpedx.apple.text.contactUs.webmasterPhone=877-269-1784
 
 template.xpedx.text.contactUs1=Haben Sie Fragen zu einer Bestellung? Wenden Sie sich direkt an die Xpedx-Kundendienstabteilung:
@@ -2338,7 +2338,7 @@ error.store.itemManuf.notUnique=Das Stammelement kann nicht erstellt werden. Es 
 error.store.itemManuf.notUniqueUpdate=Das Stammelement kann nicht aktualisiert werden. Es ist bereits ein Stammelement für diesen Hersteller, diesen Herstellerartikel und diese Maßeinheit vorhanden.
 error.store.itemManuf.ParentMasterItemExist=Das Stammelement kann nicht erstellt werden. Im übergeordneten Shop ist bereits ein Stammelement für diesen Hersteller, diesen Herstellerartikel und diese Maßeinheit vorhanden.
 error.store.itemManuf.ParentMasterItemNotUniqueUpdate=Das Stammelement kann nicht aktualisiert werden. Im übergeordneten Shop ist bereits ein Stammelement für diesen Hersteller, diesen Herstellerartikel und diese Maßeinheit vorhanden.
-error.store.synchronize.ParentChildStore=Bei der Synchronisierung des über- und untergeordneten Shops ist der Systemfehler < {0} > aufgetreten. Senden Sie den Fehlercode zur Behebung an die Adresse orderline.notifications@ipaper.com.
+error.store.synchronize.ParentChildStore=Bei der Synchronisierung des über- und untergeordneten Shops ist der Systemfehler < {0} > aufgetreten. Senden Sie den Fehlercode zur Behebung an die Adresse orderline.notifications@veritivcorp.com.
 error.shop.checkout.attnRequired=Das Feld 'z. Hd.' ist für eine alternative Versandadresse erforderlich.
 variable.empty.error=Für das Feld '{0}' sind Daten erforderlich.
 variable.required.error=''{0}'' ist erforderlich.

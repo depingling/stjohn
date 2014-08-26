@@ -125,9 +125,9 @@ public class ActionSuper extends Action {
             return HTTPS;
         }
 
-        if(servletConfidentialPort == request.getServerPort()){
+        /*if(servletConfidentialPort == request.getServerPort()){
             return HTTPS;
-        }
+        }*/
 
         return request.getScheme();
     }

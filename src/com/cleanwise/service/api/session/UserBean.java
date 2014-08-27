@@ -3998,6 +3998,7 @@ public class UserBean extends BusEntityServicesAPI {
                      if (ed.size() > 0) {
                     	 user.setEmailData((EmailData) ed.get(0));
                      }
+                     returnValue.add(user);
                  }
              }
              return returnValue;

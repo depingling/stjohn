@@ -12733,7 +12733,7 @@ log.debug("IntegrationServicesBean IIIIIIIIIIIIIIIIIIIIIIII validate 855");
             return;
         }
         OrderData orderD = orderEjb.getOrder(orderId);
-        int storeId = orderD.getSiteId();
+        int storeId = orderD.getStoreId();
         int accountId = orderD.getAccountId();
         int siteId = orderD.getSiteId();
 

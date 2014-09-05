@@ -2056,14 +2056,14 @@ log.info("sql: "+ ItemMappingDataAccess.getSqlSelectIdOnly("*",dbc));
                   dbc.addOneOf(ItemMappingDataAccess.ITEM_ID, itemReq);
                   dbc.addLikeIgnoreCase(ItemMappingDataAccess.ITEM_NUM, "%" + pCustSku + "%");
 
-                  String distrCondition =
+                  /*String distrCondition =
                           "item_id = (select item_id from CLW_CATALOG_STRUCTURE " +
                                   " where item_id=CLW_ITEM_MAPPING.item_id " +
                                   " and (CLW_CATALOG_STRUCTURE.customer_sku_num is null " +
                                   " or CLW_CATALOG_STRUCTURE.customer_sku_num = ' ') " +
                                   " and CLW_CATALOG_STRUCTURE.catalog_id = " + pShoppingItemRequest.getShoppingCatalogId() + ")";
 
-                  dbc.addCondition(distrCondition);
+                  dbc.addCondition(distrCondition);*/
                   dbc.addOrderBy(ItemMappingDataAccess.ITEM_ID);
 
                   itemIds = ItemMappingDataAccess.selectIdOnly(con, ItemMappingDataAccess.ITEM_ID, dbc);
@@ -2083,6 +2083,8 @@ log.info("sql: "+ ItemMappingDataAccess.getSqlSelectIdOnly("*",dbc));
           itemIds = ItemMappingDataAccess.selectIdOnly(con,ItemMappingDataAccess.ITEM_ID,dbc);
         }
 
+        itemSkuIds=itemIds;
+        /*
         dbc = new DBCriteria();
         dbc.addOneOf(CatalogStructureDataAccess.ITEM_ID,itemIds);
 
@@ -2110,7 +2112,7 @@ log.info("sql: "+ ItemMappingDataAccess.getSqlSelectIdOnly("*",dbc));
           if(sku==null || sku.trim().length()==0) {
             itemSkuIds.add(idI);
           }
-        }
+        }*/
       }
       if(itemNameIds!=null && itemSkuIds!=null) {
         itemSkuNameIds = new IdVector();
@@ -9415,7 +9417,7 @@ AND (cs_st.customer_sku_num LIKE '%0%' OR cs_shop.customer_sku_num LIKE '%0%')
                      "  AND im.item_mapping_cd = '"+RefCodeNames.ITEM_MAPPING_CD.ITEM_DISTRIBUTOR+"' "+
                      "  WHERE cs_shop.catalog_id = ? "+ //catalog_id
                      "  AND (lower(cs_shop.customer_sku_num) LIKE ? OR " + //searchWord
-                     "       cs_shop.customer_sku_num is null AND lower(im.item_num) LIKE ?) " + //searchWord, searchWord
+                     "       lower(im.item_num) LIKE ?) " + //searchWord, searchWord
                 // Find item by short desc
                      " union "+
                      " SELECT i.item_id as item_id"+ //, COALESCE(cs_shop.CUSTOMER_SKU_NUM, i.short_desc) act_sku_num, cs_shop.CUSTOMER_SKU_NUM, i.short_desc

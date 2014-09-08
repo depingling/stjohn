@@ -230,6 +230,7 @@ public class InboundcXMLPunchOutLogon extends InboundXMLSuper {
             return;
         }catch (Exception exc) {
             exc.printStackTrace();
+            log.error(exc.getMessage());
             appendErrorMsgs("Unknown user logon error", true);
             return;
         }

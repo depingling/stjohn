@@ -11,20 +11,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.MDC;
 
 
 import com.cleanwise.service.api.APIAccess;
+import com.cleanwise.service.api.process.ProcessActive;
 import com.cleanwise.service.api.session.Event;
+import com.cleanwise.service.api.session.Process;
 import com.cleanwise.service.api.util.RefCodeNames;
 import com.cleanwise.service.api.util.Utility;
 import com.cleanwise.service.api.value.EventData;
 import com.cleanwise.service.api.value.EventProcessView;
 import com.cleanwise.service.api.value.EventPropertyDataVector;
-import com.cleanwise.service.api.value.InboundEventData;
 import com.cleanwise.service.api.value.IntegrationRequestsVector;
 import com.cleanwise.service.api.value.ProcessData;
 import com.cleanwise.service.api.value.TradingPartnerDescView;
@@ -508,7 +511,7 @@ public class InboundTranslate extends Translator {
             						pEventId,
             						6));
             			}
-            			EventProcessView newEvent = eventEjb.addEventProcess(epv, "InboundTranslate");
+            			EventProcessView newEvent = eventEjb.addEventProcess(epv, className);
             			if(newEvent == null || newEvent.getEventData() == null){
             				log.fatal("InboundTranslate:Event not added ");
             			}else{
@@ -628,22 +631,72 @@ public class InboundTranslate extends Translator {
 			bos.write(buf, 0, len);
 		}
 		byte[] byteArray = bos.toByteArray();
+		propertyMap = new HashMap();
 
         String partnerKey = "XX"; //TODO: not sure
-        InboundTransaction handler;
-        try{
-        	handler = processInboundRequest(optionalStreamType, partnerKey, byteArray, pStreamSource, null,0,0);
-        }catch(Exception e){
-        	e.printStackTrace();
-        	throw new Exception(e.getMessage());
-        }
-    	if (!handler.isFail()){
-    		InboundEventData eventData = InboundEventData.generateInboundEvent(optionalStreamType, byteArray, partnerKey, pStreamSource);
-            eventData.setStatus(Event.STATUS_PROCESSED);
-            IntegrationRequestsVector reqs = new IntegrationRequestsVector();
-            reqs.add(eventData);
-            if (!processIntegrationRequests(reqs))
-        		throw new Exception("Failed to process inbound event requests.");
+        InboundTransaction handler = null;
+        
+        EventData eventData = Utility.createEventDataForProcess();
+        EventProcessView epv = new EventProcessView(eventData, new EventPropertyDataVector(), 0);
+        ProcessData process = APIAccess.getAPIAccess().getProcessAPI()
+                .getProcessByName(RefCodeNames.PROCESS_NAMES.PROCESS_INBOUND_TRANSACTION);
+        epv.getProperties().add(Utility.createEventPropertyData("process_id",
+                 Event.PROPERTY_PROCESS_TEMPLATE_ID,
+                 new Integer(process.getProcessId()),
+                 1));
+        epv.getProperties().add(Utility.createEventPropertyData("fileName",
+                Event.PROCESS_VARIABLE,
+                optionalStreamType,
+                1));
+        epv.getProperties().add(Utility.createEventPropertyData("partnerKey",
+                Event.PROCESS_VARIABLE,
+                partnerKey,
+                2));
+        epv.getProperties().add(Utility.createEventPropertyData("dataContents",
+                Event.PROCESS_VARIABLE,
+                byteArray,
+                3));
+        epv.getProperties().add(Utility.createEventPropertyData("sourceURI",
+                 Event.PROCESS_VARIABLE, pStreamSource,
+                 4));
+        epv.getProperties().add(Utility.createEventPropertyData("propertyMap",
+                 Event.PROCESS_VARIABLE, propertyMap,
+                 5));
+        
+        eventData.setStatus(Event.STATUS_IN_PROGRESS);
+        Event eventEjb = APIAccess.getAPIAccess().getEventAPI();
+        Process processEjb = APIAccess.getAPIAccess().getProcessAPI();
+        eventEjb.addEventProcess(epv, className);
+        
+        try {
+	        MDC.put("EventID", new Integer(eventData.getEventId()));
+	        
+	        ProcessActive activeProcess = processEjb.createActiveProcess(process.getProcessId(), null, className);
+	        MDC.put("ProcessID", new Integer(activeProcess.getProcessActiveData().getProcessId()));
+	        eventEjb.addProperty(
+	                eventData.getEventId(),
+	                "process_id",
+	                Event.PROCESS_ACTIVE_ID,
+	                new Integer(activeProcess.getProcessActiveData().getProcessId()),
+	                1);
+	        
+	        com.cleanwise.service.api.eventsys.EventData eData = eventEjb.getEvent(eventData.getEventId());
+	        
+	        try{
+	        	handler = processInboundRequest(optionalStreamType, partnerKey, byteArray, pStreamSource, null,eventData.getEventId(),0);
+	        	eData.setStatus(Event.STATUS_PROCESSED);
+	        	activeProcess.getProcessActiveData().setProcessStatusCd(RefCodeNames.PROCESS_STATUS_CD.FINISHED);
+	        }catch(Exception e){
+	        	e.printStackTrace();
+	        	eData.setStatus(Event.STATUS_REJECTED);
+	        	activeProcess.getProcessActiveData().setProcessStatusCd(RefCodeNames.PROCESS_STATUS_CD.FAILED);
+	        }
+	    		    	
+	    	eventEjb.updateEventData(eData);
+	    	processEjb.updateProcessData(activeProcess.getProcessActiveData());
+        }finally{
+        	MDC.remove("EventID");
+        	MDC.remove("ProcessID");
         }
         return handler;
     }

@@ -46,7 +46,7 @@ public class InboundToysRusCXmlPunchOutLogon extends InboundcXMLPunchOutLogon {
 		
 	        String passval = mPassword;
 	        if(!pass.equalsIgnoreCase(passval)){
-	        	throw new Exception("Authorization failed.  Check username and trading profile authorization setup.");
+	        	throw new Exception("Authorization failed.  Shared secret does not match trading profile authorization setup!");
 	        }
 	        
 	        Node requestNode = nodeToOperateOn.getDocument().selectSingleNode("//cXML/Request/PunchOutSetupRequest");

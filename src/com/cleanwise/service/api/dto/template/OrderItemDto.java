@@ -13,7 +13,9 @@ public class OrderItemDto extends ValueObject {
 	private String _name = null;
 	private String _lineNumber = null;
 	private String _unitOfMeasure = null;
+	private String _shipUnitOfMeasure = null;
 	private BigDecimal _quantity = null;
+	private BigDecimal _shipQuantity = null;
 	private String _trackingNumbers = null;
 	private String _pack = null;
 	private BigDecimal _price = null;
@@ -57,6 +59,14 @@ public class OrderItemDto extends ValueObject {
 	public void setUnitOfMeasure(String unitOfMeasure) {
 		_unitOfMeasure = unitOfMeasure;
 	}
+	
+	public String getShipUnitOfMeasure() {
+		return _shipUnitOfMeasure;
+	}
+
+	public void setShipUnitOfMeasure(String shipUnitOfMeasure) {
+		_shipUnitOfMeasure = shipUnitOfMeasure;
+	}
 
 	public BigDecimal getQuantity() {
 		return _quantity;
@@ -64,6 +74,14 @@ public class OrderItemDto extends ValueObject {
 
 	public void setQuantity(BigDecimal quantity) {
 		_quantity = quantity;
+	}
+	
+	public BigDecimal getShipQuantity() {
+		return _shipQuantity;
+	}
+
+	public void setShipQuantity(BigDecimal shipQuantity) {
+		_shipQuantity = shipQuantity;
 	}
 
 	public String getTrackingNumbers() {

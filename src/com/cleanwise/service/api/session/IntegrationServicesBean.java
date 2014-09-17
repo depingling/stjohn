@@ -12834,6 +12834,7 @@ log.debug("IntegrationServicesBean IIIIIIIIIIIIIIIIIIIIIIII validate 855");
         orderDto.setTrackingNumber(pDistEdi856.getTrackingNum());
         orderDto.setShipDate(pDistEdi856.getShipDate());
         orderDto.setOrderLocale(orderInfo.getLocaleCd());
+        orderDto.setOriginalOrderDate(orderInfoData.getOrderInfo().getOrderDate());
         //retrieve the item information
         ItemInfoViewVector orderItems = orderInfoData.getItems();
         EdiInp856ItemViewVector ediItems = pDistEdi856.getItems();
@@ -12844,21 +12845,25 @@ log.debug("IntegrationServicesBean IIIIIIIIIIIIIIIIIIIIIIII validate 855");
             OrderItemDto orderItemDto = new OrderItemDto();
             String distSkuNum = ediItem.getDistSkuNum();            
             orderItemDto.setSku(distSkuNum);
+            ItemInfoView orderItem = null;
             String skuName = "";
             if (Utility.isSet(distSkuNum)) {
             	Iterator orderItemIterator = orderItems.iterator();
                 while (orderItemIterator.hasNext()) {
-                    ItemInfoView orderItem = (ItemInfoView) orderItemIterator.next();
+                    orderItem = (ItemInfoView) orderItemIterator.next();
                     if(ediItem.getOrderItemId() == orderItem.getOrderItemId()){
-                        skuName = orderItem.getItemName();
                         break;
                     }
                 }
             }
-            orderItemDto.setName(skuName);
+            if (orderItem != null){
+            	orderItemDto.setName(orderItem.getItemName());
+            	orderItemDto.setUnitOfMeasure(orderItem.getUom());
+            	orderItemDto.setQuantity(orderItem.getQty());
+            }
             orderItemDto.setLineNumber(ediItem.getPurchOrderLineNum() + "");
-            orderItemDto.setUnitOfMeasure(ediItem.getUom());
-            orderItemDto.setQuantity(new BigDecimal(ediItem.getShippedQty()));
+            orderItemDto.setShipUnitOfMeasure(ediItem.getUom());
+            orderItemDto.setShipQuantity(new BigDecimal(ediItem.getShippedQty()));
 
             List trackingNumList = ediItem.getTrackingNumList();
             String trackingNums = "";

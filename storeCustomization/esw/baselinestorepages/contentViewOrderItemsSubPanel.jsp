@@ -465,7 +465,6 @@
 							}
 						}
 						
-							APIAccess factory = new APIAccess();
 						java.util.Date actiondate = Utility.getDateTime(action.getActionDate(), action.getActionTime()) ;
 						
 						if(actiondate == null){

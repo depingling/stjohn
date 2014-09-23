@@ -12846,7 +12846,6 @@ log.debug("IntegrationServicesBean IIIIIIIIIIIIIIIIIIIIIIII validate 855");
             String distSkuNum = ediItem.getDistSkuNum();            
             orderItemDto.setSku(distSkuNum);
             ItemInfoView orderItem = null;
-            String skuName = "";
             if (Utility.isSet(distSkuNum)) {
             	Iterator orderItemIterator = orderItems.iterator();
                 while (orderItemIterator.hasNext()) {
@@ -12857,6 +12856,8 @@ log.debug("IntegrationServicesBean IIIIIIIIIIIIIIIIIIIIIIII validate 855");
                 }
             }
             if (orderItem != null){
+            	if (Utility.isSet(orderItem.getCustSkuNum()))
+            		orderItemDto.setSku(orderItem.getCustSkuNum());
             	orderItemDto.setName(orderItem.getItemName());
             	orderItemDto.setUnitOfMeasure(orderItem.getUom());
             	orderItemDto.setQuantity(orderItem.getQty());

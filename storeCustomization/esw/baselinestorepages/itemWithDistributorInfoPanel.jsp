@@ -253,7 +253,6 @@ Integer distIdTest = new Integer (scDistData.getDistId(frTblIdTest));
 										 <% String select = ClwMessageResourcesImpl.getMessage(request,"shop.checkout.text.selectOption"); %>
                                          <html:select name="newCheckOutForm" property="checkOutForm.distFreightVendor"
                                          onchange="javascript:refreshLocationBudgetGraph('checkOutFormId','operationId','checkOut')" styleId="distFreightVendorId"> 
-								          	<html:option value="<%=select %>" />
 								          	<html:options collection="freightOptions" property="freightTableCriteriaId" labelProperty="shortDesc"  />
 								        </html:select>
 								         <%} %>

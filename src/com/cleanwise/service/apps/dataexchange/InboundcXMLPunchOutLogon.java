@@ -473,5 +473,10 @@ public class InboundcXMLPunchOutLogon extends InboundXMLSuper {
     	log.info("Responding with: "+negResp.asXML());
         return;
     }
+    
+    // override this in extended class if support generic user id
+    protected String getGenericUserId(){
+    	return null;
+    }
 
 }

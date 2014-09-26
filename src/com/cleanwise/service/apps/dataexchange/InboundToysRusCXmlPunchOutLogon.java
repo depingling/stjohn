@@ -8,11 +8,15 @@ import java.sql.Connection;
 
 import org.dom4j.Node;
 
+import com.cleanwise.service.api.APIAccess;
 import com.cleanwise.service.api.value.*;
 import com.cleanwise.service.api.dao.UserDataAccess;
+import com.cleanwise.service.api.session.EmailClient;
+import com.cleanwise.service.api.session.Event;
 import com.cleanwise.service.api.util.DBCriteria;
-import com.cleanwise.service.api.util.InvalidLoginException;
 import com.cleanwise.service.api.util.RefCodeNames;
+import com.cleanwise.service.api.util.Utility;
+import com.cleanwise.service.apps.ApplicationsEmailTool;
 
 /**
  * @author ssharma
@@ -75,12 +79,29 @@ public class InboundToysRusCXmlPunchOutLogon extends InboundcXMLPunchOutLogon {
 			if(udv!=null && udv.size()>0){
 				ldap.setUserName(username);
 			}else{
-				throw new Exception("User Name not valid: " + username);
+				ldap.setUserName(getGenericUserId());
+				
+				String emailMessage = "User not found for login id: "+username +", login with generic user id: "+getGenericUserId();
+				log.info(emailMessage);
+				
+				String sendExceptionEmailTo = getTranslator().getConfigPropertyByPropertyTypeCd("sendExceptionEmailTo");
+				if (Utility.isSet(sendExceptionEmailTo)){
+					EventEmailDataView eventEmail = new EventEmailDataView();
+
+					EmailClient emailEjb = APIAccess.getAPIAccess().getEmailClientAPI();
+                    eventEmail.setFromAddress(emailEjb.getDefaultEmailAddress());
+                    eventEmail.setToAddress(sendExceptionEmailTo);
+                    eventEmail.setSubject("User not found for login id: "+username);
+                    eventEmail.setText(emailMessage);
+                    eventEmail.setEmailStatusCd(Event.STATUS_READY);
+                    eventEmail.setAddBy("InboundToysRusCXmlPunchOutLogon");
+                    new ApplicationsEmailTool().createEvent(eventEmail);
+				} else
+					throw new Exception("sendExceptionEmailTo property need to be configured.");
 			}		
 			
 			tokenView = Translator.intSvc.createAccessToken(ldap,false);
-			return tokenView;			
-		
+			return tokenView;		
 		}catch(Exception exc){
 			exc.printStackTrace();
 			throw new Exception(exc.getMessage());
@@ -93,6 +114,10 @@ public class InboundToysRusCXmlPunchOutLogon extends InboundcXMLPunchOutLogon {
 		
 	protected void getChangeLocationEnabled(){
 		changeLocation = true;
+    }
+	
+	protected String getGenericUserId(){
+    	return "anonymous@tru.com";
     }
 	
 }

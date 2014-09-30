@@ -13,6 +13,7 @@
 <%@ page import="java.math.BigDecimal" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.*" %>
+<%@ page import="com.cleanwise.service.api.APIAccess" %>
 
 <%@ page import="com.espendwise.view.forms.esw.OrdersForm"%>
 <%@ page import="com.cleanwise.view.forms.OrderOpDetailForm"%>
@@ -83,6 +84,13 @@
 
 	String formattedODate = ClwI18nUtil.formatDateInp(request, orderDate, timeZone.getID() );
 	//Getting  properly formatted Order Date: End
+	
+
+	boolean enhancedBackorder = false;
+	if(appUser.getUserAccount().getRuntimeDisplayOrderItemActionTypes().contains(RefCodeNames.ORDER_ITEM_DETAIL_ACTION_CD.ACK_BACKORDERED_ENHANCED)){
+		enhancedBackorder = true;
+	}
+
 %>
 
 <!-- Start Box -->
@@ -465,6 +473,22 @@
 							}
 						}
 						
+						String estInStockDateStr = "";						
+						if(enhancedBackorder && action.getActionCd().equals(RefCodeNames.ORDER_ITEM_DETAIL_ACTION_CD.ACK_BACKORDERED)){
+							estInStockDateStr = "Estimated In-Stock: ";
+							APIAccess factory = new APIAccess();
+
+							BackorderDataVector bodv = factory.getOrderAPI().getBackorderDetail(action.getOrderId(), action.getOrderItemId());
+							if(bodv!=null && bodv.size()>0){
+								BackorderData bod = (BackorderData)bodv.get(0);
+								Date est = bod.getEstInStock();
+								if(est!=null){
+									estInStockDateStr += ClwI18nUtil.formatDateInp(request, est, timeZone.getID() );;
+								}
+							}
+						}
+							
+						
 						java.util.Date actiondate = Utility.getDateTime(action.getActionDate(), action.getActionTime()) ;
 						
 						if(actiondate == null){
@@ -497,7 +521,15 @@
 								String statusKey = Constants.ORDER_ITEM_ACTION_KEY + actioncd;
 								%>
 								 <%= formattedActionDate%>:
-								 <%=ClwMessageResourcesImpl.getMessage(request,statusKey)%>
+								 <%
+								 String status = null;
+								 if(enhancedBackorder && RefCodeNames.ORDER_ITEM_DETAIL_ACTION_CD.CANCELED.equals(actioncd)){
+									 status = "Item Discontinued";
+								 } else {
+									 status = ClwMessageResourcesImpl.getMessage(request,statusKey);
+								 }
+								 %>
+								 <%=status%>
 								 <%if(Utility.isSet(trackingStr)){
 									if(trackingStr.toUpperCase().contains("FED")){
 								 %>
@@ -512,7 +544,9 @@
 								 <%if(Utility.isSet(deliveryRefStr)){%>
 									<%=deliveryRefStr%>
 								 <%}%>
-								 
+								 <%if(Utility.isSet(estInStockDateStr)){%>
+									<br><%=estInStockDateStr%>
+								 <%}%>
 							   <%}else{%>
 								&nbsp;
 							    <%}%>	 

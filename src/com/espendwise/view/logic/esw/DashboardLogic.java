@@ -936,9 +936,17 @@ public class DashboardLogic {
 			OrderStatusDescData pendingOrder = getPendingOrder(pendingOrders, orderId);
 			if (pendingOrder == null) {
             	Object[] insertionStrings = new Object[1];
-            	insertionStrings[0] = Integer.toString(orderId);
-                String errorMess = ClwI18nUtil.getMessage(request, "pendingOrders.error.orderCannotBeApproved", insertionStrings);
-                errors.add("error", new ActionError("error.simpleGenericError", errorMess));
+            	try {
+	            	Order orderBean = APIAccess.getAPIAccess().getOrderAPI();
+			        OrderJoinData orderJD = orderBean.fetchOrder(orderId);
+	            	insertionStrings[0] = orderJD.getOrderNum();
+	                String errorMess = ClwI18nUtil.getMessage(request, "pendingOrders.error.orderCannotBeApproved", insertionStrings);
+	                errors.add("error", new ActionError("error.simpleGenericError", errorMess));
+            	} catch (Exception e) {
+            		insertionStrings[0] = Integer.toString(orderId);
+            		String errorMess = ClwI18nUtil.getMessage(request, "pendingOrders.error.unexpectedApprovalError", insertionStrings);
+	                errors.add("error", new ActionError("error.simpleGenericError", errorMess));
+            	}
 			}
 			else {
 				IdVector reasonsToApprove = new IdVector();

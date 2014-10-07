@@ -41,13 +41,13 @@ public class InboundTranslatorLogic {
             
             java.net.URI requestedUri = new java.net.URI(HttpUtils.getRequestURL(request).toString());
             
-            String scheme = requestedUri.getScheme();
+            /*String scheme = requestedUri.getScheme();
             
             if(Utility.isSet((String)request.getSession().getAttribute(Constants.ENTRY_SCHEME))){
                 scheme = (String)request.getSession().getAttribute(Constants.ENTRY_SCHEME);
             }
             
-            java.net.URI updatedRequestUri = new java.net.URI(scheme,requestedUri.getSchemeSpecificPart(),requestedUri.getFragment());
+            java.net.URI updatedRequestUri = new java.net.URI(scheme,requestedUri.getSchemeSpecificPart(),requestedUri.getFragment());*/
             
             /*
             String str = null;
@@ -68,7 +68,7 @@ public class InboundTranslatorLogic {
 				is = request.getInputStream();
 			}
             */
-            translator.translateByInputStream(request.getInputStream(), request.getContentType(),updatedRequestUri);
+            translator.translateByInputStream(request.getInputStream(), request.getContentType(),requestedUri);
             
             if(out.size() > 0){
                 

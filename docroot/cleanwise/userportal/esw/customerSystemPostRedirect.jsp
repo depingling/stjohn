@@ -20,17 +20,11 @@ window.onload = function(){
 </head>
 <body>
 Please Wait...
-<%String submit = (String) session.getAttribute(Constants.CUSTOMER_SYSTEM_URL);
-  String operation = (String)request.getParameter("operation");
-%>
+<%String submit = (String) session.getAttribute(Constants.CUSTOMER_SYSTEM_URL);%>
 <form method="POST" action="<%=submit%>">
-<% if (operation!=null && operation.equals(Constants.PARAMETER_OPERATION_VALUE_END_SHOPPING)) {%>
-<input  type="hidden" name="cXML-urlencoded" value="">
-<% } else { %>
 <bean:define id="theForm" name="esw.CheckOutEswForm"
     type="com.espendwise.view.forms.esw.CheckOutForm"/>
 <input  type="hidden" name="<%=theForm.getCheckOutForm().getInlinePostFieldName()%>" value="<%=theForm.getCheckOutForm().getInlinePostData()%>">
-<% } %>
 </form>
 </body>
 </html>

@@ -100,6 +100,9 @@ public final class CheckOutAction extends EswAction {
     	else if(Constants.PARAMETER_OPERATION_VALUE_PLACE_ORDER.equalsIgnoreCase(operation)) {
     		returnValue = handlePlaceOrderRequest(request, response, theForm, mapping);
     	}
+    	else if(Constants.PARAMETER_OPERATION_VALUE_END_SHOPPING.equalsIgnoreCase(operation)) {
+    		returnValue = handleEndShoppingRequest(request, response, theForm, mapping);
+    	}
         //End: CheckOut
         else {
         	returnValue = handleUnknownOperation(request, response, theForm, mapping);
@@ -337,4 +340,24 @@ public final class CheckOutAction extends EswAction {
             saveMessages(request, messages);
         }
     }
+    
+    /*
+     * Private method to determine what action forward should be returned after a end shopping request.
+     */
+	private ActionForward handleEndShoppingRequest(HttpServletRequest request, HttpServletResponse response, 
+			CheckOutForm theForm, ActionMapping mapping) {
+		ActionErrors errors = null;
+		ActionForward actionForward = mapping.findForward(MAPPING_CUST_SYS_REDIRECT);
+		
+        try {
+			theForm.setOrderFee(null);
+			CheckOutLogic.doEndShopping(request,theForm);
+        } catch(Exception e) {
+			log.error("Unexpected exception in CheckOutAction.handleCheckOutRequest: " +e);
+			saveErrors(request,mapping,errors);
+		}
+				
+		return actionForward;
+		
+	}
 }

@@ -143,9 +143,6 @@ public class SecurityAction extends EswAction {
 	    else if (Constants.PARAMETER_OPERATION_VALUE_SHOW_CONTENT.equalsIgnoreCase(operation)) {
 	       	returnValue = handleContentManagementRequest(request, response, theForm, mapping);
 	        }
-	    else if (Constants.PARAMETER_OPERATION_VALUE_END_SHOPPING.equalsIgnoreCase(operation)) {
-	    	returnValue=mapping.findForward("customerSystemPostRedirect");
-	        }
 	    else {
 	    	returnValue = handleUnknownOperation(request, response, theForm, mapping);
 	    }

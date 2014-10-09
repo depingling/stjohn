@@ -25,6 +25,7 @@ import com.cleanwise.view.utils.SessionTool;
  * @author  bstevens
  */
 public class InboundTranslatorLogic {
+	private static final Logger log = Logger.getLogger(InboundTranslatorLogic.class);
     
     /**
      *Translates a post request using the inbound translation sub system.
@@ -39,15 +40,23 @@ public class InboundTranslatorLogic {
             
             translator.setOutputStream(out);
             
-            java.net.URI requestedUri = new java.net.URI(HttpUtils.getRequestURL(request).toString());
-            
-            String scheme = requestedUri.getScheme();
+            java.net.URI requestedUri = new java.net.URI(HttpUtils.getRequestURL(request).toString());request.getRequestURL();
+            log.info("InboundTranslatorLogic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            log.info("Requested URL: " + requestedUri.toString());
+            log.info("Requested URL 1: " + request.getRequestURL().toString());
+            log.info("Requested URL isSecure: " + request.isSecure());
+            String serverName=java.net.InetAddress.getLocalHost().getHostName();
+            log.info("Requested ServerName: " + serverName);
+            log.info("X-SSL-Request: " + request.getHeader("X-SSL-Request"));
+            log.info("Sechema from Session: " + (String)request.getSession().getAttribute(Constants.ENTRY_SCHEME));
+            log.info("InboundTranslatorLogic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            /*String scheme = requestedUri.getScheme();
             
             if(Utility.isSet((String)request.getSession().getAttribute(Constants.ENTRY_SCHEME))){
                 scheme = (String)request.getSession().getAttribute(Constants.ENTRY_SCHEME);
             }
             
-            java.net.URI updatedRequestUri = new java.net.URI(scheme,requestedUri.getSchemeSpecificPart(),requestedUri.getFragment());
+            java.net.URI updatedRequestUri = new java.net.URI(scheme,requestedUri.getSchemeSpecificPart(),requestedUri.getFragment());*/
             
             /*
             String str = null;
@@ -68,7 +77,7 @@ public class InboundTranslatorLogic {
 				is = request.getInputStream();
 			}
             */
-            translator.translateByInputStream(request.getInputStream(), request.getContentType(),updatedRequestUri);
+            translator.translateByInputStream(request.getInputStream(), request.getContentType(),requestedUri);
             
             if(out.size() > 0){
                 

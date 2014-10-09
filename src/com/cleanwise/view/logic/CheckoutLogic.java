@@ -7418,6 +7418,19 @@ public class CheckoutLogic {
             orderRequestData.getProperties().add(pd);
         }
     }
+    
+  //****************************************************************************
+    public static ActionErrors endShopping(HttpServletRequest request,
+                                          CheckoutForm pForm) throws Exception {
+    	ActionErrors ae = new ActionErrors();
+        HttpSession session = request.getSession();
+        APIAccess factory = (APIAccess) session.getAttribute(Constants.APIACCESS);
+        CleanwiseUser appUser = (CleanwiseUser) session.getAttribute(Constants.APP_USER);
+        pForm.setItems(new ShoppingCartItemDataVector()); // empty the cart
+        doInlineOrderInit(ae, pForm, session, factory, appUser);
+        session.setAttribute("CheckoutForm", pForm);
+        return ae;
+    }
 
 }
 

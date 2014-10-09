@@ -87,6 +87,13 @@ public class CheckOutLogic {
 		return errors;
 	} 
 	
+	public static ActionErrors doEndShopping(HttpServletRequest request,CheckOutForm form) throws Exception {
+		// Get the existing CheckoutForm and pass it on to the existing
+		// Logic method.
+		CheckoutForm checkOutForm = form.getCheckOutForm();		
+		return CheckoutLogic.endShopping(request, checkOutForm);
+	} 
+	
 	private static ActionErrors validateCheckOutFields(HttpServletRequest request, CheckoutForm checkOutForm){
 		ActionErrors errors = new ActionErrors();
     	if (checkOutForm == null) {

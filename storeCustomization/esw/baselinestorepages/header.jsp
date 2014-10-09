@@ -214,7 +214,7 @@
                 		} else {
                 			String submit = (String) session.getAttribute(Constants.CUSTOMER_SYSTEM_URL);
                 			if (submit != null) {
-                				String endShoppingLink = "/userportal/esw/endShopping.do?"+Constants.PARAMETER_OPERATION+"="+Constants.PARAMETER_OPERATION_VALUE_END_SHOPPING;
+                				String endShoppingLink = "/userportal/esw/checkout.do?"+Constants.PARAMETER_OPERATION+"="+Constants.PARAMETER_OPERATION_VALUE_END_SHOPPING;
                 	%>
                 			<html:link action="<%=endShoppingLink %>">
 		                		(<app:storeMessage key="header.label.endShopping" />)

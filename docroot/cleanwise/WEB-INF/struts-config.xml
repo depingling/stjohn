@@ -6444,14 +6444,6 @@
         	redirect="true"/>
     </action>
     <action
-    	path="/userportal/esw/endShopping"
-		type="com.espendwise.view.actions.esw.SecurityAction"
-		name="esw.SecurityForm"
-		validate="false"
-		scope="request">
-		<forward name="customerSystemPostRedirect" path="/userportal/esw/customerSystemPostRedirect.jsp?operation=endShopping"/>        
-    </action>
-    <action
     	path="/userportal/esw/changeUI"
 		type="com.espendwise.view.actions.esw.SecurityAction"
 		name="esw.SecurityForm"

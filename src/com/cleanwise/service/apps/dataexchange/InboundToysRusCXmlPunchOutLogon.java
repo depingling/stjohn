@@ -66,6 +66,8 @@ public class InboundToysRusCXmlPunchOutLogon extends InboundcXMLPunchOutLogon {
 	        }
 	        
 	        String username = emailNode.getText();
+	        log.info("Punchout login user: " + username);
+	        log.info("Server HostName: " + java.net.InetAddress.getLocalHost().getHostName());
 	        
 			//check if user exists in our system else login as default user
 			DBCriteria cr = new DBCriteria();

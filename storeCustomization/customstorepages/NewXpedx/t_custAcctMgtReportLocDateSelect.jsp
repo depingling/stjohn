@@ -852,6 +852,7 @@ if ( dateSearchEnd ) {
 <BR/>
 
 <DIV class="subheadergeneric">
+    <br/>
     <b>
         <app:storeMessage key="report.text.EndDate"/>
         (
@@ -889,6 +890,7 @@ if ( dateSearchEnd ) {
         <%=ClwI18nUtil.getUIDateFormat(request)%>
         )
     </b>
+    <br/>
      <app:dojoInputDate id="controlStartDate"
                        name="CUSTOMER_REPORT_FORM"
                        property="<%=controlEl%>"

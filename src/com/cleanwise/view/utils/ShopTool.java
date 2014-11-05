@@ -2604,6 +2604,9 @@ public final class ShopTool {
             String costCenterName = pCostCenter.getShortDesc();
 
             log.info("validateBudgetThreshold()=> Validate Cost Center ID: " + costCenterId + ", Name: " + costCenterName);
+            
+            if(pSite.isBudgetUnlimited(costCenterId))
+                return false;
 
             BigDecimal estCartAmount = getEstCostCenterAmount(pStore,
                     pAccount,

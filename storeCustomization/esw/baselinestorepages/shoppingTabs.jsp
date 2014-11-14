@@ -302,11 +302,12 @@
         || user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.VIEW_SHOPPING_CONTROLS)) {
 %>
    				<li <%=controlsTabClass%>>
-     				<html:link action="<%=controlsLink%>">
-   						<span>
-   							<app:storeMessage key="userportal.esw.label.controls" />
-   						</span>
-     				</html:link>
+     				<a href="#" onclick="return false">
+                        <span>
+                            <app:storeMessage key="userportal.esw.label.controls" />
+                        </span>
+                    </a>
+
      				<ul>
 <%if (user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.VIEW_SHOPPING_CONTROLS)) { %>
      					<li>

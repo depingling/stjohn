@@ -106,6 +106,14 @@
     parValuesLink.append("=");
     parValuesLink.append(Constants.PARAMETER_OPERATION_VALUE_SHOW_PAR_VALUES);
     
+    StringBuilder messagesLink = new StringBuilder(50);
+    messagesLink.append("/userportal/esw/storeMessage.do");
+    messagesLink.append('?');
+    messagesLink.append(Constants.PARAMETER_OPERATION);
+    messagesLink.append("=");
+    messagesLink.append(Constants.PARAMETER_OPERATION_VALUE_SHOW_MESSAGES);
+    
+    
     StringBuilder cssStyles = new StringBuilder(50);
 	cssStyles.append("clearfix");
     String additionalCssStyles = request.getParameter(Constants.PARAMETER_ADDITIONAL_CSS_STYLES);
@@ -314,6 +322,13 @@
                 				<app:storeMessage key="userportal.esw.label.productLimits" />
                 			</html:link>
      					</li>
+<%}%>
+<%if (user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.EDIT_MESSAGES)) { %>
+                        <li>
+                            <html:link action="<%=messagesLink.toString()%>">
+                                <app:storeMessage key="userportal.esw.label.messages" />
+                            </html:link>
+                        </li>
 <%}%>
 <%if (user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.VIEW_SITE_PAR_VALUES)) { %>
 

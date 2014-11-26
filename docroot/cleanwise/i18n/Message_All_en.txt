@@ -5491,6 +5491,38 @@ userportal.esw.text.noItemsWithParValues=No items with Par Values.
 userportal.esw.errors.invalidParValuesForItem=Invalid Par Values for Item(s): {0}
 userportal.esw.errors.invalidBudgetPeriodsSize=Fiscal calendar problems. Most likely there is no fiscal calendar for current year.
 
+##Begin: New UI - Messages functionality
+userportal.esw.label.messages=Messages
+userportal.esw.label.createMessage=Create Message
+userportal.esw.label.createNewMessage=Create New Message
+userportal.esw.label.editMessage=Edit Message
+userportal.esw.label.messagesList=Messages List
+userportal.esw.label.messageTitle=Message Title
+userportal.esw.label.messageType=Message Type
+userportal.esw.label.published=Published?
+userportal.esw.label.lastModifiedBy=Last Modified by
+userportal.esw.label.created=Created
+userportal.esw.label.effective=Effective
+userportal.esw.label.expiration=Expiration
+userportal.esw.label.author=Author
+userportal.esw.label.messageContent=Message Content
+userportal.esw.label.addTranslation=Add Translation
+userportal.esw.label.deleteTranslation=Delete Translation
+userportal.esw.label.language=Language
+userportal.esw.label.country=Country
+userportal.esw.label.effectiveDate=Effective Date
+userportal.esw.label.expirationDate=Expiration Date
+userportal.esw.label.regular=Regular
+userportal.esw.label.acknowledgementRequired=Acknowledgement Required
+userportal.esw.label.forceRead=Force Read
+userportal.esw.label.forceReadCount=Force Read Count
+userportal.esw.text.messageSaved=The message has been saved successfully. Please click on the Publish button to publish this message to the users.
+userportal.esw.text.messageSavedAndPublished=The message has been saved successfully and published.
+userportal.esw.text.confirmPublish=WARNING:  Acknowledgement message content cannot be edited once Published.
+userportal.esw.text.confirmDelete=Are you sure you want to delete this translation?
+
+
+
 ##End: New UI - Controls functionality
 
 #Cleanwise properties
@@ -5940,4 +5972,10 @@ validation.catalog.loader.error.itemMappingExist=Can't 'Add' item: Distributor a
 validation.catalog.loader.error.catalogStructureExist=Can't 'Add' item: Item already defined for item key [{0}={1}] in the catalog id {2} 
 validation.catalog.loader.error.contractItemExist=Can't 'Add' item: Contract already defined for item key [{0}={1}] in the catalog id {2}
 validation.catalog.loader.error.itemAssocExist=Can't 'Add' item: Parent category already defined for item key [{0}={1}]. (Catalog id: {1})
+
+validation.error.emptyValue=Field '{0}' requires information
+validation.error.wrongNumberFormat=Field '{0}', Wrong number format: {1}
+validation.error.wrongDateFormat=Field '{0}', Wrong date format: {1}
+message.successMessage=Your request completed successfully
+
 

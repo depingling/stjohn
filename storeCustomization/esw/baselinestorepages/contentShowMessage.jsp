@@ -11,28 +11,42 @@
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 
 <app:setLocaleAndImages/>
-	<%
-		String errorsAndMessagesPage = ClwCustomizer.getStoreFilePath(request, Constants.PORTAL_ESW, "errorsAndMessages.jsp");
-	%>
+    <%
+        String errorsAndMessagesPage = ClwCustomizer.getStoreFilePath(request, Constants.PORTAL_ESW, "errorsAndMessages.jsp");
+    %>
+    
     <jsp:include page="<%=errorsAndMessagesPage %>"/>
-	
-	<logic:present name="esw.ModuleIntegrationForm" property="currentMessage">
-		
-			<bean:define id="currentMessage" name="esw.ModuleIntegrationForm" property="currentMessage"
-				type="com.cleanwise.service.api.value.StoreMessageView"/>
-	        <h4>
-	        	<bean:write name="esw.ModuleIntegrationForm" property="currentMessage.messageTitle"/>&nbsp;
-	        </h4>
-	        <p>
-		        <bean:write name="esw.ModuleIntegrationForm" property="currentMessage.messageAbstract"/><br/>&nbsp;
-		    </p>
-	        <p class="credit">
-	        	<logic:notEmpty name="esw.ModuleIntegrationForm" property="currentMessage.messageAuthor">
-	           	<app:storeMessage key="message.label.from" />: <bean:write name="esw.ModuleIntegrationForm" property="currentMessage.messageAuthor"/><br />
-	           	<%=ClwI18nUtil.formatDateInp(request, currentMessage.getPostedDate())%>
-	           	</logic:notEmpty>
-	        </p>
-	        <p>
-	        	<bean:write filter="false" name="esw.ModuleIntegrationForm" property="currentMessage.messageBody"/>
-			</p>
-	</logic:present>
+    
+    <logic:present name="esw.ModuleIntegrationForm" property="currentMessage">      
+            <bean:define id="currentMessage" name="esw.ModuleIntegrationForm" property="currentMessage"
+                type="com.cleanwise.service.api.value.StoreMessageView"/>
+            <h4>
+                <bean:write name="esw.ModuleIntegrationForm" property="currentMessage.messageTitle"/>&nbsp;
+            </h4>
+            <p class="credit">
+                <logic:notEmpty name="esw.ModuleIntegrationForm" property="currentMessage.messageAuthor">
+                <app:storeMessage key="message.label.from" />: <bean:write name="esw.ModuleIntegrationForm" property="currentMessage.messageAuthor"/><br />
+                <%=ClwI18nUtil.formatDateInp(request, currentMessage.getPostedDate())%>
+                </logic:notEmpty>
+            </p>
+            <p>
+                <bean:write filter="false" name="esw.ModuleIntegrationForm" property="currentMessage.messageBody"/>
+            </p>
+    </logic:present>
+    
+    <logic:notPresent name="esw.ModuleIntegrationForm" property="currentMessage">
+        <logic:present name="esw.StoreMessageForm" property="currentMessage">      
+            <bean:define id="currentMessage" name="esw.StoreMessageForm" property="currentMessage"
+                type="com.cleanwise.service.api.value.StoreMessageView"/>
+            <h4>
+                <bean:write name="currentMessage" property="messageTitle"/>&nbsp;
+            </h4>
+            <p class="credit">
+                <app:storeMessage key="message.label.from" />: <bean:write name="currentMessage" property="messageAuthor"/><br />
+                <%=ClwI18nUtil.formatDateInp(request, currentMessage.getPostedDate())%>
+            </p>
+            <p>
+                <bean:write filter="false" name="currentMessage" property="messageBody"/>
+            </p>
+        </logic:present>
+    </logic:notPresent>

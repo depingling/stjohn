@@ -45,6 +45,7 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
     private String mMessageAbstract;// SQL type:VARCHAR2
     private String mMessageBody;// SQL type:VARCHAR2
     private String mStoreMessageStatusCd;// SQL type:VARCHAR2, not null
+    private String mMessageManagedBy;// SQL type:VARCHAR2, not null
     private String mAddBy;// SQL type:VARCHAR2
     private Date mAddDate;// SQL type:DATE, not null
     private String mModBy;// SQL type:VARCHAR2
@@ -66,6 +67,7 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
         mMessageAbstract = "";
         mMessageBody = "";
         mStoreMessageStatusCd = "";
+        mMessageManagedBy = "";
         mAddBy = "";
         mModBy = "";
     }
@@ -73,7 +75,7 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
     /**
      * Constructor.
      */
-    public StoreMessageData(int parm1, String parm2, String parm3, String parm4, Date parm5, Date parm6, String parm7, int parm8, int parm9, String parm10, int parm11, String parm12, String parm13, String parm14, String parm15, String parm16, String parm17, String parm18, Date parm19, String parm20, Date parm21)
+    public StoreMessageData(int parm1, String parm2, String parm3, String parm4, Date parm5, Date parm6, String parm7, int parm8, int parm9, String parm10, int parm11, String parm12, String parm13, String parm14, String parm15, String parm16, String parm17, String parm18, String parm19, Date parm20, String parm21, Date parm22)
     {
         mStoreMessageId = parm1;
         mMessageTitle = parm2;
@@ -92,10 +94,11 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
         mMessageAbstract = parm15;
         mMessageBody = parm16;
         mStoreMessageStatusCd = parm17;
-        mAddBy = parm18;
-        mAddDate = parm19;
-        mModBy = parm20;
-        mModDate = parm21;
+        mMessageManagedBy = parm18;
+        mAddBy = parm19;
+        mAddDate = parm20;
+        mModBy = parm21;
+        mModDate = parm22;
         
     }
 
@@ -120,7 +123,7 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
      */
     public String toString()
     {
-        return "[" + "StoreMessageId=" + mStoreMessageId + ", MessageTitle=" + mMessageTitle + ", ShortDesc=" + mShortDesc + ", MessageType=" + mMessageType + ", PostedDate=" + mPostedDate + ", EndDate=" + mEndDate + ", ForcedRead=" + mForcedRead + ", HowManyTimes=" + mHowManyTimes + ", ForcedReadCount=" + mForcedReadCount + ", Published=" + mPublished + ", DisplayOrder=" + mDisplayOrder + ", LanguageCd=" + mLanguageCd + ", Country=" + mCountry + ", MessageAuthor=" + mMessageAuthor + ", MessageAbstract=" + mMessageAbstract + ", MessageBody=" + mMessageBody + ", StoreMessageStatusCd=" + mStoreMessageStatusCd + ", AddBy=" + mAddBy + ", AddDate=" + mAddDate + ", ModBy=" + mModBy + ", ModDate=" + mModDate + "]";
+        return "[" + "StoreMessageId=" + mStoreMessageId + ", MessageTitle=" + mMessageTitle + ", ShortDesc=" + mShortDesc + ", MessageType=" + mMessageType + ", PostedDate=" + mPostedDate + ", EndDate=" + mEndDate + ", ForcedRead=" + mForcedRead + ", HowManyTimes=" + mHowManyTimes + ", ForcedReadCount=" + mForcedReadCount + ", Published=" + mPublished + ", DisplayOrder=" + mDisplayOrder + ", LanguageCd=" + mLanguageCd + ", Country=" + mCountry + ", MessageAuthor=" + mMessageAuthor + ", MessageAbstract=" + mMessageAbstract + ", MessageBody=" + mMessageBody + ", StoreMessageStatusCd=" + mStoreMessageStatusCd + ", MessageManagedBy=" + mMessageManagedBy + ", AddBy=" + mAddBy + ", AddDate=" + mAddDate + ", ModBy=" + mModBy + ", ModDate=" + mModDate + "]";
     }
 
     /**
@@ -199,6 +202,10 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
         node.appendChild(doc.createTextNode(String.valueOf(mStoreMessageStatusCd)));
         root.appendChild(node);
 
+        node =  doc.createElement("MessageManagedBy");
+        node.appendChild(doc.createTextNode(String.valueOf(mMessageManagedBy)));
+        root.appendChild(node);
+
         node =  doc.createElement("AddBy");
         node.appendChild(doc.createTextNode(String.valueOf(mAddBy)));
         root.appendChild(node);
@@ -262,6 +269,8 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
         
         myClone.mStoreMessageStatusCd = mStoreMessageStatusCd;
         
+        myClone.mMessageManagedBy = mMessageManagedBy;
+        
         myClone.mAddBy = mAddBy;
         
         if(mAddDate != null){
@@ -319,6 +328,8 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
             return getMessageBody();
         } else if (StoreMessageDataAccess.STORE_MESSAGE_STATUS_CD.equals(pFieldName)) {
             return getStoreMessageStatusCd();
+        } else if (StoreMessageDataAccess.MESSAGE_MANAGED_BY.equals(pFieldName)) {
+            return getMessageManagedBy();
         } else if (StoreMessageDataAccess.ADD_BY.equals(pFieldName)) {
             return getAddBy();
         } else if (StoreMessageDataAccess.ADD_DATE.equals(pFieldName)) {
@@ -680,6 +691,26 @@ public class StoreMessageData extends ValueObject implements Cloneable, TableObj
      */
     public String getStoreMessageStatusCd(){
         return mStoreMessageStatusCd;
+    }
+
+    /**
+     * Sets the MessageManagedBy field. This field is required to be set in the database.
+     *
+     * @param pMessageManagedBy
+     *  String to use to update the field.
+     */
+    public void setMessageManagedBy(String pMessageManagedBy){
+        this.mMessageManagedBy = pMessageManagedBy;
+        setDirty(true);
+    }
+    /**
+     * Retrieves the MessageManagedBy field.
+     *
+     * @return
+     *  String containing the MessageManagedBy field.
+     */
+    public String getMessageManagedBy(){
+        return mMessageManagedBy;
     }
 
     /**

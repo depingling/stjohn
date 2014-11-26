@@ -7,10 +7,12 @@ package com.cleanwise.service.apps;
 import java.rmi.RemoteException;
 
 import com.cleanwise.service.api.APIAccess;
+import com.cleanwise.service.api.session.StoreMessage;
 import com.cleanwise.service.api.util.RefCodeNames;
 import com.cleanwise.service.api.value.BusEntityDataVector;
 import com.cleanwise.service.api.value.StoreMessageData;
 import com.cleanwise.service.api.value.StoreMessageDataVector;
+import com.cleanwise.service.api.value.StoreMessageDetailDataVector;
 import com.cleanwise.service.api.value.StoreMessageView;
 import com.cleanwise.service.api.value.StoreMessageViewVector;
 
@@ -129,5 +131,27 @@ public class MessageService {
 	public static void markMessageAsReadByUser(Integer userId, Integer messageId) throws Exception {
 		APIAccess.getAPIAccess().getStoreMessageAPI().markMessageAsReadByUser(userId, messageId);
 	}
+	
+	public static StoreMessageViewVector getCustomerDefaultMessages(int pAccountId)  throws Exception {
+        return APIAccess.getAPIAccess().getStoreMessageAPI().getCustomerDefaultMessages(pAccountId);
+    }
+	
+	public static StoreMessageData deleteMessage(int storeId, int messageId, String modBy)  throws Exception {
+	    StoreMessage storeMessage = APIAccess.getAPIAccess().getStoreMessageAPI();
+	    StoreMessageData messageD =  storeMessage.getStoreMessageData(storeId, messageId);
+	    messageD.setStoreMessageStatusCd(RefCodeNames.STORE_MESSAGE_STATUS_CD.INACTIVE);
+	    messageD.setModBy(modBy);
+	    return storeMessage.updateStoreMessage(storeId, messageD, modBy);
+    }
+	public static void saveStoreMessage(int storeId, int accountId, StoreMessageData storeMessageD, StoreMessageDetailDataVector messageDetailDV, String modBy) throws Exception {
+	    StoreMessage storeMessage = APIAccess.getAPIAccess().getStoreMessageAPI();
+	    storeMessage.updateStoreMessage(storeId, accountId, storeMessageD, messageDetailDV, modBy);
+	    
+	}
+
+    public static void deleteMessageDetail(int storeMessageDetailId) throws Exception {
+        StoreMessage storeMessage = APIAccess.getAPIAccess().getStoreMessageAPI();
+        storeMessage.deleteStoreMessageDetail(storeMessageDetailId);
+    }
 
 }

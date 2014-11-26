@@ -49,6 +49,7 @@ extends ValueObject
     private Date mAddDate;
     private String mModBy;
     private Date mModDate;
+    private Boolean mPublished;
 
     /**
      * Constructor.
@@ -72,7 +73,7 @@ extends ValueObject
     /**
      * Constructor. 
      */
-    public StoreMessageView(int parm1, int parm2, String parm3, String parm4, String parm5, String parm6, String parm7, String parm8, Date parm9, Date parm10, int parm11, int parm12, String parm13, String parm14, String parm15, String parm16, String parm17, Date parm18, String parm19, Date parm20)
+    public StoreMessageView(int parm1, int parm2, String parm3, String parm4, String parm5, String parm6, String parm7, String parm8, Date parm9, Date parm10, int parm11, int parm12, String parm13, String parm14, String parm15, String parm16, String parm17, Date parm18, String parm19, Date parm20, Boolean parm21)
     {
         mStoreMessageId = parm1;
         mStoreMessageDetailId = parm2;
@@ -94,6 +95,7 @@ extends ValueObject
         mAddDate = parm18;
         mModBy = parm19;
         mModDate = parm20;
+        mPublished = parm21;
         
     }
 
@@ -118,7 +120,7 @@ extends ValueObject
      */
     public String toString()
     {
-        return "[" + "StoreMessageId=" + mStoreMessageId + ", StoreMessageDetailId=" + mStoreMessageDetailId + ", ShortDesc=" + mShortDesc + ", StoreMessageStatusCd=" + mStoreMessageStatusCd + ", MessageTitle=" + mMessageTitle + ", MessageAbstract=" + mMessageAbstract + ", MessageBody=" + mMessageBody + ", MessageType=" + mMessageType + ", PostedDate=" + mPostedDate + ", EndDate=" + mEndDate + ", ForcedReadCount=" + mForcedReadCount + ", DisplayOrder=" + mDisplayOrder + ", LanguageCd=" + mLanguageCd + ", Country=" + mCountry + ", MessageAuthor=" + mMessageAuthor + ", MessageDetailTypeCd=" + mMessageDetailTypeCd + ", AddBy=" + mAddBy + ", AddDate=" + mAddDate + ", ModBy=" + mModBy + ", ModDate=" + mModDate + "]";
+        return "[" + "StoreMessageId=" + mStoreMessageId + ", StoreMessageDetailId=" + mStoreMessageDetailId + ", ShortDesc=" + mShortDesc + ", StoreMessageStatusCd=" + mStoreMessageStatusCd + ", MessageTitle=" + mMessageTitle + ", MessageAbstract=" + mMessageAbstract + ", MessageBody=" + mMessageBody + ", MessageType=" + mMessageType + ", PostedDate=" + mPostedDate + ", EndDate=" + mEndDate + ", ForcedReadCount=" + mForcedReadCount + ", DisplayOrder=" + mDisplayOrder + ", LanguageCd=" + mLanguageCd + ", Country=" + mCountry + ", MessageAuthor=" + mMessageAuthor + ", MessageDetailTypeCd=" + mMessageDetailTypeCd + ", AddBy=" + mAddBy + ", AddDate=" + mAddDate + ", ModBy=" + mModBy + ", ModDate=" + mModDate + ", Published=" + mPublished + "]";
     }
 
     /**
@@ -208,6 +210,10 @@ extends ValueObject
         node.appendChild(doc.createTextNode(String.valueOf(mModDate)));
         root.appendChild(node);
 
+        node = doc.createElement("Published");
+        node.appendChild(doc.createTextNode(String.valueOf(mPublished)));
+        root.appendChild(node);
+
         return root;
     }
 
@@ -237,6 +243,7 @@ extends ValueObject
       obj.setAddDate(mAddDate);
       obj.setModBy(mModBy);
       obj.setModDate(mModDate);
+      obj.setPublished(mPublished);
       
       return obj;
     }
@@ -639,6 +646,26 @@ extends ValueObject
      */
     public Date getModDate(){
         return mModDate;
+    }
+
+
+    /**
+     * Sets the Published property.
+     *
+     * @param pPublished
+     *  Boolean to use to update the property.
+     */
+    public void setPublished(Boolean pPublished){
+        this.mPublished = pPublished;
+    }
+    /**
+     * Retrieves the Published property.
+     *
+     * @return
+     *  Boolean containing the Published property.
+     */
+    public Boolean getPublished(){
+        return mPublished;
     }
 
 

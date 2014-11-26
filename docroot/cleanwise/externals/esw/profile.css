@@ -33,3 +33,11 @@
 .center{
     margin-left: 40%;
 }
+/*--------------veritiv styles--------------*/
+.row {
+     width: 100%;
+     margin: 6px 0;
+}
+.width50 {
+    width: 50%;
+}

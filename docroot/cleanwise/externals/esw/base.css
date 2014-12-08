@@ -213,6 +213,11 @@ input.standardCal {
     border: 1px solid #c9c9c9;
     padding: 4px 4px 3px 2px;
 }
+input.standardReadOnlyCal {
+    background: url("images/calendarIcon.png") no-repeat scroll 98% 3px rgb(235, 235, 228);
+    border: 1px solid #c9c9c9;
+    padding: 3px 3px 2px;
+}
 input.specificDatesCal {
     background: url("images/calendarIcon.png") no-repeat scroll 98% 3px #fff;
     border: 1px solid #c9c9c9;

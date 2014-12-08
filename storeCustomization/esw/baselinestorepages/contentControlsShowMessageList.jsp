@@ -104,7 +104,11 @@ String deleteLink = request.getContextPath() + "/userportal/esw/storeMessage.do?
                                         <td><%=ClwI18nUtil.formatDateInp(request, message.getAddDate())%></td>
                                         <td><a href="<%=messageLink%>"><bean:write name="message" property="messageTitle" /></a></td>
                                         <td><bean:write name="message" property="messageType"/></td>
-                                        <td><bean:write name="message" property="published"/></td>
+                                        <td align="center">
+                                        <logic:equal name="message" property="published" value="true">
+                                        <img src="../../esw/images/blue-check.png" alt="blue-check"/>
+                                        </logic:equal>
+                                        </td>
                                         <td><bean:write name="message" property="modBy" /></td>
                                         <td><%=ClwI18nUtil.formatDateInp(request, message.getPostedDate())%>&nbsp;</td>
                                         <td><%=ClwI18nUtil.formatDateInp(request, message.getEndDate())%>&nbsp;</td>

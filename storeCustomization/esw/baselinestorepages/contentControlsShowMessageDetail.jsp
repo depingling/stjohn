@@ -19,7 +19,8 @@
     boolean canEditMessages = user.isAuthorizedForFunction(RefCodeNames.APPLICATION_FUNCTIONS.EDIT_MESSAGES);
     String forcedRead = RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ.equals(myForm.getMessageType()) ? "visible":"hidden";
     boolean showMessage = Constants.PARAMETER_OPERATION_VALUE_PREVIEW_MESSAGE.equals(myForm.getOperation());
-    boolean ackPublished = myForm.getStoreMessageId() > 0 && myForm.getPublished()==true && myForm.getMessageType().equals(RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED);
+    boolean published = myForm.getPublished();
+    boolean ackPublished = published && myForm.getMessageType().equals(RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED);
     
 %>
 <% if (showMessage) { %>
@@ -35,8 +36,6 @@
     </script>
 <% } %>
 
-
-<app:setLocaleAndImages/>
 <!-- Begin: Error Message -->
 <%
     String errorsAndMessagesPage = ClwCustomizer.getStoreFilePath(request, Constants.PORTAL_ESW, "errorsAndMessages.jsp");
@@ -73,15 +72,13 @@
                             </logic:notEqual>
                             </h1>
                             <!--  ########  buttons ############ -->
-                            <% String confirmPublishVal = "if(isConfirmPublish()) {setFieldsAndSubmitForm('storeMessageForm', 'operationId', '" + Constants.PARAMETER_OPERATION_VALUE_PUBLISH_MESSAGE+"');} else {return false;};";
+                            <% String confirmPublishVal = "if(isConfirmPublish("+published+")) {setFieldsAndSubmitForm('storeMessageForm', 'operationId', '" + Constants.PARAMETER_OPERATION_VALUE_PUBLISH_MESSAGE+"');} else {return false;};";
                             %>
-                            <%if (!ackPublished) { %>
                             <a onclick="<%=confirmPublishVal%>" class="blueBtnLargeExt" disabled="<%=ackPublished%>"><span><app:storeMessage key="global.label.publish"/></span></a>
-                            <% } %>
                             <a onclick="javascript:setFieldsAndSubmitForm('storeMessageForm', 'operationId', '<%=Constants.PARAMETER_OPERATION_VALUE_SHOW_MESSAGES%>');" class="blueBtnLargeExt"><span><app:storeMessage key="global.action.label.cancel"/></span></a> 
-                            <logic:equal name="esw.StoreMessageForm" property="isNew" value="true">
+                            <%if (!published) { %>
                             <a onclick="javascript:setFieldsAndSubmitForm('storeMessageForm', 'operationId', '<%=Constants.PARAMETER_OPERATION_VALUE_SAVE_MESSAGE%>');" class="blueBtnLargeExt"><span><app:storeMessage key="global.action.label.save"/></span></a>
-                            </logic:equal>
+                            <% } %>
                             <hr>
 <logic:iterate  id="message"
                 name="esw.StoreMessageForm"
@@ -101,7 +98,7 @@
                 </td>
                 <td class="search">
                     <div class="inputWrapper">
-                        <html:text name="esw.StoreMessageForm" styleId='<%="messageTitle"+i%>' property='<%="detail["+i+"].messageTitle"%>' size="30" maxlength="128"/>
+                        <html:text name="esw.StoreMessageForm" styleId='<%="messageTitle"+i%>' property='<%="detail["+i+"].messageTitle"%>' size="30" maxlength="128" disabled="<%=ackPublished%>"/>
                     </div>
                 </td>
             </tr>
@@ -109,7 +106,7 @@
                 <td><app:storeMessage key="userportal.esw.label.author"/>: <span class="required">*</span></td>
                 <td class="search">
                     <div class="inputWrapper">
-                        <html:text property='<%="detail["+i+"].messageAuthor"%>' size="30" maxlength="60"/>
+                        <html:text property='<%="detail["+i+"].messageAuthor"%>' size="30" maxlength="60" disabled="<%=ackPublished%>"/>
                     </div>
                 </td>
             </tr>
@@ -126,12 +123,13 @@
             if(Utility.isSet(myForm.getEndDate())) {
                 endDate = myForm.getEndDate();
             }
+            String effDateStype = (myForm.getPublished()) ? "default-value standardReadOnlyCal" : "default-value standardCal";
         %>
             <tr>
                 <td><app:storeMessage key="userportal.esw.label.effectiveDate"/>:<span class="required">*</td>
                 <td class="search">
                     <div class="inputWrapper width50">
-                        <html:text styleClass="default-value standardCal" property="postedDate" value="<%=postedDate%>"/>
+                        <html:text styleClass="<%=effDateStype%>" property="postedDate" value="<%=postedDate%>" disabled="<%=published%>"/>
                     </div>
                 </td>
             </tr>  
@@ -151,40 +149,41 @@
         <table>
     <% if (i==0) { %>
             <colgroup>
-                <col width="10%">
-                <col width="70%">
+                <col width="38px">
+                <col width="65%">
                 <col>
             </colgroup>
             <tbody>
-                    <tr>
+                    <tr class="radio-row">
                         <td colspan="2"><app:storeMessage key="userportal.esw.label.messageType"/>: <span class="required">*</span></td>
                         <td align="right"><span class="required">* Required</span></td>
                     </tr>
-                    <tr>
+                    <tr class="radio-row">
                         <td>
-                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.REGULAR%>" onclick="toggle(this)"></html:radio>
+                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.REGULAR%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
                         </td>
                         <td><app:storeMessage key="userportal.esw.label.regular"/></td>
                     </tr>
-                    <tr>
+                    <tr class="radio-row">
                         <td>
-                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED%>" onclick="toggle(this)"></html:radio>
+                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
                         </td>
                         <td><app:storeMessage key="userportal.esw.label.acknowledgementRequired"/></td>
                     </tr>
-                    <tr>
+                    <tr class="radio-row">
                         <td>
-                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ%>" onclick="toggle(this)"></html:radio>
+                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
                         </td>
                         <td> 
-<div style="display: inline"><app:storeMessage key="userportal.esw.label.forceRead"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div  class="label"><app:storeMessage key="userportal.esw.label.forceRead"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 <% String style = "display: inline; visibility:"+forcedRead+";";%>
-<div id="toggleDiv" style="<%=style%>">
+<div id="toggleDiv" class="label" style="<%=style%>">
 Count:
 <span class="required">*</span>
-<html:text property="forcedReadCount" size="4" maxlength="5" style="width:auto;visibility:true"/>
+<html:text property="forcedReadCount" size="4" maxlength="5" style="width:auto;padding:2px 4px;"/>
 </div>
                         </td>
+                        <javascript:toggle(object);>
                     </tr>
             </tbody>
         <% } else { %>
@@ -198,7 +197,7 @@ Count:
                 </td>
                 <td class="search">
                     <div class="inputWrapper">
-                        <html:select property='<%="detail["+i+"].languageCd"%>'>
+                        <html:select property='<%="detail["+i+"].languageCd"%>' disabled="<%=ackPublished%>">
                             <html:option value=""><app:storeMessage  key="admin.select.language"/></html:option>
                             <html:options collection="languages.vector" labelProperty="uiName" property="languageCode"/>
                         </html:select>
@@ -209,7 +208,7 @@ Count:
                 <td>Country: <span class="required">*</span></td>
                 <td class="search">
                     <div class="inputWrapper">
-                        <html:select property='<%="detail["+i+"].country"%>'>
+                        <html:select property='<%="detail["+i+"].country"%>' disabled="<%=ackPublished%>">
                             <html:option value=""><app:storeMessage  key="admin.select.country"/></html:option>
                             <html:options  collection="countries.vector" labelProperty="uiName" property="countryCode" />
                         </html:select>                        
@@ -224,7 +223,7 @@ Count:
 <div class="clear row">&nbsp;</div>
 
 <script type="text/javascript">$(function(){ CKEDITOR.replace("messageBody<%=i%>", {
-    language: "en_US", uiColor:"rgb(159, 176, 196)",readOnly:false });
+    language: "en_US", uiColor:"rgb(159, 176, 196)",readOnly:<%=ackPublished%> });
 })</script>
 
 <div class="boxWrapper">
@@ -249,13 +248,11 @@ String confirmDeleteVal = "if(isConfirmDelete()) {detailFormAction('storeMessage
 </logic:iterate>
 <br>
 <!--  ########  buttons ############ -->
-<%if (!ackPublished) { %>
 <a onclick="<%=confirmPublishVal%>" class="blueBtnLargeExt" disabled="<%=ackPublished%>"><span><app:storeMessage key="global.label.publish"/></span></a>
-<% } %>
 <a onclick="javascript:setFieldsAndSubmitForm('storeMessageForm', 'operationId', '<%=Constants.PARAMETER_OPERATION_VALUE_SHOW_MESSAGES%>');" class="blueBtnLargeExt"><span><app:storeMessage key="global.action.label.cancel"/></span></a> 
-<logic:equal name="esw.StoreMessageForm" property="isNew" value="true">
+<%if (!published) { %>
 <a onclick="javascript:setFieldsAndSubmitForm('storeMessageForm', 'operationId', '<%=Constants.PARAMETER_OPERATION_VALUE_SAVE_MESSAGE%>');" class="blueBtnLargeExt"><span><app:storeMessage key="global.action.label.save"/></span></a>
-</logic:equal>
+<% } %>
 <!-- ZZZZZZZZZZZZZ -->  
 </div>                      
 </div>
@@ -269,9 +266,9 @@ String confirmDeleteVal = "if(isConfirmDelete()) {detailFormAction('storeMessage
 </div>
 
 <script>
-function isConfirmPublish(){
-    var ack = $('input:radio[name=messageType]:checked').val();
-    if(ack == '<%=RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED%>'){
+function isConfirmPublish(published){
+	var ack = $('input:radio[name=messageType]:checked').val();
+    if(!published && ack == '<%=RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED%>'){
         return confirm('<app:storeMessage key="userportal.esw.text.confirmPublish"/>');
     }
     return true;

@@ -5973,9 +5973,11 @@ validation.catalog.loader.error.catalogStructureExist=Can't 'Add' item: Item alr
 validation.catalog.loader.error.contractItemExist=Can't 'Add' item: Contract already defined for item key [{0}={1}] in the catalog id {2}
 validation.catalog.loader.error.itemAssocExist=Can't 'Add' item: Parent category already defined for item key [{0}={1}]. (Catalog id: {1})
 
-validation.error.emptyValue=Field '{0}' requires information
-validation.error.wrongNumberFormat=Field '{0}', Wrong number format: {1}
-validation.error.wrongDateFormat=Field '{0}', Wrong date format: {1}
+validation.error.dataRequired={0} is required.
+validation.error.requireNumber={0} is required. Please enter a number.
+validation.error.wrongNumberFormat={0} has wrong number format: {1}
+validation.error.wrongDateFormat={0} has wrong date format: {1}
+validation.error.wrongDateRange={0} must be greater than or equal to today’s date.
 message.successMessage=Your request completed successfully
 
 

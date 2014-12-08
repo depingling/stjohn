@@ -171,32 +171,48 @@ public final class StoreMessageForm extends EswForm {
     
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         String defaultDateFormat = ClwI18nUtil.getDatePattern(request);
+        SimpleDateFormat sdf = new SimpleDateFormat(defaultDateFormat);
         ActionErrors errors = new ActionErrors();
+        Date now = new Date();
+        String nowDateStr = sdf.format(now);
+        try {
+            now = sdf.parse(nowDateStr);
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
         if (!Utility.isSet(postedDate) || defaultDateFormat.equalsIgnoreCase(postedDate)){
-            errors.add("postedDate", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.effectiveDate")));
+            errors.add("postedDate", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.effectiveDate")));
         }else{
             try {
-                ClwI18nUtil.parseDateInp(request, postedDate);
+                Date tempDate = ClwI18nUtil.parseDateInp(request, postedDate);
+                if (!getPublished() && tempDate.compareTo(now) < 0){                    
+                    errors.add("postedDate", new ActionError("validation.error.wrongDateRange", 
+                            new Object[]{ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.effectiveDate")}));
+                }
             } catch (ParseException e) {
                 errors.add("postedDate", new ActionError("validation.error.wrongDateFormat", 
                         new Object[]{ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.effectiveDate"), postedDate}));
             }
         }
         if (!Utility.isSet(endDate)  || defaultDateFormat.equalsIgnoreCase(endDate)){
-            errors.add("endDate", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.expirationDate")));
+            errors.add("endDate", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.expirationDate")));
         }else{
             try {
-                ClwI18nUtil.parseDateInp(request, endDate);
+                Date tempDate = ClwI18nUtil.parseDateInp(request, endDate);
+                if (tempDate.compareTo(now) < 0) {
+                    errors.add("endDate", new ActionError("validation.error.wrongDateRange", 
+                            new Object[]{ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.expirationDate")}));
+                }
             } catch (ParseException e) {
                 errors.add("endDate", new ActionError("validation.error.wrongDateFormat", 
                         new Object[]{ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.expirationDate"), endDate}));
             }
         }
         if (!Utility.isSet(messageType)){
-            errors.add("messageType", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.messageType")));
+            errors.add("messageType", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.messageType")));
         }else if (messageType.equals(RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ)){
             if (!Utility.isSet(forcedReadCount)){
-                errors.add("forcedReadCount", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.forceReadCount")));
+                errors.add("forcedReadCount", new ActionError("validation.error.requireNumber", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.forceReadCount")));
             }else{
                 try {
                     Integer.valueOf(forcedReadCount);
@@ -209,20 +225,20 @@ public final class StoreMessageForm extends EswForm {
         for (int i = 0; i < detail.size(); i++) {
             StoreMessageDetailForm detailForm = detail.get(i);
             if (!Utility.isSet(detailForm.getMessageTitle()) && !errors.get("messageTitle").hasNext()){
-                errors.add("messageTitle", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.messageTitle")));
+                errors.add("messageTitle", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.messageTitle")));
             }
             if (!Utility.isSet(detailForm.getMessageAuthor()) && !errors.get("messageAuthor").hasNext()){
-                errors.add("messageAuthor", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.author")));
+                errors.add("messageAuthor", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.author")));
             }
             if (!Utility.isSet(detailForm.getMessageBody()) && !errors.get("messageBody").hasNext()){
-                errors.add("messageBody", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.messageContent")));
+                errors.add("messageBody", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.messageContent")));
             }
             if (i > 0){
                 if (!Utility.isSet(detailForm.getLanguageCd()) && !errors.get("languageCd").hasNext()){
-                    errors.add("languageCd", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.language")));
+                    errors.add("languageCd", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.language")));
                 }
                 if (!Utility.isSet(detailForm.getCountry()) && !errors.get("country").hasNext()){
-                    errors.add("country", new ActionError("validation.error.emptyValue", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.country")));
+                    errors.add("country", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.country")));
                 }
             }
         }

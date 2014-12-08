@@ -188,7 +188,7 @@ public class StoreMessageLogic {
             storeMessageD.setMessageType(form.getMessageType());
             if (RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED.equals(form.getMessageType()))
                 storeMessageD.setForcedReadCount(1);
-            else if (Utility.isSet(form.getForcedReadCount())){
+            else if (RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ.equals(form.getMessageType())){
                 storeMessageD.setForcedReadCount(Integer.parseInt(form.getForcedReadCount()));
             } else {
                 storeMessageD.setForcedReadCount(0);

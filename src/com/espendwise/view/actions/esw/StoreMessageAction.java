@@ -258,11 +258,6 @@ public final class StoreMessageAction extends EswAction {
         }
         if (ae.size() > 0) {
             saveErrors(request, ae);
-        }else{
-            ActionMessages result = new ActionMessages();
-            String message = ClwI18nUtil.getMessage(request, "message.successMessage", null);
-            result.add("message", new ActionMessage("message.simpleMessage", message));
-            saveMessages(request, result);
         }
         return mapping.findForward(MAPPING_MESSAGE_DETAIL);
     }

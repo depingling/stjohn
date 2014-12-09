@@ -20,6 +20,13 @@
 %>
                 <!-- Start Left Column - columns are reversed to allow expanding right column -->
                 <div class="leftColumn">
+                    <%
+                        String storeMessagesPage = ClwCustomizer.getStoreFilePath(request, Constants.PORTAL_ESW, "storeMessages.jsp");
+                    %>
+                    <jsp:include page="<%=storeMessagesPage%>">
+                        <jsp:param name="formBeanName" value="esw.DashboardForm"/>
+                        <jsp:param name="messageURL" value="<%=messageURL.toString()%>"/>
+                    </jsp:include>
 					<%
 						String orderSearchPage = ClwCustomizer.getStoreFilePath(request, Constants.PORTAL_ESW, "orderNumSearch.jsp");
 					%>
@@ -31,14 +38,7 @@
 					%>
 			        <jsp:include page="<%=productSearchPage%>">
                 		<jsp:param name="orientation" value="<%=Constants.ORIENTATION_VERTICAL%>"/>
-                	</jsp:include>
-					<%
-						String storeMessagesPage = ClwCustomizer.getStoreFilePath(request, Constants.PORTAL_ESW, "storeMessages.jsp");
-					%>
-                	<jsp:include page="<%=storeMessagesPage%>">
-                		<jsp:param name="formBeanName" value="esw.DashboardForm"/>
-                		<jsp:param name="messageURL" value="<%=messageURL.toString()%>"/>
-                	</jsp:include>
+                	</jsp:include>					
                 </div>
                 <!-- End Left Column -->
                     

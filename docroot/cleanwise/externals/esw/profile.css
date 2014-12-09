@@ -41,3 +41,43 @@
 .width50 {
     width: 50%;
 }
+.required-text {
+ float: right;
+ color: #c84b4b ;
+}
+div.twoColBox div.column input.radio.width-20  {
+ width: 20px;
+ }
+.valign-bottom {
+ vertical-align: bottom;
+}
+.valign-middle {
+ vertical-align: middle;
+}
+.addmargintop18 {
+ margin-top: 18px;
+}
+.radio-row {
+ width: 100%;
+ height: 28px;
+}
+.radio-row .label {
+ font-size: 12px;
+ display: inline-block;
+ width: auto;
+}
+.count {
+ font-size: 12px;
+ display: inline;
+ position: relative;
+ top:2px;
+}
+div.slidingItem h4 {
+ line-height: 1.2em;
+}
+.sliderNav-pos {
+    float: right;
+    margin-top: -25px;
+    width: auto;
+}
+

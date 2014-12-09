@@ -5515,6 +5515,7 @@ userportal.esw.label.expirationDate=Expiration Date
 userportal.esw.label.regular=Regular
 userportal.esw.label.acknowledgementRequired=Acknowledgement Required
 userportal.esw.label.forceRead=Force Read
+userportal.esw.label.count=Count
 userportal.esw.label.forceReadCount=Force Read Count
 userportal.esw.text.messageSaved=The message has been saved successfully. Please click on the Publish button to publish this message to the users.
 userportal.esw.text.messageSavedAndPublished=The message has been saved successfully and published.

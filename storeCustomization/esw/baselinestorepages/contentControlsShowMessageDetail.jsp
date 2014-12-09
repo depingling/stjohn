@@ -146,47 +146,26 @@
         </table>
     </div>  
     <div class="column">
-        <table>
+       
     <% if (i==0) { %>
-            <colgroup>
-                <col width="38px">
-                <col width="65%">
-                <col>
-            </colgroup>
-            <tbody>
-                    <tr class="radio-row">
-                        <td colspan="2"><app:storeMessage key="userportal.esw.label.messageType"/>: <span class="required">*</span></td>
-                        <td align="right"><span class="required">* Required</span></td>
-                    </tr>
-                    <tr class="radio-row">
-                        <td>
-                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.REGULAR%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
-                        </td>
-                        <td><app:storeMessage key="userportal.esw.label.regular"/></td>
-                    </tr>
-                    <tr class="radio-row">
-                        <td>
-                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
-                        </td>
-                        <td><app:storeMessage key="userportal.esw.label.acknowledgementRequired"/></td>
-                    </tr>
-                    <tr class="radio-row">
-                        <td>
-                            <html:radio property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
-                        </td>
-                        <td> 
-<div  class="label"><app:storeMessage key="userportal.esw.label.forceRead"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <p class="addmargintop18"><app:storeMessage key="userportal.esw.label.messageType"/>: <span class="required">*</span><span class="required-text">*Required</span></p>
+        <div class="radio-row">
+            <html:radio styleClass="radio width-20 valign-middle" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.REGULAR%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
+            <div class="label valign-middle"><app:storeMessage key="userportal.esw.label.regular"/></div>
+        </div>
+        <div class="radio-row">
+            <html:radio styleClass="radio width-20 valign-middle" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
+            <div class="label valign-middle"><app:storeMessage key="userportal.esw.label.acknowledgementRequired"/></div>
+        </div>
+        <div class="radio-row">
+            <html:radio styleClass="radio width-20 valign-middle" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
+            <div class="label valign-middle"><app:storeMessage key="userportal.esw.label.forceRead"/></div>
 <% String style = "display: inline; visibility:"+forcedRead+";";%>
-<div id="toggleDiv" class="label" style="<%=style%>">
-Count:
-<span class="required">*</span>
-<html:text property="forcedReadCount" size="4" maxlength="5" style="width:auto;padding:2px 4px;"/>
-</div>
-                        </td>
-                        <javascript:toggle(object);>
-                    </tr>
-            </tbody>
+            <div id="toggleDiv" class="count"  style="<%=style%>">Count: <span class="required">*</span>
+            <html:text property="forcedReadCount" style="width:auto; margin-left: 4px;margin-top: -6px;" size="4" maxlength="5"></html:text>
+        </div>
         <% } else { %>
+         <table>
             <colgroup>
                 <col>
                 <col width="65%">
@@ -216,8 +195,8 @@ Count:
                 </td>
             </tr>                                                   
         </tbody>
-        <% } %>
         </table>
+        <% } %>        
     </div>
 </div> <!-- END OF twoColBox -->
 <div class="clear row">&nbsp;</div>

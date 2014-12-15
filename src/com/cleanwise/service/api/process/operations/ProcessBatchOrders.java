@@ -60,7 +60,8 @@ public class ProcessBatchOrders extends InboundFlatFile {
 	private Integer storeId = null;
 	private Map<InboundBatchOrderData, String> lineNumberMap = new HashMap<InboundBatchOrderData, String>();
 	private boolean isVersion1 = true;
-	private List<Map<String, InboundBatchOrderData>> orders = new ArrayList<Map<String, InboundBatchOrderData>>();
+	private Map<String, Map<String, InboundBatchOrderData>> orders = new HashMap<String, Map<String, InboundBatchOrderData>>();
+	private List<String> qtyIgnoreList = new ArrayList<String>();
 	
 	public List validateBatchOrder(Integer storeId, String fileName, byte[] dataContents) throws Exception {
 		log.info("validateBatchOrder: Start");
@@ -100,10 +101,10 @@ public class ProcessBatchOrders extends InboundFlatFile {
 	}
 	
 	private void validateBusEntitiesAndItems() throws Exception {
-		/** Data are sorted by account id, site ref num. Multiple orders will be 
-		 * placed for each site.  The loader will process the file as received, 
-		 * so if all items for one site are not together in the file, multiple 
-		 * orders will be processed
+		/** Batch Order rows should be grouped into orders by site budget reference number and by PO#, if PO# exists. 
+		 *  One order for each unique combination of site budget reference number and PO#. 
+		 *  If no PO# is present rows should be grouped into orders by location. One order per unique Site Budget Reference number.
+		 *  Consolidate the same items in a order by item key 
 		 */ 
 		if (getErrorMsgs().size()>0){
         	return;
@@ -136,8 +137,7 @@ public class ProcessBatchOrders extends InboundFlatFile {
             List accountIdList = new ArrayList();
             List accountNotExistList = new ArrayList();
             Map siteMap = new HashMap();
-        	Map shoppingCatalogMap = new HashMap();        	
-            String preSiteKey = null;
+        	Map shoppingCatalogMap = new HashMap();
             
             // get list of account ids that associated with the store and use it to validate input account id
             Account accountEjb = APIAccess.getAPIAccess().getAccountAPI();
@@ -151,6 +151,10 @@ public class ProcessBatchOrders extends InboundFlatFile {
             Iterator it = parsedObjects.iterator();            
     		while(it.hasNext()){
     			InboundBatchOrderData flat =(InboundBatchOrderData) it.next();
+    			if (flat.qty <= 0){
+    			    getQtyIgnoreList().add(lineNumberMap.get(flat));
+    			    continue;
+    			}
     			if (isVersion1){
 	    			if (accountNotExistList.contains(flat.getAccountId())){
 		    			continue;
@@ -198,10 +202,10 @@ public class ProcessBatchOrders extends InboundFlatFile {
     			}
     			if (siteMap.containsKey(siteKey)){
     				if (setItemInfo(conn, ((Integer)shoppingCatalogMap.get(siteKey)).intValue(), flat)){
-	    				if (!siteKey.equals(preSiteKey)){
-							preSiteKey = siteKey;
+    				    orderItems = orders.get(siteKey);
+	    				if (orderItems == null){
 							orderItems = new HashMap<String, InboundBatchOrderData>();
-							orders.add(orderItems);
+							orders.put(siteKey, orderItems);
 	    				}
 	    				InboundBatchOrderData existItem = orderItems.get(flat.getItemKey());
 						if (existItem != null){ // consolidate the same items in a order
@@ -300,9 +304,9 @@ public class ProcessBatchOrders extends InboundFlatFile {
 			}else{
 				try{
 					parsedObj.setQty(new Integer((String)pParsedLine.get(COLUMN.QUANTITY)).intValue());
-					if (parsedObj.qty <= 0){
+					/*if (parsedObj.qty <= 0){
 						appendErrors(parsedObj, "validation.web.batchOrder.error.positiveQtyExpectedOnColumn", (COLUMN.QUANTITY +1));
-					}
+					}*/
 				}catch(Exception e){
 					appendErrors(parsedObj, "validation.web.batchOrder.error.errorParsingQty", pParsedLine.get(COLUMN.QUANTITY));
 					parsedObj.setQty(-1);
@@ -372,13 +376,12 @@ public class ProcessBatchOrders extends InboundFlatFile {
 		String date = custOrderDataFormat.format(new Date());
 		OrderRequestData order = null;
 		OrderRequestDataVector orderReqs = new OrderRequestDataVector();
-		Iterator it = orders.iterator();
+		Iterator it = orders.entrySet().iterator();
 		while(it.hasNext()){
 			Object[] items = ((Map<String, InboundBatchOrderData>) it.next()).values().toArray();
 								
 			for(int lineNum = 1; lineNum <= items.length; lineNum++){				
 				InboundBatchOrderData flat = (InboundBatchOrderData) items[lineNum-1];
-				String siteKey = flat.getSiteKey();
 				
 				if (lineNum == 1){
 					order = OrderRequestData.createValue();
@@ -500,7 +503,11 @@ public class ProcessBatchOrders extends InboundFlatFile {
 		return orders.size();
 	}
 	
-	public class InboundBatchOrderData implements Serializable{
+	public List<String> getQtyIgnoreList() {
+        return qtyIgnoreList;
+    }
+
+    public class InboundBatchOrderData implements Serializable{
 		private int accountId;
 		private String siteRefNum;
 		private String poNum;		

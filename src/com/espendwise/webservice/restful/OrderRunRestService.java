@@ -352,6 +352,8 @@ public class OrderRunRestService extends RestServiceSuper {
                 }else{
                 	responseMap.put("responseStatus", ""+BasicResponseValue.STATUS.OK);
                 	responseMap.put("orderCount", ""+processBatchOrders.getOrderCount());
+                	if (!processBatchOrders.getQtyIgnoreList().isEmpty())
+                	    responseMap.put("qtyIgnoreList", ""+Utility.toCommaSting(processBatchOrders.getQtyIgnoreList()));
                 	response = new BasicResponseValue<Map>(responseMap, BasicResponseValue.STATUS.OK, null);
                 }
             } else {

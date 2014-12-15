@@ -150,19 +150,19 @@
     <% if (i==0) { %>
         <p class="addmargintop18"><app:storeMessage key="userportal.esw.label.messageType"/>: <span class="required">*</span><span class="required-text">*Required</span></p>
         <div class="radio-row">
-            <html:radio styleClass="radio width-20 valign-middle" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.REGULAR%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
-            <div class="label valign-middle"><app:storeMessage key="userportal.esw.label.regular"/></div>
+            <html:radio styleClass="radio" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.REGULAR%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
+            <div class="label"><app:storeMessage key="userportal.esw.label.regular"/></div>
         </div>
         <div class="radio-row">
-            <html:radio styleClass="radio width-20 valign-middle" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
+            <html:radio styleClass="radio" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
             <div class="label valign-middle"><app:storeMessage key="userportal.esw.label.acknowledgementRequired"/></div>
         </div>
         <div class="radio-row">
-            <html:radio styleClass="radio width-20 valign-middle" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
-            <div class="label valign-middle"><app:storeMessage key="userportal.esw.label.forceRead"/></div>
+            <html:radio styleClass="radio" property="messageType" value="<%=RefCodeNames.MESSAGE_TYPE_CD.FORCE_READ%>" onclick="toggle(this)" disabled="<%=published%>"></html:radio>
+            <div class="label"><app:storeMessage key="userportal.esw.label.forceRead"/></div>
 <% String style = "display: inline; visibility:"+forcedRead+";";%>
-            <div id="toggleDiv" class="count"  style="<%=style%>">Count: <span class="required">*</span>
-            <html:text property="forcedReadCount" style="width:auto; margin-left: 4px;margin-top: -6px;" size="4" maxlength="5"></html:text>
+            <div id="toggleDiv" class="count"  style="<%=style%>">&nbsp;&nbsp;&nbsp;&nbsp;<app:storeMessage key="userportal.esw.label.count"/>: <span class="required">*</span>
+            <html:text property="forcedReadCount" style="width:auto; margin-left: 4px;margin-top: -7px;" size="4" maxlength="5"></html:text>
         </div>
         <% } else { %>
          <table>

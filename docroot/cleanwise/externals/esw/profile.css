@@ -45,13 +45,8 @@
  float: right;
  color: #c84b4b ;
 }
-div.twoColBox div.column input.radio.width-20  {
+div.twoColBox div.column input.radio {
  width: 20px;
- }
-.valign-bottom {
- vertical-align: bottom;
-}
-.valign-middle {
  vertical-align: middle;
 }
 .addmargintop18 {
@@ -65,15 +60,15 @@ div.twoColBox div.column input.radio.width-20  {
  font-size: 12px;
  display: inline-block;
  width: auto;
+ vertical-align: middle;
 }
 .count {
  font-size: 12px;
  display: inline;
- position: relative;
- top:2px;
 }
 div.slidingItem h4 {
  line-height: 1.2em;
+ word-wrap: break-word;
 }
 .sliderNav-pos {
     float: right;

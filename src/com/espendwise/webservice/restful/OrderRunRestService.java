@@ -344,7 +344,7 @@ public class OrderRunRestService extends RestServiceSuper {
 
             if (user != null) {
                 ProcessBatchOrders processBatchOrders = new ProcessBatchOrders();
-                List errors = processBatchOrders.validateBatchOrder(batchOrderData.getStoreId(), batchOrderData.getFileName(), batchOrderData.getDataContents());
+                List errors = processBatchOrders.validateBatchOrder(batchOrderData.getStoreId(), batchOrderData.getAccountId(), batchOrderData.getFileName(), batchOrderData.getDataContents());
 
                 if (errors.size() > 0){
                 	responseMap.put("responseStatus", BasicResponseValue.STATUS.ERROR);

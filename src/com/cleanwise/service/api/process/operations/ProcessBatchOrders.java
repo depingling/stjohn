@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.cleanwise.service.api.APIAccess;
 import com.cleanwise.service.api.session.Account;
@@ -27,6 +28,7 @@ import com.cleanwise.service.api.session.IntegrationServices;
 import com.cleanwise.service.api.util.I18nUtil;
 import com.cleanwise.service.api.util.RefCodeNames;
 import com.cleanwise.service.api.util.Utility;
+import com.cleanwise.service.api.value.AccountData;
 import com.cleanwise.service.api.value.IdVector;
 import com.cleanwise.service.api.value.OrderRequestData;
 import com.cleanwise.service.api.value.OrderRequestDataVector;
@@ -44,8 +46,8 @@ import org.apache.log4j.Logger;
 public class ProcessBatchOrders extends InboundFlatFile {
 	public interface COLUMN {
         public static final int
-                ACCOUNT_ID = 0,
-                SITE_REF_NUM = 1,
+                SITE_REF_NUM = 0,
+                CUST_SKU = 1,
                 DIST_SKU = 2,
                 QUANTITY = 3,
                 PO_NUM = 4,
@@ -58,14 +60,16 @@ public class ProcessBatchOrders extends InboundFlatFile {
 	private static final SimpleDateFormat custOrderDataFormat = new SimpleDateFormat("yyyyMMdd");
 	private List<InboundBatchOrderData> parsedObjects = new ArrayList<InboundBatchOrderData>();
 	private Integer storeId = null;
+	private Integer accountId = null;
 	private Map<InboundBatchOrderData, String> lineNumberMap = new HashMap<InboundBatchOrderData, String>();
 	private boolean isVersion1 = true;
 	private Map<String, Map<String, InboundBatchOrderData>> orders = new HashMap<String, Map<String, InboundBatchOrderData>>();
 	private List<String> qtyIgnoreList = new ArrayList<String>();
 	
-	public List validateBatchOrder(Integer storeId, String fileName, byte[] dataContents) throws Exception {
+	public List validateBatchOrder(Integer storeId, Integer accountId, String fileName, byte[] dataContents) throws Exception {
 		log.info("validateBatchOrder: Start");
 		this.storeId = storeId;
+		this.accountId = accountId;
 		InboundBatchOrderData data = new InboundBatchOrderData();
 		javaBeanToPopulate = data.getClass().getName();
 		InputStream inputStream = null;
@@ -81,12 +85,23 @@ public class ProcessBatchOrders extends InboundFlatFile {
         	
 	        if (fileFormatIssue){
 	    		String message = I18nUtil.getMessage("validation.web.batchOrder.error.mustBeCsvOrTxtFileFormat");
-	    		appendErrors(message);        		
-	    		return getErrorMsgs();
+	    		appendErrors(message);
 	        }
     			
+	        Account accountEjb = APIAccess.getAPIAccess().getAccountAPI();
+	        try {
+	            AccountData accountD = accountEjb.getAccount(accountId, storeId);
+	            if (accountD.getBusEntity().getBusEntityStatusCd().equals(RefCodeNames.BUS_ENTITY_STATUS_CD.INACTIVE)){
+	                appendErrors("validation.web.batchOrder.error.noneActiveAccountFoundForAccountId", accountId+"");
+	            }
+	        } catch (Exception e) {
+	            appendErrors("validation.web.batchOrder.error.accountIdNotExistInPrimaryEntity", accountId+"", storeId+"");                
+	        }
+	        if (getErrorMsgs().size()>0){
+	            return getErrorMsgs();
+	        }
+	        
 			Reader reader = new InputStreamReader(inputStream, "UTF-8");
-			BufferedReader r = new BufferedReader(reader);
 			translate((Reader)reader);
 	        validateBusEntitiesAndItems();
 		}catch(Exception e){
@@ -134,17 +149,8 @@ public class ProcessBatchOrders extends InboundFlatFile {
             conn = getConnection();
             PreparedStatement pstmt = conn.prepareStatement(selAccountId);
             PreparedStatement pstmt1 = conn.prepareStatement(sql);
-            List accountIdList = new ArrayList();
-            List accountNotExistList = new ArrayList();
             Map siteMap = new HashMap();
         	Map shoppingCatalogMap = new HashMap();
-            
-            // get list of account ids that associated with the store and use it to validate input account id
-            Account accountEjb = APIAccess.getAPIAccess().getAccountAPI();
-            IdVector acctIdsAssocWithStore = null;
-            if (isVersion1)
-            	acctIdsAssocWithStore = accountEjb.getAccountsForStore(storeId);
-            
             
             Map<String, InboundBatchOrderData> orderItems = null;
             
@@ -155,30 +161,12 @@ public class ProcessBatchOrders extends InboundFlatFile {
     			    getQtyIgnoreList().add(lineNumberMap.get(flat));
     			    continue;
     			}
-    			if (isVersion1){
-	    			if (accountNotExistList.contains(flat.getAccountId())){
-		    			continue;
-		    		}
-	    			if (!accountIdList.contains(flat.getAccountId())){
-	    				if (!acctIdsAssocWithStore.contains(flat.getAccountId())){
-	    					appendErrors(flat, "validation.web.batchOrder.error.accountIdNotExistInPrimaryEntity", flat.getAccountId(), storeId);
-	    					continue;
-	    				}
-		    			pstmt.setInt(1,flat.getAccountId());
-		    			ResultSet rs = pstmt.executeQuery();
-		    			if (!rs.next()){
-		    				accountNotExistList.add(flat.getAccountId());
-		    				appendErrors(flat, "validation.web.batchOrder.error.noneActiveAccountFoundForAccountId", flat.getAccountId());
-		    				continue;
-		    			}
-		    			accountIdList.add(flat.getAccountId());
-		    		}
-    			}
+    			
     			String siteKey = flat.getSiteKey();
     			if (!siteMap.containsKey(siteKey)){
     				pstmt1.setInt(1,storeId);
     				if (isVersion1){
-    					pstmt1.setInt(2,flat.getAccountId());
+    					pstmt1.setInt(2,accountId);
     					pstmt1.setString(3,flat.getSiteRefNum());    					
     				} else {
     					pstmt1.setInt(2,flat.getSiteId());
@@ -193,8 +181,6 @@ public class ProcessBatchOrders extends InboundFlatFile {
 	    				}else{
 	    					siteMap.put(siteKey, siteId);
 	    					shoppingCatalogMap.put(siteKey, shoppingCatalogId);
-	    					if (flat.accountId == 0)
-	    						flat.accountId = accountId;
 	    				}
 	    			}else{
 	    				appendErrors(flat, "validation.web.batchOrder.error.failedToFindActiveLocation");
@@ -225,9 +211,9 @@ public class ProcessBatchOrders extends InboundFlatFile {
         }
 	}
 	
-	public void process(Integer storeId, String fileName, String applyToBudget, String sendConfirmation, Object dataContents) throws Exception {
+	public void process(Integer storeId, String fileName, String applyToBudget, String sendConfirmation, Object dataContents, Integer accountId) throws Exception {
 		log.info("process: Start");
-		validateBatchOrder(storeId, fileName, (byte[])dataContents);
+		validateBatchOrder(storeId, accountId, fileName, (byte[])dataContents);
 		if (getErrorMsgs().size()>0){
         	throw new RuntimeException(getFormatedErrorMsgs());
         }
@@ -286,17 +272,12 @@ public class ProcessBatchOrders extends InboundFlatFile {
 			}
 		}
 				
-		if (columnCount > COLUMN.ACCOUNT_ID && pParsedLine.get(COLUMN.ACCOUNT_ID) != null){
-			try{
-				parsedObj.setAccountId(new Integer((String)pParsedLine.get(COLUMN.ACCOUNT_ID)).intValue());
-			}catch(Exception e){
-				appendErrors(parsedObj, "validation.web.batchOrder.error.errorParsingAccountId", pParsedLine.get(COLUMN.ACCOUNT_ID));
-				parsedObj.setAccountId(-1);
-			}
-		}
 		if (columnCount > COLUMN.SITE_REF_NUM && pParsedLine.get(COLUMN.SITE_REF_NUM) != null)
 			parsedObj.setSiteRefNum((String)pParsedLine.get(COLUMN.SITE_REF_NUM));
-		if (columnCount > COLUMN.DIST_SKU && pParsedLine.get(COLUMN.DIST_SKU) != null)
+		if (columnCount > COLUMN.CUST_SKU && pParsedLine.get(COLUMN.CUST_SKU) != null){
+            parsedObj.setCustSku((String)pParsedLine.get(COLUMN.CUST_SKU));
+        }
+        if (columnCount > COLUMN.DIST_SKU && pParsedLine.get(COLUMN.DIST_SKU) != null)
 			parsedObj.setDistSku((String)pParsedLine.get(COLUMN.DIST_SKU));
 		if (columnCount > COLUMN.QUANTITY){
 			if (pParsedLine.get(COLUMN.QUANTITY) == null){
@@ -351,14 +332,11 @@ public class ProcessBatchOrders extends InboundFlatFile {
 	protected void processParsedObject(Object pParsedObject) throws Exception{
 		InboundBatchOrderData parsedObj = (InboundBatchOrderData) pParsedObject;
 		if (isVersion1){
-			if (parsedObj.getAccountId()==0){
-				appendErrors(parsedObj, "validation.web.batchOrder.error.accountIdExpectedOnColumn", (COLUMN.ACCOUNT_ID+1));
-			}			
 			if (!Utility.isSet(parsedObj.siteRefNum)){
 				appendErrors(parsedObj, "validation.web.batchOrder.error.locationRefNumExpectedOnColumn", (COLUMN.SITE_REF_NUM +1));
 			}			
-			if (!Utility.isSet(parsedObj.distSku)){
-				appendErrors(parsedObj, "validation.web.batchOrder.error.distSkuExpectedOnColumn", (COLUMN.DIST_SKU +1));
+			if (!Utility.isSet(parsedObj.custSku) && !Utility.isSet(parsedObj.distSku)){
+				appendErrors(parsedObj, "validation.web.batchOrder.error.custSkuOrdistSkuExpectedOnColumn", (COLUMN.CUST_SKU +1), (COLUMN.DIST_SKU +1));
 			}
 		} else {
 			if (parsedObj.siteId==0){
@@ -368,7 +346,7 @@ public class ProcessBatchOrders extends InboundFlatFile {
 				appendErrors(parsedObj, "validation.web.batchOrder.error.storeSkuExpectedOnColumn", (COLUMN.STORE_SKU +1));
 			}
 		}
-				
+			
 		parsedObjects.add(parsedObj);
 	}
 	
@@ -376,16 +354,14 @@ public class ProcessBatchOrders extends InboundFlatFile {
 		String date = custOrderDataFormat.format(new Date());
 		OrderRequestData order = null;
 		OrderRequestDataVector orderReqs = new OrderRequestDataVector();
-		Iterator it = orders.entrySet().iterator();
-		while(it.hasNext()){
-			Object[] items = ((Map<String, InboundBatchOrderData>) it.next()).values().toArray();
-								
+		for (Map.Entry<String, Map<String, InboundBatchOrderData>> entry : orders.entrySet()) {
+		    Object[] items = entry.getValue().values().toArray();								
 			for(int lineNum = 1; lineNum <= items.length; lineNum++){				
 				InboundBatchOrderData flat = (InboundBatchOrderData) items[lineNum-1];
 				
 				if (lineNum == 1){
 					order = OrderRequestData.createValue();
-					order.setAccountId(flat.getAccountId());
+					order.setAccountId(accountId);
 					order.setSiteId(flat.siteId);
 					order.setCustomerPoNumber(flat.getPoNum());
 					order.setCustomerOrderDate(date);
@@ -414,30 +390,41 @@ public class ProcessBatchOrders extends InboundFlatFile {
 	// set item_id and price to object InboundBatchOrderData if item is found in shopping catalog
 	private boolean setItemInfo(Connection conn, int shoppingCatalogId, InboundBatchOrderData flat) throws Exception {
 		boolean itemInCatalog = true;
+		String temp = "";
+		if (isVersion1){
+		    if (flat.custSku != null){
+		        temp = "AND cs.CUSTOMER_SKU_NUM  = ? \n";
+		    } else {
+		        temp = "AND im.ITEM_NUM = ? \n";
+		        if (flat.getDistUom()!=null)
+		            temp += "AND im.ITEM_UOM = ? \n";
+		    }
+		}else{
+		    temp = "AND i.sku_num = ? \n";
+		}
 		String sql = "SELECT i.ITEM_ID, ci.AMOUNT, im.ITEM_NUM, im.ITEM_UOM \n" +
 				"FROM CLW_ITEM i, CLW_CATALOG_STRUCTURE cs, CLW_CONTRACT c, CLW_CONTRACT_ITEM ci, CLW_ITEM_MAPPING im \n" +
 				"WHERE i.ITEM_ID = cs.ITEM_ID \n" +
 				"AND cs.CATALOG_ID = ? \n" +
+				"AND CATALOG_STRUCTURE_CD='" + RefCodeNames.CATALOG_STRUCTURE_CD.CATALOG_PRODUCT + "' \n" +
 				"AND c.CATALOG_ID = cs.CATALOG_ID \n" +
 				"AND c.CONTRACT_ID = ci.CONTRACT_ID \n" +
 				"AND ci.ITEM_ID = i.ITEM_ID \n" +
 				"AND im.ITEM_ID = i.ITEM_ID \n" +
 				"AND im.ITEM_MAPPING_CD = '" + RefCodeNames.ITEM_MAPPING_CD.ITEM_DISTRIBUTOR + "' \n" +					
-				"AND im.BUS_ENTITY_ID = cs.BUS_ENTITY_ID \n" +
-				(isVersion1? 
-					"AND im.ITEM_NUM = ? \n" +
-					((flat.getDistUom()!=null) ? "AND im.ITEM_UOM = ? \n" : "")					
-					: 
-					"AND i.sku_num = ?"
-				);
+				"AND im.BUS_ENTITY_ID = cs.BUS_ENTITY_ID \n" + temp;
 		
         PreparedStatement pstmt = conn.prepareStatement(sql);
         int idx = 1;
         pstmt.setInt(idx++, shoppingCatalogId);
         if (isVersion1){
-	        pstmt.setString(idx++, flat.getDistSku());
-	        if (flat.getDistUom()!=null)
-	        	pstmt.setString(idx++, flat.getDistUom());
+            if (flat.custSku != null){
+                pstmt.setString(idx++, flat.getCustSku());
+            }else{
+    	        pstmt.setString(idx++, flat.getDistSku());
+    	        if (flat.getDistUom()!=null)
+    	        	pstmt.setString(idx++, flat.getDistUom());
+            }
         }else{
         	pstmt.setInt(idx++, flat.getStoreSku());
         }
@@ -471,10 +458,15 @@ public class ProcessBatchOrders extends InboundFlatFile {
 		getErrorMsgs().add(error);		
 	}
 	
-	private void appendErrors(String message) {
-		ResponseError error = new ResponseError(message);
+	private void appendErrors(String messageKey, Object... args) {
+	    ResponseError error = new ResponseError(null, null, null, messageKey, args);
 		getErrorMsgs().add(error);	
 	}
+	
+	private void appendErrors(String message) {
+        ResponseError error = new ResponseError(message);
+        getErrorMsgs().add(error);  
+    }
 	
 	public String getFormatedErrorMsgs ()
 	{
@@ -508,9 +500,9 @@ public class ProcessBatchOrders extends InboundFlatFile {
     }
 
     public class InboundBatchOrderData implements Serializable{
-		private int accountId;
 		private String siteRefNum;
-		private String poNum;		
+		private String poNum;
+		private String custSku;
 		private String distSku;
 		private int qty;
 		private String distUom = null;
@@ -520,8 +512,8 @@ public class ProcessBatchOrders extends InboundFlatFile {
 		double price;
 		
 		public String toString(){
-			return "InboundBatchOrderData: accountId="+	accountId + ", siteRefNum=" + siteRefNum + 
-				", poNum=" + poNum + ", distSku=" + distSku + ", distUom=" + distUom + ", qty="+ qty + 
+			return "InboundBatchOrderData: siteRefNum=" + siteRefNum + ", poNum=" + poNum + ", custSku=" + custSku + 
+			    ", distSku=" + distSku + ", distUom=" + distUom + ", qty="+ qty + 
 				", siteId=" + siteId + ", storeSku=" + storeSku+ ", itemId=" + itemId + 
 				", price=" + price;
 		}
@@ -548,12 +540,6 @@ public class ProcessBatchOrders extends InboundFlatFile {
 			}else{
 				return storeSku+"";
 			}
-		}
-		public void setAccountId(int accountId) {
-			this.accountId = accountId;
-		}
-		public int getAccountId() {
-			return accountId;
 		}
 		public void setSiteRefNum(String siteRefNum) {
 			this.siteRefNum = siteRefNum;
@@ -597,5 +583,11 @@ public class ProcessBatchOrders extends InboundFlatFile {
 		public int getStoreSku() {
 			return storeSku;
 		}
+        public String getCustSku() {
+            return custSku;
+        }
+        public void setCustSku(String custSku) {
+            this.custSku = custSku;
+        }
 	}
 }

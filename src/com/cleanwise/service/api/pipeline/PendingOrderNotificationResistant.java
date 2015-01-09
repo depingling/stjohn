@@ -114,7 +114,7 @@ public class PendingOrderNotificationResistant implements OrderPipeline {
 
             EmailView ev = EmailView.createValue();
             ev.setToAddress(toAddress);
-            ev.setFromAddress("pendingrevieworders@espendwise.com");
+            ev.setFromAddress("pendingrevieworders@veritivcorp.com");
             ev.setSubject(subject);
             ev.setText(text);
 

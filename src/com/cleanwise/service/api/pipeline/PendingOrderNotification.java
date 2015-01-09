@@ -105,7 +105,7 @@ public class PendingOrderNotification extends PendingOrderNotificationResistant 
         eventEmailData.setEventId(eventData.getEventId());
         eventEmailData.setEmailStatusCd(RefCodeNames.PROCESS_STATUS_CD.READY);
         eventEmailData.setToAddress(toAddress);
-        eventEmailData.setFromAddress("pendingrevieworders@espendwise.com");
+        eventEmailData.setFromAddress("pendingrevieworders@veritivcorp.com");
         
         BusEntityData storeD = BusEntityDataAccess.select(pCon, storeId);
         String storeName = storeD.getShortDesc();       

@@ -9,6 +9,7 @@ import com.cleanwise.service.api.value.BusEntityDataVector;
 import com.cleanwise.service.api.value.IdVector;
 import com.cleanwise.service.api.value.StoreMessageData;
 import com.cleanwise.service.api.value.StoreMessageDataVector;
+import com.cleanwise.service.api.value.StoreMessageDetailDataVector;
 import com.cleanwise.service.api.value.StoreMessageView;
 import com.cleanwise.service.api.value.StoreMessageViewVector;
 
@@ -93,5 +94,13 @@ public interface StoreMessage extends javax.ejb.EJBObject {
 	 * @throws RemoteException
 	 */
 	public void markMessageAsReadByUser(Integer userId, Integer messageId) throws RemoteException;
+
+    public StoreMessageViewVector getCustomerDefaultMessages(int pAccountId) throws RemoteException;
+    public StoreMessageDetailDataVector getStoreMessageDetails(int storeMessageId) throws RemoteException;
+
+    public void updateStoreMessage(int storeId, int accountId, StoreMessageData storeMessageD,
+            StoreMessageDetailDataVector messageDetailDV, String modBy) throws RemoteException;
+
+    public void deleteStoreMessageDetail(int storeMessageDetailId) throws RemoteException;
 	
 }

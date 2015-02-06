@@ -152,6 +152,27 @@ public final class Constants {
     
     public static final String PARAMETER_OPERATION_VALUE_RESET_PASSWORD = "resetPassword";
     public static final String PARAMETER_OPERATION_VALUE_SHOW_RESET_PASSWORD = "showResetPassword";
+    
+    public static final String PARAMETER_OPERATION_VALUE_SHOW_MESSAGES = "showMessages";
+    public static final String PARAMETER_OPERATION_VALUE_SORT_MESSAGES = "sortMessages";
+    public static final String PARAMETER_OPERATION_VALUE_SHOW_MESSAGE_DETAIL = "showMessageDetail";
+    public static final String PARAMETER_OPERATION_VALUE_CREATE_MESSAGE = "createMessage";
+    public static final String PARAMETER_OPERATION_VALUE_DELETE_MESSAGE = "deleteMessage";
+    public static final String PARAMETER_OPERATION_VALUE_SAVE_MESSAGE = "saveMessage";
+    public static final String PARAMETER_OPERATION_VALUE_PUBLISH_MESSAGE = "publishMessage";
+    public static final String PARAMETER_OPERATION_VALUE_ADD_TRANSLATION = "addTranslation";
+    public static final String PARAMETER_OPERATION_VALUE_DELETE_TRANSLATION = "deleteTranslation";
+    public static final String PARAMETER_OPERATION_VALUE_PREVIEW_MESSAGE = "previewMessage";
+    public static final String STORE_MESSAGE_SORT_ORDER_ASCENDING = "ascending";
+    public static final String STORE_MESSAGE_SORT_ORDER_DESCENDING = "descending";
+    public static final String STORE_MESSAGE_SORT_FIELD_MESSAGE_TITLE = "messageTitle";
+    public static final String STORE_MESSAGE_SORT_FIELD_MESSAGE_TYPE = "messageType";
+    public static final String STORE_MESSAGE_SORT_FIELD_PUBLISHED = "published";
+    public static final String STORE_MESSAGE_SORT_FIELD_MOD_BY = "modBy";
+    public static final String STORE_MESSAGE_SORT_FIELD_CREATED_DATE = "createdDate";
+    public static final String STORE_MESSAGE_SORT_FIELD_POSTED_DATE = "postedDate";
+    public static final String STORE_MESSAGE_SORT_FIELD_END_DATE = "endDate";
+    
     //constants for the various tabs in the application
     //top level tabs
     public static final String TAB_ASSETS = "assets";

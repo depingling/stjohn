@@ -3151,6 +3151,13 @@
 				  var_name="dataContents"
 				  status="ACTIVE" />
 
+        <property
+                  type="MANDATORY"
+                  position="6"
+                  var_type="java.lang.Integer"
+                  var_name="accountId"
+                  status="ACTIVE" />
+
 	   </task>
 
 		<ref

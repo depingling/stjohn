@@ -70,6 +70,8 @@ public class StoreMessageDataAccess extends DataAccessImpl
     public static final String MESSAGE_BODY = "MESSAGE_BODY";
     /** <code>STORE_MESSAGE_STATUS_CD</code> STORE_MESSAGE_STATUS_CD column of table CLW_STORE_MESSAGE */
     public static final String STORE_MESSAGE_STATUS_CD = "STORE_MESSAGE_STATUS_CD";
+    /** <code>MESSAGE_MANAGED_BY</code> MESSAGE_MANAGED_BY column of table CLW_STORE_MESSAGE */
+    public static final String MESSAGE_MANAGED_BY = "MESSAGE_MANAGED_BY";
     /** <code>ADD_BY</code> ADD_BY column of table CLW_STORE_MESSAGE */
     public static final String ADD_BY = "ADD_BY";
     /** <code>ADD_DATE</code> ADD_DATE column of table CLW_STORE_MESSAGE */
@@ -97,7 +99,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
     public static StoreMessageData select(Connection pCon, int pStoreMessageId)
         throws SQLException, DataNotFoundException {
         StoreMessageData x=null;
-        String sql="SELECT STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_STORE_MESSAGE WHERE STORE_MESSAGE_ID = ?";
+        String sql="SELECT STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,MESSAGE_MANAGED_BY,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_STORE_MESSAGE WHERE STORE_MESSAGE_ID = ?";
 
         if (log.isDebugEnabled()) {
             log.debug("SQL: pStoreMessageId=" + pStoreMessageId);
@@ -128,10 +130,11 @@ public class StoreMessageDataAccess extends DataAccessImpl
             x.setMessageAbstract(rs.getString(15));
             x.setMessageBody(rs.getString(16));
             x.setStoreMessageStatusCd(rs.getString(17));
-            x.setAddBy(rs.getString(18));
-            x.setAddDate(rs.getTimestamp(19));
-            x.setModBy(rs.getString(20));
-            x.setModDate(rs.getTimestamp(21));
+            x.setMessageManagedBy(rs.getString(18));
+            x.setAddBy(rs.getString(19));
+            x.setAddDate(rs.getTimestamp(20));
+            x.setModBy(rs.getString(21));
+            x.setModDate(rs.getTimestamp(22));
 
         } else {
             rs.close();
@@ -165,7 +168,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
     *using the parseResultSet method.
     */
     public String getSelectColumns(){
-        return "CLW_STORE_MESSAGE.STORE_MESSAGE_ID,CLW_STORE_MESSAGE.MESSAGE_TITLE,CLW_STORE_MESSAGE.SHORT_DESC,CLW_STORE_MESSAGE.MESSAGE_TYPE,CLW_STORE_MESSAGE.POSTED_DATE,CLW_STORE_MESSAGE.END_DATE,CLW_STORE_MESSAGE.FORCED_READ,CLW_STORE_MESSAGE.HOW_MANY_TIMES,CLW_STORE_MESSAGE.FORCED_READ_COUNT,CLW_STORE_MESSAGE.PUBLISHED,CLW_STORE_MESSAGE.DISPLAY_ORDER,CLW_STORE_MESSAGE.LANGUAGE_CD,CLW_STORE_MESSAGE.COUNTRY,CLW_STORE_MESSAGE.MESSAGE_AUTHOR,CLW_STORE_MESSAGE.MESSAGE_ABSTRACT,CLW_STORE_MESSAGE.MESSAGE_BODY,CLW_STORE_MESSAGE.STORE_MESSAGE_STATUS_CD,CLW_STORE_MESSAGE.ADD_BY,CLW_STORE_MESSAGE.ADD_DATE,CLW_STORE_MESSAGE.MOD_BY,CLW_STORE_MESSAGE.MOD_DATE";
+        return "CLW_STORE_MESSAGE.STORE_MESSAGE_ID,CLW_STORE_MESSAGE.MESSAGE_TITLE,CLW_STORE_MESSAGE.SHORT_DESC,CLW_STORE_MESSAGE.MESSAGE_TYPE,CLW_STORE_MESSAGE.POSTED_DATE,CLW_STORE_MESSAGE.END_DATE,CLW_STORE_MESSAGE.FORCED_READ,CLW_STORE_MESSAGE.HOW_MANY_TIMES,CLW_STORE_MESSAGE.FORCED_READ_COUNT,CLW_STORE_MESSAGE.PUBLISHED,CLW_STORE_MESSAGE.DISPLAY_ORDER,CLW_STORE_MESSAGE.LANGUAGE_CD,CLW_STORE_MESSAGE.COUNTRY,CLW_STORE_MESSAGE.MESSAGE_AUTHOR,CLW_STORE_MESSAGE.MESSAGE_ABSTRACT,CLW_STORE_MESSAGE.MESSAGE_BODY,CLW_STORE_MESSAGE.STORE_MESSAGE_STATUS_CD,CLW_STORE_MESSAGE.MESSAGE_MANAGED_BY,CLW_STORE_MESSAGE.ADD_BY,CLW_STORE_MESSAGE.ADD_DATE,CLW_STORE_MESSAGE.MOD_BY,CLW_STORE_MESSAGE.MOD_DATE";
     }
 
 
@@ -211,10 +214,11 @@ public class StoreMessageDataAccess extends DataAccessImpl
          x.setMessageAbstract(rs.getString(15+offset));
          x.setMessageBody(rs.getString(16+offset));
          x.setStoreMessageStatusCd(rs.getString(17+offset));
-         x.setAddBy(rs.getString(18+offset));
-         x.setAddDate(rs.getTimestamp(19+offset));
-         x.setModBy(rs.getString(20+offset));
-         x.setModDate(rs.getTimestamp(21+offset));
+         x.setMessageManagedBy(rs.getString(18+offset));
+         x.setAddBy(rs.getString(19+offset));
+         x.setAddDate(rs.getTimestamp(20+offset));
+         x.setModBy(rs.getString(21+offset));
+         x.setModDate(rs.getTimestamp(22+offset));
          return x;
     }
 
@@ -222,7 +226,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
     *@Returns a count of the number of columns the StoreMessageData Object represents.
     */
     public int getColumnCount(){
-        return 21;
+        return 22;
     }
 
     /**
@@ -241,10 +245,10 @@ public class StoreMessageDataAccess extends DataAccessImpl
         Collection otherTables = pCriteria.getJoinTables();
         String where;
         if(otherTables == null || otherTables.isEmpty()){
-                sqlBuf = new StringBuffer("SELECT STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_STORE_MESSAGE");
+                sqlBuf = new StringBuffer("SELECT STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,MESSAGE_MANAGED_BY,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_STORE_MESSAGE");
                 where = pCriteria.getSqlClause();
         }else{
-                sqlBuf = new StringBuffer("SELECT CLW_STORE_MESSAGE.STORE_MESSAGE_ID,CLW_STORE_MESSAGE.MESSAGE_TITLE,CLW_STORE_MESSAGE.SHORT_DESC,CLW_STORE_MESSAGE.MESSAGE_TYPE,CLW_STORE_MESSAGE.POSTED_DATE,CLW_STORE_MESSAGE.END_DATE,CLW_STORE_MESSAGE.FORCED_READ,CLW_STORE_MESSAGE.HOW_MANY_TIMES,CLW_STORE_MESSAGE.FORCED_READ_COUNT,CLW_STORE_MESSAGE.PUBLISHED,CLW_STORE_MESSAGE.DISPLAY_ORDER,CLW_STORE_MESSAGE.LANGUAGE_CD,CLW_STORE_MESSAGE.COUNTRY,CLW_STORE_MESSAGE.MESSAGE_AUTHOR,CLW_STORE_MESSAGE.MESSAGE_ABSTRACT,CLW_STORE_MESSAGE.MESSAGE_BODY,CLW_STORE_MESSAGE.STORE_MESSAGE_STATUS_CD,CLW_STORE_MESSAGE.ADD_BY,CLW_STORE_MESSAGE.ADD_DATE,CLW_STORE_MESSAGE.MOD_BY,CLW_STORE_MESSAGE.MOD_DATE FROM CLW_STORE_MESSAGE");
+                sqlBuf = new StringBuffer("SELECT CLW_STORE_MESSAGE.STORE_MESSAGE_ID,CLW_STORE_MESSAGE.MESSAGE_TITLE,CLW_STORE_MESSAGE.SHORT_DESC,CLW_STORE_MESSAGE.MESSAGE_TYPE,CLW_STORE_MESSAGE.POSTED_DATE,CLW_STORE_MESSAGE.END_DATE,CLW_STORE_MESSAGE.FORCED_READ,CLW_STORE_MESSAGE.HOW_MANY_TIMES,CLW_STORE_MESSAGE.FORCED_READ_COUNT,CLW_STORE_MESSAGE.PUBLISHED,CLW_STORE_MESSAGE.DISPLAY_ORDER,CLW_STORE_MESSAGE.LANGUAGE_CD,CLW_STORE_MESSAGE.COUNTRY,CLW_STORE_MESSAGE.MESSAGE_AUTHOR,CLW_STORE_MESSAGE.MESSAGE_ABSTRACT,CLW_STORE_MESSAGE.MESSAGE_BODY,CLW_STORE_MESSAGE.STORE_MESSAGE_STATUS_CD,CLW_STORE_MESSAGE.MESSAGE_MANAGED_BY,CLW_STORE_MESSAGE.ADD_BY,CLW_STORE_MESSAGE.ADD_DATE,CLW_STORE_MESSAGE.MOD_BY,CLW_STORE_MESSAGE.MOD_DATE FROM CLW_STORE_MESSAGE");
                 where = pCriteria.getSqlClause("CLW_STORE_MESSAGE");
 
                 Iterator it = otherTables.iterator();
@@ -294,10 +298,11 @@ public class StoreMessageDataAccess extends DataAccessImpl
             x.setMessageAbstract(rs.getString(15));
             x.setMessageBody(rs.getString(16));
             x.setStoreMessageStatusCd(rs.getString(17));
-            x.setAddBy(rs.getString(18));
-            x.setAddDate(rs.getTimestamp(19));
-            x.setModBy(rs.getString(20));
-            x.setModDate(rs.getTimestamp(21));
+            x.setMessageManagedBy(rs.getString(18));
+            x.setAddBy(rs.getString(19));
+            x.setAddDate(rs.getTimestamp(20));
+            x.setModBy(rs.getString(21));
+            x.setModDate(rs.getTimestamp(22));
             v.add(x);
         }
 
@@ -319,7 +324,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
     public static StoreMessageDataVector select(Connection pCon, IdVector pIdVector)
         throws SQLException{
         StoreMessageDataVector v = new StoreMessageDataVector();
-        StringBuffer sqlBuf = new StringBuffer("SELECT STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_STORE_MESSAGE WHERE STORE_MESSAGE_ID IN (");
+        StringBuffer sqlBuf = new StringBuffer("SELECT STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,MESSAGE_MANAGED_BY,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_STORE_MESSAGE WHERE STORE_MESSAGE_ID IN (");
 
         if ( pIdVector.size() > 0 ) {
             sqlBuf.append(pIdVector.get(0).toString());
@@ -359,10 +364,11 @@ public class StoreMessageDataAccess extends DataAccessImpl
                 x.setMessageAbstract(rs.getString(15));
                 x.setMessageBody(rs.getString(16));
                 x.setStoreMessageStatusCd(rs.getString(17));
-                x.setAddBy(rs.getString(18));
-                x.setAddDate(rs.getTimestamp(19));
-                x.setModBy(rs.getString(20));
-                x.setModDate(rs.getTimestamp(21));
+                x.setMessageManagedBy(rs.getString(18));
+                x.setAddBy(rs.getString(19));
+                x.setAddDate(rs.getTimestamp(20));
+                x.setModBy(rs.getString(21));
+                x.setModDate(rs.getTimestamp(22));
                 v.add(x);
             }
 
@@ -382,7 +388,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
      */
     public static StoreMessageDataVector selectAll(Connection pCon)
         throws SQLException{
-        String sql = "SELECT STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_STORE_MESSAGE";
+        String sql = "SELECT STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,MESSAGE_MANAGED_BY,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE FROM CLW_STORE_MESSAGE";
 
         if (log.isDebugEnabled()) {
             log.debug("SQL: " + sql);
@@ -413,10 +419,11 @@ public class StoreMessageDataAccess extends DataAccessImpl
             x.setMessageAbstract(rs.getString(15));
             x.setMessageBody(rs.getString(16));
             x.setStoreMessageStatusCd(rs.getString(17));
-            x.setAddBy(rs.getString(18));
-            x.setAddDate(rs.getTimestamp(19));
-            x.setModBy(rs.getString(20));
-            x.setModDate(rs.getTimestamp(21));
+            x.setMessageManagedBy(rs.getString(18));
+            x.setAddBy(rs.getString(19));
+            x.setAddDate(rs.getTimestamp(20));
+            x.setModBy(rs.getString(21));
+            x.setModDate(rs.getTimestamp(22));
 
             v.add(x);
         }
@@ -603,7 +610,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
         pData.setStoreMessageId(rs.getInt(1));
         stmt.close();
 
-        String sql = "INSERT INTO CLW_STORE_MESSAGE (STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; PreparedStatement pstmt = pCon.prepareStatement(sql);
+        String sql = "INSERT INTO CLW_STORE_MESSAGE (STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,MESSAGE_MANAGED_BY,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; PreparedStatement pstmt = pCon.prepareStatement(sql);
 
         
         java.util.Date current = new java.util.Date(System.currentTimeMillis());
@@ -627,10 +634,11 @@ public class StoreMessageDataAccess extends DataAccessImpl
         pstmt.setString(15,pData.getMessageAbstract());
         pstmt.setString(16,pData.getMessageBody());
         pstmt.setString(17,pData.getStoreMessageStatusCd());
-        pstmt.setString(18,pData.getAddBy());
-        pstmt.setTimestamp(19,DBAccess.toSQLTimestamp(pData.getAddDate()));
-        pstmt.setString(20,pData.getModBy());
-        pstmt.setTimestamp(21,DBAccess.toSQLTimestamp(pData.getModDate()));
+        pstmt.setString(18,pData.getMessageManagedBy());
+        pstmt.setString(19,pData.getAddBy());
+        pstmt.setTimestamp(20,DBAccess.toSQLTimestamp(pData.getAddDate()));
+        pstmt.setString(21,pData.getModBy());
+        pstmt.setTimestamp(22,DBAccess.toSQLTimestamp(pData.getModDate()));
 
         if (log.isDebugEnabled()) {
             log.debug("SQL:   STORE_MESSAGE_ID="+pData.getStoreMessageId());
@@ -650,6 +658,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
             log.debug("SQL:   MESSAGE_ABSTRACT="+pData.getMessageAbstract());
             log.debug("SQL:   MESSAGE_BODY="+pData.getMessageBody());
             log.debug("SQL:   STORE_MESSAGE_STATUS_CD="+pData.getStoreMessageStatusCd());
+            log.debug("SQL:   MESSAGE_MANAGED_BY="+pData.getMessageManagedBy());
             log.debug("SQL:   ADD_BY="+pData.getAddBy());
             log.debug("SQL:   ADD_DATE="+pData.getAddDate());
             log.debug("SQL:   MOD_BY="+pData.getModBy());
@@ -688,7 +697,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
 
         int n = 0;
 
-        String sql = "UPDATE CLW_STORE_MESSAGE SET MESSAGE_TITLE = ?,SHORT_DESC = ?,MESSAGE_TYPE = ?,POSTED_DATE = ?,END_DATE = ?,FORCED_READ = ?,HOW_MANY_TIMES = ?,FORCED_READ_COUNT = ?,PUBLISHED = ?,DISPLAY_ORDER = ?,LANGUAGE_CD = ?,COUNTRY = ?,MESSAGE_AUTHOR = ?,MESSAGE_ABSTRACT = ?,MESSAGE_BODY = ?,STORE_MESSAGE_STATUS_CD = ?,ADD_BY = ?,ADD_DATE = ?,MOD_BY = ?,MOD_DATE = ? WHERE STORE_MESSAGE_ID = ?";
+        String sql = "UPDATE CLW_STORE_MESSAGE SET MESSAGE_TITLE = ?,SHORT_DESC = ?,MESSAGE_TYPE = ?,POSTED_DATE = ?,END_DATE = ?,FORCED_READ = ?,HOW_MANY_TIMES = ?,FORCED_READ_COUNT = ?,PUBLISHED = ?,DISPLAY_ORDER = ?,LANGUAGE_CD = ?,COUNTRY = ?,MESSAGE_AUTHOR = ?,MESSAGE_ABSTRACT = ?,MESSAGE_BODY = ?,STORE_MESSAGE_STATUS_CD = ?,MESSAGE_MANAGED_BY = ?,ADD_BY = ?,ADD_DATE = ?,MOD_BY = ?,MOD_DATE = ? WHERE STORE_MESSAGE_ID = ?";
 
         PreparedStatement pstmt = pCon.prepareStatement(sql);
 
@@ -713,6 +722,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
         pstmt.setString(i++,pData.getMessageAbstract());
         pstmt.setString(i++,pData.getMessageBody());
         pstmt.setString(i++,pData.getStoreMessageStatusCd());
+        pstmt.setString(i++,pData.getMessageManagedBy());
         pstmt.setString(i++,pData.getAddBy());
         pstmt.setTimestamp(i++,DBAccess.toSQLTimestamp(pData.getAddDate()));
         pstmt.setString(i++,pData.getModBy());
@@ -736,6 +746,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
             log.debug("SQL:   MESSAGE_ABSTRACT="+pData.getMessageAbstract());
             log.debug("SQL:   MESSAGE_BODY="+pData.getMessageBody());
             log.debug("SQL:   STORE_MESSAGE_STATUS_CD="+pData.getStoreMessageStatusCd());
+            log.debug("SQL:   MESSAGE_MANAGED_BY="+pData.getMessageManagedBy());
             log.debug("SQL:   ADD_BY="+pData.getAddBy());
             log.debug("SQL:   ADD_DATE="+pData.getAddDate());
             log.debug("SQL:   MOD_BY="+pData.getModBy());
@@ -817,7 +828,7 @@ public class StoreMessageDataAccess extends DataAccessImpl
         throws SQLException {
 
         String sql = "INSERT INTO LCLW_STORE_MESSAGE (LOG_DATE_MS,LOG_DATE,ACTION, STATUS,"+
-          "STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+          "STORE_MESSAGE_ID,MESSAGE_TITLE,SHORT_DESC,MESSAGE_TYPE,POSTED_DATE,END_DATE,FORCED_READ,HOW_MANY_TIMES,FORCED_READ_COUNT,PUBLISHED,DISPLAY_ORDER,LANGUAGE_CD,COUNTRY,MESSAGE_AUTHOR,MESSAGE_ABSTRACT,MESSAGE_BODY,STORE_MESSAGE_STATUS_CD,MESSAGE_MANAGED_BY,ADD_BY,ADD_DATE,MOD_BY,MOD_DATE) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         PreparedStatement pstmt = pCon.prepareStatement(sql);
         
@@ -843,10 +854,11 @@ public class StoreMessageDataAccess extends DataAccessImpl
         pstmt.setString(15+4,pData.getMessageAbstract());
         pstmt.setString(16+4,pData.getMessageBody());
         pstmt.setString(17+4,pData.getStoreMessageStatusCd());
-        pstmt.setString(18+4,pData.getAddBy());
-        pstmt.setTimestamp(19+4,DBAccess.toSQLTimestamp(pData.getAddDate()));
-        pstmt.setString(20+4,pData.getModBy());
-        pstmt.setTimestamp(21+4,DBAccess.toSQLTimestamp(pData.getModDate()));
+        pstmt.setString(18+4,pData.getMessageManagedBy());
+        pstmt.setString(19+4,pData.getAddBy());
+        pstmt.setTimestamp(20+4,DBAccess.toSQLTimestamp(pData.getAddDate()));
+        pstmt.setString(21+4,pData.getModBy());
+        pstmt.setTimestamp(22+4,DBAccess.toSQLTimestamp(pData.getModDate()));
 
 
         pstmt.executeUpdate();

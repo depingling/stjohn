@@ -33,3 +33,46 @@
 .center{
     margin-left: 40%;
 }
+/*--------------veritiv styles--------------*/
+.row {
+     width: 100%;
+     margin: 6px 0;
+}
+.width50 {
+    width: 50%;
+}
+.required-text {
+ float: right;
+ color: #c84b4b ;
+}
+div.twoColBox div.column input.radio {
+ width: 20px;
+ vertical-align: middle;
+}
+.addmargintop18 {
+ margin-top: 18px;
+}
+.radio-row {
+ width: 100%;
+ height: 28px;
+}
+.radio-row .label {
+ font-size: 12px;
+ display: inline-block;
+ width: auto;
+ vertical-align: middle;
+}
+.count {
+ font-size: 12px;
+ display: inline;
+}
+div.slidingItem h4 {
+ line-height: 1.2em;
+ word-wrap: break-word;
+}
+.sliderNav-pos {
+    float: right;
+    margin-top: -25px;
+    width: auto;
+}
+

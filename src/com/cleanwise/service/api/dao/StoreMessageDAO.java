@@ -29,7 +29,13 @@ public class StoreMessageDAO {
 	}
 	
 	public StoreMessageViewVector getMessagesForUser(Connection conn,
-			DBCriteria dbCriteria, int pMaxRows, List messageTypeCds) throws SQLException {
+            DBCriteria dbCriteria, int pMaxRows, List messageTypeCds) throws SQLException {
+	    return getMessages(conn, dbCriteria, pMaxRows, messageTypeCds, false);
+	    
+	}
+	
+	public StoreMessageViewVector getMessages(Connection conn,
+			DBCriteria dbCriteria, int pMaxRows, List messageTypeCds, boolean defaultLocale) throws SQLException {
 		StringBuffer sqlBuf;
 		String where;
 
@@ -38,7 +44,10 @@ public class StoreMessageDAO {
 						+ " DETAIL");
 		dbCriteria.addCondition(StoreMessageDataAccess.STORE_MESSAGE_ID + " = "
 				+ "DETAIL." + StoreMessageDetailDataAccess.STORE_MESSAGE_ID);
-
+		if (defaultLocale)
+		    dbCriteria.addCondition("DETAIL."+StoreMessageDetailDataAccess.MESSAGE_DETAIL_TYPE_CD + " = "
+	                + "'" + RefCodeNames.MESSAGE_DETAIL_TYPE_CD.DEFAULT+"'", false);
+		
 		sqlBuf = new StringBuffer("SELECT CLW_STORE_MESSAGE.STORE_MESSAGE_ID,"
 				+ "DETAIL.STORE_MESSAGE_DETAIL_ID," + "DETAIL.MESSAGE_TITLE,"
 				+ "CLW_STORE_MESSAGE.SHORT_DESC," + "CLW_STORE_MESSAGE.MESSAGE_TYPE,"
@@ -48,7 +57,8 @@ public class StoreMessageDAO {
 				+ "DETAIL.MESSAGE_ABSTRACT," + "DETAIL.MESSAGE_BODY,"
 				+ "CLW_STORE_MESSAGE.STORE_MESSAGE_STATUS_CD,"
 				+ "CLW_STORE_MESSAGE.ADD_BY," + "CLW_STORE_MESSAGE.ADD_DATE,"
-				+ "CLW_STORE_MESSAGE.MOD_BY," + "CLW_STORE_MESSAGE.MOD_DATE "
+				+ "CLW_STORE_MESSAGE.MOD_BY," + "CLW_STORE_MESSAGE.MOD_DATE, "
+				+ "CLW_STORE_MESSAGE.PUBLISHED "
 				+ "FROM CLW_STORE_MESSAGE");
 
 		Collection otherTables = dbCriteria.getJoinTables();
@@ -107,6 +117,7 @@ public class StoreMessageDAO {
 			view.setAddDate(rs.getDate(16));
 			view.setModBy(rs.getString(17));
 			view.setModDate(rs.getDate(18));
+			view.setPublished(Boolean.valueOf(rs.getString(19)));
 
 			v.add(view);
 		}

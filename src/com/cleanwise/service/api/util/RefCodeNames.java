@@ -1895,6 +1895,7 @@ public interface RefCodeNames {
                 EDIT_SITE_SHOPPING_CONTROLS = "Edit Shopping Controls",
                 VIEW_SHOPPING_CONTROLS = "View Shopping Controls",
                 EDIT_PROFILING = "Edit Profiling",
+                EDIT_MESSAGES = "Edit Messages",
                 ADD_CUSTOMER_ORDER_NOTES = "Add Customer Order Notes",
                 ADD_SHIPPING_ORDER_COMMENTS = "Add Order Shipping Comments",
                 VIEW_PARTIAL_ORD_CREDIT_CARD   = "View Partial Ord Credit Card",
@@ -4345,4 +4346,8 @@ ZULU="Zulu";
     	public static final String GENERIC_REPORT = "GENERIC_REPORT";
     }
     
+    public interface MESSAGE_MANAGED_BY {
+        public static final String ADMINISTRATOR = "ADMINISTRATOR";
+        public static final String CUSTOMER = "CUSTOMER";
+    }    
 }

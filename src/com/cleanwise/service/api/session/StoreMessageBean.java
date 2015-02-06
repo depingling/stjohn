@@ -4,7 +4,6 @@ import java.rmi.RemoteException;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
@@ -24,6 +23,7 @@ import com.cleanwise.service.api.dao.BusEntityDataAccess;
 import com.cleanwise.service.api.dao.StoreMessageAssocDataAccess;
 import com.cleanwise.service.api.dao.StoreMessageDAO;
 import com.cleanwise.service.api.dao.StoreMessageDataAccess;
+import com.cleanwise.service.api.dao.StoreMessageDetailDataAccess;
 import com.cleanwise.service.api.dao.UserMessageAssocDataAccess;
 import com.cleanwise.service.api.framework.BusEntityServicesAPI;
 import com.cleanwise.service.api.util.DBCriteria;
@@ -38,12 +38,13 @@ import com.cleanwise.service.api.value.StoreMessageAssocData;
 import com.cleanwise.service.api.value.StoreMessageAssocDataVector;
 import com.cleanwise.service.api.value.StoreMessageData;
 import com.cleanwise.service.api.value.StoreMessageDataVector;
+import com.cleanwise.service.api.value.StoreMessageDetailData;
+import com.cleanwise.service.api.value.StoreMessageDetailDataVector;
 import com.cleanwise.service.api.value.StoreMessageView;
 import com.cleanwise.service.api.value.StoreMessageViewVector;
 import com.cleanwise.service.api.value.UserData;
 import com.cleanwise.service.api.value.UserMessageAssocData;
 import com.cleanwise.service.api.value.UserMessageAssocDataVector;
-import com.cleanwise.view.utils.Constants;
 
 public class StoreMessageBean extends BusEntityServicesAPI {
 
@@ -1146,6 +1147,104 @@ public class StoreMessageBean extends BusEntityServicesAPI {
 			closeConnection(conn);
 		}
 		return returnValue;
+	}
+	
+	public StoreMessageViewVector getCustomerDefaultMessages(int pAccountId) throws RemoteException {
+	    Connection conn = null;
+
+        try {
+            conn = getConnection();
+
+    	    // get messages that associated with pAccountId
+    	    DBCriteria dbCrit = new DBCriteria();
+            dbCrit.addEqualTo(StoreMessageAssocDataAccess.BUS_ENTITY_ID, pAccountId);
+            dbCrit.addEqualTo(StoreMessageAssocDataAccess.STORE_MESSAGE_ASSOC_CD, RefCodeNames.STORE_MESSAGE_ASSOC_CD.MESSAGE_ACCOUNT);
+            String messageIds = StoreMessageAssocDataAccess.getSqlSelectIdOnly(
+                    StoreMessageAssocDataAccess.STORE_MESSAGE_ID, dbCrit);    
+            
+            // get message that managed by customer only
+            dbCrit = new DBCriteria();
+            dbCrit.addEqualToIgnoreCase(StoreMessageDataAccess.STORE_MESSAGE_STATUS_CD, RefCodeNames.STORE_MESSAGE_STATUS_CD.ACTIVE);
+            dbCrit.addEqualTo(StoreMessageDataAccess.MESSAGE_MANAGED_BY, RefCodeNames.MESSAGE_MANAGED_BY.CUSTOMER);
+            dbCrit.addOneOf(StoreMessageDataAccess.STORE_MESSAGE_ID, messageIds);
+            dbCrit.addOrderBy(StoreMessageDataAccess.ADD_DATE);
+            
+            StoreMessageDAO dao = new StoreMessageDAO();
+            return dao.getMessages(conn, dbCrit, 0, null, true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RemoteException("getMessagesByCriteria:" + e);
+        } finally {
+            closeConnection(conn);
+        }
+    }
+	
+	public StoreMessageDetailDataVector getStoreMessageDetails(int storeMessageId) throws RemoteException {
+	    Connection conn = null;
+
+        try {
+            conn = getConnection();
+
+            // get messages that associated with pAccountId
+            DBCriteria dbCrit = new DBCriteria();
+            dbCrit.addEqualTo(StoreMessageDetailDataAccess.STORE_MESSAGE_ID, storeMessageId);
+            dbCrit.addOrderBy(StoreMessageDetailDataAccess.ADD_DATE);    
+            return StoreMessageDetailDataAccess.select(conn, dbCrit);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RemoteException("getStoreMessageDetails:" + e);
+        } finally {
+            closeConnection(conn);
+        }
+	}
+	
+	public void updateStoreMessage(int storeId, int accountId, StoreMessageData storeMessageD,
+            StoreMessageDetailDataVector messageDetailDV, String modBy) throws RemoteException {
+	    Connection conn = null;
+
+        try {
+            conn = getConnection();
+            storeMessageD = updateStoreMessage(storeId, storeMessageD, modBy);
+            int messageId = storeMessageD.getStoreMessageId();
+                    
+            for (Iterator iterator = messageDetailDV.iterator(); iterator.hasNext();) {
+                StoreMessageDetailData messageDetail = (StoreMessageDetailData) iterator.next();
+                messageDetail.setModBy(modBy);
+                                    
+                if (messageDetail.getStoreMessageId() == 0){
+                    messageDetail.setStoreMessageId(messageId);
+                    messageDetail.setAddBy(modBy);
+                    StoreMessageDetailDataAccess.insert(conn, messageDetail);
+                }else{
+                    StoreMessageDetailDataAccess.update(conn, messageDetail);
+                }
+            }
+            
+            IdVector pNewAccountIds = new IdVector();
+            pNewAccountIds.add(accountId);
+            updateMessageAssoc(conn, messageId,
+                    RefCodeNames.STORE_MESSAGE_ASSOC_CD.MESSAGE_ACCOUNT,
+                    pNewAccountIds, null, modBy);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RemoteException("updateStoreMessage:" + e);
+        } finally {
+            closeConnection(conn);
+        }
+	}
+	
+	public void deleteStoreMessageDetail(int storeMessageDetailId) throws RemoteException {
+	    Connection conn = null;
+
+        try {
+            conn = getConnection();
+            StoreMessageDetailDataAccess.remove(conn, storeMessageDetailId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RemoteException("deleteStoreMessageDetail:" + e);
+        } finally {
+            closeConnection(conn);
+        }
 	}
 
 }

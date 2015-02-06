@@ -344,7 +344,7 @@ public class OrderRunRestService extends RestServiceSuper {
 
             if (user != null) {
                 ProcessBatchOrders processBatchOrders = new ProcessBatchOrders();
-                List errors = processBatchOrders.validateBatchOrder(batchOrderData.getStoreId(), batchOrderData.getFileName(), batchOrderData.getDataContents());
+                List errors = processBatchOrders.validateBatchOrder(batchOrderData.getStoreId(), batchOrderData.getAccountId(), batchOrderData.getFileName(), batchOrderData.getDataContents());
 
                 if (errors.size() > 0){
                 	responseMap.put("responseStatus", BasicResponseValue.STATUS.ERROR);
@@ -352,6 +352,8 @@ public class OrderRunRestService extends RestServiceSuper {
                 }else{
                 	responseMap.put("responseStatus", ""+BasicResponseValue.STATUS.OK);
                 	responseMap.put("orderCount", ""+processBatchOrders.getOrderCount());
+                	if (!processBatchOrders.getQtyIgnoreList().isEmpty())
+                	    responseMap.put("qtyIgnoreList", ""+Utility.toCommaSting(processBatchOrders.getQtyIgnoreList()));
                 	response = new BasicResponseValue<Map>(responseMap, BasicResponseValue.STATUS.OK, null);
                 }
             } else {

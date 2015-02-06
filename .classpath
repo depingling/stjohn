@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="com/cleanwise/mule/" kind="src" path="src"/>
 	<classpathentry kind="lib" path="tools/soap/axis.jar"/>
 	<classpathentry kind="lib" path="tools/crypto/bcprov-jdk14.jar"/>
 	<classpathentry kind="lib" path="tools/bzip2/bzip2.jar"/>
@@ -34,19 +34,162 @@
 	<classpathentry kind="lib" path="tools/struts/struts.jar"/>
 	<classpathentry kind="lib" path="tools/thumbnails/Thumbnailator-0.4.0.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.6.0_43/lib/tools.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="tools/jdbcappender/jdbcappender.jar"/>
+	<classpathentry kind="lib" path="tools/httpunit/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="tools/AvalaraTax/jaxrpc.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.generic.runtimeTarget/JBoss v5.0">
-		<attributes>
-			<attribute name="owner.project.facets" value="jst.web"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="tools/xerces/xerces.jar"/>
-	<classpathentry kind="lib" path="tools/jakarta-commons/commons-codec-1.3.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/antlr.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/autonumber-plugin.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/bcel.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/bsf.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/bsh.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/commons-collections.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/commons-dbcp-1.2.1.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/commons-httpclient.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/commons-logging.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/dtdparser121.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/ejb3-persistence.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/el-api.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/hibernate-annotations.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/hibernate-core.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/hibernate-entitymanager.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/hibernate-jmx.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/hibernate-validator.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/hsqldb.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/hsqldb-plugin.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jaxen.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossas-remoting.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-bindingservice.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-common-jdbc-wrapper.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-current-invocation-aspects.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-cache.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-common.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-core.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-deployers.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-ext-api.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-ext-api-impl.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-interceptors.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-mc-int.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-metadata.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-proxy.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-proxy-clustered.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-security.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ejb3-transactions.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossha.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ha-client.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ha-server-api.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ha-server-cache-jbc.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-ha-server-cache-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-hibernate.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-iiop.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-integration.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-jaspi-api.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-javaee.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-jca.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-jmx-remoting.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-jpa-deployers.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-jsr77.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-jsr88.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossjta.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossjta-integration.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-management.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-messaging.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-messaging-int.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-metadata.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-monitoring.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-profileservice.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-remoting.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-remoting-aspects.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-security-aspects.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-security-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-serialization.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-srp.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-sunxacml.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbosssx.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbosssx-server.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-transaction-aspects.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossts-common.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossws-common.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossws-framework.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossws-native-jaxrpc.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossws-native-jaxws.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossws-native-jaxws-ext.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossws-native-saaj.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jbossws-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jboss-xacml.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jmx-adaptor-plugin.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jnpserver.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/joesnmp.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/jsp-api.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/log4j.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/log4j-snmp-appender.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/mail.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/mail-plugin.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/properties-plugin.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/quartz-1.6.0.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/quartz-jboss-1.6.0.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/quartz-oracle-1.6.0.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/scheduler-plugin.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/scheduler-plugin-example.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/servlet-api.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/slf4j-api.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/common/lib/slf4j-jboss-logging.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/concurrent.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/dom4j.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/getopt.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/javassist.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jaxb-impl.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jaxb-xjc.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-aop.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-aop-asintegration-core.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-aop-asintegration-jmx.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-aop-asintegration-mc.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-aop-jboss5.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-aop-mc-int.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-bootstrap.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-classloader.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-classloading.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-classloading-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-classloading-vfs.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-common-core.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-dependency.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-client.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-client-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-core.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-core-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-impl.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-structure-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-vfs.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-deployers-vfs-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-j2se.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-jmx.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-kernel.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-logging-jdk.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-logging-log4j.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-logging-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-main.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-managed.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-mbeans.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-mdr.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-metatype.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-profileservice-spi.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-reflect.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-system.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-system-jmx.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-vfs.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/jboss-xml-binding.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/log4j-boot.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/osgi.core.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/trove.jar"/>
+	<classpathentry kind="var" path="JBOSS_HOME/lib/wstx.jar"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>

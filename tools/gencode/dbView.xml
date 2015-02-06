@@ -6272,6 +6272,7 @@
 				<property><javatype>Date</javatype><javaname>AddDate</javaname><sort>false</sort></property>
 				<property><javatype>String</javatype><javaname>ModBy</javaname><sort>false</sort></property>
 				<property><javatype>Date</javatype><javaname>ModDate</javaname><sort>false</sort></property>
+                <property><javatype>Boolean</javatype><javaname>Published</javaname></property>
         
     </table>
     <table javaname="CorpOrderCache">

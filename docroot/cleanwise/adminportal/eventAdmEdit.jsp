@@ -33,6 +33,9 @@
             font-size:9pt;
             text-align:left;
             vertical-align:top;
+            min-width: 585px;
+            max-width: 587px;            
+            word-wrap: break-word;
         }
 
         .verticalAlign {
@@ -457,7 +460,7 @@
                 </td></tr>
             </table>
         </logic:present>
-        <table bgcolor="#cccccc" width="769">
+        <table bgcolor="#cccccc" width="100%">
             <logic:equal name="EVENT_ADM_CONFIG_FORM" property="updateEventData.type" value="<%=Event.TYPE_EMAIL%>">
             <logic:present name="EVENT_ADM_CONFIG_FORM" property="updateEventData.eventEmailDataViewVector">
             <logic:iterate id="propery" name="EVENT_ADM_CONFIG_FORM" property="updateEventData.eventEmailDataViewVector" indexId="i">

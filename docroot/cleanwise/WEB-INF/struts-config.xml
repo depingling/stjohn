@@ -739,7 +739,10 @@
         type="com.espendwise.view.forms.esw.RemoteAccessMgrForm"/>
     <form-bean      
     	name="esw.ControlsForm"
-		type="com.espendwise.view.forms.esw.ControlsForm"/>     
+		type="com.espendwise.view.forms.esw.ControlsForm"/> 
+	<form-bean      
+        name="esw.StoreMessageForm"
+        type="com.espendwise.view.forms.esw.StoreMessageForm"/>       
 <!--  ================ ESW User Interface action forms end ================  -->
    </form-beans>
 
@@ -6737,6 +6740,18 @@
         <forward 
         	name="continueLogin"
         	path="/userportal/esw/showModule.do"/>
+    </action>
+
+    <!-- Store Message action -->
+    <action 
+    	path="/userportal/esw/storeMessage"
+		type="com.espendwise.view.actions.esw.StoreMessageAction"
+		name="esw.StoreMessageForm"
+		validate="false"
+		scope="session" >
+		<forward name="messageList" path="/userportal/esw/controlsShowMessageList.jsp"/>
+		<forward name="messageDetail" path="/userportal/esw/controlsShowMessageDetail.jsp"/>
+		<forward name="messagePreview" path="/userportal/esw/showMessage.jsp"/>
     </action>
 <!--  ================ ESW User Interface action mappings end ================  -->
 <!--  ================ Mobile Application action mappings start ================  -->

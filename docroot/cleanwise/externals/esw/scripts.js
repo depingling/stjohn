@@ -1333,13 +1333,13 @@ $(document).ready(function() {
         $('body').append('<div id="coverLayer">&nbsp;</div>');
         $('body').append('<div class="popUpWindow popUpMessage"><div class="popUpTop">&nbsp;</div><div class="popUpContent clearfix"><h1>'
         // Take title from clicked link on page
-            + $(this).attr('title')
-            + '</h1><hr /><iframe src="'
+            //+ $(this).attr('title')
+            + '</h1><iframe src="'
         // Take iframe path from clicked link on page
             + $(this).attr('href')
             + '" id="iFrameHolder" frameborder="0" height="1"></iframe><hr /><div class="buttonRow"><a href="#" class="blueBtnLarge closePopUpBtn"><span>' + closeBtnText + '</span></a></div></div><div class="popUpBottom">&nbsp;</div></div><div class="loader"><p>' + loadingText + '...</p><img src="' + loadingImageUrl + '" alt="' + loadingText + '" /></div>');
         // Set the iframe height 
-        $('div.popUpWindow iframe').height('325');
+        $('div.popUpWindow iframe').height('525');
         // Disable iframe resizer, on load the iframe will have a scrollbar if content inside is too long
         iframeResizeDisabled = true;
         // this item requires a loader due to iframe
@@ -1390,8 +1390,8 @@ $(document).ready(function() {
         //$('body').append('<div id="coverLayer">&nbsp;</div>');
         $('body').append('<div class="popUpWindow popUpMessage"><div class="popUpTop">&nbsp;</div><div class="popUpContent clearfix"><h1>'
         // Take title from clicked link on page
-            + $(this).attr('title')
-            + '</h1><hr /><iframe src="'
+            //+ $(this).attr('title')
+            + '</h1><iframe src="'
         // Take iframe path from clicked link on page
             + $(this).attr('href')
             + '" id="iFrameHolder" frameborder="0" height="1"></iframe><hr /><div class="buttonRow">'
@@ -1406,7 +1406,7 @@ $(document).ready(function() {
             +'</div>'
             +'</div></div><div class="popUpBottom">&nbsp;</div></div><div class="loader"><p>' + loadingText + '...</p><img src="' + loadingImageUrl + '" alt="' + loadingText + '" /></div>');
         // Set the iframe height 
-        $('div.popUpWindow iframe').height('325');
+        $('div.popUpWindow iframe').height('525');
         // Disable iframe resizer, on load the iframe will have a scrollbar if content inside is too long
         iframeResizeDisabled = true;
         // this item requires a loader due to iframe

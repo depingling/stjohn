@@ -21,7 +21,7 @@
     boolean showMessage = Constants.PARAMETER_OPERATION_VALUE_PREVIEW_MESSAGE.equals(myForm.getOperation());
     boolean published = myForm.getPublished();
     boolean ackPublished = published && myForm.getMessageType().equals(RefCodeNames.MESSAGE_TYPE_CD.ACKNOWLEDGEMENT_REQUIRED);
-    
+    String confirmPublishVal = "if(isConfirmPublish("+published+")) {setFieldsAndSubmitForm('storeMessageForm', 'operationId', '" + Constants.PARAMETER_OPERATION_VALUE_PUBLISH_MESSAGE+"');} else {return false;};";
 %>
 <% if (showMessage) { %>
     <script>
@@ -72,9 +72,7 @@
                             </logic:notEqual>
                             </h1>
                             <!--  ########  buttons ############ -->
-                            <% String confirmPublishVal = "if(isConfirmPublish("+published+")) {setFieldsAndSubmitForm('storeMessageForm', 'operationId', '" + Constants.PARAMETER_OPERATION_VALUE_PUBLISH_MESSAGE+"');} else {return false;};";
-                            %>
-                            <a onclick="<%=confirmPublishVal%>" class="blueBtnLargeExt" disabled="<%=ackPublished%>"><span><app:storeMessage key="global.label.publish"/></span></a>
+                            <a onclick="<%=confirmPublishVal%>" class="blueBtnLargeExt"><span><app:storeMessage key="global.label.publish"/></span></a>
                             <a onclick="javascript:setFieldsAndSubmitForm('storeMessageForm', 'operationId', '<%=Constants.PARAMETER_OPERATION_VALUE_SHOW_MESSAGES%>');" class="blueBtnLargeExt"><span><app:storeMessage key="global.action.label.cancel"/></span></a> 
                             <%if (!published) { %>
                             <a onclick="javascript:setFieldsAndSubmitForm('storeMessageForm', 'operationId', '<%=Constants.PARAMETER_OPERATION_VALUE_SAVE_MESSAGE%>');" class="blueBtnLargeExt"><span><app:storeMessage key="global.action.label.save"/></span></a>
@@ -227,7 +225,7 @@ String confirmDeleteVal = "if(isConfirmDelete()) {detailFormAction('storeMessage
 </logic:iterate>
 <br>
 <!--  ########  buttons ############ -->
-<a onclick="<%=confirmPublishVal%>" class="blueBtnLargeExt" disabled="<%=ackPublished%>"><span><app:storeMessage key="global.label.publish"/></span></a>
+<a onclick="<%=confirmPublishVal%>" class="blueBtnLargeExt"><span><app:storeMessage key="global.label.publish"/></span></a>
 <a onclick="javascript:setFieldsAndSubmitForm('storeMessageForm', 'operationId', '<%=Constants.PARAMETER_OPERATION_VALUE_SHOW_MESSAGES%>');" class="blueBtnLargeExt"><span><app:storeMessage key="global.action.label.cancel"/></span></a> 
 <%if (!published) { %>
 <a onclick="javascript:setFieldsAndSubmitForm('storeMessageForm', 'operationId', '<%=Constants.PARAMETER_OPERATION_VALUE_SAVE_MESSAGE%>');" class="blueBtnLargeExt"><span><app:storeMessage key="global.action.label.save"/></span></a>

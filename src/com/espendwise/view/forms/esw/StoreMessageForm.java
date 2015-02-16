@@ -180,12 +180,15 @@ public final class StoreMessageForm extends EswForm {
         } catch (ParseException e1) {
             e1.printStackTrace();
         }
+        
+        Date effDate = null;
+        Date endEffDate = null;
         if (!Utility.isSet(postedDate) || defaultDateFormat.equalsIgnoreCase(postedDate)){
             errors.add("postedDate", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.effectiveDate")));
         }else{
             try {
-                Date tempDate = ClwI18nUtil.parseDateInp(request, postedDate);
-                if (!getPublished() && tempDate.compareTo(now) < 0){                    
+                effDate = ClwI18nUtil.parseDateInp(request, postedDate);
+                if (!getPublished() && effDate.compareTo(now) < 0){                    
                     errors.add("postedDate", new ActionError("validation.error.wrongDateRange", 
                             new Object[]{ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.effectiveDate")}));
                 }
@@ -198,8 +201,8 @@ public final class StoreMessageForm extends EswForm {
             errors.add("endDate", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.expirationDate")));
         }else{
             try {
-                Date tempDate = ClwI18nUtil.parseDateInp(request, endDate);
-                if (tempDate.compareTo(now) < 0) {
+                endEffDate = ClwI18nUtil.parseDateInp(request, endDate);
+                if (endEffDate.compareTo(now) < 0) {
                     errors.add("endDate", new ActionError("validation.error.wrongDateRange", 
                             new Object[]{ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.expirationDate")}));
                 }
@@ -207,6 +210,11 @@ public final class StoreMessageForm extends EswForm {
                 errors.add("endDate", new ActionError("validation.error.wrongDateFormat", 
                         new Object[]{ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.expirationDate"), endDate}));
             }
+        }
+        if (effDate != null && endEffDate != null  && endEffDate.compareTo(effDate) < 0){
+            errors.add("endDate", new ActionError("validation.error.wrongDateRange2", 
+                    new Object[]{ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.expirationDate"),
+                    ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.effectiveDate")}));
         }
         if (!Utility.isSet(messageType)){
             errors.add("messageType", new ActionError("validation.error.dataRequired", ClwMessageResourcesImpl.getMessage(request, "userportal.esw.label.messageType")));

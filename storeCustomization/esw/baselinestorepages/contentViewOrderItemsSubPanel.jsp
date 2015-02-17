@@ -473,7 +473,7 @@
 							}
 						}
 						
-							APIAccess factory = new APIAccess();
+						String estInStockDateStr = "";
 						if(enhancedBackorder && action.getActionCd().equals(RefCodeNames.ORDER_ITEM_DETAIL_ACTION_CD.ACK_BACKORDERED)){
 							estInStockDateStr = "Estimated In-Stock: ";
 							APIAccess factory = new APIAccess();

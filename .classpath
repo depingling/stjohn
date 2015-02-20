@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<classpath>
+<classpath>  
 	<classpathentry excluding="com/cleanwise/mule/" kind="src" path="src"/>
 	<classpathentry kind="lib" path="tools/soap/axis.jar"/>
 	<classpathentry kind="lib" path="tools/crypto/bcprov-jdk14.jar"/>

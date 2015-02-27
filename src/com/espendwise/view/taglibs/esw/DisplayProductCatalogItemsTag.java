@@ -67,6 +67,7 @@ public class DisplayProductCatalogItemsTag extends TagSupport {
         private boolean viewOptionInventoryList; // if we are rendering a list of
         private boolean viewOptionItemDetail; //is we are rendering an item detail page
         private boolean viewOptionGroupItemDetail; //is we are rendering an group item detail page
+
         //uses the action right now
         private String altThumbImage; // if no thumbnail is present default
         private boolean notShowParOnHandCols;
@@ -128,7 +129,10 @@ public class DisplayProductCatalogItemsTag extends TagSupport {
             } else if (viewOptionOrderGuide) {
                 result = getOrderGuideViewDefinitions(aList);
             } else if (viewOptionInvShoppingCart) {
-                result = getInvShoppingCartViewDefinitions(aList);
+                if (ShopTool.isPhysicalCartAvailable(request))
+                    result = getPhysicalInvCartViewDefinitions(aList);
+                else
+                    result = getInvShoppingCartViewDefinitions(aList);
             } else if (viewOptionShoppingCart) {
                 result = getShoppingCartViewDefinitions(aList);
             } else if (viewOptionReorder) {
@@ -595,7 +599,7 @@ public class DisplayProductCatalogItemsTag extends TagSupport {
         private void renderRowItemView(Writer out) throws IOException {
        	 
        	 ProductViewDefDataVector columnDefs = getProductDefinitions(true);
-       	 
+       	        	 
        	 //Determine the total width of all the columns
        	Double dTotalWidth = calculateTotalColumnWidth(columnDefs);
             
@@ -1569,8 +1573,21 @@ public class DisplayProductCatalogItemsTag extends TagSupport {
 
         }
 
+    public static ProductViewDefDataVector getPhysicalInvCartViewDefinitions(ProductViewDefDataVector pInnerList){
+    	log.debug("CommonDisplayProductAttributesTag FFFFFFFFFFFFFFFF getPhysicalInvCartViewDefinitions");
+        ProductViewDefDataVector defs = new ProductViewDefDataVector();
+        defs.add(getViewDef(RefCodeNames.SHOP_UI_SPECIAL_PROD_ATTRIBUTE.QTY_ON_HAND_COND, TEXT_CENTER, 8));
+        defs.add(getViewDef(ProductData.UOM, TEXT_CENTER, 8));
+        defs.add(getViewDef(RefCodeNames.SHOP_UI_SPECIAL_PROD_ATTRIBUTE.CATALOG_PRODUCT_SHORT_DESC, null, 30));
+        defs.add(getViewDef(RefCodeNames.SHOP_UI_SPECIAL_PROD_ATTRIBUTE.ACTUAL_SKU, TEXT_CENTER, 10));
+        defs.add(getViewDef(RefCodeNames.SHOP_UI_SPECIAL_PROD_ATTRIBUTE.DIST_PACK, TEXT_CENTER, 10));
+        defs.add(getViewDef(ProductData.SIZE, TEXT_CENTER, 20));
+       return defs ;
+
+    }
+    
     public static ProductViewDefDataVector getInvShoppingCartViewDefinitions(ProductViewDefDataVector pInnerList){
-    	log.debug("CommonDisplayProductAttributesTag FFFFFFFFFFFFFFFF InvShoppingCartViewDefinitions");
+        log.debug("CommonDisplayProductAttributesTag FFFFFFFFFFFFFFFF InvShoppingCartViewDefinitions");
             ProductViewDefDataVector defs = new ProductViewDefDataVector();
             //defs.add(getViewDef(RefCodeNames.SHOP_UI_SPECIAL_PROD_ATTRIBUTE.IA, TEST_CENTER, 15));
             addInnerViewListDefs(pInnerList, defs);
@@ -1584,8 +1601,6 @@ public class DisplayProductCatalogItemsTag extends TagSupport {
        return defs ;
 
     }
-
-
 
 
         public static ProductViewDefDataVector getCheckoutViewDefinitions(ProductViewDefDataVector pInnerList){

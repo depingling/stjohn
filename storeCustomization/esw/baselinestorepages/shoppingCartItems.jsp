@@ -23,6 +23,8 @@
 <%@ page import="com.cleanwise.service.api.value.AddressData" %>
 <%@ page import="com.cleanwise.service.api.value.BusEntityData" %>
 <%@ page import="com.cleanwise.service.api.value.OrderAddressData" %>
+<%@ page import="com.cleanwise.service.api.value.ShoppingCartItemData" %>
+<%@ page import="com.cleanwise.service.api.value.ShoppingInfoData" %>
 <%@ page import="org.apache.commons.lang.StringUtils" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
@@ -60,7 +62,8 @@ String viewShoppingCart = request.getParameter("viewShoppingCartAction");
 									invShoppingCartView = false,
 									inventoryListView = false;
 
-							boolean isInventoryCartOpened = ShopTool.hasInventoryCartAccessOpen(request);
+							boolean isPhysicalCartAvailable = ShopTool.isPhysicalCartAvailable(request);
+                            boolean isInventoryCartOpened = ShopTool.hasInventoryCartAccessOpen(request);
 							
 							String viewType = null;							
 							viewType = request.getParameter("viewType");
@@ -81,7 +84,7 @@ String viewShoppingCart = request.getParameter("viewShoppingCartAction");
 								showOnlyNonParItems = true;
 							}
 
-							if(showOnlyParItems && isInventoryCartOpened) {
+							if(showOnlyParItems && (isPhysicalCartAvailable || isInventoryCartOpened)) {
 								shoppingCartView = true;
 								invShoppingCartView = true;
 								inventoryListView = true;
@@ -123,12 +126,12 @@ String viewShoppingCart = request.getParameter("viewShoppingCartAction");
 java.util.Set<Integer> catsWithAutOrderedItems = new java.util.HashSet<Integer>();
 				      %>
 <logic:iterate id="sciD" name="shoppingCartItems" offset="0" indexId="IDX"
-						   type="com.cleanwise.service.api.value.ShoppingCartItemData"><%
-if (isInventoryCartOpened && sciD.getIsaInventoryItem() && sciD.getAutoOrderEnable() && sciD.getInventoryParValue() > 0 && sciD.getCategory() != null) {
+						   type="ShoppingCartItemData"><%
+if ((isPhysicalCartAvailable || isInventoryCartOpened) && sciD.getIsaInventoryItem() && sciD.getAutoOrderEnable() && sciD.getInventoryParValue() > 0 && sciD.getCategory() != null) {
     catsWithAutOrderedItems.add(sciD.getCategory().getCatalogCategoryId());
 }%></logic:iterate>
 					  <logic:iterate id="sciD" name="shoppingCartItems" offset="0" indexId="IDX"
-						   type="com.cleanwise.service.api.value.ShoppingCartItemData">
+						   type="ShoppingCartItemData">
 
 						     <bean:define id="orderNumber" name="sciD" property="orderNumber"/>
 						     <bean:define id="itemId" name="sciD" property="product.productId" type="java.lang.Integer" />
@@ -222,10 +225,15 @@ if (isInventoryCartOpened && sciD.getIsaInventoryItem() && sciD.getAutoOrderEnab
 												String itemLink1 = "shopping.do?operation="+Constants.PARAMETER_OPERATION_VALUE_ITEMS+"&source="+sourceStr+"&itemId="
 												  +itemId+"&qty="+sciD.getQuantity();
 												 // String trColor=ClwCustomizer.getEvenRowColor(request.getSession(),rowIdx++);
+                                                String parHistory = getParItemActivity(sciD, IDX, request);
+                                                String trClass = "";
+                                                if (Utility.isSet(parHistory)){
+                                                    trClass = " class=\"border-bot-none\"";
+                                                }
 												%>
 				
 				                                 <!-- Repeating Row - needs two rows for each entry to accomodate the comment line which needs colspan -->
-                                 				<tr>
+                                 				<tr<%=trClass%>>
                                  					<app:displayProductCatalogItems
 												        viewOptionEditCartItems="<%=editCartItems%>"
 												        viewOptionQuickOrderView="<%=quickOrderView%>"
@@ -243,7 +251,8 @@ if (isInventoryCartOpened && sciD.getIsaInventoryItem() && sciD.getAutoOrderEnab
 														formName="<%=formName %>"
 														/>
                                  				</tr>
-										<% }
+                                                <%=parHistory%>
+                                        <% }
 											if( IDX==(countOfItems-1)) { 
 										%>
                                  			</tbody>
@@ -253,4 +262,86 @@ if (isInventoryCartOpened && sciD.getIsaInventoryItem() && sciD.getAutoOrderEnab
 										}
 				%>
 				</logic:iterate>
+                
+<%!
+private String getParItemActivity(ShoppingCartItemData sciD, Integer IDX, HttpServletRequest request){
+    StringBuffer strBuf = new StringBuffer();
+    boolean firstFlag = true;
+    if (ShopTool.isPhysicalCartAvailable(request)) {
+        List itemHist = sciD.getItemShoppingCartHistory();
+        if ( null != itemHist && itemHist.size() > 0) {
+              int histLastIdx = itemHist.size() - 1;                  
+
+              for (int idx = 0; idx < itemHist.size(); idx++) {
+                ShoppingInfoData sid = (ShoppingInfoData) itemHist.get(idx);
+
+                if (sid.getArg0() != null && sid.getArg0().equals("nothing")) {
+                    // get previous. If it was the same then continue
+                    if (idx < histLastIdx) {
+                        ShoppingInfoData sidPrev = (ShoppingInfoData) itemHist.get(idx+1);
+                        if ((sidPrev.getArg0() != null &&
+                             sidPrev.getArg0().equals(sid.getArg0())) ||
+                            (sidPrev.getArg1() != null &&
+                             sidPrev.getArg1().equals(sid.getArg0()))
+                            ) {
+                            continue;
+                        }
+                    } else {
+                        continue;
+                    }
+                }
+                if (sid.getArg0() != null &&
+                        sid.getArg1() != null &&
+                        sid.getArg0().equals(sid.getArg1())) {
+                    continue;
+                }
+                if (sid.getArg0() != null &&
+                        sid.getArg0().trim().equals("0") &&
+                        sid.getMessageKey().equals("shoppingMessages.text.onHandQtySet")) {
+                    // get previous. If it was the same then continue
+                    if (idx < histLastIdx) {
+                        ShoppingInfoData sidPrev = (ShoppingInfoData) itemHist.get(idx+1);
+                        if ((sidPrev.getArg0() != null &&
+                             sidPrev.getArg0().equals(sid.getArg0())) ||
+                            (sidPrev.getArg1() != null &&
+                             sidPrev.getArg1().equals(sid.getArg0()))
+                            ) {
+                            continue;
+                        }
+                    }
+                }
+                String messKey = sid.getMessageKey();
+                String message = null;
+                if(messKey==null){ 
+                    message = sid.getValue();
+                } else {
+                    message = ClwI18nUtil.getMessage(request, messKey, new Object[]{sid.getArg0(), sid.getArg1(), sid.getArg2(), sid.getArg3()});
+                }
+                String dateTime = ClwI18nUtil.formatDateTime(request,sid.getAddDate());
+                String byStr = ClwI18nUtil.getMessage(request, "shoppingItems.text.by");
+                
+                if (firstFlag) { 
+                    firstFlag = false;
+                    strBuf.append("<!-- START: item audit " + IDX + " -->");
+                    strBuf.append("<tr>");
+                    strBuf.append("<td colspan=\"7\" class=\"addpadtop0\">");                        
+                }
+                strBuf.append("<div class=\"modification\">");
+                strBuf.append("<div class=\"modify-comment\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + message + "</div>");
+                strBuf.append("<div class=\"modify-date-userid\">" + dateTime + "</div>");
+                strBuf.append("<div class=\"modify-date-userid\">" + byStr + "&nbsp;" + sid.getModBy() + "</div>");
+                strBuf.append("</div>");
+            }
+        }
+    }
+    
+    if (!firstFlag){
+        strBuf.append("</div>");
+        strBuf.append("</tr>");
+        strBuf.append("<!-- END: item audit " + IDX + " -->");
+    }
+
+    return strBuf.toString();        
+}
+%>
 				

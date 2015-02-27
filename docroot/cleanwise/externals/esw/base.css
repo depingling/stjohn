@@ -901,7 +901,7 @@ div#header div.location a.btnLeft {
     height: 22px;
     line-height: 13px !important;
     padding: 6px 0 0 10px;
-    width: 116px;
+    width: 130px;
 }
 div#header div.location a.btnRight {
     background: url("images/header/expandCart.png") no-repeat scroll right top;
@@ -913,17 +913,21 @@ div#header div.location a.btnRight {
     line-height: 13px !important;
     outline: 0 none;
     padding: 6px 0 0 10px;
-    width: 114px;
+    width: 100px;
 }
 div#header div.locationSelect a.locationsBtn {
     text-align: left;
 }
-div#header div.location a.btnLeft:hover, div#header div.location a.btnRight:hover {
+div#header div.location a.btnLeft:hover {
     background-position: left -28px;
     text-decoration: none;
 }
+div#header div.location a.btnRight:hover {
+    background-position: right -28px;
+    text-decoration: none;
+}
 div#header div.location a.expanded {
-    background-position: left -56px !important;
+    background-position: right -56px !important;
 }
 div#header div.locationSelect a.expanded {
     background-position: left -28px !important;
@@ -932,7 +936,7 @@ div#header div.locationSelect a.expanded span {
     background-position: right -28px !important;
 }
 div#header div.location a.expanded:hover {
-    background-position: left -84px !important;
+    background-position: right -84px !important;
 }
 div#header div.locationSelect a.expanded:hover {
     background-position: left top !important;
@@ -3404,4 +3408,22 @@ div.leftColumn div.whiteBox ul li ul li ul li ul li table a {
 div.leftColumn div.whiteBox ul li ul li ul li ul li ul li table a {
     color: #285b8c;
     padding-left: 15px !important;
+}
+.addpadtop0 {
+ padding-top: 0px !important;
+}
+.border-bot-none {
+ border-bottom: none !important;
+}
+.modification {
+ font-style:italic;
+}
+.modify-comment {
+ width: 300px;
+ display: inline-block;
+}
+.modify-date-userid {
+ width: 150px;
+ display: inline-block;
+ color: #575757 !important;
 }

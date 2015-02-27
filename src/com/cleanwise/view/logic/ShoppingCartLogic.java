@@ -134,7 +134,7 @@ public class ShoppingCartLogic {
         }
 
         CleanwiseUser appUser = ShopTool.getCurrentUser(request);
-        if(!ShopTool.hasInventoryCartAccessOpen(request)) {
+        if(!ShopTool.isPhysicalCartAvailable(request) && !ShopTool.hasInventoryCartAccessOpen(request)) {
             String errorMess = ClwI18nUtil.getMessage(request, "shop.errors.scheduleOrderNoLongerAvailable",null);
             ae.add("error", new ActionError("error.simpleGenericError", errorMess));
             return ae;

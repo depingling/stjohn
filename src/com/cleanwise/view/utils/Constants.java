@@ -100,6 +100,7 @@ public final class Constants {
     public static final String PARAMETER_OPERATION_VALUE_SHOW_FUTURE_ORDERS = "showFutureOrders";
     public static final String PARAMETER_OPERATION_VALUE_SHOW_PAR_ORDER = "showParOrder";
     public static final String PARAMETER_OPERATION_VALUE_SHOW_CORPORATE_ORDER = "showCorporateOrder";
+    public static final String PARAMETER_OPERATION_VALUE_SHOW_PHYSICAL_CART = "showPhysicalCart";
     public static final String PARAMETER_OPERATION_VALUE_SHOW_BUDGETS_REPORTS = "showBudgetsReports";
     public static final String PARAMETER_OPERATION_VALUE_SHOW_ORDERS_REPORTS = "showOrdersReports";
     public static final String PARAMETER_OPERATION_VALUE_SHOW_MISC_REPORTS = "showMiscReports";
@@ -278,6 +279,7 @@ public final class Constants {
     public static final String REQUEST_PARAMETER_ORDER_ITEMS_BY = "orderBy";    
     public static final String PARAMETER_OPERATION_VALUE_SAVE_PAR_ORDER = "saveParOrder";
     public static final String PARAMETER_OPERATION_VALUE_SAVE_CORPORATE_ORDER = "saveCorporateOrder";
+    public static final String PARAMETER_OPERATION_VALUE_SAVE_PHYSICAL_CART = "savePhysicalCart";
     
     //Order Schedule constants
     public static int MONTH_DAY_MIN = 1;

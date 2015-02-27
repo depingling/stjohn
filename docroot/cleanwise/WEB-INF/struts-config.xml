@@ -6561,7 +6561,11 @@
         	path="/userportal/esw/checkout.do?operation=" redirect="true"/>
         <forward
         	name="viewOrderDetail"
-        	path="/userportal/esw/showOrderDetail.do" redirect="false"/>	  		    	
+        	path="/userportal/esw/showOrderDetail.do" redirect="false"/>
+        <forward
+            name="showPhysicalCart"
+            path="/userportal/esw/viewPhysicalCart.jsp"/>
+        
     </action>
     
     <!-- CheckOut action -->

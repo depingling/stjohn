@@ -5,7 +5,9 @@
 
 package com.espendwise.view.actions.esw;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +26,7 @@ import org.apache.struts.action.ActionMessages;
 import org.apache.struts.util.LabelValueBean;
 import org.apache.struts.util.MessageResources;
 
+import com.cleanwise.service.api.util.PhysicalInventoryPeriod;
 import com.cleanwise.service.api.util.RefCodeNames;
 import com.cleanwise.service.api.util.SessionDataUtil;
 import com.cleanwise.service.api.util.Utility;
@@ -56,6 +59,7 @@ public final class ShoppingAction extends EswAction  {
     private static final String MAPPING_SHOPPING_SHOW_MULTI_PRODUCT_DETAIL = "showMultiProductGroupDetail";
     private static final String MAPPING_SHOPPING_SHOW_SHOPPING_LISTS = "showShoppingLists";
     private static final String MAPPING_ORDERS_SHOW_CORPORATE_ORDER = "showCorporateOrder";
+    private static final String MAPPING_ORDERS_SHOW_PHYSICAL_CART = "showPhysicalCart";
     private static final String MAPPING_VIEW_DASHBOARD = "showDashboard";
     private static final String MAPPING_SHOW_CHECK_OUT = "showCheckOut";
 
@@ -235,6 +239,16 @@ public final class ShoppingAction extends EswAction  {
     		returnValue = handleSaveParOrderRequest(request, response, theForm, mapping);
     	}
 		//End: PAR (Corporate) Orders
+    	
+    	//Begin: Physical Cart
+        else if (Constants.PARAMETER_OPERATION_VALUE_SHOW_PHYSICAL_CART.equalsIgnoreCase(operation)) {
+            rememberOperation = false;    
+            returnValue = handleShowPhysicalCartRequest(request, response, theForm, mapping);
+        }
+        else if (Constants.PARAMETER_OPERATION_VALUE_SAVE_PHYSICAL_CART.equalsIgnoreCase(operation)){
+            returnValue = handleSavePhysicalCartRequest(request, response, theForm, mapping);
+        }
+        //End: PAR (Corporate) Orders
 		
 		//Begin: Product Detail
     	else if (Constants.PARAMETER_OPERATION_VALUE_ITEM_TO_CART.equalsIgnoreCase(operation)) {
@@ -2099,9 +2113,153 @@ public final class ShoppingAction extends EswAction  {
               }
               
         return returnValue;    
+      }      
+      
+      private ActionForward handleShowPhysicalCartRequest(HttpServletRequest request, HttpServletResponse response,
+              ShoppingForm form, ActionMapping mapping) {
+          
+          ActionErrors errors = new ActionErrors();
+          ActionForward returnValue;
+          try {
+              
+              SiteData currentLocation = ShopTool.getCurrentSite(request);
+              //if the user has not yet selected a location, return an error
+              if (currentLocation == null) {
+                  String errorMess = ClwI18nUtil.getMessage(request, "error.noLocationSelected");
+                  errors.add("error", new ActionError("error.simpleGenericError",
+                          errorMess));
+                  saveErrors(request, errors);
+              } else {
+
+                  errors = ShoppingLogic.obtainParOrder(request, form);
+                  
+                  if(errors!=null && errors.size()>0) {
+                      saveErrors(request, errors);
+                  } else {
+                      //Set ShoppingCartForm from session to ShoppingForm.
+                      setShoppingCartForm(request,form);
+                      
+                      //if no items were found, return an informational message to the user.
+                      if (errors.isEmpty() && !Utility.isSet(form.getShoppingCartForm().getCartItems())) {
+                          ActionMessages messages = (ActionMessages) request.getAttribute(Globals.MESSAGE_KEY);
+                          if(messages==null) {
+                              messages = new ActionMessages();
+                          }
+                          String message = ClwI18nUtil.getMessage(request,"shoppingCart.message.noItems", null);
+                          messages.add("message", new ActionMessage("message.simpleMessage", message));
+                          saveMessages(request, messages);
+                      }else{
+                          ActionMessages messages = (ActionMessages) request.getAttribute(Globals.MESSAGE_KEY);
+                          if(messages==null) {
+                              messages = new ActionMessages();
+                          }
+                          String[] param = {"error", "error", "error"};
+                          PhysicalInventoryPeriod invPeriod = ShopTool.getCurrentPhysicalPeriod(request);
+                          if(invPeriod != null && invPeriod.getEndDate() != null){
+                              param[0] = ClwI18nUtil.formatDate(request,invPeriod.getEndDate(),DateFormat.MEDIUM);
+                              Calendar gCalendar = Calendar.getInstance();
+                              gCalendar.setTime(invPeriod.getAbsoluteFinishDate());
+                              gCalendar.add(Calendar.HOUR, 24);// add one day                              
+                              param[1] = ClwI18nUtil.formatDate(request,gCalendar.getTime(),DateFormat.MEDIUM);
+                              if (currentLocation.getNextOrdercutoffDate() != null)
+                                  param[2] = ClwI18nUtil.formatDate(request,currentLocation.getNextOrdercutoffDate(),DateFormat.MEDIUM);
+                          }
+                          // Physical Inventory inputs due (Feb 23, 2015) at 6pm.<br>Enter non-forecast items between (Feb 25, 2015) and (Feb 26, 2015) before 6pm.
+                          String message = ClwI18nUtil.getMessage(request,"shoppingCart.text.physicalInventoryInputDue", param);
+                          messages.add("message", new ActionMessage("message.simpleMessage", message));
+                          saveMessages(request, messages);
+                      }
+                  }
+                  
+              }          
+              returnValue = mapping.findForward(MAPPING_ORDERS_SHOW_PHYSICAL_CART);
+          } catch (Exception e) {
+              log.error("Unexpected exception in ShoppingAction.handleShowPhysicalCartRequest: "+e);
+              returnValue = saveErrors(request,mapping,errors);  
+          } finally {
+              Utility.getSessionDataUtil(request).setSelectedSubTab(Constants.EMPTY);
+          }
+          
+          return returnValue;
       }
 
+      private ActionForward handleSavePhysicalCartRequest(HttpServletRequest request, HttpServletResponse response, 
+              ShoppingForm shoppingForm, ActionMapping mapping) {
+          ActionErrors errors = null ;
+          ActionMessages messages = null;
+          ActionForward returnValue;
+          
+          try {
+              CleanwiseUser clwUser = ShopTool.getCurrentUser(request);
+              if (clwUser.isBrowseOnly()) {
+                  errors = new ActionErrors();
+                  String message = ClwI18nUtil.getMessage(request,
+                          "orders.error.browseOnlyCannotUpdatePhysicalCart",
+                          null);
+                  errors.add("error", new ActionMessage(
+                          "error.simpleGenericError", message));
+                  saveErrors(request, errors);
+                  return mapping.findForward(MAPPING_ORDERS_SHOW_PHYSICAL_CART);
+              }
+              //Validate Quantities entered.
+              errors = ShoppingLogic.validateQuantities(request, shoppingForm.getShoppingCartForm(),true);
+              if(errors==null || errors.isEmpty()) {
+                  errors = ShoppingLogic.saveParOrder(request,shoppingForm);
+                  
+                  if (errors!=null && errors.size() > 0) {
+                      saveErrors(request, errors);
+                  } else {
+                      //Need to call show PAR Orders request to get latest data for PAR Activity
+                      handleShowParOrderRequest(request,response,shoppingForm,mapping);
+                      
+                      errors = (ActionErrors) request.getAttribute(Globals.ERROR_KEY); 
 
+                      //If there are no errors, print success message.
+                      if(errors==null || errors.isEmpty()) {
+                          if(messages==null) {
+                              messages = new ActionMessages();
+                          }
+                          String message = ClwI18nUtil.getMessage(request,"shoppingCart.info.message.physicalCartSave", null);
+                          messages.add("message", new ActionMessage("message.simpleMessage", message));
+                          String confMessage;
+                          if(ShopTool.isPhysicalCartCompliant(request)){
+                              confMessage = ClwI18nUtil.getMessage(request, "shop.checkout.text.actionMessage.physicalInventoryCompliant", null );
+                              messages.add("message", new ActionMessage("message.simpleMessage", confMessage));
+                          }else{
+                              Object[] param = new Object[1];
+                              PhysicalInventoryPeriod invPeriod = ShopTool.getCurrentPhysicalPeriod(request);
+                              if(invPeriod != null && invPeriod.getEndDate() != null){
+                                  param[0] = ClwI18nUtil.formatDate(request,invPeriod.getEndDate(),DateFormat.MEDIUM);
+                              }else{
+                                  param[0] = "error";
+                              }
+                              confMessage = ClwI18nUtil.getMessage(request, "shoppingCart.text.physicalInventoryNonCompliant", param);
+                              messages.add("message", new ActionMessage("message.simpleMessage", confMessage));
+                          }
+                          saveMessages(request, messages);
+                      } 
+                      
+                      //Save Info messages, if there are any.
+                      messages = (ActionMessages) request.getAttribute(Globals.MESSAGE_KEY);
+                      if(messages!=null && !messages.isEmpty()) {
+                          saveMessages(request, messages);
+                      }
+                  }
+              } else {
+                  saveErrors(request, errors);
+              }
+                  
+              returnValue = mapping.findForward(MAPPING_ORDERS_SHOW_PHYSICAL_CART);
+          }
+          catch (Exception e) {
+              log.error("Unexpected exception in ShoppingAction.handleSavePhysicalCartRequest: "+e);
+              returnValue = saveErrors(request,mapping,errors); 
+          } finally {
+              Utility.getSessionDataUtil(request).setSelectedSubTab(Constants.EMPTY);
+          }
+          return returnValue;   
+      }
+      
 
 }
 

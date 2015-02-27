@@ -1448,19 +1448,25 @@ public final class ShopTool {
      * is one where all of the on hand values for all items in the cart are set.
      * @param request
      * @return
+     * @throws Exception 
      */
-    public static boolean isPhysicalCartCompliant(HttpServletRequest request) {
+    public static boolean isPhysicalCartCompliant(HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
         if (session == null) {
             return false;
         }
+        
+        CleanwiseUser appUser = getCurrentUser(request);
+        APIAccess factory = (APIAccess) session.getAttribute(Constants.APIACCESS);
+        ShoppingServices shoppingServEjb = factory.getShoppingServicesAPI();
+        IdVector specialItemIds = shoppingServEjb.getSpecialPermssionItemIds(appUser.getUserAccount().getAccountCatalog().getCatalogId());
         ShoppingCartForm cartForm = (ShoppingCartForm) session.getAttribute("INVENTORY_SHOPPING_CART_FORM");
         ShoppingCartData shoppingCartD = cartForm.getShoppingCart();
         ShoppingCartItemDataVector items = shoppingCartD.getInventoryItemsOnly();
         Iterator<ShoppingCartItemData> it = (Iterator<ShoppingCartItemData>) items.iterator();
         while(it.hasNext()){
         	ShoppingCartItemData item = it.next();
-        	if(!Utility.isSet(item.getInventoryQtyOnHandString())){
+        	if(!Utility.isSet(item.getInventoryQtyOnHandString()) && !specialItemIds.contains(item.getItemId())){
         		return false;
         	}
         }
@@ -1993,12 +1999,9 @@ public final class ShopTool {
             return false;
         }
         boolean isInventoryCartAccessOpen = false;
-//        boolean usePhysicalInventory = isUsedPhysicalInventoryAlgorithm(u);
 	    boolean isPhysicalCartAvailable = isPhysicalCartAvailable(request);
-		boolean isUsedPhysicalInventoryAlgorithm = isUsedPhysicalInventoryAlgorithm(u);
-        boolean usePhysicalInventory = isPhysicalCartAvailable && isUsedPhysicalInventoryAlgorithm;
-        if (usePhysicalInventory) {
-            isInventoryCartAccessOpen = isPhysicalCartPeriodAvailable(u.getSite().getPhysicalInventoryPeriods());
+        if (isPhysicalCartAvailable) {
+            isInventoryCartAccessOpen = true;
         } else {
             isInventoryCartAccessOpen =
                 u.getSite().hasInventoryCartAccessOpen();
@@ -3128,6 +3131,12 @@ public final class ShopTool {
 	    corporateOrderLink.append(Constants.PARAMETER_OPERATION);
 	    corporateOrderLink.append("=");
 	    corporateOrderLink.append(Constants.PARAMETER_OPERATION_VALUE_SHOW_CORPORATE_ORDER);
+	    
+	    StringBuilder physicalCartLink = new StringBuilder(50);
+        physicalCartLink.append("shopping.do?");
+        physicalCartLink.append(Constants.PARAMETER_OPERATION);
+        physicalCartLink.append("=");
+        physicalCartLink.append(Constants.PARAMETER_OPERATION_VALUE_SHOW_PHYSICAL_CART);
 		    
 	    StringBuilder viewCartItemLink = new StringBuilder(50);
 	    viewCartItemLink.append("shopping.do?");
@@ -3150,9 +3159,9 @@ public final class ShopTool {
 	    StringBuilder viewCartHTML = new StringBuilder(1000);
 	    //STJ-5021 - only show the cart if the user is authorized for shopping
  		boolean showCorporateOrder = Utility.getSessionDataUtil(request).isConfiguredForCorporateOrders();;
- 	    boolean isCorporateOrderOpen = ShopTool.hasInventoryCartAccessOpen(request);
- 	    
-		if (showCorporateOrder && isCorporateOrderOpen) {
+ 	    boolean isCorporateOrderOpen = ShopTool.hasInventoryCartAccessOpen(request); 	    
+ 	    boolean isPhysicalCartAvailable = ShopTool.isPhysicalCartAvailable(request);
+        if (showCorporateOrder && (isPhysicalCartAvailable || isCorporateOrderOpen)) {
 			ShoppingCartData cart = (ShoppingCartData)session.getAttribute(Constants.INVENTORY_SHOPPING_CART);
 			int contractId = 0;
 			
@@ -3162,9 +3171,15 @@ public final class ShopTool {
 
 			//View Cart Left button
 			viewCartHTML.append("<a class=\"btnLeft\" href=\"");
-			viewCartHTML.append(corporateOrderLink.toString());
-			viewCartHTML.append("\"> ");
-			viewCartHTML.append(ClwMessageResourcesImpl.getMessage(request,"header.label.orders.corporateOrder"));
+			if (isPhysicalCartAvailable){
+			    viewCartHTML.append(physicalCartLink.toString());
+			    viewCartHTML.append("\"> ");
+	            viewCartHTML.append(ClwMessageResourcesImpl.getMessage(request,"shoppingCart.text.physicalCart"));	            
+			} else {
+			    viewCartHTML.append(corporateOrderLink.toString());
+			    viewCartHTML.append("\"> ");
+	            viewCartHTML.append(ClwMessageResourcesImpl.getMessage(request,"header.label.orders.corporateOrder"));	            
+			}
 			viewCartHTML.append(" ");
 			viewCartHTML.append("(");
 			viewCartHTML.append(cart.getItemsQty());

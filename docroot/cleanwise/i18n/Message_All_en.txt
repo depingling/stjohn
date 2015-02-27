@@ -481,6 +481,7 @@ orders.error.browseOnlyCannotPlaceOrder=Browse-only user cannot place an order.
 orders.error.browseOnlyCannotReorder=Browse-only user cannot reorder an order.
 orders.error.browseOnlyCannotCheckout=Browse-only user cannot checkout.
 orders.error.browseOnlyCannotUpdateCorporateOrder=Browse-only user cannot update Corporate Order.
+orders.error.browseOnlyCannotUpdatePhysicalCart=Browse-only user cannot update Physical Inventory Cart.
 orders.error.browseOnlyCannotAddOrModifyShoppingList=Browse-only user cannot add or modify a shopping list.
 orders.search.error.problemModifyingProductItems=Error occurred while modifying Product Items
 orders.search.error.problemReorderingProductItems=Error occurred while reordering Product Items
@@ -864,6 +865,8 @@ shoppingCart.text.confirmation=Order Confirmation
 shoppingCart.text.scheduledCartMessage=You MUST enter your on-hand quantities for Forecasted Items <U>AND</U> click the "Update Cart" button.
 #The hardcoded times and days was a request from Chris Klusener of xpedx.  This text is a requirement of xpedx.
 shoppingCart.text.physicalInventoryText=You are entering your physical on hand inventory, you have until 6 pm ET {0}  to complete your inventory.<br>Non forecasted items can not be ordered until Wednesday to be completed by 6 pm ET Thursday.
+shoppingCart.text.physicalInventoryInputDue=Physical Inventory inputs due {0} at 6pm.<br>Enter non-forecast items between {1} and {2} before 6pm.
+shoppingCart.text.physicalInventoryNonCompliant=WARNING: You have not completed the physical inventory. In order to be completed, all items must have a value entered into each 'On Hand Qty' field. The Physical Inventory Period ends on {0}.
 shoppingCart.text.addMoreFields=Add More Fields...
 
 #Msb Notes
@@ -1775,6 +1778,7 @@ shoppingCart.error.message.wrongOnHandQuantity=Invalid On Hand Quantity ({0}) ha
 shoppingCart.error.message.onHandIsGraterThanPar=The on hand value entered (SKU :{0}) is greater than the PAR value; nothing will be ordered.
 shoppingCart.error.message.nothingForOnHand=No On Hand value entered (SKU : {0}), setting Quantity to {1}.
 shoppingCart.info.message.corporateOrderSave=Corporate Order has been successfully updated.
+shoppingCart.info.message.physicalCartSave=Physical Inventory Cart has been successfully updated.
 shoppingItems.text.subTotal=Subtotal
 
 #NewXPdex
@@ -1833,7 +1837,7 @@ shop.checkout.text.poNum=PO #:
 shop.checkout.text.sTotal=Sub Total:
 shop.checkout.text.grandTotal=Grand Total:
 shop.checkout.text.actionMessage.physicalInventoryCompliant=Thank You.  Your Physical Inventory is now complete.
-shop.checkout.text.actionMessage.physicalInventoryNonCompliant=WARNING: You have not completed the physical inventory.  In order to be completed, all items must have a value entered into each 'On Hand Qty' field.  Click&nbsp;{0}&nbsp;to return to your physical inventory.  The Physical Inventory Period ends on {1}.
+shop.checkout.text.actionMessage.physicalInventoryNonCompliant=WARNING: You have not completed the physical inventory. In order to be completed, all items must have a value entered into each 'On Hand Qty' field.  Click&nbsp;{0}&nbsp;to return to your physical inventory.  The Physical Inventory Period ends on {1}.
 shop.checkout.text.actionMessage.orderSubmitted=Order Number '{0}' has been successfully submitted.
 shop.checkout.text.actionMessage.confirmationMess=Your Order has been placed successfully. Click&nbsp;{0}&nbsp;to view your order.
 shop.checkout.text.actionMessage.confirmationMessXpedx=Order Number "{0}" has been successfully submitted. Click&nbsp;"{1}"&nbsp;to view the order.

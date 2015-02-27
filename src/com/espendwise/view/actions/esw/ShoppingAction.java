@@ -2226,12 +2226,14 @@ public final class ShoppingAction extends EswAction  {
                               confMessage = ClwI18nUtil.getMessage(request, "shop.checkout.text.actionMessage.physicalInventoryCompliant", null );
                               messages.add("message", new ActionMessage("message.simpleMessage", confMessage));
                           }else{
-                              Object[] param = new Object[1];
-                              PhysicalInventoryPeriod invPeriod = ShopTool.getCurrentPhysicalPeriod(request);
+                              Object[] param = new Object[2];
+                              param[0] = ClwI18nUtil.getMessage(request, "shoppingItems.text.onHand");
+                              
+                              PhysicalInventoryPeriod invPeriod = ShopTool.getCurrentPhysicalPeriod(request);                              
                               if(invPeriod != null && invPeriod.getEndDate() != null){
-                                  param[0] = ClwI18nUtil.formatDate(request,invPeriod.getEndDate(),DateFormat.MEDIUM);
+                                  param[1] = ClwI18nUtil.formatDate(request,invPeriod.getEndDate(),DateFormat.MEDIUM);
                               }else{
-                                  param[0] = "error";
+                                  param[1] = "error";
                               }
                               confMessage = ClwI18nUtil.getMessage(request, "shoppingCart.text.physicalInventoryNonCompliant", param);
                               messages.add("message", new ActionMessage("message.simpleMessage", confMessage));

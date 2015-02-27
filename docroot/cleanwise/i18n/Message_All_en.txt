@@ -866,7 +866,7 @@ shoppingCart.text.scheduledCartMessage=You MUST enter your on-hand quantities fo
 #The hardcoded times and days was a request from Chris Klusener of xpedx.  This text is a requirement of xpedx.
 shoppingCart.text.physicalInventoryText=You are entering your physical on hand inventory, you have until 6 pm ET {0}  to complete your inventory.<br>Non forecasted items can not be ordered until Wednesday to be completed by 6 pm ET Thursday.
 shoppingCart.text.physicalInventoryInputDue=Physical Inventory inputs due {0} at 6pm.<br>Enter non-forecast items between {1} and {2} before 6pm.
-shoppingCart.text.physicalInventoryNonCompliant=WARNING: You have not completed the physical inventory. In order to be completed, all items must have a value entered into each 'On Hand Qty' field. The Physical Inventory Period ends on {0}.
+shoppingCart.text.physicalInventoryNonCompliant=WARNING: You have not completed the physical inventory. In order to be completed, all items must have a value entered into each '{0}' field. The Physical Inventory Period ends on {1}.
 shoppingCart.text.addMoreFields=Add More Fields...
 
 #Msb Notes

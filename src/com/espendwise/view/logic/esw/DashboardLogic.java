@@ -316,9 +316,11 @@ public class DashboardLogic {
 	        	SimpleDateFormat stf = new SimpleDateFormat(ClwI18nUtil.getTimePattern(request));	    		
 	    		
 	        	if(isCorporateOrderOpen){
-	        		//get release date and time
-		    		String releaseDateS = sdf.format(nextCutOffDate) + " " +stf.format(nextCutOffTime);
-		    		sessionDataUtil.setCorporateOrderReleaseDate(releaseDateS.toString());		    		
+	        	    if(nextCutOffDate!=null){
+    	        		//get release date and time
+    		    		String releaseDateS = sdf.format(nextCutOffDate) + " " +stf.format(nextCutOffTime);
+    		    		sessionDataUtil.setCorporateOrderReleaseDate(releaseDateS.toString());
+	        	    }
 	        	}else{	        		
 	        		if(nextCutOffDate!=null){
 	        			Date openDate = locationData.getNextScheduleAccessTime();

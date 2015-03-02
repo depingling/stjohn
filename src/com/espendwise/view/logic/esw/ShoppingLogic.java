@@ -110,7 +110,7 @@ public class ShoppingLogic {
 		shoppingCartForm = (ShoppingCartForm)request.getSession().getAttribute(Constants.INVENTORY_SHOPPING_CART_FORM);
 		if (shoppingCartForm != null && shoppingCartForm.getShoppingCart() != null) {
 			setParOrderDateTimeInfo(request,form);
-			if (errors.isEmpty()){
+			if (errors.isEmpty() && !ShopTool.isPhysicalCartAvailable(request)){
 				errors = ShoppingCartLogic.recalInvCartQty(request, shoppingCartForm);
 			}
 		}
